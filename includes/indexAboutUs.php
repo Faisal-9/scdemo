@@ -4,27 +4,27 @@
 $major_projects = [
     [
         'title' => 'ABC Infrastructure Project',
-        'image' => '/assets/images/3.jpg'
+        'image' => 'assets/images/3.jpg'
     ],
     [
         'title' => 'Highway Construction Project',
-        'image' => '/assets/images/4.jpg'
+        'image' => 'assets/images/4.jpg'
     ],
     [
         'title' => 'International Airport Development',
-        'image' => '/assets/images/5.jpg'
+        'image' => 'assets/images/5.jpg'
     ],
     [
         'title' => 'Smart City Development',
-        'image' => '/assets/images/6.jpg'
+        'image' => 'assets/images/6.jpg'
     ],
     [
         'title' => 'Hydropower Energy Project',
-        'image' => '/assets/images/7.jpg'
+        'image' => 'assets/images/7.jpg'
     ],
     [
         'title' => 'Mega Bridge Construction',
-        'image' => '/assets/images/8.jpg'
+        'image' => 'assets/images/8.jpg'
     ],
 ];
 
@@ -42,13 +42,13 @@ $history = [
 $about_tabs = [
     'mission' => [
         'title' => 'Our Mission',
-        'text' => 'Our mission is to deliver quality and sustainable development projects worldwide.',
-        'image' => '/assets/images/12.jpg'
+        'text' => 'To be the leading and most trusted engineering and construction partner in the region, recognized for our technical expertise and transformative impact on infrastructure and energy development.',
+        'image' => 'assets/images/12.jpg'
     ],
     'vision' => [
         'title' => 'Our Vision',
-        'text' => 'Our vision is to become a leading infrastructure and construction company globally.',
-        'image' => '/assets/images/11.jpg'
+        'text' => 'To engineer a sustainable and empowered future for Afghanistan through reliable energy and robust infrastructure, delivering excellence, innovation, and value in every project we undertake.',
+        'image' => 'assets/images/11.jpg'
     ]
 ];
 ?>
@@ -124,9 +124,6 @@ $about_tabs = [
                         <div class="col-md-6">
                             <h2 class="text-orange"><?= $tab['title'] ?></h2>
                             <p><?= $tab['text'] ?></p>
-                            <?php if ($id == "vision"): ?>
-                                <a class="btn btn-orange">Get Started +</a>
-                            <?php endif; ?>
                         </div>
                         <div class="col-md-6">
                             <img src="<?= $tab['image'] ?>" class="img-fluid rounded">

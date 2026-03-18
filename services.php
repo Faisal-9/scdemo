@@ -29,13 +29,13 @@ include("includes/head.php");
 
             <div class="services-content">
                 <div id="planning" class="service-section active">
-                    <?php include("./includes/planningss.php"); ?>
+                    <?php include("includes/planningss.php"); ?>
                 </div>
                 <div id="designing" class="service-section">
-                    <?php include("./includes/designss.php"); ?>
+                    <?php include("includes/designss.php"); ?>
                 </div>
                 <div id="tender" class="service-section">
-                    <?php include("./includes/tenderss.php"); ?>
+                    <?php include("includes/tenderss.php"); ?>
                 </div>
             </div>
         </div>

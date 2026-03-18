@@ -5,7 +5,7 @@
 
             <!-- Slide 1 -->
             <div class="swiper-slide">
-                <div class="image-layer" style="background-image:url(/assets/images/hero-image4.jpg)"></div>
+                <div class="image-layer" style="background-image:url(assets/images/hero-image4.jpg)"></div>
                 <div class="slider-overlay"></div>
                 <div class="container">
                     <div class="slider-content">
@@ -21,7 +21,7 @@
 
             <!-- Slide 2 -->
             <div class="swiper-slide">
-                <div class="image-layer" style="background-image:url(/assets/images/hero-image2.jpg)"></div>
+                <div class="image-layer" style="background-image:url(assets/images/hero-image2.jpg)"></div>
                 <div class="slider-overlay"></div>
                 <div class="container">
                     <div class="slider-content">
@@ -37,7 +37,7 @@
 
             <!-- Slide 3 -->
             <div class="swiper-slide">
-                <div class="image-layer" style="background-image:url(/assets/images/slider_03.jpg)"></div>
+                <div class="image-layer" style="background-image:url(assets/images/slider_03.jpg)"></div>
                 <div class="slider-overlay"></div>
                 <div class="container">
                     <div class="slider-content">

@@ -17,7 +17,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.6.1/dist/lazyload.min.js"></script>
 
 <!-- Navigation Script -->
-<script src="/assets/js/navigation.js" defer></script>
+<script src="assets/js/navigation.js" defer></script>
 
 <!-- Main Custom JS -->
-<script src="/assets/js/main.min.js" defer></script>
+<script src="assets/js/main.min.js" defer></script>

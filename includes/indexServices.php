@@ -1,7 +1,7 @@
 <?php
 $indexservices = [
     [
-        "image" => "/assets/images/8.jpg",
+        "image" => "assets/images/8.jpg",
         "title" => "Planning",
         "desc" => [
             "Project Identification",
@@ -15,7 +15,7 @@ $indexservices = [
         "link" => "#"
     ],
     [
-        "image" => "/assets/images/slider_03.jpg",
+        "image" => "assets/images/slider_03.jpg",
         "title" => "Design",
         "desc" => [
             "Conceptual Design",
@@ -29,7 +29,7 @@ $indexservices = [
         "link" => "#"
     ],
     [
-        "image" => "/assets/images/service02.jpg",
+        "image" => "assets/images/service02.jpg",
         "title" => "Tender",
         "desc" => [
             "Tender Documentation",

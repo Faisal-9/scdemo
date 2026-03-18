@@ -32,7 +32,7 @@ include("includes/head.php");
 
     <!-- ================= LINKS OF FOOTER ================= -->
     <?php include("includes/footerLink.php"); ?>
-    
+
 
 </body>
 

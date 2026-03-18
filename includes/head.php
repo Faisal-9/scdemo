@@ -64,9 +64,9 @@ if (!isset($page_description))
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
     <!-- Local Styles -->
-    <link rel="stylesheet" href="/assets/css/navigation.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 
     <!-- Main JS -->
     <script src="/assets/js/main.js"></script>

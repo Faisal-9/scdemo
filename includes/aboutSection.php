@@ -1,15 +1,15 @@
 <?php
 
 $generalInfo = [
-    'general_info-image' => '/assets/images/growth.jpg',
+    'general_info-image' => 'assets/images/growth.jpg',
     'general_info-content' => 'Over the past two decade, we have grown into one of Afghanistan\'s largest and most valuable companies — with offices in USA, Turkey, and Uzbekistan and an expanding global presence — built on a commitment to delivering complete, high-quality project solutions that improve the communities we serve. 
     Starting with multi-million dollar construction projects for the U.S. Army Corps of Engineers (USACE), we expanded into the energy sector, where we now specialize in high-voltage transmission lines, substations, and power distribution networks. With few Afghan companies capable of operating at this scale, energy is our core focus — and with a proven track record, skilled workforce, and unwavering commitment to quality, we are on course to become Afghanistan\'s leading energy company.'
 ];
 
 $mission_vision = [
-    'mission_img' => '/assets/images/growth.jpg',
+    'mission_img' => 'assets/images/growth.jpg',
     'mission' => "State Corps' mission is to strengthen Afghanistan's future by delivering high-impact projects across transportation, manufacturing, energy, and mining — creating lasting economic value and advancing the nation toward self-reliance and sustainable growth.",
-    'vision_img' => '/assets/images/growth.jpg',
+    'vision_img' => 'assets/images/growth.jpg',
     'vision' => "State Corps aspires to be Afghanistan's leading strategic investor and developer — advancing progress across Transportation, Manufacturing, Energy, and Mining through innovation, strategic partnerships, and responsible investment."
 ];
 
@@ -24,32 +24,32 @@ $milestones = [
 ];
 
 $clientData = [
-    ['logo' => '/assets/images/clients/client_ABC_resized.png'],
-    ['logo' => '/assets/images/clients/client_ADB_resized.png'],
-    ['logo' => '/assets/images/clients/client_dabs_resized.png'],
-    ['logo' => '/assets/images/clients/client_fao_resized.png'],
-    ['logo' => '/assets/images/clients/client_metq_resized.png'],
-    ['logo' => '/assets/images/clients/client_mew_resized.png'],
-    ['logo' => '/assets/images/clients/client_unops_resized.png'],
-    ['logo' => '/assets/images/clients/client_usace_resized.png'],
-    ['logo' => '/assets/images/clients/client_worldbank_resized.png'],
-    ['logo' => '/assets/images/clients/client_wfp.png']
+    ['logo' => 'assets/images/clients/client_ABC_resized.png'],
+    ['logo' => 'assets/images/clients/client_ADB_resized.png'],
+    ['logo' => 'assets/images/clients/client_dabs_resized.png'],
+    ['logo' => 'assets/images/clients/client_fao_resized.png'],
+    ['logo' => 'assets/images/clients/client_metq_resized.png'],
+    ['logo' => 'assets/images/clients/client_mew_resized.png'],
+    ['logo' => 'assets/images/clients/client_unops_resized.png'],
+    ['logo' => 'assets/images/clients/client_usace_resized.png'],
+    ['logo' => 'assets/images/clients/client_worldbank_resized.png'],
+    ['logo' => 'assets/images/clients/client_wfp.png']
 ];
 
 $sisterCompanies = [
     [
         'name' => 'AryaMineral',
-        'logo' => '/assets/images/Scompany/Scom_aryamineral.png',
+        'logo' => 'assets/images/Scompany/Scom_aryamineral.png',
         'description' => 'Professional exploration, expliotation, processing and trading of minerals in Afghanistan'
     ],
     [
         'name' => 'Aeroparcel',
-        'logo' => '/assets/images/Scompany/Scom_aeroparcel.png',
+        'logo' => 'assets/images/Scompany/Scom_aeroparcel.png',
         'description' => 'Worldwide agents Aeroparcel offer access to a smarter, simpler and global supply chain'
     ],
     [
         'name' => 'Petropool',
-        'logo' => '/assets/images/Scompany/Scom_petropool.png',
+        'logo' => 'assets/images/Scompany/Scom_petropool.png',
         'description' => 'Operates a number of well-located, finest-quality motor fuel services all across Afghanistan'
     ],
 ];
@@ -57,30 +57,30 @@ $sisterCompanies = [
 $awards = [
     [
         'name' => 'Quality Management Systems',
-        'logo' => '/assets/images/awards/1_Cert.jpg'
+        'logo' => 'assets/images/awards/1_Cert.jpg'
     ],
     [
         'name' => 'Enviromental Management Systems',
-        'logo' => '/assets/images/awards/2_Cert.jpg'
+        'logo' => 'assets/images/awards/2_Cert.jpg'
     ],
     [
         'name' => 'Health & Safety Management Systems',
-        'logo' => '/assets/images/awards/3_Cert.jpg'
+        'logo' => 'assets/images/awards/3_Cert.jpg'
     ],
 ];
 
 $certificates = [
     [
         'name' => 'Quality Management Systems',
-        'logo' => '/assets/images/ISO_Certificates/ISO1.jpg'
+        'logo' => 'assets/images/ISO_Certificates/ISO1.jpg'
     ],
     [
         'name' => 'Enviromental Management Systems',
-        'logo' => '/assets/images/ISO_Certificates/ISO2.jpg'
+        'logo' => 'assets/images/ISO_Certificates/ISO2.jpg'
     ],
     [
         'name' => 'Health & Safety Management Systems',
-        'logo' => '/assets/images/ISO_Certificates/ISO3.jpg'
+        'logo' => 'assets/images/ISO_Certificates/ISO3.jpg'
     ],
 ];
 ?>
@@ -203,7 +203,7 @@ $certificates = [
                                 <!-- Image -->
                                 <div class="col-12 col-lg-6">
                                     <div class="ms-img">
-                                        <img src="/assets/images/taloqan.jpg" alt="Milestones" class="img-fluid rounded-3">
+                                        <img src="assets/images/taloqan.jpg" alt="Milestones" class="img-fluid rounded-3">
                                     </div>
                                 </div>
 
