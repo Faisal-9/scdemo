@@ -1,42 +1,44 @@
 <?php
-$page_title = "Services - State Corps";
+$page_title = "Sectors - State Corps";
 include("includes/head.php");
-include("includes/data/servicesdata.php");
+include("includes/data/sectorsdata.php");
 ?>
 
 <body>
 
     <?php include("includes/header.php"); ?>
 
-    <section class="services-page">
+    <section class="sectors-page">
         <div class="container">
 
-            <!-- MENU -->
-            <div class="services-menu-wrapper">
-                <ul class="services-menu">
+            <!-- SECTOR MENU -->
+            <div class="sectors-menu-wrapper">
+                <ul class="sectors-menu">
                     <?php
                     $first = true;
-                    foreach ($services as $key => $service):
+                    foreach ($sectors as $key => $sector):
                     ?>
                         <li class="<?= $first ? 'active' : '' ?>"
                             data-target="<?= $key ?>">
-                            <?= $service['title'] ?>
+                            <?= $sector['title'] ?>
                         </li>
-                    <?php $first = false;
-                    endforeach; ?>
+                    <?php
+                        $first = false;
+                    endforeach;
+                    ?>
                 </ul>
             </div>
 
-            <!-- CONTENT -->
-            <div class="services-content">
+            <!-- SECTOR CONTENT -->
+            <div class="sectors-content">
                 <?php
                 $first = true;
-                foreach ($services as $key => $service):
+                foreach ($sectors as $key => $sector):
                 ?>
-                    <div id="<?= $key ?>" class="service-section <?= $first ? 'active' : '' ?>">
+                    <div id="<?= $key ?>" class="sector-section <?= $first ? 'active' : '' ?>">
                         <?php
                         $prefix = $key . "-";
-                        $sections = $service["sections"];
+                        $sections = $sector["sections"];
                         include("includes/components/sidebarsection.php");
                         ?>
                     </div>
@@ -45,6 +47,7 @@ include("includes/data/servicesdata.php");
                 endforeach;
                 ?>
             </div>
+
         </div>
 
     </section>

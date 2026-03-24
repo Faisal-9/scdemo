@@ -24,7 +24,7 @@ $planningSections = [
 ];
 ?>
 
-<section class="service-detail-page py-5">
+<section class="service-detail-page">
 
     <div class="container">
         <div class="row">

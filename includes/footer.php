@@ -8,7 +8,7 @@
             <!-- Company Info -->
             <div class="col-lg-3 col-md-6 footer-about">
                 <a href="index.php" class="footer-logo">
-                    <img src="/assets/images/footerlogo.png" alt="State Corps Logo" loading="lazy">
+                    <img src="assets/images/footerlogo.png" alt="State Corps Logo" loading="lazy">
                 </a>
                 <div class="social-media-footer">
                     <h5>Follow Us</h5>

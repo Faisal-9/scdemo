@@ -1,22 +1,4 @@
 <?php
-// $service_planning = [
-//     [
-//         "image" => "/assets/images/8.jpg",
-//         "title" => "Planning",
-//         "desc" => [
-//             "Project Identification",
-//             "Reconnaissance Studies",
-//             "Master Plan/Pre-Feasibility",
-//             "Technical & Economical Feasibility",
-//             "Hydrological Studies",
-//             "Geological & Hydrogeological Studies",
-//             "Geotechnical Studies",
-//         ],
-//     ],
-// ];
-
-
-// <?php
 
 $planningSections = [
     [
@@ -42,8 +24,7 @@ $planningSections = [
 ];
 ?>
 
-<section class="service-detail-page py-5">
-
+<section class="service-detail-page">
     <div class="container">
         <div class="row">
 
@@ -64,7 +45,6 @@ $planningSections = [
 
             <!-- CONTENT -->
             <div class="col-lg-9">
-
                 <div data-bs-spy="scroll"
                     data-bs-target=".about-sidebar"
                     data-bs-offset="100"
@@ -78,7 +58,6 @@ $planningSections = [
                     <?php endforeach; ?>
                 </div>
             </div>
-
         </div>
     </div>
 

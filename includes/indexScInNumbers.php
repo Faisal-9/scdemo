@@ -1,4 +1,7 @@
 <?php
+
+$statsBg = "assets/images/about.jpg";
+
 $stats = [
     ['number' => 20, 'suffix' => 'year', 'label' => 'Years of Excellence'],
     ['number' => 100, 'suffix' => '+', 'label' => 'Completed Projects'],
@@ -7,7 +10,10 @@ $stats = [
 ];
 ?>
 
-<section class="index-stats-section">
+<section class="index-stats-section"
+    style="background-image:
+linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+url('<?= $statsBg ?>');">
 
     <div class="container">
         <div class="row align-items-center">

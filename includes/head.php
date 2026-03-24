@@ -37,8 +37,8 @@ if (!isset($page_description))
     <meta name="twitter:image" content="https://statecorps.com/images/twitter-image.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" href="/assets/images/favicon.png" sizes="32x32">
-    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" href="assets/images/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,10 +69,10 @@ if (!isset($page_description))
     <link rel="stylesheet" href="assets/css/responsive.css">
 
     <!-- Main JS -->
-    <script src="/assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <!-- Preload Important Logo -->
-    <link rel="preload" as="image" href="/assets/images/logo.png">
+    <link rel="preload" as="image" href="assets/images/logo.png">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX"></script>

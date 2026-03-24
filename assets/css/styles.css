@@ -165,9 +165,6 @@
 /* ================= INDEX STATS SECTION ================= */
 .index-stats-section {
   padding: 120px 0;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("/assets/images/about.jpg");
   background-size: cover;
   background-position: bottom center;
   background-attachment: fixed;
@@ -1354,8 +1351,8 @@
   top: 50px;
   z-index: 50;
   background: #fff;
-  padding: 10px 0;
-  margin-bottom: 40px;
+  /* padding: 10px 0; */
+  margin-bottom: 10px;
 }
 
 .services-menu {
@@ -1413,6 +1410,63 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ================= SECTORS PAGE ================= */
+
+.sectors-menu-wrapper {
+  position: sticky;
+  top: 50px;
+  z-index: 50;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.sectors-menu {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.sectors-menu li {
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #444;
+  position: relative;
+  transition: 0.3s;
+}
+
+.sectors-menu li:hover {
+  color: #e8461e;
+}
+
+.sectors-menu li.active {
+  color: #e8461e;
+}
+
+.sectors-menu li.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #e8461e;
+}
+
+.sector-section {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.sector-section.active {
+  display: block;
 }
 
 /* ================= FOOTER ================= */

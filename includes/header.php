@@ -2,38 +2,25 @@
 // Get current page for active state
 $current_page = basename($_SERVER['PHP_SELF']);
 
-// Define page groups for active state in dropdowns - this can be expanded as needed
-
-$about_pages = [
-    'about.php',
-    'general-information.php',
-    'mission-vision.php',
-    'milestones.php',
-    'clients.php',
-    'SisterCompany.php',
-    'awards-rewards.php',
-    'certificates.php'
-];
-
 $services_pages = [
     'services.php',
-    'transmission.php',
-    'substation.php',
-    'distribution.php',
-    'hydropowerdam.php',
-    'logistic.php'
+    // 'transmission.php',
+    // 'substation.php',
+    // 'distribution.php',
+    // 'hydropowerdam.php',
+    // 'logistic.php'
 ];
 
 $sectors_pages = [
     'sectors.php',
-    'commercialbuilding.php',
-    'residential.php',
-    'industrial.php',
-    'roadhighway.php',
-    'airport.php',
-    'transportation.php',
-    'water-infrastructure.php',
-    'mining.php'
+    //     'commercialbuilding.php',
+    //     'residential.php',
+    //     'industrial.php',
+    //     'roadhighway.php',
+    //     'airport.php',
+    //     'transportation.php',
+    //     'water-infrastructure.php',
+    //     'mining.php'
 ];
 
 $media_pages = [
@@ -72,35 +59,23 @@ $media_pages = [
                         </li>
 
                         <!-- About Us Dropdown -->
-                        <li class="nav-item dropdown <?php echo in_array($current_page, $about_pages) ? 'active' : ''; ?>">
+                        <li class="nav-item dropdown <?= ($current_page == 'about.php') ? 'active' : '' ?>">
                             <a href="about.php" class="nav-link has-dropdown">
                                 <span class="nav-text">About Us</span>
                                 <span class="dropdown-arrow">▼</span>
                             </a>
+
                             <div class="dropdown-menu">
                                 <ul class="dropdown-list">
-                                    <li>
-                                        <a href="/about.php#general-info" class="dropdown-link">General Information</a>
-                                    </li>
-                                    <li>
-                                        <a href="/about.php#mission-vision" class="dropdown-link">Mission - Vision</a>
-                                    </li>
-                                    <li>
-                                        <a href="/about.php#milestones" class="dropdown-link">Milestones</a>
-                                    </li>
 
-                                    <li>
-                                        <a href="/about.php#clients" class="dropdown-link">Clients</a>
-                                    </li>
-                                    <li>
-                                        <a href="/about.php#sister" class="dropdown-link">Sister Companies</a>
-                                    </li>
-                                    <li>
-                                        <a href="/about.php#awards" class="dropdown-link">Awards & Recognitions</a>
-                                    </li>
-                                    <li>
-                                        <a href="/about.php#certificates" class="dropdown-link">Certificates</a>
-                                    </li>
+                                    <li><a href="about.php#general-info" class="dropdown-link">General Information</a></li>
+                                    <li><a href="about.php#mission-vision" class="dropdown-link">Mission - Vision</a></li>
+                                    <li><a href="about.php#milestones" class="dropdown-link">Milestones</a></li>
+                                    <li><a href="about.php#clients" class="dropdown-link">Clients</a></li>
+                                    <li><a href="about.php#sister" class="dropdown-link">Sister Companies</a></li>
+                                    <li><a href="about.php#awards" class="dropdown-link">Awards & Recognitions</a></li>
+                                    <li><a href="about.php#certificates" class="dropdown-link">Certificates</a></li>
+
                                 </ul>
                             </div>
                         </li>
@@ -118,7 +93,7 @@ $media_pages = [
 
                                     <!-- Column 1: Design -->
                                     <div class="mega-column">
-                                        <h4 class="mega-title">Planning</h4>
+                                        <h4 class="mega-title">ECP</h4>
                                         <ul class="mega-list">
                                             <li><a href="substation.php" class="mega-link <?php echo ($current_page == 'substation.php') ? 'active' : ''; ?>">Designing & Modeling</a></li>
                                             <li><a href="distribution.php" class="mega-link <?php echo ($current_page == 'distribution.php') ? 'active' : ''; ?>">Mechanical</a></li>
@@ -141,7 +116,7 @@ $media_pages = [
 
                                     <!-- Column 3: Operations & Maintenance -->
                                     <div class="mega-column">
-                                        <h4 class="mega-title">Tender</h4>
+                                        <h4 class="mega-title">Suply Chain</h4>
                                         <ul class="mega-list">
                                             <li><a href="transmission.php" class="mega-link <?php echo ($current_page == 'transmission.php') ? 'active' : ''; ?>">Transmission Lines</a></li>
                                             <li><a href="substation.php" class="mega-link <?php echo ($current_page == 'substation.php') ? 'active' : ''; ?>">Substations</a></li>
@@ -221,16 +196,6 @@ $media_pages = [
                                     <!-- Column 5: Mining -->
                                     <div class="mega-column">
                                         <h4 class="mega-title">Mining</h4>
-                                        <ul class="mega-list">
-                                            <li><a href="mining.php" class="mega-link <?php echo ($current_page == 'mining.php') ? 'active' : ''; ?>">Exploration</a></li>
-                                            <li><a href="mining.php" class="mega-link <?php echo ($current_page == 'mining.php') ? 'active' : ''; ?>">Exploitation</a></li>
-                                            <li><a href="mining.php" class="mega-link <?php echo ($current_page == 'mining.php') ? 'active' : ''; ?>">Processing</a></li>
-                                            <li><a href="mining.php" class="mega-link <?php echo ($current_page == 'mining.php') ? 'active' : ''; ?>">Export Services</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- Column 5: Mining -->
-                                    <div class="mega-column">
-                                        <h4 class="mega-title">designing</h4>
                                         <ul class="mega-list">
                                             <li><a href="mining.php" class="mega-link <?php echo ($current_page == 'mining.php') ? 'active' : ''; ?>">Exploration</a></li>
                                             <li><a href="mining.php" class="mega-link <?php echo ($current_page == 'mining.php') ? 'active' : ''; ?>">Exploitation</a></li>

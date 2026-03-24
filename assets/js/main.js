@@ -200,19 +200,43 @@ about us Sister Companies Swiper
 
   document.querySelectorAll(".services-menu li").forEach((item) => {
     item.addEventListener("click", function () {
-
-      document.querySelectorAll(".services-menu li")
+      document
+        .querySelectorAll(".services-menu li")
         .forEach((el) => el.classList.remove("active"));
 
       this.classList.add("active");
 
       const target = this.dataset.target;
 
-      document.querySelectorAll(".service-section")
+      document
+        .querySelectorAll(".service-section")
         .forEach((sec) => sec.classList.remove("active"));
 
       document.getElementById(target).classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
 
+  /* ==========================
+   SECTORS PAGE TABS
+========================== */
+
+  document.querySelectorAll(".sectors-menu li").forEach((item) => {
+    item.addEventListener("click", function () {
+      document
+        .querySelectorAll(".sectors-menu li")
+        .forEach((li) => li.classList.remove("active"));
+
+      this.classList.add("active");
+
+      let target = this.getAttribute("data-target");
+
+      document
+        .querySelectorAll(".sector-section")
+        .forEach((sec) => sec.classList.remove("active"));
+
+      document.getElementById(target).classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
 });
