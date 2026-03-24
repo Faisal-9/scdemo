@@ -28,7 +28,7 @@ include("includes/data/servicesdata.php");
             </div>
 
             <!-- CONTENT -->
-            <div class="services-content">
+            <div class="services-content service-gallery">
                 <?php
                 $first = true;
                 foreach ($services as $key => $service):

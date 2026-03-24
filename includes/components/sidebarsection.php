@@ -36,15 +36,19 @@ $sections = $sections ?? [];
                     class="about-content">
                     <?php foreach ($sections as $section): ?>
 
-                        <section id="<?= $prefix . $section['id'] ?>" class="about-section-block py-4">
-                            <div class="row align-items-center">
+                        <section id="<?= $prefix . $section['id'] ?>" class="about-section-block p-3">
+                            <div class="row align-items-start">
                                 <!-- TEXT -->
-                                <div class="">
+                                <div class="col-lg-7">
                                     <h2><?= $section['title'] ?></h2>
                                     <?php if (!empty($section['small-title'])): ?>
                                         <p class="small-title"><?= $section['small-title'] ?></p>
                                     <?php endif; ?>
-                                    <p><?= $section['text'] ?></p>
+                                    <?php if (!empty($section['text'])): ?>
+                                        <p><?= $section['text'] ?></p>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="col-lg-5">
                                     <?php if (!empty($section['features'])): ?>
                                         <ul class="service-features">
                                             <?php foreach ($section['features'] as $feature): ?>
@@ -53,14 +57,33 @@ $sections = $sections ?? [];
                                         </ul>
                                     <?php endif; ?>
                                 </div>
+
                                 <!-- IMAGE -->
                                 <?php if (!empty($section['image'])): ?>
-                                    <div class="">
-                                        <img src="<?= $section['image'] ?>"
-                                            class="img-fluid rounded shadow-sm"
-                                            alt="<?= $section['title'] ?>">
+                                    <?php
+                                    $images = $section['image'];
+                                    $count = count($images);
+
+                                    $col = match ($count) {
+                                        1, 2 => "col-lg-6",
+                                        3 => "col-lg-4",
+                                        4 => "col-lg-3",
+                                        default => "col-lg-3 col-md-4"
+                                    };
+                                    ?>
+                                    <div class="col-12">
+                                        <div class="row g-3 mt-3">
+                                            <?php foreach ($images as $img): ?>
+                                                <div class="<?= $col ?>">
+                                                    <img src="<?= $img ?>"
+                                                        class="img-fluid rounded shadow-sm w-100"
+                                                        alt="<?= $section['title'] ?? 'Service image' ?>">
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
                                     </div>
                                 <?php endif; ?>
+
                             </div>
                         </section>
                     <?php endforeach; ?>

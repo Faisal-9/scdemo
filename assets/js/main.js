@@ -195,6 +195,44 @@ about us Sister Companies Swiper
   }
 
   /* ==========================
+   SERVICES SIDEBAR HIGHLIGHT
+========================== */
+
+  let serviceSections = [];
+  let sidebarLinks = [];
+
+  function updateActiveServiceData() {
+    const activeService = document.querySelector(".service-section.active");
+
+    if (!activeService) return;
+
+    serviceSections = activeService.querySelectorAll(".about-section-block");
+    sidebarLinks = activeService.querySelectorAll(".about-sidebar .nav-link");
+  }
+
+  function highlightSidebar() {
+    if (!serviceSections.length) return;
+
+    let scrollPos = window.scrollY + 140;
+
+    serviceSections.forEach((section, index) => {
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+
+      if (scrollPos >= top && scrollPos < bottom) {
+        sidebarLinks.forEach((link) => link.classList.remove("active"));
+
+        if (sidebarLinks[index]) {
+          sidebarLinks[index].classList.add("active");
+        }
+      }
+    });
+  }
+
+  /* GLOBAL SCROLL LISTENER */
+  window.addEventListener("scroll", highlightSidebar);
+
+  /* ==========================
    SERVICES PAGE TABS
 ========================== */
 
@@ -212,10 +250,62 @@ about us Sister Companies Swiper
         .querySelectorAll(".service-section")
         .forEach((sec) => sec.classList.remove("active"));
 
-      document.getElementById(target).classList.add("active");
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      const activeSection = document.getElementById(target);
+      activeSection.classList.add("active");
+
+      window.scrollTo({
+        top: document.querySelector(".services-page").offsetTop - 80,
+        behavior: "smooth",
+      });
+
+      updateActiveServiceData();
+
+      highlightSidebar();
     });
   });
+
+  updateActiveServiceData();
+  highlightSidebar();
+
+  /* ==========================
+   SECTORS SIDEBAR HIGHLIGHT
+========================== */
+
+  let sectorSections = [];
+  let sectorSidebarLinks = [];
+
+  function updateActiveSectorData() {
+    const activeSector = document.querySelector(".sector-section.active");
+
+    if (!activeSector) return;
+
+    sectorSections = activeSector.querySelectorAll(".about-section-block");
+    sectorSidebarLinks = activeSector.querySelectorAll(
+      ".about-sidebar .nav-link",
+    );
+  }
+
+  function highlightSectorSidebar() {
+    if (!sectorSections.length) return;
+
+    let scrollPos = window.scrollY + 140;
+
+    sectorSections.forEach((section, index) => {
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+
+      if (scrollPos >= top && scrollPos < bottom) {
+        sectorSidebarLinks.forEach((link) => link.classList.remove("active"));
+
+        if (sectorSidebarLinks[index]) {
+          sectorSidebarLinks[index].classList.add("active");
+        }
+      }
+    });
+  }
+
+  /* global scroll listener */
+  window.addEventListener("scroll", highlightSectorSidebar);
 
   /* ==========================
    SECTORS PAGE TABS
@@ -229,14 +319,26 @@ about us Sister Companies Swiper
 
       this.classList.add("active");
 
-      let target = this.getAttribute("data-target");
+      const target = this.dataset.target;
 
       document
         .querySelectorAll(".sector-section")
         .forEach((sec) => sec.classList.remove("active"));
 
-      document.getElementById(target).classList.add("active");
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      const activeSector = document.getElementById(target);
+      activeSector.classList.add("active");
+
+      window.scrollTo({
+        top: document.querySelector(".sectors-page").offsetTop - 80,
+        behavior: "smooth",
+      });
+
+      updateActiveSectorData();
+
+      highlightSectorSidebar();
     });
   });
+
+  updateActiveSectorData();
+  highlightSectorSidebar();
 });

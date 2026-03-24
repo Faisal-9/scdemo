@@ -37,7 +37,7 @@ if (!isset($page_description))
     <meta name="twitter:image" content="https://statecorps.com/images/twitter-image.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/favicon.png" sizes="32x32">
+    <link rel="icon" href="assets/images/favicon1.png" sizes="32x32">
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 
     <!-- Google Fonts -->

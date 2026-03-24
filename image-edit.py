@@ -7,10 +7,10 @@ def resize_image_fixed(input_path: str, output_path: str, width: int, height: in
         print(f"Image resized to {width}x{height} and saved to '{output_path}'")
 
 # ── Configuration ──────────────────────────────────────────
-INPUT_IMAGE  = "C:/Users/AFS/Desktop/clients/client_fao_resized.png" 
-OUTPUT_IMAGE = "C:/Users/AFS/Desktop/clients/client_fao_resized.png"
-TARGET_WIDTH  = 800
-TARGET_HEIGHT = 400
+INPUT_IMAGE  = "C:/Users/AFS/Desktop/clients/favicon2.png" 
+OUTPUT_IMAGE = "C:/Users/AFS/Desktop/clients/favicon1.png"
+TARGET_WIDTH  = 100
+TARGET_HEIGHT = 100
 # ───────────────────────────────────────────────────────────
 
 resize_image_fixed(INPUT_IMAGE, OUTPUT_IMAGE, TARGET_WIDTH, TARGET_HEIGHT)
