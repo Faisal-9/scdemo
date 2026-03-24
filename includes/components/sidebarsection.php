@@ -35,11 +35,36 @@ $sections = $sections ?? [];
                     tabindex="0"
                     class="about-content">
                     <?php foreach ($sections as $section): ?>
+
                         <section id="<?= $prefix . $section['id'] ?>" class="about-section-block py-4">
-                            <h2><?= $section['title'] ?></h2>
-                            <p><?= $section['content'] ?></p>
+                            <div class="row align-items-center">
+                                <!-- TEXT -->
+                                <div class="">
+                                    <h2><?= $section['title'] ?></h2>
+                                    <?php if (!empty($section['small-title'])): ?>
+                                        <p class="small-title"><?= $section['small-title'] ?></p>
+                                    <?php endif; ?>
+                                    <p><?= $section['text'] ?></p>
+                                    <?php if (!empty($section['features'])): ?>
+                                        <ul class="service-features">
+                                            <?php foreach ($section['features'] as $feature): ?>
+                                                <li><?= $feature ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif; ?>
+                                </div>
+                                <!-- IMAGE -->
+                                <?php if (!empty($section['image'])): ?>
+                                    <div class="">
+                                        <img src="<?= $section['image'] ?>"
+                                            class="img-fluid rounded shadow-sm"
+                                            alt="<?= $section['title'] ?>">
+                                    </div>
+                                <?php endif; ?>
+                            </div>
                         </section>
                     <?php endforeach; ?>
+
                 </div>
             </div>
 

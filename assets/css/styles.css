@@ -5,49 +5,10 @@
 }
 
 .container {
-  /* max-width: 1500px; */
   margin: auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 /* ================= HEADER ================= */
-
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #fff;
-  transition: box-shadow 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.header-small .nav-wrapper {
-  padding: 0.4rem 1rem;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header-small .logo-img {
-  height: 3rem;
-  transition: height 0.3s ease;
-}
-
-.header-small .nav-link {
-  font-size: 0.9rem;
-  transition: min-height 0.3s ease;
-}
-
-.social-link-header {
-  background: none;
-  font-size: 1.3rem;
-}
-
-.header-small .social-link-header {
-  width: 1rem;
-  transition: width 0.3s ease;
-}
-
-.header-small {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-}
 
 /* ================= INDEX SLIDER ================= */
 
@@ -673,8 +634,16 @@
 .about-section-block h2 {
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   color: #0b1d4f;
+}
+
+.about-section-block .small-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6c757d;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
 }
 
 .mission-box,
