@@ -5,8 +5,8 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   /* =====================================
-       COUNTER ANIMATION
-    ===================================== */
+     COUNTER ANIMATION
+  ===================================== */
 
   const counters = document.querySelectorAll(".counter");
 
@@ -27,8 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /* =====================================
-       Lazy Load Images
-    ===================================== */
+     Lazy Load Images
+  ===================================== */
+
   if (typeof LazyLoad === "function") {
     new LazyLoad({
       elements_selector: ".lazy",
@@ -37,8 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* =====================================
-   Global Image Error Handler
-===================================== */
+     Global Image Error Handler
+  ===================================== */
+
   document.addEventListener(
     "error",
     function (e) {
@@ -52,8 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   /* ==========================
-   Mobile Navigation
-========================== */
+     Mobile Navigation
+  ========================== */
 
   const menuToggle = document.querySelector(".mobile-menu-toggle");
   const navMenu = document.querySelector(".nav-menu");
@@ -66,49 +68,42 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* ==========================
-Hero Slider
-========================== */
+     Hero Slider
+  ========================== */
 
   if (typeof Swiper !== "undefined" && document.querySelector(".heroSwiper")) {
     new Swiper(".heroSwiper", {
       loop: true,
       speed: 1000,
-
       autoplay: {
         delay: 3500,
         disableOnInteraction: false,
       },
-
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
       },
-
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-
       effect: "slide",
     });
   }
 
   /* ==========================
-Header Shrink
-========================== */
+     Header Shrink
+  ========================== */
 
   const header = document.querySelector(".header");
-
   let isSmall = false;
 
   window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
-
     if (!isSmall && scrollY > 100) {
       header.classList.add("header-small");
       isSmall = true;
     }
-
     if (isSmall && scrollY < 60) {
       header.classList.remove("header-small");
       isSmall = false;
@@ -120,8 +115,9 @@ Header Shrink
   });
 
   /* ==========================
-about us mission - vision
-========================== */
+     About Us Mission - Vision
+  ========================== */
+
   const panels = document.querySelectorAll(".mv-panel");
   panels.forEach((panel) => {
     panel.addEventListener("click", () => {
@@ -131,8 +127,8 @@ about us mission - vision
   });
 
   /* ==========================
-   ABOUT US MILESTONES
-========================== */
+     About Us Milestones
+  ========================== */
 
   window.mileToggle = function (header) {
     const clickedCard = header.closest(".mile-card");
@@ -142,9 +138,7 @@ about us mission - vision
       const iconLine = card.querySelector(".h-line");
       if (card !== clickedCard) {
         card.classList.remove("active");
-        if (iconLine) {
-          iconLine.style.display = "";
-        }
+        if (iconLine) iconLine.style.display = "";
       }
     });
     const isActive = clickedCard.classList.toggle("active");
@@ -155,8 +149,9 @@ about us mission - vision
   };
 
   /* ==========================
-about us Sister Companies Swiper
-========================== */
+     Sister Companies Swiper
+  ========================== */
+
   if (
     typeof Swiper !== "undefined" &&
     document.querySelector(".sisterSwiper")
@@ -164,102 +159,72 @@ about us Sister Companies Swiper
     new Swiper(".sisterSwiper", {
       slidesPerView: 3,
       spaceBetween: 30,
-
       grid: {
         rows: 2,
         fill: "row",
       },
-
       navigation: {
         nextEl: ".sister-next",
         prevEl: ".sister-prev",
       },
-
       breakpoints: {
-        0: {
-          slidesPerView: 1,
-          grid: { rows: 1 },
-        },
-
-        768: {
-          slidesPerView: 2,
-          grid: { rows: 2 },
-        },
-
-        1200: {
-          slidesPerView: 3,
-          grid: { rows: 2 },
-        },
+        0: { slidesPerView: 1, grid: { rows: 1 } },
+        768: { slidesPerView: 2, grid: { rows: 2 } },
+        1200: { slidesPerView: 3, grid: { rows: 2 } },
       },
     });
   }
 
   /* ==========================
-   SERVICES SIDEBAR HIGHLIGHT
-========================== */
+     Services Sidebar Highlight
+  ========================== */
 
   let serviceSections = [];
   let sidebarLinks = [];
 
   function updateActiveServiceData() {
     const activeService = document.querySelector(".service-section.active");
-
     if (!activeService) return;
-
     serviceSections = activeService.querySelectorAll(".about-section-block");
     sidebarLinks = activeService.querySelectorAll(".about-sidebar .nav-link");
   }
 
   function highlightSidebar() {
     if (!serviceSections.length) return;
-
     let scrollPos = window.scrollY + 140;
-
     serviceSections.forEach((section, index) => {
       const top = section.offsetTop;
       const bottom = top + section.offsetHeight;
-
       if (scrollPos >= top && scrollPos < bottom) {
         sidebarLinks.forEach((link) => link.classList.remove("active"));
-
-        if (sidebarLinks[index]) {
-          sidebarLinks[index].classList.add("active");
-        }
+        if (sidebarLinks[index]) sidebarLinks[index].classList.add("active");
       }
     });
   }
 
-  /* GLOBAL SCROLL LISTENER */
   window.addEventListener("scroll", highlightSidebar);
 
   /* ==========================
-   SERVICES PAGE TABS
-========================== */
+     Services Page Tabs
+  ========================== */
 
   document.querySelectorAll(".services-menu li").forEach((item) => {
     item.addEventListener("click", function () {
       document
         .querySelectorAll(".services-menu li")
         .forEach((el) => el.classList.remove("active"));
-
       this.classList.add("active");
-
       const target = this.dataset.target;
-
       document
         .querySelectorAll(".service-section")
         .forEach((sec) => sec.classList.remove("active"));
-
       const activeSection = document.getElementById(target);
       activeSection.classList.add("active");
-
       window.scrollTo({
         top: document.querySelector(".services-page").offsetTop - 90,
         behavior: "smooth",
       });
-
       updateActiveServiceData();
-
       highlightSidebar();
     });
   });
@@ -268,17 +233,15 @@ about us Sister Companies Swiper
   highlightSidebar();
 
   /* ==========================
-   SECTORS SIDEBAR HIGHLIGHT
-========================== */
+     Sectors Sidebar Highlight
+  ========================== */
 
   let sectorSections = [];
   let sectorSidebarLinks = [];
 
   function updateActiveSectorData() {
     const activeSector = document.querySelector(".sector-section.active");
-
     if (!activeSector) return;
-
     sectorSections = activeSector.querySelectorAll(".about-section-block");
     sectorSidebarLinks = activeSector.querySelectorAll(
       ".about-sidebar .nav-link",
@@ -287,54 +250,41 @@ about us Sister Companies Swiper
 
   function highlightSectorSidebar() {
     if (!sectorSections.length) return;
-
     let scrollPos = window.scrollY + 140;
-
     sectorSections.forEach((section, index) => {
       const top = section.offsetTop;
       const bottom = top + section.offsetHeight;
-
       if (scrollPos >= top && scrollPos < bottom) {
         sectorSidebarLinks.forEach((link) => link.classList.remove("active"));
-
-        if (sectorSidebarLinks[index]) {
+        if (sectorSidebarLinks[index])
           sectorSidebarLinks[index].classList.add("active");
-        }
       }
     });
   }
 
-  /* global scroll listener */
   window.addEventListener("scroll", highlightSectorSidebar);
 
   /* ==========================
-   SECTORS PAGE TABS
-========================== */
+     Sectors Page Tabs
+  ========================== */
 
   document.querySelectorAll(".sectors-menu li").forEach((item) => {
     item.addEventListener("click", function () {
       document
         .querySelectorAll(".sectors-menu li")
         .forEach((li) => li.classList.remove("active"));
-
       this.classList.add("active");
-
       const target = this.dataset.target;
-
       document
         .querySelectorAll(".sector-section")
         .forEach((sec) => sec.classList.remove("active"));
-
       const activeSector = document.getElementById(target);
       activeSector.classList.add("active");
-
       window.scrollTo({
         top: document.querySelector(".sectors-page").offsetTop - 90,
         behavior: "smooth",
       });
-
       updateActiveSectorData();
-
       highlightSectorSidebar();
     });
   });
@@ -343,52 +293,102 @@ about us Sister Companies Swiper
   highlightSectorSidebar();
 
   /* ==========================
-   PROJECTS PAGE TABS
-========================== */
+     Projects Filter + Sort
+  ========================== */
 
   let sector = "all";
   let status = "all";
+  let sortOrder = "newest";
 
-  const items = document.querySelectorAll(".project-item");
+  const projectItems = document.querySelectorAll(".project-item");
 
+  // Sector filter buttons
   document.querySelectorAll(".project-filters button").forEach((btn) => {
     btn.addEventListener("click", function () {
       document
         .querySelectorAll(".project-filters button")
         .forEach((b) => b.classList.remove("active"));
-
       this.classList.add("active");
-
       sector = this.dataset.sector;
-
       filterProjects();
     });
   });
 
-  document
-    .getElementById("statusFilter")
-    .addEventListener("change", function () {
+  // Status filter
+  const statusFilter = document.getElementById("statusFilter");
+  if (statusFilter) {
+    statusFilter.addEventListener("change", function () {
       status = this.value;
-
       filterProjects();
     });
+  }
+
+  // Sort
+  const sortSelect = document.getElementById("sortProjects");
+  if (sortSelect) {
+    sortSelect.addEventListener("change", function () {
+      sortOrder = this.value;
+      sortProjects(sortOrder);
+    });
+  }
 
   function filterProjects() {
-    items.forEach((item) => {
-      let itemSector = item.dataset.sector;
-      let itemStatus = item.dataset.status;
-
+    projectItems.forEach((item) => {
+      const itemSector = item.dataset.sector;
+      const itemStatus = item.dataset.status;
       let show = true;
-
-      if (sector != "all" && sector !== itemSector) show = false;
-
-      if (status != "all" && status !== itemStatus) show = false;
-
+      if (sector !== "all" && sector !== itemSector) show = false;
+      if (status !== "all" && status !== itemStatus) show = false;
       item.style.display = show ? "block" : "none";
     });
   }
 
+  function sortProjects(order) {
+    const grid = document.getElementById("projectsGrid");
+    if (!grid) return;
+    const items = Array.from(grid.querySelectorAll(".project-item"));
+    items.sort((a, b) => {
+      const yearA = parseInt(a.dataset.year);
+      const yearB = parseInt(b.dataset.year);
+      return order === "newest" ? yearB - yearA : yearA - yearB;
+    });
+    items.forEach((item) => grid.appendChild(item));
+  }
+
+  // Init on page load
+  sortProjects("newest");
+
   /* ==========================
-PROJECT DETAILS SWIPER
-========================== */
+     Project Details Swiper
+  ========================== */
+
+  function initProjectSwiper() {
+    if (
+      typeof Swiper !== "undefined" &&
+      document.querySelector(".project-gallery")
+    ) {
+      new Swiper(".project-gallery", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        pagination: {
+          el: ".project-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".project-next",
+          prevEl: ".project-prev",
+        },
+      });
+    } else if (typeof Swiper === "undefined") {
+      setTimeout(initProjectSwiper, 100);
+    }
+  }
+
+  initProjectSwiper();
 });

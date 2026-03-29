@@ -1564,12 +1564,28 @@
   font-size: 11px;
 }
 
-/*  PROJECT DETAILS PAGE  */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  border-radius: inherit;
+}
 
+.project-page-card .position-absolute.top-0 {
+  z-index: 3;
+}
+
+.project-bottom-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  z-index: 3;
+}
+
+/*  PROJECT DETAILS PAGE  */
 .project-title-box {
   display: block;
   padding: 0;
-  margin-bottom: 16px;
+  margin-bottom: 5px;
 }
 
 .project-main-title {
@@ -1584,7 +1600,7 @@
 .project-description-box {
   background: #f5f5f5;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 15px;
   color: #444;
   line-height: 1.6;

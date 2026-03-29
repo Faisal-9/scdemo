@@ -46,6 +46,7 @@ if (!$project) {
                     <div class="project-info-box">
 
                         <!-- Client Meta -->
+                         <h3 class="scope-title"> Project Information</h3>
                         <ul class="project-meta">
                             <li><b>Client:</b> <?= $project['client'] ?></li>
                             <li><b>Location:</b> <?= $project['location'] ?></li>
@@ -55,7 +56,7 @@ if (!$project) {
                         </ul>
 
                         <!-- Scope of Work -->
-                        <h3 class="scope-title">Scope of Project</h3>
+                        <h3 class="scope-title">Project Scope</h3>
                         <ul class="scope-list">
                             <?php foreach ($project['scope'] as $s): ?>
                                 <?php if ($s): ?>
@@ -91,34 +92,5 @@ if (!$project) {
 
     <?php include("includes/footer.php"); ?>
     <?php include("includes/footerLink.php"); ?>
-
-    <script>
-        function initProjectSwiper() {
-            if (typeof Swiper !== "undefined" && document.querySelector(".project-gallery")) {
-                new Swiper(".project-gallery", {
-                    loop: true,
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                    autoplay: {
-                        delay: 2000,
-                        disableOnInteraction: false,
-                        pauseOnMouseEnter: true,
-                    },
-                    pagination: {
-                        el: ".project-pagination",
-                        clickable: true,
-                    },
-                    navigation: {
-                        nextEl: ".project-next",
-                        prevEl: ".project-prev",
-                    },
-                });
-            } else if (typeof Swiper === "undefined") {
-                setTimeout(initProjectSwiper, 100);
-            }
-        }
-
-        initProjectSwiper();
-    </script>
 
 </body>
