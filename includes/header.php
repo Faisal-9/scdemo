@@ -51,6 +51,7 @@ $media_pages = [
                 <!-- Main Navigation Menu -->
                 <nav class="nav-menu">
                     <ul class="nav-list">
+
                         <!-- Home -->
                         <li class="nav-item <?php echo ($current_page == 'index.php' || $current_page == '') ? 'active' : ''; ?>">
                             <a href="index.php" class="nav-link">
@@ -215,6 +216,13 @@ $media_pages = [
                                     </div>
                                 </div>
                             </div>
+                        </li>
+
+                        <!-- Contact Us -->
+                        <li class="nav-item cta-item <?php echo ($current_page == 'projects.php') ? 'active' : ''; ?>">
+                            <a href="projects.php" class="nav-link ">
+                                <span class="nav-text">Projects</span>
+                            </a>
                         </li>
 
                         <!-- Media -->

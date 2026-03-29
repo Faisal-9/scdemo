@@ -254,7 +254,7 @@ about us Sister Companies Swiper
       activeSection.classList.add("active");
 
       window.scrollTo({
-        top: document.querySelector(".services-page").offsetTop - 80,
+        top: document.querySelector(".services-page").offsetTop - 90,
         behavior: "smooth",
       });
 
@@ -329,7 +329,7 @@ about us Sister Companies Swiper
       activeSector.classList.add("active");
 
       window.scrollTo({
-        top: document.querySelector(".sectors-page").offsetTop - 80,
+        top: document.querySelector(".sectors-page").offsetTop - 90,
         behavior: "smooth",
       });
 
@@ -341,4 +341,54 @@ about us Sister Companies Swiper
 
   updateActiveSectorData();
   highlightSectorSidebar();
+
+  /* ==========================
+   PROJECTS PAGE TABS
+========================== */
+
+  let sector = "all";
+  let status = "all";
+
+  const items = document.querySelectorAll(".project-item");
+
+  document.querySelectorAll(".project-filters button").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      document
+        .querySelectorAll(".project-filters button")
+        .forEach((b) => b.classList.remove("active"));
+
+      this.classList.add("active");
+
+      sector = this.dataset.sector;
+
+      filterProjects();
+    });
+  });
+
+  document
+    .getElementById("statusFilter")
+    .addEventListener("change", function () {
+      status = this.value;
+
+      filterProjects();
+    });
+
+  function filterProjects() {
+    items.forEach((item) => {
+      let itemSector = item.dataset.sector;
+      let itemStatus = item.dataset.status;
+
+      let show = true;
+
+      if (sector != "all" && sector !== itemSector) show = false;
+
+      if (status != "all" && status !== itemStatus) show = false;
+
+      item.style.display = show ? "block" : "none";
+    });
+  }
+
+  /* ==========================
+PROJECT DETAILS SWIPER
+========================== */
 });

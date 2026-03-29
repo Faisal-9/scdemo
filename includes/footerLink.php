@@ -20,4 +20,4 @@
 <script src="assets/js/navigation.js" defer></script>
 
 <!-- Main Custom JS -->
-<script src="assets/js/main.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
