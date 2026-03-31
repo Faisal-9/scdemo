@@ -59,7 +59,7 @@ include("includes/data/projectsdata.php");
                     <div class="col-lg-4 col-md-6 project-item"
                         data-sector="<?= strtolower($project['sector']) ?>"
                         data-status="<?= strtolower($project['status']) ?>"
-                        data-year="<?= $project['year'] ?>">
+                        data-year="<?= $project['completion-year'] ?>">
 
                         <a href="projectdetails.php?id=<?= $project['id'] ?>"
                             class="project-page-card d-block text-decoration-none rounded-3 overflow-hidden position-relative"

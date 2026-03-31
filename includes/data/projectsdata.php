@@ -8,16 +8,16 @@ $projects = [
         'sector' => 'energy',
         'category' => 'Transmission Line',
         'status' => 'Completed',
-        'year' => 2019,
+        'completion-year' => 2019,
         'location' => 'Logar-Gardiz',
         'client' => '',
 
-        'thumbnail' => 'assets/images/projects/3.jpg',
+        'thumbnail' => '',
 
         'images' => [
-            'assets/images/projects/3.jpg',
-            'assets/images/projects/3.jpg',
-            'assets/images/projects/3.jpg'
+            '',
+            '',
+            ''
         ],
 
         'description' =>
@@ -33,23 +33,21 @@ $projects = [
     ],
 
 
-
     [
         'id' => 'c2',
         'name' => 'Jabul Saraj-Gulbahar 220 kV Transmission Line',
         'sector' => 'energy',
         'category' => 'Transmission Line',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Kapisa',
         'client' => '',
 
-        'thumbnail' => 'assets/images/projects/3.jpg',
+        'thumbnail' => '',
 
         'images' => [
-            'assets/images/projects/3.jpg',
-            'assets/images/projects/3.jpg',
-            'assets/images/projects/3.jpg'
+            '',
+            '',
         ],
 
         'description' =>
@@ -71,21 +69,18 @@ $projects = [
         'sector' => 'energy',
         'category' => 'Transmission Line',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Gulbahar- Nijrab',
         'client' => '',
 
-        'thumbnail' => 'assets/images/projects/3.jpg',
+        'thumbnail' => '',
 
         'images' => [
-            'assets/images/projects/3.jpg',
-            'assets/images/projects/3.jpg',
-            'assets/images/projects/3.jpg'
+            '',
         ],
 
         'description' =>
-        'Single circuit 110 kV electrical transmission system is delivering power from Gulbahar Substation located in Gulbahar, Kapisa to a new substation, Nejrab Substation, located in Nejrab, Kapisa.
-',
+        'Single circuit 110 kV electrical transmission system is delivering power from Gulbahar Substation located in Gulbahar, Kapisa to a new substation, Nejrab Substation, located in Nejrab, Kapisa.',
 
         'scope' => [
             'Single circuit 110 kV',
@@ -103,7 +98,7 @@ $projects = [
         'sector' => 'energy',
         'category' => 'Substation',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Gardiz',
         'client' => '',
 
@@ -134,14 +129,14 @@ $projects = [
         'sector' => 'energy',
         'category' => 'Substation',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => ' Gulbahar',
         'client' => '',
 
-        'thumbnail' => 'assets/images/projects/3.jpg',
+        'thumbnail' => '',
 
         'images' => [
-            'assets/images/projects/3.jpg',
+            '',
             '',
             ''
         ],
@@ -159,23 +154,20 @@ $projects = [
     ],
 
 
-
     [
         'id' => 'c6',
         'name' => 'Construction of 12.38 Km Concrete Road in Dasht-e-Barchi Area      ',
         'sector' => 'Construction',
         'category' => 'Road',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Kabul, Afghanistan',
         'client' => 'Kabul Municipality',
 
-        'thumbnail' => 'assets/images/projects/3.jpg',
+        'thumbnail' => '',
 
         'images' => [
-            'assets/images/projects/3.jpg',
-            'assets/images/projects/3.jpg',
-            'assets/images/projects/3.jpg'
+            '',
         ],
 
         'description' =>
@@ -197,7 +189,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Kabul',
         'client' => 'USACE',
 
@@ -228,7 +220,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Kandahar',
         'client' => 'USACE',
 
@@ -259,7 +251,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Balkh',
         'client' => 'USACE',
 
@@ -290,7 +282,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Faryab Province, Afghanistan',
         'client' => 'USACE',
 
@@ -321,7 +313,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Balkh ',
         'client' => 'USACE',
 
@@ -352,7 +344,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Faryab',
         'client' => 'USACE',
 
@@ -383,7 +375,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Baghlan',
         'client' => 'USACE',
 
@@ -414,7 +406,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Badakhshan',
         'client' => 'USACE',
 
@@ -445,7 +437,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Paktia',
         'client' => 'USACE',
 
@@ -476,7 +468,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Balkh',
         'client' => 'USACE',
 
@@ -507,7 +499,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Logar',
         'client' => 'USACE',
 
@@ -538,7 +530,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Logar',
         'client' => 'USACE',
 
@@ -569,7 +561,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Jawzjan',
         'client' => 'USACE',
 
@@ -600,7 +592,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Daikondi',
         'client' => 'USACE',
 
@@ -631,7 +623,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Khost',
         'client' => 'USACE',
 
@@ -662,7 +654,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Konduz',
         'client' => 'USACE',
 
@@ -693,7 +685,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Faryab',
         'client' => 'USACE',
 
@@ -724,7 +716,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Ghazni',
         'client' => 'USACE',
 
@@ -755,7 +747,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Kabul',
         'client' => 'USACE',
 
@@ -786,7 +778,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Ghazni',
         'client' => 'USACE',
 
@@ -810,13 +802,14 @@ $projects = [
 
     ],
 
+
     [
         'id' => 'c27',
         'name' => ' Main Road Security Company “MRSC” Taloqan',
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Takhar',
         'client' => 'USACE',
 
@@ -847,7 +840,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Balkh',
         'client' => 'USACE',
 
@@ -878,7 +871,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Laghman',
         'client' => 'USACE',
 
@@ -909,7 +902,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Ghazni',
         'client' => 'USACE',
 
@@ -940,7 +933,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Nangarhar',
         'client' => 'USACE',
 
@@ -971,7 +964,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Kabul',
         'client' => 'USACE',
 
@@ -1001,7 +994,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Kabul',
         'client' => 'USACE',
 
@@ -1032,7 +1025,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Jawzjan',
         'client' => 'USACE',
 
@@ -1063,7 +1056,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Badghis',
         'client' => 'USACE',
 
@@ -1094,7 +1087,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Nangarhar',
         'client' => 'USACE',
 
@@ -1125,7 +1118,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Kandahar',
         'client' => 'Ministry of Public Work',
 
@@ -1156,7 +1149,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Herat',
         'client' => 'Ministry of Public Works',
 
@@ -1187,7 +1180,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Completed',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Balkh',
         'client' => 'Ministry of Public Works',
 
@@ -1218,7 +1211,7 @@ $projects = [
         'sector' => 'Energy',
         'category' => 'Substation',
         'status' => 'Ongoing',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Herat',
         'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
 
@@ -1242,13 +1235,14 @@ $projects = [
 
     ],
 
+
     [
         'id' => 'O2',
         'name' => 'Gulbahar - Panjshir Transmission Line and Substation',
         'sector' => 'Energy',
         'category' => 'Transmission',
         'status' => 'Ongoing',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Panjshir',
         'client' => 'Ministry of Energy and Water (MEW)',
 
@@ -1279,7 +1273,7 @@ $projects = [
         'sector' => 'Energy',
         'category' => 'Distribution Network',
         'status' => 'Ongoing',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Paktya',
         'client' => 'Angelique International Ltd',
 
@@ -1310,7 +1304,7 @@ $projects = [
         'sector' => 'Energy',
         'category' => 'Substation',
         'status' => 'Ongoing',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Jalalabad',
         'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
 
@@ -1341,7 +1335,7 @@ $projects = [
         'sector' => 'Construction',
         'category' => 'Construction',
         'status' => 'Ongoing',
-        'year' => 2020,
+        'completion-year' => 2020,
         'location' => 'Kabul',
         'client' => 'Da Afghanistan Breshna Sherkat',
 
@@ -1365,6 +1359,810 @@ $projects = [
 
     ],
 
+
+    [
+        'id' => 'O66',
+        'name' => 'Pashmul To Malala Maiwand 110 KV TL',
+        'sector' => 'Energy',
+        'category' => 'Transmission Line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kandahar',
+        'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O67',
+        'name' => 'Sangin To Kajaki 110 KV  TL',
+        'sector' => 'Energy',
+        'category' => 'Transmission Line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Helmand',
+        'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O68',
+        'name' => 'Band-e-Bughorchar Transmission Line',
+        'sector' => 'Energy',
+        'category' => 'Transmission Line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Herat',
+        'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O69',
+        'name' => 'Mohammad Agha 220/20kV Substation Logar',
+        'sector' => 'Energy',
+        'category' => 'Substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Logar',
+        'client' => 'Ghazanfar Group',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O70',
+        'name' => 'Expansion of Northwest and East SS',
+        'sector' => 'Energy',
+        'category' => 'Substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul',
+        'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O71',
+        'name' => 'Expansion of Qasaba Substation',
+        'sector' => 'Energy',
+        'category' => 'Substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul',
+        'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O72',
+        'name' => 'Dasht-e-Archi & Asqalan Substations',
+        'sector' => 'Energy',
+        'category' => 'Substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kunduz',
+        'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O73',
+        'name' => 'Expansion of Central and Seh Darak SS in Kunduz',
+        'sector' => 'Energy',
+        'category' => 'Substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kunduz',
+        'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O74',
+        'name' => 'Amu Darya Crossing Special project',
+        'sector' => '',
+        'category' => '',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Hairatan',
+        'client' => 'METQ',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O75',
+        'name' => 'Hairatan to Dashti Alwan 500 kV TL',
+        'sector' => 'Energy',
+        'category' => 'Transmission Line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'BLK-SMG-BGL',
+        'client' => 'METQ',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O76',
+        'name' => 'Kabul to Jalalabad 220 kV TL',
+        'sector' => 'Energy',
+        'category' => 'Transmission Line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul-Nangarhar',
+        'client' => 'METQ',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O77',
+        'name' => 'Dashti Alwan 500 kV SS with Shunt Reactor System',
+        'sector' => 'Energy',
+        'category' => 'Substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Baghlan',
+        'client' => 'METQ',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O78',
+        'name' => 'Shaikh Mesri 220/110/20 kV Substation',
+        'sector' => 'Energy',
+        'category' => 'Substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Nangarhar',
+        'client' => 'METQ',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O79',
+        'name' => 'Arghandi Transformer Bay',
+        'sector' => 'Energy',
+        'category' => 'Substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul',
+        'client' => 'METQ',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O80',
+        'name' => 'Design Service for Uzbek Afghan 500Kv 5 projects',
+        'sector' => 'Energy',
+        'category' => 'Design',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'StateCorps Turkey',
+        'client' => 'METQ',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O85',
+        'name' => 'Chemtala to Tarakhail 220 kV TL',
+        'sector' => 'Energy',
+        'category' => 'Transmission Line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul',
+        'client' => 'ABC',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O86',
+        'name' => 'Arghandi to Butkhak 220 kv TL',
+        'sector' => 'Energy',
+        'category' => 'Transmission Line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul',
+        'client' => 'ABC',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O87',
+        'name' => 'Tarakhail 220/110kV & 220/20kV SS',
+        'sector' => 'Energy',
+        'category' => 'Substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul',
+        'client' => 'ABC',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O88',
+        'name' => 'Butkhak 220/110kV & 220/20kV SS',
+        'sector' => 'Energy',
+        'category' => 'Substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul',
+        'client' => 'ABC',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O89',
+        'name' => 'Arghandi SS 500 KV Two Reactor Bays',
+        'sector' => 'Energy',
+        'category' => 'Substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul',
+        'client' => 'ABC',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O91',
+        'name' => 'Pul-e-Khorasan - Qush Tepa - Darazab 220 kV TL',
+        'sector' => 'Energy',
+        'category' => 'Transmission Line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Jawzjan',
+        'client' => 'MoWE',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O92',
+        'name' => 'Qush Tepa & Darzab Substations',
+        'sector' => 'Energy',
+        'category' => 'Substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Jawzjan',
+        'client' => 'MoWE',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O93',
+        'name' => 'Qush Tepa & Darzab DN',
+        'sector' => 'Energy',
+        'category' => 'Distribution Networks',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Jawzjan',
+        'client' => 'MoWE',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O94',
+        'name' => 'Sare Pul to Sancharak 110 kV TL',
+        'sector' => 'Energy',
+        'category' => 'Transmission Line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Sare Pul',
+        'client' => 'MoWE',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O95',
+        'name' => 'Sancharak SS and Sare Pul Line Bay',
+        'sector' => 'Energy',
+        'category' => 'substation & Line Bay',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Sare Pul',
+        'client' => 'MoWE',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O96',
+        'name' => 'Sancharak, Sozmaqala & Gosfandi DN',
+        'sector' => 'Energy',
+        'category' => 'Distribution Networks',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Sare Pul',
+        'client' => 'MoWE',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+    ],
 
 
 

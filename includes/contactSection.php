@@ -49,8 +49,7 @@ $international_offices = [
         'title' => 'State Corps Turkey',
         'phone' => '+90 212 123 4567',
         'email' => 'info@statecorps.com.tr',
-        'address' => 'İnşaat Sanayi ve Ticaret A.Ş. Kuçukbakkalkoy Mah. Kuçuk Setli Sk. No:5-9 İç Kapı No:4 Ataşehir
-        Istanbul, Türkiye 34750',
+        'address' => 'İnşaat Sanayi ve Ticaret A.Ş. Kuçukbakkalkoy Mah. Kuçuk Setli Sk. No:5-9 İç Kapı No:4 Ataşehir Istanbul, Türkiye 34750',
         'business-hours' => 'Monday to Friday: 9:00 - 19:00',
     ],
     [
@@ -110,10 +109,9 @@ $international_offices = [
                     <button class="submit-btn">Submit Message</button>
                 </form>
             </div>
-
         </div>
 
-        <!-- ================= INTERNATIONAL OFFICES ================= -->
+        <!-- INTERNATIONAL OFFICES -->
         <div class="international-offices">
             <h2>Oversees Branches</h2>
             <p>Contact our offices worldwide for assistance and support.</p>
