@@ -1,19 +1,19 @@
-name: 🚀 Deploy to InfinityFree via FTP
+name: Deploy to InfinityFree via FTP
 
 on:
   push:
     branches:
-      - main          # change to 'master' if needed
+      - main
 
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: 📤 Upload to InfinityFree via FTP
+      - name: Upload to InfinityFree via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
@@ -21,18 +21,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_TARGET_FOLDER }}
           port: 21
-```
-
----
-
-## Step 4: Add a `.ftpignore` File (Recommended)
-
-Create a `.ftpignore` file in your project root to prevent uploading junk:
-```
-.git
-.github
-node_modules
-.env
-README.md
-.gitignore
-.ftpignore
+          dangerous-clean-slate: false
