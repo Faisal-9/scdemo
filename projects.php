@@ -75,7 +75,7 @@ include("includes/data/projectsdata.php");
                     <div class="col-lg-4 col-md-6 project-item"
                         data-sector="<?= strtolower($project['sector']) ?>"
                         data-status="<?= strtolower($project['status']) ?>"
-                        data-category="<?= htmlspecialchars($project['category']) ?>"
+                        data-category="<?= strtolower($project['category']) ?>"
                         data-year="<?= $project['completion-year'] ?>">
 
                         <a href="projectdetails.php?id=<?= $project['id'] ?>"

@@ -64,8 +64,9 @@ if (!isset($page_description))
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
     <!-- Local Styles -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=<?= time() ?>">
+    <link rel="stylesheet" href="assets/css/navigation.css?v=<?= time() ?>">
+    <!-- <link rel="stylesheet" href="assets/css/responsive.css?v=<?= time() ?>"> -->
 
     <!-- Preload Important Logo -->
     <link rel="preload" as="image" href="assets/images/logo.png">

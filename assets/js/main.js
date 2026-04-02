@@ -311,11 +311,8 @@ document.addEventListener("DOMContentLoaded", function () {
         .forEach((b) => b.classList.remove("active"));
       this.classList.add("active");
       sector = this.dataset.sector;
-
-      // Reset category and update buttons for selected sector
       category = "all";
       updateCategoryButtons(sector);
-
       filterProjects();
     });
   });
@@ -330,7 +327,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .querySelectorAll(".project-category-filters button")
             .forEach((b) => b.classList.remove("active"));
           this.classList.add("active");
-          category = this.dataset.category;
+          category = this.dataset.category.toLowerCase();
           filterProjects();
         });
       });
@@ -342,7 +339,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const statusFilter = document.getElementById("statusFilter");
   if (statusFilter) {
     statusFilter.addEventListener("change", function () {
-      status = this.value;
+      status = this.value.toLowerCase();
       filterProjects();
     });
   }
@@ -361,29 +358,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector(".project-category-filters");
     if (!container) return;
 
-    // Collect unique categories for the selected sector
     const categories = new Set();
     projectItems.forEach((item) => {
       if (selectedSector === "all" || item.dataset.sector === selectedSector) {
-        categories.add(item.dataset.category);
+        categories.add(item.dataset.category.toLowerCase());
       }
     });
 
-    // Rebuild buttons
     container.innerHTML = `<button class="btn btn-sm btn-outline-secondary active" data-category="all">All Categories</button>`;
     categories.forEach((cat) => {
-      container.innerHTML += `<button class="btn btn-sm btn-outline-secondary" data-category="${cat}">${cat}</button>`;
+      container.innerHTML += `
+        <button class="btn btn-sm btn-outline-secondary" data-category="${cat}">
+          ${cat.charAt(0).toUpperCase() + cat.slice(1)}
+        </button>`;
     });
 
-    // Re-attach listeners to new buttons
     attachCategoryListeners();
   }
 
   function filterProjects() {
     projectItems.forEach((item) => {
-      const itemSector = item.dataset.sector;
-      const itemStatus = item.dataset.status;
-      const itemCategory = item.dataset.category;
+      const itemSector = item.dataset.sector.toLowerCase();
+      const itemStatus = item.dataset.status.toLowerCase();
+      const itemCategory = item.dataset.category.toLowerCase();
 
       let show = true;
 
