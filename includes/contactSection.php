@@ -34,11 +34,11 @@ $head_office = [
     'address' => 'Kart-e-char, D#3, Kabul Afghanistan',
     'qr_codes' => [
         [
-            'image' => 'assets/images/WA-QR-Code.jpg.jpeg',
+            'image' => 'assets/images/WA-QR-Code.jpg',
             'label' => 'WeChat'
         ],
         [
-            'image' => 'assets/images/WA-QR-Code.jpg.jpeg',
+            'image' => 'assets/images/WA-QR-Code.jpg',
             'label' => 'WhatsApp'
         ]
     ]

@@ -39,17 +39,17 @@ $clientData = [
 $sisterCompanies = [
     [
         'name' => 'AryaMineral',
-        'logo' => 'assets/images/Scompany/Scom_aryamineral.png',
+        'logo' => 'assets/images/scompany/Scom_aryamineral.png',
         'description' => 'Professional exploration, expliotation, processing and trading of minerals in Afghanistan'
     ],
     [
         'name' => 'Aeroparcel',
-        'logo' => 'assets/images/Scompany/Scom_aeroparcel.png',
+        'logo' => 'assets/images/scompany/Scom_aeroparcel.png',
         'description' => 'Worldwide agents Aeroparcel offer access to a smarter, simpler and global supply chain'
     ],
     [
         'name' => 'Petropool',
-        'logo' => 'assets/images/Scompany/Scom_petropool.png',
+        'logo' => 'assets/images/scompany/Scom_petropool.png',
         'description' => 'Operates a number of well-located, finest-quality motor fuel services all across Afghanistan'
     ],
 ];

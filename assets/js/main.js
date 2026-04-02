@@ -293,16 +293,17 @@ document.addEventListener("DOMContentLoaded", function () {
   highlightSectorSidebar();
 
   /* ==========================
-     Projects Filter + Sort
-  ========================== */
+   Projects Filter + Sort
+========================== */
 
   let sector = "all";
   let status = "all";
+  let category = "all";
   let sortOrder = "newest";
 
   const projectItems = document.querySelectorAll(".project-item");
 
-  // Sector filter buttons
+  // Sector filter
   document.querySelectorAll(".project-filters button").forEach((btn) => {
     btn.addEventListener("click", function () {
       document
@@ -310,9 +311,32 @@ document.addEventListener("DOMContentLoaded", function () {
         .forEach((b) => b.classList.remove("active"));
       this.classList.add("active");
       sector = this.dataset.sector;
+
+      // Reset category and update buttons for selected sector
+      category = "all";
+      updateCategoryButtons(sector);
+
       filterProjects();
     });
   });
+
+  // Category filter - initial attach
+  function attachCategoryListeners() {
+    document
+      .querySelectorAll(".project-category-filters button")
+      .forEach((btn) => {
+        btn.addEventListener("click", function () {
+          document
+            .querySelectorAll(".project-category-filters button")
+            .forEach((b) => b.classList.remove("active"));
+          this.classList.add("active");
+          category = this.dataset.category;
+          filterProjects();
+        });
+      });
+  }
+
+  attachCategoryListeners();
 
   // Status filter
   const statusFilter = document.getElementById("statusFilter");
@@ -332,13 +356,41 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Update category buttons based on selected sector
+  function updateCategoryButtons(selectedSector) {
+    const container = document.querySelector(".project-category-filters");
+    if (!container) return;
+
+    // Collect unique categories for the selected sector
+    const categories = new Set();
+    projectItems.forEach((item) => {
+      if (selectedSector === "all" || item.dataset.sector === selectedSector) {
+        categories.add(item.dataset.category);
+      }
+    });
+
+    // Rebuild buttons
+    container.innerHTML = `<button class="btn btn-sm btn-outline-secondary active" data-category="all">All Categories</button>`;
+    categories.forEach((cat) => {
+      container.innerHTML += `<button class="btn btn-sm btn-outline-secondary" data-category="${cat}">${cat}</button>`;
+    });
+
+    // Re-attach listeners to new buttons
+    attachCategoryListeners();
+  }
+
   function filterProjects() {
     projectItems.forEach((item) => {
       const itemSector = item.dataset.sector;
       const itemStatus = item.dataset.status;
+      const itemCategory = item.dataset.category;
+
       let show = true;
+
       if (sector !== "all" && sector !== itemSector) show = false;
       if (status !== "all" && status !== itemStatus) show = false;
+      if (category !== "all" && category !== itemCategory) show = false;
+
       item.style.display = show ? "block" : "none";
     });
   }
@@ -355,8 +407,9 @@ document.addEventListener("DOMContentLoaded", function () {
     items.forEach((item) => grid.appendChild(item));
   }
 
-  // Init on page load
+  // Init
   sortProjects("newest");
+  updateCategoryButtons("all");
 
   /* ==========================
      Project Details Swiper

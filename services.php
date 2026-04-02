@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 $page_title = "Services - State Corps";
 include("includes/head.php");

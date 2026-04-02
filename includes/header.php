@@ -204,9 +204,10 @@ $media_pages = [
                                             <li><a href="mining.php" class="mega-link <?php echo ($current_page == 'mining.php') ? 'active' : ''; ?>">Export Services</a></li>
                                         </ul>
                                     </div>
-                                    <!-- Column 5: Mining -->
+
+                                    <!-- Column 5: Designing -->
                                     <div class="mega-column">
-                                        <h4 class="mega-title">designing</h4>
+                                        <h4 class="mega-title">Design</h4>
                                         <ul class="mega-list">
                                             <li><a href="mining.php" class="mega-link <?php echo ($current_page == 'mining.php') ? 'active' : ''; ?>">Exploration</a></li>
                                             <li><a href="mining.php" class="mega-link <?php echo ($current_page == 'mining.php') ? 'active' : ''; ?>">Exploitation</a></li>
@@ -218,7 +219,7 @@ $media_pages = [
                             </div>
                         </li>
 
-                        <!-- Contact Us -->
+                        <!-- Projects -->
                         <li class="nav-item cta-item <?php echo ($current_page == 'projects.php') ? 'active' : ''; ?>">
                             <a href="projects.php" class="nav-link ">
                                 <span class="nav-text">Projects</span>

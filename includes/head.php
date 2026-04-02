@@ -66,7 +66,6 @@ if (!isset($page_description))
     <!-- Local Styles -->
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/navigation.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
 
     <!-- Preload Important Logo -->
     <link rel="preload" as="image" href="assets/images/logo.png">

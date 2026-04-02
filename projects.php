@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 $page_title = "Projects - State Corps";
 include("includes/head.php");
@@ -51,6 +52,21 @@ include("includes/data/projectsdata.php");
                 </div>
             </div>
 
+            <!-- Category buttons - directly below -->
+            <div class="col-12 mb-4 mx-auto">
+                <div class="d-flex flex-wrap gap-2 project-category-filters justify-content-center">
+                    <button class="btn btn-sm btn-outline-secondary active" data-category="all">All Categories</button>
+                    <?php
+                    $categories = array_unique(array_column($projects, 'category'));
+                    foreach ($categories as $category):
+                    ?>
+                        <button class="btn btn-sm btn-outline-secondary" data-category="<?= htmlspecialchars($category) ?>">
+                            <?= htmlspecialchars($category) ?>
+                        </button>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
 
             <!-- PROJECTS GRID -->
             <div class="row g-4" id="projectsGrid">
@@ -59,6 +75,7 @@ include("includes/data/projectsdata.php");
                     <div class="col-lg-4 col-md-6 project-item"
                         data-sector="<?= strtolower($project['sector']) ?>"
                         data-status="<?= strtolower($project['status']) ?>"
+                        data-category="<?= htmlspecialchars($project['category']) ?>"
                         data-year="<?= $project['completion-year'] ?>">
 
                         <a href="projectdetails.php?id=<?= $project['id'] ?>"

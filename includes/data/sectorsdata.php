@@ -25,6 +25,11 @@ $sectors = [
                 "id" => "hydropower",
                 "title" => "Hydro Power Dams",
                 "content" => "Construction and development of hydropower dams and renewable energy facilities."
+            ],
+            [
+                "id" => "renewableenergy",
+                "title" => "Renewable Energy",
+                "content" => "Development of renewable energy facilities.",
             ]
         ]
     ],
@@ -91,6 +96,11 @@ $sectors = [
                 "id" => "flood-control",
                 "title" => "Flood Control",
                 "content" => "Infrastructure designed to protect communities from flooding."
+            ],
+            [
+                "id" => "dams",
+                "title" => "Dams",
+                "content" => "Construction and management of dam infrastructure."
             ]
         ]
     ],

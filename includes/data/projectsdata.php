@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 
 $projects = [
@@ -12,12 +13,10 @@ $projects = [
         'location' => 'Logar-Gardiz',
         'client' => '',
 
-        'thumbnail' => '',
+        'thumbnail' => 'assets/images/projects/01-logar-gardiz-1.jpg',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/01-logar-gardiz-1.jpg',
         ],
 
         'description' =>
@@ -43,10 +42,10 @@ $projects = [
         'location' => 'Kapisa',
         'client' => '',
 
-        'thumbnail' => '',
+        'thumbnail' => 'assets/images/projects/',
 
         'images' => [
-            '',
+            'assets/images/projects/',
             '',
         ],
 
@@ -73,10 +72,10 @@ $projects = [
         'location' => 'Gulbahar- Nijrab',
         'client' => '',
 
-        'thumbnail' => '',
+        'thumbnail' => 'assets/images/projects/02-gulbahar-nijrab-1.png',
 
         'images' => [
-            '',
+            'assets/images/projects/02-gulbahar-nijrab-1.png',
         ],
 
         'description' =>
@@ -102,12 +101,10 @@ $projects = [
         'location' => 'Gardiz',
         'client' => '',
 
-        'thumbnail' => 'assets/images/projects/gardiz 220-20 ss.jpg',
+        'thumbnail' => 'assets/images/projects/04-gardiz-1.png',
 
         'images' => [
-            'assets/images/projects/3.jpg',
-            'assets/images/projects/3.jpg',
-            ''
+            'assets/images/projects/04-gardiz-1.png',
         ],
 
         'description' =>
@@ -130,7 +127,7 @@ $projects = [
         'category' => 'Substation',
         'status' => 'Completed',
         'completion-year' => 2020,
-        'location' => ' Gulbahar',
+        'location' => 'Gulbahar',
         'client' => '',
 
         'thumbnail' => '',
@@ -164,10 +161,13 @@ $projects = [
         'location' => 'Kabul, Afghanistan',
         'client' => 'Kabul Municipality',
 
-        'thumbnail' => '',
+        'thumbnail' => 'assets/images/projects/06-kabul-1.png',
 
         'images' => [
-            '',
+            'assets/images/projects/06-kabul-1.png',
+            'assets/images/projects/06-kabul-2.png',
+            'assets/images/projects/06-kabul-3.png',
+            'assets/images/projects/06-kabul-4.png',
         ],
 
         'description' =>
@@ -193,12 +193,12 @@ $projects = [
         'location' => 'Kabul',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/mfndu-phaseIIIA-1.png',
+        'thumbnail' => 'assets/images/projects/07-kabul-1.png',
 
         'images' => [
-            'assets/images/projects/mfndu-phaseIIIA-1.png',
-            'assets/images/projects/mfndu-phaseIIIA-2.png',
-            'assets/images/projects/mfndu-phaseIIIA-3.png'
+            'assets/images/projects/07-kabul-1.png',
+            'assets/images/projects/07-kabul-2.png',
+            'assets/images/projects/07-kabul-3.png'
         ],
 
         'description' =>
@@ -224,12 +224,10 @@ $projects = [
         'location' => 'Kandahar',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANCOP BN & PRC-1.png',
+        'thumbnail' => 'assets/images/projects/08-kandahar-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/08-kandahar-1.png'
         ],
 
         'description' =>
@@ -255,12 +253,10 @@ $projects = [
         'location' => 'Balkh',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/BP Company Headquarters Boz Areq-1.png',
+        'thumbnail' => 'assets/images/projects/09-balkh-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/09-balkh-1.png',
         ],
 
         'description' =>
@@ -283,15 +279,13 @@ $projects = [
         'category' => 'Construction',
         'status' => 'Completed',
         'completion-year' => 2020,
-        'location' => 'Faryab Province, Afghanistan',
+        'location' => 'Faryab',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANP UP DHQ Qaysar-1.png',
+        'thumbnail' => 'assets/images/projects/10-faryab-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/10-faryab-1.png',
         ],
 
         'description' =>
@@ -317,12 +311,10 @@ $projects = [
         'location' => 'Balkh ',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANP UP DHQ Mazar-1.png',
+        'thumbnail' => 'assets/images/projects/11-balkh-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/11-balkh-1.png',
         ],
 
         'description' =>
@@ -348,12 +340,11 @@ $projects = [
         'location' => 'Faryab',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/BP Yaka Toot-1.png',
+        'thumbnail' => 'assets/images/projects/12-faryab-1.png',
 
         'images' => [
-            'assets/images/projects/BP Yaka Toot-1.png',
-            'assets/images/projects/BP Yaka Toot-2.png',
-            ''
+            'assets/images/projects/12-faryab-1.png',
+            'assets/images/projects/12-faryab-2.png',
         ],
 
         'description' =>
@@ -379,12 +370,10 @@ $projects = [
         'location' => 'Baghlan',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANP UP DHQ Khost Farang-1.png',
+        'thumbnail' => 'assets/images/projects/13-baghlan-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/13-baghlan-1.png',
         ],
 
         'description' =>
@@ -410,12 +399,10 @@ $projects = [
         'location' => 'Badakhshan',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANP UP DHQ Wardoj-1.png',
+        'thumbnail' => 'assets/images/projects/14-badakhshan-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/14-badakhshan-1.png',
         ],
 
         'description' =>
@@ -441,12 +428,11 @@ $projects = [
         'location' => 'Paktia',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANA Gardez Training Ranges-1.png',
+        'thumbnail' => 'assets/images/projects/15-paktia-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/15-paktia-1.png',
+            'assets/images/projects/15-paktia-2.png',
         ],
 
         'description' =>
@@ -472,12 +458,10 @@ $projects = [
         'location' => 'Balkh',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/Fire Department FD Mazar-e-Sharif-1.png',
+        'thumbnail' => 'assets/images/projects/16-balkh-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/16-balkh-1.png',
         ],
 
         'description' =>
@@ -503,12 +487,10 @@ $projects = [
         'location' => 'Logar',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/PRC Logar-1.png',
+        'thumbnail' => 'assets/images/projects/17-logar-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/17-logar-1.png',
         ],
 
         'description' =>
@@ -534,10 +516,10 @@ $projects = [
         'location' => 'Logar',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/MILCON Cargo Handling Area FOB SHANK-1.png',
+        'thumbnail' => 'assets/images/projects/18-logar-1.png',
 
         'images' => [
-            '',
+            'assets/images/projects/18-logar-1.png',
             '',
             ''
         ],
@@ -565,12 +547,10 @@ $projects = [
         'location' => 'Jawzjan',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANP UP DHQ Sheberghan-1.png',
+        'thumbnail' => 'assets/images/projects/19-jawzjan-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/19-jawzjan-1.png',
         ],
 
         'description' =>
@@ -593,13 +573,13 @@ $projects = [
         'category' => 'Construction',
         'status' => 'Completed',
         'completion-year' => 2020,
-        'location' => 'Daikondi',
+        'location' => 'Daikundi',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANP UP DHQ Miramor-1.png',
+        'thumbnail' => 'assets/images/projects/20-daikundi-1.png',
 
         'images' => [
-            '',
+            'assets/images/projects/20-daikundi-1.png',
             '',
             ''
         ],
@@ -627,10 +607,10 @@ $projects = [
         'location' => 'Khost',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANP UP DHQ Musa Kheil-1.png',
+        'thumbnail' => 'assets/images/projects/21-khost-1.png',
 
         'images' => [
-            '',
+            'assets/images/projects/21-khost-1.png',
             '',
             ''
         ],
@@ -658,10 +638,10 @@ $projects = [
         'location' => 'Konduz',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANP UP DHQ Kunduz-1.png',
+        'thumbnail' => 'assets/images/projects/22-kunduz-1.png',
 
         'images' => [
-            '',
+            'assets/images/projects/22-kunduz-1.png',
             '',
             ''
         ],
@@ -689,10 +669,10 @@ $projects = [
         'location' => 'Faryab',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/BP Yaka Haji-1.png',
+        'thumbnail' => 'assets/images/projects/23-faryab-1.png',
 
         'images' => [
-            '',
+            'assets/images/projects/23-faryab-1.png',
             '',
             ''
         ],
@@ -720,10 +700,10 @@ $projects = [
         'location' => 'Ghazni',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/PRC Ghazni-1.png',
+        'thumbnail' => 'assets/images/projects/24-ghazni-1.png',
 
         'images' => [
-            '',
+            'assets/images/projects/24-ghazni-1.png',
             '',
             ''
         ],
@@ -751,10 +731,10 @@ $projects = [
         'location' => 'Kabul',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/NKIA Kabul-1.png',
+        'thumbnail' => 'assets/images/projects/25-kabul-1.png',
 
         'images' => [
-            '',
+            'assets/images/projects/25-kabul-1.png',
             '',
             ''
         ],
@@ -782,10 +762,10 @@ $projects = [
         'location' => 'Ghazni',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANP UP DHQ Nawur-1.png',
+        'thumbnail' => 'assets/images/projects/26-ghazni-1.png',
 
         'images' => [
-            '',
+            'assets/images/projects/26-ghazni-1.png',
             '',
             ''
         ],
@@ -813,11 +793,11 @@ $projects = [
         'location' => 'Takhar',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/Main Road Security Comp MRSC Taloqan-1.png',
+        'thumbnail' => 'assets/images/projects/27-takhar-1.png',
 
         'images' => [
-            'assets/images/projects/Main Road Security Comp MRSC Taloqan-1.png',
-            'assets/images/projects/Main Road Security Comp MRSC Taloqan-2.png',
+            'assets/images/projects/27-takhar-1.png',
+            'assets/images/projects/27-takhar-2.png',
             ''
         ],
 
@@ -844,11 +824,11 @@ $projects = [
         'location' => 'Balkh',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/Elevated Water Tower Balkh-1.png',
+        'thumbnail' => 'assets/images/projects/28-balkh-1.png',
 
         'images' => [
-            '',
-            '',
+            'assets/images/projects/28-balkh-1.png',
+            'assets/images/projects/28-balkh-2.png',
             ''
         ],
 
@@ -875,10 +855,10 @@ $projects = [
         'location' => 'Laghman',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANP UP DHQ Mehterlam-1.png',
+        'thumbnail' => 'assets/images/projects/29-laghman-1.png',
 
         'images' => [
-            '',
+            'assets/images/projects/29-laghman-1.png',
             '',
             ''
         ],
@@ -906,12 +886,12 @@ $projects = [
         'location' => 'Ghazni',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANA Infantry Kandak Moqur district-1.png',
+        'thumbnail' => 'assets/images/projects/30-ghazni-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/30-ghazni-1.png',
+            'assets/images/projects/30-ghazni-2.png',
+            'assets/images/projects/30-ghazni-3.png'
         ],
 
         'description' =>
@@ -937,12 +917,12 @@ $projects = [
         'location' => 'Nangarhar',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANP UP DHQ Jalalabad-1.png',
+        'thumbnail' => 'assets/images/projects/31-nangarhar-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/31-nangarhar-1.png',
+            'assets/images/projects/31-nangarhar-2.png',
+            'assets/images/projects/31-nangarhar-3.png'
         ],
 
         'description' =>
@@ -968,11 +948,11 @@ $projects = [
         'location' => 'Kabul',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANA NAVC III Kabul-1.png',
+        'thumbnail' => 'assets/images/projects/32-kabul-1.png',
 
         'images' => [
-            'assets/images/projects/ANA NAVC III Kabul-1.png',
-            'assets/images/projects/ANA NAVC III Kabul-2.png',
+            'assets/images/projects/32-kabul-1.png',
+            'assets/images/projects/32-kabul-2.png',
         ],
 
         'description' =>
@@ -998,12 +978,12 @@ $projects = [
         'location' => 'Kabul',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANA Infantry Branch School Darulaman-1.png',
+        'thumbnail' => 'assets/images/projects/33-kabul-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/33-kabul-1.png',
+            'assets/images/projects/33-kabul-2.png',
+            'assets/images/projects/33-kabul-3.png'
         ],
 
         'description' =>
@@ -1029,12 +1009,12 @@ $projects = [
         'location' => 'Jawzjan',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANP MOI Supply Point-1.png',
+        'thumbnail' => 'assets/images/projects/34-jawzjan-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/34-jawzjan-1.png',
+            'assets/images/projects/34-jawzjan-2.png',
+            'assets/images/projects/34-jawzjan-3.png'
         ],
 
         'description' =>
@@ -1060,12 +1040,12 @@ $projects = [
         'location' => 'Badghis',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANA O&M Base Camp Repairs-1.png',
+        'thumbnail' => 'assets/images/projects/35-badghis-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/35-badghis-1.png',
+            'assets/images/projects/35-badghis-2.png',
+            'assets/images/projects/35-badghis-3.png'
         ],
 
         'description' =>
@@ -1091,12 +1071,12 @@ $projects = [
         'location' => 'Nangarhar',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/ANP Transportation Brigade Headquarter-1.png',
+        'thumbnail' => 'assets/images/projects/36-nangarhar-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/36-nangarhar-1.png',
+            'assets/images/projects/36-nangarhar-2.png',
+            'assets/images/projects/36-nangarhar-3.png'
         ],
 
         'description' =>
@@ -1122,12 +1102,12 @@ $projects = [
         'location' => 'Kandahar',
         'client' => 'Ministry of Public Work',
 
-        'thumbnail' => 'assets/images/projects/Construction of Railway Admin Building of Kandahar-1.png',
+        'thumbnail' => 'assets/images/projects/37-kandahar-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/37-kandahar-1.png',
+            'assets/images/projects/37-kandahar-2.png',
+            'assets/images/projects/37-kandahar-3.png'
         ],
 
         'description' =>
@@ -1153,12 +1133,12 @@ $projects = [
         'location' => 'Herat',
         'client' => 'Ministry of Public Works',
 
-        'thumbnail' => 'assets/images/projects/Construction of Railway Admin Building of Herat-1.png',
+        'thumbnail' => 'assets/images/projects/38-herat-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/38-herat-1.png',
+            'assets/images/projects/38-herat-2.png',
+            'assets/images/projects/38-herat-3.png'
         ],
 
         'description' =>
@@ -1184,12 +1164,12 @@ $projects = [
         'location' => 'Balkh',
         'client' => 'Ministry of Public Works',
 
-        'thumbnail' => 'assets/images/projects/Construction of Railway Admin Building of Balkh-1.png',
+        'thumbnail' => 'assets/images/projects/39-balkh-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/39-balkh-1.png',
+            'assets/images/projects/39-balkh-2.png',
+            'assets/images/projects/39-balkh-3.png'
         ],
 
         'description' =>
@@ -1206,21 +1186,22 @@ $projects = [
 
 
     [
-        'id' => 'O1',
-        'name' => 'Herat Electrification Project (Lot 1)',
+        'id' => '40',
+        'name' => 'Design, Supply, Installation, Testing and Commissioning of Gardez and Wazai Zadran Distribution Networks (Lot 2)',
         'sector' => 'Energy',
-        'category' => 'Substation',
-        'status' => 'Ongoing',
+        'category' => 'Multi-Service',
+        'status' => 'completed',
         'completion-year' => 2020,
-        'location' => 'Herat',
+        'location' => 'Paktya',
         'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
 
-        'thumbnail' => '',
+        'thumbnail' => 'assets/images/projects/40-paktya-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/40-paktya-1.png',
+            'assets/images/projects/40-paktya-2.png',
+            'assets/images/projects/40-paktya-3.png',
+            'assets/images/projects/40-paktya-4.png'
         ],
 
         'description' =>
@@ -1237,90 +1218,29 @@ $projects = [
 
 
     [
-        'id' => 'O2',
-        'name' => 'Gulbahar - Panjshir Transmission Line and Substation',
+        'id' => '41',
+        'name' => 'Herat Electrification Project (Lot 1)',
         'sector' => 'Energy',
-        'category' => 'Transmission',
-        'status' => 'Ongoing',
+        'category' => 'Multi-Service',
+        'status' => 'completed',
         'completion-year' => 2020,
-        'location' => 'Panjshir',
-        'client' => 'Ministry of Energy and Water (MEW)',
-
-        'thumbnail' => '',
-
-        'images' => [
-            '',
-            '',
-            ''
-        ],
-
-        'description' =>
-        'This contract was signed between Ministry of Energy & Water (MEW) and State Corps, it is a design build project, it covers the procurement of design and construction Extension 110kV high voltage Transmission Line from Gulbahar to Panjshir and Substation in Panjshir province.',
-
-        'scope' => [
-            'Extension 110kV high voltage Transmission Line',
-            ' from Gulbahar to Panjshir',
-            '',
-            '',
-        ]
-
-    ],
-
-
-    [
-        'id' => 'O3',
-        'name' => 'Design, Supply, Installation, Testing and Commissioning of Gardez and Wazai Zadran (lot 2) Distribution Networks ',
-        'sector' => 'Energy',
-        'category' => 'Distribution Network',
-        'status' => 'Ongoing',
-        'completion-year' => 2020,
-        'location' => 'Paktya',
-        'client' => 'Angelique International Ltd',
-
-        'thumbnail' => '',
-
-        'images' => [
-            '',
-            '',
-            ''
-        ],
-
-        'description' =>
-        'This project was signed between Angelique International Ltd and State Corps, the project covers the -Design, Supply, Installation, Testing and Commissioning of Gardez and Wazai Zadran Zadran 20 kV Distribution networks at Gardez and Wazai Zadran districts of Paktya province of Afghanistan.',
-
-        'scope' => [
-            '20 kV Distribution networks',
-            '',
-            '',
-            '',
-        ]
-
-    ],
-
-
-    [
-        'id' => 'O4',
-        'name' => 'Shaikh Mesri 220/110/20 kV Substation ',
-        'sector' => 'Energy',
-        'category' => 'Substation',
-        'status' => 'Ongoing',
-        'completion-year' => 2020,
-        'location' => 'Jalalabad',
+        'location' => 'Herat',
         'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
 
-        'thumbnail' => '',
+        'thumbnail' => 'assets/images/projects/41-herat-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/41-herat-1.png',
+            'assets/images/projects/41-herat-2.png',
+            'assets/images/projects/41-herat-3.png',
+            'assets/images/projects/41-herat-4.png'
         ],
 
         'description' =>
-        'This contract was signed between Da Afghanistan Breshna Sherkat (DABS) and State Corps. It is a design build project and it covers the procurement of plant - design, supply, and installation, testing and commissioning of 220/110/20 kV Substation at Jalalabad Shaikh Mesri in Jalalabad city of Nangarhar province.',
+        'This contract was signed between Da Afghanistan Breshna Sherkat (DABS) and State Corps, The project covers the -Design, Supply, Construction, Erection, Testing and Commissioning of Four Substations of 110/20 kV at Chesht Sharif, Hobi, Karokh & Pashton Zarghoon districts of Herat province of Afghanistan',
 
         'scope' => [
-            'procurement of plant - design, supply, and installation, testing and commissioning of 220/110/20 kV Substation',
+            'Four Substations of 110/20 kV',
             '',
             '',
             '',
@@ -1330,21 +1250,20 @@ $projects = [
 
 
     [
-        'id' => 'O5',
+        'id' => '42',
         'name' => 'Construction of Warehouse for Da Afghanistan Breshna Sherkat (DABS)',
-        'sector' => 'Construction',
-        'category' => 'Construction',
-        'status' => 'Ongoing',
+        'sector' => 'construction',
+        'category' => 'construction',
+        'status' => 'completed',
         'completion-year' => 2020,
         'location' => 'Kabul',
-        'client' => 'Da Afghanistan Breshna Sherkat',
+        'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
 
-        'thumbnail' => '',
+        'thumbnail' => 'assets/images/projects/42-kabul-1.png',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/42-kabul-1.png',
+            'assets/images/projects/42-kabul-2.png',
         ],
 
         'description' =>
@@ -1358,6 +1277,18 @@ $projects = [
         ]
 
     ],
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     [
@@ -1611,8 +1542,8 @@ $projects = [
     [
         'id' => 'O74',
         'name' => 'Amu Darya Crossing Special project',
-        'sector' => '',
-        'category' => '',
+        'sector' => 'Energy',
+        'category' => 'Transmission Line',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
         'location' => 'Hairatan',
@@ -1797,7 +1728,7 @@ $projects = [
     [
         'id' => 'O80',
         'name' => 'Design Service for Uzbek Afghan 500Kv 5 projects',
-        'sector' => 'Energy',
+        'sector' => 'Design',
         'category' => 'Design',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1999,13 +1930,13 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Qush Tepa and Darzaab districts. One of the key components of this project is the construction of an 85.24 km 220 kV transmission line, The line consists of 52.76 km from Pul-e-Khorasan to Qush Tepa Substation and 32.48 km from Qush Tepa to Darzab Substation.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'survey, design, procurement, construction,  test and commissioning of key infrastructure components required for the electrification of  Qush Tepa and Darzaab districts',
+            'Construction of a 220 kV single-circuit overhead transmission line from Pul-e Khorasan Substation to the new substations',
+            'Transmission line Length: 85.24 Km',
+            'The transmission line also include the installation (OPGW) for communication and protection purposes',
         ]
 
     ],
@@ -2108,7 +2039,7 @@ $projects = [
         'id' => 'O95',
         'name' => 'Sancharak SS and Sare Pul Line Bay',
         'sector' => 'Energy',
-        'category' => 'substation & Line Bay',
+        'category' => 'Multi-Service',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
         'location' => 'Sare Pul',
