@@ -176,125 +176,178 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* ==========================
-     Services Sidebar Highlight
+     Services Page Tabs + Sidebar
   ========================== */
 
-  let serviceSections = [];
-  let sidebarLinks = [];
+  const serviceMenuItems = document.querySelectorAll(".services-menu li");
+  const servicePageSections = document.querySelectorAll(".service-section");
 
-  function updateActiveServiceData() {
-    const activeService = document.querySelector(".service-section.active");
-    if (!activeService) return;
-    serviceSections = activeService.querySelectorAll(".about-section-block");
-    sidebarLinks = activeService.querySelectorAll(".about-sidebar .nav-link");
-  }
+  if (serviceMenuItems.length) {
+    let activeServiceBlocks = [];
+    let activeServiceLinks = [];
 
-  function highlightSidebar() {
-    if (!serviceSections.length) return;
-    let scrollPos = window.scrollY + 140;
-    serviceSections.forEach((section, index) => {
-      const top = section.offsetTop;
-      const bottom = top + section.offsetHeight;
-      if (scrollPos >= top && scrollPos < bottom) {
-        sidebarLinks.forEach((link) => link.classList.remove("active"));
-        if (sidebarLinks[index]) sidebarLinks[index].classList.add("active");
-      }
-    });
-  }
+    function updateActiveServiceData() {
+      const activeService = document.querySelector(".service-section.active");
+      if (!activeService) return;
+      activeServiceBlocks = Array.from(
+        activeService.querySelectorAll(".about-section-block"),
+      );
+      activeServiceLinks = Array.from(
+        activeService.querySelectorAll(".about-sidebar .nav-link"),
+      );
+    }
 
-  window.addEventListener("scroll", highlightSidebar);
+    function highlightServiceSidebar() {
+      if (!activeServiceBlocks.length) return;
+      const scrollPos = window.scrollY + 160;
+      activeServiceBlocks.forEach((section, index) => {
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+        if (scrollPos >= top && scrollPos < bottom) {
+          activeServiceLinks.forEach((link) => link.classList.remove("active"));
+          if (activeServiceLinks[index])
+            activeServiceLinks[index].classList.add("active");
+        }
+      });
+    }
 
-  /* ==========================
-     Services Page Tabs
-  ========================== */
+    function activateServiceTab(target) {
+      serviceMenuItems.forEach((el) => el.classList.remove("active"));
+      servicePageSections.forEach((sec) => sec.classList.remove("active"));
 
-  document.querySelectorAll(".services-menu li").forEach((item) => {
-    item.addEventListener("click", function () {
-      document
-        .querySelectorAll(".services-menu li")
-        .forEach((el) => el.classList.remove("active"));
-      this.classList.add("active");
-      const target = this.dataset.target;
-      document
-        .querySelectorAll(".service-section")
-        .forEach((sec) => sec.classList.remove("active"));
+      const matchedMenu = Array.from(serviceMenuItems).find(
+        (el) => el.dataset.target === target,
+      );
+      if (matchedMenu) matchedMenu.classList.add("active");
+
       const activeSection = document.getElementById(target);
+      if (!activeSection) return;
       activeSection.classList.add("active");
-      window.scrollTo({
-        top: document.querySelector(".services-page").offsetTop - 90,
-        behavior: "smooth",
-      });
+
       updateActiveServiceData();
-      highlightSidebar();
-    });
-  });
+      highlightServiceSidebar();
+    }
 
-  updateActiveServiceData();
-  highlightSidebar();
-
-  /* ==========================
-     Sectors Sidebar Highlight
-  ========================== */
-
-  let sectorSections = [];
-  let sectorSidebarLinks = [];
-
-  function updateActiveSectorData() {
-    const activeSector = document.querySelector(".sector-section.active");
-    if (!activeSector) return;
-    sectorSections = activeSector.querySelectorAll(".about-section-block");
-    sectorSidebarLinks = activeSector.querySelectorAll(
-      ".about-sidebar .nav-link",
-    );
-  }
-
-  function highlightSectorSidebar() {
-    if (!sectorSections.length) return;
-    let scrollPos = window.scrollY + 140;
-    sectorSections.forEach((section, index) => {
-      const top = section.offsetTop;
-      const bottom = top + section.offsetHeight;
-      if (scrollPos >= top && scrollPos < bottom) {
-        sectorSidebarLinks.forEach((link) => link.classList.remove("active"));
-        if (sectorSidebarLinks[index])
-          sectorSidebarLinks[index].classList.add("active");
+    // Handle ?tab= param from mega menu links
+    const serviceParams = new URLSearchParams(window.location.search);
+    const serviceTab = serviceParams.get("tab");
+    if (serviceTab && document.getElementById(serviceTab)) {
+      activateServiceTab(serviceTab);
+      // scroll to anchor if present
+      if (window.location.hash) {
+        setTimeout(() => {
+          const anchor = document.querySelector(window.location.hash);
+          if (anchor) {
+            anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 100);
       }
+    }
+
+    serviceMenuItems.forEach((item) => {
+      item.addEventListener("click", function () {
+        const target = this.dataset.target;
+        activateServiceTab(target);
+        const page = document.querySelector(".services-page");
+        if (page) {
+          window.scrollTo({ top: page.offsetTop - 90, behavior: "smooth" });
+        }
+      });
     });
+
+    window.addEventListener("scroll", highlightServiceSidebar);
+    updateActiveServiceData();
+    highlightServiceSidebar();
   }
 
-  window.addEventListener("scroll", highlightSectorSidebar);
-
   /* ==========================
-     Sectors Page Tabs
+     Sectors Page Tabs + Sidebar
   ========================== */
 
-  document.querySelectorAll(".sectors-menu li").forEach((item) => {
-    item.addEventListener("click", function () {
-      document
-        .querySelectorAll(".sectors-menu li")
-        .forEach((li) => li.classList.remove("active"));
-      this.classList.add("active");
-      const target = this.dataset.target;
-      document
-        .querySelectorAll(".sector-section")
-        .forEach((sec) => sec.classList.remove("active"));
-      const activeSector = document.getElementById(target);
-      activeSector.classList.add("active");
-      window.scrollTo({
-        top: document.querySelector(".sectors-page").offsetTop - 90,
-        behavior: "smooth",
+  const sectorMenuItems = document.querySelectorAll(".sectors-menu li");
+  const sectorPageSections = document.querySelectorAll(".sector-section");
+
+  if (sectorMenuItems.length) {
+    let activeSectorBlocks = [];
+    let activeSectorLinks = [];
+
+    function updateActiveSectorData() {
+      const activeSector = document.querySelector(".sector-section.active");
+      if (!activeSector) return;
+      activeSectorBlocks = Array.from(
+        activeSector.querySelectorAll(".about-section-block"),
+      );
+      activeSectorLinks = Array.from(
+        activeSector.querySelectorAll(".about-sidebar .nav-link"),
+      );
+    }
+
+    function highlightSectorSidebar() {
+      if (!activeSectorBlocks.length) return;
+      const scrollPos = window.scrollY + 160;
+      activeSectorBlocks.forEach((section, index) => {
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+        if (scrollPos >= top && scrollPos < bottom) {
+          activeSectorLinks.forEach((link) => link.classList.remove("active"));
+          if (activeSectorLinks[index])
+            activeSectorLinks[index].classList.add("active");
+        }
       });
+    }
+
+    function activateSectorTab(target) {
+      sectorMenuItems.forEach((el) => el.classList.remove("active"));
+      sectorPageSections.forEach((sec) => sec.classList.remove("active"));
+
+      const matchedMenu = Array.from(sectorMenuItems).find(
+        (el) => el.dataset.target === target,
+      );
+      if (matchedMenu) matchedMenu.classList.add("active");
+
+      const activeSection = document.getElementById(target);
+      if (!activeSection) return;
+      activeSection.classList.add("active");
+
       updateActiveSectorData();
       highlightSectorSidebar();
-    });
-  });
+    }
 
-  updateActiveSectorData();
-  highlightSectorSidebar();
+    // Handle ?tab= param from mega menu links
+    const sectorParams = new URLSearchParams(window.location.search);
+    const sectorTab = sectorParams.get("tab");
+    if (sectorTab && document.getElementById(sectorTab)) {
+      activateSectorTab(sectorTab);
+      // scroll to anchor if present
+      if (window.location.hash) {
+        setTimeout(() => {
+          const anchor = document.querySelector(window.location.hash);
+          if (anchor) {
+            anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 100);
+      }
+    }
+
+    sectorMenuItems.forEach((item) => {
+      item.addEventListener("click", function () {
+        const target = this.dataset.target;
+        activateSectorTab(target);
+        const page = document.querySelector(".sectors-page");
+        if (page) {
+          window.scrollTo({ top: page.offsetTop - 90, behavior: "smooth" });
+        }
+      });
+    });
+
+    window.addEventListener("scroll", highlightSectorSidebar);
+    updateActiveSectorData();
+    highlightSectorSidebar();
+  }
 
   /* ==========================
-   Projects Filter + Sort
-========================== */
+     Projects Filter + Sort
+  ========================== */
 
   let sector = "all";
   let status = "all";
@@ -303,7 +356,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const projectItems = document.querySelectorAll(".project-item");
 
-  // Sector filter
   document.querySelectorAll(".project-filters button").forEach((btn) => {
     btn.addEventListener("click", function () {
       document
@@ -317,7 +369,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Category filter - initial attach
   function attachCategoryListeners() {
     document
       .querySelectorAll(".project-category-filters button")
@@ -335,7 +386,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   attachCategoryListeners();
 
-  // Status filter
   const statusFilter = document.getElementById("statusFilter");
   if (statusFilter) {
     statusFilter.addEventListener("change", function () {
@@ -344,7 +394,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Sort
   const sortSelect = document.getElementById("sortProjects");
   if (sortSelect) {
     sortSelect.addEventListener("change", function () {
@@ -353,7 +402,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Update category buttons based on selected sector
   function updateCategoryButtons(selectedSector) {
     const container = document.querySelector(".project-category-filters");
     if (!container) return;
@@ -383,7 +431,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const itemCategory = item.dataset.category.toLowerCase();
 
       let show = true;
-
       if (sector !== "all" && sector !== itemSector) show = false;
       if (status !== "all" && status !== itemStatus) show = false;
       if (category !== "all" && category !== itemCategory) show = false;
@@ -404,9 +451,10 @@ document.addEventListener("DOMContentLoaded", function () {
     items.forEach((item) => grid.appendChild(item));
   }
 
-  // Init
-  sortProjects("newest");
-  updateCategoryButtons("all");
+  if (projectItems.length) {
+    sortProjects("newest");
+    updateCategoryButtons("all");
+  }
 
   /* ==========================
      Project Details Swiper

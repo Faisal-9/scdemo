@@ -240,6 +240,11 @@
   padding: 1rem;
 }
 
+.mega-menu-content a {
+  text-decoration: none;
+  color: #000000;
+}
+
 .mega-column {
   display: flex;
   flex-direction: column;

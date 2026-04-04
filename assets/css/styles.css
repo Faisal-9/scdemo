@@ -652,14 +652,6 @@
   border-radius: 10px;
 }
 
-.service-section .about-section-block:nth-child(odd) {
-  background: #f0f0f0;
-}
-
-.service-section .about-section-block:nth-child(even) {
-  background: #f8f7f7;
-}
-
 .about-section-block h2 {
   font-size: 28px;
   font-weight: 700;
@@ -1413,6 +1405,14 @@
   display: block;
 }
 
+.service-section .about-section-block:nth-child(odd) {
+  background: #f0f0f0;
+}
+
+.service-section .about-section-block:nth-child(even) {
+  background: #f8f7f7;
+}
+
 .features-title {
   font-size: 16px;
   font-weight: 700;
@@ -1519,6 +1519,14 @@
 
 .sector-section.active {
   display: block;
+}
+
+.sector-section .about-section-block:nth-child(odd) {
+  background: #f0f0f0;
+}
+
+.sector-section .about-section-block:nth-child(even) {
+  background: #f8f7f7;
 }
 
 /* ================= PROJECTS PAGE ================= */

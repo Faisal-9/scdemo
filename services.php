@@ -23,8 +23,10 @@ include("includes/data/servicesdata.php");
                             data-target="<?= $key ?>">
                             <?= $service['title'] ?>
                         </li>
-                    <?php $first = false;
-                    endforeach; ?>
+                    <?php
+                        $first = false;
+                    endforeach;
+                    ?>
                 </ul>
             </div>
 
@@ -39,15 +41,13 @@ include("includes/data/servicesdata.php");
                         $prefix = $key . "-";
                         $sections = $service["sections"];
                         include("includes/components/sidebarsection.php");
+                        $first = false;
                         ?>
                     </div>
-                <?php
-                    $first = false;
-                endforeach;
-                ?>
+                <?php endforeach; ?>
             </div>
-        </div>
 
+        </div>
     </section>
 
     <?php include("includes/footer.php"); ?>

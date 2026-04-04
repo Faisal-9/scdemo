@@ -20,4 +20,6 @@
 <script src="assets/js/navigation.js" defer></script>
 
 <!-- Main Custom JS -->
+<!-- When your site is fully ready for production, replace time() with a fixed version number instead: -->
+<!-- <script src="assets/js/main.js?v=2.0" defer></script> -->
 <script src="assets/js/main.js?v=<?= time() ?>" defer></script>

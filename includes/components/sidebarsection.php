@@ -34,68 +34,56 @@ $sections = $sections ?? [];
                     data-bs-offset="100"
                     tabindex="0"
                     class="about-content">
+
                     <?php foreach ($sections as $section): ?>
 
                         <section id="<?= $prefix . $section['id'] ?>" class="about-section-block p-3">
 
-                            <div class="row justify-content-center">
+                            <!-- TITLE -->
+                            <div class="text-center mb-1">
+                                <h2 class="service-block-title"><?= $section['title'] ?></h2>
+                                <?php if (!empty($section['small-title'])): ?>
+                                    <p class="service-block-subtitle text-muted"><?= $section['small-title'] ?></p>
+                                <?php endif; ?>
+                                <hr class="service-title-line mx-auto">
+                            </div>
 
-                                <div class="col-lg-12 text-center">
+                            <!-- TEXT + IMAGE ROW -->
+                            <div class="row g-4 align-items-start">
 
-                                    <!-- TITLE -->
-                                    <h2><?= $section['title'] ?></h2>
+                                <!-- LEFT: text + features -->
+                                <div class="col-lg-6">
 
-                                    <?php if (!empty($section['small-title'])): ?>
-                                        <p class="small-title"><?= $section['small-title'] ?></p>
-                                    <?php endif; ?>
+                                    <!-- <?php if (!empty($section['text'])): ?>
+                                        <p class="service-block-text"><?= $section['text'] ?></p>
+                                    <?php endif; ?> -->
 
-                                    <!-- TEXT -->
-                                    <?php if (!empty($section['text'])): ?>
-                                        <p class="service-text"><?= $section['text'] ?></p>
-                                    <?php endif; ?>
-
-                                    <!-- FEATURES -->
                                     <?php if (!empty($section['features'])): ?>
-                                        <h5 class="features-title">Key Capabilities</h5>
-
-                                        <div class="service-features">
+                                        <h6 class="service-caps-title fw-bold mb-2">Key Capabilities</h6>
+                                        <ul class="service-features-list">
                                             <?php foreach ($section['features'] as $feature): ?>
-                                                <span class="feature-pill"><?= $feature ?></span>
+                                                <?php if ($feature): ?>
+                                                    <li><?= $feature ?></li>
+                                                <?php endif; ?>
                                             <?php endforeach; ?>
-                                        </div>
-                                    <?php endif; ?>
-
-                                    <!-- IMAGES -->
-                                    <?php if (!empty($section['image'])): ?>
-                                        <?php
-                                        $images = $section['image'];
-                                        $count = count($images);
-
-                                        $col = match ($count) {
-                                            1 => "col-md-8",
-                                            2 => "col-md-6",
-                                            3 => "col-md-4",
-                                            4 => "col-md-3",
-                                            default => "col-md-3"
-                                        };
-                                        ?>
-
-                                        <div class="row g-3 mt-4 justify-content-center">
-                                            <?php foreach ($images as $img): ?>
-                                                <div class="<?= $col ?>">
-                                                    <img src="<?= $img ?>"
-                                                        class="img-fluid rounded shadow-sm w-100"
-                                                        alt="<?= $section['title'] ?>">
-                                                </div>
-                                            <?php endforeach; ?>
-                                        </div>
+                                        </ul>
                                     <?php endif; ?>
 
                                 </div>
 
+                                <!-- RIGHT: image -->
+                                <div class="col-lg-6">
+                                    <?php if (!empty($section['image'][0])): ?>
+                                        <img src="<?= $section['image'][0] ?>"
+                                            alt="<?= $section['title'] ?>"
+                                            class="img-fluid rounded-3 w-100 service-block-img">
+                                    <?php endif; ?>
+                                </div>
 
                             </div>
+
                         </section>
+
                     <?php endforeach; ?>
 
                 </div>

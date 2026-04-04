@@ -41,16 +41,13 @@ include("includes/data/sectorsdata.php");
                         $prefix = $key . "-";
                         $sections = $sector["sections"];
                         include("includes/components/sidebarsection.php");
+                        $first = false;
                         ?>
                     </div>
-                <?php
-                    $first = false;
-                endforeach;
-                ?>
+                <?php endforeach; ?>
             </div>
 
         </div>
-
     </section>
 
     <?php include("includes/footer.php"); ?>

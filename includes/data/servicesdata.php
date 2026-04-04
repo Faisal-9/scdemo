@@ -3,80 +3,192 @@
 $services = [
 
     "epc" => [
-        "title" => "EPC",
+        "title" => "Energy Infrastructure & EPC",
 
         "sections" => [
             [
-                "id" => "E-Engineering",
-                "title" => "Engineering",
-                "text" => "Engineering covers the full design and technical planning phase: feasibility studies, conceptual and detailed design, structural and civil engineering, process and systems engineering, environmental and geotechnical studies, value engineering, and technical specifications.",
+                "id" => "1-feasibility-studies-project-development",
+                "title" => "Feasibility Studies & Project Development",
+                "small-title" => "Pre-Development Clarity. Post-Development Confidence.",
+                "text" => "Before a single bolt is tightened or a cable is laid, the foundation of every successful energy project is a rigorous feasibility and development process. We evaluate technical viability, financial bankability, site suitability, and regulatory pathways — giving investors, developers, and stakeholders the confidence to move forward with clarity and reduced risk.",
                 "image" => [
-                    "assets/images/2.jpg",
-                    "assets/images/2.jpg",
                     "assets/images/2.jpg",
                 ],
                 "features" => [
-                    "Initial project screening",
-                    "Feasibility & concept studies",
-                    "Detailed design & drawings",
-                    "Structural & civil engineering",
-                    "Process & systems engineering",
-                    "Geotechnical & environmental",
-                    "BIM & 3D modelling",
-                    "Value engineering",
-                    "Permitting & regulatory docs",
-                    "Technical specifications",
-                    "HAZOP & risk analysis",
-                    "Construction methodology",
-                    "As-built documentation",
+                    "Technical feasibility assessments",
+                    "Financial modeling & bankability analysis",
+                    "Site selection & land suitability studies",
+                    "Resource assessment (solar, wind, hydro)",
+                    "Regulatory screening & permitting roadmap",
+                    "Environmental & social impact pre-screening",
+                    "Grid connection feasibility",
+                    "Risk identification & mitigation planning",
+                    "Stakeholder & community engagement support",
+                    "Investment-grade project reports",
+                    "Concept development & technology selection",
+                    "Project timeline & milestone planning",
                 ]
 
             ],
             [
-                "id" => "P-Procurement",
-                "title" => "Procurement",
-                "text" => "Procurement covers all sourcing and supply chain activities: vendor qualification and management, equipment and materials sourcing, supply chain logistics coordination, quality inspection of goods, contract and subcontractor management, and bulk material planning.",
+                "id" => "2-engineering-design",
+                "title" => "Engineering Design",
+                "small-title" => "Precision Engineering. Designs Built to Perform.",
+                "text" => "Great projects are built on great engineering. Our Engineering Design service transforms project concepts into detailed, construction-ready technical solutions. From initial system architecture to final technical specifications, we apply rigorous engineering principles to ensure every component is optimally sized, safely designed, and ready for seamless execution — minimizing rework, cost overruns, and on-site surprises.",
                 "image" => [
                     "assets/images/2.jpg",
                     "assets/images/2.jpg",
                 ],
                 "features" => [
-                    "Vendor qualification",
-                    "Equipment sourcing & supply",
-                    "Bulk material planning",
-                    "Tendering & contract award",
-                    "Subcontractor management",
-                    "Quality inspection (FAT/SAT)",
-                    "Import/export logistics",
-                    "Material tracking & expediting",
-                    "Warehousing & site delivery",
-                    "Cost control & budgeting",
-                    "Supply chain risk management",
-                    "Long-lead item management",
+                    "Conceptual & preliminary design",
+                    "Detailed engineering & technical drawings",
+                    "Electrical system design & load calculations",
+                    "Mechanical & structural engineering",
+                    "Civil & foundation design",
+                    "Single-line & layout diagrams (SLD/GIS)",
+                    "Equipment sizing & selection",
+                    "Cable routing & earthing design",
+                    "Protection & control system design",
+                    "Technical specifications & datasheets",
+                    "BIM & 3D modelling",
+                    "HAZOP & design risk analysis",
+                    "Design review & value engineering",
+                    "Construction & installation methodology",
+                    "As-built documentation support",
                 ]
             ],
             [
-                "id" => "C-Construction",
-                "title" => "Construction",
-                "text" => "Construction covers physical execution: site preparation and mobilization, civil works (foundations, earthworks, roads), structural works (steel, concrete), MEP (mechanical, electrical, plumbing), commissioning and testing, safety management, and handover/closeout.",
+                "id" => "3-procurement-supply-chain",
+                "title" => "Procurement & Supply Chain",
+                "small-title" => "Strategic Sourcing. Seamless Delivery.",
+                "text" => "The right equipment, at the right quality, at the right time — procurement is where project timelines are won or lost. Our Procurement & Supply Chain service manages the full sourcing lifecycle, from vendor qualification and competitive tendering through to logistics coordination and on-site delivery. We leverage established supplier networks and rigorous quality controls to protect your project schedule, budget, and performance standards.",
                 "image" => [
                     "assets/images/2.jpg"
                 ],
                 "features" => [
-                    "Site mobilisation & preparation",
-                    "Earthworks & foundations",
-                    "Structural steel & concrete",
-                    "MEP works",
-                    "Road & infrastructure works",
-                    "Equipment installation",
-                    "HSE management on site",
-                    "Quality assurance & control",
-                    "Pre-commissioning & testing",
-                    "Commissioning & start-up",
-                    "Punch list & close-out",
-                    "Handover & O&M support",
+                    "Vendor qualification & prequalification",
+                    "Equipment & materials sourcing",
+                    "Competitive tendering & bid evaluation",
+                    "Contract negotiation & award",
+                    "Subcontractor management",
+                    "Factory acceptance testing (FAT)",
+                    "Site acceptance testing (SAT)",
+                    "Import/export & customs coordination",
+                    "Logistics & freight management",
+                    "Material tracking & expediting",
+                    "Warehousing & site delivery",
+                    "Long-lead item management",
+                    "Bulk material planning",
+                    "Supply chain risk management",
+                    "Cost control & budget tracking",
                 ]
-            ]
+            ],
+            [
+                "id" => "4-epc",
+                "title" => "EPC (Engineering, Procurement & Construction)",
+                "small-title" => "One Contract. Total Accountability. Full Delivery.",
+                "text" => "EPC is where everything comes together. As your single point of responsibility, we manage the complete project delivery lifecycle — integrating engineering design, equipment procurement, and physical construction under one unified contract. From ground-breaking to grid connection, our EPC service eliminates interface risk, streamlines communication, and ensures your project is delivered on time, within budget, and to the highest technical standards.",
+                "image" => [
+                    "assets/images/2.jpg"
+                ],
+                "features" => [
+                    "Single-point EPC contracting",
+                    "Integrated project delivery management",
+                    "Site mobilisation & preparation",
+                    "Civil works — earthworks & foundations",
+                    "Structural steel & concrete works",
+                    "Mechanical, electrical & plumbing (MEP)",
+                    "Equipment supply & installation",
+                    "Road & site infrastructure works",
+                    "HSE management & compliance",
+                    "Quality assurance & control (QA/QC)",
+                    "Pre-commissioning & loop checks",
+                    "Commissioning & system start-up",
+                    "Performance testing & acceptance",
+                    "Punch list management & close-out",
+                    "Project handover & O&M transition",
+                ]
+            ],
+            [
+                "id" => "5-grid-integration-commissioning",
+                "title" => "Grid Integration & Commissioning",
+                "small-title" => "Commissioning That Connects. Integration That Energises.",
+                "text" => "The final step before power flows. Grid Integration & Commissioning is the critical bridge between a completed installation and a fully operational energy asset. We manage the technical process of connecting your project to the utility network, validating system performance, and ensuring every component operates exactly as designed — safely, reliably, and in full compliance with grid codes and utility requirements.",
+                "image" => [
+                    "assets/images/2.jpg"
+                ],
+                "features" => [
+                    "Grid connection design & coordination",
+                    "Utility & network operator liaison",
+                    "Grid code compliance & studies",
+                    "Protection relay setting & testing",
+                    "Pre-commissioning checks & loop testing",
+                    "Electrical system energisation",
+                    "Inverter & transformer commissioning",
+                    "SCADA & control system integration",
+                    "Synchronisation & load testing",
+                    "Performance ratio & yield validation",
+                    "Power quality & harmonic analysis",
+                    "FAT & SAT supervision",
+                    "Commissioning documentation & reports",
+                    "Regulatory sign-off & approvals",
+                    "Handover to operations & O&M team",
+                ]
+            ],
+            [
+                "id" => "6-operation-maintenance",
+                "title" => "Operation & Maintenance (O&M)",
+                "small-title" => "Maximising Uptime. Protecting Your Investment.",
+                "text" => "A project delivered is only the beginning. Long-term asset value depends on how well it is operated and maintained throughout its lifecycle. Our O&M service keeps your energy asset running at peak performance — minimising downtime, preventing failures before they occur, and ensuring every kilowatt-hour your system is capable of producing is actually delivered. From routine inspections to advanced performance analytics, we are your long-term partner in asset reliability.",
+                "image" => [
+                    "assets/images/2.jpg"
+                ],
+                "features" => [
+                    "Preventive & scheduled maintenance",
+                    "Corrective & emergency maintenance",
+                    "24/7 remote monitoring & SCADA oversight",
+                    "Performance data analysis & reporting",
+                    "Energy yield optimisation",
+                    "Inverter & transformer servicing",
+                    "Electrical testing & thermographic surveys",
+                    "Panel & equipment cleaning programs",
+                    "Spare parts management & inventory",
+                    "Fault diagnosis & rapid response",
+                    "Vegetation & site management",
+                    "Health, safety & environmental compliance",
+                    "Warranty & insurance claim support",
+                    "Long-term service agreements (LTSA)",
+                    "Asset lifecycle & replacement planning",
+                ]
+            ],
+            [
+                "id" => "7-project-management-hse",
+                "title" => "Project Management & HSE Compliance",
+                "small-title" => "In Control at Every Stage. Safe at Every Step.",
+                "text" => "Behind every successfully delivered project is disciplined management and an uncompromising commitment to safety. Our Project Management & HSE service provides the strategic oversight and governance framework that keeps your project on schedule, within budget, and fully compliant with health, safety, and environmental standards. We act as the control tower across all project phases — coordinating teams, managing risk, resolving issues, and ensuring that no milestone is missed and no shortcut is taken.",
+                "image" => [
+                    "assets/images/2.jpg"
+                ],
+                "features" => [
+                    "Project planning & master scheduling",
+                    "Budget management & cost control",
+                    "Risk identification & mitigation",
+                    "Stakeholder & communication management",
+                    "Contract administration & compliance",
+                    "Progress monitoring & reporting",
+                    "Change management & variation control",
+                    "Multi-discipline team coordination",
+                    "HSE policy & management system development",
+                    "Site safety audits & inspections",
+                    "Incident reporting & investigation",
+                    "Permit-to-work (PTW) systems",
+                    "Environmental compliance monitoring",
+                    "Safety training & toolbox talks",
+                    "Regulatory & statutory compliance",
+                    "Project close-out & lessons learned",
+                ]
+
+            ],
         ]
     ],
 
@@ -237,7 +349,8 @@ $services = [
             [
                 "id" => "heavylift-oversizedload",
                 "title" => "Heavy Lift & Oversized Load Movement",
-                "small-title" => "Power plant components, pressure vessels, transformers, and large structural modules require a level of logistics planning that goes far beyond standard freight. We plan and execute heavy lift and abnormal load movements with full route surveys, permit applications, escort coordination, and specialised transport equipment. Our team works closely with structural and installation engineers to ensure that how something arrives is consistent with how it will be lifted, positioned, and installed — eliminating costly surprises at the critical path.",
+                "small-title" => "No margin for error. No shortcuts on critical cargo.",
+                "text" => "Power plant components, pressure vessels, transformers, and large structural modules require a level of logistics planning that goes far beyond standard freight. We plan and execute heavy lift and abnormal load movements with full route surveys, permit applications, escort coordination, and specialised transport equipment. Our team works closely with structural and installation engineers to ensure that how something arrives is consistent with how it will be lifted, positioned, and installed — eliminating costly surprises at the critical path.",
                 "image" => [
                     "assets/images/2.jpg"
                 ],
@@ -451,5 +564,55 @@ $services = [
         ]
 
     ],
+
+    "water" => [
+        "title" => "Water Infrastructure",
+
+        "sections" => [
+            [
+                "id" => "water-supply",
+                "title" => "Water Supply",
+                "content" => "Construction of water supply networks and treatment plants."
+            ],
+            [
+                "id" => "sewage",
+                "title" => "Sewage Systems",
+                "content" => "Urban wastewater management systems."
+            ],
+            [
+                "id" => "flood-control",
+                "title" => "Flood Control",
+                "content" => "Infrastructure designed to protect communities from flooding."
+            ],
+            [
+                "id" => "dams",
+                "title" => "Dams",
+                "content" => "Construction and management of dam infrastructure."
+            ]
+        ]
+    ],
+
+    "mining" => [
+        "title" => "Mining",
+
+        "sections" => [
+
+            [
+                "id" => "exploration",
+                "title" => "Exploration",
+                "content" => "Mineral exploration using advanced geological techniques."
+            ],
+            [
+                "id" => "exploitation",
+                "title" => "Exploitation",
+                "content" => "Extraction and processing of mineral resources."
+            ],
+            [
+                "id" => "export",
+                "title" => "Export Services",
+                "content" => "Logistics and export management for mining products."
+            ]
+        ]
+    ]
 
 ];
