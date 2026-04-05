@@ -457,6 +457,43 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* ==========================
+   URL Parameter Filtering
+========================== */
+  if (typeof urlSector !== "undefined" && typeof urlCategory !== "undefined") {
+    if (urlCategory !== "all") {
+      sector = "all";
+      category = urlCategory;
+
+      // Activate All sector button
+      document.querySelectorAll(".project-filters button").forEach((b) => {
+        b.classList.toggle("active", b.dataset.sector === "all");
+      });
+
+      // Rebuild category buttons for all sectors
+      updateCategoryButtons("all");
+
+      // Activate matching category button
+      document
+        .querySelectorAll(".project-category-filters button")
+        .forEach((b) => {
+          b.classList.toggle("active", b.dataset.category === urlCategory);
+        });
+
+      filterProjects();
+    } else if (urlSector !== "all") {
+      sector = urlSector;
+
+      // Activate matching sector button
+      document.querySelectorAll(".project-filters button").forEach((b) => {
+        b.classList.toggle("active", b.dataset.sector === urlSector);
+      });
+
+      updateCategoryButtons(urlSector);
+      filterProjects();
+    }
+  }
+
+  /* ==========================
      Project Details Swiper
   ========================== */
 

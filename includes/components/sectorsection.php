@@ -2,11 +2,9 @@
 
 $prefix = $prefix ?? "";
 $sections = $sections ?? [];
-
 ?>
 
 <section class="service-detail-page">
-
     <div class="container">
         <div class="row">
 
@@ -37,10 +35,12 @@ $sections = $sections ?? [];
 
                     <?php foreach ($sections as $section): ?>
 
-                        <section id="<?= $prefix . $section['id'] ?>" class="about-section-block p-3">
+                        <?php $filterCategory = strtolower($section['category'] ?? ''); ?>
+
+                        <section id="<?= $prefix . $section['id'] ?>" class="about-section-block sector-block p-3">
 
                             <!-- TITLE -->
-                            <div class="text-center mb-1">
+                            <div class="text-center mb-3">
                                 <h2 class="service-block-title"><?= $section['title'] ?></h2>
                                 <?php if (!empty($section['small-title'])): ?>
                                     <p class="service-block-subtitle text-muted"><?= $section['small-title'] ?></p>
@@ -49,25 +49,24 @@ $sections = $sections ?? [];
                             </div>
 
                             <!-- TEXT + IMAGE ROW -->
-                            <div class="row g-4 align-items-start">
+                            <div class="row g-4 align-items-stretch mb-4">
 
-                                <!-- LEFT: text + features -->
-                                <div class="col-lg-6">
+                                <!-- LEFT: text + button -->
+                                <div class="col-lg-6 d-flex flex-column">
 
                                     <?php if (!empty($section['text'])): ?>
                                         <p class="service-block-text"><?= $section['text'] ?></p>
+                                    <?php elseif (!empty($section['content'])): ?>
+                                        <p class="service-block-text"><?= $section['content'] ?></p>
                                     <?php endif; ?>
 
-                                    <?php if (!empty($section['features'])): ?>
-                                        <h6 class="service-caps-title fw-bold mb-2">Key Capabilities</h6>
-                                        <ul class="service-features-list">
-                                            <?php foreach ($section['features'] as $feature): ?>
-                                                <?php if ($feature): ?>
-                                                    <li><?= $feature ?></li>
-                                                <?php endif; ?>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    <?php endif; ?>
+                                    <!-- Projects Button pinned to bottom -->
+                                    <div class="mt-auto pt-3">
+                                        <a href="projects.php?category=<?= urlencode($filterCategory) ?>"
+                                            class="btn sector-projects-btn">
+                                            Projects
+                                        </a>
+                                    </div>
 
                                 </div>
 
@@ -82,6 +81,18 @@ $sections = $sections ?? [];
 
                             </div>
 
+                            <!-- STATS ROW -->
+                            <?php if (!empty($section['stats'])): ?>
+                                <div class="sector-stats-row">
+                                    <?php foreach ($section['stats'] as $stat): ?>
+                                        <div class="sector-stat-item">
+                                            <span class="sector-stat-value"><?= $stat['value'] ?></span>
+                                            <span class="sector-stat-label"><?= $stat['label'] ?></span>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endif; ?>
+
                         </section>
 
                     <?php endforeach; ?>
@@ -91,5 +102,4 @@ $sections = $sections ?? [];
 
         </div>
     </div>
-
 </section>

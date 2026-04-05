@@ -40,7 +40,7 @@ include("includes/data/sectorsdata.php");
                         <?php
                         $prefix = $key . "-";
                         $sections = $sector["sections"];
-                        include("includes/components/sidebarsection.php");
+                        include("includes/components/sectorsection.php");
                         $first = false;
                         ?>
                     </div>

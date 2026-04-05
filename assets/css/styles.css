@@ -1529,6 +1529,70 @@
   background: #f8f7f7;
 }
 
+/*  SECTOR BLOCKS  */
+
+.sector-projects-btn {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid #0a2a66;
+  color: #0a2a66;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 22px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.sector-projects-btn:hover {
+  background: #0a2a66;
+  color: #fff;
+}
+
+/* Stats row */
+.sector-stats-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #f5f7fb;
+  border-radius: 10px;
+  padding: 20px 16px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.sector-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sector-stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0a2a66;
+  line-height: 1.2;
+}
+
+.sector-stat-label {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .sector-stats-row {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .sector-stat-value {
+    font-size: 18px;
+  }
+}
+
 /* ================= PROJECTS PAGE ================= */
 
 .project-page-card {
