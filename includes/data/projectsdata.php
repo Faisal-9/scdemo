@@ -1372,13 +1372,11 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This contract was signed between Da Afghanistan Breshna Sherkat (DABS) and State Corps. The project covers the rehabilitation and construction of a 220 kV transmission line in the Bughorchar area of Herat Province. The main component of this project is the construction of an approximately 6 km, 220 kV transmission line. The line is designed as a double-circuit with a single conductor per phase, using ACSR conductors with a cross-section of 300 mm².',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Procurement of Plant Survey, Design Supply, Construction, Installation, Testing and Commissioning of Double Circuit Single Conductor (D/C & SC/ph.) of 220kV Transmission Line For Band-e-Bughorchar with an approximately length of 6 km in Herat province',
+            'Replacement and installation of Optical Ground Wire (OPGW) for communication and protection, damaged during the incident',
         ]
 
     ],
@@ -1434,13 +1432,10 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This contract was signed between Da Afghanistan Breshna Sherkat (DABS) and State Corps. The project covers the renovation of 110/20 kV power transformers at Northwest and East Substations in Kabul. The main component of this project is the procurement, survey, design, supply, installation, testing, and commissioning of renovated transformers to restore full operational capacity.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Renovation of three 40 MVA transformers at Northwest Substation and two 40 MVA transformers at East Substation in Kabul, including survey, design, supply, installation, testing, and commissioning.',
         ]
 
     ],
@@ -1465,13 +1460,10 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This contract was signed between Da Afghanistan Breshna Sherkat (DABS) and State Corps. The project covers the expansion of Qasaba 110/20 kV Substation near Kabul Airport, including procurement, design, supply, installation, testing, and commissioning of all necessary equipment to enhance power transformation and distribution.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Procurement, Design, Installation, Testing and Commissioning of the Expansion of Qasaba 110/20kV Substation near Kabul Airport, including the integration of one new 110/20kV, 20MVA transformer bay.',
         ]
 
     ],
@@ -1496,13 +1488,13 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This contract was signed between Da Afghanistan Breshna Sherkat (DABS) and State Corps. The project covers the procurement, design, supply, installation, testing, and commissioning of a 220/20 kV, 1x16 MVA transformer at Dasht-e-Archi Substation, including the extension of the 220 kV line bay at Asqalan Substation, Kunduz Province. The scope also includes all necessary auxiliary equipment, protection, control systems, civil works, and related infrastructure to ensure safe and reliable power transformation and distribution at the substation',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Design, supply, installation, testing, and commissioning of 1*16 MVA, 220/20 kV transformer at Dasht-e-Archi Substation',
+            'Construction of a new 220/20 kV substation in Dasht-e-Archi District.',
+            'Extension of 220 kV line bay with all accessories at Asqalan Substation, Kunduz.',
+            'Integration with existing infrastructure and compliance with DABS standards.',
         ]
 
     ],
@@ -1933,10 +1925,9 @@ $projects = [
         'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Qush Tepa and Darzaab districts. One of the key components of this project is the construction of an 85.24 km 220 kV transmission line, The line consists of 52.76 km from Pul-e-Khorasan to Qush Tepa Substation and 32.48 km from Qush Tepa to Darzab Substation.',
 
         'scope' => [
-            'survey, design, procurement, construction,  test and commissioning of key infrastructure components required for the electrification of  Qush Tepa and Darzaab districts',
-            'Construction of a 220 kV single-circuit overhead transmission line from Pul-e Khorasan Substation to the new substations',
-            'Transmission line Length: 85.24 Km',
-            'The transmission line also include the installation (OPGW) for communication and protection purposes',
+            'Survey, design, procurement, construction, testing, and commissioning of the 220 kV transmission line from Pul-e-Khorasan to Qush Tepa and Darzaab Substations.',
+            'Construction of an overhead 220 kV single-circuit line from Pul-e-Khorasan Substation to Qush Tepa Substation (52.76 km) and from Qush Tepa Substation to Darzaab Substation (32.48 km).',
+            'Optical Ground Wire (OPGW) for communication and protection purposes',
         ]
 
     ],
@@ -1961,13 +1952,13 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Qush Tepa and Darzab districts. One of the key components of this project is the construction of two new substations to ensure efficient power transformation and distribution, including a 20 MVA (2*10 MVA) substation in Qush Tepa District and a 32 MVA (2*16 MVA) substation in Darzab District. In addition, one 220 kV line bay will be established at Pul-e-Khorasan Substation to facilitate the integration of the new substations into the national grid.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Survey, design, procurement, construction, testing, and commissioning of two new substations in Qush Tepa and Darzab districts.',
+            '20 MVA (2*10 MVA) substation in Qush Tepa District',
+            '32 MVA (2*16 MVA) substation in Darzaab District',
+            'Establishment of one 220 kV systems (line Bay) in Pul-e-Khorasan Substation.',
         ]
 
     ],
@@ -1975,7 +1966,7 @@ $projects = [
 
     [
         'id' => 'O93',
-        'name' => 'Qush Tepa & Darzab DN',
+        'name' => 'Qush Tepa & Darzab Distribution Networks',
         'sector' => 'energy',
         'category' => 'distribution networks',
         'status' => 'Ongoing',
@@ -1992,13 +1983,12 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Qush Tepa and Darzab districts. One of the key components of this project is the development of medium- and low-voltage (20/0.4 Kv) distribution networks to provide electricity to households, public services, and businesses in both districts, including a total distribution capacity of 16 MVA in Qush Tepa District and 20 MVA in Darzab District.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Construction of medium- and low-voltage (20/0.4 kV) distribution networks to provide electricity to households, public services, and businesses in Qush Tepa and Darzaab Districts.',
+            'The total distribution capacity in Qush Tepa District is 16 MVA',
+            'The total distribution capacity in Darzaab District is 20 MVA'
         ]
 
     ],
@@ -2017,13 +2007,13 @@ $projects = [
         'thumbnail' => '',
 
         'images' => [
-            '',
-            '',
-            ''
+            'Survey, design, procurement, construction, testing, and commissioning of the 110 kV transmission line from Sar-e Pul substation to the new substation in Sangcharak',
+            'Extension of an overhead 110 kV single-circuit line from Sar e Pul Substation to the new substation in Sangcharak (60 Km).',
+            'Optical Ground Wire (OPGW) for communication and protection purposes'
         ],
 
         'description' =>
-        '',
+        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Sangcharak, Sozmaqala, and Gusfandi districts. One of the key components of this project is the construction of a 60 km, 110 kV transmission line from Sar-e Pul to Sangcharak Substation.',
 
         'scope' => [
             '',
@@ -2054,13 +2044,11 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Sangcharak, Sozmaqala, and Gusfandi districts. One of the key components of this project is the construction of a new 32 MVA (2*16 MVA) substation to ensure efficient power transformation and distribution. In addition, a 110 kV line bay will be established at Sar-e Pul Substation to facilitate the integration of the new substation into the national grid.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Survey, design, procurement, construction, testing, and commissioning of a 32 MVA (2*16 MVA) substation in Sangcharak District',
+            'Establishment of one 110 kV systems (line Bay) in Sar-e Pul Substation',
         ]
 
     ],
@@ -2068,7 +2056,7 @@ $projects = [
 
     [
         'id' => 'O96',
-        'name' => 'Sancharak, Sozmaqala & Gosfandi DN',
+        'name' => 'Sancharak, Sozmaqala & Gosfandi Distribution Networks',
         'sector' => 'energy',
         'category' => 'distribution networks',
         'status' => 'Ongoing',
@@ -2085,13 +2073,13 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Sangcharak, Sozmaqala, and Gusfandi districts. One of the key components of this project is the development of medium- and low-voltage (20/0.4 Kv) distribution networks to provide electricity to households, public services, and businesses in three districts, including a total distribution capacity of 3 MVA in Sangcharak District,18 MVA in Sozmaqala District and 5 MVA in Gusfandi District.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Construction of medium- and low-voltage (20/0.4 kV) distribution networks to provide electricity to households, public services, and businesses in Sangcharak, Sozmaqala and Gusfandi Districts.',
+            'The total distribution capacity in Sangcharak District is 3 MVA',
+            'The total distribution capacity in Sozmaqala District is 18 MVA',
+            'The total distribution capacity in Gusfandi District is 5 MVA',
         ]
     ],
 

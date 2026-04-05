@@ -14,26 +14,53 @@ $mission_vision = [
 ];
 
 $milestones = [
-    ['year' => '2007', 'text' => 'State Corps Established', 'description' => 'Establishment of the company in Afghanistan.'],
-    ['year' => '2010', 'text' => 'First Major Project', 'description' => 'Completion of
-    significant energy infrastructure project.'],
-    ['year' => '2014', 'text' => 'International Expansion', 'description' => 'Established headquarters in Türkiye and USA.'],
-    ['year' => '2021', 'text' => 'Project Milestone', 'description' => 'Completed over 60 projects valued more than 400 million in USD.'],
-    ['year' => '2024', 'text' => 'MOEW &  DABS Recognition Award ', 'description' => 'Awarded for having successful Projects.'],
-    ['year' => '2025', 'text' => 'UZBEK-AFGHAN Projects', 'description' => 'MEW TL, SS & Distribution.'],
+    [
+        'year' => '2007', 
+        'text' => 'State Corps Established', 
+        'description' => 'Establishment of the company in Afghanistan.'],
+    [
+        'year' => '2010', 
+        'text' => 'First Major Project', 
+        'description' => 'Completion of significant energy infrastructure project.'],
+    [
+        'year' => '2014', 
+        'text' => 'International Expansion', 
+        'description' => 'Established headquarters in Türkiye and USA.'],
+    [
+        'year' => '2021', 
+        'text' => 'Project Milestone', 
+        'description' => 'Completed over 60 projects valued more than 400 million in USD.'],
+    [
+        'year' => '2024', 
+        'text' => 'MOEW &  DABS Recognition Award ', 
+        'description' => 'Awarded for having successful Projects.'],
+    [
+        'year' => '2025', 
+        'text' => 'UZBEK-AFGHAN Projects', 
+        'description' => 'MEW TL, SS & Distribution.'],
 ];
 
 $clientData = [
-    ['logo' => 'assets/images/clients/client_ABC_resized.png'],
-    ['logo' => 'assets/images/clients/client_ADB_resized.png'],
-    ['logo' => 'assets/images/clients/client_dabs_resized.png'],
-    ['logo' => 'assets/images/clients/client_fao_resized.png'],
-    ['logo' => 'assets/images/clients/client_metq_resized.png'],
-    ['logo' => 'assets/images/clients/client_mew_resized.png'],
-    ['logo' => 'assets/images/clients/client_unops_resized.png'],
-    ['logo' => 'assets/images/clients/client_usace_resized.png'],
-    ['logo' => 'assets/images/clients/client_worldbank_resized.png'],
-    ['logo' => 'assets/images/clients/client_wfp.png']
+    [
+        'logo' => 'assets/images/clients/client_ABC_resized.png'],
+    [
+        'logo' => 'assets/images/clients/client_ADB_resized.png'],
+    [
+        'logo' => 'assets/images/clients/client_dabs_resized.png'],
+    [
+        'logo' => 'assets/images/clients/client_fao_resized.png'],
+    [
+        'logo' => 'assets/images/clients/client_metq_resized.png'],
+    [
+        'logo' => 'assets/images/clients/client_mew_resized.png'],
+    [
+        'logo' => 'assets/images/clients/client_unops_resized.png'],
+    [
+        'logo' => 'assets/images/clients/client_usace_resized.png'],
+    [
+        'logo' => 'assets/images/clients/client_worldbank_resized.png'],
+    [
+        'logo' => 'assets/images/clients/client_wfp.png']
 ];
 
 $sisterCompanies = [

@@ -60,9 +60,9 @@ $international_offices = [
         'business-hours' => 'Monday to Friday: 9:00 - 17:00',
     ],
     [
-        'title' => 'State Corps Ubekistan',
+        'title' => 'State Corps Uzbekistan',
         'phone' => '+971 4 123 4567',
-        'email' => 'ubekistan@statecorps.com',
+        'email' => 'uzbekistan@statecorps.com',
         'address' => 'abc Street, Tashkent, Uzbekistan',
         'business-hours' => 'Monday to Friday: 9:00 - 17:00',
     ],
