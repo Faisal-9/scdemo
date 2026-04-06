@@ -72,16 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
   ========================== */
 
   if (typeof Swiper !== "undefined" && document.querySelector(".heroSwiper")) {
-    new Swiper(".heroSwiper", {
+    const slideDelay = 2000;
+
+    const heroSwiper = new Swiper(".heroSwiper", {
       loop: true,
       speed: 1000,
       autoplay: {
-        delay: 3000,
+        delay: slideDelay,
         disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
       },
       navigation: {
         nextEl: ".swiper-button-next",
@@ -89,6 +87,42 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       effect: "slide",
     });
+
+    const indicators = document.querySelectorAll(".hero-indicator-item");
+    const totalSlides = indicators.length;
+
+    // Set CSS variable for animation duration
+    indicators.forEach((ind) => {
+      ind.style.setProperty("--slide-delay", slideDelay + "ms");
+    });
+
+    function setActiveIndicator(realIndex) {
+      const index = realIndex % totalSlides;
+      indicators.forEach((ind, i) => {
+        ind.classList.remove("active");
+        // Reset progress animation
+        const bar = ind.querySelector(".hero-indicator-progress");
+        bar.style.animation = "none";
+        bar.offsetHeight; // reflow
+        bar.style.animation = "";
+      });
+      indicators[index].classList.add("active");
+    }
+
+    // Click indicator to go to slide
+    indicators.forEach((ind, i) => {
+      ind.addEventListener("click", () => {
+        heroSwiper.slideToLoop(i);
+      });
+    });
+
+    // Sync on slide change
+    heroSwiper.on("slideChange", () => {
+      setActiveIndicator(heroSwiper.realIndex);
+    });
+
+    // Init
+    setActiveIndicator(0);
   }
 
   /* ==========================

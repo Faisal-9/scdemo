@@ -47,8 +47,8 @@ $sectors = [
             ],
             [
                 "id" => "hydropower",
-                "title" => "Hydro Power Dams",
-                "category" => "dams",
+                "title" => "Hydro Power",
+                "category" => "renewable energy",
                 "content" => "Construction and development of hydropower dams and renewable energy facilities.",
                 "image" => ["assets/images/2.jpg"],
                 "stats" => [
@@ -62,6 +62,19 @@ $sectors = [
                 "id" => "renewableenergy",
                 "title" => "Renewable Energy",
                 "category" => "transmission line",
+                "content" => "Development of renewable energy facilities.",
+                "image" => ["assets/images/2.jpg"],
+                "stats" => [
+                    ["value" => "5+",    "label" => "Projects"],
+                    ["value" => "50MW+", "label" => "Capacity"],
+                    ["value" => "3+",    "label" => "Provinces"],
+                    ["value" => "$80M+", "label" => "Total Value"],
+                ]
+            ],
+            [
+                "id" => "windenergy",
+                "title" => "Wind Energy",
+                "category" => "green energy",
                 "content" => "Development of renewable energy facilities.",
                 "image" => ["assets/images/2.jpg"],
                 "stats" => [
@@ -252,7 +265,21 @@ $sectors = [
 
             [
                 "id" => "commercial",
+                "title" => "Urban Development",
+                "category" => "multi-service",
+                "content" => "Development of office buildings, malls and business complexes.",
+                "image" => ["assets/images/2.jpg"],
+                "stats" => [
+                    ["value" => "15+",   "label" => "Projects"],
+                    ["value" => "10+",   "label" => "Building Types"],
+                    ["value" => "3+",    "label" => "Countries"],
+                    ["value" => "$100M+", "label" => "Total Value"],
+                ]
+            ],
+            [
+                "id" => "commercial",
                 "title" => "Commercial Buildings",
+                "category" => "transmission line",
                 "content" => "Development of office buildings, malls and business complexes.",
                 "image" => ["assets/images/2.jpg"],
                 "stats" => [
