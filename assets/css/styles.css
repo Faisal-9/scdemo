@@ -1673,6 +1673,18 @@
 }
 
 /* ================= PROJECTS PAGE ================= */
+.filters-box {
+  position: sticky;
+  top: 60px; 
+  z-index: 100;
+  background: #ffffffe7;
+  padding: 16px 0 8px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
 
 .project-page-card {
   position: relative;

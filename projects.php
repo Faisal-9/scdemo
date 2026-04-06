@@ -11,67 +11,70 @@ $urlSector   = isset($_GET['sector'])   ? strtolower($_GET['sector'])   : 'all';
 <body>
     <?php include("includes/header.php"); ?>
 
-    <section class="projects-page py-5">
+    <section class="projects-page py-3">
         <div class="container align-items-center">
 
-            <!-- FILTERS -->
-            <div class="row mb-4 align-items-center">
-                <div class="col-lg-6">
-                    <div class="btn-group project-filters flex-wrap gap-2">
+            <div class="filters-box">
 
-                        <button class="btn btn-outline-dark active" data-sector="all">
-                            All
-                        </button>
+                <!-- FILTERS -->
+                <div class="row mb-3 align-items-center">
+                    <div class="col-lg-8">
+                        <div class="btn-group project-filters flex-wrap gap-2">
 
-                        <?php
-                        $sectors = array_unique(array_map('strtolower', array_column($projects, 'sector')));
-                        foreach ($sectors as $sector):
-                        ?>
-                            <button class="btn btn-outline-dark" data-sector="<?= $sector ?>">
-                                <?= ucfirst($sector) ?>
+                            <button class="btn btn-outline-dark active" data-sector="all">
+                                All
                             </button>
-                        <?php endforeach; ?>
 
+                            <?php
+                            $sectors = array_unique(array_map('strtolower', array_column($projects, 'sector')));
+                            foreach ($sectors as $sector):
+                            ?>
+                                <button class="btn btn-outline-dark" data-sector="<?= $sector ?>">
+                                    <?= ucfirst($sector) ?>
+                                </button>
+                            <?php endforeach; ?>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <select class="form-select" id="statusFilter">
+                            <option value="all">All Status</option>
+                            <?php
+                            $statuses = array_unique(array_map('strtolower', array_column($projects, 'status')));
+                            foreach ($statuses as $status):
+                            ?>
+                                <option value="<?= $status ?>"><?= ucfirst($status) ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <select class="form-select" id="sortProjects">
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                        </select>
                     </div>
                 </div>
 
-                <div class="col-lg-3">
-                    <select class="form-select" id="statusFilter">
-                        <option value="all">All Status</option>
+                <!-- Category buttons - directly below -->
+                <div class="col-12 mb-1 mx-auto">
+                    <div class="d-flex flex-wrap gap-2 project-category-filters justify-content-center">
+                        <button class="btn btn-sm btn-outline-secondary active" data-category="all">All Categories</button>
                         <?php
-                        $statuses = array_unique(array_map('strtolower', array_column($projects, 'status')));
-                        foreach ($statuses as $status):
+                        $categories = array_unique(array_column($projects, 'category'));
+                        foreach ($categories as $category):
                         ?>
-                            <option value="<?= $status ?>"><?= ucfirst($status) ?></option>
+                            <button class="btn btn-sm btn-outline-secondary" data-category="<?= htmlspecialchars($category) ?>">
+                                <?= htmlspecialchars($category) ?>
+                            </button>
                         <?php endforeach; ?>
-                    </select>
-                </div>
-
-                <div class="col-lg-3">
-                    <select class="form-select" id="sortProjects">
-                        <option value="newest">Newest</option>
-                        <option value="oldest">Oldest</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Category buttons - directly below -->
-            <div class="col-12 mb-4 mx-auto">
-                <div class="d-flex flex-wrap gap-2 project-category-filters justify-content-center">
-                    <button class="btn btn-sm btn-outline-secondary active" data-category="all">All Categories</button>
-                    <?php
-                    $categories = array_unique(array_column($projects, 'category'));
-                    foreach ($categories as $category):
-                    ?>
-                        <button class="btn btn-sm btn-outline-secondary" data-category="<?= htmlspecialchars($category) ?>">
-                            <?= htmlspecialchars($category) ?>
-                        </button>
-                    <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
 
             <!-- PROJECTS GRID -->
-            <div class="row g-4" id="projectsGrid">
+            <div class="row g-4 my-1" id="projectsGrid">
                 <?php foreach ($projects as $project): ?>
                     <div class="col-lg-4 col-md-6 project-item"
                         data-sector="<?= strtolower($project['sector']) ?>"
