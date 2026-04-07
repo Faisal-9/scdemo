@@ -70,12 +70,29 @@ $sections = $sections ?? [];
 
                                 </div>
 
-                                <!-- RIGHT: image -->
+                                <!-- RIGHT: image grid -->
                                 <div class="col-lg-6">
-                                    <?php if (!empty($section['image'][0])): ?>
-                                        <img src="<?= $section['image'][0] ?>"
-                                            alt="<?= $section['title'] ?>"
-                                            class="img-fluid rounded-3 w-100 service-block-img">
+                                    <?php if (!empty($section['image'])): ?>
+                                        <div class="sector-img-grid">
+
+                                            <!-- Left column -->
+                                            <div class="sector-img-col">
+                                                <div class="sector-img-left">
+                                                    <img src="<?= $section['image'][0] ?>" alt="<?= $section['title'] ?>" class="sector-img">
+                                                </div>
+                                            </div>
+
+                                            <!-- Right column -->
+                                            <div class="sector-img-col">
+                                                <div class="sector-img-top-right">
+                                                    <img src="<?= $section['image'][2] ?>" alt="<?= $section['title'] ?>" class="sector-img">
+                                                </div>
+                                                <div class="sector-img-bottom-right">
+                                                    <img src="<?= $section['image'][3] ?>" alt="<?= $section['title'] ?>" class="sector-img">
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     <?php endif; ?>
                                 </div>
 
