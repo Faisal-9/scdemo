@@ -69,10 +69,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ==========================
      Hero Slider
-  ========================== */
+========================== */
 
   if (typeof Swiper !== "undefined" && document.querySelector(".heroSwiper")) {
-    const slideDelay = 2000;
+    const slideDelay = 3000; //slide time
 
     const heroSwiper = new Swiper(".heroSwiper", {
       loop: true,
@@ -81,31 +81,32 @@ document.addEventListener("DOMContentLoaded", function () {
         delay: slideDelay,
         disableOnInteraction: false,
       },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
       effect: "slide",
     });
 
     const indicators = document.querySelectorAll(".hero-indicator-item");
+    const indicatorsContainer = document.querySelector(".hero-indicators");
     const totalSlides = indicators.length;
 
-    // Set CSS variable for animation duration
+    /* Set CSS variable for animation duration */
     indicators.forEach((ind) => {
       ind.style.setProperty("--slide-delay", slideDelay + "ms");
     });
 
     function setActiveIndicator(realIndex) {
       const index = realIndex % totalSlides;
+
       indicators.forEach((ind, i) => {
         ind.classList.remove("active");
-        // Reset progress animation
+
         const bar = ind.querySelector(".hero-indicator-progress");
+
+        // Reset animation
         bar.style.animation = "none";
-        bar.offsetHeight; // reflow
+        bar.offsetHeight; // force reflow
         bar.style.animation = "";
       });
+
       indicators[index].classList.add("active");
     }
 
@@ -116,10 +117,33 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Sync on slide change
+    // Sync indicators with slides
     heroSwiper.on("slideChange", () => {
       setActiveIndicator(heroSwiper.realIndex);
     });
+
+    // Pause autoplay + progress animation on hover
+    if (indicatorsContainer) {
+      indicatorsContainer.addEventListener("mouseenter", () => {
+        heroSwiper.autoplay.stop();
+
+        // Pause progress bars
+        indicators.forEach((ind) => {
+          const bar = ind.querySelector(".hero-indicator-progress");
+          bar.style.animationPlayState = "paused";
+        });
+      });
+
+      indicatorsContainer.addEventListener("mouseleave", () => {
+        heroSwiper.autoplay.start();
+
+        // Resume progress bars
+        indicators.forEach((ind) => {
+          const bar = ind.querySelector(".hero-indicator-progress");
+          bar.style.animationPlayState = "running";
+        });
+      });
+    }
 
     // Init
     setActiveIndicator(0);

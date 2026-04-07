@@ -151,6 +151,7 @@
   width: 0%;
   background: #fff;
   transition: none;
+  animation-play-state: running; /* allowing JS to pause/resume */
 }
 
 /* Active progress animation */
