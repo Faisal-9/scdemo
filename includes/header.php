@@ -47,13 +47,13 @@ include_once("includes/data/sectorsdata.php");
                             </a>
                             <div class="dropdown-menu">
                                 <ul class="dropdown-list">
-                                    <li><a href="about.php#general-info"   class="dropdown-link">General Information</a></li>
+                                    <li><a href="about.php#general-info" class="dropdown-link">General Information</a></li>
                                     <li><a href="about.php#mission-vision" class="dropdown-link">Mission - Vision</a></li>
-                                    <li><a href="about.php#milestones"     class="dropdown-link">Milestones</a></li>
-                                    <li><a href="about.php#clients"        class="dropdown-link">Clients</a></li>
-                                    <li><a href="about.php#sister"         class="dropdown-link">Sister Companies</a></li>
-                                    <li><a href="about.php#awards"         class="dropdown-link">Awards &amp; Recognitions</a></li>
-                                    <li><a href="about.php#certificates"   class="dropdown-link">Certificates</a></li>
+                                    <li><a href="about.php#milestones" class="dropdown-link">Milestones</a></li>
+                                    <li><a href="about.php#clients" class="dropdown-link">Clients</a></li>
+                                    <li><a href="about.php#sister" class="dropdown-link">Sister Companies</a></li>
+                                    <li><a href="about.php#awards" class="dropdown-link">Awards &amp; Recognitions</a></li>
+                                    <li><a href="about.php#certificates" class="dropdown-link">Certificates</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -77,7 +77,7 @@ include_once("includes/data/sectorsdata.php");
                                                 <?php foreach ($service['sections'] as $section): ?>
                                                     <li>
                                                         <a href="services.php?tab=<?= $serviceKey ?>#<?= $serviceKey ?>-<?= $section['id'] ?>"
-                                                           class="mega-link">
+                                                            class="mega-link">
                                                             <?= $section['title'] ?>
                                                         </a>
                                                     </li>
@@ -108,7 +108,7 @@ include_once("includes/data/sectorsdata.php");
                                                 <?php foreach ($sector['sections'] as $section): ?>
                                                     <li>
                                                         <a href="sectors.php?tab=<?= $sectorKey ?>#<?= $sectorKey ?>-<?= $section['id'] ?>"
-                                                           class="mega-link">
+                                                            class="mega-link">
                                                             <?= $section['title'] ?>
                                                         </a>
                                                     </li>
@@ -135,7 +135,7 @@ include_once("includes/data/sectorsdata.php");
                             </a>
                             <div class="dropdown-menu">
                                 <ul class="dropdown-list">
-                                    <li><a href="news.php"   class="dropdown-link <?= ($current_page == 'news.php')   ? 'active' : '' ?>">News</a></li>
+                                    <li><a href="news.php" class="dropdown-link <?= ($current_page == 'news.php')   ? 'active' : '' ?>">News</a></li>
                                     <li><a href="events.php" class="dropdown-link <?= ($current_page == 'events.php') ? 'active' : '' ?>">Events &amp; Exhibitions</a></li>
                                     <li><a href="gallery.php" class="dropdown-link <?= ($current_page == 'gallery.php') ? 'active' : '' ?>">Gallery</a></li>
                                 </ul>

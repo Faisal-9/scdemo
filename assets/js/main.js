@@ -584,4 +584,87 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   initProjectSwiper();
+
+  /* =============================
+     Media page tabs
+  ============================= */
+  const tabs = document.querySelectorAll(".media-menu li");
+  const tabContents = document.querySelectorAll(".media-tab-content");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+      tabs.forEach((t) => t.classList.remove("active"));
+      tabContents.forEach((c) => c.classList.remove("active"));
+
+      this.classList.add("active");
+      const target = document.getElementById("tab-" + this.dataset.tab);
+      if (target) target.classList.add("active");
+    });
+  });
+
+  /* =============================
+     SIDEBAR CLICK TO FEATURED
+  ============================= */
+  const sidebarItems = document.querySelectorAll(".media-sidebar-item");
+
+  sidebarItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const parentTab = this.closest(".media-tab-content");
+      const featured = parentTab.querySelector(".media-featured");
+
+      // Update featured content
+      const img = featured.querySelector(".media-featured-img");
+      const title = featured.querySelector(".media-featured-title");
+      const desc = featured.querySelector(".media-featured-desc");
+      const date = featured.querySelector(".media-featured-date");
+      const tagsContainer = featured.querySelector(".media-tags");
+
+      // Update values
+      img.src = this.querySelector("img")?.src || this.dataset.image;
+      img.alt = this.querySelector(".media-sidebar-title").innerText;
+      title.innerText = this.querySelector(".media-sidebar-title").innerText;
+      date.innerText = this.querySelector(".media-sidebar-date").innerText;
+      desc.innerText = this.dataset.description || this.dataset.desc || "";
+
+      // Update tags
+      if (tagsContainer) {
+        tagsContainer.innerHTML = "";
+        const tags = JSON.parse(this.dataset.tags || "[]");
+        tags.forEach((tag) => {
+          const span = document.createElement("span");
+          span.className = "media-tag";
+          span.innerText = tag;
+          tagsContainer.appendChild(span);
+        });
+      }
+    });
+  });
+
+  /* =============================
+   SIDEBAR PAGINATION
+============================= */
+  (function () {
+    let currentPage = 0;
+    const sidebarList = document.getElementById("mediaSidebarList");
+    if (!sidebarList) return;
+
+    const itemsPerPage = parseInt(sidebarList.dataset.itemsPerPage) || 5;
+    const sidebarItems = sidebarList.querySelectorAll(".media-sidebar-item");
+    const totalPages = Math.ceil(sidebarItems.length / itemsPerPage);
+
+    window.mediaPage = function (dir) {
+      currentPage += dir;
+      if (currentPage < 0) currentPage = 0;
+      if (currentPage >= totalPages) currentPage = totalPages - 1;
+
+      sidebarItems.forEach((el, i) => {
+        const page = Math.floor(i / itemsPerPage);
+        el.classList.toggle("d-none", page !== currentPage);
+      });
+
+      document.getElementById("mediaPrev").disabled = currentPage === 0;
+      document.getElementById("mediaNext").disabled =
+        currentPage >= totalPages - 1;
+    };
+  })();
 });
