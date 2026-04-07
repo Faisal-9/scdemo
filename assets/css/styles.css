@@ -1712,9 +1712,8 @@
 }
 
 .project-title {
-  font-size: large;
+  font-size: medium;
   font-weight: 500;
-  margin: 6px 0;
 }
 
 .project-tags {

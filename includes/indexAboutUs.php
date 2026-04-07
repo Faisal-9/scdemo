@@ -30,12 +30,13 @@ $major_projects = [
 
 /* ================= HISTORY ================= */
 $history = [
-    ['year' => '2006', 'title' => 'Company Founded'],
-    ['year' => '2011', 'title' => 'First International Project'],
-    ['year' => '2016', 'title' => 'Expanded to Global Markets'],
-    ['year' => '2018', 'title' => 'Smart Infrastructure Division'],
-    ['year' => '2020', 'title' => 'Renewable Energy Projects'],
-    ['year' => '2023', 'title' => 'Mega Bridge Construction'],
+    ['year' => '2007', 'title' => 'State Corps Establishment'],
+    ['year' => '2010', 'title' => 'First Major Project'],
+    ['year' => '2012', 'title' => 'Awarded by USACE'],
+    ['year' => '2014', 'title' => 'International Expansion to Middle East, Turkey and USA'],
+    ['year' => '2021', 'title' => 'Successfully completed 60 projects valued at $400M+'],
+    ['year' => '2024', 'title' => 'Awarded by MoWE & DABS'],
+    ['year' => '2025', 'title' => 'UZBEK-AFGHAN 5 projects'],
 ];
 
 /* ================= TAB CONTENT ================= */
@@ -65,7 +66,7 @@ $about_tabs = [
             </li>
             <li class="nav-item">
                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#history">
-                    Our History
+                    History & Milestones
                 </button>
             </li>
             <li class="nav-item">
@@ -107,7 +108,7 @@ $about_tabs = [
             <div class="tab-pane fade" id="history">
                 <div class="row g-4">
                     <?php foreach ($history as $item): ?>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="history-box p-4">
                                 <h5 class="year"><?= $item['year'] ?></h5>
                                 <p><?= $item['title'] ?></p>
