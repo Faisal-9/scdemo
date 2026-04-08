@@ -203,13 +203,17 @@
   }
 }
 
-/* ================= INDEX STATS SECTION ================= */
+/* ================= INDEX STATS & ABOUT US SECTION ================= */
 .index-stats-section {
-  padding: 120px 0;
+  padding: 60px 0;
   background-size: cover;
-  background-position: bottom center;
+  background-position: left center;
   background-attachment: fixed;
   color: #fff;
+}
+
+.index-about-us-header h2 {
+  color: #ffffff;
 }
 
 .stat-item {
@@ -235,42 +239,91 @@
   opacity: 0.9;
 }
 
-.stats-info-box {
-  background: #ffffff38;
-  padding: 50px;
-  border-radius: 18px;
+/* About Us tabs inside stats section */
+.index-stats-section .index-about-us {
+  padding: 0;
 }
 
-.stats-info-box h3 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 20px;
+.index-stats-section .index-about-us .nav-tabs {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
-.stats-info-box p {
-  line-height: 1.8;
-  opacity: 0.95;
+.index-stats-section .index-about-us .nav-tabs .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  border: none;
+  margin-right: 25px;
+  background: transparent;
+  padding-bottom: 12px;
 }
 
-.stats-btn {
-  display: inline-block;
+.index-stats-section .index-about-us .nav-tabs .nav-link.active {
+  color: #ff5a1f;
+  border-bottom: 3px solid #fff;
+  background: transparent;
+}
+
+.index-stats-section .index-about-us .tab-content {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
-  padding: 12px 30px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 40px;
-  color: #fff;
-  text-decoration: none;
-  transition: 0.3s;
 }
 
-.stats-btn:hover {
-  background: #fff;
-  color: #123a8f;
+.index-stats-section .index-about-us .history-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.index-stats-section .index-about-us .history-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.index-stats-section .index-about-us .history-box p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.index-stats-section .index-about-us .year {
+  background: rgba(255, 90, 31, 0.3);
+  color: #ff5a1f;
+  padding: 8px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.index-stats-section #history .history-box {
+  height: 220px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.index-stats-section .text-orange {
+  color: #ff5a1f;
 }
 
 @media (max-width: 768px) {
   .index-stats-section {
     background-attachment: scroll;
+  }
+
+  .index-stats-section .index-about-us .tab-content {
+    height: auto;
+  }
+
+  .index-stats-section #mission,
+  .index-stats-section #vision {
+    height: auto;
   }
 }
 
@@ -281,22 +334,8 @@
   background: #f6f6f6;
 }
 
-.section-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
 .section-header h2 {
-  font-size: 32px;
-  font-weight: 700;
   color: #0b1d4f;
-}
-
-.section-header p {
-  font-size: 16px;
-  color: #555;
-  max-width: 600px;
-  margin: 10px auto 0;
 }
 
 .service-card {
@@ -387,66 +426,39 @@
   color: white;
 }
 
-/* ================= INDEX ABOUT US ================= */
+/* ================= MAJOR PROJECTS ================= */
 
-.index-about-us .tab-content {
+.major-projects-section {
+  background: #fff;
+}
+
+.major-projects-container h2 {
+  color: #0b1d4f;
+}
+
+.major-project-card {
   position: relative;
-  height: 500px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.index-about-us .nav-tabs .nav-link {
-  color: #0b2a5b;
-  font-weight: 600;
-  border: none;
-  margin-right: 25px;
-}
-
-.index-about-us .nav-tabs .nav-link.active {
-  color: #ff5a1f;
-  border-bottom: 3px solid #0b2a5b;
-}
-
-.text-orange {
-  color: #ff5a1f;
-}
-
-.btn-orange {
-  background: #ff5a1f;
-  color: white;
-  padding: 10px 25px;
-}
-
-.index-about-us .history-box {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  border-radius: 6px;
   border: 1px solid #f1c8b7;
-  background: white;
+  height: 220px;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1rem;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
-.index-about-us .history-box:hover {
+.major-project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-.project-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 6px;
-  border: none;
-  height: 220px;
-  display: flex;
-  align-items: flex-end;
-  margin-bottom: 1rem;
-}
-
-.project-card .project-img {
+.major-project-card .major-project-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -454,11 +466,11 @@
   transition: transform 0.4s;
 }
 
-.project-card:hover .project-img {
+.major-project-card:hover .major-project-img {
   transform: scale(1.05);
 }
 
-.project-title {
+.major-project-title {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -468,44 +480,18 @@
   font-weight: 600;
   padding: 12px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-}
-
-#history .history-box {
-  height: 220px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.year {
-  background: #ffe3d6;
-  padding: 8px;
-  color: #ff5a1f;
-  display: inline-block;
-  margin-bottom: 8px;
+  z-index: 1;
 }
 
 @media (max-width: 992px) {
-  .project-card {
-    flex: 1 1 calc(50% - 1rem);
+  .major-project-card {
     height: 200px;
   }
 }
 
 @media (max-width: 768px) {
-  .project-card {
-    flex: 1 1 100%;
+  .major-project-card {
     height: 180px;
-    margin-bottom: 1rem;
-  }
-  .index-about-us .tab-content {
-    height: auto;
-  }
-  #mission,
-  #vision {
-    height: auto;
   }
 }
 
@@ -621,6 +607,10 @@
   margin: auto;
   overflow: hidden;
   border-radius: 5px;
+}
+
+.clients-container h2 {
+  color: #0b1d4f;
 }
 
 .clients-slider {

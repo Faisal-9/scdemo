@@ -7,41 +7,51 @@ $heroSlides = [
         "id" => "energy",
         "subtitle" => "Our Energy Expertise",
         "title" => "Power & Energy",
-        "image" => "assets/images/hero-image4.jpg",
+        "image" => "assets/images/slider_imgs/hero_energy1.jpg",
         "button" => "Read More",
         "link" => "#",
-        "indicator" => "Power & Energy"
+        "indicator" => "Our Energy Expertise"
     ],
 
     [
         "id" => "structure",
-        "subtitle" => "Structure Solutions",
-        "title" => "Construction & <br> Solutions",
-        "image" => "assets/images/hero-image2.jpg",
+        "subtitle" => "Structure & Building",
+        "title" => "Physical Structure<br>& Real Estate",
+        "image" => "assets/images/slider_imgs/hero_structure1.png",
         "button" => "Read More",
         "link" => "#",
-        "indicator" => "Engineering Industries"
+        "indicator" => "Structure & Building"
     ],
 
     [
-        "id" => "design",
-        "subtitle" => "abc",
-        "title" => "Design",
+        "id" => "transport",
+        "subtitle" => "Transport Engineering & Development",
+        "title" => "Transportation<br>Infrastructure",
         "image" => "assets/images/slider_03.jpg",
         "button" => "Read More",
         "link" => "#",
-        "indicator" => "Infrastructure Future"
+        "indicator" => "Transport Engineering & Development"
+    ],
+
+    [
+        "id" => "water",
+        "subtitle" => "Sustainable Water Management",
+        "title" => "Water Resources<br>& Dams Infrastructure",
+        "image" => "assets/images/slider_03.jpg",
+        "button" => "Read More",
+        "link" => "#",
+        "indicator" => "Sustainable Water Management"
     ],
 
     [
         "id" => "mining",
-        "subtitle" => "abc",
+        "subtitle" => "Mining & Mineral Operations",
         "title" => "Mining",
         "image" => "assets/images/slider_03.jpg",
         "button" => "Read More",
         "link" => "#",
-        "indicator" => "Infrastructure Future"
-    ]
+        "indicator" => "Mining & Mineral Operations"
+    ],
 
 ];
 
