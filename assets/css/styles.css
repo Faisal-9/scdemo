@@ -673,7 +673,7 @@
   }
 }
 
-/* ================= ABOUT ================= */
+/* ================= ABOUT us ================= */
 
 .sidebarr {
   position: relative;
@@ -816,10 +816,6 @@
 .mv-horizontal-container {
   display: flex;
   gap: 10px;
-}
-
-.mv-mission {
-  background-image: url("../images/about/mission.jpg");
 }
 
 .mv-panel {

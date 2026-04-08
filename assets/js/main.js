@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 ========================== */
 
   if (typeof Swiper !== "undefined" && document.querySelector(".heroSwiper")) {
-    const slideDelay = 3000; //slide time
+    const slideDelay = 10000; //slide time
 
     const heroSwiper = new Swiper(".heroSwiper", {
       loop: true,
