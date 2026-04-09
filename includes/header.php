@@ -42,20 +42,8 @@ include_once("includes/data/sectorsdata.php");
                         <!-- About Us -->
                         <li class="nav-item dropdown <?= ($current_page == 'about.php') ? 'active' : '' ?>">
                             <a href="about.php" class="nav-link has-dropdown">
-                                <span class="nav-text">About Us</span>
-                                <span class="dropdown-arrow">▼</span>
+                                <span class="nav-text">About</span>
                             </a>
-                            <div class="dropdown-menu">
-                                <ul class="dropdown-list">
-                                    <li><a href="about.php#general-info" class="dropdown-link">General Information</a></li>
-                                    <li><a href="about.php#mission-vision" class="dropdown-link">Mission - Vision</a></li>
-                                    <li><a href="about.php#milestones" class="dropdown-link">Milestones</a></li>
-                                    <li><a href="about.php#clients" class="dropdown-link">Clients</a></li>
-                                    <li><a href="about.php#sister" class="dropdown-link">Sister Companies</a></li>
-                                    <li><a href="about.php#awards" class="dropdown-link">Awards &amp; Recognitions</a></li>
-                                    <li><a href="about.php#certificates" class="dropdown-link">Certificates</a></li>
-                                </ul>
-                            </div>
                         </li>
 
                         <!-- Services -->
