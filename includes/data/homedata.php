@@ -56,14 +56,42 @@ $heroSlides = [
 ];
 
 
-/* ================= STATS ================= */
+/* ================= WHY STATE CORPS ================= */
 $statsBg = "assets/images/about.jpg";
 
 $stats = [
-    ['number' => 20, 'suffix' => 'year', 'label' => 'Years of Excellence'],
+    ['number' => 19, 'suffix' => '+', 'label' => 'Years of Excellence'],
     ['number' => 100, 'suffix' => '+', 'label' => 'Completed Projects'],
-    ['number' => 600, 'suffix' => 'M+', 'label' => 'Total Project Value'],
+    ['number' => 600, 'suffix' => '$M+', 'label' => 'Total Project Value'],
     ['number' => 4, 'suffix' => '+', 'label' => 'Active Global Offices'],
+];
+/*  HISTORY  */
+$history = [
+    ['year' => '2007', 'title' => 'State Corps Establishment'],
+    ['year' => '2010', 'title' => 'First Major Project'],
+    ['year' => '2012', 'title' => 'Awarded by USACE'],
+    ['year' => '2014', 'title' => 'International Expansion to Middle East, Turkey and USA'],
+    ['year' => '2021', 'title' => 'Successfully completed 60 projects valued at $400M+'],
+    ['year' => '2024', 'title' => 'Awarded by MoWE & DABS'],
+    ['year' => '2025', 'title' => 'UZBEK-AFGHAN 5 projects'],
+];
+/* INNER TABS  */
+$whySC = [
+    '01' => [
+        'title' => 'Delivering Experience',
+        'text' => 'To be the leading and most trusted engineering and construction partner in the region, recognized for our technical expertise and transformative impact on infrastructure and energy development.',
+        'image' => 'assets/images/12.jpg'
+    ],
+    '02' => [
+        'title' => 'Regional Presence',
+        'text' => 'To be the leading and most trusted engineering and construction partner in the region, recognized for our technical expertise and transformative impact on infrastructure and energy development.',
+        'image' => 'assets/images/12.jpg'
+    ],
+    '03' => [
+        'title' => 'Technical Capabilities',
+        'text' => 'To engineer a sustainable and empowered future for Afghanistan through reliable energy and robust infrastructure, delivering excellence, innovation, and value in every project we undertake.',
+        'image' => 'assets/images/11.jpg'
+    ]
 ];
 
 
@@ -114,7 +142,7 @@ $indexservices = [
 
 
 /* ================= ABOUT US ================= */
-/*  MAJOR PROJECTS  */
+/*  FEATURED PROJECTS  */
 $major_projects = [
     [
         'title' => 'ABC Infrastructure Project',
@@ -126,43 +154,12 @@ $major_projects = [
     ],
     [
         'title' => 'International Airport Development',
-        'image' => 'assets/images/5.jpg'
+        'image' => 'assets/images/4.jpg'
     ],
     [
-        'title' => 'Smart City Development',
-        'image' => 'assets/images/6.jpg'
+        'title' => 'International Airport Development',
+        'image' => 'assets/images/4.jpg'
     ],
-    [
-        'title' => 'Hydropower Energy Project',
-        'image' => 'assets/images/7.jpg'
-    ],
-    [
-        'title' => 'Mega Bridge Construction',
-        'image' => 'assets/images/8.jpg'
-    ],
-];
-/*  HISTORY  */
-$history = [
-    ['year' => '2007', 'title' => 'State Corps Establishment'],
-    ['year' => '2010', 'title' => 'First Major Project'],
-    ['year' => '2012', 'title' => 'Awarded by USACE'],
-    ['year' => '2014', 'title' => 'International Expansion to Middle East, Turkey and USA'],
-    ['year' => '2021', 'title' => 'Successfully completed 60 projects valued at $400M+'],
-    ['year' => '2024', 'title' => 'Awarded by MoWE & DABS'],
-    ['year' => '2025', 'title' => 'UZBEK-AFGHAN 5 projects'],
-];
-/* Mission - Vision  */
-$about_tabs = [
-    'mission' => [
-        'title' => 'Our Mission',
-        'text' => 'To be the leading and most trusted engineering and construction partner in the region, recognized for our technical expertise and transformative impact on infrastructure and energy development.',
-        'image' => 'assets/images/12.jpg'
-    ],
-    'vision' => [
-        'title' => 'Our Vision',
-        'text' => 'To engineer a sustainable and empowered future for Afghanistan through reliable energy and robust infrastructure, delivering excellence, innovation, and value in every project we undertake.',
-        'image' => 'assets/images/11.jpg'
-    ]
 ];
 
 

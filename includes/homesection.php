@@ -18,7 +18,7 @@ include("includes/data/homedata.php");
                             <h3><?= $slide['subtitle'] ?></h3>
                             <h1><?= $slide['title'] ?></h1>
                             <a href="<?= $slide['link'] ?>" class="hero-btn">
-                                <?= $slide['button'] ?>
+                                Explore Projects
                             </a>
                         </div>
                     </div>
@@ -59,7 +59,7 @@ include("includes/data/homedata.php");
 
         <div class="index-about-us-header text-center mb-4">
             <h2 class="fw-bold fs-2">
-                About Us
+                Why State Corps
             </h2>
         </div>
         <div class="row align-items-center">
@@ -83,64 +83,60 @@ include("includes/data/homedata.php");
             </div>
 
             <div class="col-lg-9">
+
                 <section class="index-about-us">
                     <div class="index-about-us-container">
-
-                        <!-- Tabs -->
+                        <!-- TABS -->
                         <ul class="nav nav-tabs border-0 mb-4">
-                            <li class="nav-item">
-                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#history">
-                                    History & Milestones
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#mission">
-                                    Our Mission
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#vision">
-                                    Our Vision
-                                </button>
-                            </li>
+                            <?php $first = true; ?>
+
+                            <?php foreach ($whySC as $id => $item): ?>
+                                <li class="nav-item">
+                                    <button
+                                        class="nav-link <?= $first ? 'active' : '' ?>"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#why<?= $id ?>">
+                                        <?= $item['title'] ?>
+                                    </button>
+                                </li>
+                                <?php $first = false; ?>
+                            <?php endforeach; ?>
+
                         </ul>
 
+                        <!-- TAB CONTENT -->
                         <div class="tab-content">
+                            <?php $first = true; ?>
 
-                            <!-- HISTORY & MILESTONES -->
-                            <div class="tab-pane fade show active" id="history">
-                                <div class="row g-2">
-                                    <?php foreach ($history as $item): ?>
-                                        <div class="col-md-3">
-                                            <div class="history-box p-4">
-                                                <h5 class="year"><?= $item['year'] ?></h5>
-                                                <p><?= $item['title'] ?></p>
-                                            </div>
-                                        </div>
-                                    <?php endforeach; ?>
-                                </div>
-                            </div>
-
-                            <!-- MISSION + VISION -->
-                            <?php foreach ($about_tabs as $id => $tab): ?>
-                                <div class="tab-pane fade" id="<?= $id ?>">
+                            <?php foreach ($whySC as $id => $item): ?>
+                                <div
+                                    class="tab-pane fade <?= $first ? 'show active' : '' ?>"
+                                    id="why<?= $id ?>">
                                     <div class="row align-items-center">
                                         <div class="col-md-6">
-                                            <h2 class="text-orange"><?= $tab['title'] ?></h2>
-                                            <p><?= $tab['text'] ?></p>
+                                            <h2 class="text-orange">
+                                                <?= $item['title'] ?>
+                                            </h2>
+                                            <p>
+                                                <?= $item['text'] ?>
+                                            </p>
                                         </div>
                                         <div class="col-md-6">
-                                            <img src="<?= $tab['image'] ?>" class="img-fluid rounded">
+                                            <img
+                                                src="<?= $item['image'] ?>"
+                                                class="img-fluid rounded"
+                                                alt="<?= $item['title'] ?>">
                                         </div>
                                     </div>
                                 </div>
+                                <?php $first = false; ?>
                             <?php endforeach; ?>
 
                         </div>
                     </div>
                 </section>
-            </div>
 
+            </div>
         </div>
     </div>
 
@@ -187,13 +183,13 @@ include("includes/data/homedata.php");
 
 
 
-<!-- ================= MAJOR PROJECTS ================= -->
+<!-- ================= FEATURED PROJECTS ================= -->
 <section class="major-projects-section py-5">
     <div class="container major-projects-container">
         <div class="row g-4">
             <div class="text-center mb-4">
                 <h2 class="fw-bold fs-2">
-                    Our Key Projects
+                    Featured Projects
                 </h2>
             </div>
             <?php foreach ($major_projects as $project): ?>
