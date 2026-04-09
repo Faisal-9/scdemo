@@ -278,3 +278,79 @@ include("includes/data/homedata.php");
     </div>
 
 </section>
+
+
+
+<!-- ================= CONTACT QUICK SECTION ================= -->
+<section class="index-contact-section py-4">
+
+    <div class="container">
+
+        <!-- Title -->
+        <div class="text-center mb-2">
+            <h2 class="contact-title">
+                <span>Get In</span> Touch
+            </h2>
+        </div>
+
+        <div class="row text-center g-2">
+
+            <!-- Phone -->
+            <div class="col-lg-4 col-md-3">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <p class="contact-text">
+                        +93 700 000 000
+                    </p>
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="col-lg-4 col-md-3">
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <h6 class="mb-2">Corporate Office</h6>
+
+                    <p class="contact-text">
+                        Kabul, Afghanistan <br>
+                        State Corps Headquarters
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="col-lg-4 col-md-3">
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+
+                    <p class="contact-text">
+                        info@statecorps.com <br>
+                        hr@statecorps.com
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Button -->
+        <div class="text-center mt-5">
+            <a href="contact.php" class="contact-btn">
+                CONTACT US
+            </a>
+        </div>
+
+    </div>
+
+</section>
