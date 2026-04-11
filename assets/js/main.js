@@ -168,9 +168,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const scrollSpy = new bootstrap.ScrollSpy(document.body, {
-    target: "#aboutSidebar",
-  });
+  /* ==========================
+   About Page Section Toggle
+========================== */
+  const aboutLinks = document.querySelectorAll(
+    ".about-sidebar .nav-link[data-section]",
+  );
+  const aboutPanels = document.querySelectorAll(".about-panel");
+
+  if (aboutLinks.length) {
+    aboutLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        aboutLinks.forEach((l) => l.classList.remove("active"));
+        this.classList.add("active");
+
+        const target = this.dataset.section;
+        aboutPanels.forEach((panel) => {
+          panel.classList.toggle("active", panel.id === target);
+        });
+
+        window.scrollTo({
+          top: document.querySelector(".about-content").offsetTop - 100,
+          behavior: "smooth",
+        });
+      });
+    });
+  }
 
   /* ==========================
      About Us Mission - Vision
@@ -205,6 +230,107 @@ document.addEventListener("DOMContentLoaded", function () {
       clickedIcon.style.display = isActive ? "none" : "";
     }
   };
+
+  /* ==========================
+   Growth Timeline
+========================== */
+
+  // make function GLOBAL
+  window.showMilestone = function (el) {
+    const items = document.querySelectorAll(".timeline-item");
+    const detail = document.querySelector(".timeline-detail");
+
+    // remove active
+    items.forEach((item) => item.classList.remove("active"));
+
+    // set active
+    el.classList.add("active");
+
+    // fade out
+    if (detail) detail.style.opacity = 0;
+
+    setTimeout(() => {
+      // update content
+      const titleEl = document.getElementById("mileTitle");
+      const yearEl = document.getElementById("mileYear");
+      const descEl = document.getElementById("mileDesc");
+      const imgEl = document.getElementById("mileImg");
+
+      if (titleEl) titleEl.innerText = el.dataset.title;
+      if (yearEl) yearEl.innerText = el.dataset.year;
+      if (descEl) descEl.innerText = el.dataset.desc;
+      if (imgEl) imgEl.src = el.dataset.img;
+
+      // fade in
+      if (detail) detail.style.opacity = 1;
+    }, 200);
+  };
+
+  /* ==========================
+   Autoplay (SMART CONTINUE)
+========================== */
+
+  (function () {
+    const section = document.getElementById("milestones");
+    const items = document.querySelectorAll(".timeline-item");
+
+    if (!section || !items.length) return;
+
+    let index = 0;
+    let interval = null;
+
+    function playTimeline() {
+      clearInterval(interval); // 🔥 IMPORTANT (prevents duplicates)
+
+      interval = setInterval(() => {
+        index = (index + 1) % items.length;
+        showMilestone(items[index]);
+      }, 2000);
+    }
+
+    function stopTimeline() {
+      clearInterval(interval);
+    }
+
+    /* ===== AUTO START WHEN VISIBLE ===== */
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            playTimeline();
+          } else {
+            stopTimeline();
+          }
+        });
+      },
+      { threshold: 0.2 },
+    );
+
+    observer.observe(section);
+
+    /* ===== CLICK HANDLING (KEY FIX) ===== */
+    items.forEach((item, i) => {
+      item.addEventListener("click", function () {
+        index = i; // ✅ set current index
+        showMilestone(this); // show clicked
+        playTimeline(); // 🔥 restart autoplay from here
+      });
+    });
+
+    /* ===== PAUSE ON HOVER ===== */
+    const detail = document.querySelector(".timeline-detail");
+
+    if (detail) {
+      detail.addEventListener("mouseenter", stopTimeline);
+      detail.addEventListener("mouseleave", playTimeline);
+    }
+
+    /* ===== INIT FIRST ITEM ===== */
+    if (items[0]) {
+      index = 0;
+      showMilestone(items[0]);
+    }
+  })();
 
   /* ==========================
      Sister Companies Swiper

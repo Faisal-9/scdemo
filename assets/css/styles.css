@@ -712,7 +712,7 @@
   color: #fff;
 }
 
-/* ================= ABOUT us ================= */
+/* ================= ABOUT PAGE ================= */
 
 .sidebarr {
   position: relative;
@@ -725,29 +725,27 @@
   top: 1%;
   bottom: 2%;
   width: 1px;
-  background-color: #03142e;
+  background: #03142e;
 }
+
+/* Sidebar */
 
 .about-sidebar {
   position: sticky;
-  top: 110px;
+  top: 90px;
   background: #f7f7f7;
   padding: 10px;
   border-radius: 10px;
-  max-width: 100%;
+  z-index: 10;
 }
 
 .about-sidebar .nav-link {
   color: #03142e;
   padding: 7px;
   border-left: 3px solid transparent;
-  transition: all 0.25s ease;
   font-size: 13px;
   font-weight: 300;
-  white-space: normal;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  line-height: 1.5;
+  transition: 0.25s;
 }
 
 .about-sidebar .nav-link:hover {
@@ -761,12 +759,21 @@
   background: #fff;
 }
 
+/* for activness */
+.about-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.about-panel.active {
+  display: block;
+}
+
+/* Section */
 .about-section-block {
-  /* background: #e9ecef; */
-  scroll-margin-top: 100px;
+  scroll-margin-top: 120px;
   margin-bottom: 10px;
-  padding: 40px 30px;
-  /* padding-bottom: 10px; */
+  padding: 30px 20px;
   border-bottom: 1px solid #eee;
   border-radius: 10px;
 }
@@ -774,48 +781,10 @@
 .about-section-block h2 {
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 5px;
   color: #0b1d4f;
 }
 
-.about-section-block .small-title {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #6c757d;
-  margin-bottom: 1rem;
-  letter-spacing: 0.02em;
-}
-
-.about-section-block img {
-  max-height: 300px;
-  object-fit: cover;
-}
-
-.mission-box,
-.vision-box {
-  background: #f9f9f9;
-  padding: 25px;
-  border-radius: 10px;
-  height: 100%;
-}
-
-.timeline {
-  list-style: none;
-  padding: 0;
-}
-
-.timeline li {
-  margin-bottom: 20px;
-}
-
-.timeline span {
-  font-weight: 700;
-  color: #0b1d4f;
-  margin-right: 10px;
-}
-
-/* ===== WELCOMMING INFORMATION SECTION ===== */
-
+/* Company Overview */
 .general-info-content p {
   font-size: 15px;
   line-height: 1.8;
@@ -824,204 +793,151 @@
 }
 
 .general-info-image img {
-  width: 100%;
-  height: auto;
   border-radius: 10px;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center bottom;
 }
 
 .general-info-image img:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
-@media (max-width: 991px) {
-  .general-info-image {
-    margin-top: 20px;
-  }
+/*  MISSION VISION SECTION  */
+.mv-text-block {
+  padding: 5px 0;
 }
 
-@media (max-width: 576px) {
-  .general-info-content h2 {
-    font-size: 22px;
-  }
-
-  .general-info-content p {
-    font-size: 14px;
-  }
+.mv-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0a2a66;
+  margin-bottom: 8px;
 }
 
-/* ================= MISSION VISION SECTION ================= */
-.mv-horizontal-container {
+.mv-text {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.mv-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.mv-values-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mv-values-list li {
   display: flex;
+  align-items: flex-start;
   gap: 10px;
+  font-size: 14px;
+  color: #444;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  line-height: 1.6;
 }
 
-.mv-panel {
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  min-height: 70vh;
-  color: #fff;
-  border-radius: 10px;
-  padding: 30px;
-  cursor: pointer;
-  transition: all 0.5s ease;
+.mv-values-list li:last-child {
+  border-bottom: none;
+}
+
+.mv-value-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  background: #0a2a66;
+  border-radius: 50%;
+  margin-top: 6px;
+}
+
+/*  GROWTH  */
+.timeline-list {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  gap: 12px;
+  position: relative;
 }
 
-.mv-panel::before {
+.timeline-list::before {
   content: "";
   position: absolute;
+  left: 5px;
   top: 0;
-  left: 0;
-  width: 100%;
+  width: 2px;
   height: 100%;
-  background: rgba(0, 0, 0, 0.55);
-  border-radius: 10px;
-  z-index: 1;
+  background: #ddd;
 }
 
-.mv-panel-header,
-.mv-panel-content {
-  position: relative;
-  z-index: 2;
-}
-
-.mv-panel.active {
-  flex: 10;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-}
-
-.mv-panel:not(.active) {
-  padding: 15px;
-}
-
-.mv-panel:not(.active) .mv-panel-content {
-  display: none;
-}
-
-.mv-panel-header {
+.timeline-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
-}
-
-.mv-panel-header h4 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.mv-panel-content {
-  opacity: 0;
-  max-width: 0;
-  transition: 0.4s;
-  line-height: 1.7;
-}
-
-.mv-panel.active .mv-panel-content {
-  opacity: 1;
-  max-width: 100%;
-  margin-top: 10px;
-}
-
-.mv-panel.active .mv-plus {
-  transform: rotate(45deg);
-}
-
-/* ================= Milestones ================= */
-.about-section-miles {
-  background-color: #e9ecef;
-}
-
-.mile-card {
-  border-radius: 10px;
-  overflow: hidden;
+  gap: 12px;
   cursor: pointer;
+  padding: 10px;
+  border-radius: 6px;
+  transition: 0.3s;
 }
-.mile-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 20px;
-  background: #1a1a1a;
-  user-select: none;
+
+.timeline-item:hover {
+  background: #f5f5f5;
 }
-.mile-card.active .mile-header {
-  background: #b4b2b0;
+
+.timeline-item.active {
+  background: #0d6efd;
+  color: #fff;
 }
-.mile-year {
+
+.year-badge {
+  min-width: 45px;
+  text-align: center;
+  padding: 5px 8px;
+  background: #333;
+  color: #fff;
+  border-radius: 20px;
   font-size: 12px;
-  font-weight: 600;
-  color: #e8461e;
-  background: rgba(232, 70, 30, 0.15);
-  padding: 2px 10px;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-.mile-card.active .mile-year {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.2);
-}
-.mile-title {
-  font-size: 15px;
-  font-weight: 600;
-  color: #fff;
-  margin: 0;
-}
-.mile-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 4px;
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.mile-body {
-  background: #b4b2b0;
-  overflow: hidden;
-  max-height: 0;
-  transition:
-    max-height 0.3s ease,
-    padding 0.3s ease;
-  padding: 0 20px;
-}
-.mile-card.active .mile-body {
-  max-height: 500px;
-  padding: 4px 20px 16px;
-}
-.mile-body p {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.92);
-  line-height: 1.65;
-  margin: 0;
 }
 
-/* ================= CLIENTS SECTION ================= */
-.client-title {
-  font-weight: 700;
-  letter-spacing: 2px;
+.timeline-item.active .year-badge {
+  background: #fff;
+  color: #0d6efd;
 }
 
-.client-grid {
-  align-items: center;
+.title-text {
+  font-weight: 500;
 }
+
+.timeline-detail {
+  transition: opacity 0.4s ease;
+}
+
+.timeline-detail img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+}
+
+/*  CLIENTS  */
 
 .client-card {
   background: #fff;
-  padding: 16px;
-  border-radius: 4px;
+  padding: 20px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70px;
+  height: 120px; /* bigger card */
   transition: 0.3s;
 }
 
@@ -1031,104 +947,19 @@
 }
 
 .client-card img {
-  max-height: 50px;
+  max-height: 80px;
   max-width: 100%;
   object-fit: contain;
-  filter: grayscale(15%);
-  opacity: 0.85;
-  transition: all 0.3s ease;
-}
-
-.client-card:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.2);
-  opacity: 1;
-}
-
-/* ================= SISTER COMPANIES SECTION ================= */
-.client-card {
-  background: #fff;
-  border-radius: 7px;
-  padding: 20px 10px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  opacity: 0.9;
   transition: 0.3s;
 }
 
-.client-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+.client-card:hover img {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
-.client-logo {
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-.client-logo img {
-  max-height: 55px;
-  object-fit: contain;
-}
-
-.client-name {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  color: #0b1d4f;
-  margin-bottom: 15px;
-}
-
-.client-details {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 13px;
-}
-
-.client-details li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
-.client-details i {
-  color: #0b1d4f;
-  width: 16px;
-}
-
-/* ================= SWIPER NAVIGATION ================= */
-
-.clients-nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  padding-top: 15px;
-  margin-top: 20px;
-}
-
-.clients-nav .swiper-button-prev,
-.clients-nav .swiper-button-next {
-  position: relative;
-  top: auto;
-  left: auto;
-  right: auto;
-  width: 36px;
-  height: 36px;
-  background: #0b1d4f;
-  border-radius: 50%;
-  color: #fff;
-}
-
-.clients-nav .swiper-button-prev::after,
-.clients-nav .swiper-button-next::after {
-  font-size: 12px;
-  font-weight: bold;
-}
-
-/* ================= AWARDS SECTION ================= */
+/*  AWARDS  */
 
 .award-card {
   background: #fff;
@@ -1137,28 +968,6 @@
   text-align: center;
   transition: 0.3s;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.award-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 0%;
-  background: #7887a0;
-  transition: height 0.35s ease;
-  z-index: -1;
-}
-
-.award-card:hover::before {
-  height: 100%;
 }
 
 .award-card:hover {
@@ -1168,28 +977,18 @@
 
 .award-img img {
   max-width: 100%;
-  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
-  transition: 0.3s;
-}
-
-.award-card:hover .award-img img {
-  transform: scale(1.05);
 }
 
 .award-name {
   font-size: 16px;
   font-weight: 600;
   color: #0b1d4f;
-  transition: 0.3s;
 }
 
-.award-card:hover .award-name {
-  color: #fff;
-}
+/*  CERTIFICATES  */
 
-/* ================= CERTIFICATES SECTION ================= */
 .certificate-card {
   background: #fff;
   border-radius: 10px;
@@ -1197,57 +996,37 @@
   text-align: center;
   transition: 0.3s;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.certificate-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 0%;
-  background: #7887a0;
-  transition: height 0.35s ease;
-  z-index: -1;
-}
-
-.certificate-card:hover::before {
-  height: 100%;
 }
 
 .certificate-card:hover {
-  transform: translateY(-8px) scale(1.03);
+  transform: translateY(-8px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .certificate-img img {
-  max-width: 100%;
+  width: 100%;
   height: 350px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
-  transition: 0.3s;
-}
-
-.certificate-card:hover .certificate-img img {
-  transform: scale(1.05);
 }
 
 .certificate-name {
   font-size: 16px;
   font-weight: 600;
   color: #0b1d4f;
-  transition: 0.3s;
 }
 
-.certificate-card:hover .certificate-name {
-  color: #fff;
+@media (max-width: 991px) {
+  .sidebarr::after {
+    display: none;
+  }
+
+  .about-sidebar {
+    position: relative;
+    top: 0;
+    margin-bottom: 30px;
+  }
 }
 /* ================= CONTACT ================= */
 .contact {
