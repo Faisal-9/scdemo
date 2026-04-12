@@ -3,6 +3,7 @@
 $services = [
 
     "engineeringanddesign" => [
+        "image" => "assets/images/8.jpg",
         "title" => "Engineering and design",
 
         "sections" => [
@@ -101,7 +102,9 @@ $services = [
     ],
 
     "implementation" => [
+        "image" => "assets/images/slider_03.jpg",
         "title" => "Project Delivery & Implementation",
+
         "sections" => [
 
             [
@@ -245,14 +248,15 @@ $services = [
 
     "logistics" => [
         "title" => "Logistics",
+        "image" => "assets/images/service02.jpg",
 
         "sections" => [
 
             [
-                "id" => "transportation-freight",
+                "id" => "1transportation-freight",
                 "title" => "Transportation & Freight Management",
-                "small-title" => "Every load. Every mode. On schedule.",
-                "text" => "We manage the full movement of project cargo — structural steel, equipment, bulk materials, and specialist items — across road, sea, rail, and air. Our freight management team handles carrier selection, booking, documentation, and tracking for both domestic and international shipments. Every movement is coordinated against the construction programme, ensuring materials arrive when the site is ready to receive and install them — not before, and never after.",
+                "small-title" => "",
+                "text" => "",
                 "image" => [
                     "assets/images/2.jpg"
                 ],
@@ -266,10 +270,10 @@ $services = [
             ],
 
             [
-                "id" => "heavylift-oversizedload",
+                "id" => "2heavylift-oversizedload",
                 "title" => "Heavy Lift & Oversized Load Movement",
-                "small-title" => "No margin for error. No shortcuts on critical cargo.",
-                "text" => "Power plant components, pressure vessels, transformers, and large structural modules require a level of logistics planning that goes far beyond standard freight. We plan and execute heavy lift and abnormal load movements with full route surveys, permit applications, escort coordination, and specialised transport equipment. Our team works closely with structural and installation engineers to ensure that how something arrives is consistent with how it will be lifted, positioned, and installed — eliminating costly surprises at the critical path.",
+                "small-title" => "",
+                "text" => "",
                 "image" => [
                     "assets/images/2.jpg"
                 ],
@@ -283,10 +287,10 @@ $services = [
             ],
 
             [
-                "id" => "customsclearance-importexport",
+                "id" => "3customsclearance-importexport",
                 "title" => "Customs Clearance & Import/Export",
-                "small-title" => "Through borders without delays.",
-                "text" => "Cross-border procurement is a reality for most complex projects, and customs delays are among the most avoidable causes of schedule overrun. We manage the complete import and export process — from HS code classification and duty optimisation through to customs agent coordination, document preparation, and regulatory compliance. Our team maintains active relationships with customs authorities and freight agents in key markets, enabling us to anticipate requirements, resolve clearance issues quickly, and keep materials moving toward site without interruption.",
+                "small-title" => "",
+                "text" => "",
                 "image" => [
                     "assets/images/2.jpg"
                 ],
@@ -302,8 +306,8 @@ $services = [
             [
                 "id" => "sitereceiving-delivery",
                 "title" => "Site Receiving & Delivery Management",
-                "small-title" => "Controlled entry. Zero confusion on site.",
-                "text" => "Delivery to site is not the end of logistics — it is the handover point where the supply chain meets construction execution. We operate structured site receiving functions that inspect incoming materials against purchase orders and packing lists, document any damage or shortages immediately, and route items to the correct storage or installation area. Delivery windows are coordinated with the site construction team to prevent congestion and ensure that materials land at the right work front at the right time, maintaining site productivity and reducing double-handling.",
+                "small-title" => "",
+                "text" => "",
                 "image" => [
                     "assets/images/2.jpg"
                 ],
@@ -319,8 +323,8 @@ $services = [
             [
                 "id" => "reverselogistics-demobilisation",
                 "title" => "Reverse Logistics & Demobilisation",
-                "small-title" => "Clean closeout. Assets recovered. Nothing left behind.",
-                "text" => "Project closeout demands the same logistical discipline as mobilisation. We manage the return of unused materials, temporary equipment, and hired plant — coordinating repatriation, refurbishment, and redeployment as appropriate. Surplus materials are tracked against project records to identify resale, reuse, or disposal opportunities. Our demobilisation planning begins early, runs parallel to construction closeout, and ensures that the project site is fully cleared, documented, and handed over without loose ends.",
+                "small-title" => "",
+                "text" => "",
                 "image" => [
                     "assets/images/2.jpg"
                 ],

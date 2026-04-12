@@ -1,5 +1,6 @@
 <?php
 include("includes/data/homedata.php");
+include_once("includes/data/servicesdata.php");
 ?>
 
 
@@ -148,31 +149,38 @@ include("includes/data/homedata.php");
     <div class="container">
 
         <div class="section-header text-center mb-4">
-            <h2 class="fw-bold fs-2">
-                Our Services
-            </h2>
+            <h2 class="fw-bold fs-2">Our Services</h2>
         </div>
 
         <div class="row g-4">
-            <?php foreach ($indexservices as $service): ?>
+            <?php foreach ($services as $serviceKey => $service): ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card h-100">
+
                         <div class="service-image">
-                            <img src="<?= $service['image']; ?>" alt="<?= $service['title']; ?>" class="img-fluid" loading="lazy">
+                            <img src="<?= $service['image'] ?>"
+                                alt="<?= $service['title'] ?>"
+                                class="img-fluid"
+                                loading="lazy">
                         </div>
+
                         <div class="service-content">
                             <div class="service-title">
-                                <?= htmlspecialchars($service['title']); ?>
+                                <?= htmlspecialchars($service['title']) ?>
                             </div>
+
                             <ul class="service-desc">
-                                <?php foreach ($service['desc'] as $item): ?>
-                                    <li><?= htmlspecialchars($item); ?></li>
+                                <?php foreach (array_slice($service['sections'], 0, 6) as $section): ?>
+                                    <li><?= htmlspecialchars($section['title']) ?></li>
                                 <?php endforeach; ?>
                             </ul>
-                            <a href="<?= $service['link']; ?>" class="service-btn">
+
+                            <a href="services.php?tab=<?= $serviceKey ?>"
+                                class="service-btn">
                                 Read More +
                             </a>
                         </div>
+
                     </div>
                 </div>
             <?php endforeach; ?>
