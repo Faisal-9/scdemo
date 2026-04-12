@@ -138,16 +138,20 @@ $sisterCompanies = [
             'logo' => 'assets/images/scompany/sc_turkey.png',
         ],
         [
+            'name' => 'State Corps Uzbikistan',
+            'logo' => 'assets/images/scompany/sc_us.png',
+        ],
+        [
             'name' => 'Arya Mineral',
             'logo' => 'assets/images/scompany/Scom_aryamineral.png',
+        ],
+        [
+            'name' => 'Petropool',
+            'logo' => 'assets/images/scompany/Scom_petropool.png',
         ],
         [
             'name' => 'Aeroparcel',
             'logo' => 'assets/images/scompany/Scom_aeroparcel.png',
         ],
-        [
-            'name' => 'Petropool',
-            'logo' => 'assets/images/scompany/Scom_petropool.png',
-        ]
     ]
 ];

@@ -183,43 +183,72 @@ $aboutSections = [
                     </section>
 
                     <!-- AWARDS -->
-                    <section id="awards" class="about-section-block about-panel py-1">
-                        <h2 class="text-center mb-4"><?= $awards['title'] ?></h2>
-                        <div class="row g-4">
-                            <?php foreach ($awards['items'] as $award): ?>
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="award-card">
-                                        <div class="award-img">
-                                            <img src="<?= $award['logo'] ?>" alt="<?= $award['name'] ?>">
-                                        </div>
-                                        <h5 class="award-name"><?= $award['name'] ?></h5>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </section>
+                    <section id="awards" class="about-section-block about-panel py-2">
+                        <div class="container">
+                            <h2 class="text-center mb-4"><?= $awards['title'] ?></h2>
 
-                    <!-- SISTER COMPANIES -->
-                    <section id="sister" class="about-section-block about-sister-slider about-panel py-1">
-                        <h2 class="text-center mb-4"><?= $sisterCompanies['title'] ?></h2>
-                        <div class="swiper sisterSwiper">
-                            <div class="swiper-wrapper">
-                                <?php foreach ($sisterCompanies['items'] as $company): ?>
-                                    <div class="swiper-slide d-flex justify-content-center align-items-center">
-                                        <div class="client-card d-flex justify-content-center align-items-center p-4">
-                                            <img src="<?= $company['logo'] ?>"
-                                                alt="<?= $company['name'] ?>"
-                                                class="img-fluid mx-auto d-block"
-                                                style="max-height:90px;">
+                            <div class="row g-4 align-items-stretch">
+                                <?php foreach ($awards['items'] as $award): ?>
+                                    <div class="col-lg-4 col-md-6 d-flex">
+                                        <div class="award-card w-100 d-flex flex-column text-center p-3 bg-white rounded-3">
+
+                                            <div class="award-img d-flex align-items-center justify-content-center">
+                                                <img src="<?= $award['logo'] ?>" alt="<?= $award['name'] ?>" class="img-fluid">
+                                            </div>
+
+                                            <h5 class="award-name mt-3 mb-0">
+                                                <?= $award['name'] ?>
+                                            </h5>
+
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
-                            <div class="clients-nav">
-                                <div class="swiper-button-prev sister-prev"></div>
-                                <div class="swiper-button-next sister-next"></div>
+                        </div>
+                    </section>
+
+                    <!-- SISTER COMPANIES -->
+                    <section id="sister" class="about-section-block about-sister-slider about-panel py-2">
+
+                        <div class="container">
+                            <h2 class="text-center mb-4"><?= $sisterCompanies['title'] ?></h2>
+
+                            <div class="swiper sisterSwiper">
+                                <div class="swiper-wrapper">
+
+                                    <?php foreach ($sisterCompanies['items'] as $company): ?>
+                                        <div class="swiper-slide d-flex">
+
+                                            <!-- Card -->
+                                            <div class="sister-card w-100 d-flex flex-column align-items-center justify-content-center text-center p-4 bg-white rounded-3">
+
+                                                <!-- Logo -->
+                                                <div class="sister-logo d-flex align-items-center justify-content-center mb-3">
+                                                    <img src="<?= $company['logo'] ?>"
+                                                        alt="<?= $company['name'] ?>"
+                                                        class="img-fluid">
+                                                </div>
+
+                                                <!-- Name -->
+                                                <p class="sister-name fw-semibold mb-0">
+                                                    <?= $company['name'] ?>
+                                                </p>
+
+                                            </div>
+
+                                        </div>
+                                    <?php endforeach; ?>
+
+                                </div>
+
+                                <!-- Navigation -->
+                                <div class="clients-nav">
+                                    <div class="swiper-button-prev sister-prev"></div>
+                                    <div class="swiper-button-next sister-next"></div>
+                                </div>
                             </div>
                         </div>
+
                     </section>
 
                 </div>
