@@ -40,7 +40,7 @@ include("includes/data/servicesdata.php");
                         <?php
                         $prefix = $key . "-";
                         $sections = $service["sections"];
-                        include("includes/components/sidebarsection.php");
+                        include("includes/components/servicessection.php");
                         $first = false;
                         ?>
                     </div>

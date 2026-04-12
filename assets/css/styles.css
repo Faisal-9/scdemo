@@ -732,11 +732,25 @@
 
 .about-sidebar {
   position: sticky;
-  top: 90px;
+  top: 100px;
   background: #f7f7f7;
   padding: 10px;
   border-radius: 10px;
   z-index: 10;
+}
+
+/* Ensure sidebar takes full width */
+.about-sidebar .nav {
+  width: 100%;
+}
+
+.about-sidebar .nav-link {
+  display: block;
+  width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere; 
+  word-break: break-word; 
+  line-height: 1.4;
 }
 
 .about-sidebar .nav-link {
@@ -770,6 +784,10 @@
 }
 
 /* Section */
+.min-vh-60 {
+  min-height: 60vh;
+}
+
 .about-section-block {
   scroll-margin-top: 120px;
   margin-bottom: 10px;

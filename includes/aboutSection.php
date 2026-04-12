@@ -36,7 +36,7 @@ $aboutSections = [
             </div>
 
             <!-- CONTENT -->
-            <div class="col-lg-9">
+            <div class="container-fluid col-lg-9 min-vh-60">
                 <div class="about-content">
 
                     <!-- COMPANY OVERVIEW -->
@@ -183,7 +183,7 @@ $aboutSections = [
                     </section>
 
                     <!-- AWARDS -->
-                    <section id="awards" class="about-section-block about-panel py-4">
+                    <section id="awards" class="about-section-block about-panel py-1">
                         <h2 class="text-center mb-4"><?= $awards['title'] ?></h2>
                         <div class="row g-4">
                             <?php foreach ($awards['items'] as $award): ?>

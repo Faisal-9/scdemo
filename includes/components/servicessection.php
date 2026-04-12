@@ -37,7 +37,7 @@ $sections = $sections ?? [];
 
                     <?php foreach ($sections as $section): ?>
 
-                        <section id="<?= $prefix . $section['id'] ?>" class="about-section-block p-3">
+                        <section id="<?= $prefix . $section['id'] ?>" class="about-section-block ">
 
                             <!-- TITLE -->
                             <div class="text-center mb-1">
