@@ -80,7 +80,7 @@ include_once("includes/data/sectorsdata.php");
                         <!-- Sectors -->
                         <li class="nav-item dropdown <?= in_array($current_page, $sectors_pages) ? 'active' : '' ?>">
                             <a href="sectors.php" class="nav-link has-dropdown">
-                                <span class="nav-text">Sectors</span>
+                                <span class="nav-text">Expertise</span>
                                 <span class="dropdown-arrow">▼</span>
                             </a>
                             <div class="dropdown-menu mega-menu">
