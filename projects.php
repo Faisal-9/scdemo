@@ -18,7 +18,7 @@ $urlSector   = isset($_GET['sector'])   ? strtolower($_GET['sector'])   : 'all';
 
                 <!-- FILTERS -->
                 <div class="row mb-3 align-items-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         <div class="btn-group project-filters flex-wrap gap-2">
 
                             <button class="btn btn-outline-dark active" data-sector="all">
@@ -49,16 +49,16 @@ $urlSector   = isset($_GET['sector'])   ? strtolower($_GET['sector'])   : 'all';
                         </select>
                     </div>
 
-                    <div class="col-lg-2">
+                    <!-- <div class="col-lg-2">
                         <select class="form-select" id="sortProjects">
                             <option value="newest">Newest</option>
                             <option value="oldest">Oldest</option>
                         </select>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- Category buttons - directly below -->
-                <div class="col-12 mb-1 mx-auto">
+                <!-- <div class="col-12 mb-1 mx-auto">
                     <div class="d-flex flex-wrap gap-2 project-category-filters justify-content-center">
                         <button class="btn btn-sm btn-outline-secondary active" data-category="all">All Categories</button>
                         <?php
@@ -70,7 +70,7 @@ $urlSector   = isset($_GET['sector'])   ? strtolower($_GET['sector'])   : 'all';
                             </button>
                         <?php endforeach; ?>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <!-- PROJECTS GRID -->

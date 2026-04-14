@@ -193,7 +193,7 @@ $projects = [
         'location' => 'Kabul',
         'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/07-kabul-1.png',
+        'thumbnail' => 'assets/images/projects/07-kabul-2.png',
 
         'images' => [
             'assets/images/projects/07-kabul-1.png',
@@ -214,238 +214,238 @@ $projects = [
     ],
 
 
-    [
-        'id' => 'c8',
-        'name' => 'ANCOP BN & PRC',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'Completed',
-        'completion-year' => 2020,
-        'location' => 'Kandahar',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c8',
+    //     'name' => 'ANCOP BN & PRC',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'Completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Kandahar',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/08-kandahar-1.png',
+    //     'thumbnail' => 'assets/images/projects/08-kandahar-1.png',
 
-        'images' => [
-            'assets/images/projects/08-kandahar-1.png'
-        ],
+    //     'images' => [
+    //         'assets/images/projects/08-kandahar-1.png'
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Afghan National Civil Order and Provincial Response Company Compounds at Daman District of Kandahar Province was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Afghan National Civil Order and Provincial Response Company Compounds at Daman District of Kandahar Province was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
-
-
-    [
-        'id' => 'c9',
-        'name' => 'BP Company Headquarters Boz Areq',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Balkh',
-        'client' => 'USACE',
-
-        'thumbnail' => 'assets/images/projects/09-balkh-1.png',
-
-        'images' => [
-            'assets/images/projects/09-balkh-1.png',
-        ],
-
-        'description' =>
-        'This contract was signed between USACE andState Corps. Through this project the construction of Border Police Headquarter Compound for Afghan National Police in Kaldar District of Balkh Province was accomplished.',
-
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
-
-    ],
+    // ],
 
 
-    [
-        'id' => 'c10',
-        'name' => ' ANP UP DHQ Qaysar',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Faryab',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c9',
+    //     'name' => 'BP Company Headquarters Boz Areq',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Balkh',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/10-faryab-1.png',
+    //     'thumbnail' => 'assets/images/projects/09-balkh-1.png',
 
-        'images' => [
-            'assets/images/projects/10-faryab-1.png',
-        ],
+    //     'images' => [
+    //         'assets/images/projects/09-balkh-1.png',
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Uniformed Police District Headquarter for Afghan National Police in Qaysar Disctrict of Faryab Province, Afghanistan was accomplished',
+    //     'description' =>
+    //     'This contract was signed between USACE andState Corps. Through this project the construction of Border Police Headquarter Compound for Afghan National Police in Kaldar District of Balkh Province was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
-
-
-    [
-        'id' => 'c11',
-        'name' => 'ANP UP DHQ Mazar',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Balkh ',
-        'client' => 'USACE',
-
-        'thumbnail' => 'assets/images/projects/11-balkh-1.png',
-
-        'images' => [
-            'assets/images/projects/11-balkh-1.png',
-        ],
-
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Uni- Formed Police District Headquarter for Afghan National Police in Mazar City of Balkh Province, Afghanistan was accomplished.',
-
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
-
-    ],
+    // ],
 
 
-    [
-        'id' => 'c12',
-        'name' => ' BP Yaka Toot',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Faryab',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c10',
+    //     'name' => ' ANP UP DHQ Qaysar',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Faryab',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/12-faryab-1.png',
+    //     'thumbnail' => 'assets/images/projects/10-faryab-1.png',
 
-        'images' => [
-            'assets/images/projects/12-faryab-1.png',
-            'assets/images/projects/12-faryab-2.png',
-        ],
+    //     'images' => [
+    //         'assets/images/projects/10-faryab-1.png',
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Uni- Formed Police District Headquarter for Afghan National Police in Yaka Toot district of Faryab Province, Afghanistan was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Uniformed Police District Headquarter for Afghan National Police in Qaysar Disctrict of Faryab Province, Afghanistan was accomplished',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
-
-
-    [
-        'id' => 'c13',
-        'name' => 'ANP UP DHQ Khost Farang',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Baghlan',
-        'client' => 'USACE',
-
-        'thumbnail' => 'assets/images/projects/13-baghlan-1.png',
-
-        'images' => [
-            'assets/images/projects/13-baghlan-1.png',
-        ],
-
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Uniformed Police District Headquarter for Afghan National Police in Khost Farang District of Baghlan Province, Afghanistan was accomplished.',
-
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
-
-    ],
+    // ],
 
 
-    [
-        'id' => 'c14',
-        'name' => 'ANP UP DHQ Wardoj ',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Badakhshan',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c11',
+    //     'name' => 'ANP UP DHQ Mazar',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Balkh ',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/14-badakhshan-1.png',
+    //     'thumbnail' => 'assets/images/projects/11-balkh-1.png',
 
-        'images' => [
-            'assets/images/projects/14-badakhshan-1.png',
-        ],
+    //     'images' => [
+    //         'assets/images/projects/11-balkh-1.png',
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Uni- Formed Police District Headquarter for Afghan National Police in Wardoj District of Badakhshan Province, Afghanistan was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Uni- Formed Police District Headquarter for Afghan National Police in Mazar City of Balkh Province, Afghanistan was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
+    // ],
 
 
-    [
-        'id' => 'c15',
-        'name' => ' ANA Gardez Training Ranges',
-        'sector' => 'structure',
-        'category' => 'army training range',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Paktia',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c12',
+    //     'name' => ' BP Yaka Toot',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Faryab',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/15-paktia-1.png',
+    //     'thumbnail' => 'assets/images/projects/12-faryab-1.png',
 
-        'images' => [
-            'assets/images/projects/15-paktia-1.png',
-            'assets/images/projects/15-paktia-2.png',
-        ],
+    //     'images' => [
+    //         'assets/images/projects/12-faryab-1.png',
+    //         'assets/images/projects/12-faryab-2.png',
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project aimed to perform the construction of Afghan National Army Small Arms Training Ranges for National Army in Gardez City of Paktia Province.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Uni- Formed Police District Headquarter for Afghan National Police in Yaka Toot district of Faryab Province, Afghanistan was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
+    // ],
+
+
+    // [
+    //     'id' => 'c13',
+    //     'name' => 'ANP UP DHQ Khost Farang',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Baghlan',
+    //     'client' => 'USACE',
+
+    //     'thumbnail' => 'assets/images/projects/13-baghlan-1.png',
+
+    //     'images' => [
+    //         'assets/images/projects/13-baghlan-1.png',
+    //     ],
+
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Uniformed Police District Headquarter for Afghan National Police in Khost Farang District of Baghlan Province, Afghanistan was accomplished.',
+
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
+
+    // ],
+
+
+    // [
+    //     'id' => 'c14',
+    //     'name' => 'ANP UP DHQ Wardoj ',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Badakhshan',
+    //     'client' => 'USACE',
+
+    //     'thumbnail' => 'assets/images/projects/14-badakhshan-1.png',
+
+    //     'images' => [
+    //         'assets/images/projects/14-badakhshan-1.png',
+    //     ],
+
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Uni- Formed Police District Headquarter for Afghan National Police in Wardoj District of Badakhshan Province, Afghanistan was accomplished.',
+
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
+
+    // ],
+
+
+    // [
+    //     'id' => 'c15',
+    //     'name' => ' ANA Gardez Training Ranges',
+    //     'sector' => 'structure',
+    //     'category' => 'army training range',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Paktia',
+    //     'client' => 'USACE',
+
+    //     'thumbnail' => 'assets/images/projects/15-paktia-1.png',
+
+    //     'images' => [
+    //         'assets/images/projects/15-paktia-1.png',
+    //         'assets/images/projects/15-paktia-2.png',
+    //     ],
+
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project aimed to perform the construction of Afghan National Army Small Arms Training Ranges for National Army in Gardez City of Paktia Province.',
+
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
+
+    // ],
 
 
     [
@@ -477,248 +477,248 @@ $projects = [
     ],
 
 
-    [
-        'id' => 'c17',
-        'name' => 'PRC Logar',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Logar',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c17',
+    //     'name' => 'PRC Logar',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Logar',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/17-logar-1.png',
+    //     'thumbnail' => 'assets/images/projects/17-logar-1.png',
 
-        'images' => [
-            'assets/images/projects/17-logar-1.png',
-        ],
+    //     'images' => [
+    //         'assets/images/projects/17-logar-1.png',
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Provincial Response Company  for Afghan National Police "ANP" in Logar Province was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Provincial Response Company  for Afghan National Police "ANP" in Logar Province was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
-
-
-    [
-        'id' => 'c18',
-        'name' => 'MILCON Cargo Handling Area FOB SHANK',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Logar',
-        'client' => 'USACE',
-
-        'thumbnail' => 'assets/images/projects/18-logar-1.png',
-
-        'images' => [
-            'assets/images/projects/18-logar-1.png',
-            '',
-            ''
-        ],
-
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the constructions of Cargo Handling inside Shank Forward Operating Base (FOB) was accomplished.',
-
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
-
-    ],
+    // ],
 
 
-    [
-        'id' => 'c19',
-        'name' => ' ANP UP DHQ Sheberghan',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Jawzjan',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c18',
+    //     'name' => 'MILCON Cargo Handling Area FOB SHANK',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Logar',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/19-jawzjan-1.png',
+    //     'thumbnail' => 'assets/images/projects/18-logar-1.png',
 
-        'images' => [
-            'assets/images/projects/19-jawzjan-1.png',
-        ],
+    //     'images' => [
+    //         'assets/images/projects/18-logar-1.png',
+    //         '',
+    //         ''
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Uniformed Police district Headquarter for afghan National Police in Sheberghan, Jawozjan Province, Afghanistan was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the constructions of Cargo Handling inside Shank Forward Operating Base (FOB) was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
-
-
-    [
-        'id' => 'c20',
-        'name' => 'ANP UP DHQ Miramor',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Daikundi',
-        'client' => 'USACE',
-
-        'thumbnail' => 'assets/images/projects/20-daikundi-1.png',
-
-        'images' => [
-            'assets/images/projects/20-daikundi-1.png',
-            '',
-            ''
-        ],
-
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Uniformed Police District Headquarter for afghan National Police in Miramar District of Daykundi Province, Afghanistan was accomplished.',
-
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
-
-    ],
+    // ],
 
 
-    [
-        'id' => 'c21',
-        'name' => 'ANP UP DHQ Musa Kheil',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Khost',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c19',
+    //     'name' => ' ANP UP DHQ Sheberghan',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Jawzjan',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/21-khost-1.png',
+    //     'thumbnail' => 'assets/images/projects/19-jawzjan-1.png',
 
-        'images' => [
-            'assets/images/projects/21-khost-1.png',
-            '',
-            ''
-        ],
+    //     'images' => [
+    //         'assets/images/projects/19-jawzjan-1.png',
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Uniformed Police District Headquarter for Afghan National Police in Musa Kheil District of Khost Province, Afghanistan was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Uniformed Police district Headquarter for afghan National Police in Sheberghan, Jawozjan Province, Afghanistan was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
+    // ],
 
 
-    [
-        'id' => 'c22',
-        'name' => 'ANP UP DHQ Kunduz',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Konduz',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c20',
+    //     'name' => 'ANP UP DHQ Miramor',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Daikundi',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/22-kunduz-1.png',
+    //     'thumbnail' => 'assets/images/projects/20-daikundi-1.png',
 
-        'images' => [
-            'assets/images/projects/22-kunduz-1.png',
-            '',
-            ''
-        ],
+    //     'images' => [
+    //         'assets/images/projects/20-daikundi-1.png',
+    //         '',
+    //         ''
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Uniformed Police District Headquarter for Afghan National Police in Kunduz City of Kunduz Province, Afghanistan was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Uniformed Police District Headquarter for afghan National Police in Miramar District of Daykundi Province, Afghanistan was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
-
-
-    [
-        'id' => 'c23',
-        'name' => 'BP Yaka Haji',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Faryab',
-        'client' => 'USACE',
-
-        'thumbnail' => 'assets/images/projects/23-faryab-1.png',
-
-        'images' => [
-            'assets/images/projects/23-faryab-1.png',
-            '',
-            ''
-        ],
-
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Border Police Company Headquarters Compound for Afghan National Police in Yaka Haji District of Faryab Province was accomplished.',
-
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
-
-    ],
+    // ],
 
 
-    [
-        'id' => 'c24',
-        'name' => 'PRC Ghazni',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Ghazni',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c21',
+    //     'name' => 'ANP UP DHQ Musa Kheil',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Khost',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/24-ghazni-1.png',
+    //     'thumbnail' => 'assets/images/projects/21-khost-1.png',
 
-        'images' => [
-            'assets/images/projects/24-ghazni-1.png',
-            '',
-            ''
-        ],
+    //     'images' => [
+    //         'assets/images/projects/21-khost-1.png',
+    //         '',
+    //         ''
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Provincial Response Company  for Afghan National Police "ANP" in Ghazni Province was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Uniformed Police District Headquarter for Afghan National Police in Musa Kheil District of Khost Province, Afghanistan was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
+    // ],
+
+
+    // [
+    //     'id' => 'c22',
+    //     'name' => 'ANP UP DHQ Kunduz',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Konduz',
+    //     'client' => 'USACE',
+
+    //     'thumbnail' => 'assets/images/projects/22-kunduz-1.png',
+
+    //     'images' => [
+    //         'assets/images/projects/22-kunduz-1.png',
+    //         '',
+    //         ''
+    //     ],
+
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Uniformed Police District Headquarter for Afghan National Police in Kunduz City of Kunduz Province, Afghanistan was accomplished.',
+
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
+
+    // ],
+
+
+    // [
+    //     'id' => 'c23',
+    //     'name' => 'BP Yaka Haji',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Faryab',
+    //     'client' => 'USACE',
+
+    //     'thumbnail' => 'assets/images/projects/23-faryab-1.png',
+
+    //     'images' => [
+    //         'assets/images/projects/23-faryab-1.png',
+    //         '',
+    //         ''
+    //     ],
+
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Border Police Company Headquarters Compound for Afghan National Police in Yaka Haji District of Faryab Province was accomplished.',
+
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
+
+    // ],
+
+
+    // [
+    //     'id' => 'c24',
+    //     'name' => 'PRC Ghazni',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Ghazni',
+    //     'client' => 'USACE',
+
+    //     'thumbnail' => 'assets/images/projects/24-ghazni-1.png',
+
+    //     'images' => [
+    //         'assets/images/projects/24-ghazni-1.png',
+    //         '',
+    //         ''
+    //     ],
+
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Provincial Response Company  for Afghan National Police "ANP" in Ghazni Province was accomplished.',
+
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
+
+    // ],
 
 
     [
@@ -752,66 +752,66 @@ $projects = [
     ],
 
 
-    [
-        'id' => 'c26',
-        'name' => ' ANP UP DHQ Nawur',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Ghazni',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c26',
+    //     'name' => ' ANP UP DHQ Nawur',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Ghazni',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/26-ghazni-1.png',
+    //     'thumbnail' => 'assets/images/projects/26-ghazni-1.png',
 
-        'images' => [
-            'assets/images/projects/26-ghazni-1.png',
-            '',
-            ''
-        ],
+    //     'images' => [
+    //         'assets/images/projects/26-ghazni-1.png',
+    //         '',
+    //         ''
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Uni-Formed Police District Headquarter for Afghan National Police in Nawur District of Ghazni Province, Afghanistan was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Uni-Formed Police District Headquarter for Afghan National Police in Nawur District of Ghazni Province, Afghanistan was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
+    // ],
 
 
-    [
-        'id' => 'c27',
-        'name' => ' Main Road Security Company “MRSC” Taloqan',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Takhar',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c27',
+    //     'name' => ' Main Road Security Company “MRSC” Taloqan',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Takhar',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/27-takhar-1.png',
+    //     'thumbnail' => 'assets/images/projects/27-takhar-1.png',
 
-        'images' => [
-            'assets/images/projects/27-takhar-1.png',
-            'assets/images/projects/27-takhar-2.png',
-            ''
-        ],
+    //     'images' => [
+    //         'assets/images/projects/27-takhar-1.png',
+    //         'assets/images/projects/27-takhar-2.png',
+    //         ''
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of main Road Security Company Complex in Taleqan City of Takhar Province, Afghanistan was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of main Road Security Company Complex in Taleqan City of Takhar Province, Afghanistan was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
+    // ],
 
 
     [
@@ -845,251 +845,251 @@ $projects = [
     ],
 
 
-    [
-        'id' => 'c29',
-        'name' => 'ANP UP DHQ - Mehterlam',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Laghman',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c29',
+    //     'name' => 'ANP UP DHQ - Mehterlam',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Laghman',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/29-laghman-1.png',
+    //     'thumbnail' => 'assets/images/projects/29-laghman-1.png',
 
-        'images' => [
-            'assets/images/projects/29-laghman-1.png',
-            '',
-            ''
-        ],
+    //     'images' => [
+    //         'assets/images/projects/29-laghman-1.png',
+    //         '',
+    //         ''
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Uni- Formed Police District Headquarter for Afghan National Police in Mehtarlam City of Laghman Province, Afghanistan was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Uni- Formed Police District Headquarter for Afghan National Police in Mehtarlam City of Laghman Province, Afghanistan was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
-
-
-    [
-        'id' => 'c30',
-        'name' => 'ANA Infantry Kandak - Moqur district ',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Ghazni',
-        'client' => 'USACE',
-
-        'thumbnail' => 'assets/images/projects/30-ghazni-1.png',
-
-        'images' => [
-            'assets/images/projects/30-ghazni-1.png',
-            'assets/images/projects/30-ghazni-2.png',
-            'assets/images/projects/30-ghazni-3.png'
-        ],
-
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Infantry Kandak Facilities for Afghan National Army in Moqur District of Ghazni Province was accomplished',
-
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
-
-    ],
+    // ],
 
 
-    [
-        'id' => 'c31',
-        'name' => 'ANP UP DHQ - Jalalabad',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Nangarhar',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c30',
+    //     'name' => 'ANA Infantry Kandak - Moqur district ',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Ghazni',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/31-nangarhar-1.png',
+    //     'thumbnail' => 'assets/images/projects/30-ghazni-1.png',
 
-        'images' => [
-            'assets/images/projects/31-nangarhar-1.png',
-            'assets/images/projects/31-nangarhar-2.png',
-            'assets/images/projects/31-nangarhar-3.png'
-        ],
+    //     'images' => [
+    //         'assets/images/projects/30-ghazni-1.png',
+    //         'assets/images/projects/30-ghazni-2.png',
+    //         'assets/images/projects/30-ghazni-3.png'
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Uni-Formed Police District Headquarter for Afghan National Police in Jalalabad City of Nangarhar Province, Afghanistan was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Infantry Kandak Facilities for Afghan National Army in Moqur District of Ghazni Province was accomplished',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
-
-
-    [
-        'id' => 'c32',
-        'name' => ' ANA, NAVC III, Kabul',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Kabul',
-        'client' => 'USACE',
-
-        'thumbnail' => 'assets/images/projects/32-kabul-1.png',
-
-        'images' => [
-            'assets/images/projects/32-kabul-1.png',
-            'assets/images/projects/32-kabul-2.png',
-        ],
-
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of National Army Volunteer Center for Afghan National Army in Kabul Province, Afghanistan was accomplished.',
-
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
-
-    ],
+    // ],
 
 
-    [
-        'id' => 'c33',
-        'name' => 'ANA, Infantry Branch School at Darulaman',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Kabul',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c31',
+    //     'name' => 'ANP UP DHQ - Jalalabad',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Nangarhar',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/33-kabul-1.png',
+    //     'thumbnail' => 'assets/images/projects/31-nangarhar-1.png',
 
-        'images' => [
-            'assets/images/projects/33-kabul-1.png',
-            'assets/images/projects/33-kabul-2.png',
-            'assets/images/projects/33-kabul-3.png'
-        ],
+    //     'images' => [
+    //         'assets/images/projects/31-nangarhar-1.png',
+    //         'assets/images/projects/31-nangarhar-2.png',
+    //         'assets/images/projects/31-nangarhar-3.png'
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Infantry Branch School for Afghan National Army in Darulaman area of Kabul City, Afghanistan was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Uni-Formed Police District Headquarter for Afghan National Police in Jalalabad City of Nangarhar Province, Afghanistan was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
-
-
-    [
-        'id' => 'c34',
-        'name' => 'ANP - MOI - Supply Point',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Jawzjan',
-        'client' => 'USACE',
-
-        'thumbnail' => 'assets/images/projects/34-jawzjan-1.png',
-
-        'images' => [
-            'assets/images/projects/34-jawzjan-1.png',
-            'assets/images/projects/34-jawzjan-2.png',
-            'assets/images/projects/34-jawzjan-3.png'
-        ],
-
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of facilities for Supply Point of Afghan National Police in Sheberghan City of Jawzjan Province was accomplished.',
-
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
-
-    ],
+    // ],
 
 
-    [
-        'id' => 'c35',
-        'name' => 'ANA -O&M- Base Camp Repairs at Qala-e-Naw',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Badghis',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c32',
+    //     'name' => ' ANA, NAVC III, Kabul',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Kabul',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/35-badghis-1.png',
+    //     'thumbnail' => 'assets/images/projects/32-kabul-1.png',
 
-        'images' => [
-            'assets/images/projects/35-badghis-1.png',
-            'assets/images/projects/35-badghis-2.png',
-            'assets/images/projects/35-badghis-3.png'
-        ],
+    //     'images' => [
+    //         'assets/images/projects/32-kabul-1.png',
+    //         'assets/images/projects/32-kabul-2.png',
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Afghan National Army "ANA" Operation and Maintenance repairs inside Base Camp at Qala-e-naw City of Badghis Province, Afghanistan was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of National Army Volunteer Center for Afghan National Army in Kabul Province, Afghanistan was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
+    // ],
 
 
-    [
-        'id' => 'c36',
-        'name' => 'ANP Transportation Brigade Headquarter',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Nangarhar',
-        'client' => 'USACE',
+    // [
+    //     'id' => 'c33',
+    //     'name' => 'ANA, Infantry Branch School at Darulaman',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Kabul',
+    //     'client' => 'USACE',
 
-        'thumbnail' => 'assets/images/projects/36-nangarhar-1.png',
+    //     'thumbnail' => 'assets/images/projects/33-kabul-1.png',
 
-        'images' => [
-            'assets/images/projects/36-nangarhar-1.png',
-            'assets/images/projects/36-nangarhar-2.png',
-            'assets/images/projects/36-nangarhar-3.png'
-        ],
+    //     'images' => [
+    //         'assets/images/projects/33-kabul-1.png',
+    //         'assets/images/projects/33-kabul-2.png',
+    //         'assets/images/projects/33-kabul-3.png'
+    //     ],
 
-        'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Transportation BrigadeHeadquarter for Afghan National Police in Jalalabad city of Nangarhar Province, Afghanistan was accomplished.',
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Infantry Branch School for Afghan National Army in Darulaman area of Kabul City, Afghanistan was accomplished.',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
+    // ],
+
+
+    // [
+    //     'id' => 'c34',
+    //     'name' => 'ANP - MOI - Supply Point',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Jawzjan',
+    //     'client' => 'USACE',
+
+    //     'thumbnail' => 'assets/images/projects/34-jawzjan-1.png',
+
+    //     'images' => [
+    //         'assets/images/projects/34-jawzjan-1.png',
+    //         'assets/images/projects/34-jawzjan-2.png',
+    //         'assets/images/projects/34-jawzjan-3.png'
+    //     ],
+
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of facilities for Supply Point of Afghan National Police in Sheberghan City of Jawzjan Province was accomplished.',
+
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
+
+    // ],
+
+
+    // [
+    //     'id' => 'c35',
+    //     'name' => 'ANA -O&M- Base Camp Repairs at Qala-e-Naw',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Badghis',
+    //     'client' => 'USACE',
+
+    //     'thumbnail' => 'assets/images/projects/35-badghis-1.png',
+
+    //     'images' => [
+    //         'assets/images/projects/35-badghis-1.png',
+    //         'assets/images/projects/35-badghis-2.png',
+    //         'assets/images/projects/35-badghis-3.png'
+    //     ],
+
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Afghan National Army "ANA" Operation and Maintenance repairs inside Base Camp at Qala-e-naw City of Badghis Province, Afghanistan was accomplished.',
+
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
+
+    // ],
+
+
+    // [
+    //     'id' => 'c36',
+    //     'name' => 'ANP Transportation Brigade Headquarter',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Nangarhar',
+    //     'client' => 'USACE',
+
+    //     'thumbnail' => 'assets/images/projects/36-nangarhar-1.png',
+
+    //     'images' => [
+    //         'assets/images/projects/36-nangarhar-1.png',
+    //         'assets/images/projects/36-nangarhar-2.png',
+    //         'assets/images/projects/36-nangarhar-3.png'
+    //     ],
+
+    //     'description' =>
+    //     'This contract was signed between USACE and State Corps. Through this project the construction of Transportation BrigadeHeadquarter for Afghan National Police in Jalalabad city of Nangarhar Province, Afghanistan was accomplished.',
+
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
+
+    // ],
 
 
     [
@@ -1249,46 +1249,34 @@ $projects = [
     ],
 
 
-    [
-        'id' => '42',
-        'name' => 'Construction of Warehouse for Da Afghanistan Breshna Sherkat (DABS)',
-        'sector' => 'structure',
-        'category' => 'vertical construction',
-        'status' => 'completed',
-        'completion-year' => 2020,
-        'location' => 'Kabul',
-        'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
+    // [
+    //     'id' => '42',
+    //     'name' => 'Construction of Warehouse for Da Afghanistan Breshna Sherkat (DABS)',
+    //     'sector' => 'structure',
+    //     'category' => 'vertical construction',
+    //     'status' => 'completed',
+    //     'completion-year' => 2020,
+    //     'location' => 'Kabul',
+    //     'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
 
-        'thumbnail' => 'assets/images/projects/42-kabul-1.png',
+    //     'thumbnail' => 'assets/images/projects/42-kabul-1.png',
 
-        'images' => [
-            'assets/images/projects/42-kabul-1.png',
-            'assets/images/projects/42-kabul-2.png',
-        ],
+    //     'images' => [
+    //         'assets/images/projects/42-kabul-1.png',
+    //         'assets/images/projects/42-kabul-2.png',
+    //     ],
 
-        'description' =>
-        'This contract was signed between Da Afghanistan Breshna Sherkat (DABS) and State Corps, it covers RCC concrete,  Stone & brick masonry works  and steel structure for Da Afghanistan Breshna Sherkat (DABS) warehouse in Kabul province.',
+    //     'description' =>
+    //     'This contract was signed between Da Afghanistan Breshna Sherkat (DABS) and State Corps, it covers RCC concrete,  Stone & brick masonry works  and steel structure for Da Afghanistan Breshna Sherkat (DABS) warehouse in Kabul province.',
 
-        'scope' => [
-            'RCC concrete,  Stone & brick masonry works  and steel structure for Da Afghanistan Breshna Sherkat (DABS) warehouse in Kabul province',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         'RCC concrete,  Stone & brick masonry works  and steel structure for Da Afghanistan Breshna Sherkat (DABS) warehouse in Kabul province',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
-
-
-
-
-
-
-
-
-
-
-
-
+    // ],
 
 
     [
