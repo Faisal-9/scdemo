@@ -286,75 +286,65 @@ include_once("includes/data/servicesdata.php");
 
 
 <!-- ================= CONTACT QUICK SECTION ================= -->
-<section class="index-contact-section py-4">
+<!-- <section class="index-contact-section py-4">
 
     <div class="container">
 
-        <!-- Title -->
+        // Title 
         <div class="text-center mb-2">
-            <h2 class="contact-title">
+            <h2 class="contact-title fw-bold fs-2">
                 <span>Get In</span> Touch
             </h2>
         </div>
+        <div class="row">
+            <div class="col-lg-10 text-center g-2">
 
-        <div class="row text-center g-2">
-
-            <!-- Phone -->
-            <div class="col-lg-4 col-md-3">
-                <div class="contact-item">
+                // Phone 
+                <div class="contact-item d-flex align-items-center justify-content-center gap-2">
                     <div class="contact-icon">
                         <i class="fa-solid fa-phone"></i>
                     </div>
 
-                    <p class="contact-text">
+                    <p class="contact-text mb-0">
                         +93 700 000 000
                     </p>
                 </div>
-            </div>
 
-            <!-- Address -->
-            <div class="col-lg-4 col-md-3">
-                <div class="contact-item">
-
+                // Address
+                <div class="contact-item d-flex align-items-center justify-content-center gap-2 mt-2">
                     <div class="contact-icon">
                         <i class="fa-solid fa-location-dot"></i>
                     </div>
 
-                    <h6 class="mb-2">Corporate Office</h6>
-
-                    <p class="contact-text">
-                        Kabul, Afghanistan <br>
-                        State Corps Headquarters
-                    </p>
-
+                    <div>
+                        <h6 class="mb-1">Corporate Office</h6>
+                        <p class="contact-text mb-0">
+                            Kart-e-Char D#3, Kabul Afghanistan <br>
+                            State Corps Headquarters
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Email -->
-            <div class="col-lg-4 col-md-3">
-                <div class="contact-item">
-
+                // Email 
+                <div class="contact-item d-flex align-items-center justify-content-center gap-2 mt-2">
                     <div class="contact-icon">
                         <i class="fa-regular fa-envelope"></i>
                     </div>
 
-                    <p class="contact-text">
-                        info@statecorps.com <br>
-                        hr@statecorps.com
+                    <p class="contact-text mb-0">
+                        comms@statecorps.com
                     </p>
-
                 </div>
+
             </div>
 
+            // Button 
+            <div class="col-lg-2 text-center mt-5">
+                <a href="contact.php" class="contact-btn">
+                    CONTACT US
+                </a>
+            </div>
         </div>
-
-        <!-- Button -->
-        <div class="text-center mt-5">
-            <a href="contact.php" class="contact-btn">
-                CONTACT US
-            </a>
-        </div>
-
     </div>
 
-</section>
+</section> -->
