@@ -1,6 +1,7 @@
 <?php
 include("includes/data/homedata.php");
 include_once("includes/data/servicesdata.php");
+include_once("includes/data/aboutdata.php");
 ?>
 
 
@@ -218,6 +219,34 @@ include_once("includes/data/servicesdata.php");
 
 
 
+<section class="clients-section">
+
+    <div class="container">
+        <div class="clients-container">
+
+            <div class="text-center mb-4">
+                <h2 class="fw-bold fs-2">Our Clients</h2>
+            </div>
+
+            <div class="clients-slider">
+                <div class="clients-track" id="clientsTrack">
+                    <?php $logos = array_merge($clients["items"], $clients["items"]); ?>
+                    <?php foreach ($logos as $client): ?>
+                        <div class="client-item">
+                            <div class="client-logo-box">
+                                <img src="<?= htmlspecialchars($client['logo']) ?>" alt="Client Logo">
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
 <!-- ================= LATEST NEWS ================= -->
 <section class="index-news-section section-padding">
     <div class="container">
@@ -259,29 +288,6 @@ include_once("includes/data/servicesdata.php");
     </div>
 </section>
 
-
-
-<!-- ================= CLIENTS ================= -->
-<section class="clients-section">
-
-    <div class="container">
-        <div class="container clients-container">
-            <div class="text-center my-3">
-                <h2 class="fw-bold fs-2">
-                    Clients
-                </h2>
-            </div>
-            <div class="clients-slider">
-                <?php foreach (array_merge($clients, $clients) as $logo): ?>
-                    <div class="client-item">
-                        <img src="<?= $logo ?>" alt="Client Logo">
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </div>
-
-</section>
 
 
 

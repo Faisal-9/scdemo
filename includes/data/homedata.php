@@ -187,19 +187,15 @@ $newsItems = [
 
 
 /* ================= CLIENTS ================= */
-$clients = [
-    "assets/images/clients/client_ABC_resized.png",
-    "assets/images/clients/client_ADB_resized.png",
-    "assets/images/clients/client_dabs_resized.png",
-    "assets/images/clients/client_fao_resized.png",
-    "assets/images/clients/client_metq_resized.png",
-    "assets/images/clients/client_mew_resized.png",
-    "assets/images/clients/client_unops_resized.png",
-    "assets/images/clients/client_usace_resized.png",
-    "assets/images/clients/client_wfp_resized.png",
-    "assets/images/clients/client_worldbank_resized.png",
-];
-
-
-
-/* ================= CONTACT ================= */
+// $clients = [
+//     "assets/images/clients/client_ABC_resized.png",
+//     "assets/images/clients/client_ADB_resized.png",
+//     "assets/images/clients/client_dabs_resized.png",
+//     "assets/images/clients/client_fao_resized.png",
+//     "assets/images/clients/client_metq_resized.png",
+//     "assets/images/clients/client_mew_resized.png",
+//     "assets/images/clients/client_unops_resized.png",
+//     "assets/images/clients/client_usace_resized.png",
+//     "assets/images/clients/client_wfp_resized.png",
+//     "assets/images/clients/client_worldbank_resized.png",
+// ];

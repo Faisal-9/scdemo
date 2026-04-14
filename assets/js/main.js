@@ -150,6 +150,74 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* ==========================
+   INDEX CLIENTS INFINITE SLIDER 
+========================== */
+
+  (function () {
+    const track = document.getElementById("clientsTrack");
+    const section = document.querySelector(".clients-section");
+
+    if (!track || !section) return;
+
+    let position = 0;
+    let speed = 0.3; 
+    let isRunning = false;
+    let animationFrame;
+
+    // Get half width (since duplicated items)
+    function getHalfWidth() {
+      return track.scrollWidth / 2;
+    }
+
+    function animate() {
+      if (!isRunning) return;
+
+      position -= speed;
+
+      // 🔥 seamless loop reset
+      if (Math.abs(position) >= getHalfWidth()) {
+        position = 0;
+      }
+
+      track.style.transform = `translateX(${position}px)`;
+
+      animationFrame = requestAnimationFrame(animate);
+    }
+
+    function start() {
+      if (!isRunning) {
+        isRunning = true;
+        animate();
+      }
+    }
+
+    function stop() {
+      isRunning = false;
+      cancelAnimationFrame(animationFrame);
+    }
+
+    /*  RUN ONLY WHEN VISIBLE  */
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            start();
+          } else {
+            stop();
+          }
+        });
+      },
+      { threshold: 0.2 },
+    );
+
+    observer.observe(section);
+
+    /*  PAUSE ON HOVER  */
+    track.addEventListener("mouseenter", stop);
+    track.addEventListener("mouseleave", start);
+  })();
+
+  /* ==========================
      Header Shrink
   ========================== */
 
