@@ -26,17 +26,16 @@ Message: $message
 }
 
 $head_office = [
-    'title' => 'Head Office - Afghanistan',
-    'contact_heading' => 'CONTACT US',
+    'title' => 'Headquarters - State Corps Afghanistan',
     'phone' => '+93 791 811 968',
     'whatsapp' => '+93 791 811 968',
     'email' => 'comms@statecorps.com',
     'address' => 'Kart-e-char, D#3, Kabul Afghanistan',
     'qr_codes' => [
-        [
-            'image' => 'assets/images/WA-QR-Code.jpg',
-            'label' => 'WeChat'
-        ],
+        // [
+        //     'image' => 'assets/images/WA-QR-Code.jpg',
+        //     'label' => 'WeChat'
+        // ],
         [
             'image' => 'assets/images/WA-QR-Code.jpg',
             'label' => 'WhatsApp'
@@ -50,82 +49,173 @@ $international_offices = [
         'phone' => '+90 212 123 4567',
         'email' => 'info@statecorps.com.tr',
         'address' => 'İnşaat Sanayi ve Ticaret A.Ş. Kuçukbakkalkoy Mah. Kuçuk Setli Sk. No:5-9 İç Kapı No:4 Ataşehir Istanbul, Türkiye 34750',
-        'business-hours' => 'Monday to Friday: 9:00 - 19:00',
     ],
     [
         'title' => 'State Corps USA',
         'phone' => '+1 123-456-7890',
         'email' => 'hq@statecorps.com',
         'address' => '42426 Benfold Square Brambleton, VA 20148 United States',
-        'business-hours' => 'Monday to Friday: 9:00 - 17:00',
     ],
     [
         'title' => 'State Corps Uzbekistan',
         'phone' => '+971 4 123 4567',
         'email' => 'uzbekistan@statecorps.com',
         'address' => 'abc Street, Tashkent, Uzbekistan',
-        'business-hours' => 'Monday to Friday: 9:00 - 17:00',
     ],
 ];
 ?>
 
-<section class="contact">
+<section class="contact py-4">
     <div class="container">
 
-        <div class="contact-wrapper">
+        <h2 class="text-center fw-bold mb-4">Reach Us</h2>
 
-            <div class="contact-left">
-                <h2><?= $head_office['title'] ?></h2>
-                <h4><?= $head_office['contact_heading'] ?></h4>
-                <p>Phone: <a href="tel:<?= $head_office['whatsapp'] ?>"><?= $head_office['whatsapp'] ?></a></p>
-                <p>WhatsApp:<a href="https://wa.me/+93791811968" target="_blank"><?= $head_office['phone'] ?></a></p>
-                <p>Email: <a href="mailto:<?= $head_office['email'] ?>"><?= $head_office['email'] ?></a></p>
-                <p>Address: <?= $head_office['address'] ?></p>
+        <div class="p-4 rounded shadow-sm">
 
-                <div class="qr-box">
-                    <?php foreach ($head_office['qr_codes'] as $qr): ?>
-                        <div>
-                            <img src="<?= $qr['image'] ?>">
-                            <span><?= $qr['label'] ?></span>
+            <!-- TOP ROW -->
+            <div class="row g-4">
+
+                <!-- LEFT -->
+                <div class="col-lg-6">
+                    <div class="p-4 rounded h-100">
+
+                        <h4 class="fw-bold "><?= $head_office['title'] ?></h4>
+
+                        <p class="mb-2">
+                            <strong>Phone:</strong>
+                            <a href="tel:<?= $head_office['phone'] ?>" class="text-decoration-none">
+                                <?= $head_office['phone'] ?>
+                            </a>
+                        </p>
+
+                        <p class="mb-2">
+                            <strong>WhatsApp:</strong>
+                            <a href="https://wa.me/<?= $head_office['whatsapp'] ?>" target="_blank" class="text-decoration-none">
+                                <?= $head_office['whatsapp'] ?>
+                            </a>
+                        </p>
+
+                        <p class="mb-2">
+                            <strong>Email:</strong>
+                            <a href="mailto:<?= $head_office['email'] ?>" class="text-decoration-none">
+                                <?= $head_office['email'] ?>
+                            </a>
+                        </p>
+
+                        <p class="mb-3">
+                            <strong>Address:</strong><br>
+                            <?= $head_office['address'] ?>
+                        </p>
+
+                        <div class="row text-center g-3 mt-3">
+                            <?php foreach ($head_office['qr_codes'] as $qr): ?>
+                                <div class="col-6">
+                                    <div class="p-2 bg-white rounded shadow-sm">
+                                        <img src="<?= $qr['image'] ?>" class="img-fluid mb-2" style="max-height:100px;">
+                                        <div class="small fw-semibold"><?= $qr['label'] ?></div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
-                    <?php endforeach; ?>
+
+                    </div>
                 </div>
+
+                <!-- RIGHT -->
+                <div class="col-lg-6">
+                    <div class="position-relative rounded overflow-hidden">
+
+                        <div class="position-absolute top-0 start-0 bg-dark text-white px-3 py-1 small z-3">
+                            Kart-e-Char, Kabul, Afghanistan
+                        </div>
+
+                        <iframe
+                            src="https://maps.google.com/maps?q=34.50447374731745,69.14093396440924&z=14&output=embed"
+                            class="w-100"
+                            style="height: 400px; border:0;">
+                        </iframe>
+
+                    </div>
+                </div>
+
             </div>
 
-            <div class="contact-right">
-                <?php if ($success != "") { ?>
-                    <p style="color:green;"><?php echo $success; ?></p>
-                <?php } ?>
-                <?php if ($error != "") { ?>
-                    <p style="color:red;"><?php echo $error; ?></p>
-                <?php } ?>
-                <form class="contact-form" method="post">
-                    <input type="text" name="name" placeholder="Name" required>
-                    <div class="form-row">
-                        <input type="text" name="phone" placeholder="Whatsapp / Tel *" required>
-                        <input type="email" name="email" placeholder="Email *" required>
+        </div>
+
+        <!-- FORM -->
+        <div class="bg-white p-4 rounded shadow-sm mt-4">
+
+            <h4 class="text-center fw-bold mb-4">Drop Message</h4>
+
+            <?php if ($success != "") { ?>
+                <div class="alert alert-success"><?= $success ?></div>
+            <?php } ?>
+
+            <?php if ($error != "") { ?>
+                <div class="alert alert-danger"><?= $error ?></div>
+            <?php } ?>
+
+            <form method="post">
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" name="name" class="form-control" placeholder="Name" required>
                     </div>
-                    <textarea name="message" placeholder="Message content *" required></textarea>
-                    <button class="submit-btn">Submit Message</button>
-                </form>
-            </div>
+
+                    <div class="col-md-6">
+                        <input type="text" name="phone" class="form-control" placeholder="Phone / WhatsApp" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <input type="text" name="subject" class="form-control" placeholder="Subject">
+                    </div>
+
+                    <div class="col-12">
+                        <textarea name="message" class="form-control" rows="4" placeholder="Your Message..." required></textarea>
+                    </div>
+
+                    <div class="col-12 text-end">
+                        <button class="btn btn-primary px-4">Submit</button>
+                    </div>
+                </div>
+
+            </form>
         </div>
 
         <!-- INTERNATIONAL OFFICES -->
-        <div class="international-offices">
-            <h2>Oversees Branches</h2>
-            <p>Contact our offices worldwide for assistance and support.</p>
-            <div class="office-cards">
+        <div class="international-offices p-5 rounded">
+
+            <h3 class="text-center fw-bold">Overseas Companies Offices</h3>
+            <p class="text-center mb-4">
+                Contact our offices worldwide for assistance and support.
+            </p>
+
+            <div class="row g-4">
                 <?php foreach ($international_offices as $office): ?>
-                    <div class="office-card">
-                        <h3><?= $office['title'] ?></h3>
-                        <p><b>Phone:</b> <a href="tel:<?= $office['phone'] ?>"><?= $office['phone'] ?></a></p>
-                        <p><b>Email:</b> <a href="mailto:<?= $office['email'] ?>"><?= $office['email'] ?></a></p>
-                        <p><b>Address:</b> <?= $office['address'] ?></p>
-                        <p><b>Business Hours:</b> <?= $office['business-hours'] ?></p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="office-card h-100 p-3 bg-white rounded shadow-sm">
+
+                            <h5 class="text-primary text-center"><?= $office['title'] ?></h5>
+
+                            <p><strong>Phone:</strong>
+                                <a href="tel:<?= $office['phone'] ?>"><?= $office['phone'] ?></a>
+                            </p>
+
+                            <p><strong>Email:</strong>
+                                <a href="mailto:<?= $office['email'] ?>"><?= $office['email'] ?></a>
+                            </p>
+
+                            <p><strong>Address:</strong><br><?= $office['address'] ?></p>
+
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>
+
         </div>
 
     </div>
