@@ -64,6 +64,7 @@ include_once("includes/data/aboutdata.php");
                 Why State Corps
             </h2>
         </div>
+
         <div class="row align-items-center">
 
             <div class="col-lg-3">
@@ -93,17 +94,27 @@ include_once("includes/data/aboutdata.php");
                             <?php $first = true; ?>
 
                             <?php foreach ($whySC as $id => $item): ?>
+
+                                <?php
+                                $hasAny = !empty($item['tabname'] ?? null);
+
+                                if (!$hasAny) continue;
+
+                                $label = $item['tabname'] ?? 'Section ' . $id;
+                                ?>
+
                                 <li class="nav-item">
                                     <button
                                         class="nav-link <?= $first ? 'active' : '' ?>"
                                         data-bs-toggle="tab"
                                         data-bs-target="#why<?= $id ?>">
-                                        <?= $item['title'] ?>
+                                        <?= htmlspecialchars($label) ?>
                                     </button>
                                 </li>
-                                <?php $first = false; ?>
-                            <?php endforeach; ?>
 
+                                <?php $first = false; ?>
+
+                            <?php endforeach; ?>
                         </ul>
 
                         <!-- TAB CONTENT -->
@@ -111,27 +122,51 @@ include_once("includes/data/aboutdata.php");
                             <?php $first = true; ?>
 
                             <?php foreach ($whySC as $id => $item): ?>
-                                <div
-                                    class="tab-pane fade <?= $first ? 'show active' : '' ?>"
-                                    id="why<?= $id ?>">
+
+                                <?php
+                                $hasTitle = !empty($item['title'] ?? null);
+                                $hasText  = !empty($item['text'] ?? null);
+                                $hasImage = !empty($item['image'] ?? null);
+
+                                $hasContent = $hasTitle || $hasText;
+                                ?>
+
+                                <div class="tab-pane fade <?= $first ? 'show active' : '' ?>" id="why<?= $id ?>">
                                     <div class="row align-items-center">
-                                        <div class="col-md-6">
-                                            <h2 class="text-orange">
-                                                <?= $item['title'] ?>
-                                            </h2>
-                                            <p>
-                                                <?= $item['text'] ?>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <img
-                                                src="<?= $item['image'] ?>"
-                                                class="img-fluid rounded"
-                                                alt="<?= $item['title'] ?>">
-                                        </div>
+
+                                        <?php if ($hasContent): ?>
+                                            <div class="<?= $hasImage ? 'col-md-6' : 'col-md-12' ?>">
+
+                                                <?php if ($hasTitle): ?>
+                                                    <h2 class="text-orange">
+                                                        <?= htmlspecialchars($item['title']) ?>
+                                                    </h2>
+                                                <?php endif; ?>
+
+                                                <?php if ($hasText): ?>
+                                                    <p>
+                                                        <?= htmlspecialchars($item['text']) ?>
+                                                    </p>
+                                                <?php endif; ?>
+
+                                            </div>
+                                        <?php endif; ?>
+
+
+                                        <?php if ($hasImage): ?>
+                                            <div class="<?= $hasContent ? 'col-md-6' : 'col-md-12' ?>">
+                                                <img
+                                                    src="<?= htmlspecialchars($item['image']) ?>"
+                                                    class="img-fluid rounded"
+                                                    alt="<?= htmlspecialchars($item['title'] ?? 'image') ?>">
+                                            </div>
+                                        <?php endif; ?>
+
                                     </div>
                                 </div>
+
                                 <?php $first = false; ?>
+
                             <?php endforeach; ?>
 
                         </div>
@@ -219,6 +254,7 @@ include_once("includes/data/aboutdata.php");
 
 
 
+<!-- ================= CLIENTS ================= -->
 <section class="clients-section">
 
     <div class="container">
@@ -250,8 +286,8 @@ include_once("includes/data/aboutdata.php");
 <!-- ================= LATEST NEWS ================= -->
 <section class="index-news-section section-padding">
     <div class="container">
-        <div class="index-news-header">
-            <h2 class="index-news-head">Recent Activities</h2>
+        <div class="index-news-header text-center mb-4">
+            <h2 class="index-news-head fw-bold fs-2">Recent Activities</h2>
         </div>
 
         <div class="row g-4">

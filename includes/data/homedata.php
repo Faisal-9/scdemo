@@ -78,18 +78,21 @@ $history = [
 /* INNER TABS  */
 $whySC = [
     '01' => [
+        'tabname' => 'Delivering Experience',
         'title' => 'Delivering Experience',
-        'text' => 'To be the leading and most trusted engineering and construction partner in the region, recognized for our technical expertise and transformative impact on infrastructure and energy development.',
+        'text' => 'With a proven track record across diverse and challenging environments, we bring deep industry experience to every project we undertake. Our team is driven by a commitment to excellence, delivering projects on time, within budget, and to the highest standards of quality and safety. By combining practical expertise with a results-oriented approach, we ensure consistent performance, reliability, and value for our clients across energy, infrastructure, and mining sectors.',
         'image' => 'assets/images/12.jpg'
     ],
     '02' => [
-        'title' => 'Regional Presence',
-        'text' => 'To be the leading and most trusted engineering and construction partner in the region, recognized for our technical expertise and transformative impact on infrastructure and energy development.',
-        'image' => 'assets/images/12.jpg'
+        'tabname' => 'Regional Presence',
+        // 'title' => 'Regional Presence',
+        // 'text' => 'To be the leading and most trusted engineering and construction partner in the region, recognized for our technical expertise and transformative impact on infrastructure and energy development.',
+        'image' => 'assets/images/presence.png'
     ],
     '03' => [
+        'tabname' => 'Technical Capabilities',
         'title' => 'Technical Capabilities',
-        'text' => 'To engineer a sustainable and empowered future for Afghanistan through reliable energy and robust infrastructure, delivering excellence, innovation, and value in every project we undertake.',
+        'text' => 'We combine advanced engineering expertise with cutting-edge technologies to deliver complex projects across energy, infrastructure, and mining sectors. Our multidisciplinary teams bring precision, innovation, and efficiency to every phase—from design and planning to execution and commissioning. With a focus on quality, safety, and sustainability, we provide reliable, scalable solutions that meet the highest industry standards and drive long-term value.',
         'image' => 'assets/images/11.jpg'
     ]
 ];
