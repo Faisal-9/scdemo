@@ -5,6 +5,7 @@ $services_pages = ['services.php'];
 $sectors_pages  = ['sectors.php'];
 $media_pages    = ['media.php', 'news.php', 'events.php', 'gallery.php'];
 
+include_once("includes/data/aboutdata.php");
 include_once("includes/data/servicesdata.php");
 include_once("includes/data/sectorsdata.php");
 ?>
@@ -43,7 +44,19 @@ include_once("includes/data/sectorsdata.php");
                         <li class="nav-item dropdown <?= ($current_page == 'about.php') ? 'active' : '' ?>">
                             <a href="about.php" class="nav-link has-dropdown">
                                 <span class="nav-text">About</span>
+                                <span class="dropdown-arrow">▼</span>
                             </a>
+                            <div class="dropdown-menu">
+                                <ul class="dropdown-list">
+                                    <?php foreach ($aboutSections as $section): ?>
+                                        <li>
+                                            <a href="about.php#<?= $section['id']; ?>" class="dropdown-link">
+                                                <?= htmlspecialchars($section['data']['title']); ?>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
                         </li>
 
                         <!-- Services -->

@@ -5,8 +5,8 @@ $heroSlides = [
 
     [
         "id" => "energy",
-        "subtitle" => "Our Energy Expertise",
         "title" => "Power & Energy",
+        "desc" => "Delivering large-scale power generation, transmission, and energy infrastructure projects that ensure reliable and sustainable energy supply for national and industrial growth.",
         "image" => "assets/images/slider_imgs/hero_energy1.jpg",
         "button" => "Read More",
         "link" => "#",
@@ -15,8 +15,8 @@ $heroSlides = [
 
     [
         "id" => "structure",
-        "subtitle" => "Structure & Building",
         "title" => "Physical Structure<br>& Real Estate",
+        "desc" => "Engineering and constructing modern commercial, residential, and industrial structures with a focus on durability, efficiency, and long-term value.",
         "image" => "assets/images/slider_imgs/hero_structure1.png",
         "button" => "Read More",
         "link" => "#",
@@ -25,8 +25,8 @@ $heroSlides = [
 
     [
         "id" => "transport",
-        "subtitle" => "Transport Engineering & Development",
         "title" => "Transportation<br>Infrastructure",
+        "desc" => "Designing and developing roads, highways, and transport networks that enhance connectivity, trade flow, and regional economic integration.",
         "image" => "assets/images/slider_03.jpg",
         "button" => "Read More",
         "link" => "#",
@@ -35,8 +35,8 @@ $heroSlides = [
 
     [
         "id" => "water",
-        "subtitle" => "Sustainable Water Management",
         "title" => "Water Resources<br>& Dams Infrastructure",
+        "desc" => "Building sustainable water systems, dams, and irrigation infrastructure to support agriculture, energy generation, and long-term water security.",
         "image" => "assets/images/slider_03.jpg",
         "button" => "Read More",
         "link" => "#",
@@ -45,8 +45,8 @@ $heroSlides = [
 
     [
         "id" => "mining",
-        "subtitle" => "Mining & Mineral Operations",
         "title" => "Mining",
+        "desc" => "Providing end-to-end mining solutions including exploration support, site development, and infrastructure for efficient mineral extraction.",
         "image" => "assets/images/slider_03.jpg",
         "button" => "Read More",
         "link" => "#",

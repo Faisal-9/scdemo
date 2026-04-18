@@ -17,8 +17,10 @@ include_once("includes/data/aboutdata.php");
                     <div class="slider-overlay"></div>
                     <div class="container">
                         <div class="slider-content">
-                            <h3><?= $slide['subtitle'] ?></h3>
                             <h1><?= $slide['title'] ?></h1>
+                            <p class="hero-desc">
+                                <?= $slide['desc'] ?>
+                            </p>
                             <a href="<?= $slide['link'] ?>" class="hero-btn">
                                 Explore Projects
                             </a>
@@ -35,7 +37,6 @@ include_once("includes/data/aboutdata.php");
 
             <?php foreach ($heroSlides as $index => $slide): ?>
                 <div class="hero-indicator-item <?= $index == 0 ? 'active' : '' ?>" data-index="<?= $index ?>">
-
                     <div class="hero-indicator-progress"></div>
                     <span class="hero-indicator-num">
                         <?= str_pad($index + 1, 2, "0", STR_PAD_LEFT) ?>

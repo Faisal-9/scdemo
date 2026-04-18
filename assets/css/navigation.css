@@ -167,9 +167,9 @@
   border-radius: 2px;
 }
 
-/* Dropdown Menus */ 
-// deleted for about page
+/* Dropdown Menus */
 .dropdown-menu {
+  animation: fadeIn 0.2s ease;
   position: absolute;
   top: 100%;
   left: 0;
@@ -188,7 +188,6 @@
 }
 
 .nav-item:hover .dropdown-menu,
-.has-dropdown:hover ~ .dropdown-menu,
 .dropdown-menu:hover {
   display: block;
   opacity: 1;
@@ -478,8 +477,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.dropdown-menu {
-  animation: fadeIn 0.2s ease;
 }

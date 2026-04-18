@@ -155,3 +155,35 @@ $sisterCompanies = [
         ],
     ]
 ];
+
+
+$aboutSections = [
+    [
+        'id' => 'general-info',
+        'data' => $generalInfo
+    ],
+    [
+        'id' => 'mission-vision',
+        'data' => $missionVision
+    ],
+    [
+        'id' => 'milestones',
+        'data' => $milestones
+    ],
+    [
+        'id' => 'clients',
+        'data' => $clients
+    ],
+    [
+        'id' => 'sister',
+        'data' => $sisterCompanies
+    ],
+    [
+        'id' => 'awards',
+        'data' => $awards
+    ],
+    [
+        'id' => 'certificates',
+        'data' => $certificates
+    ],
+];

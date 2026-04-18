@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 ========================== */
 
   if (typeof Swiper !== "undefined" && document.querySelector(".heroSwiper")) {
-    const slideDelay = 3000; //slide time
+    const slideDelay = 300000; //slide time
 
     const heroSwiper = new Swiper(".heroSwiper", {
       loop: true,
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!track || !section) return;
 
     let position = 0;
-    let speed = 0.5; 
+    let speed = 0.9;
     let isRunning = false;
     let animationFrame;
 
@@ -237,33 +237,102 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /* ==========================
-   About Page Section Toggle
+   About Page Section System (FINAL)
 ========================== */
+
   const aboutLinks = document.querySelectorAll(
     ".about-sidebar .nav-link[data-section]",
   );
   const aboutPanels = document.querySelectorAll(".about-panel");
 
+  /* ===== CORE FUNCTION ===== */
+  function activateSection(targetId, scroll = true) {
+    // activate sidebar
+    aboutLinks.forEach((l) => {
+      l.classList.toggle("active", l.dataset.section === targetId);
+    });
+
+    // show panel
+    aboutPanels.forEach((panel) => {
+      panel.classList.toggle("active", panel.id === targetId);
+    });
+
+    // scroll
+    if (scroll) {
+      const el = document.getElementById(targetId);
+      if (el) {
+        window.scrollTo({
+          top: el.offsetTop - 110,
+          behavior: "smooth",
+        });
+      }
+    }
+  }
+
+  /* ===== SIDEBAR CLICK ===== */
   if (aboutLinks.length) {
     aboutLinks.forEach((link) => {
       link.addEventListener("click", function (e) {
         e.preventDefault();
 
-        aboutLinks.forEach((l) => l.classList.remove("active"));
-        this.classList.add("active");
-
         const target = this.dataset.section;
-        aboutPanels.forEach((panel) => {
-          panel.classList.toggle("active", panel.id === target);
-        });
 
-        window.scrollTo({
-          top: document.querySelector(".about-content").offsetTop - 100,
-          behavior: "smooth",
-        });
+        // update URL without reload
+        history.pushState(null, null, "#" + target);
+
+        activateSection(target);
       });
     });
   }
+
+  /* ===== PAGE LOAD (direct URL or from other page) ===== */
+  window.addEventListener("load", function () {
+    const hash = window.location.hash.replace("#", "");
+
+    if (hash && document.getElementById(hash)) {
+      activateSection(hash, false);
+
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) {
+          window.scrollTo({
+            top: el.offsetTop - 110,
+            behavior: "smooth",
+          });
+        }
+      }, 200);
+    }
+  });
+
+  /* ===== HASH CHANGE (clicking header while already on about page) ===== */
+  window.addEventListener("hashchange", function () {
+    const hash = window.location.hash.replace("#", "");
+
+    if (hash && document.getElementById(hash)) {
+      activateSection(hash);
+    }
+  });
+
+  /* ===== HEADER MENU FIX (IMPORTANT) ===== */
+  document.querySelectorAll('a[href*="about.php#"]').forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const isAboutPage = window.location.pathname.includes("about.php");
+
+      if (isAboutPage) {
+        e.preventDefault();
+
+        const hash = this.getAttribute("href").split("#")[1];
+
+        if (hash && document.getElementById(hash)) {
+          // update URL
+          history.pushState(null, null, "#" + hash);
+
+          // activate section
+          activateSection(hash);
+        }
+      }
+    });
+  });
 
   /* ==========================
      About Us Mission - Vision

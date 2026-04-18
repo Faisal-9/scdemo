@@ -73,18 +73,30 @@
   color: #fff;
 }
 
-.slider-content h3 {
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  opacity: 0.9;
-}
-
 .slider-content h1 {
   font-size: 64px;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 25px;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.hero-desc {
+  max-width: 40%;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .hero-btn {
@@ -605,7 +617,6 @@
 .index-news-header {
   color: #0b1d4f;
 }
-
 
 .index-news-card {
   position: relative;
