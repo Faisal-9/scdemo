@@ -56,14 +56,11 @@ include_once("includes/data/aboutdata.php");
 
 
 <!-- ================= ABOUT US ================= -->
-<section class="index-stats-section" style="background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('<?= $statsBg ?>');">
-
+<section class="index-stats-section py-4" style="background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('<?= $statsBg ?>');">
     <div class="container">
 
         <div class="index-about-us-header text-center mb-4">
-            <h2 class="fw-bold fs-2">
-                Why State Corps
-            </h2>
+            <h2 class="fw-bold fs-2">Why State Corps</h2>
         </div>
 
         <div class="row align-items-center">
@@ -182,7 +179,7 @@ include_once("includes/data/aboutdata.php");
 
 
 <!-- ================= OUR SERVICES ================= -->
-<section class="services-section">
+<section class="services-section py-4">
     <div class="container">
 
         <div class="section-header text-center mb-4">
@@ -229,14 +226,16 @@ include_once("includes/data/aboutdata.php");
 
 
 <!-- ================= FEATURED PROJECTS ================= -->
-<section class="major-projects-section py-5">
+<section class="major-projects-section py-4">
     <div class="container major-projects-container">
+
+
+        <div class="text-center mb-4">
+            <h2 class="fw-bold fs-2">
+                Featured Projects
+            </h2>
+        </div>
         <div class="row g-4">
-            <div class="text-center mb-4">
-                <h2 class="fw-bold fs-2">
-                    Featured Projects
-                </h2>
-            </div>
             <?php foreach ($major_projects as $project): ?>
                 <div class="col-md-3">
                     <div class="major-project-card">
@@ -256,7 +255,7 @@ include_once("includes/data/aboutdata.php");
 
 
 <!-- ================= CLIENTS ================= -->
-<section class="clients-section">
+<section class="clients-section py-4">
 
     <div class="container">
         <div class="clients-container">
@@ -285,8 +284,9 @@ include_once("includes/data/aboutdata.php");
 
 
 <!-- ================= LATEST NEWS ================= -->
-<section class="index-news-section section-padding">
+<section class="index-news-section py-4">
     <div class="container">
+
         <div class="index-news-header text-center mb-4">
             <h2 class="index-news-head fw-bold fs-2">Recent Activities</h2>
         </div>

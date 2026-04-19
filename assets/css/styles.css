@@ -1,8 +1,22 @@
+/* ================= root styling variables ================= */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+
+  --font-size: 16px;
+  --font-size: 16px;
+}
+
+
+
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 .container {
   margin: auto;
@@ -217,7 +231,7 @@
 
 /*  INDEX STATS & ABOUT US SECTION  */
 .index-stats-section {
-  padding: 60px 0;
+  /* padding: 60px 0; */
   background-size: cover;
   background-position: left center;
   background-attachment: fixed;
@@ -342,7 +356,7 @@
 /*  INDEX SERVICES  */
 
 .services-section {
-  padding: 60px 20px;
+  /* padding: 60px 20px; */
   background: #f6f6f6;
 }
 
@@ -456,7 +470,6 @@
   height: 220px;
   display: flex;
   align-items: flex-end;
-  margin-bottom: 1rem;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -490,7 +503,6 @@
   text-align: center;
   color: #fff;
   font-weight: 600;
-  padding: 12px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
   z-index: 1;
 }
@@ -507,17 +519,14 @@
   }
 }
 
-/*  CLIENTS  */
 
+/*  CLIENTS  */
 .clients-section {
-  background: #ffffff;
-  padding: 40px 0;
+  background: #f6f6f6;
 }
 
 .clients-container {
-  background: #f8f9fb;
   border-radius: 10px;
-  padding: 30px 20px;
   position: relative;
   overflow: hidden;
 }
@@ -572,7 +581,6 @@
   background: #ffffff;
   border-radius: 8px;
   padding: 10px;
-
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
@@ -610,8 +618,7 @@
 
 /*  INDEX NEWS   */
 .index-news-section {
-  background: #f5f6f8;
-  padding: 2% 0;
+  background: #fff;
 }
 
 .index-news-header {
@@ -1872,7 +1879,7 @@
 /* ================= FOOTER BASE ================= */
 
 .site-footer {
-  background: #001f4d;
+  background: #0c1c3d;
   color: #cfd8e3;
   font-size: 14px;
   padding: 30px 0;

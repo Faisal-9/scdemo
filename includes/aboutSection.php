@@ -56,7 +56,7 @@ $aboutSections = [
 
                     <!-- MISSION & VISION -->
                     <section id="mission-vision" class="about-section-block about-panel py-1">
-                        <h2 class="text-center mb-5">Mission, Vision & Core Values</h2>
+                        <h2 class="text-center mb-3">Mission, Vision & Core Values</h2>
 
                         <!-- ROW 1: Mission — text left, image right -->
                         <div class="row align-items-center g-4 mb-5">
@@ -114,7 +114,7 @@ $aboutSections = [
 
                     <!-- GROWTH -->
                     <section id="milestones" class="about-section-block about-panel py-1">
-                        <h2 class="text-center mb-4"><?= $milestones['title'] ?></h2>
+                        <h2 class="text-center mb-3"><?= $milestones['title'] ?></h2>
 
                         <div class="row">
                             <!-- LEFT SIDE -->
@@ -153,7 +153,7 @@ $aboutSections = [
 
                     <!-- CLIENTS -->
                     <section id="clients" class="about-section-block client-section about-panel py-1">
-                        <h2 class="text-center mb-4"><?= $clients['title'] ?></h2>
+                        <h2 class="text-center mb-3"><?= $clients['title'] ?></h2>
                         <div class="row g-3 justify-content-center">
                             <?php foreach ($clients['items'] as $client): ?>
                                 <div class="col-lg-2 col-md-3 col-4">
@@ -167,7 +167,7 @@ $aboutSections = [
 
                     <!-- CERTIFICATES -->
                     <section id="certificates" class="about-section-block about-panel py-1">
-                        <h2 class="text-center mb-4"><?= $certificates['title'] ?></h2>
+                        <h2 class="text-center mb-3"><?= $certificates['title'] ?></h2>
                         <div class="row g-4 justify-content-center">
                             <?php foreach ($certificates['items'] as $cert): ?>
                                 <div class="col-lg-4 col-md-6">
@@ -183,9 +183,9 @@ $aboutSections = [
                     </section>
 
                     <!-- AWARDS -->
-                    <section id="awards" class="about-section-block about-panel py-2">
+                    <section id="awards" class="about-section-block about-panel py-1">
                         <div class="container">
-                            <h2 class="text-center mb-4"><?= $awards['title'] ?></h2>
+                            <h2 class="text-center mb-3"><?= $awards['title'] ?></h2>
 
                             <div class="row g-4 align-items-stretch">
                                 <?php foreach ($awards['items'] as $award): ?>
@@ -208,10 +208,10 @@ $aboutSections = [
                     </section>
 
                     <!-- SISTER COMPANIES -->
-                    <section id="sister" class="about-section-block about-sister-slider about-panel py-2">
+                    <section id="sister" class="about-section-block about-sister-slider about-panel py-1">
 
                         <div class="container">
-                            <h2 class="text-center mb-4"><?= $sisterCompanies['title'] ?></h2>
+                            <h2 class="text-center mb-3"><?= $sisterCompanies['title'] ?></h2>
 
                             <div class="swiper sisterSwiper">
                                 <div class="swiper-wrapper">
