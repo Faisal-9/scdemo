@@ -36,7 +36,7 @@ $aboutSections = [
             </div>
 
             <!-- CONTENT -->
-            <div class="container-fluid col-lg-9 min-vh-60">
+            <div class="container-fluid col-lg-9">
                 <div class="about-content">
 
                     <!-- COMPANY OVERVIEW -->

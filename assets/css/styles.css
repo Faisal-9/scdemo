@@ -7,21 +7,27 @@
   --font-size: 16px;
 }
 
-
-
-
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-.container {
-  margin: auto;
-  padding: 0 15px;
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 /* ================= HEADER ================= */
 
 /*  INDEX SLIDER  */
@@ -519,7 +525,6 @@
   }
 }
 
-
 /*  CLIENTS  */
 .clients-section {
   background: #f6f6f6;
@@ -832,10 +837,6 @@
 }
 
 /* Section */
-.min-vh-60 {
-  min-height: 60vh;
-}
-
 .about-section-block {
   scroll-margin-top: 120px;
   margin-bottom: 10px;
@@ -1881,20 +1882,12 @@
 .site-footer {
   background: #0c1c3d;
   color: #cfd8e3;
-  font-size: 14px;
-  padding: 30px 0;
 }
 
-/* ================= LOGO + TEXT ================= */
-
-.footer-logo img {
-  max-width: 170px;
-  margin-bottom: 15px;
-}
+/*  LOGO + TEXT  */
 
 .footer-text {
   color: #aab6c5;
-  margin-bottom: 15px;
   line-height: 1.6;
 }
 
@@ -1909,7 +1902,7 @@
   margin: 0 6px;
 }
 
-/* ================= SOCIAL ICONS ================= */
+/*  SOCIAL ICONS  */
 
 .social-icons {
   display: flex;
@@ -2018,7 +2011,7 @@
   margin: 0 6px;
 }
 
-/* ================= RESPONSIVE ================= */
+/*  RESPONSIVE  */
 
 @media (max-width: 768px) {
   .footer-top {

@@ -10,7 +10,9 @@ include("includes/head.php");
     <?php include("includes/header.php"); ?>
 
     <!-- HOMEPAGE CONTENT -->
-    <?php include("includes/homesection.php"); ?>
+    <main>
+        <?php include("includes/homesection.php"); ?>
+    </main>
 
     <!-- ================= FOOTER ================= -->
     <?php include("includes/footer.php"); ?>

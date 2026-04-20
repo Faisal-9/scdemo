@@ -8,7 +8,9 @@ include("includes/head.php");
 
     <?php include("includes/header.php"); ?>
 
-    <?php include("includes/aboutSection.php"); ?>
+    <main>
+        <?php include("includes/aboutSection.php"); ?>
+    </main>
 
     <?php include("includes/footer.php"); ?>
 

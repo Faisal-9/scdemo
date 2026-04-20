@@ -9,46 +9,49 @@ include("includes/data/sectorsdata.php");
 
     <?php include("includes/header.php"); ?>
 
-    <section class="sectors-page">
-        <div class="container">
+    <main>
 
-            <!-- SECTOR MENU -->
-            <div class="sectors-menu-wrapper">
-                <ul class="sectors-menu">
+        <section class="sectors-page">
+            <div class="container">
+
+                <!-- SECTOR MENU -->
+                <div class="sectors-menu-wrapper">
+                    <ul class="sectors-menu">
+                        <?php
+                        $first = true;
+                        foreach ($sectors as $key => $sector):
+                        ?>
+                            <li class="<?= $first ? 'active' : '' ?>"
+                                data-target="<?= $key ?>">
+                                <?= $sector['title'] ?>
+                            </li>
+                        <?php
+                            $first = false;
+                        endforeach;
+                        ?>
+                    </ul>
+                </div>
+
+                <!-- SECTOR CONTENT -->
+                <div class="sectors-content">
                     <?php
                     $first = true;
                     foreach ($sectors as $key => $sector):
                     ?>
-                        <li class="<?= $first ? 'active' : '' ?>"
-                            data-target="<?= $key ?>">
-                            <?= $sector['title'] ?>
-                        </li>
-                    <?php
-                        $first = false;
-                    endforeach;
-                    ?>
-                </ul>
-            </div>
+                        <div id="<?= $key ?>" class="sector-section <?= $first ? 'active' : '' ?>">
+                            <?php
+                            $prefix = $key . "-";
+                            $sections = $sector["sections"];
+                            include("includes/components/sectorsection.php");
+                            $first = false;
+                            ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
 
-            <!-- SECTOR CONTENT -->
-            <div class="sectors-content">
-                <?php
-                $first = true;
-                foreach ($sectors as $key => $sector):
-                ?>
-                    <div id="<?= $key ?>" class="sector-section <?= $first ? 'active' : '' ?>">
-                        <?php
-                        $prefix = $key . "-";
-                        $sections = $sector["sections"];
-                        include("includes/components/sectorsection.php");
-                        $first = false;
-                        ?>
-                    </div>
-                <?php endforeach; ?>
             </div>
-
-        </div>
-    </section>
+        </section>
+    </main>
 
     <?php include("includes/footer.php"); ?>
     <?php include("includes/footerLink.php"); ?>

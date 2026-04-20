@@ -1,6 +1,6 @@
 <?php $current_year = date("Y"); ?>
 
-<footer class="site-footer">
+<footer class="site-footer py-4">
     <div class="container">
 
         <!-- TOP SECTION -->
