@@ -4,6 +4,30 @@
 ===================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
+  /* ==========================
+   MOBILE DROPDOWN FIX
+========================== */
+
+  const dropdownLinks = document.querySelectorAll(".has-dropdown");
+
+  dropdownLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+
+        const parent = this.closest(".nav-item");
+        const dropdown = parent.querySelector(".dropdown-menu");
+
+        // Close others (accordion behavior)
+        document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+          if (menu !== dropdown) menu.classList.remove("active");
+        });
+
+        dropdown.classList.toggle("active");
+      }
+    });
+  });
+
   /* =====================================
      COUNTER ANIMATION
   ===================================== */
@@ -72,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 ========================== */
 
   if (typeof Swiper !== "undefined" && document.querySelector(".heroSwiper")) {
-    const slideDelay = 300000;
+    const slideDelay = 10000;
 
     const heroSwiper = new Swiper(".heroSwiper", {
       loop: true,

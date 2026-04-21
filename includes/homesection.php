@@ -65,25 +65,30 @@ include_once("includes/data/aboutdata.php");
 
         <div class="row align-items-center">
 
-            <div class="col-lg-3">
-                <div class="row g-5">
+            <div class="col-lg-3 col-md-12">
+                <div class="row g-4 text-center text-lg-start">
+
                     <?php foreach ($stats as $stat): ?>
-                        <div class="col-12">
+                        <div class="col-6 col-sm-6 col-md-3 col-lg-12">
                             <div class="stat-item">
+
                                 <div class="stat-number">
                                     <span class="counter" data-target="<?= $stat['number'] ?>">0</span>
                                     <span class="suffix"><?= $stat['suffix'] ?></span>
                                 </div>
+
                                 <div class="stat-label">
                                     <?= $stat['label'] ?>
                                 </div>
+
                             </div>
                         </div>
                     <?php endforeach; ?>
+
                 </div>
             </div>
 
-            <div class="col-lg-9">
+            <div class="col-lg-9 col-md-8 d-none d-md-flex">
 
                 <section class="index-about-us">
                     <div class="index-about-us-container">
@@ -188,7 +193,7 @@ include_once("includes/data/aboutdata.php");
 
         <div class="row g-4">
             <?php foreach ($services as $serviceKey => $service): ?>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="service-card h-100">
 
                         <div class="service-image">
@@ -237,13 +242,16 @@ include_once("includes/data/aboutdata.php");
         </div>
         <div class="row g-4">
             <?php foreach ($major_projects as $project): ?>
-                <div class="col-md-3">
+                <div class="col-6 col-md-6 col-lg-3">
                     <div class="major-project-card">
                         <img src="<?= $project['image'] ?>"
                             alt="<?= $project['title'] ?>"
                             class="major-project-img">
-                        <div class="major-project-title">
-                            <?= $project['title'] ?>
+
+                        <div class="major-project-overlay">
+                            <div class="major-project-title">
+                                <?= $project['title'] ?>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -293,33 +301,45 @@ include_once("includes/data/aboutdata.php");
 
         <div class="row g-4">
 
-            <?php foreach ($newsItems as $news): ?>
-                <div class="col-lg-4 col-md-6">
+            <?php foreach (array_slice($newsItems, 0, 3) as $index => $news): ?>
+                <div class="col-lg-4 col-md-6 col-12 <?= $index >= 1 ? 'd-none d-md-block' : '' ?>">
                     <article class="index-news-card">
+
                         <div class="index-news-image">
-                            <img src="<?= $news['image']; ?> " alt="<?= $news['title']; ?>" class="img-fluid lazy" loading="lazy">
+                            <img src="<?= $news['image']; ?>"
+                                alt="<?= $news['title']; ?>"
+                                class="img-fluid lazy"
+                                loading="lazy">
                         </div>
+
                         <div class="index-news-content">
+
                             <div class="index-news-meta">
-                                <span>
-                                    <i class="fa-regular fa-user"></i>
-                                    Posted by: <?= $news['author']; ?>
-                                </span>
                                 <span>
                                     <i class="fa-regular fa-calendar-check"></i>
                                     <?= $news['comments']; ?>
                                 </span>
                             </div>
+
                             <h3 class="index-news-title">
                                 <a href="#">
                                     <?= htmlspecialchars($news['title']); ?>
                                 </a>
                             </h3>
+
                         </div>
+
                     </article>
                 </div>
             <?php endforeach; ?>
 
+        </div>
+
+        <!-- View All Button -->
+        <div class="text-center mt-4">
+            <a href="media.php" class="index-news-btn">
+                View More
+            </a>
         </div>
 
     </div>

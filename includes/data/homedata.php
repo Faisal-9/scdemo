@@ -184,7 +184,7 @@ $newsItems = [
         'image' => 'assets/images/gulbahar.jpg',
         'author' => 'Mayar',
         'comments' => '2 Sep, 2025',
-        'title' => 'Afghanistan 6th International EXRO Participation'
+        'title' => 'Afghanistan 6th International EXRO  Participation Participation Participation Participation'
     ]
 ];
 
