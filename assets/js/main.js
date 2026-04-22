@@ -271,22 +271,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ===== CORE FUNCTION ===== */
   function activateSection(targetId, scroll = true) {
-    // activate sidebar
     aboutLinks.forEach((l) => {
       l.classList.toggle("active", l.dataset.section === targetId);
     });
 
-    // show panel
     aboutPanels.forEach((panel) => {
       panel.classList.toggle("active", panel.id === targetId);
     });
 
-    // scroll
     if (scroll) {
       const el = document.getElementById(targetId);
       if (el) {
         window.scrollTo({
-          top: el.offsetTop - 110,
+          top: el.offsetTop - (window.innerWidth < 768 ? 80 : 110),
           behavior: "smooth",
         });
       }
@@ -331,31 +328,71 @@ document.addEventListener("DOMContentLoaded", function () {
   /* ===== HASH CHANGE (clicking header while already on about page) ===== */
   window.addEventListener("hashchange", function () {
     const hash = window.location.hash.replace("#", "");
-
     if (hash && document.getElementById(hash)) {
       activateSection(hash);
     }
   });
 
-  /* ===== HEADER MENU FIX (IMPORTANT) ===== */
+  /* ===== HEADER MENU FIX ===== */
   document.querySelectorAll('a[href*="about.php#"]').forEach((link) => {
     link.addEventListener("click", function (e) {
-      const isAboutPage = window.location.pathname.includes("about.php");
+      if (!window.location.pathname.includes("about.php")) return;
 
-      if (isAboutPage) {
-        e.preventDefault();
+      e.preventDefault();
+      const hash = this.getAttribute("href").split("#")[1];
 
-        const hash = this.getAttribute("href").split("#")[1];
-
-        if (hash && document.getElementById(hash)) {
-          // update URL
-          history.pushState(null, null, "#" + hash);
-
-          // activate section
-          activateSection(hash);
-        }
+      if (hash && document.getElementById(hash)) {
+        history.pushState(null, null, "#" + hash);
+        activateSection(hash);
       }
     });
+  });
+
+  /* ===== MOBILE SLIDER (certificates & awards) ===== */
+  function initMobileSlider({
+    thumbSelector,
+    mainImgId,
+    nameId,
+    prevId,
+    nextId,
+  }) {
+    const thumbs = document.querySelectorAll(thumbSelector);
+    const mainImg = document.getElementById(mainImgId);
+    const name = document.getElementById(nameId);
+
+    if (!thumbs.length || !mainImg || !name) return;
+
+    let index = 0;
+
+    function show(i) {
+      index = i;
+      thumbs.forEach((t) => t.classList.remove("active"));
+      thumbs[index].classList.add("active");
+      mainImg.src = thumbs[index].src;
+      name.innerText = thumbs[index].dataset.name;
+    }
+
+    thumbs.forEach((t, i) => t.addEventListener("click", () => show(i)));
+
+    document.getElementById(nextId).onclick = () =>
+      show((index + 1) % thumbs.length);
+    document.getElementById(prevId).onclick = () =>
+      show((index - 1 + thumbs.length) % thumbs.length);
+  }
+
+  initMobileSlider({
+    thumbSelector: ".cert-thumb",
+    mainImgId: "certMainImg",
+    nameId: "certName",
+    prevId: "certPrev",
+    nextId: "certNext",
+  });
+  initMobileSlider({
+    thumbSelector: ".award-thumb",
+    mainImgId: "awardMainImg",
+    nameId: "awardName",
+    prevId: "awardPrev",
+    nextId: "awardNext",
   });
 
   /* ==========================
@@ -391,6 +428,29 @@ document.addEventListener("DOMContentLoaded", function () {
       clickedIcon.style.display = isActive ? "none" : "";
     }
   };
+
+  /* ==========================
+   Mobile Milestone Picker
+========================== */
+  (function () {
+    const pills = document.querySelectorAll(".mob-mile-pill");
+    if (!pills.length) return;
+
+    function mobShow(i) {
+      const pill = pills[i];
+      pills.forEach((p) => p.classList.remove("active"));
+      pills[i].classList.add("active");
+
+      document.getElementById("mobMileImg").src = pill.dataset.img;
+      document.getElementById("mobMileName").innerText = pill.dataset.title;
+      document.getElementById("mobMileYear").innerText = pill.dataset.year;
+      document.getElementById("mobMileDesc").innerText = pill.dataset.desc;
+    }
+
+    pills.forEach((pill, i) =>
+      pill.addEventListener("click", () => mobShow(i)),
+    );
+  })();
 
   /* ==========================
    Growth Timeline
