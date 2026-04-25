@@ -2036,6 +2036,138 @@ img {
   opacity: 1;
 }
 
+/*  HERO  */
+.projects-hero {
+  position: relative;
+  height: 70vh;
+  background-position: center ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.projects-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.projects-hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.projects-hero h1 span {
+  color: #ffc107;
+}
+
+.hero-sub {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.hero-stats strong {
+  font-size: 22px;
+}
+
+/*  CATEGORY  */
+.project-category-section {
+  margin: 60px 0;
+}
+
+.project-category-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.project-count {
+  font-size: 13px;
+  color: #888;
+}
+
+/*  GRID  */
+.project-masonry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 220px;
+  gap: 15px;
+}
+
+.project-card.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.project-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 15px;
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+/* overlay */
+.project-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+}
+
+/* content */
+.project-card .content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.project-card .location {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.project-card h3 {
+  font-size: 15px;
+}
+
+/*  RESPONSIVE  */
+
+@media (max-width: 992px) {
+  .project-masonry {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-card.big {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-masonry {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card.big {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
 /* ================= MEDIA PAGE ================= */
 
 /* MEDIA TABS */

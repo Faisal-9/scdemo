@@ -833,15 +833,24 @@ document.addEventListener("DOMContentLoaded", function () {
     projectItems.forEach((item) => {
       const itemSector = item.dataset.sector.toLowerCase();
       const itemStatus = item.dataset.status.toLowerCase();
-      const itemCategory = item.dataset.category.toLowerCase();
 
       let show = true;
+
       if (sector !== "all" && sector !== itemSector) show = false;
       if (status !== "all" && status !== itemStatus) show = false;
-      if (category !== "all" && category !== itemCategory) show = false;
 
-      item.style.display = show ? "block" : "none";
+      item.style.display = show ? "flex" : "none";
     });
+
+    // Hide empty sections
+    document
+      .querySelectorAll(".project-category-section")
+      .forEach((section) => {
+        const visibleItems = section.querySelectorAll(
+          ".project-item[style*='flex']",
+        );
+        section.style.display = visibleItems.length ? "block" : "none";
+      });
   }
 
   function sortProjects(order) {

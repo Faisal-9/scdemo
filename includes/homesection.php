@@ -188,7 +188,9 @@ include_once("includes/data/aboutdata.php");
     <div class="container">
 
         <div class="section-header text-center mb-4">
-            <h2 class="fw-bold fs-2">Our Services</h2>
+            <p class="text-muted fs-5">
+                Delivering end-to-end engineering, project execution, and Mining solutions tailored to your industry's demands.
+            </p>
         </div>
 
         <div class="row g-4">

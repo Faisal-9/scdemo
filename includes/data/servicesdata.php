@@ -246,94 +246,94 @@ $services = [
 
     ],
 
-    "logistics" => [
-        "title" => "Logistics",
+    "mining" => [
+        "title" => "Mining",
         "image" => "assets/images/service02.jpg",
 
         "sections" => [
 
             [
-                "id" => "1transportation-freight",
-                "title" => "Transportation & Freight Management",
+                "id" => "1exploration-feasibility",
+                "title" => "Exploration & Feasibility Studies",
                 "small-title" => "",
                 "text" => "",
                 "image" => [
-                    "assets/images/2.jpg"
+                    "assets/images/mining1.jpg"
                 ],
                 "features" => [
-                    "Road freight",
-                    "Land, Sea & air cargo",
-                    "Multimodal transport",
-                    "Carrier management",
-                    "Schedule-linked delivery",
+                    "Geological surveys",
+                    "Drilling & sampling programs",
+                    "Resource estimation",
+                    "Feasibility & scoping studies",
+                    "Environmental baseline studies",
                 ]
             ],
 
             [
-                "id" => "2heavylift-oversizedload",
-                "title" => "Heavy Lift & Oversized Load Movement",
+                "id" => "2mine-development",
+                "title" => "Mine Development & Construction",
                 "small-title" => "",
                 "text" => "",
                 "image" => [
-                    "assets/images/2.jpg"
+                    "assets/images/mining2.jpg"
                 ],
                 "features" => [
-                    "Route surveys",
-                    "Abnormal load permits",
-                    "Heavy haulage",
-                    "Crane & rigging coordination",
-                    "Critical path logistics",
+                    "Open pit & underground development",
+                    "Infrastructure construction",
+                    "Shaft sinking & tunnelling",
+                    "Mine access road construction",
+                    "Contractor management",
                 ]
             ],
 
             [
-                "id" => "3customsclearance-importexport",
-                "title" => "Customs Clearance & Import/Export",
+                "id" => "3mining-operations",
+                "title" => "Mining Operations & Production",
                 "small-title" => "",
                 "text" => "",
                 "image" => [
-                    "assets/images/2.jpg"
+                    "assets/images/mining3.jpg"
                 ],
                 "features" => [
-                    "Import documentation",
-                    "HS classification",
-                    "Duty management",
-                    "Customs agent coordination",
+                    "Drill & blast operations",
+                    "Load & haul management",
+                    "Grade control",
+                    "Ore processing & crushing",
+                    "Production reporting",
+                ]
+            ],
+
+            [
+                "id" => "4mineral-processing",
+                "title" => "Mineral Processing & Beneficiation",
+                "small-title" => "",
+                "text" => "",
+                "image" => [
+                    "assets/images/mining4.jpg"
+                ],
+                "features" => [
+                    "Crushing & grinding circuits",
+                    "Flotation & leaching",
+                    "Gravity separation",
+                    "Tailings management",
+                    "Plant optimisation",
+                ]
+            ],
+
+            [
+                "id" => "5hse-rehabilitation",
+                "title" => "HSE & Mine Rehabilitation",
+                "small-title" => "",
+                "text" => "",
+                "image" => [
+                    "assets/images/mining5.jpg"
+                ],
+                "features" => [
+                    "Health & safety management",
+                    "Environmental monitoring",
                     "Regulatory compliance",
-                ]
-            ],
-
-            [
-                "id" => "sitereceiving-delivery",
-                "title" => "Site Receiving & Delivery Management",
-                "small-title" => "",
-                "text" => "",
-                "image" => [
-                    "assets/images/2.jpg"
-                ],
-                "features" => [
-                    "Goods receiving inspection",
-                    "Delivery scheduling",
-                    "Damage reporting",
-                    "Work-front coordination",
-                    "Handling controls",
-                ]
-            ],
-
-            [
-                "id" => "reverselogistics-demobilisation",
-                "title" => "Reverse Logistics & Demobilisation",
-                "small-title" => "",
-                "text" => "",
-                "image" => [
-                    "assets/images/2.jpg"
-                ],
-                "features" => [
-                    "Surplus material return",
-                    "Plant repatriation",
-                    "Site demobilisation",
-                    "Asset recovery",
-                    "Disposal management",
+                    "Land rehabilitation",
+                    "Closure planning",
                 ]
             ],
 
