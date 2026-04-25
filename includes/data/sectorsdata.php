@@ -118,7 +118,7 @@ $sectors = [
     ],
 
     "Infrastructure" => [
-        "title" => "Public Infrastructure",
+        "title" => "Transportation Infrastructure",
         "sections" => [
 
             [
@@ -178,11 +178,17 @@ $sectors = [
                 ]
             ],
 
+        ]
+    ],
+
+    "Infrastructure" => [
+        "title" => "Building & Construction",
+        "sections" => [
             [
-                "id" => "dam",
-                "title" => "Dams",
+                "id" => "buildings",
+                "title" => "Buildings",
                 "category" => "construction",
-                "content" => "Industrial plants, warehouses and production facilities.",
+                "content" => "residential, commercial, industrial, and institutional buildings.",
                 "image" => [
                     "assets/images/2.jpg",
                     "assets/images/2.jpg",
@@ -190,10 +196,10 @@ $sectors = [
                     "assets/images/2.jpg",
                 ],
                 "stats" => [
-                    ["value" => "10+",   "label" => "Facilities"],
-                    ["value" => "50000+", "label" => "sqm Built"],
-                    ["value" => "5+",    "label" => "Industries"],
-                    ["value" => "$150M+", "label" => "Total Value"],
+                    ["value" => "5+",    "label" => "Projects"],
+                    ["value" => "200km+", "label" => "Track Designed"],
+                    ["value" => "3+",    "label" => "Regions"],
+                    ["value" => "$300M+", "label" => "Total Value"],
                 ]
             ],
 
@@ -221,25 +227,6 @@ $sectors = [
                 "title" => "Tunnels",
                 "category" => "construction",
                 "content" => "Design and development of modern railway infrastructure.",
-                "image" => [
-                    "assets/images/2.jpg",
-                    "assets/images/2.jpg",
-                    "assets/images/2.jpg",
-                    "assets/images/2.jpg",
-                ],
-                "stats" => [
-                    ["value" => "5+",    "label" => "Projects"],
-                    ["value" => "200km+", "label" => "Track Designed"],
-                    ["value" => "3+",    "label" => "Regions"],
-                    ["value" => "$300M+", "label" => "Total Value"],
-                ]
-            ],
-
-            [
-                "id" => "buildings",
-                "title" => "Buildings",
-                "category" => "construction",
-                "content" => "residential, commercial, industrial, and institutional buildings.",
                 "image" => [
                     "assets/images/2.jpg",
                     "assets/images/2.jpg",
@@ -316,6 +303,25 @@ $sectors = [
                     ["value" => "10+",   "label" => "Industrial Facilities"],
                     ["value" => "100%",  "label" => "Code Compliant"],
                     ["value" => "$300M+", "label" => "Construction Value"],
+                ]
+            ],
+
+            [
+                "id" => "dam",
+                "title" => "Dams",
+                "category" => "construction",
+                "content" => "Industrial plants, warehouses and production facilities.",
+                "image" => [
+                    "assets/images/2.jpg",
+                    "assets/images/2.jpg",
+                    "assets/images/2.jpg",
+                    "assets/images/2.jpg",
+                ],
+                "stats" => [
+                    ["value" => "10+",   "label" => "Facilities"],
+                    ["value" => "50000+", "label" => "sqm Built"],
+                    ["value" => "5+",    "label" => "Industries"],
+                    ["value" => "$150M+", "label" => "Total Value"],
                 ]
             ],
 
