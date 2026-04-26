@@ -176,7 +176,7 @@ $services = [
             ],
             [
                 "id" => "5quality-assurance-hse",
-                "title" => "Quality Assurance & HSE (Health, Safety & Environment)",
+                "title" => "Quality Assurance & HSE",
                 "small-title" => "",
                 "text" => "",
                 "image" => [
