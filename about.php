@@ -16,6 +16,12 @@ include("includes/head.php");
 
     <?php include("includes/footerLink.php"); ?>
 
+    <!-- GLOBAL IMAGE LIGHTBOX -->
+    <div id="imgLightbox" class="img-lightbox">
+        <span class="img-close">&times;</span>
+        <img class="img-lightbox-content" id="lightboxImg">
+    </div>
+
 </body>
 
 </html>

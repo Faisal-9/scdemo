@@ -5,6 +5,36 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   /* ==========================
+   GLOBAL IMAGE LIGHTBOX
+========================== */
+
+  (function () {
+    const lightbox = document.getElementById("imgLightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const closeBtn = document.querySelector(".img-close");
+
+    if (!lightbox || !lightboxImg) return;
+
+    // Attach click to ALL images with class "zoomable"
+    document.querySelectorAll(".zoomable").forEach((img) => {
+      img.addEventListener("click", function () {
+        lightbox.style.display = "block";
+        lightboxImg.src = this.src;
+      });
+    });
+
+    // Close
+    closeBtn.onclick = () => (lightbox.style.display = "none");
+
+    // Click outside image closes
+    lightbox.onclick = (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    };
+  })();
+
+  /* ==========================
    MOBILE DROPDOWN FIX
 ========================== */
 

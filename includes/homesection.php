@@ -160,7 +160,7 @@ include_once("includes/data/aboutdata.php");
                                             <div class="<?= $hasContent ? 'col-md-6' : 'col-md-12' ?>">
                                                 <img
                                                     src="<?= htmlspecialchars($item['image']) ?>"
-                                                    class="img-fluid rounded"
+                                                    class="zoomable img-fluid rounded"
                                                     alt="<?= htmlspecialchars($item['title'] ?? 'image') ?>">
                                             </div>
                                         <?php endif; ?>
@@ -248,7 +248,7 @@ include_once("includes/data/aboutdata.php");
                     <div class="major-project-card">
                         <img src="<?= $project['image'] ?>"
                             alt="<?= $project['title'] ?>"
-                            class="major-project-img">
+                            class="major-project-img zoomable">
 
                         <div class="major-project-overlay">
                             <div class="major-project-title">
@@ -280,7 +280,7 @@ include_once("includes/data/aboutdata.php");
                     <?php foreach ($logos as $client): ?>
                         <div class="client-item">
                             <div class="client-logo-box">
-                                <img src="<?= htmlspecialchars($client['logo']) ?>" alt="Client Logo">
+                                <img src="<?= htmlspecialchars($client['logo']) ?>" class="zoomable" alt="Client Logo">
                             </div>
                         </div>
                     <?php endforeach; ?>

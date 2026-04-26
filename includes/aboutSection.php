@@ -49,7 +49,7 @@ $aboutSections = [
                             <div class="general-info-image mt-4">
                                 <img src="<?= $generalInfo['image'] ?>"
                                     alt="State Corps Company Overview"
-                                    class="img-fluid rounded-3 w-100 center center">
+                                    class="zoomable img-fluid rounded-3 w-100 center center ">
                             </div>
                         <?php endif; ?>
                     </section>
@@ -69,7 +69,7 @@ $aboutSections = [
                             <div class="col-lg-6">
                                 <img src="<?= $missionVision['mission_img'] ?>"
                                     alt="Mission"
-                                    class="img-fluid rounded-3 mv-img">
+                                    class="img-fluid rounded-3 mv-img zoomable">
                             </div>
                         </div>
 
@@ -78,7 +78,7 @@ $aboutSections = [
                             <div class="col-lg-6">
                                 <img src="<?= $missionVision['vision_img'] ?>"
                                     alt="Vision"
-                                    class="img-fluid rounded-3 mv-img">
+                                    class="img-fluid rounded-3 mv-img zoomable">
                             </div>
                             <div class="col-lg-6">
                                 <div class="mv-text-block">
@@ -106,7 +106,7 @@ $aboutSections = [
                             <div class="col-lg-6">
                                 <img src="<?= $missionVision['core_values_img'] ?>"
                                     alt="Core Values"
-                                    class="img-fluid rounded-3 mv-img">
+                                    class="img-fluid rounded-3 mv-img zoomable">
                             </div>
                         </div>
 
@@ -145,7 +145,7 @@ $aboutSections = [
 
                                     <img id="mileImg"
                                         src="assets/images/taloqan.jpg"
-                                        class="img-fluid rounded-3 mb-3">
+                                        class="img-fluid rounded-3 mb-3 zoomable">
 
                                     <div class="d-flex justify-content-between align-items-center">
                                         <h4 id="mileTitle"><?= $milestones['items'][0]['title'] ?></h4>
@@ -194,7 +194,7 @@ $aboutSections = [
                                     <div class="certificate-card text-center p-3 bg-white rounded-3 h-100">
 
                                         <div class="certificate-img mb-2">
-                                            <img src="<?= $cert['logo'] ?>" alt="<?= $cert['name'] ?>" class="img-fluid">
+                                            <img src="<?= $cert['logo'] ?>" alt="<?= $cert['name'] ?>" class="img-fluid zoomable">
                                         </div>
 
                                         <h6 class="certificate-name">
@@ -219,7 +219,7 @@ $aboutSections = [
                                     <div class="award-card text-center p-3 bg-white rounded-3 h-100">
 
                                         <div class="award-img mb-2">
-                                            <img src="<?= $award['logo'] ?>" class="img-fluid">
+                                            <img src="<?= $award['logo'] ?>" class="img-fluid zoomable">
                                         </div>
 
                                         <h6 class="award-title">
