@@ -103,7 +103,7 @@ $services = [
 
     "implementation" => [
         "image" => "assets/images/slider_03.jpg",
-        "title" => "Project Delivery & Implementation",
+        "title" => "Project Delivery",
 
         "sections" => [
 
