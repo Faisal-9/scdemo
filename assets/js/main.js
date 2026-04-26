@@ -348,53 +348,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /* ===== MOBILE SLIDER (certificates & awards) ===== */
-  function initMobileSlider({
-    thumbSelector,
-    mainImgId,
-    nameId,
-    prevId,
-    nextId,
-  }) {
-    const thumbs = document.querySelectorAll(thumbSelector);
-    const mainImg = document.getElementById(mainImgId);
-    const name = document.getElementById(nameId);
-
-    if (!thumbs.length || !mainImg || !name) return;
-
-    let index = 0;
-
-    function show(i) {
-      index = i;
-      thumbs.forEach((t) => t.classList.remove("active"));
-      thumbs[index].classList.add("active");
-      mainImg.src = thumbs[index].src;
-      name.innerText = thumbs[index].dataset.name;
-    }
-
-    thumbs.forEach((t, i) => t.addEventListener("click", () => show(i)));
-
-    document.getElementById(nextId).onclick = () =>
-      show((index + 1) % thumbs.length);
-    document.getElementById(prevId).onclick = () =>
-      show((index - 1 + thumbs.length) % thumbs.length);
-  }
-
-  initMobileSlider({
-    thumbSelector: ".cert-thumb",
-    mainImgId: "certMainImg",
-    nameId: "certName",
-    prevId: "certPrev",
-    nextId: "certNext",
-  });
-  initMobileSlider({
-    thumbSelector: ".award-thumb",
-    mainImgId: "awardMainImg",
-    nameId: "awardName",
-    prevId: "awardPrev",
-    nextId: "awardNext",
-  });
-
   /* ==========================
      About Us Mission - Vision
   ========================== */
@@ -488,7 +441,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   /* ==========================
-   Autoplay (SMART CONTINUE)
+   MILESTONES AUTOPLAY (CLEAN)
 ========================== */
 
   (function () {
@@ -500,20 +453,32 @@ document.addEventListener("DOMContentLoaded", function () {
     let index = 0;
     let interval = null;
 
+    /* ===== CORE FUNCTION ===== */
+    function show(item) {
+      items.forEach((el) => el.classList.remove("active"));
+      item.classList.add("active");
+
+      document.getElementById("mileTitle").innerText = item.dataset.title;
+      document.getElementById("mileYear").innerText = item.dataset.year;
+      document.getElementById("mileDesc").innerText = item.dataset.desc;
+      document.getElementById("mileImg").src = item.dataset.img;
+    }
+
+    /* ===== AUTOPLAY ===== */
     function playTimeline() {
-      clearInterval(interval); // 🔥 IMPORTANT (prevents duplicates)
+      clearInterval(interval);
 
       interval = setInterval(() => {
         index = (index + 1) % items.length;
-        showMilestone(items[index]);
-      }, 2000);
+        show(items[index]);
+      }, 2500); // ⏱ slightly smoother timing
     }
 
     function stopTimeline() {
       clearInterval(interval);
     }
 
-    /* ===== AUTO START WHEN VISIBLE ===== */
+    /* ===== OBSERVER ===== */
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -524,21 +489,21 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
       },
-      { threshold: 0.2 },
+      { threshold: 0.3 },
     );
 
     observer.observe(section);
 
-    /* ===== CLICK HANDLING (KEY FIX) ===== */
+    /* ===== CLICK ===== */
     items.forEach((item, i) => {
       item.addEventListener("click", function () {
-        index = i; // ✅ set current index
-        showMilestone(this); // show clicked
-        playTimeline(); // 🔥 restart autoplay from here
+        index = i;
+        show(this);
+        playTimeline(); // restart from clicked
       });
     });
 
-    /* ===== PAUSE ON HOVER ===== */
+    /* ===== HOVER PAUSE ===== */
     const detail = document.querySelector(".timeline-detail");
 
     if (detail) {
@@ -546,11 +511,8 @@ document.addEventListener("DOMContentLoaded", function () {
       detail.addEventListener("mouseleave", playTimeline);
     }
 
-    /* ===== INIT FIRST ITEM ===== */
-    if (items[0]) {
-      index = 0;
-      showMilestone(items[0]);
-    }
+    /* ===== INIT ===== */
+    show(items[0]);
   })();
 
   /* ==========================

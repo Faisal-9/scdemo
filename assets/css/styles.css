@@ -949,7 +949,7 @@ img {
   background: #03142e;
 }
 
-/* ================= SIDEBAR ================= */
+/*  SIDEBAR  */
 
 .about-sidebar {
   position: sticky;
@@ -986,7 +986,7 @@ img {
   background: #fff;
 }
 
-/* ================= PANELS ================= */
+/*  PANELS  */
 
 .about-panel {
   display: none;
@@ -997,7 +997,7 @@ img {
   display: block;
 }
 
-/* ================= SECTION ================= */
+/*  SECTION  */
 
 .about-section-block {
   scroll-margin-top: 120px;
@@ -1013,7 +1013,7 @@ img {
   color: #0b1d4f;
 }
 
-/* ================= GENERAL INFO ================= */
+/*  GENERAL INFO  */
 
 .general-info-content p {
   font-size: 15px;
@@ -1030,7 +1030,7 @@ img {
   object-fit: cover;
 }
 
-/* ================= MISSION / VISION ================= */
+/*  MISSION / VISION  */
 
 .mv-heading {
   font-size: 22px;
@@ -1055,116 +1055,7 @@ img {
   padding: 8px 0;
 }
 
-/* ================= TIMELINE ================= */
-
-.timeline-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  position: relative;
-}
-
-.timeline-list::before {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: #ddd;
-}
-
-.timeline-item {
-  display: flex;
-  gap: 12px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.timeline-item.active {
-  background: #0d6efd;
-  color: #fff;
-}
-
-.year-badge {
-  padding: 5px 8px;
-  background: #333;
-  color: #fff;
-  border-radius: 20px;
-}
-
-/* ================= CLIENTS ================= */
-
-.client-card {
-  background: #fff;
-  padding: 10px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ================= CERTIFICATES ================= */
-
-.certificate-card {
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.certificate-img img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-}
-
-/* ================= AWARDS ================= */
-
-.award-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.award-img {
-  height: auto;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-
-.award-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.award-card h5 {
-  font-size: 14px;
-  font-weight: 600;
-  color: #0b1d4f;
-  margin-top: auto;
-  padding-top: 8px;
-  line-height: 1.4;
-}
-
-@media (max-width: 768px) {
-  .award-img {
-    height: 120px;
-  }
-}
-
-/* ================= MOBILE SLIDERS (hidden by default) ================= */
-
-.certificate-mobile,
-.award-mobile {
-  display: none;
-}
-
-/* ================= TABLET (max 991px) ================= */
+/*  TABLET (max 991px)  */
 
 @media (max-width: 991px) {
   .sidebarr::after {
@@ -1207,7 +1098,7 @@ img {
   }
 }
 
-/* ================= MOBILE (max 768px) ================= */
+/*  MOBILE (max 768px)  */
 
 @media (max-width: 768px) {
   body {
@@ -1250,122 +1141,252 @@ img {
   .mv-img {
     height: 200px;
   }
+}
 
-  /* Timeline horizontal */
+/* ================= CLIENTS ================= */
+
+.client-card {
+  height: 100%;
+  min-height: 100px;
+  transition: all 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* LOGO CONTAINER (KEY FIX) */
+.client-logo {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LOGO IMAGE FIX */
+.client-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.client-card:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .client-logo {
+    height: 70px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .client-logo {
+    height: 80px;
+  }
+
+  .client-card {
+    min-height: 120px;
+  }
+}
+
+/*  MILESTONES  */
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Timeline item */
+.timeline-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.25s;
+}
+
+.timeline-item:hover {
+  background: #f5f7fb;
+}
+
+.timeline-item.active {
+  background: #0b1d4f;
+  color: #fff;
+}
+
+/* Year badge */
+.year-badge {
+  padding: 4px 10px;
+  background: #333;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Detail */
+.timeline-detail img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+/*  MOBILE  */
+
+@media (max-width: 768px) {
+  /* Horizontal timeline */
   .timeline-list {
     flex-direction: row;
     overflow-x: auto;
-  }
-
-  .timeline-list::before {
-    display: none;
+    padding-bottom: 8px;
   }
 
   .timeline-item {
-    min-width: 140px;
+    min-width: 160px;
     flex-direction: column;
     background: #f5f7fb;
   }
 
-  /* Clients */
-  .client-card {
-    height: 80px;
-    padding: 10px;
+  .timeline-item.active {
+    background: #0b1d4f;
+    color: #fff;
   }
 
-  .client-card img {
-    max-height: 50px;
+  /* Detail card */
+  .timeline-detail {
+    margin-top: 10px;
+    background: #f5f7fb;
+    padding: 12px;
+    border-radius: 12px;
   }
 
-  /* Certificates & Awards */
-  .certificate-img img {
-    height: 220px;
+  .timeline-detail img {
+    height: 200px;
+    border-radius: 10px;
   }
+}
 
+/*  CERTIFICATES */
+
+.certificate-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Image container */
+.certificate-img {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* Title */
+.certificate-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0b1d4f;
+  margin-top: auto;
+  line-height: 1.4;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .certificate-img {
+    height: 200px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .certificate-img {
+    height: 240px;
+  }
+}
+
+/*  AWARDS */
+
+.award-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.award-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Image container */
+.award-img {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.award-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Title */
+.award-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0b1d4f;
+  margin-top: auto;
+  line-height: 1.4;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
   .award-img {
     height: 120px;
   }
+}
 
-  /* Show mobile sliders, hide desktop grids */
-  .desktop-certificates,
-  .desktop-awards {
-    display: none;
-  }
-
-  .certificate-mobile,
-  .award-mobile {
-    display: block;
-    background: #fff;
-    padding: 15px;
-    border-radius: 14px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  }
-
-  /* Slider internals */
-  .cert-main img,
-  .award-main img {
-    width: 100%;
-    height: auto;
-    object-fit: cov;
-    border-radius: 10px;
-  }
-
-  .cert-thumbs,
-  .award-thumbs {
-    display: none;
-  }
-
-  .cert-thumb,
-  .award-thumb {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 6px;
-    opacity: 0.6;
-    cursor: pointer;
-    border: 2px solid transparent;
-  }
-
-  .cert-thumb.active,
-  .award-thumb.active {
-    opacity: 1;
-    border-color: #0b1d4f;
-  }
-
-  .cert-controls,
-  .award-controls {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-
-  .cert-controls button,
-  .award-controls button {
-    background: #0b1d4f;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
+/* Desktop */
+@media (min-width: 1200px) {
+  .award-img {
+    height: 140px;
   }
 }
 
-/* Sister mobile grid — hidden by default */
-
-.sister-mobile-grid {
-  display: none;
-}
-
-/* ================= SISTER COMPANIES (DESKTOP FIX) ================= */
-
-.desktop-sister .swiper-slide {
-  height: auto;
-  display: flex;
-}
-
+/*  SISTER COMPANIES */
 .sister-card {
   height: 100%;
-  min-height: 260px; /* 🔥 equal card height */
-  transition: 0.3s ease;
+  min-height: 180px;
+  transition: all 0.3s ease;
 }
 
 .sister-card:hover {
@@ -1373,157 +1394,44 @@ img {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* 🔥 LOGO CONTAINER FIX */
+/* LOGO BOX (VERY IMPORTANT FIX) */
 .sister-logo {
   width: 100%;
-  height: 120px; /* 🔥 fixed space for all logos */
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
-/* 🔥 LOGO IMAGE FIX (MOST IMPORTANT) */
+/* LOGO IMAGE FIX */
 .sister-logo img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* 🔥 keeps ratio PERFECT */
-  transition: transform 0.3s ease;
+  object-fit: contain; /* 🔥 keeps logos perfect */
 }
 
-/* Optional hover effect */
-.sister-card:hover .sister-logo img {
-  transform: scale(1.05);
-}
-
-/* 🔥 TEXT FIX */
+/* TEXT */
 .sister-name {
-  font-size: 14px;
-  margin-top: 10px;
+  font-size: 13px;
   color: #0b1d4f;
+  margin-top: auto;
 }
 
-/* ================= LARGE SCREEN IMPROVEMENT ================= */
-
-@media (min-width: 1400px) {
+/* Tablet */
+@media (min-width: 768px) {
   .sister-logo {
-    height: 140px; /* slightly bigger for large screens */
+    height: 100px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .sister-logo {
+    height: 120px;
   }
 
   .sister-card {
-    min-height: 300px;
-  }
-}
-
-@media (max-width: 768px) {
-  .desktop-sister {
-    display: none;
-  }
-
-  .sister-mobile-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .sister-mobile-grid .sister-card {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-    min-height: 120px;
-  }
-
-  .sister-mobile-grid .sister-logo img {
-    max-height: 60px;
-    object-fit: contain;
-  }
-
-  .sister-mobile-grid .sister-name {
-    font-size: 12px;
-    margin-top: 6px;
-  }
-}
-
-/* Desktop milestones visible, mobile hidden by default */
-.mobile-milestones {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .desktop-milestones {
-    display: none;
-  }
-
-  .mobile-milestones {
-    display: block;
-  }
-
-  /* 4-column year grid */
-  .mob-mile-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    margin-bottom: 14px;
-  }
-
-  .mob-mile-pill {
-    padding: 8px 4px;
-    border-radius: 20px;
-    border: 1.5px solid #ccc;
-    font-size: 12px;
-    font-weight: 500;
-    color: #444;
-    cursor: pointer;
-    text-align: center;
-    transition: 0.2s;
-  }
-
-  .mob-mile-pill.active {
-    background: #0b1d4f;
-    color: #fff;
-    border-color: #0b1d4f;
-  }
-
-  /* Detail card */
-  .mob-mile-card {
-    background: #f5f7fb;
-    border-radius: 12px;
-    padding: 12px;
-  }
-
-  .mob-mile-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-
-  .mob-mile-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-  }
-
-  .mob-mile-meta span:first-child {
-    font-size: 14px;
-    font-weight: 600;
-    color: #0b1d4f;
-  }
-
-  .mob-year-badge {
-    padding: 4px 10px;
-    background: #0b1d4f;
-    color: #fff;
-    border-radius: 20px;
-    font-size: 11px;
-    white-space: nowrap;
-  }
-
-  #mobMileDesc {
-    font-size: 13px;
-    color: #555;
-    line-height: 1.7;
-    margin: 0;
+    min-height: 220px;
   }
 }
 
@@ -2040,7 +1948,7 @@ img {
 .projects-hero {
   position: relative;
   height: 70vh;
-  background-position: center ;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;

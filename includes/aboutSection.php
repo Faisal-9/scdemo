@@ -114,209 +114,153 @@ $aboutSections = [
 
                     <!-- GROWTH -->
                     <section id="milestones" class="about-section-block about-panel py-1">
-                        <h2 class="text-center mb-3"><?= $milestones['title'] ?></h2>
+                        <h2 class="text-center mb-4"><?= $milestones['title'] ?></h2>
 
-                        <!-- DESKTOP: existing left/right layout -->
-                        <div class="row desktop-milestones">
+                        <div class="row g-4 align-items-start">
+
+                            <!-- TIMELINE -->
                             <div class="col-lg-5">
                                 <div class="timeline-list">
+
                                     <?php foreach ($milestones['items'] as $i => $mile): ?>
                                         <div class="timeline-item <?= $i === 0 ? 'active' : '' ?>"
-                                            onclick="showMilestone(this)"
+                                            data-index="<?= $i ?>"
                                             data-year="<?= $mile['year'] ?>"
                                             data-title="<?= $mile['title'] ?>"
                                             data-desc="<?= $mile['description'] ?>"
                                             data-img="assets/images/taloqan.jpg">
+
                                             <span class="year-badge"><?= $mile['year'] ?></span>
                                             <span class="title-text"><?= $mile['title'] ?></span>
+
                                         </div>
                                     <?php endforeach; ?>
+
                                 </div>
                             </div>
+
+                            <!-- DETAIL -->
                             <div class="col-lg-7">
                                 <div class="timeline-detail">
-                                    <img id="mileImg" src="assets/images/taloqan.jpg" class="img-fluid rounded-3 mb-3">
-                                    <div class="d-flex justify-content-between">
+
+                                    <img id="mileImg"
+                                        src="assets/images/taloqan.jpg"
+                                        class="img-fluid rounded-3 mb-3">
+
+                                    <div class="d-flex justify-content-between align-items-center">
                                         <h4 id="mileTitle"><?= $milestones['items'][0]['title'] ?></h4>
                                         <span id="mileYear"><?= $milestones['items'][0]['year'] ?></span>
                                     </div>
+
                                     <p id="mileDesc"><?= $milestones['items'][0]['description'] ?></p>
+
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- MOBILE: 4-column year grid + detail card -->
-                        <div class="mobile-milestones">
-
-                            <div class="mob-mile-grid">
-                                <?php foreach ($milestones['items'] as $i => $mile): ?>
-                                    <div class="mob-mile-pill <?= $i === 0 ? 'active' : '' ?>"
-                                        data-index="<?= $i ?>"
-                                        data-year="<?= $mile['year'] ?>"
-                                        data-title="<?= $mile['title'] ?>"
-                                        data-desc="<?= $mile['description'] ?>"
-                                        data-img="assets/images/taloqan.jpg">
-                                        <?= $mile['year'] ?>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-
-                            <div class="mob-mile-card">
-                                <img id="mobMileImg" src="assets/images/taloqan.jpg" class="mob-mile-img rounded-3">
-                                <div class="mob-mile-meta">
-                                    <span id="mobMileName"><?= $milestones['items'][0]['title'] ?></span>
-                                    <span id="mobMileYear" class="mob-year-badge"><?= $milestones['items'][0]['year'] ?></span>
-                                </div>
-                                <p id="mobMileDesc"><?= $milestones['items'][0]['description'] ?></p>
                             </div>
 
                         </div>
-
                     </section>
 
                     <!-- CLIENTS -->
                     <section id="clients" class="about-section-block client-section about-panel py-1">
-                        <h2 class="text-center mb-3"><?= $clients['title'] ?></h2>
+                        <h2 class="text-center mb-4"><?= $clients['title'] ?></h2>
+
                         <div class="row g-3 justify-content-center">
+
                             <?php foreach ($clients['items'] as $client): ?>
-                                <div class="col-lg-2 col-md-3 col-4">
-                                    <div class="client-card">
-                                        <img src="<?= $client['logo'] ?>" alt="Client Logo">
+                                <div class="col-6 col-md-4 col-lg-2">
+
+                                    <div class="client-card d-flex align-items-center justify-content-center bg-white rounded-3 p-3 h-100">
+
+                                        <div class="client-logo">
+                                            <img src="<?= $client['logo'] ?>" alt="Client Logo" class="img-fluid">
+                                        </div>
+
                                     </div>
+
                                 </div>
                             <?php endforeach; ?>
+
                         </div>
                     </section>
 
                     <!-- CERTIFICATES -->
                     <section id="certificates" class="about-section-block about-panel py-1">
-                        <h2 class="text-center mb-3"><?= $certificates['title'] ?></h2>
+                        <h2 class="text-center mb-4"><?= $certificates['title'] ?></h2>
 
-                        <!-- DESKTOP GRID -->
-                        <div class="row g-4 justify-content-center desktop-certificates">
+                        <div class="row g-3 certificates-grid">
+
                             <?php foreach ($certificates['items'] as $cert): ?>
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="certificate-card">
-                                        <div class="certificate-img">
-                                            <img src="<?= $cert['logo'] ?>" alt="<?= $cert['name'] ?>">
+                                <div class="col-6 col-md-4 col-lg-4">
+                                    <div class="certificate-card text-center p-3 bg-white rounded-3 h-100">
+
+                                        <div class="certificate-img mb-2">
+                                            <img src="<?= $cert['logo'] ?>" alt="<?= $cert['name'] ?>" class="img-fluid">
                                         </div>
-                                        <h5 class="certificate-name"><?= $cert['name'] ?></h5>
+
+                                        <h6 class="certificate-name">
+                                            <?= $cert['name'] ?>
+                                        </h6>
+
                                     </div>
                                 </div>
                             <?php endforeach; ?>
-                        </div>
-
-                        <!-- MOBILE SLIDER -->
-                        <div class="certificate-mobile">
-
-                            <div class="cert-main">
-                                <img id="certMainImg" src="<?= $certificates['items'][0]['logo'] ?>">
-                            </div>
-
-                            <div class="cert-thumbs">
-                                <?php foreach ($certificates['items'] as $i => $cert): ?>
-                                    <img
-                                        src="<?= $cert['logo'] ?>"
-                                        class="cert-thumb <?= $i === 0 ? 'active' : '' ?>"
-                                        data-index="<?= $i ?>"
-                                        data-name="<?= $cert['name'] ?>">
-                                <?php endforeach; ?>
-                            </div>
-
-                            <h5 id="certName" class="text-center mt-3">
-                                <?= $certificates['items'][0]['name'] ?>
-                            </h5>
-
-                            <div class="cert-controls">
-                                <button id="certPrev">Prev</button>
-                                <button id="certNext">Next</button>
-                            </div>
 
                         </div>
                     </section>
 
                     <!-- AWARDS -->
                     <section id="awards" class="about-section-block about-panel py-1">
-                        <h2 class="text-center mb-3"><?= $awards['title'] ?></h2>
+                        <h2 class="text-center mb-4"><?= $awards['title'] ?></h2>
 
-                        <!-- DESKTOP -->
-                        <div class="row g-4 desktop-awards">
+                        <div class="row g-3 awards-grid">
+
                             <?php foreach ($awards['items'] as $award): ?>
-                                <div class="col-lg-6 col-md-6 col-6">
-                                    <div class="award-card text-center p-3 bg-white rounded-3">
-                                        <div class="award-img">
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="award-card text-center p-3 bg-white rounded-3 h-100">
+
+                                        <div class="award-img mb-2">
                                             <img src="<?= $award['logo'] ?>" class="img-fluid">
                                         </div>
-                                        <h5><?= $award['name'] ?></h5>
+
+                                        <h6 class="award-title">
+                                            <?= $award['name'] ?>
+                                        </h6>
+
                                     </div>
                                 </div>
                             <?php endforeach; ?>
-                        </div>
-
-                        <!-- MOBILE -->
-                        <div class="award-mobile">
-
-                            <div class="award-main">
-                                <img id="awardMainImg" src="<?= $awards['items'][0]['logo'] ?>">
-                            </div>
-
-                            <div class="award-thumbs">
-                                <?php foreach ($awards['items'] as $i => $award): ?>
-                                    <img
-                                        src="<?= $award['logo'] ?>"
-                                        class="award-thumb <?= $i === 0 ? 'active' : '' ?>"
-                                        data-index="<?= $i ?>"
-                                        data-name="<?= $award['name'] ?>">
-                                <?php endforeach; ?>
-                            </div>
-
-                            <h5 id="awardName" class="text-center mt-3">
-                                <?= $awards['items'][0]['name'] ?>
-                            </h5>
-
-                            <div class="award-controls">
-                                <button id="awardPrev">Prev</button>
-                                <button id="awardNext">Next</button>
-                            </div>
 
                         </div>
                     </section>
 
                     <!-- SISTER COMPANIES -->
-                    <section id="sister" class="about-section-block about-sister-slider about-panel py-1">
+                    <section id="sister" class="about-section-block about-panel py-1">
                         <div class="container">
-                            <h2 class="text-center mb-3"><?= $sisterCompanies['title'] ?></h2>
 
-                            <!-- DESKTOP: Swiper -->
-                            <div class="swiper sisterSwiper desktop-sister">
-                                <div class="swiper-wrapper">
-                                    <?php foreach ($sisterCompanies['items'] as $company): ?>
-                                        <div class="swiper-slide d-flex">
-                                            <div class="sister-card w-100 d-flex flex-column align-items-center justify-content-center text-center p-4 bg-white rounded-3">
-                                                <div class="sister-logo d-flex align-items-center justify-content-center mb-3">
-                                                    <img src="<?= $company['logo'] ?>" alt="<?= $company['name'] ?>" class="img-fluid">
-                                                </div>
-                                                <p class="sister-name fw-semibold mb-0"><?= $company['name'] ?></p>
-                                            </div>
-                                        </div>
-                                    <?php endforeach; ?>
-                                </div>
-                                <div class="clients-nav">
-                                    <div class="swiper-button-prev sister-prev"></div>
-                                    <div class="swiper-button-next sister-next"></div>
-                                </div>
-                            </div>
+                            <h2 class="text-center mb-4"><?= $sisterCompanies['title'] ?></h2>
 
-                            <!-- MOBILE: 2-column grid -->
-                            <div class="sister-mobile-grid">
+                            <div class="row g-3">
+
                                 <?php foreach ($sisterCompanies['items'] as $company): ?>
-                                    <div class="sister-card d-flex flex-column align-items-center justify-content-center text-center p-3 bg-white rounded-3">
-                                        <div class="sister-logo d-flex align-items-center justify-content-center mb-2">
-                                            <img src="<?= $company['logo'] ?>" alt="<?= $company['name'] ?>" class="img-fluid">
+                                    <div class="col-6 col-md-4 col-lg-3">
+
+                                        <div class="sister-card d-flex flex-column align-items-center justify-content-center text-center p-3 bg-white rounded-3 h-100">
+
+                                            <div class="sister-logo mb-2">
+                                                <img src="<?= $company['logo'] ?>"
+                                                    alt="<?= $company['name'] ?>"
+                                                    class="img-fluid">
+                                            </div>
+
+                                            <p class="sister-name fw-semibold mb-0">
+                                                <?= $company['name'] ?>
+                                            </p>
+
                                         </div>
-                                        <p class="sister-name fw-semibold mb-0"><?= $company['name'] ?></p>
+
                                     </div>
                                 <?php endforeach; ?>
+
                             </div>
 
                         </div>
