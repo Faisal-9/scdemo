@@ -112,7 +112,7 @@ $urlSector   = isset($_GET['sector'])   ? strtolower($_GET['sector'])   : 'all';
 
                                         <div class="content">
                                             <span class="location"><?= $project['location'] ?></span>
-                                            <h3><?= $project['name'] ?></h3>
+                                            <h3 class="serif-link"><?= $project['name'] ?></h3>
                                         </div>
 
                                     </a>

@@ -106,9 +106,9 @@ include_once("includes/data/aboutdata.php");
                                 $label = $item['tabname'] ?? 'Section ' . $id;
                                 ?>
 
-                                <li class="nav-item">
+                                <li class="nav-item ">
                                     <button
-                                        class="nav-link <?= $first ? 'active' : '' ?>"
+                                        class="nav-link serif-link <?= $first ? 'active' : '' ?>"
                                         data-bs-toggle="tab"
                                         data-bs-target="#why<?= $id ?>">
                                         <?= htmlspecialchars($label) ?>
@@ -217,7 +217,7 @@ include_once("includes/data/aboutdata.php");
                             </ul>
 
                             <a href="services.php?tab=<?= $serviceKey ?>"
-                                class="service-btn">
+                                class="service-btn serif-link">
                                 Read More +
                             </a>
                         </div>
@@ -323,7 +323,7 @@ include_once("includes/data/aboutdata.php");
                                 </span>
                             </div>
 
-                            <h3 class="index-news-title">
+                            <h3 class="index-news-title serif-link">
                                 <a href="#">
                                     <?= htmlspecialchars($news['title']); ?>
                                 </a>
@@ -339,7 +339,7 @@ include_once("includes/data/aboutdata.php");
 
         <!-- View All Button -->
         <div class="text-center mt-4">
-            <a href="media.php" class="index-news-btn">
+            <a href="media.php" class="index-news-btn serif-link">
                 View More
             </a>
         </div>

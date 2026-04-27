@@ -131,7 +131,7 @@ $aboutSections = [
                                             data-img="assets/images/taloqan.jpg">
 
                                             <span class="year-badge"><?= $mile['year'] ?></span>
-                                            <span class="title-text"><?= $mile['title'] ?></span>
+                                            <span class="title-text serif-link"><?= $mile['title'] ?></span>
 
                                         </div>
                                     <?php endforeach; ?>

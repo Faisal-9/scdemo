@@ -199,7 +199,7 @@ $international_offices = [
                     <div class="col-md-6 col-lg-4">
                         <div class="office-card h-100 p-3 bg-white rounded shadow-sm">
 
-                            <h5 class="text-primary text-center"><?= $office['title'] ?></h5>
+                            <h5 class="text-center"><?= $office['title'] ?></h5>
 
                             <p><strong>Phone:</strong>
                                 <a href="tel:<?= $office['phone'] ?>"><?= $office['phone'] ?></a>
@@ -209,7 +209,9 @@ $international_offices = [
                                 <a href="mailto:<?= $office['email'] ?>"><?= $office['email'] ?></a>
                             </p>
 
-                            <p><strong>Address:</strong><br><?= $office['address'] ?></p>
+                            <p><strong>Address:</strong><br>
+                                <span class="serif-link"><?= $office['address'] ?></span>
+                            </p>
 
                         </div>
                     </div>
