@@ -36,9 +36,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ==========================
    MOBILE DROPDOWN FIX
+   Handles BOTH bottom-row (.nav-item) and top-row (.nav-item-top) dropdowns
 ========================== */
 
-  const dropdownLinks = document.querySelectorAll(".has-dropdown");
+  // Bottom-row dropdowns
+  const dropdownLinks = document.querySelectorAll(".nav-item .has-dropdown");
 
   dropdownLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
@@ -49,11 +51,38 @@ document.addEventListener("DOMContentLoaded", function () {
         const dropdown = parent.querySelector(".dropdown-menu");
 
         // Close others (accordion behavior)
-        document.querySelectorAll(".dropdown-menu").forEach((menu) => {
-          if (menu !== dropdown) menu.classList.remove("active");
-        });
+        document
+          .querySelectorAll(".nav-item .dropdown-menu")
+          .forEach((menu) => {
+            if (menu !== dropdown) menu.classList.remove("active");
+          });
 
-        dropdown.classList.toggle("active");
+        if (dropdown) dropdown.classList.toggle("active");
+      }
+    });
+  });
+
+  // Top-row dropdowns
+  const topDropdownLinks = document.querySelectorAll(
+    ".nav-item-top .has-dropdown",
+  );
+
+  topDropdownLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+
+        const parent = this.closest(".nav-item-top");
+        const dropdown = parent.querySelector(".dropdown-menu-top");
+
+        // Close others
+        document
+          .querySelectorAll(".nav-item-top .dropdown-menu-top")
+          .forEach((menu) => {
+            if (menu !== dropdown) menu.classList.remove("active");
+          });
+
+        if (dropdown) dropdown.classList.toggle("active");
       }
     });
   });
@@ -109,15 +138,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ==========================
      Mobile Navigation
+     — targets .nav-rows (two-row header layout)
   ========================== */
 
   const menuToggle = document.querySelector(".mobile-menu-toggle");
-  const navMenu = document.querySelector(".nav-menu");
+  const navRows = document.querySelector(".nav-rows");
 
-  if (menuToggle) {
+  if (menuToggle && navRows) {
     menuToggle.addEventListener("click", function () {
       this.classList.toggle("active");
-      navMenu.classList.toggle("active");
+      navRows.classList.toggle("active");
+    });
+
+    // Close menu when any nav link is tapped on mobile
+    navRows.querySelectorAll(".nav-link, .nav-link-top").forEach((link) => {
+      link.addEventListener("click", function () {
+        // Only auto-close for non-dropdown links on mobile
+        const isDropdown = this.classList.contains("has-dropdown");
+        if (!isDropdown && window.innerWidth <= 768) {
+          menuToggle.classList.remove("active");
+          navRows.classList.remove("active");
+        }
+      });
     });
   }
 
