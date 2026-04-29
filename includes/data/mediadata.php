@@ -7,6 +7,7 @@ $media = [
             'title' => 'Completion of 60 Projects Milestone',
             'description' => 'State Corps has successfully completed over 60 major infrastructure projects valued at more than $400 million, marking a significant milestone in the company\'s history of delivering world-class engineering solutions across Afghanistan.',
             'image' => 'assets/images/2.jpg',
+            'link' => 'https://scdemo.gt.tc/media.php',
             'tags' => ['Milestone', 'Projects'],
         ],
         [
@@ -15,6 +16,7 @@ $media = [
             'title' => 'MOEW & DABS Recognition Award',
             'description' => 'State Corps received the prestigious recognition award from the Ministry of Energy and Water (MoEW) and DABS for outstanding contributions to Afghanistan\'s energy infrastructure development.',
             'image' => 'assets/images/2.jpg',
+            'link' => 'https://scdemo.gt.tc/media.php',
             'tags' => ['Award', 'Energy'],
         ],
         [
@@ -31,6 +33,7 @@ $media = [
             'title' => 'New Office Opened in Uzbekistan',
             'description' => 'As part of our expanding regional presence, State Corps has officially opened a new office in Tashkent, Uzbekistan to support our growing portfolio of cross-border infrastructure and energy projects.',
             'image' => 'assets/images/2.jpg',
+            'link' => 'https://scdemo.gt.tc/media.php',
             'tags' => ['Expansion', 'International'],
         ],
         [
@@ -47,6 +50,7 @@ $media = [
             'title' => 'ISO Certification Renewed',
             'description' => 'State Corps has successfully renewed its ISO 9001, ISO 14001, and ISO 45001 certifications, reaffirming our commitment to quality management, environmental responsibility, and occupational health and safety.',
             'image' => 'assets/images/2.jpg',
+            'link' => 'https://scdemo.gt.tc/media.php',
             'tags' => ['Certification', 'Quality'],
         ],
         [
@@ -113,7 +117,7 @@ $media = [
     'gallery' => [
         [
             'id' => 'g1',
-            'date' => '2024',
+            'date' => '3 Dec,2024',
             'title' => 'Logar-Gardiz Transmission Line',
             'description' => 'Construction and completion of the 220kV single circuit transmission line from Logar to Gardiz.',
             'image' => 'assets/images/2.jpg',
@@ -121,7 +125,7 @@ $media = [
         ],
         [
             'id' => 'g2',
-            'date' => '2024',
+            'date' => '23 Dec, 2024',
             'title' => 'Gardiz 220/20 kV Substation',
             'description' => 'Installation and commissioning of the Gardiz substation serving Paktya province.',
             'image' => 'assets/images/2.jpg',
@@ -129,7 +133,7 @@ $media = [
         ],
         [
             'id' => 'g3',
-            'date' => '2023',
+            'date' => '27 Dec, 2023',
             'title' => 'Kabul Road Construction',
             'description' => 'Construction of 12.38km concrete road in Dasht-e-Barchi area of Kabul.',
             'image' => 'assets/images/2.jpg',
@@ -137,7 +141,7 @@ $media = [
         ],
         [
             'id' => 'g4',
-            'date' => '2023',
+            'date' => '6 Dec, 2023',
             'title' => 'MFNDU Defense University',
             'description' => 'Marshal Fahim National Defense University Phase IIIA construction project.',
             'image' => 'assets/images/2.jpg',
@@ -145,7 +149,7 @@ $media = [
         ],
         [
             'id' => 'g5',
-            'date' => '2022',
+            'date' => '9 Sep, 2022',
             'title' => 'Gulbahar Substation',
             'description' => 'Engineering and construction of the 220/110/20kV Gulbahar substation.',
             'image' => 'assets/images/2.jpg',
@@ -153,7 +157,47 @@ $media = [
         ],
         [
             'id' => 'g6',
-            'date' => '2022',
+            'date' => '9 Sep, 2022',
+            'title' => 'Nijrab Transmission Line',
+            'description' => 'Single circuit 110kV transmission line from Gulbahar to Nijrab.',
+            'image' => 'assets/images/2.jpg',
+            'tags' => ['Energy', 'Transmission'],
+        ],
+        [
+            'id' => 'g7',
+            'date' => '9 Sep, 2024',
+            'title' => 'Gardiz 220/20 kV Substation',
+            'description' => 'Installation and commissioning of the Gardiz substation serving Paktya province.',
+            'image' => 'assets/images/2.jpg',
+            'tags' => ['Energy', 'Substation'],
+        ],
+        [
+            'id' => 'g8',
+            'date' => '9 Sep, 2023',
+            'title' => 'Kabul Road Construction',
+            'description' => 'Construction of 12.38km concrete road in Dasht-e-Barchi area of Kabul.',
+            'image' => 'assets/images/2.jpg',
+            'tags' => ['Construction', 'Road'],
+        ],
+        [
+            'id' => 'g9',
+            'date' => '9 Sep, 2023',
+            'title' => 'MFNDU Defense University',
+            'description' => 'Marshal Fahim National Defense University Phase IIIA construction project.',
+            'image' => 'assets/images/2.jpg',
+            'tags' => ['Construction', 'Military'],
+        ],
+        [
+            'id' => 'g10',
+            'date' => '9 Sep, 2022',
+            'title' => 'Gulbahar Substation',
+            'description' => 'Engineering and construction of the 220/110/20kV Gulbahar substation.',
+            'image' => 'assets/images/2.jpg',
+            'tags' => ['Energy', 'Substation'],
+        ],
+        [
+            'id' => 'g11',
+            'date' => '9 Sep, 2022',
             'title' => 'Nijrab Transmission Line',
             'description' => 'Single circuit 110kV transmission line from Gulbahar to Nijrab.',
             'image' => 'assets/images/2.jpg',

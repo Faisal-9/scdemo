@@ -185,9 +185,15 @@ include_once("includes/data/sectorsdata.php");
 
                                         <div class="dropdown-menu">
                                             <ul class="dropdown-list">
-                                                <li><a href="news.php" class="dropdown-link <?= ($current_page == 'news.php') ? 'active' : '' ?>">News</a></li>
-                                                <li><a href="events.php" class="dropdown-link <?= ($current_page == 'events.php') ? 'active' : '' ?>">Events</a></li>
-                                                <li><a href="gallery.php" class="dropdown-link <?= ($current_page == 'gallery.php') ? 'active' : '' ?>">Gallery</a></li>
+                                                <li>
+                                                    <a href="media.php?tab=news" class="dropdown-link">News</a>
+                                                </li>
+                                                <li>
+                                                    <a href="media.php?tab=events" class="dropdown-link">Events</a>
+                                                </li>
+                                                <li>
+                                                    <a href="media.php?tab=gallery" class="dropdown-link">Gallery</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </li>

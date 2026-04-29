@@ -143,15 +143,15 @@ $sisterCompanies = [
         ],
         [
             'name' => 'Arya Mineral',
-            'logo' => 'assets/images/scompany/Scom_aryamineral.png',
+            'logo' => 'assets/images/scompany/scom_aryamineral.png',
         ],
         [
             'name' => 'Petropool',
-            'logo' => 'assets/images/scompany/Scom_petropool.png',
+            'logo' => 'assets/images/scompany/scom_petropool.png',
         ],
         [
             'name' => 'Aeroparcel',
-            'logo' => 'assets/images/scompany/Scom_aeroparcel.png',
+            'logo' => 'assets/images/scompany/scom_aeroparcel.png',
         ],
     ]
 ];

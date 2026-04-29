@@ -975,20 +975,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
   initProjectSwiper();
 
-  /* =============================
-     Media page tabs
-  ============================= */
+  /* ==========================
+     TABS 
+  ========================== */
   const tabs = document.querySelectorAll(".media-menu li");
-  const tabContents = document.querySelectorAll(".media-tab-content");
+  const contents = document.querySelectorAll(".media-tab-content");
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", function () {
       tabs.forEach((t) => t.classList.remove("active"));
-      tabContents.forEach((c) => c.classList.remove("active"));
+      contents.forEach((c) => c.classList.remove("active"));
 
       this.classList.add("active");
+
       const target = document.getElementById("tab-" + this.dataset.tab);
       if (target) target.classList.add("active");
+    });
+  });
+
+  /* 
+     SHOW MORE
+   */
+  const buttons = document.querySelectorAll(".media-show-more-btn");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const tabKey = this.dataset.tab;
+      const list = document.getElementById("list-" + tabKey);
+
+      if (!list) return;
+
+      const cards = list.querySelectorAll(".media-card");
+      let visible = parseInt(list.getAttribute("data-visible")) || 5;
+
+      const nextLimit = visible + 5;
+
+      cards.forEach((card, index) => {
+        if (index < nextLimit) {
+          card.classList.remove("media-card--hidden");
+        }
+      });
+
+      list.setAttribute("data-visible", nextLimit);
+
+      // hide button if all shown
+      if (nextLimit >= cards.length) {
+        this.style.display = "none";
+      }
     });
   });
 
@@ -1030,9 +1063,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /* =============================
+  /* 
    SIDEBAR PAGINATION
-============================= */
+ */
   (function () {
     let currentPage = 0;
     const sidebarList = document.getElementById("mediaSidebarList");
