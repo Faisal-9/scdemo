@@ -13,7 +13,7 @@ include_once("includes/data/aboutdata.php");
             <?php foreach ($heroSlides as $slide): ?>
                 <div class="swiper-slide">
 
-                    <div class="image-layer" style="background-image:url(<?= $slide['image'] ?>)"></div>
+                    <div class="image-layer" style="background-image:url(<?= $slide['image'] ?> )"></div>
                     <div class="slider-overlay"></div>
                     <div class="container">
                         <div class="slider-content">

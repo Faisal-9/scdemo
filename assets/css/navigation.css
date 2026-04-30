@@ -70,7 +70,6 @@ CONTAINER CONTENT ONLY
   align-items: center;
   justify-content: flex-end;
   min-height: inherit;
-  /* padding-left: 170px; */
 }
 
 .nav-row-bottom .container {
@@ -141,8 +140,8 @@ BOTTOM MENU
 
 .nav-link {
   color: #e8edf5;
-  padding-right: 0 !important;
-  padding: 8px 22px;
+  /* padding-right: 0 !important; */
+  padding: 8px 14px;
   text-decoration: none;
   font-size: 0.95rem;
   text-transform: uppercase;
@@ -193,7 +192,7 @@ DROPDOWN
   top: 100%;
   left: auto;
   right: 0;
-  min-width: 230px;
+  min-width: 250px;
   background: #fff;
   border-radius: 8px;
   padding: 5px;

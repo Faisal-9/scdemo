@@ -1,6 +1,5 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']);
-
 $services_pages = ['services.php'];
 $sectors_pages  = ['sectors.php'];
 $media_pages    = ['media.php', 'news.php', 'events.php', 'gallery.php'];
@@ -139,33 +138,21 @@ include_once("includes/data/sectorsdata.php");
 
                                     <!-- EXPERTISE -->
                                     <li class="nav-item dropdown <?= in_array($current_page, $sectors_pages) ? 'active' : '' ?>">
-                                        <a href="sectors.php" class="nav-link has-dropdown">
+                                        <div class="nav-link has-dropdown">
                                             <span class="nav-text">Expertise</span>
                                             <span class="dropdown-arrow">▼</span>
-                                        </a>
+                                        </div>
 
-                                        <div class="dropdown-menu mega-menu">
-                                            <div class="mega-menu-content">
+                                        <div class="dropdown-menu">
+                                            <ul class="dropdown-list">
                                                 <?php foreach ($sectors as $sectorKey => $sector): ?>
-                                                    <div class="mega-column">
-                                                        <h4 class="mega-title">
-                                                            <a href="sectors.php?tab=<?= $sectorKey ?>" class="mega-title-link">
-                                                                <?= $sector['title'] ?>
-                                                            </a>
-                                                        </h4>
-
-                                                        <ul class="dropdown-list">
-                                                            <?php foreach ($sector['sections'] as $section): ?>
-                                                                <li>
-                                                                    <a href="sectors.php?tab=<?= $sectorKey ?>#<?= $sectorKey ?>-<?= $section['id'] ?>" class="dropdown-link">
-                                                                        <?= $section['title'] ?>
-                                                                    </a>
-                                                                </li>
-                                                            <?php endforeach; ?>
-                                                        </ul>
-                                                    </div>
+                                                    <li>
+                                                        <a href="sectors.php?tab=<?= $sectorKey ?>" class="dropdown-link">
+                                                            <?= htmlspecialchars($sector['title']); ?>
+                                                        </a>
+                                                    </li>
                                                 <?php endforeach; ?>
-                                            </div>
+                                            </ul>
                                         </div>
                                     </li>
 

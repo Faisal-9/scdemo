@@ -1,122 +1,92 @@
 <?php
-
-$prefix = $prefix ?? "";
-$sections = $sections ?? [];
+$sector = $sector ?? [];
 ?>
 
-<section class="service-detail-page">
-    <div class="container">
-        <div class="row">
+<section class="sector-modern">
 
-            <!-- SIDEBAR -->
-            <div class="col-lg-3 sidebarr">
-                <nav id="<?= $prefix ?>-sidebar" class="about-sidebar">
-                    <ul class="nav flex-column">
-                        <?php foreach ($sections as $i => $section): ?>
-                            <li class="nav-item">
-                                <a class="nav-link <?= $i == 0 ? 'active' : '' ?>"
-                                    href="#<?= $prefix . $section['id'] ?>">
-                                    <?= $section['title'] ?>
-                                </a>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </nav>
+    <!-- HERO -->
+    <div class="sector-hero" style="background-image:url('<?= $sector['hero']['image'] ?? 'assets/images/default.jpg' ?>')">
+        <div class="overlay">
+            <div class="container">
+                <p class="tag"><?= $sector['hero']['tag'] ?? '' ?></p>
+                <h1><?= $sector['hero']['headline'] ?? '' ?></h1>
+                <p class="sub"><?= $sector['hero']['sub'] ?? '' ?></p>
+
+                <?php if (!empty($sector['hero']['cta_text'])): ?>
+                    <a href="<?= $sector['hero']['cta_link'] ?>" class="btn-cta">
+                        <?= $sector['hero']['cta_text'] ?>
+                    </a>
+                <?php endif; ?>
             </div>
-
-            <!-- CONTENT -->
-            <div class="col-lg-9 contentt">
-                <div
-                    data-bs-spy="scroll"
-                    data-bs-target="#<?= $prefix ?>-sidebar"
-                    data-bs-offset="100"
-                    tabindex="0"
-                    class="about-content">
-
-                    <?php foreach ($sections as $section): ?>
-
-                        <?php $filterCategory = strtolower($section['category'] ?? ''); ?>
-
-                        <section id="<?= $prefix . $section['id'] ?>" class="about-section-block sector-block p-3">
-
-                            <!-- TITLE -->
-                            <div class="text-center mb-3">
-                                <h2 class="service-block-title"><?= $section['title'] ?></h2>
-                                <?php if (!empty($section['small-title'])): ?>
-                                    <p class="service-block-subtitle text-muted"><?= $section['small-title'] ?></p>
-                                <?php endif; ?>
-                                <hr class="service-title-line mx-auto">
-                            </div>
-
-                            <!-- TEXT + IMAGE ROW -->
-                            <div class="row g-4 align-items-stretch mb-4">
-
-                                <!-- LEFT: text + button -->
-                                <div class="col-lg-6 d-flex flex-column">
-
-                                    <?php if (!empty($section['text'])): ?>
-                                        <p class="service-block-text"><?= $section['text'] ?></p>
-                                    <?php elseif (!empty($section['content'])): ?>
-                                        <p class="service-block-text"><?= $section['content'] ?></p>
-                                    <?php endif; ?>
-
-                                    <!-- Projects Button pinned to bottom -->
-                                    <div class="mt-auto pt-3">
-                                        <a href="projects.php?category=<?= urlencode($filterCategory) ?>"
-                                            class="btn sector-projects-btn">
-                                            Projects
-                                        </a>
-                                    </div>
-
-                                </div>
-
-                                <!-- RIGHT: image grid -->
-                                <div class="col-lg-6">
-                                    <?php if (!empty($section['image'])): ?>
-                                        <div class="sector-img-grid">
-
-                                            <!-- Left column -->
-                                            <div class="sector-img-col">
-                                                <div class="sector-img-left">
-                                                    <img src="<?= $section['image'][0] ?>" alt="<?= $section['title'] ?>" class="sector-img">
-                                                </div>
-                                            </div>
-
-                                            <!-- Right column -->
-                                            <div class="sector-img-col">
-                                                <div class="sector-img-top-right">
-                                                    <img src="<?= $section['image'][2] ?>" alt="<?= $section['title'] ?>" class="sector-img">
-                                                </div>
-                                                <div class="sector-img-bottom-right">
-                                                    <img src="<?= $section['image'][3] ?>" alt="<?= $section['title'] ?>" class="sector-img">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
-
-                            </div>
-
-                            <!-- STATS ROW -->
-                            <?php if (!empty($section['stats'])): ?>
-                                <div class="sector-stats-row">
-                                    <?php foreach ($section['stats'] as $stat): ?>
-                                        <div class="sector-stat-item">
-                                            <span class="sector-stat-value"><?= $stat['value'] ?></span>
-                                            <span class="sector-stat-label"><?= $stat['label'] ?></span>
-                                        </div>
-                                    <?php endforeach; ?>
-                                </div>
-                            <?php endif; ?>
-
-                        </section>
-
-                    <?php endforeach; ?>
-
-                </div>
-            </div>
-
         </div>
     </div>
+
+    <!-- STATS -->
+    <div class="container">
+        <?php if (!empty($sector['stats'])): ?>
+            <div class="sector-stats">
+                <?php foreach ($sector['stats'] as $s): ?>
+                    <div class="stat">
+                        <h3><?= $s['value'] ?></h3>
+                        <p><?= $s['label'] ?></p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+
+
+    <div class="container">
+        <div class="sector-mid">
+
+            <!-- LEFT COLUMN -->
+            <div class="sector-left">
+
+                <?php if (!empty($sector['why'])): ?>
+                    <div class="why">
+                        <h3>Why Choose Us</h3>
+                        <ul>
+                            <?php foreach ($sector['why'] as $w): ?>
+                                <li><?= $w ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (!empty($sector['areas'])): ?>
+                    <div class="areas">
+                        <h3>Areas of Expertise</h3>
+                        <ul>
+                            <?php foreach ($sector['areas'] as $a): ?>
+                                <li><?= $a ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <?php if (!empty($sector['project'])): ?>
+                <div class="sector-project-card">
+                    <h4><?= $sector['project']['name'] ?></h4>
+                    <img src="<?= $sector['project']['image'] ?>" alt="">
+                    <a href="<?= $sector['project']['cta_link'] ?>" class="btn-cta small">
+                        <?= $sector['project']['cta_text'] ?>
+                    </a>
+                </div>
+            <?php endif; ?>
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+        <?php if (!empty($sector['description'])): ?>
+            <div class="sector-desc container">
+                <p><?= $sector['description'] ?></p>
+            </div>
+        <?php endif; ?>
+
+    </div>
+
 </section>
