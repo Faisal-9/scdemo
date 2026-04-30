@@ -22,6 +22,13 @@ include_once("includes/data/sectorsdata.php");
                 </a>
             </div>
 
+            <!-- MOBILE MENU BUTTON -->
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <div class="nav-rows">
 
                 <!-- ================= TOP ROW ================= -->

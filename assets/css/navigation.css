@@ -332,3 +332,93 @@ RESPONSIVE
     grid-template-columns: 1fr;
   }
 }
+
+/* Mobile toggle button */
+.mobile-menu-toggle {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1010;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+/* Animate to X when active */
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 991px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  /* Hide nav-rows by default on mobile */
+  .nav-rows {
+    display: none;
+    flex-direction: column;
+  }
+
+  .nav-rows.active {
+    display: flex;
+  }
+
+  /* Reorder: bottom row FIRST, then top row */
+  .nav-row-bottom {
+    order: 1;
+  }
+
+  /* Divider between sections */
+  .nav-row-bottom::after {
+    content: "";
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .nav-row-top {
+    order: 2;
+  }
+
+  /* Top row social — stack inline with links */
+  .top-row-social {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Dropdown active state (JS toggles this) */
+  .dropdown-menu.active {
+    display: block;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .dropdown-link {
+    color: #a8b8d8;
+  }
+
+  .dropdown-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+}
