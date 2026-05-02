@@ -1170,6 +1170,21 @@ img {
     display: none;
   }
 
+  .about-content h2 {
+    font-size: 18px;
+  }
+
+  .about-content h3 {
+    font-size: 15px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+    line-height: 1.2;
+    color: #444;
+    text-align: justify;
+  }
+
   .about-panel {
     display: block !important;
   }
