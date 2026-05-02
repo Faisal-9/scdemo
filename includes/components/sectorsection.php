@@ -44,7 +44,7 @@ $sector = $sector ?? [];
 
                 <?php if (!empty($sector['why'])): ?>
                     <div class="why">
-                        <h3>Why Choose Us</h3>
+                        <h4>Why Choose Us</h4>
                         <ul>
                             <?php foreach ($sector['why'] as $w): ?>
                                 <li><?= $w ?></li>
@@ -55,7 +55,7 @@ $sector = $sector ?? [];
 
                 <?php if (!empty($sector['areas'])): ?>
                     <div class="areas">
-                        <h3>Areas of Expertise</h3>
+                        <h4>Areas of Expertise</h4>
                         <ul>
                             <?php foreach ($sector['areas'] as $a): ?>
                                 <li><?= $a ?></li>

@@ -145,23 +145,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const navRows = document.querySelector(".nav-rows");
 
   if (menuToggle && navRows) {
-    menuToggle.addEventListener("click", function () {
-      this.classList.toggle("active");
-      navRows.classList.toggle("active");
-    });
+  menuToggle.addEventListener("click", function () {
+    this.classList.toggle("active");
+    navRows.classList.toggle("active");
 
-    // Close menu when any nav link is tapped on mobile
-    navRows.querySelectorAll(".nav-link, .nav-link-top").forEach((link) => {
-      link.addEventListener("click", function () {
-        // Only auto-close for non-dropdown links on mobile
-        const isDropdown = this.classList.contains("has-dropdown");
-        if (!isDropdown && window.innerWidth <= 768) {
-          menuToggle.classList.remove("active");
-          navRows.classList.remove("active");
-        }
-      });
+    // 🔥 Prevent background scroll
+    document.body.classList.toggle("menu-open");
+  });
+
+  // 🔥 Close when clicking outside (backdrop)
+  navRows.addEventListener("click", function (e) {
+    if (e.target === navRows) {
+      menuToggle.classList.remove("active");
+      navRows.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+  });
+
+  // 🔥 Close on link click (non-dropdown)
+  navRows.querySelectorAll(".nav-link, .nav-link-top").forEach((link) => {
+    link.addEventListener("click", function () {
+      if (!this.classList.contains("has-dropdown")) {
+        menuToggle.classList.remove("active");
+        navRows.classList.remove("active");
+        document.body.classList.remove("menu-open");
+      }
     });
-  }
+  });
+}
 
   /* ==========================
      Hero Slider

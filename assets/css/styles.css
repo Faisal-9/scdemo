@@ -1686,8 +1686,8 @@ img {
 /* MID SECTION */
 .sector-mid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: 2fr 3fr;
+  gap: 10px;
 }
 
 /* WHY */
@@ -1720,14 +1720,6 @@ img {
   line-height: 1.8;
 }
 
-/* MID LAYOUT */
-.sector-mid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* LEFT bigger */
-  gap: 50px;
-  padding: 10px 0;
-}
-
 /* LEFT COLUMN STACK */
 .sector-left {
   display: flex;
@@ -1755,12 +1747,12 @@ img {
 
 .sector-project-card img {
   width: 100%;
-  height: 360px;
+  height: auto;
   object-fit: cover;
   border-radius: 10px;
 }
 
-.sector-project-card h4 {
+.sector-mid h4 {
   margin: 12px 0 10px;
   font-weight: 600;
   text-align: left;
