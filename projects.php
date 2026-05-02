@@ -62,7 +62,7 @@ $urlSector   = isset($_GET['sector'])   ? strtolower($_GET['sector'])   : 'all';
                         </div>
 
                         <div class="col-lg-2">
-                            <select class="form-select" id="statusFilter">
+                            <select class="statusfilter form-select" id="statusFilter">
                                 <option value="all">All Status</option>
                                 <?php
                                 $statuses = array_unique(array_map('strtolower', array_column($projects, 'status')));

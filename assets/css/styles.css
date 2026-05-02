@@ -1801,16 +1801,13 @@ img {
 }
 
 /* ================= PROJECTS PAGE ================= */
-.filters-box {
+.projects-page .filters-box {
   position: sticky;
-  top: 60px;
+  top: 65px;
   z-index: 100;
   background: #ffffffe7;
-  padding: 16px 0 8px;
   border-bottom: 1px solid #eee;
-  margin-bottom: 24px;
   border-radius: 10px;
-  margin: 10px;
   padding: 10px;
 }
 
@@ -1821,8 +1818,6 @@ img {
   border: none;
   height: 220px;
   display: flex;
-  /* align-items: flex-end; */
-  /* text-decoration: none; */
   color: #222;
   display: block;
   transition: all 0.3s ease;
@@ -1989,7 +1984,7 @@ img {
 /*  HERO  */
 .projects-hero {
   position: relative;
-  height: 70vh;
+  height: 70dvh;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2009,7 +2004,7 @@ img {
   font-weight: 700;
 }
 
-.projects-hero h1 span {
+.projects-hero span {
   color: #ffc107;
 }
 
@@ -2098,7 +2093,28 @@ img {
 
 /*  RESPONSIVE  */
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
+  .projects-hero h1 {
+    font-size: 24px;
+  }
+
+  .hero-stats {
+    /* display: flex; */
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+  }
+
+  .hero-stats strong {
+    font-size: 18px;
+  }
+
+  .projects-page .statusfilter {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 991px) {
   .project-masonry {
     grid-template-columns: repeat(2, 1fr);
   }
