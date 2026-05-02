@@ -28,7 +28,7 @@ FLOATING LOGO
   transform: translateX(-570px);
   z-index: 1005;
   width: 140px;
-  height: 120px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -353,6 +353,7 @@ RESPONSIVE
     height: auto;
     padding: 0;
     order: 1;
+    border-radius: 0 0 9px 9px;
     z-index: 2100;
   }
 
