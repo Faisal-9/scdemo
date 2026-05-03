@@ -145,34 +145,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const navRows = document.querySelector(".nav-rows");
 
   if (menuToggle && navRows) {
-  menuToggle.addEventListener("click", function () {
-    this.classList.toggle("active");
-    navRows.classList.toggle("active");
+    menuToggle.addEventListener("click", function () {
+      this.classList.toggle("active");
+      navRows.classList.toggle("active");
 
-    // 🔥 Prevent background scroll
-    document.body.classList.toggle("menu-open");
-  });
+      // 🔥 Prevent background scroll
+      document.body.classList.toggle("menu-open");
+    });
 
-  // 🔥 Close when clicking outside (backdrop)
-  navRows.addEventListener("click", function (e) {
-    if (e.target === navRows) {
-      menuToggle.classList.remove("active");
-      navRows.classList.remove("active");
-      document.body.classList.remove("menu-open");
-    }
-  });
-
-  // 🔥 Close on link click (non-dropdown)
-  navRows.querySelectorAll(".nav-link, .nav-link-top").forEach((link) => {
-    link.addEventListener("click", function () {
-      if (!this.classList.contains("has-dropdown")) {
+    // 🔥 Close when clicking outside (backdrop)
+    navRows.addEventListener("click", function (e) {
+      if (e.target === navRows) {
         menuToggle.classList.remove("active");
         navRows.classList.remove("active");
         document.body.classList.remove("menu-open");
       }
     });
-  });
-}
+
+    // 🔥 Close on link click (non-dropdown)
+    navRows.querySelectorAll(".nav-link, .nav-link-top").forEach((link) => {
+      link.addEventListener("click", function () {
+        if (!this.classList.contains("has-dropdown")) {
+          menuToggle.classList.remove("active");
+          navRows.classList.remove("active");
+          document.body.classList.remove("menu-open");
+        }
+      });
+    });
+  }
 
   /* ==========================
      Hero Slider
@@ -271,23 +271,37 @@ document.addEventListener("DOMContentLoaded", function () {
     let isRunning = false;
     let animationFrame;
 
-    // Get half width (since duplicated items)
+    /* 
+     DRAG VARIABLES
+   */
+    let isDragging = false;
+    let startX = 0;
+    let lastX = 0;
+
+    /* 
+     HELPERS
+   */
     function getHalfWidth() {
       return track.scrollWidth / 2;
     }
 
+    function setPosition(x) {
+      track.style.transform = `translateX(${x}px)`;
+    }
+
+    /* 
+     AUTO SCROLL
+   */
     function animate() {
-      if (!isRunning) return;
+      if (!isRunning || isDragging) return;
 
       position -= speed;
 
-      // 🔥 seamless loop reset
       if (Math.abs(position) >= getHalfWidth()) {
         position = 0;
       }
 
-      track.style.transform = `translateX(${position}px)`;
-
+      setPosition(position);
       animationFrame = requestAnimationFrame(animate);
     }
 
@@ -303,15 +317,67 @@ document.addEventListener("DOMContentLoaded", function () {
       cancelAnimationFrame(animationFrame);
     }
 
-    /*  RUN ONLY WHEN VISIBLE  */
+    /* 
+     DRAG START
+   */
+    function dragStart(e) {
+      isDragging = true;
+      stop();
+
+      startX = e.type.includes("mouse") ? e.pageX : e.touches[0].pageX;
+      lastX = startX;
+
+      track.style.cursor = "grabbing";
+    }
+
+    /* 
+     DRAG MOVE
+   */
+    function dragMove(e) {
+      if (!isDragging) return;
+
+      const currentX = e.type.includes("mouse") ? e.pageX : e.touches[0].pageX;
+
+      const delta = currentX - lastX;
+      lastX = currentX;
+
+      position += delta;
+
+      // seamless loop while dragging
+      if (position > 0) position = -getHalfWidth();
+      if (Math.abs(position) >= getHalfWidth()) position = 0;
+
+      setPosition(position);
+    }
+
+    /* 
+     DRAG END
+   */
+    function dragEnd() {
+      isDragging = false;
+      track.style.cursor = "grab";
+      start();
+    }
+
+    /* 
+     EVENTS (MOUSE + TOUCH)
+   */
+    track.addEventListener("mousedown", dragStart);
+    window.addEventListener("mousemove", dragMove);
+    window.addEventListener("mouseup", dragEnd);
+
+    track.addEventListener("touchstart", dragStart, { passive: true });
+    track.addEventListener("touchmove", dragMove, { passive: true });
+    track.addEventListener("touchend", dragEnd);
+
+    /* 
+     INTERSECTION OBSERVER
+   */
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            start();
-          } else {
-            stop();
-          }
+          if (entry.isIntersecting) start();
+          else stop();
         });
       },
       { threshold: 0.2 },
@@ -319,9 +385,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(section);
 
-    /*  PAUSE ON HOVER  */
+    /* 
+     HOVER PAUSE
+   */
     track.addEventListener("mouseenter", stop);
     track.addEventListener("mouseleave", start);
+
+    /* 
+     INIT
+   */
+    track.style.cursor = "grab";
   })();
 
   /* ==========================

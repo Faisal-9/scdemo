@@ -737,6 +737,12 @@ img {
   gap: 30px;
   width: max-content;
   will-change: transform;
+  cursor: grab;
+  user-select: none;
+}
+
+.clients-track:active {
+  cursor: grabbing;
 }
 
 .client-item {
