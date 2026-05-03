@@ -568,10 +568,9 @@ $sectors = [
             "Exploration",
             "Extraction",
             "Processing",
-            "Mine Infrastructure",
-            "Environmental Management",
-            "Minerals Exporting"
+            "Trade",
         ],
+        
         "project" => [
             "name" => "Copper Extraction Project",
             "image" => "assets/images/2.jpg",

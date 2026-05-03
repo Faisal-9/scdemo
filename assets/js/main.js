@@ -1175,5 +1175,21 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   })();
 
-  
+  /* =============================
+     policy privacy
+  ============================= */
+
+  document.querySelectorAll(".policy-tab").forEach((tab) => {
+    tab.addEventListener("click", function () {
+      document
+        .querySelectorAll(".policy-tab")
+        .forEach((t) => t.classList.remove("active"));
+      document
+        .querySelectorAll(".policy-content")
+        .forEach((c) => c.classList.remove("active"));
+
+      this.classList.add("active");
+      document.getElementById(this.dataset.tab).classList.add("active");
+    });
+  });
 });

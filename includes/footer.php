@@ -56,7 +56,7 @@
             <div class="footer-bottom-right">
                 <a href="#">Trademarks</a>
                 <span>|</span>
-                <a href="privacy.php">Privacy Policy</a>
+                <a href="privacypolicy.php">Privacy Policy</a>
                 <span>|</span>
                 <a href="terms.php">Terms of Service</a>
             </div>
