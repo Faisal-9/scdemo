@@ -87,7 +87,7 @@ $whySC = [
         'tabname' => 'Regional Presence',
         // 'title' => 'Regional Presence',
         // 'text' => 'To be the leading and most trusted engineering and construction partner in the region, recognized for our technical expertise and transformative impact on infrastructure and energy development.',
-        'image' => 'assets/images/presence.png'
+        'image' => 'assets/images/presenceindex.jpeg'
     ],
     '03' => [
         'tabname' => 'Technical Capabilities',
