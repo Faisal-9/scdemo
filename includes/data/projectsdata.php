@@ -154,7 +154,7 @@ $projects = [
     [
         'id' => 'c6',
         'name' => 'Construction of 12.38 Km Concrete Road in Dasht-e-Barchi Area',
-        'sector' => 'Structure',
+        'sector' => 'structure',
         'category' => 'road',
         'status' => 'Completed',
         'completion-year' => 2020,
@@ -182,11 +182,10 @@ $projects = [
 
     ],
 
-
     [
         'id' => 'c7',
         'name' => 'Marshal Fahim National Defense University Phase IIIA (MFNDU - ANDU)',
-        'sector' => 'Structure',
+        'sector' => 'structure',
         'category' => 'vertical construction',
         'status' => 'completed',
         'completion-year' => 2020,

@@ -7,6 +7,7 @@ $media_pages    = ['media.php', 'news.php', 'events.php', 'gallery.php'];
 include_once("includes/data/aboutdata.php");
 include_once("includes/data/servicesdata.php");
 include_once("includes/data/sectorsdata.php");
+include_once("includes/data/projectsdata.php");
 ?>
 
 <header class="header">
@@ -164,10 +165,29 @@ include_once("includes/data/sectorsdata.php");
                                     </li>
 
                                     <!-- PROJECTS -->
-                                    <li class="nav-item <?= ($current_page == 'projects.php') ? 'active' : '' ?>">
-                                        <a href="projects.php" class="nav-link">
+                                    <li class="nav-item dropdown <?= ($current_page == 'projects.php') ? 'active' : '' ?>">
+                                        <div class="nav-link has-dropdown">
                                             <span class="nav-text">Projects</span>
-                                        </a>
+                                            <span class="dropdown-arrow">▼</span>
+                                        </div>
+
+                                        <div class="dropdown-menu">
+                                            <ul class="dropdown-list">
+                                                <li>
+                                                    <a href="projects.php" class="dropdown-link">All Projects</a>
+                                                </li>
+                                                <?php
+                                                // Get unique sectors from projects
+                                                $projectSectors = array_unique(array_column($projects, 'sector'));
+                                                foreach ($projectSectors as $sectorName): ?>
+                                                    <li>
+                                                        <a href="projects.php?sector=<?= urlencode(strtolower($sectorName)) ?>" class="dropdown-link">
+                                                            <?= htmlspecialchars(ucfirst($sectorName)) ?>
+                                                        </a>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        </div>
                                     </li>
 
                                     <!-- MEDIA -->
