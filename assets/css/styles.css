@@ -1873,6 +1873,28 @@ img {
 }
 
 /*  PROJECT DETAILS PAGE  */
+
+.project-back {
+  margin-bottom: 10px;
+}
+
+.back-btn {
+  background: #eeeeee;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: none;
+
+  color: #0a2a66;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
 .project-title-box {
   display: block;
   padding: 0;

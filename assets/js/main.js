@@ -1174,4 +1174,6 @@ document.addEventListener("DOMContentLoaded", function () {
         currentPage >= totalPages - 1;
     };
   })();
+
+  
 });

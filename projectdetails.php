@@ -28,9 +28,14 @@ if (!$project) {
 
     <main>
 
-
         <section class="project-details py-3">
             <div class="container">
+
+                <div class="project-back">
+                    <button onclick="goBackToProjects()" class="back-btn">
+                        Back to Projects
+                    </button>
+                </div>
 
                 <!-- TITLE -->
                 <div class="project-title-box d-flex justify-content-center">
@@ -98,5 +103,22 @@ if (!$project) {
 
     <?php include("includes/footer.php"); ?>
     <?php include("includes/footerLink.php"); ?>
+
+
+    /* ==========================
+    PROJECT BACK BUTTON (SMART)
+    ========================== */
+    <script>
+        function goBackToProjects() {
+            const lastPage = sessionStorage.getItem("projectsPage");
+
+            if (lastPage) {
+                window.location.href = lastPage;
+            } else {
+                // fallback (if user opened directly)
+                history.back();
+            }
+        }
+    </script>
 
 </body>
