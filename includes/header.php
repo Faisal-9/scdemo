@@ -181,7 +181,7 @@ include_once("includes/data/projectsdata.php");
                                                 $projectSectors = array_unique(array_column($projects, 'sector'));
                                                 foreach ($projectSectors as $sectorName): ?>
                                                     <li>
-                                                        <a href="projects.php?sector=<?= urlencode(strtolower($sectorName)) ?>" class="dropdown-link">
+                                                        <a href="projects.php?sector=<?= urlencode($sectorName) ?>" class="dropdown-link">
                                                             <?= htmlspecialchars(ucfirst($sectorName)) ?>
                                                         </a>
                                                     </li>

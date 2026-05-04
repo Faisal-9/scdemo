@@ -5,7 +5,7 @@ include("includes/head.php");
 include("includes/data/projectsdata.php");
 
 $urlCategory = isset($_GET['category']) ? strtolower($_GET['category']) : 'all';
-$urlSector   = isset($_GET['sector'])   ? strtolower($_GET['sector'])   : 'all';
+$urlSector = isset($_GET['sector']) ? strtolower(trim($_GET['sector'])) : 'all';
 ?>
 
 <body>

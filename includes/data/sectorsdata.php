@@ -170,7 +170,7 @@ $sectors = [
     ],
 
     "transport" => [
-        "title" => "Transportation Infrastructure",
+        "title" => "Transportation",
 
         "hero" => [
             "tag" => "Transport Sector",
@@ -279,7 +279,7 @@ $sectors = [
     ],
 
     "Infrastructure" => [
-        "title" => "Building & Construction",
+        "title" => "Building",
 
         "hero" => [
             "tag" => "Infrastructure Sector",

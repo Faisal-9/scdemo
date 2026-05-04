@@ -6,7 +6,7 @@ $projects = [
     [
         'id' => 'c1',
         'name' => 'Logar-Gardiz 220 kV TL',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'transmission line',
         'status' => 'Completed',
         'completion-year' => 2019,
@@ -35,7 +35,7 @@ $projects = [
     [
         'id' => 'c2',
         'name' => 'Jabul Saraj-Gulbahar 220 kV Transmission Line',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'transmission line',
         'status' => 'Completed',
         'completion-year' => 2020,
@@ -65,7 +65,7 @@ $projects = [
     [
         'id' => 'c3',
         'name' => 'Gulbahar- Nijrab 110 kV Transmission Line',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'transmission line',
         'status' => 'Completed',
         'completion-year' => 2020,
@@ -94,7 +94,7 @@ $projects = [
     [
         'id' => 'c4',
         'name' => ' Gardiz 220/20 kV Substation',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'substation',
         'status' => 'Completed',
         'completion-year' => 2020,
@@ -123,7 +123,7 @@ $projects = [
     [
         'id' => 'c5',
         'name' => ' Gulbahar 220/110/20 kV Substation',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'substation',
         'status' => 'Completed',
         'completion-year' => 2020,
@@ -154,7 +154,7 @@ $projects = [
     [
         'id' => 'c6',
         'name' => 'Construction of 12.38 Km Concrete Road in Dasht-e-Barchi Area',
-        'sector' => 'structure',
+        'sector' => 'Transportation',
         'category' => 'road',
         'status' => 'Completed',
         'completion-year' => 2020,
@@ -185,7 +185,7 @@ $projects = [
     [
         'id' => 'c7',
         'name' => 'Marshal Fahim National Defense University Phase IIIA (MFNDU - ANDU)',
-        'sector' => 'structure',
+        'sector' => 'Building',
         'category' => 'vertical construction',
         'status' => 'completed',
         'completion-year' => 2020,
@@ -216,7 +216,7 @@ $projects = [
     // [
     //     'id' => 'c8',
     //     'name' => 'ANCOP BN & PRC',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'Completed',
     //     'completion-year' => 2020,
@@ -245,7 +245,7 @@ $projects = [
     // [
     //     'id' => 'c9',
     //     'name' => 'BP Company Headquarters Boz Areq',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -274,7 +274,7 @@ $projects = [
     // [
     //     'id' => 'c10',
     //     'name' => ' ANP UP DHQ Qaysar',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -303,7 +303,7 @@ $projects = [
     // [
     //     'id' => 'c11',
     //     'name' => 'ANP UP DHQ Mazar',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -332,7 +332,7 @@ $projects = [
     // [
     //     'id' => 'c12',
     //     'name' => ' BP Yaka Toot',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -362,7 +362,7 @@ $projects = [
     // [
     //     'id' => 'c13',
     //     'name' => 'ANP UP DHQ Khost Farang',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -391,7 +391,7 @@ $projects = [
     // [
     //     'id' => 'c14',
     //     'name' => 'ANP UP DHQ Wardoj ',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -420,7 +420,7 @@ $projects = [
     // [
     //     'id' => 'c15',
     //     'name' => 'ANA Gardez Training Ranges',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'army training range',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -450,7 +450,7 @@ $projects = [
     [
         'id' => 'c16',
         'name' => ' Fire Department “FD” Mazar - e- Sharif',
-        'sector' => 'structure',
+        'sector' => 'Building',
         'category' => 'vertical construction',
         'status' => 'completed',
         'completion-year' => 2020,
@@ -479,7 +479,7 @@ $projects = [
     // [
     //     'id' => 'c17',
     //     'name' => 'PRC Logar',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -508,7 +508,7 @@ $projects = [
     // [
     //     'id' => 'c18',
     //     'name' => 'MILCON Cargo Handling Area FOB SHANK',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -539,7 +539,7 @@ $projects = [
     // [
     //     'id' => 'c19',
     //     'name' => ' ANP UP DHQ Sheberghan',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -568,7 +568,7 @@ $projects = [
     // [
     //     'id' => 'c20',
     //     'name' => 'ANP UP DHQ Miramor',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -599,7 +599,7 @@ $projects = [
     // [
     //     'id' => 'c21',
     //     'name' => 'ANP UP DHQ Musa Kheil',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -630,7 +630,7 @@ $projects = [
     // [
     //     'id' => 'c22',
     //     'name' => 'ANP UP DHQ Kunduz',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -661,7 +661,7 @@ $projects = [
     // [
     //     'id' => 'c23',
     //     'name' => 'BP Yaka Haji',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -692,7 +692,7 @@ $projects = [
     // [
     //     'id' => 'c24',
     //     'name' => 'PRC Ghazni',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -723,7 +723,7 @@ $projects = [
     // [
     //     'id' => 'c25',
     //     'name' => ' North Kabul International Airport NKIA - Electrical Upgrade',
-    //     'sector' => 'energy',
+    //     'sector' => 'Power and Energy',
     //     'category' => 'distribution networks',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -754,7 +754,7 @@ $projects = [
     // [
     //     'id' => 'c26',
     //     'name' => ' ANP UP DHQ Nawur',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -785,7 +785,7 @@ $projects = [
     // [
     //     'id' => 'c27',
     //     'name' => ' Main Road Security Company “MRSC” Taloqan',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -816,7 +816,7 @@ $projects = [
     [
         'id' => 'c28',
         'name' => 'Elevated Water Tower, Balkh',
-        'sector' => 'water infrastructure',
+        'sector' => 'water Resources',
         'category' => 'water supply networks',
         'status' => 'completed',
         'completion-year' => 2020,
@@ -847,7 +847,7 @@ $projects = [
     // [
     //     'id' => 'c29',
     //     'name' => 'ANP UP DHQ - Mehterlam',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -878,7 +878,7 @@ $projects = [
     // [
     //     'id' => 'c30',
     //     'name' => 'ANA Infantry Kandak - Moqur district ',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -909,7 +909,7 @@ $projects = [
     // [
     //     'id' => 'c31',
     //     'name' => 'ANP UP DHQ - Jalalabad',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -940,7 +940,7 @@ $projects = [
     // [
     //     'id' => 'c32',
     //     'name' => ' ANA, NAVC III, Kabul',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -970,7 +970,7 @@ $projects = [
     // [
     //     'id' => 'c33',
     //     'name' => 'ANA, Infantry Branch School at Darulaman',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -1001,7 +1001,7 @@ $projects = [
     // [
     //     'id' => 'c34',
     //     'name' => 'ANP - MOI - Supply Point',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -1032,7 +1032,7 @@ $projects = [
     // [
     //     'id' => 'c35',
     //     'name' => 'ANA -O&M- Base Camp Repairs at Qala-e-Naw',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -1063,7 +1063,7 @@ $projects = [
     // [
     //     'id' => 'c36',
     //     'name' => 'ANP Transportation Brigade Headquarter',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -1094,7 +1094,7 @@ $projects = [
     [
         'id' => 'c37',
         'name' => 'Construction of Railway Admin Building of Kandahar',
-        'sector' => 'structure',
+        'sector' => 'Building',
         'category' => 'vertical construction',
         'status' => 'completed',
         'completion-year' => 2020,
@@ -1125,7 +1125,7 @@ $projects = [
     [
         'id' => 'c38',
         'name' => ' Construction of Railway Admin Building of Herat Province',
-        'sector' => 'structure',
+        'sector' => 'Building',
         'category' => 'vertical construction',
         'status' => 'completed',
         'completion-year' => 2020,
@@ -1156,7 +1156,7 @@ $projects = [
     [
         'id' => 'c39',
         'name' => 'Construction of Railway Admin Building of Balkh Province',
-        'sector' => 'structure',
+        'sector' => 'Building',
         'category' => 'vertical construction',
         'status' => 'completed',
         'completion-year' => 2020,
@@ -1187,7 +1187,7 @@ $projects = [
     [
         'id' => '40',
         'name' => 'Gardez Electrification and Wazai Zadran Distribution Networks (Lot 2)',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'multi-service',
         'status' => 'completed',
         'completion-year' => 2020,
@@ -1219,7 +1219,7 @@ $projects = [
     [
         'id' => '41',
         'name' => 'Herat Electrification Project (Lot 1)',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'multi-service',
         'status' => 'completed',
         'completion-year' => 2020,
@@ -1251,7 +1251,7 @@ $projects = [
     // [
     //     'id' => '42',
     //     'name' => 'Construction of Warehouse for Da Afghanistan Breshna Sherkat (DABS)',
-    //     'sector' => 'structure',
+    //     'sector' => 'Building',
     //     'category' => 'vertical construction',
     //     'status' => 'completed',
     //     'completion-year' => 2020,
@@ -1281,7 +1281,7 @@ $projects = [
     // [
     //     'id' => 'O66',
     //     'name' => 'Pashmul To Malala Maiwand 110 KV TL',
-    //     'sector' => 'energy',
+    //     'sector' => 'Power and Energy',
     //     'category' => 'transmission line',
     //     'status' => 'Ongoing',
     //     'completion-year' => 'Ongoing',
@@ -1312,7 +1312,7 @@ $projects = [
     // [
     //     'id' => 'O67',
     //     'name' => 'Sangin To Kajaki 110 KV  TL',
-    //     'sector' => 'energy',
+    //     'sector' => 'Power and Energy',
     //     'category' => 'transmission line',
     //     'status' => 'Ongoing',
     //     'completion-year' => 'Ongoing',
@@ -1343,7 +1343,7 @@ $projects = [
     // [
     //     'id' => 'O68',
     //     'name' => 'Band-e-Bughorchar Transmission Line',
-    //     'sector' => 'energy',
+    //     'sector' => 'Power and Energy',
     //     'category' => 'transmission line',
     //     'status' => 'Ongoing',
     //     'completion-year' => 'Ongoing',
@@ -1372,7 +1372,7 @@ $projects = [
     // [
     //     'id' => 'O69',
     //     'name' => 'Mohammad Agha 220/20kV Substation Logar',
-    //     'sector' => 'energy',
+    //     'sector' => 'Power and Energy',
     //     'category' => 'substation',
     //     'status' => 'Ongoing',
     //     'completion-year' => 'Ongoing',
@@ -1403,7 +1403,7 @@ $projects = [
     // [
     //     'id' => 'O70',
     //     'name' => 'Expansion of Northwest and East SS',
-    //     'sector' => 'energy',
+    //     'sector' => 'Power and Energy',
     //     'category' => 'substation',
     //     'status' => 'Ongoing',
     //     'completion-year' => 'Ongoing',
@@ -1431,7 +1431,7 @@ $projects = [
     // [
     //     'id' => 'O71',
     //     'name' => 'Expansion of Qasaba Substation',
-    //     'sector' => 'energy',
+    //     'sector' => 'Power and Energy',
     //     'category' => 'substation',
     //     'status' => 'Ongoing',
     //     'completion-year' => 'Ongoing',
@@ -1459,7 +1459,7 @@ $projects = [
     // [
     //     'id' => 'O72',
     //     'name' => 'Dasht-e-Archi & Asqalan Substations',
-    //     'sector' => 'energy',
+    //     'sector' => 'Power and Energy',
     //     'category' => 'substation',
     //     'status' => 'Ongoing',
     //     'completion-year' => 'Ongoing',
@@ -1490,7 +1490,7 @@ $projects = [
     // [
     //     'id' => 'O73',
     //     'name' => 'Expansion of Central and Seh Darak SS',
-    //     'sector' => 'energy',
+    //     'sector' => 'Power and Energy',
     //     'category' => 'substation',
     //     'status' => 'Ongoing',
     //     'completion-year' => 'Ongoing',
@@ -1521,7 +1521,7 @@ $projects = [
     [
         'id' => 'O74',
         'name' => 'Amu Darya Crossing Special project',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'transmission line',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1552,7 +1552,7 @@ $projects = [
     [
         'id' => 'O75',
         'name' => 'Hairatan to Dashti Alwan 500 kV TL',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'transmission line',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1583,7 +1583,7 @@ $projects = [
     [
         'id' => 'O76',
         'name' => 'Kabul to Jalalabad 220 kV TL',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'transmission line',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1614,7 +1614,7 @@ $projects = [
     [
         'id' => 'O77',
         'name' => 'Dashti Alwan 500 kV SS with Shunt Reactor System',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'substation',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1645,7 +1645,7 @@ $projects = [
     [
         'id' => 'O78',
         'name' => 'Shaikh Mesri 220/110/20 kV Substation',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'substation',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1676,7 +1676,7 @@ $projects = [
     [
         'id' => 'O79',
         'name' => 'Arghandi Transformer Bay',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'substation',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1707,7 +1707,7 @@ $projects = [
     [
         'id' => 'O80',
         'name' => 'Design Service for Uzbek Afghan 500Kv 5 projects',
-        'sector' => 'design',
+        'sector' => 'Power and Energy',
         'category' => 'design',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1738,7 +1738,7 @@ $projects = [
     [
         'id' => 'O85',
         'name' => 'Chemtala to Tarakhail 220 kV TL',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'transmission line',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1769,7 +1769,7 @@ $projects = [
     [
         'id' => 'O86',
         'name' => 'Arghandi to Butkhak 220 kv TL',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'transmission line',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1800,7 +1800,7 @@ $projects = [
     [
         'id' => 'O87',
         'name' => 'Tarakhail 220/110kV & 220/20kV SS',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'substation',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1831,7 +1831,7 @@ $projects = [
     [
         'id' => 'O88',
         'name' => 'Butkhak 220/110kV & 220/20kV SS',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'substation',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1862,7 +1862,7 @@ $projects = [
     [
         'id' => 'O89',
         'name' => 'Arghandi SS 500 KV Two Reactor Bays',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'substation',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1893,7 +1893,7 @@ $projects = [
     [
         'id' => 'O91',
         'name' => 'Pul-e-Khorasan - Qush Tepa - Darazab 220 kV TL',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'transmission line',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1923,7 +1923,7 @@ $projects = [
     [
         'id' => 'O92',
         'name' => 'Qush Tepa & Darzab Substations',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'substation',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1954,7 +1954,7 @@ $projects = [
     [
         'id' => 'O93',
         'name' => 'Qush Tepa & Darzab Distribution Networks',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'distribution networks',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -1984,7 +1984,7 @@ $projects = [
     [
         'id' => 'O94',
         'name' => 'Sare Pul to Sancharak 110 kV TL',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'transmission line',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -2015,7 +2015,7 @@ $projects = [
     [
         'id' => 'O95',
         'name' => 'Sancharak SS and Sare Pul Line Bay',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'multi-service',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -2044,7 +2044,7 @@ $projects = [
     [
         'id' => 'O96',
         'name' => 'Sancharak, Sozmaqala & Gosfandi Distribution Networks',
-        'sector' => 'energy',
+        'sector' => 'Power and Energy',
         'category' => 'distribution networks',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
@@ -2107,7 +2107,7 @@ $projects = [
 $projecthero = [
     'background' => 'assets/images/phero.png',
     'title' => 'Turning Ambition Into <span>Lasting</span> Impact',
-    'subtitle' => 'Delivering infrastructure, energy, mining, and development projects across regions.',
+    'subtitle' => 'Delivering infrastructure, power & energy, mining, and development projects across regions.',
     'stats' => [
         ['count' => '100' . '+', 'label' => 'Completed Projects'],
         // ['count' => count($projects) . '+', 'label' => 'Projects'],

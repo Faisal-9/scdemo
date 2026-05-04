@@ -989,22 +989,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* ==========================
-   URL Parameter Filtering
+   URL Parameter Filtering (for direct links from mega menu)
 ========================== */
+
   if (typeof urlSector !== "undefined" && typeof urlCategory !== "undefined") {
+    // 🔹 PRIORITY 1: CATEGORY
     if (urlCategory !== "all") {
       sector = "all";
       category = urlCategory;
 
-      // Activate All sector button
       document.querySelectorAll(".project-filters button").forEach((b) => {
         b.classList.toggle("active", b.dataset.sector === "all");
       });
 
-      // Rebuild category buttons for all sectors
       updateCategoryButtons("all");
 
-      // Activate matching category button
       document
         .querySelectorAll(".project-category-filters button")
         .forEach((b) => {
@@ -1012,16 +1011,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
       filterProjects();
-    } else if (urlSector !== "all") {
+    }
+
+    // 🔹 PRIORITY 2: SECTOR
+    else if (urlSector !== "all") {
       sector = urlSector;
 
-      // Activate matching sector button
       document.querySelectorAll(".project-filters button").forEach((b) => {
         b.classList.toggle("active", b.dataset.sector === urlSector);
       });
 
       updateCategoryButtons(urlSector);
-      filterProjects();
+
+      setTimeout(() => filterProjects(), 50);
     }
   }
 
