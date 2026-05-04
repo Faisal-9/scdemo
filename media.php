@@ -11,7 +11,7 @@ function parseMediaDate($date)
 }
 $active_tab = $_GET['tab'] ?? 'news';
 
-// Build recents: merge all items, tag with type, sort newest-first, take 5
+// Building recents: merge all items, tag with type, sort newest-first, take 5
 $all_recents = [];
 foreach ($media as $type => $items) {
     foreach ($items as $item) {

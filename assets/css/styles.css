@@ -2166,7 +2166,7 @@ img {
 .media-two-col {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 40px;
+  gap: 20px;
 }
 
 /* ---- TABS ---- */
@@ -2423,6 +2423,13 @@ img {
 @media (max-width: 900px) {
   .media-two-col {
     grid-template-columns: 1fr;
+  }
+
+  .media-right {
+    margin-top: 60px;
+    order: -1;
+    position: static;
+    top: auto;
   }
 
   .media-card {
