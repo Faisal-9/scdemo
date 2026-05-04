@@ -419,7 +419,7 @@ $projects = [
 
     // [
     //     'id' => 'c15',
-    //     'name' => ' ANA Gardez Training Ranges',
+    //     'name' => 'ANA Gardez Training Ranges',
     //     'sector' => 'structure',
     //     'category' => 'army training range',
     //     'status' => 'completed',
@@ -1518,190 +1518,190 @@ $projects = [
     // ],
 
 
-    // [
-    //     'id' => 'O74',
-    //     'name' => 'Amu Darya Crossing Special project',
-    //     'sector' => 'energy',
-    //     'category' => 'transmission line',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Hairatan',
-    //     'client' => 'METQ',
+    [
+        'id' => 'O74',
+        'name' => 'Amu Darya Crossing Special project',
+        'sector' => 'energy',
+        'category' => 'transmission line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Hairatan',
+        'client' => 'METQ',
 
-    //     'thumbnail' => '',
+        'thumbnail' => '',
 
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
+        'images' => [
+            '',
+            '',
+            ''
+        ],
 
-    //     'description' =>
-    //     '',
+        'description' =>
+        '',
 
-    //     'scope' => [
-    //         '',
-    //         '',
-    //         '',
-    //         '',
-    //     ]
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
 
-    // ],
-
-
-    // [
-    //     'id' => 'O75',
-    //     'name' => 'Hairatan to Dashti Alwan 500 kV TL',
-    //     'sector' => 'energy',
-    //     'category' => 'transmission line',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'BLK-SMG-BGL',
-    //     'client' => 'METQ',
-
-    //     'thumbnail' => '',
-
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
-
-    //     'description' =>
-    //     '',
-
-    //     'scope' => [
-    //         '',
-    //         '',
-    //         '',
-    //         '',
-    //     ]
-
-    // ],
+    ],
 
 
-    // [
-    //     'id' => 'O76',
-    //     'name' => 'Kabul to Jalalabad 220 kV TL',
-    //     'sector' => 'energy',
-    //     'category' => 'transmission line',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Kabul-Nangarhar',
-    //     'client' => 'METQ',
+    [
+        'id' => 'O75',
+        'name' => 'Hairatan to Dashti Alwan 500 kV TL',
+        'sector' => 'energy',
+        'category' => 'transmission line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'BLK-SMG-BGL',
+        'client' => 'METQ',
 
-    //     'thumbnail' => '',
+        'thumbnail' => '',
 
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
+        'images' => [
+            '',
+            '',
+            ''
+        ],
 
-    //     'description' =>
-    //     '',
+        'description' =>
+        '',
 
-    //     'scope' => [
-    //         '',
-    //         '',
-    //         '',
-    //         '',
-    //     ]
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
 
-    // ],
-
-
-    // [
-    //     'id' => 'O77',
-    //     'name' => 'Dashti Alwan 500 kV SS with Shunt Reactor System',
-    //     'sector' => 'energy',
-    //     'category' => 'substation',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Baghlan',
-    //     'client' => 'METQ',
-
-    //     'thumbnail' => '',
-
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
-
-    //     'description' =>
-    //     '',
-
-    //     'scope' => [
-    //         '',
-    //         '',
-    //         '',
-    //         '',
-    //     ]
-
-    // ],
+    ],
 
 
-    // [
-    //     'id' => 'O78',
-    //     'name' => 'Shaikh Mesri 220/110/20 kV Substation',
-    //     'sector' => 'energy',
-    //     'category' => 'substation',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Nangarhar',
-    //     'client' => 'METQ',
+    [
+        'id' => 'O76',
+        'name' => 'Kabul to Jalalabad 220 kV TL',
+        'sector' => 'energy',
+        'category' => 'transmission line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul-Nangarhar',
+        'client' => 'METQ',
 
-    //     'thumbnail' => '',
+        'thumbnail' => '',
 
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
+        'images' => [
+            '',
+            '',
+            ''
+        ],
 
-    //     'description' =>
-    //     '',
+        'description' =>
+        '',
 
-    //     'scope' => [
-    //         '',
-    //         '',
-    //         '',
-    //         '',
-    //     ]
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
 
-    // ],
+    ],
 
 
-    // [
-    //     'id' => 'O79',
-    //     'name' => 'Arghandi Transformer Bay',
-    //     'sector' => 'energy',
-    //     'category' => 'substation',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Kabul',
-    //     'client' => 'METQ',
+    [
+        'id' => 'O77',
+        'name' => 'Dashti Alwan 500 kV SS with Shunt Reactor System',
+        'sector' => 'energy',
+        'category' => 'substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Baghlan',
+        'client' => 'METQ',
 
-    //     'thumbnail' => '',
+        'thumbnail' => '',
 
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
+        'images' => [
+            '',
+            '',
+            ''
+        ],
 
-    //     'description' =>
-    //     '',
+        'description' =>
+        '',
 
-    //     'scope' => [
-    //         '',
-    //         '',
-    //         '',
-    //         '',
-    //     ]
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
 
-    // ],
+    ],
+
+
+    [
+        'id' => 'O78',
+        'name' => 'Shaikh Mesri 220/110/20 kV Substation',
+        'sector' => 'energy',
+        'category' => 'substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Nangarhar',
+        'client' => 'METQ',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O79',
+        'name' => 'Arghandi Transformer Bay',
+        'sector' => 'energy',
+        'category' => 'substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul',
+        'client' => 'METQ',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
 
 
     [
@@ -1735,340 +1735,371 @@ $projects = [
     ],
 
 
-    // [
-    //     'id' => 'O85',
-    //     'name' => 'Chemtala to Tarakhail 220 kV TL',
-    //     'sector' => 'energy',
-    //     'category' => 'transmission line',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Kabul',
-    //     'client' => 'ABC',
-
-    //     'thumbnail' => '',
-
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
-
-    //     'description' =>
-    //     '',
-
-    //     'scope' => [
-    //         '',
-    //         '',
-    //         '',
-    //         '',
-    //     ]
-
-    // ],
-
-
-    // [
-    //     'id' => 'O86',
-    //     'name' => 'Arghandi to Butkhak 220 kv TL',
-    //     'sector' => 'energy',
-    //     'category' => 'transmission line',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Kabul',
-    //     'client' => 'ABC',
-
-    //     'thumbnail' => '',
-
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
-
-    //     'description' =>
-    //     '',
-
-    //     'scope' => [
-    //         '',
-    //         '',
-    //         '',
-    //         '',
-    //     ]
-
-    // ],
-
-
-    // [
-    //     'id' => 'O87',
-    //     'name' => 'Tarakhail 220/110kV & 220/20kV SS',
-    //     'sector' => 'energy',
-    //     'category' => 'substation',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Kabul',
-    //     'client' => 'ABC',
-
-    //     'thumbnail' => '',
-
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
-
-    //     'description' =>
-    //     '',
-
-    //     'scope' => [
-    //         '',
-    //         '',
-    //         '',
-    //         '',
-    //     ]
-
-    // ],
-
-
-    // [
-    //     'id' => 'O88',
-    //     'name' => 'Butkhak 220/110kV & 220/20kV SS',
-    //     'sector' => 'energy',
-    //     'category' => 'substation',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Kabul',
-    //     'client' => 'ABC',
-
-    //     'thumbnail' => '',
-
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
-
-    //     'description' =>
-    //     '',
-
-    //     'scope' => [
-    //         '',
-    //         '',
-    //         '',
-    //         '',
-    //     ]
-
-    // ],
-
-
-    // [
-    //     'id' => 'O89',
-    //     'name' => 'Arghandi SS 500 KV Two Reactor Bays',
-    //     'sector' => 'energy',
-    //     'category' => 'substation',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Kabul',
-    //     'client' => 'ABC',
-
-    //     'thumbnail' => '',
-
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
-
-    //     'description' =>
-    //     '',
-
-    //     'scope' => [
-    //         '',
-    //         '',
-    //         '',
-    //         '',
-    //     ]
-
-    // ],
-
-
-    // [
-    //     'id' => 'O91',
-    //     'name' => 'Pul-e-Khorasan - Qush Tepa - Darazab 220 kV TL',
-    //     'sector' => 'energy',
-    //     'category' => 'transmission line',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Jawzjan',
-    //     'client' => 'MoWE',
-
-    //     'thumbnail' => '',
-
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
-
-    //     'description' =>
-    //     'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Qush Tepa and Darzaab districts. One of the key components of this project is the construction of an 85.24 km 220 kV transmission line, The line consists of 52.76 km from Pul-e-Khorasan to Qush Tepa Substation and 32.48 km from Qush Tepa to Darzab Substation.',
-
-    //     'scope' => [
-    //         'Survey, design, procurement, construction, testing, and commissioning of the 220 kV transmission line from Pul-e-Khorasan to Qush Tepa and Darzaab Substations.',
-    //         'Construction of an overhead 220 kV single-circuit line from Pul-e-Khorasan Substation to Qush Tepa Substation (52.76 km) and from Qush Tepa Substation to Darzaab Substation (32.48 km).',
-    //         'Optical Ground Wire (OPGW) for communication and protection purposes',
-    //     ]
-
-    // ],
-
-
-    // [
-    //     'id' => 'O92',
-    //     'name' => 'Qush Tepa & Darzab Substations',
-    //     'sector' => 'energy',
-    //     'category' => 'substation',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Jawzjan',
-    //     'client' => 'MoWE',
-
-    //     'thumbnail' => '',
-
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
-
-    //     'description' =>
-    //     'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Qush Tepa and Darzab districts. One of the key components of this project is the construction of two new substations to ensure efficient power transformation and distribution, including a 20 MVA (2*10 MVA) substation in Qush Tepa District and a 32 MVA (2*16 MVA) substation in Darzab District. In addition, one 220 kV line bay will be established at Pul-e-Khorasan Substation to facilitate the integration of the new substations into the national grid.',
-
-    //     'scope' => [
-    //         'Survey, design, procurement, construction, testing, and commissioning of two new substations in Qush Tepa and Darzab districts.',
-    //         '20 MVA (2*10 MVA) substation in Qush Tepa District',
-    //         '32 MVA (2*16 MVA) substation in Darzaab District',
-    //         'Establishment of one 220 kV systems (line Bay) in Pul-e-Khorasan Substation.',
-    //     ]
-
-    // ],
-
-
-    // [
-    //     'id' => 'O93',
-    //     'name' => 'Qush Tepa & Darzab Distribution Networks',
-    //     'sector' => 'energy',
-    //     'category' => 'distribution networks',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Jawzjan',
-    //     'client' => 'MoWE',
-
-    //     'thumbnail' => '',
-
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
-
-    //     'description' =>
-    //     'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Qush Tepa and Darzab districts. One of the key components of this project is the development of medium- and low-voltage (20/0.4 Kv) distribution networks to provide electricity to households, public services, and businesses in both districts, including a total distribution capacity of 16 MVA in Qush Tepa District and 20 MVA in Darzab District.',
-
-    //     'scope' => [
-    //         'Construction of medium- and low-voltage (20/0.4 kV) distribution networks to provide electricity to households, public services, and businesses in Qush Tepa and Darzaab Districts.',
-    //         'The total distribution capacity in Qush Tepa District is 16 MVA',
-    //         'The total distribution capacity in Darzaab District is 20 MVA'
-    //     ]
-
-    // ],
-
-
-    // [
-    //     'id' => 'O94',
-    //     'name' => 'Sare Pul to Sancharak 110 kV TL',
-    //     'sector' => 'energy',
-    //     'category' => 'transmission line',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Sare Pul',
-    //     'client' => 'MoWE',
-
-    //     'thumbnail' => '',
-
-    //     'images' => [
-    //         'Survey, design, procurement, construction, testing, and commissioning of the 110 kV transmission line from Sar-e Pul substation to the new substation in Sangcharak',
-    //         'Extension of an overhead 110 kV single-circuit line from Sar e Pul Substation to the new substation in Sangcharak (60 Km).',
-    //         'Optical Ground Wire (OPGW) for communication and protection purposes'
-    //     ],
-
-    //     'description' =>
-    //     'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Sangcharak, Sozmaqala, and Gusfandi districts. One of the key components of this project is the construction of a 60 km, 110 kV transmission line from Sar-e Pul to Sangcharak Substation.',
-
-    //     'scope' => [
-    //         '',
-    //         '',
-    //         '',
-    //         '',
-    //     ]
-
-    // ],
-
-
-    // [
-    //     'id' => 'O95',
-    //     'name' => 'Sancharak SS and Sare Pul Line Bay',
-    //     'sector' => 'energy',
-    //     'category' => 'multi-service',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Sare Pul',
-    //     'client' => 'MoWE',
-
-    //     'thumbnail' => '',
-
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
-
-    //     'description' =>
-    //     'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Sangcharak, Sozmaqala, and Gusfandi districts. One of the key components of this project is the construction of a new 32 MVA (2*16 MVA) substation to ensure efficient power transformation and distribution. In addition, a 110 kV line bay will be established at Sar-e Pul Substation to facilitate the integration of the new substation into the national grid.',
-
-    //     'scope' => [
-    //         'Survey, design, procurement, construction, testing, and commissioning of a 32 MVA (2*16 MVA) substation in Sangcharak District',
-    //         'Establishment of one 110 kV systems (line Bay) in Sar-e Pul Substation',
-    //     ]
-
-    // ],
-
-
-    // [
-    //     'id' => 'O96',
-    //     'name' => 'Sancharak, Sozmaqala & Gosfandi Distribution Networks',
-    //     'sector' => 'energy',
-    //     'category' => 'distribution networks',
-    //     'status' => 'Ongoing',
-    //     'completion-year' => 'Ongoing',
-    //     'location' => 'Sare Pul',
-    //     'client' => 'MoWE',
-
-    //     'thumbnail' => '',
-
-    //     'images' => [
-    //         '',
-    //         '',
-    //         ''
-    //     ],
-
-    //     'description' =>
-    //     'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Sangcharak, Sozmaqala, and Gusfandi districts. One of the key components of this project is the development of medium- and low-voltage (20/0.4 Kv) distribution networks to provide electricity to households, public services, and businesses in three districts, including a total distribution capacity of 3 MVA in Sangcharak District,18 MVA in Sozmaqala District and 5 MVA in Gusfandi District.',
-
-    //     'scope' => [
-    //         'Construction of medium- and low-voltage (20/0.4 kV) distribution networks to provide electricity to households, public services, and businesses in Sangcharak, Sozmaqala and Gusfandi Districts.',
-    //         'The total distribution capacity in Sangcharak District is 3 MVA',
-    //         'The total distribution capacity in Sozmaqala District is 18 MVA',
-    //         'The total distribution capacity in Gusfandi District is 5 MVA',
-    //     ]
-    // ],
+    [
+        'id' => 'O85',
+        'name' => 'Chemtala to Tarakhail 220 kV TL',
+        'sector' => 'energy',
+        'category' => 'transmission line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul',
+        'client' => 'ABC',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O86',
+        'name' => 'Arghandi to Butkhak 220 kv TL',
+        'sector' => 'energy',
+        'category' => 'transmission line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul',
+        'client' => 'ABC',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O87',
+        'name' => 'Tarakhail 220/110kV & 220/20kV SS',
+        'sector' => 'energy',
+        'category' => 'substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul',
+        'client' => 'ABC',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O88',
+        'name' => 'Butkhak 220/110kV & 220/20kV SS',
+        'sector' => 'energy',
+        'category' => 'substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul',
+        'client' => 'ABC',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O89',
+        'name' => 'Arghandi SS 500 KV Two Reactor Bays',
+        'sector' => 'energy',
+        'category' => 'substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Kabul',
+        'client' => 'ABC',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        '',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O91',
+        'name' => 'Pul-e-Khorasan - Qush Tepa - Darazab 220 kV TL',
+        'sector' => 'energy',
+        'category' => 'transmission line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Jawzjan',
+        'client' => 'MoWE',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Qush Tepa and Darzaab districts. One of the key components of this project is the construction of an 85.24 km 220 kV transmission line, The line consists of 52.76 km from Pul-e-Khorasan to Qush Tepa Substation and 32.48 km from Qush Tepa to Darzab Substation.',
+
+        'scope' => [
+            'Survey, design, procurement, construction, testing, and commissioning of the 220 kV transmission line from Pul-e-Khorasan to Qush Tepa and Darzaab Substations.',
+            'Construction of an overhead 220 kV single-circuit line from Pul-e-Khorasan Substation to Qush Tepa Substation (52.76 km) and from Qush Tepa Substation to Darzaab Substation (32.48 km).',
+            'Optical Ground Wire (OPGW) for communication and protection purposes',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O92',
+        'name' => 'Qush Tepa & Darzab Substations',
+        'sector' => 'energy',
+        'category' => 'substation',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Jawzjan',
+        'client' => 'MoWE',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Qush Tepa and Darzab districts. One of the key components of this project is the construction of two new substations to ensure efficient power transformation and distribution, including a 20 MVA (2*10 MVA) substation in Qush Tepa District and a 32 MVA (2*16 MVA) substation in Darzab District. In addition, one 220 kV line bay will be established at Pul-e-Khorasan Substation to facilitate the integration of the new substations into the national grid.',
+
+        'scope' => [
+            'Survey, design, procurement, construction, testing, and commissioning of two new substations in Qush Tepa and Darzab districts.',
+            '20 MVA (2*10 MVA) substation in Qush Tepa District',
+            '32 MVA (2*16 MVA) substation in Darzaab District',
+            'Establishment of one 220 kV systems (line Bay) in Pul-e-Khorasan Substation.',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O93',
+        'name' => 'Qush Tepa & Darzab Distribution Networks',
+        'sector' => 'energy',
+        'category' => 'distribution networks',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Jawzjan',
+        'client' => 'MoWE',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Qush Tepa and Darzab districts. One of the key components of this project is the development of medium- and low-voltage (20/0.4 Kv) distribution networks to provide electricity to households, public services, and businesses in both districts, including a total distribution capacity of 16 MVA in Qush Tepa District and 20 MVA in Darzab District.',
+
+        'scope' => [
+            'Construction of medium- and low-voltage (20/0.4 kV) distribution networks to provide electricity to households, public services, and businesses in Qush Tepa and Darzaab Districts.',
+            'The total distribution capacity in Qush Tepa District is 16 MVA',
+            'The total distribution capacity in Darzaab District is 20 MVA'
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O94',
+        'name' => 'Sare Pul to Sancharak 110 kV TL',
+        'sector' => 'energy',
+        'category' => 'transmission line',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Sare Pul',
+        'client' => 'MoWE',
+
+        'thumbnail' => '',
+
+        'images' => [
+            'Survey, design, procurement, construction, testing, and commissioning of the 110 kV transmission line from Sar-e Pul substation to the new substation in Sangcharak',
+            'Extension of an overhead 110 kV single-circuit line from Sar e Pul Substation to the new substation in Sangcharak (60 Km).',
+            'Optical Ground Wire (OPGW) for communication and protection purposes'
+        ],
+
+        'description' =>
+        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Sangcharak, Sozmaqala, and Gusfandi districts. One of the key components of this project is the construction of a 60 km, 110 kV transmission line from Sar-e Pul to Sangcharak Substation.',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O95',
+        'name' => 'Sancharak SS and Sare Pul Line Bay',
+        'sector' => 'energy',
+        'category' => 'multi-service',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Sare Pul',
+        'client' => 'MoWE',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Sangcharak, Sozmaqala, and Gusfandi districts. One of the key components of this project is the construction of a new 32 MVA (2*16 MVA) substation to ensure efficient power transformation and distribution. In addition, a 110 kV line bay will be established at Sar-e Pul Substation to facilitate the integration of the new substation into the national grid.',
+
+        'scope' => [
+            'Survey, design, procurement, construction, testing, and commissioning of a 32 MVA (2*16 MVA) substation in Sangcharak District',
+            'Establishment of one 110 kV systems (line Bay) in Sar-e Pul Substation',
+        ]
+
+    ],
+
+
+    [
+        'id' => 'O96',
+        'name' => 'Sancharak, Sozmaqala & Gosfandi Distribution Networks',
+        'sector' => 'energy',
+        'category' => 'distribution networks',
+        'status' => 'Ongoing',
+        'completion-year' => 'Ongoing',
+        'location' => 'Sare Pul',
+        'client' => 'MoWE',
+
+        'thumbnail' => '',
+
+        'images' => [
+            '',
+            '',
+            ''
+        ],
+
+        'description' =>
+        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Sangcharak, Sozmaqala, and Gusfandi districts. One of the key components of this project is the development of medium- and low-voltage (20/0.4 Kv) distribution networks to provide electricity to households, public services, and businesses in three districts, including a total distribution capacity of 3 MVA in Sangcharak District,18 MVA in Sozmaqala District and 5 MVA in Gusfandi District.',
+
+        'scope' => [
+            'Construction of medium- and low-voltage (20/0.4 kV) distribution networks to provide electricity to households, public services, and businesses in Sangcharak, Sozmaqala and Gusfandi Districts.',
+            'The total distribution capacity in Sangcharak District is 3 MVA',
+            'The total distribution capacity in Sozmaqala District is 18 MVA',
+            'The total distribution capacity in Gusfandi District is 5 MVA',
+        ]
+    ],
+
+
+
+
+    /*============================ Mining projects ===========================*/
+    [
+        'id' => '001',
+        'name' => 'Talc Processing Plant',
+        'sector' => 'mining',
+        'category' => 'mineral processing',
+        'status' => 'ongoing',
+        'completion-year' => 'ongoing',
+        'location' => 'Sheikh Mesri Industrial Park, Nangarhar Province',
+        'client' => 'Arya Mineral',
+
+        'thumbnail' => 'assets/images/projects/processingplant.jpg',
+
+        'images' => [
+            'assets/images/projects/processingplant.jpg',
+            'assets/images/projects/processingplant1.jpg',
+        ],
+
+        'description' =>
+        'Arya Mineral owns talc grinding and crushing plants located in Sheikh Mesri Industrial Park, Nangarhar Province. The plant was designed and manufactured by Zenith and constructed and installed by State Corps. It has a minimum annual grinding capacity of 30,000 tons and a crushing capacity of 100,000 tons, with the potential for further expansion as the business grows. The facility also uses advanced color-sorting technology to sort and segregate different grades and types of talc.',
+
+        'scope' => [
+            'Advanced color-sorting technology to sort and segregate different grades and types of talc.',
+            'Facility designed with capacity for further expansion as business grows.',
+        ]
+    ],
+
 
 ];
 
