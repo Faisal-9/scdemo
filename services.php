@@ -12,45 +12,29 @@ include("includes/data/servicesdata.php");
     <main>
 
         <section class="services-page">
-            <div class="container">
-
-                <!-- MENU -->
-                <div class="services-menu-wrapper">
-                    <ul class="services-menu">
-                        <?php
-                        $first = true;
-                        foreach ($services as $key => $service):
-                        ?>
-                            <li class="<?= $first ? 'active' : '' ?>"
-                                data-target="<?= $key ?>">
-                                <?= $service['title'] ?>
-                            </li>
-                        <?php
-                            $first = false;
-                        endforeach;
-                        ?>
-                    </ul>
-                </div>
-
+            <div>
                 <!-- CONTENT -->
-                <div class="services-content service-gallery">
+                <div class="services-content">
+
                     <?php
                     $first = true;
                     foreach ($services as $key => $service):
                     ?>
                         <div id="<?= $key ?>" class="service-section <?= $first ? 'active' : '' ?>">
-                            <?php
-                            $prefix = $key . "-";
-                            $sections = $service["sections"];
-                            include("includes/components/servicessection.php");
-                            $first = false;
-                            ?>
+
+                            <?php include("includes/components/servicessection.php"); ?>
+
                         </div>
-                    <?php endforeach; ?>
+                    <?php
+                        $first = false;
+                    endforeach;
+                    ?>
+
                 </div>
 
             </div>
         </section>
+
     </main>
 
     <?php include("includes/footer.php"); ?>

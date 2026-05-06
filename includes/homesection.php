@@ -199,8 +199,8 @@ include_once("includes/data/aboutdata.php");
                     <div class="service-card h-100">
 
                         <div class="service-image">
-                            <img src="<?= $service['image'] ?>"
-                                alt="<?= $service['title'] ?>"
+                            <img src="<?= htmlspecialchars($service['image'] ?? $service['hero_image'] ?? 'assets/images/default.jpg') ?>"
+                                alt="<?= htmlspecialchars($service['title']) ?>"
                                 class="img-fluid"
                                 loading="lazy">
                         </div>
@@ -211,8 +211,8 @@ include_once("includes/data/aboutdata.php");
                             </div>
 
                             <ul class="service-desc">
-                                <?php foreach (array_slice($service['sections'], 0, 6) as $section): ?>
-                                    <li><?= htmlspecialchars($section['title']) ?></li>
+                                <?php foreach (array_slice($service['sub_services'] ?? [], 0, 6) as $sub): ?>
+                                    <li><?= htmlspecialchars($sub['title']) ?></li>
                                 <?php endforeach; ?>
                             </ul>
 

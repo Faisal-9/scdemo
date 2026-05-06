@@ -702,85 +702,125 @@ document.addEventListener("DOMContentLoaded", function () {
      Services Page Tabs + Sidebar
   ========================== */
 
-  const serviceMenuItems = document.querySelectorAll(".services-menu li");
-  const servicePageSections = document.querySelectorAll(".service-section");
+  /* SUB SERVICE SWITCH */
+  document.querySelectorAll(".sub-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      document
+        .querySelectorAll(".sub-tab")
+        .forEach((t) => t.classList.remove("active"));
+      document
+        .querySelectorAll(".subservice-content")
+        .forEach((c) => c.classList.remove("active"));
 
-  if (serviceMenuItems.length) {
-    let activeServiceBlocks = [];
-    let activeServiceLinks = [];
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.sub).classList.add("active");
+    });
+  });
 
-    function updateActiveServiceData() {
-      const activeService = document.querySelector(".service-section.active");
-      if (!activeService) return;
-      activeServiceBlocks = Array.from(
-        activeService.querySelectorAll(".about-section-block"),
-      );
-      activeServiceLinks = Array.from(
-        activeService.querySelectorAll(".about-sidebar .nav-link"),
-      );
-    }
+  /* SUB-SUB SWITCH */
+  document.querySelectorAll(".sub-sub-list li[data-target]").forEach((item) => {
+    item.addEventListener("click", () => {
+      const container = item.closest(".subservice-content");
 
-    function highlightServiceSidebar() {
-      if (!activeServiceBlocks.length) return;
-      const scrollPos = window.scrollY + 160;
-      activeServiceBlocks.forEach((section, index) => {
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
-        if (scrollPos >= top && scrollPos < bottom) {
-          activeServiceLinks.forEach((link) => link.classList.remove("active"));
-          if (activeServiceLinks[index])
-            activeServiceLinks[index].classList.add("active");
-        }
-      });
-    }
+      container
+        .querySelectorAll("li[data-target]")
+        .forEach((li) => li.classList.remove("active"));
 
-    function activateServiceTab(target) {
-      serviceMenuItems.forEach((el) => el.classList.remove("active"));
-      servicePageSections.forEach((sec) => sec.classList.remove("active"));
+      container
+        .querySelectorAll(".detail-panel")
+        .forEach((p) => p.classList.remove("active"));
 
-      const matchedMenu = Array.from(serviceMenuItems).find(
-        (el) => el.dataset.target === target,
-      );
-      if (matchedMenu) matchedMenu.classList.add("active");
+      item.classList.add("active");
 
-      const activeSection = document.getElementById(target);
-      if (!activeSection) return;
-      activeSection.classList.add("active");
+      const target = document.getElementById(item.dataset.target);
+      if (target) target.classList.add("active");
+    });
+  });
 
-      updateActiveServiceData();
-      highlightServiceSidebar();
-    }
+  /* 
+   MAIN SERVICE SWITCH
+ */
+  document.querySelectorAll(".services-menu li").forEach((item) => {
+    item.addEventListener("click", () => {
+      // remove active from menu
+      document
+        .querySelectorAll(".services-menu li")
+        .forEach((li) => li.classList.remove("active"));
 
-    // Handle ?tab= param from mega menu links
-    const serviceParams = new URLSearchParams(window.location.search);
-    const serviceTab = serviceParams.get("tab");
-    if (serviceTab && document.getElementById(serviceTab)) {
-      activateServiceTab(serviceTab);
-      // scroll to anchor if present
-      if (window.location.hash) {
+      // hide all sections
+      document
+        .querySelectorAll(".service-section")
+        .forEach((sec) => sec.classList.remove("active"));
+
+      // activate clicked
+      item.classList.add("active");
+
+      const target = item.dataset.target;
+      const section = document.getElementById(target);
+
+      if (section) section.classList.add("active");
+    });
+  });
+
+  /* ==========================
+     Services Page tab param
+  ========================== */
+  if (window.location.pathname.endsWith("services.php")) {
+    const params = new URLSearchParams(window.location.search);
+    const serviceTab = params.get("tab");
+    const hashAnchor = window.location.hash.replace("#", "");
+
+    if (serviceTab) {
+      // Activate main service section
+      document
+        .querySelectorAll(".service-section")
+        .forEach((sec) => sec.classList.remove("active"));
+      const activeSection = document.getElementById(serviceTab);
+      if (activeSection) {
+        activeSection.classList.add("active");
+      }
+
+      // If hash exists, activate nested subservice-content and sub-tab
+      if (hashAnchor) {
         setTimeout(() => {
-          const anchor = document.querySelector(window.location.hash);
-          if (anchor) {
-            anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+          const targetSubservice = document.getElementById(hashAnchor);
+          if (
+            targetSubservice &&
+            targetSubservice.classList.contains("subservice-content")
+          ) {
+            // Deactivate other subservice-contents in this section
+            activeSection
+              .querySelectorAll(".subservice-content")
+              .forEach((sc) => sc.classList.remove("active"));
+            targetSubservice.classList.add("active");
+
+            // Find and activate the corresponding sub-tab
+            const subTabDataAttr = targetSubservice.id;
+            const correspondingSubTab = activeSection.querySelector(
+              `.sub-tab[data-sub="${subTabDataAttr}"]`,
+            );
+            if (correspondingSubTab) {
+              activeSection
+                .querySelectorAll(".sub-tab")
+                .forEach((tab) => tab.classList.remove("active"));
+              correspondingSubTab.classList.add("active");
+            }
+
+            // Scroll to target
+            targetSubservice.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          } else if (hashAnchor) {
+            // Fallback: just scroll to hash if it exists
+            const anchor = document.querySelector("#" + hashAnchor);
+            if (anchor) {
+              anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
           }
-        }, 100);
+        }, 150);
       }
     }
-
-    serviceMenuItems.forEach((item) => {
-      item.addEventListener("click", function () {
-        const target = this.dataset.target;
-        activateServiceTab(target);
-        const page = document.querySelector(".services-page");
-        if (page) {
-          window.scrollTo({ top: page.offsetTop - 90, behavior: "smooth" });
-        }
-      });
-    });
-
-    window.addEventListener("scroll", highlightServiceSidebar);
-    updateActiveServiceData();
-    highlightServiceSidebar();
   }
 
   /* ==========================
@@ -1176,6 +1216,45 @@ document.addEventListener("DOMContentLoaded", function () {
         currentPage >= totalPages - 1;
     };
   })();
+
+  /* =============================
+     Services Accordion Menu
+  ============================= */
+  document.querySelectorAll(".sub-sub-list").forEach((menuList) => {
+    // Show first group by default
+    const firstGroupTitle = menuList.querySelector(".group-title");
+    const firstGroupList = menuList.querySelector(".group-list");
+    if (firstGroupList) {
+      firstGroupList.classList.add("active");
+    }
+    if (firstGroupTitle) {
+      firstGroupTitle.classList.add("active");
+    }
+  });
+
+  document.querySelectorAll(".sub-sub-list .group-title").forEach((title) => {
+    title.addEventListener("click", function () {
+      const groupList = this.nextElementSibling; // Get the .group-list
+
+      if (!groupList || !groupList.classList.contains("group-list")) {
+        return; // Safety check
+      }
+
+      const parentList = this.closest(".sub-sub-list");
+
+      // Close all other group lists and remove active class from titles
+      parentList.querySelectorAll(".group-list").forEach((list) => {
+        list.classList.remove("active");
+      });
+      parentList.querySelectorAll(".group-title").forEach((t) => {
+        t.classList.remove("active");
+      });
+
+      // Open clicked group and add active class to title
+      groupList.classList.add("active");
+      this.classList.add("active");
+    });
+  });
 
   /* =============================
      policy privacy

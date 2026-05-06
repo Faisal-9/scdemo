@@ -19,7 +19,7 @@ if (!isset($page_description))
 
     <!-- SEO -->
     <meta name="description" content="<?php echo htmlspecialchars($page_description); ?>">
-    <meta name="keywords" content="statecorps, state corps, tl in afghanistan, transmission line in afghanistan, infrastructure, engineering, Afghanistan, construction, energy, designing for constructions, transportation, government contractor">
+    <meta name="keywords" content="State Corps Engineering, statecorps, STATECORPS, STATE CORPS, state corps, state corps engineering, Afghanistan infrastructure, engineering services, construction, energy projects, mining solutions, transport development, transmission lines, project management, sustainable infrastructure, government contractor">
     <meta name="author" content="State Corps Engineering">
 
     <!-- Open Graph -->

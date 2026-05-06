@@ -1,95 +1,147 @@
 <?php
+if (empty($service) || !is_array($service)): return;
+endif;
 
-$prefix = $prefix ?? "";
-$sections = $sections ?? [];
-
+if (!function_exists('renderServiceDetailPanel')) {
+    function renderServiceDetailPanel(array $item, string $panelId, string $activeClass = '')
+    {
 ?>
-
-<section class="service-detail-page">
-
-    <div class="container">
-        <div class="row">
-
-            <!-- SIDEBAR -->
-            <div class="col-lg-3 sidebarr">
-                <nav id="<?= $prefix ?>-sidebar" class="about-sidebar">
-                    <ul class="nav flex-column">
-                        <?php foreach ($sections as $i => $section): ?>
-                            <li class="nav-item">
-                                <a class="nav-link <?= $i == 0 ? 'active' : '' ?>"
-                                    href="#<?= $prefix . $section['id'] ?>">
-                                    <?= $section['title'] ?>
-                                </a>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </nav>
+        <div class="detail-panel <?= $activeClass ?>" id="<?= htmlspecialchars($panelId) ?>">
+            <img src="<?= htmlspecialchars($item['image']) ?>" class="img-fluid mb-3 zoomable service-detail-img" alt="<?= htmlspecialchars($item['title']) ?>">
+            <h3 class="service-detail-title"><?= htmlspecialchars($item['title']) ?></h3>
+            <p class="service-short-desc"><?= htmlspecialchars($item['short_desc']) ?></p>
+            <div class="service-why">
+                <h5 class="services-why-heading">Why Choose Our <?= htmlspecialchars($item['title']) ?> Service?</h5>
+                <p class="service-why-text"><?= htmlspecialchars($item['why']) ?></p>
             </div>
+            <h5>Key Features</h5>
+            <ul>
+                <?php foreach ($item['features'] as $feature): ?>
+                    <li><?= htmlspecialchars($feature) ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php
+    }
 
-            <!-- CONTENT -->
-            <div class="col-lg-9 contentt">
-                <div
-                    data-bs-spy="scroll"
-                    data-bs-target="#<?= $prefix ?>-sidebar"
-                    data-bs-offset="100"
-                    tabindex="0"
-                    class="about-content">
-
-                    <?php foreach ($sections as $section): ?>
-
-                        <section id="<?= $prefix . $section['id'] ?>" class="about-section-block ">
-
-                            <!-- TITLE -->
-                            <div class="text-center mb-1">
-                                <h2 class="service-block-title"><?= $section['title'] ?></h2>
-                                <?php if (!empty($section['small-title'])): ?>
-                                    <p class="service-block-subtitle text-muted"><?= $section['small-title'] ?></p>
-                                <?php endif; ?>
-                                <hr class="service-title-line mx-auto">
-                            </div>
-
-                            <!-- TEXT + IMAGE ROW -->
-                            <div class="row g-4 align-items-start">
-
-                                <!-- LEFT: text + features -->
-                                <div class="col-lg-6">
-
-                                    <?php if (!empty($section['text'])): ?>
-                                        <p class="service-block-text"><?= $section['text'] ?></p>
-                                    <?php endif; ?>
-
-                                    <?php if (!empty($section['features'])): ?>
-                                        <h6 class="service-caps-title fw-bold mb-2">Key Capabilities</h6>
-                                        <ul class="service-features-list">
-                                            <?php foreach ($section['features'] as $feature): ?>
-                                                <?php if ($feature): ?>
-                                                    <li><?= $feature ?></li>
-                                                <?php endif; ?>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    <?php endif; ?>
-
-                                </div>
-
-                                <!-- RIGHT: image -->
-                                <div class="col-lg-6">
-                                    <?php if (!empty($section['image'][0])): ?>
-                                        <img src="<?= $section['image'][0] ?>"
-                                            alt="<?= $section['title'] ?>"
-                                            class="img-fluid rounded-3 w-100 service-block-img">
-                                    <?php endif; ?>
-                                </div>
-
-                            </div>
-
-                        </section>
-
+    function renderServiceSubMenu(array $items, string $tabId, bool &$hasActive = false)
+    {
+        foreach ($items as $i => $item) {
+            if (isset($item['subitems']) || isset($item['items'])) {
+                $groupTitle = $item['title'] ?? (isset($item['subitems']) ? 'Subitems' : 'Items');
+        ?>
+                <li class="group-title"><?= htmlspecialchars($groupTitle) ?></li>
+                <ul class="group-list">
+                    <?php
+                    $children = $item['subitems'] ?? $item['items'];
+                    foreach ($children as $j => $child):
+                        $panelId = $tabId . '-' . $i . '-' . $j;
+                        $active = $hasActive ? '' : 'active';
+                        if (!$hasActive) {
+                            $hasActive = true;
+                        }
+                    ?>
+                        <li class="<?= $active ?>" data-target="<?= htmlspecialchars($panelId) ?>">
+                            <?= htmlspecialchars($child['title']) ?>
+                        </li>
                     <?php endforeach; ?>
+                </ul>
+            <?php
+            } else {
+                $panelId = $tabId . '-' . $i;
+                $active = $hasActive ? '' : 'active';
+                if (!$hasActive) {
+                    $hasActive = true;
+                }
+            ?>
+                <li class="<?= $active ?>" data-target="<?= htmlspecialchars($panelId) ?>">
+                    <?= htmlspecialchars($item['title']) ?>
+                </li>
+<?php
+            }
+        }
+    }
+
+    function renderServiceDetailPanels(array $items, string $tabId, bool &$hasActive = false)
+    {
+        foreach ($items as $i => $item) {
+            if (isset($item['subitems']) || isset($item['items'])) {
+                $children = $item['subitems'] ?? $item['items'];
+                foreach ($children as $j => $child) {
+                    $panelId = $tabId . '-' . $i . '-' . $j;
+                    $active = $hasActive ? '' : 'active';
+                    if (!$hasActive) {
+                        $hasActive = true;
+                    }
+                    renderServiceDetailPanel($child, $panelId, $active);
+                }
+            } else {
+                $panelId = $tabId . '-' . $i;
+                $active = $hasActive ? '' : 'active';
+                if (!$hasActive) {
+                    $hasActive = true;
+                }
+                renderServiceDetailPanel($item, $panelId, $active);
+            }
+        }
+    }
+}
+?>
+<section class="service-page">
+
+    <!-- ================= HERO ================= -->
+    <div class="service-hero" style="background-image:url('<?= htmlspecialchars($service['hero_image']) ?>')">
+        <div class="overlay">
+            <div class="container text-center text-white">
+                <h1><?= htmlspecialchars($service['title']) ?></h1>
+                <p><?= htmlspecialchars($service['hero_text']) ?></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= SUB-SERVICE TABS ================= -->
+    <div class="subservice-tabs">
+        <?php foreach ($service['sub_services'] as $i => $sub): ?>
+            <?php
+            $tabId = $key . '-' . $sub['id'];
+            ?>
+            <button class="sub-tab <?= $i === 0 ? 'active' : '' ?>"
+                data-sub="<?= htmlspecialchars($tabId) ?>">
+                <?= htmlspecialchars($sub['title']) ?>
+            </button>
+        <?php endforeach; ?>
+    </div>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <div class="container mt-4">
+
+        <?php foreach ($service['sub_services'] as $sIndex => $sub): ?>
+            <?php $tabId = $key . '-' . $sub['id']; ?>
+
+            <div class="subservice-content <?= $sIndex === 0 ? 'active' : '' ?>"
+                id="<?= htmlspecialchars($tabId) ?>">
+
+                <div class="row">
+
+                    <!-- LEFT MENU -->
+                    <div class="col-lg-4 sub-sub-menu">
+                        <ul class="sub-sub-list">
+                            <?php $menuActive = false;
+                            renderServiceSubMenu($sub['items'], $tabId, $menuActive); ?>
+                        </ul>
+                    </div>
+
+                    <!-- RIGHT CONTENT -->
+                    <div class="col-lg-8">
+                        <?php $panelActive = false;
+                        renderServiceDetailPanels($sub['items'], $tabId, $panelActive); ?>
+                    </div>
 
                 </div>
             </div>
 
-        </div>
+        <?php endforeach; ?>
+
     </div>
 
 </section>

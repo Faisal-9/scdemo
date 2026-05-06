@@ -122,18 +122,19 @@ include_once("includes/data/projectsdata.php");
                                         <div class="dropdown-menu mega-menu">
                                             <div class="mega-menu-content">
                                                 <?php foreach ($services as $serviceKey => $service): ?>
+                                                    <?php if (!isset($service['title'])) continue; ?>
                                                     <div class="mega-column">
                                                         <h4 class="mega-title">
-                                                            <a href="services.php?tab=<?= $serviceKey ?>" class="mega-title-link">
-                                                                <?= $service['title'] ?>
+                                                            <a href="services.php?tab=<?= urlencode($serviceKey) ?>" class="mega-title-link">
+                                                                <?= htmlspecialchars($service['title']) ?>
                                                             </a>
                                                         </h4>
 
                                                         <ul class="dropdown-list">
-                                                            <?php foreach ($service['sections'] as $section): ?>
+                                                            <?php foreach ($service['sub_services'] ?? [] as $sub): ?>
                                                                 <li>
-                                                                    <a href="services.php?tab=<?= $serviceKey ?>#<?= $serviceKey ?>-<?= $section['id'] ?>" class="dropdown-link">
-                                                                        <?= $section['title'] ?>
+                                                                    <a href="services.php?tab=<?= urlencode($serviceKey) ?>#<?= htmlspecialchars($serviceKey . '-' . $sub['id']) ?>" class="dropdown-link">
+                                                                        <?= htmlspecialchars($sub['title']) ?>
                                                                     </a>
                                                                 </li>
                                                             <?php endforeach; ?>
