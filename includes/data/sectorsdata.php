@@ -570,7 +570,7 @@ $sectors = [
             "Processing",
             "Trade",
         ],
-        
+
         "project" => [
             "name" => "Copper Extraction Project",
             "image" => "assets/images/2.jpg",

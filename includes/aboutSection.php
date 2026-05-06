@@ -23,10 +23,10 @@ $aboutSections = [
                         <?php $first = true;
                         foreach ($aboutSections as $id => $section): ?>
                             <li class="nav-item">
-                                <a class="nav-link <?= $first ? 'active' : '' ?>"
+                                <a class="nav-link <?php echo $first ? 'active' : '' ?>"
                                     href="#"
-                                    data-section="<?= $id ?>">
-                                    <?= $section['title'] ?>
+                                    data-section="<?php echo $id ?>">
+                                    <?php echo $section['title'] ?>
                                 </a>
                             </li>
                         <?php $first = false;
@@ -43,11 +43,11 @@ $aboutSections = [
                     <section id="general-info" class="about-section-block about-panel active py-1">
                         <h2 class="text-center mb-3">Company Overview</h2>
                         <div class="general-info-content">
-                            <p><?= $generalInfo['content'] ?></p>
+                            <p><?php echo $generalInfo['content'] ?></p>
                         </div>
                         <?php if (!empty($generalInfo['image'])): ?>
                             <div class="general-info-image mt-4">
-                                <img src="<?= $generalInfo['image'] ?>"
+                                <img src="<?php echo $generalInfo['image'] ?>"
                                     alt="State Corps Company Overview"
                                     class="zoomable img-fluid rounded-3 w-100 center center ">
                             </div>
@@ -63,11 +63,11 @@ $aboutSections = [
                             <div class="col-lg-6">
                                 <div class="mv-text-block">
                                     <h3 class="mv-heading">Our Mission</h3>
-                                    <p class="mv-text"><?= $missionVision['mission'] ?></p>
+                                    <p class="mv-text"><?php echo $missionVision['mission'] ?></p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <img src="<?= $missionVision['mission_img'] ?>"
+                                <img src="<?php echo $missionVision['mission_img'] ?>"
                                     alt="Mission"
                                     class="img-fluid rounded-3 mv-img zoomable">
                             </div>
@@ -76,14 +76,14 @@ $aboutSections = [
                         <!-- ROW 2: Vision — image left, text right -->
                         <div class="row align-items-center g-4 mb-5">
                             <div class="col-lg-6">
-                                <img src="<?= $missionVision['vision_img'] ?>"
+                                <img src="<?php echo $missionVision['vision_img'] ?>"
                                     alt="Vision"
                                     class="img-fluid rounded-3 mv-img zoomable">
                             </div>
                             <div class="col-lg-6">
                                 <div class="mv-text-block">
                                     <h3 class="mv-heading">Our Vision</h3>
-                                    <p class="mv-text"><?= $missionVision['vision'] ?></p>
+                                    <p class="mv-text"><?php echo $missionVision['vision'] ?></p>
                                 </div>
                             </div>
                         </div>
@@ -97,14 +97,14 @@ $aboutSections = [
                                         <?php foreach ($missionVision['core_values'] as $value): ?>
                                             <li>
                                                 <span class="mv-value-dot"></span>
-                                                <?= $value ?>
+                                                <?php echo $value ?>
                                             </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <img src="<?= $missionVision['core_values_img'] ?>"
+                                <img src="<?php echo $missionVision['core_values_img'] ?>"
                                     alt="Core Values"
                                     class="img-fluid rounded-3 mv-img zoomable">
                             </div>
@@ -114,7 +114,7 @@ $aboutSections = [
 
                     <!-- GROWTH -->
                     <section id="milestones" class="about-section-block about-panel py-1">
-                        <h2 class="text-center mb-4"><?= $milestones['title'] ?></h2>
+                        <h2 class="text-center mb-4"><?php echo $milestones['title'] ?></h2>
 
                         <div class="row g-4 align-items-start">
 
@@ -123,15 +123,15 @@ $aboutSections = [
                                 <div class="timeline-list">
 
                                     <?php foreach ($milestones['items'] as $i => $mile): ?>
-                                        <div class="timeline-item <?= $i === 0 ? 'active' : '' ?>"
-                                            data-index="<?= $i ?>"
-                                            data-year="<?= $mile['year'] ?>"
-                                            data-title="<?= $mile['title'] ?>"
-                                            data-desc="<?= $mile['description'] ?>"
+                                        <div class="timeline-item <?php echo $i === 0 ? 'active' : '' ?>"
+                                            data-index="<?php echo $i ?>"
+                                            data-year="<?php echo $mile['year'] ?>"
+                                            data-title="<?php echo $mile['title'] ?>"
+                                            data-desc="<?php echo $mile['description'] ?>"
                                             data-img="assets/images/taloqan.jpg">
 
-                                            <span class="year-badge"><?= $mile['year'] ?></span>
-                                            <span class="title-text serif-link"><?= $mile['title'] ?></span>
+                                            <span class="year-badge"><?php echo $mile['year'] ?></span>
+                                            <span class="title-text serif-link"><?php echo $mile['title'] ?></span>
 
                                         </div>
                                     <?php endforeach; ?>
@@ -148,11 +148,11 @@ $aboutSections = [
                                         class="img-fluid rounded-3 mb-3 zoomable">
 
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <h4 id="mileTitle"><?= $milestones['items'][0]['title'] ?></h4>
-                                        <span id="mileYear"><?= $milestones['items'][0]['year'] ?></span>
+                                        <h4 id="mileTitle"><?php echo $milestones['items'][0]['title'] ?></h4>
+                                        <span id="mileYear"><?php echo $milestones['items'][0]['year'] ?></span>
                                     </div>
 
-                                    <p id="mileDesc"><?= $milestones['items'][0]['description'] ?></p>
+                                    <p id="mileDesc"><?php echo $milestones['items'][0]['description'] ?></p>
 
                                 </div>
                             </div>
@@ -162,7 +162,7 @@ $aboutSections = [
 
                     <!-- CLIENTS -->
                     <section id="clients" class="about-section-block client-section about-panel py-1">
-                        <h2 class="text-center mb-4"><?= $clients['title'] ?></h2>
+                        <h2 class="text-center mb-4"><?php echo $clients['title'] ?></h2>
 
                         <div class="row g-3 justify-content-center">
 
@@ -172,7 +172,7 @@ $aboutSections = [
                                     <div class="client-card d-flex align-items-center justify-content-center bg-white rounded-3 p-3 h-100">
 
                                         <div class="client-logo">
-                                            <img src="<?= $client['logo'] ?>" alt="Client Logo" class="img-fluid">
+                                            <img src="<?php echo $client['logo'] ?>" alt="Client Logo" class="img-fluid">
                                         </div>
 
                                     </div>
@@ -185,7 +185,7 @@ $aboutSections = [
 
                     <!-- CERTIFICATES -->
                     <section id="certificates" class="about-section-block about-panel py-1">
-                        <h2 class="text-center mb-4"><?= $certificates['title'] ?></h2>
+                        <h2 class="text-center mb-4"><?php echo $certificates['title'] ?></h2>
 
                         <div class="row g-3 certificates-grid">
 
@@ -194,11 +194,11 @@ $aboutSections = [
                                     <div class="certificate-card text-center p-3 bg-white rounded-3 h-100">
 
                                         <div class="certificate-img mb-2">
-                                            <img src="<?= $cert['logo'] ?>" alt="<?= $cert['name'] ?>" class="img-fluid zoomable">
+                                            <img src="<?php echo $cert['logo'] ?>" alt="<?php echo $cert['name'] ?>" class="img-fluid zoomable">
                                         </div>
 
                                         <h6 class="certificate-name">
-                                            <?= $cert['name'] ?>
+                                            <?php echo $cert['name'] ?>
                                         </h6>
 
                                     </div>
@@ -210,7 +210,7 @@ $aboutSections = [
 
                     <!-- AWARDS -->
                     <section id="awards" class="about-section-block about-panel py-1">
-                        <h2 class="text-center mb-4"><?= $awards['title'] ?></h2>
+                        <h2 class="text-center mb-4"><?php echo $awards['title'] ?></h2>
 
                         <div class="row g-3 awards-grid">
 
@@ -219,11 +219,11 @@ $aboutSections = [
                                     <div class="award-card text-center p-3 bg-white rounded-3 h-100">
 
                                         <div class="award-img mb-2">
-                                            <img src="<?= $award['logo'] ?>" class="img-fluid zoomable">
+                                            <img src="<?php echo $award['logo'] ?>" class="img-fluid zoomable">
                                         </div>
 
                                         <h6 class="award-title">
-                                            <?= $award['name'] ?>
+                                            <?php echo $award['name'] ?>
                                         </h6>
 
                                     </div>
@@ -237,7 +237,7 @@ $aboutSections = [
                     <section id="sister" class="about-section-block about-panel py-1">
                         <div class="container">
 
-                            <h2 class="text-center mb-4"><?= $sisterCompanies['title'] ?></h2>
+                            <h2 class="text-center mb-4"><?php echo $sisterCompanies['title'] ?></h2>
 
                             <div class="row g-3">
 
@@ -247,13 +247,13 @@ $aboutSections = [
                                         <div class="sister-card d-flex flex-column align-items-center justify-content-center text-center p-3 bg-white rounded-3 h-100">
 
                                             <div class="sister-logo mb-2">
-                                                <img src="<?= $company['logo'] ?>"
-                                                    alt="<?= $company['name'] ?>"
+                                                <img src="<?php echo $company['logo'] ?>"
+                                                    alt="<?php echo $company['name'] ?>"
                                                     class="img-fluid">
                                             </div>
 
                                             <p class="sister-name fw-semibold mb-0">
-                                                <?= $company['name'] ?>
+                                                <?php echo $company['name'] ?>
                                             </p>
 
                                         </div>

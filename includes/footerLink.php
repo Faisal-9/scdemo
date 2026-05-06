@@ -22,4 +22,4 @@
 <!-- Main Custom JS -->
 <!-- When your site is fully ready for production, replace time() with a fixed version number instead: -->
 <!-- <script src="assets/js/main.js?v=2.0" defer></script> -->
-<script src="assets/js/main.js?v=<?= time() ?>" defer></script>
+<script src="assets/js/main.js?v=26.1" defer></script>

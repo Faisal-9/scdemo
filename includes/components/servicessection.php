@@ -6,18 +6,18 @@ if (!function_exists('renderServiceDetailPanel')) {
     function renderServiceDetailPanel(array $item, string $panelId, string $activeClass = '')
     {
 ?>
-        <div class="detail-panel <?= $activeClass ?>" id="<?= htmlspecialchars($panelId) ?>">
-            <img src="<?= htmlspecialchars($item['image']) ?>" class="img-fluid mb-3 zoomable service-detail-img" alt="<?= htmlspecialchars($item['title']) ?>">
-            <h3 class="service-detail-title"><?= htmlspecialchars($item['title']) ?></h3>
-            <p class="service-short-desc"><?= htmlspecialchars($item['short_desc']) ?></p>
+        <div class="detail-panel <?php echo $activeClass ?>" id="<?php echo htmlspecialchars($panelId) ?>">
+            <img src="<?php echo htmlspecialchars($item['image']) ?>" class="img-fluid mb-3 zoomable service-detail-img" alt="<?php echo htmlspecialchars($item['title']) ?>">
+            <h3 class="service-detail-title"><?php echo htmlspecialchars($item['title']) ?></h3>
+            <p class="service-short-desc"><?php echo htmlspecialchars($item['short_desc']) ?></p>
             <div class="service-why">
-                <h5 class="services-why-heading">Why Choose Our <?= htmlspecialchars($item['title']) ?> Service?</h5>
-                <p class="service-why-text"><?= htmlspecialchars($item['why']) ?></p>
+                <h5 class="services-why-heading">Why Choose Our <?php echo htmlspecialchars($item['title']) ?> Service?</h5>
+                <p class="service-why-text"><?php echo htmlspecialchars($item['why']) ?></p>
             </div>
             <h5>Key Features</h5>
             <ul>
                 <?php foreach ($item['features'] as $feature): ?>
-                    <li><?= htmlspecialchars($feature) ?></li>
+                    <li><?php echo htmlspecialchars($feature) ?></li>
                 <?php endforeach; ?>
             </ul>
         </div>
@@ -30,7 +30,7 @@ if (!function_exists('renderServiceDetailPanel')) {
             if (isset($item['subitems']) || isset($item['items'])) {
                 $groupTitle = $item['title'] ?? (isset($item['subitems']) ? 'Subitems' : 'Items');
         ?>
-                <li class="group-title"><?= htmlspecialchars($groupTitle) ?></li>
+                <li class="group-title"><?php echo htmlspecialchars($groupTitle) ?></li>
                 <ul class="group-list">
                     <?php
                     $children = $item['subitems'] ?? $item['items'];
@@ -41,8 +41,8 @@ if (!function_exists('renderServiceDetailPanel')) {
                             $hasActive = true;
                         }
                     ?>
-                        <li class="<?= $active ?>" data-target="<?= htmlspecialchars($panelId) ?>">
-                            <?= htmlspecialchars($child['title']) ?>
+                        <li class="<?php echo $active ?>" data-target="<?php echo htmlspecialchars($panelId) ?>">
+                            <?php echo htmlspecialchars($child['title']) ?>
                         </li>
                     <?php endforeach; ?>
                 </ul>
@@ -54,8 +54,8 @@ if (!function_exists('renderServiceDetailPanel')) {
                     $hasActive = true;
                 }
             ?>
-                <li class="<?= $active ?>" data-target="<?= htmlspecialchars($panelId) ?>">
-                    <?= htmlspecialchars($item['title']) ?>
+                <li class="<?php echo $active ?>" data-target="<?php echo htmlspecialchars($panelId) ?>">
+                    <?php echo htmlspecialchars($item['title']) ?>
                 </li>
 <?php
             }
@@ -90,11 +90,11 @@ if (!function_exists('renderServiceDetailPanel')) {
 <section class="service-page">
 
     <!-- ================= HERO ================= -->
-    <div class="service-hero" style="background-image:url('<?= htmlspecialchars($service['hero_image']) ?>')">
+    <div class="service-hero" style="background-image:url('<?php echo htmlspecialchars($service['hero_image']) ?>')">
         <div class="overlay">
             <div class="container text-center text-white">
-                <h1><?= htmlspecialchars($service['title']) ?></h1>
-                <p><?= htmlspecialchars($service['hero_text']) ?></p>
+                <h1><?php echo htmlspecialchars($service['title']) ?></h1>
+                <p><?php echo htmlspecialchars($service['hero_text']) ?></p>
             </div>
         </div>
     </div>
@@ -112,9 +112,9 @@ if (!function_exists('renderServiceDetailPanel')) {
             <?php
             $tabId = $serviceKey . '-' . $sub['id'];
             ?>
-            <button class="sub-tab <?= $i === 0 ? 'active' : '' ?>"
-                data-sub="<?= htmlspecialchars($tabId) ?>">
-                <?= htmlspecialchars($sub['title']) ?>
+            <button class="sub-tab <?php echo $i === 0 ? 'active' : '' ?>"
+                data-sub="<?php echo htmlspecialchars($tabId) ?>">
+                <?php echo htmlspecialchars($sub['title']) ?>
             </button>
         <?php endforeach; ?>
     </div>
@@ -125,8 +125,8 @@ if (!function_exists('renderServiceDetailPanel')) {
         <?php foreach ($subServices as $sIndex => $sub): ?>
             <?php $tabId = $serviceKey . '-' . $sub['id']; ?>
 
-            <div class="subservice-content <?= $sIndex === 0 ? 'active' : '' ?>"
-                id="<?= htmlspecialchars($tabId) ?>">
+            <div class="subservice-content <?php echo $sIndex === 0 ? 'active' : '' ?>"
+                id="<?php echo htmlspecialchars($tabId) ?>">
 
                 <div class="row">
 

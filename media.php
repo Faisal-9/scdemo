@@ -41,9 +41,9 @@ $recents = array_slice($all_recents, 0, 5);
                         <div class="media-menu-wrapper">
                             <ul class="media-menu">
                                 <?php foreach ($media as $key => $tab): ?>
-                                    <li class="<?= ($active_tab === $key) ? 'active' : '' ?>"
-                                        data-tab="<?= $key ?>">
-                                        <?= ucfirst($key) ?>
+                                    <li class="<?php echo ($active_tab === $key) ? 'active' : '' ?>"
+                                        data-tab="<?php echo $key ?>">
+                                        <?php echo ucfirst($key) ?>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
@@ -53,7 +53,7 @@ $recents = array_slice($all_recents, 0, 5);
                         <div class="media-tab-content-wrapper">
 
                             <!-- NEWS -->
-                            <div class="media-tab-content <?= ($active_tab === 'news') ? 'active' : '' ?>" id="tab-news">
+                            <div class="media-tab-content <?php echo ($active_tab === 'news') ? 'active' : '' ?>" id="tab-news">
                                 <?php
                                 $media_items = $media['news'];
                                 $tab_key = 'news';
@@ -62,7 +62,7 @@ $recents = array_slice($all_recents, 0, 5);
                             </div>
 
                             <!-- EVENTS -->
-                            <div class="media-tab-content <?= ($active_tab === 'events') ? 'active' : '' ?>" id="tab-events">
+                            <div class="media-tab-content <?php echo ($active_tab === 'events') ? 'active' : '' ?>" id="tab-events">
                                 <?php
                                 $media_items = $media['events'];
                                 $tab_key = 'events';
@@ -71,7 +71,7 @@ $recents = array_slice($all_recents, 0, 5);
                             </div>
 
                             <!-- GALLERY -->
-                            <div class="media-tab-content <?= ($active_tab === 'gallery') ? 'active' : '' ?>" id="tab-gallery">
+                            <div class="media-tab-content <?php echo ($active_tab === 'gallery') ? 'active' : '' ?>" id="tab-gallery">
                                 <?php
                                 $media_items = $media['gallery'];
                                 $tab_key = 'gallery';
@@ -89,10 +89,10 @@ $recents = array_slice($all_recents, 0, 5);
                             <div class="media-recents__list">
                                 <?php foreach ($recents as $r): ?>
                                     <div class="media-recent-item">
-                                        <span class="media-recent-item__date"><?= htmlspecialchars($r['date']) ?></span>
+                                        <span class="media-recent-item__date"><?php echo htmlspecialchars($r['date']) ?></span>
                                         <div class="media-recent-item__row">
-                                            <span class="media-recent-item__type"><?= htmlspecialchars($r['_type']) ?></span>
-                                            <p class="media-recent-item__name"><?= htmlspecialchars($r['title']) ?></p>
+                                            <span class="media-recent-item__type"><?php echo htmlspecialchars($r['_type']) ?></span>
+                                            <p class="media-recent-item__name"><?php echo htmlspecialchars($r['title']) ?></p>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>

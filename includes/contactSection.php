@@ -79,40 +79,40 @@ $international_offices = [
                 <div class="col-lg-6">
                     <div class="p-4 rounded h-100">
 
-                        <h4 class="fw-bold "><?= $head_office['title'] ?></h4>
+                        <h4 class="fw-bold "><?php echo $head_office['title'] ?></h4>
 
                         <p class="mb-2">
                             <strong>Phone:</strong>
-                            <a href="tel:<?= $head_office['phone'] ?>" class="text-decoration-none">
-                                <?= $head_office['phone'] ?>
+                            <a href="tel:<?php echo $head_office['phone'] ?>" class="text-decoration-none">
+                                <?php echo $head_office['phone'] ?>
                             </a>
                         </p>
 
                         <p class="mb-2">
                             <strong>WhatsApp:</strong>
-                            <a href="https://wa.me/<?= $head_office['whatsapp'] ?>" target="_blank" class="text-decoration-none">
-                                <?= $head_office['whatsapp'] ?>
+                            <a href="https://wa.me/<?php echo $head_office['whatsapp'] ?>" target="_blank" class="text-decoration-none">
+                                <?php echo $head_office['whatsapp'] ?>
                             </a>
                         </p>
 
                         <p class="mb-2">
                             <strong>Email:</strong>
-                            <a href="mailto:<?= $head_office['email'] ?>" class="text-decoration-none">
-                                <?= $head_office['email'] ?>
+                            <a href="mailto:<?php echo $head_office['email'] ?>" class="text-decoration-none">
+                                <?php echo $head_office['email'] ?>
                             </a>
                         </p>
 
                         <p class="mb-3">
                             <strong>Address:</strong><br>
-                            <?= $head_office['address'] ?>
+                            <?php echo $head_office['address'] ?>
                         </p>
 
                         <div class="row text-center g-3 mt-3">
                             <?php foreach ($head_office['qr_codes'] as $qr): ?>
                                 <div class="col-6">
                                     <div class="p-2 bg-white rounded shadow-sm">
-                                        <img src="<?= $qr['image'] ?>" class="img-fluid mb-2" style="max-height:100px;">
-                                        <div class="small fw-semibold"><?= $qr['label'] ?></div>
+                                        <img src="<?php echo $qr['image'] ?>" class="img-fluid mb-2" style="max-height:100px;">
+                                        <div class="small fw-semibold"><?php echo $qr['label'] ?></div>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
@@ -148,11 +148,11 @@ $international_offices = [
             <h4 class="text-center fw-bold mb-4">Drop Message</h4>
 
             <?php if ($success != "") { ?>
-                <div class="alert alert-success"><?= $success ?></div>
+                <div class="alert alert-success"><?php echo $success ?></div>
             <?php } ?>
 
             <?php if ($error != "") { ?>
-                <div class="alert alert-danger"><?= $error ?></div>
+                <div class="alert alert-danger"><?php echo $error ?></div>
             <?php } ?>
 
             <form method="post">
@@ -199,18 +199,18 @@ $international_offices = [
                     <div class="col-md-6 col-lg-4">
                         <div class="office-card h-100 p-3 bg-white rounded shadow-sm">
 
-                            <h5 class="text-center"><?= $office['title'] ?></h5>
+                            <h5 class="text-center"><?php echo $office['title'] ?></h5>
 
                             <p><strong>Phone:</strong>
-                                <a href="tel:<?= $office['phone'] ?>"><?= $office['phone'] ?></a>
+                                <a href="tel:<?php echo $office['phone'] ?>"><?php echo $office['phone'] ?></a>
                             </p>
 
                             <p><strong>Email:</strong>
-                                <a href="mailto:<?= $office['email'] ?>"><?= $office['email'] ?></a>
+                                <a href="mailto:<?php echo $office['email'] ?>"><?php echo $office['email'] ?></a>
                             </p>
 
                             <p><strong>Address:</strong><br>
-                                <span class="serif-link"><?= $office['address'] ?></span>
+                                <span class="serif-link"><?php echo $office['address'] ?></span>
                             </p>
 
                         </div>

@@ -39,12 +39,12 @@ if (!$project) {
 
                 <!-- TITLE -->
                 <div class="project-title-box d-flex justify-content-center">
-                    <h1 class="project-main-title"><?= $project['name'] ?></h1>
+                    <h1 class="project-main-title"><?php echo $project['name'] ?></h1>
                 </div>
 
                 <!-- DESCRIPTION -->
                 <div class="project-description-box p-2">
-                    <p><?= $project['description'] ?></p>
+                    <p><?php echo $project['description'] ?></p>
                 </div>
 
                 <!-- TWO COLUMNS -->
@@ -57,11 +57,11 @@ if (!$project) {
                             <!-- Client Meta -->
                             <h3 class="scope-title"> Project Information</h3>
                             <ul class="project-meta">
-                                <li><b>Client:</b> <?= $project['client'] ?></li>
-                                <li><b>Location:</b> <?= $project['location'] ?></li>
-                                <li><b>Status:</b> <?= ucfirst($project['status']) ?></li>
-                                <li><b>Sector:</b> <?= ucfirst($project['sector']) ?></li>
-                                <li><b>Category:</b> <?= ucfirst($project['category']) ?></li>
+                                <li><b>Client:</b> <?php echo $project['client'] ?></li>
+                                <li><b>Location:</b> <?php echo $project['location'] ?></li>
+                                <li><b>Status:</b> <?php echo ucfirst($project['status']) ?></li>
+                                <li><b>Sector:</b> <?php echo ucfirst($project['sector']) ?></li>
+                                <li><b>Category:</b> <?php echo ucfirst($project['category']) ?></li>
                             </ul>
 
                             <!-- Scope of Work -->
@@ -69,7 +69,7 @@ if (!$project) {
                             <ul class="scope-list">
                                 <?php foreach ($project['scope'] as $s): ?>
                                     <?php if ($s): ?>
-                                        <li><?= $s ?></li>
+                                        <li><?php echo $s ?></li>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
                             </ul>
@@ -83,7 +83,7 @@ if (!$project) {
                             <div class="swiper-wrapper">
                                 <?php foreach ($project['images'] as $img): ?>
                                     <div class="swiper-slide">
-                                        <img src="<?= $img ?>" class="img-fluid rounded">
+                                        <img src="<?php echo $img ?>" class="img-fluid rounded">
                                     </div>
                                 <?php endforeach; ?>
                             </div>

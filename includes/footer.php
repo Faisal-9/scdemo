@@ -50,7 +50,7 @@
         <!-- BOTTOM -->
         <div class="footer-bottom">
             <div class="footer-bottom-left">
-                <p>© <?= $current_year ?> State Corps. All rights reserved</p>
+                <p>© <?php echo $current_year ?> State Corps. All rights reserved</p>
             </div>
 
             <div class="footer-bottom-right">

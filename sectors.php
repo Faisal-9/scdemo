@@ -18,7 +18,7 @@ $activeTab = $_GET['tab'] ?? array_key_first($sectors);
                 <!-- SECTOR CONTENT -->
                 <div class="sectors-content">
                     <?php foreach ($sectors as $key => $sector): ?>
-                        <div id="<?= $key ?>" class="sector-section <?= ($key === $activeTab) ? 'active' : '' ?>">
+                        <div id="<?php echo $key ?>" class="sector-section <?php echo ($key === $activeTab) ? 'active' : '' ?>">
                             <?php
                             $prefix = $key . "-";
                             include("includes/components/sectorsection.php");

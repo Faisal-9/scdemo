@@ -20,7 +20,7 @@ include("includes/data/servicesdata.php");
                     $first = true;
                     foreach ($services as $key => $service):
                     ?>
-                        <div id="<?= $key ?>" class="service-section <?= $first ? 'active' : '' ?>">
+                        <div id="<?php echo $key ?>" class="service-section <?php echo $first ? 'active' : '' ?>">
 
                             <?php include("includes/components/servicessection.php"); ?>
 

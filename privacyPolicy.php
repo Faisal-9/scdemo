@@ -19,9 +19,9 @@ include("includes/data/privacypolicydata.php");
                         <div class="policy-sidebar">
                             <ul>
                                 <?php foreach ($policies as $key => $policy): ?>
-                                    <li class="policy-tab <?= $key === 'privacy' ? 'active' : '' ?>"
-                                        data-tab="<?= $key ?>">
-                                        <?= $policy['title'] ?>
+                                    <li class="policy-tab <?php echo $key === 'privacy' ? 'active' : '' ?>"
+                                        data-tab="<?php echo $key ?>">
+                                        <?php echo $policy['title'] ?>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
@@ -33,22 +33,22 @@ include("includes/data/privacypolicydata.php");
 
                         <?php foreach ($policies as $key => $policy): ?>
 
-                            <div class="policy-content <?= $key === 'privacy' ? 'active' : '' ?>" id="<?= $key ?>">
+                            <div class="policy-content <?php echo $key === 'privacy' ? 'active' : '' ?>" id="<?php echo $key ?>">
 
-                                <h2><?= $policy['title'] ?></h2>
+                                <h2><?php echo $policy['title'] ?></h2>
 
                                 <?php foreach ($policy['sections'] as $section): ?>
 
-                                    <h3><?= $section['title'] ?></h3>
+                                    <h3><?php echo $section['title'] ?></h3>
 
                                     <?php if (!empty($section['content'])): ?>
-                                        <p><?= $section['content'] ?></p>
+                                        <p><?php echo $section['content'] ?></p>
                                     <?php endif; ?>
 
                                     <?php if (!empty($section['list'])): ?>
                                         <ul>
                                             <?php foreach ($section['list'] as $item): ?>
-                                                <li><?= $item ?></li>
+                                                <li><?php echo $item ?></li>
                                             <?php endforeach; ?>
                                         </ul>
                                     <?php endif; ?>

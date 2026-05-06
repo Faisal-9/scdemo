@@ -15,19 +15,19 @@ $urlSector = isset($_GET['sector']) ? strtolower(trim($_GET['sector'])) : 'all';
 
         <!-- ================= HERO ================= -->
         <section class="projects-hero"
-            style="background-image: url('<?= $projecthero['background'] ?>');">
+            style="background-image: url('<?php echo $projecthero['background'] ?>');">
             <div class="projects-hero-overlay"></div>
 
             <div class="container position-relative z-2">
                 <span class="hero-sub">OUR PROJECTS</span>
-                <h1><?= $projecthero['title'] ?></h1>
-                <p><?= $projecthero['subtitle'] ?></p>
+                <h1><?php echo $projecthero['title'] ?></h1>
+                <p><?php echo $projecthero['subtitle'] ?></p>
                 <div class="hero-stats">
 
                     <?php foreach ($projecthero['stats'] as $stat): ?>
                         <div>
-                            <strong><?= $stat['count'] ?></strong>
-                            <span><?= $stat['label'] ?></span>
+                            <strong><?php echo $stat['count'] ?></strong>
+                            <span><?php echo $stat['label'] ?></span>
                         </div>
                     <?php endforeach; ?>
 
@@ -53,8 +53,8 @@ $urlSector = isset($_GET['sector']) ? strtolower(trim($_GET['sector'])) : 'all';
                                 $sectors = array_unique(array_map('strtolower', array_column($projects, 'sector')));
                                 foreach ($sectors as $sector):
                                 ?>
-                                    <button class="btn btn-outline-dark" data-sector="<?= $sector ?>">
-                                        <?= ucfirst($sector) ?>
+                                    <button class="btn btn-outline-dark" data-sector="<?php echo $sector ?>">
+                                        <?php echo ucfirst($sector) ?>
                                     </button>
                                 <?php endforeach; ?>
 
@@ -68,7 +68,7 @@ $urlSector = isset($_GET['sector']) ? strtolower(trim($_GET['sector'])) : 'all';
                                 $statuses = array_unique(array_map('strtolower', array_column($projects, 'status')));
                                 foreach ($statuses as $status):
                                 ?>
-                                    <option value="<?= $status ?>"><?= ucfirst($status) ?></option>
+                                    <option value="<?php echo $status ?>"><?php echo ucfirst($status) ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -90,29 +90,29 @@ $urlSector = isset($_GET['sector']) ? strtolower(trim($_GET['sector'])) : 'all';
 
                     <?php foreach ($grouped as $sector => $items): ?>
                         <section class="project-category-section"
-                            data-sector="<?= $sector ?>">
+                            data-sector="<?php echo $sector ?>">
 
                             <div class="d-flex justify-content-between align-items-end mb-3">
-                                <h2><?= ucfirst($sector) ?></h2>
-                                <span class="project-count"><?= count($items) ?> Projects</span>
+                                <h2><?php echo ucfirst($sector) ?></h2>
+                                <span class="project-count"><?php echo count($items) ?> Projects</span>
                             </div>
 
                             <div class="project-masonry">
 
                                 <?php foreach ($items as $index => $project): ?>
-                                    <a href="projectdetails.php?id=<?= $project['id'] ?>"
-                                        class="project-card <?= $index === 0 ? 'big' : '' ?> project-item"
-                                        data-sector="<?= strtolower($project['sector']) ?>"
-                                        data-status="<?= strtolower($project['status']) ?>"
-                                        data-category="<?= strtolower($project['category']) ?>"
-                                        data-year="<?= $project['completion-year'] ?>"
-                                        style="background-image:url('<?= $project['thumbnail'] ?: 'assets/images/default.jpg' ?>')">
+                                    <a href="projectdetails.php?id=<?php echo $project['id'] ?>"
+                                        class="project-card <?php echo $index === 0 ? 'big' : '' ?> project-item"
+                                        data-sector="<?php echo strtolower($project['sector']) ?>"
+                                        data-status="<?php echo strtolower($project['status']) ?>"
+                                        data-category="<?php echo strtolower($project['category']) ?>"
+                                        data-year="<?php echo $project['completion-year'] ?>"
+                                        style="background-image:url('<?php echo $project['thumbnail'] ?: 'assets/images/default.jpg' ?>')">
 
                                         <div class="overlay"></div>
 
                                         <div class="content">
-                                            <span class="location"><?= $project['location'] ?></span>
-                                            <h3 class="serif-link"><?= $project['name'] ?></h3>
+                                            <span class="location"><?php echo $project['location'] ?></span>
+                                            <h3 class="serif-link"><?php echo $project['name'] ?></h3>
                                         </div>
 
                                     </a>
@@ -132,8 +132,8 @@ $urlSector = isset($_GET['sector']) ? strtolower(trim($_GET['sector'])) : 'all';
 
 
     <script>
-        const urlSector = "<?= htmlspecialchars($urlSector) ?>";
-        const urlCategory = "<?= htmlspecialchars($urlCategory) ?>";
+        const urlSector = "<?php echo htmlspecialchars($urlSector) ?>";
+        const urlCategory = "<?php echo htmlspecialchars($urlCategory) ?>";
     </script>
 
     <?php include("includes/footer.php"); ?>

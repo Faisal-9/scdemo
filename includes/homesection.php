@@ -13,15 +13,15 @@ include_once("includes/data/aboutdata.php");
             <?php foreach ($heroSlides as $slide): ?>
                 <div class="swiper-slide">
 
-                    <div class="image-layer" style="background-image:url(<?= $slide['image'] ?> )"></div>
+                    <div class="image-layer" style="background-image:url(<?php echo $slide['image'] ?> )"></div>
                     <div class="slider-overlay"></div>
                     <div class="container">
                         <div class="slider-content">
-                            <h1><?= $slide['title'] ?></h1>
+                            <h1><?php echo $slide['title'] ?></h1>
                             <p class="hero-desc">
-                                <?= $slide['desc'] ?>
+                                <?php echo $slide['desc'] ?>
                             </p>
-                            <a href="<?= $slide['link'] ?>" class="hero-btn">
+                            <a href="<?php echo $slide['link'] ?>" class="hero-btn">
                                 Explore Projects
                             </a>
                         </div>
@@ -36,13 +36,13 @@ include_once("includes/data/aboutdata.php");
         <div class="hero-indicators">
 
             <?php foreach ($heroSlides as $index => $slide): ?>
-                <div class="hero-indicator-item <?= $index == 0 ? 'active' : '' ?>" data-index="<?= $index ?>">
+                <div class="hero-indicator-item <?php echo $index == 0 ? 'active' : '' ?>" data-index="<?php echo $index ?>">
                     <div class="hero-indicator-progress"></div>
                     <span class="hero-indicator-num">
-                        <?= str_pad($index + 1, 2, "0", STR_PAD_LEFT) ?>
+                        <?php echo str_pad($index + 1, 2, "0", STR_PAD_LEFT) ?>
                     </span>
                     <span class="hero-indicator-title">
-                        <?= $slide['indicator'] ?>
+                        <?php echo $slide['indicator'] ?>
                     </span>
 
                 </div>
@@ -56,7 +56,7 @@ include_once("includes/data/aboutdata.php");
 
 
 <!-- ================= ABOUT US ================= -->
-<section class="index-stats-section py-4" style="background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('<?= $statsBg ?>');">
+<section class="index-stats-section py-4" style="background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('<?php echo $statsBg ?>');">
     <div class="container">
 
         <div class="index-about-us-header text-center mb-4">
@@ -73,12 +73,12 @@ include_once("includes/data/aboutdata.php");
                             <div class="stat-item">
 
                                 <div class="stat-number">
-                                    <span class="counter" data-target="<?= $stat['number'] ?>">0</span>
-                                    <span class="suffix"><?= $stat['suffix'] ?></span>
+                                    <span class="counter" data-target="<?php echo $stat['number'] ?>">0</span>
+                                    <span class="suffix"><?php echo $stat['suffix'] ?></span>
                                 </div>
 
                                 <div class="stat-label">
-                                    <?= $stat['label'] ?>
+                                    <?php echo $stat['label'] ?>
                                 </div>
 
                             </div>
@@ -108,10 +108,10 @@ include_once("includes/data/aboutdata.php");
 
                                 <li class="nav-item ">
                                     <button
-                                        class="nav-link serif-link <?= $first ? 'active' : '' ?>"
+                                        class="nav-link serif-link <?php echo $first ? 'active' : '' ?>"
                                         data-bs-toggle="tab"
-                                        data-bs-target="#why<?= $id ?>">
-                                        <?= htmlspecialchars($label) ?>
+                                        data-bs-target="#why<?php echo $id ?>">
+                                        <?php echo htmlspecialchars($label) ?>
                                     </button>
                                 </li>
 
@@ -134,21 +134,21 @@ include_once("includes/data/aboutdata.php");
                                 $hasContent = $hasTitle || $hasText;
                                 ?>
 
-                                <div class="tab-pane fade <?= $first ? 'show active' : '' ?>" id="why<?= $id ?>">
+                                <div class="tab-pane fade <?php echo $first ? 'show active' : '' ?>" id="why<?php echo $id ?>">
                                     <div class="row align-items-center">
 
                                         <?php if ($hasContent): ?>
-                                            <div class="<?= $hasImage ? 'col-md-6' : 'col-md-12' ?>">
+                                            <div class="<?php echo $hasImage ? 'col-md-6' : 'col-md-12' ?>">
 
                                                 <?php if ($hasTitle): ?>
                                                     <h2 class="text-orange">
-                                                        <?= htmlspecialchars($item['title']) ?>
+                                                        <?php echo htmlspecialchars($item['title']) ?>
                                                     </h2>
                                                 <?php endif; ?>
 
                                                 <?php if ($hasText): ?>
                                                     <p>
-                                                        <?= htmlspecialchars($item['text']) ?>
+                                                        <?php echo htmlspecialchars($item['text']) ?>
                                                     </p>
                                                 <?php endif; ?>
 
@@ -157,11 +157,11 @@ include_once("includes/data/aboutdata.php");
 
 
                                         <?php if ($hasImage): ?>
-                                            <div class="<?= $hasContent ? 'col-md-6' : 'col-md-12' ?>">
+                                            <div class="<?php echo $hasContent ? 'col-md-6' : 'col-md-12' ?>">
                                                 <img
-                                                    src="<?= htmlspecialchars($item['image']) ?>"
+                                                    src="<?php echo htmlspecialchars($item['image']) ?>"
                                                     class="zoomable img-fluid rounded"
-                                                    alt="<?= htmlspecialchars($item['title'] ?? 'image') ?>">
+                                                    alt="<?php echo htmlspecialchars($item['title'] ?? 'image') ?>">
                                             </div>
                                         <?php endif; ?>
 
@@ -199,24 +199,24 @@ include_once("includes/data/aboutdata.php");
                     <div class="service-card h-100">
 
                         <div class="service-image">
-                            <img src="<?= htmlspecialchars($service['image'] ?? $service['hero_image'] ?? 'assets/images/default.jpg') ?>"
-                                alt="<?= htmlspecialchars($service['title']) ?>"
+                            <img src="<?php echo htmlspecialchars($service['image'] ?? $service['hero_image'] ?? 'assets/images/default.jpg') ?>"
+                                alt="<?php echo htmlspecialchars($service['title']) ?>"
                                 class="img-fluid"
                                 loading="lazy">
                         </div>
 
                         <div class="service-content">
                             <div class="service-title">
-                                <?= htmlspecialchars($service['title']) ?>
+                                <?php echo htmlspecialchars($service['title']) ?>
                             </div>
 
                             <ul class="service-desc">
                                 <?php foreach (array_slice($service['sub_services'] ?? [], 0, 6) as $sub): ?>
-                                    <li><?= htmlspecialchars($sub['title']) ?></li>
+                                    <li><?php echo htmlspecialchars($sub['title']) ?></li>
                                 <?php endforeach; ?>
                             </ul>
 
-                            <a href="services.php?tab=<?= $serviceKey ?>"
+                            <a href="services.php?tab=<?php echo $serviceKey ?>"
                                 class="service-btn serif-link">
                                 Read More +
                             </a>
@@ -246,13 +246,13 @@ include_once("includes/data/aboutdata.php");
             <?php foreach ($major_projects as $project): ?>
                 <div class="col-6 col-md-6 col-lg-3">
                     <div class="major-project-card">
-                        <img src="<?= $project['image'] ?>"
-                            alt="<?= $project['title'] ?>"
+                        <img src="<?php echo $project['image'] ?>"
+                            alt="<?php echo $project['title'] ?>"
                             class="major-project-img zoomable">
 
                         <div class="major-project-overlay">
                             <div class="major-project-title">
-                                <?= $project['title'] ?>
+                                <?php echo $project['title'] ?>
                             </div>
                         </div>
                     </div>
@@ -280,7 +280,7 @@ include_once("includes/data/aboutdata.php");
                     <?php foreach ($logos as $client): ?>
                         <div class="client-item">
                             <div class="client-logo-box">
-                                <img src="<?= htmlspecialchars($client['logo']) ?>" class="zoomable" alt="Client Logo">
+                                <img src="<?php echo htmlspecialchars($client['logo']) ?>" class="zoomable" alt="Client Logo">
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -304,12 +304,12 @@ include_once("includes/data/aboutdata.php");
         <div class="row g-4">
 
             <?php foreach (array_slice($newsItems, 0, 3) as $index => $news): ?>
-                <div class="col-lg-4 col-md-6 col-12 <?= $index >= 1 ? 'd-none d-md-block' : '' ?>">
+                <div class="col-lg-4 col-md-6 col-12 <?php echo $index >= 1 ? 'd-none d-md-block' : '' ?>">
                     <article class="index-news-card">
 
                         <div class="index-news-image">
-                            <img src="<?= $news['image']; ?>"
-                                alt="<?= $news['title']; ?>"
+                            <img src="<?php echo $news['image']; ?>"
+                                alt="<?php echo $news['title']; ?>"
                                 class="img-fluid lazy"
                                 loading="lazy">
                         </div>
@@ -319,13 +319,13 @@ include_once("includes/data/aboutdata.php");
                             <div class="index-news-meta">
                                 <span>
                                     <i class="fa-regular fa-calendar-check"></i>
-                                    <?= $news['comments']; ?>
+                                    <?php echo $news['comments']; ?>
                                 </span>
                             </div>
 
                             <h3 class="index-news-title serif-link">
                                 <a href="#">
-                                    <?= htmlspecialchars($news['title']); ?>
+                                    <?php echo htmlspecialchars($news['title']); ?>
                                 </a>
                             </h3>
 
