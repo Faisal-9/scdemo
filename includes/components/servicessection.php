@@ -100,10 +100,17 @@ if (!function_exists('renderServiceDetailPanel')) {
     </div>
 
     <!-- ================= SUB-SERVICE TABS ================= -->
+    <?php
+    $serviceKey = isset($key)
+        ? $key
+        : ($service['slug'] ?? preg_replace('/[^a-z0-9\-]+/i', '-', strtolower($service['title'] ?? 'service')));
+    $subServices = $service['sub_services'] ?? [];
+    ?>
+
     <div class="subservice-tabs">
-        <?php foreach ($service['sub_services'] as $i => $sub): ?>
+        <?php foreach ($subServices as $i => $sub): ?>
             <?php
-            $tabId = $key . '-' . $sub['id'];
+            $tabId = $serviceKey . '-' . $sub['id'];
             ?>
             <button class="sub-tab <?= $i === 0 ? 'active' : '' ?>"
                 data-sub="<?= htmlspecialchars($tabId) ?>">
@@ -115,8 +122,8 @@ if (!function_exists('renderServiceDetailPanel')) {
     <!-- ================= MAIN CONTENT ================= -->
     <div class="container mt-4">
 
-        <?php foreach ($service['sub_services'] as $sIndex => $sub): ?>
-            <?php $tabId = $key . '-' . $sub['id']; ?>
+        <?php foreach ($subServices as $sIndex => $sub): ?>
+            <?php $tabId = $serviceKey . '-' . $sub['id']; ?>
 
             <div class="subservice-content <?= $sIndex === 0 ? 'active' : '' ?>"
                 id="<?= htmlspecialchars($tabId) ?>">
@@ -127,14 +134,14 @@ if (!function_exists('renderServiceDetailPanel')) {
                     <div class="col-lg-4 sub-sub-menu">
                         <ul class="sub-sub-list">
                             <?php $menuActive = false;
-                            renderServiceSubMenu($sub['items'], $tabId, $menuActive); ?>
+                            renderServiceSubMenu($sub['items'] ?? $sub['subitems'] ?? [], $tabId, $menuActive); ?>
                         </ul>
                     </div>
 
                     <!-- RIGHT CONTENT -->
                     <div class="col-lg-8">
                         <?php $panelActive = false;
-                        renderServiceDetailPanels($sub['items'], $tabId, $panelActive); ?>
+                        renderServiceDetailPanels($sub['items'] ?? $sub['subitems'] ?? [], $tabId, $panelActive); ?>
                     </div>
 
                 </div>

@@ -1221,20 +1221,19 @@ document.addEventListener("DOMContentLoaded", function () {
      Services Accordion Menu
   ============================= */
   document.querySelectorAll(".sub-sub-list").forEach((menuList) => {
-    // Show first group by default
-    const firstGroupTitle = menuList.querySelector(".group-title");
-    const firstGroupList = menuList.querySelector(".group-list");
-    if (firstGroupList) {
-      firstGroupList.classList.add("active");
-    }
-    if (firstGroupTitle) {
-      firstGroupTitle.classList.add("active");
-    }
+    // Start with all accordion groups collapsed until user interacts.
+    menuList.querySelectorAll(".group-title").forEach((title) => {
+      title.classList.remove("active");
+    });
+    menuList.querySelectorAll(".group-list").forEach((list) => {
+      list.classList.remove("active");
+    });
   });
 
   document.querySelectorAll(".sub-sub-list .group-title").forEach((title) => {
     title.addEventListener("click", function () {
       const groupList = this.nextElementSibling; // Get the .group-list
+      const activeContent = this.closest(".subservice-content");
 
       if (!groupList || !groupList.classList.contains("group-list")) {
         return; // Safety check
@@ -1242,17 +1241,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const parentList = this.closest(".sub-sub-list");
 
-      // Close all other group lists and remove active class from titles
+      // Close all other group lists and remove active class from titles/items
       parentList.querySelectorAll(".group-list").forEach((list) => {
         list.classList.remove("active");
       });
       parentList.querySelectorAll(".group-title").forEach((t) => {
         t.classList.remove("active");
       });
+      parentList.querySelectorAll("li[data-target]").forEach((item) => {
+        item.classList.remove("active");
+      });
 
       // Open clicked group and add active class to title
       groupList.classList.add("active");
       this.classList.add("active");
+
+      // Activate the first child service item in this group and its detail panel.
+      const firstChildItem = groupList.querySelector("li[data-target]");
+      if (firstChildItem) {
+        firstChildItem.classList.add("active");
+        if (activeContent) {
+          activeContent.querySelectorAll(".detail-panel").forEach((panel) => {
+            panel.classList.remove("active");
+          });
+          const targetPanel = document.getElementById(
+            firstChildItem.dataset.target,
+          );
+          if (targetPanel) {
+            targetPanel.classList.add("active");
+          }
+        }
+      }
     });
   });
 

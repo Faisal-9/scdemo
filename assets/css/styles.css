@@ -1644,7 +1644,7 @@ img {
 }
 
 .sub-sub-list .group-list.active {
-  max-height: 500px;
+  max-height: 999px;
   opacity: 1;
 }
 
