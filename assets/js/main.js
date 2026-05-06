@@ -124,17 +124,17 @@ document.addEventListener("DOMContentLoaded", function () {
      Global Image Error Handler
   ===================================== */
 
-  document.addEventListener(
-    "error",
-    function (e) {
-      if (e.target.tagName === "IMG") {
-        e.target.src =
-          "https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg";
-        e.target.classList.add("img-error");
-      }
-    },
-    true,
-  );
+  // document.addEventListener(
+  //   "error",
+  //   function (e) {
+  //     if (e.target.tagName === "IMG") {
+  //       e.target.src =
+  //         "https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg";
+  //       e.target.classList.add("img-error");
+  //     }
+  //   },
+  //   true,
+  // );
 
   /* ==========================
      Mobile Navigation
