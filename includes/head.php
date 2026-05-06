@@ -2,7 +2,7 @@
 // head.php - Optimized CDN Version
 
 if (!isset($page_title))
-    $page_title = "State Corps | Engineering Afghanistan's Infrastructure Future";
+    $page_title = "State Corps";
 
 if (!isset($page_description))
     $page_description = "Leading infrastructure company delivering 100+ projects valued at $600M+ for government and international partners since 2007";
