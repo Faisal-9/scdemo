@@ -28,12 +28,12 @@ if (!function_exists('renderServiceDetailPanel')) {
     {
         foreach ($items as $i => $item) {
             if (isset($item['subitems']) || isset($item['items'])) {
-                $groupTitle = $item['title'] ?? (isset($item['subitems']) ? 'Subitems' : 'Items');
+                $groupTitle = isset($item['title']) ? $item['title'] : (isset($item['subitems']) ? 'Subitems' : 'Items');
         ?>
                 <li class="group-title"><?php echo htmlspecialchars($groupTitle) ?></li>
                 <ul class="group-list">
                     <?php
-                    $children = $item['subitems'] ?? $item['items'];
+                    $children = isset($item['subitems']) ? $item['subitems'] : $item['items'];
                     foreach ($children as $j => $child):
                         $panelId = $tabId . '-' . $i . '-' . $j;
                         $active = $hasActive ? '' : 'active';
@@ -66,7 +66,7 @@ if (!function_exists('renderServiceDetailPanel')) {
     {
         foreach ($items as $i => $item) {
             if (isset($item['subitems']) || isset($item['items'])) {
-                $children = $item['subitems'] ?? $item['items'];
+                $children = isset($item['subitems']) ? $item['subitems'] : $item['items'];
                 foreach ($children as $j => $child) {
                     $panelId = $tabId . '-' . $i . '-' . $j;
                     $active = $hasActive ? '' : 'active';
@@ -103,8 +103,8 @@ if (!function_exists('renderServiceDetailPanel')) {
     <?php
     $serviceKey = isset($key)
         ? $key
-        : ($service['slug'] ?? preg_replace('/[^a-z0-9\-]+/i', '-', strtolower($service['title'] ?? 'service')));
-    $subServices = $service['sub_services'] ?? [];
+        : (isset($service['slug']) ? $service['slug'] : preg_replace('/[^a-z0-9\-]+/i', '-', strtolower(isset($service['title']) ? $service['title'] : 'service')));
+    $subServices = isset($service['sub_services']) ? $service['sub_services'] : [];
     ?>
 
     <div class="subservice-tabs">
@@ -134,14 +134,14 @@ if (!function_exists('renderServiceDetailPanel')) {
                     <div class="col-lg-4 sub-sub-menu">
                         <ul class="sub-sub-list">
                             <?php $menuActive = false;
-                            renderServiceSubMenu($sub['items'] ?? $sub['subitems'] ?? [], $tabId, $menuActive); ?>
+                            renderServiceSubMenu(isset($sub['items']) ? $sub['items'] : (isset($sub['subitems']) ? $sub['subitems'] : []), $tabId, $menuActive); ?>
                         </ul>
                     </div>
 
                     <!-- RIGHT CONTENT -->
                     <div class="col-lg-8">
                         <?php $panelActive = false;
-                        renderServiceDetailPanels($sub['items'] ?? $sub['subitems'] ?? [], $tabId, $panelActive); ?>
+                        renderServiceDetailPanels(isset($sub['items']) ? $sub['items'] : (isset($sub['subitems']) ? $sub['subitems'] : []), $tabId, $panelActive); ?>
                     </div>
 
                 </div>

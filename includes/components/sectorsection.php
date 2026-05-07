@@ -1,16 +1,16 @@
 <?php
-$sector = $sector ?? [];
+$sector = isset($sector) ? $sector : [];
 ?>
 
 <section class="sector-modern">
 
     <!-- HERO -->
-    <div class="sector-hero" style="background-image:url('<?php echo $sector['hero']['image'] ?? 'assets/images/default.jpg' ?>')">
+    <div class="sector-hero" style="background-image:url('<?php echo isset($sector['hero']['image']) ? $sector['hero']['image'] : 'assets/images/default.jpg' ?>')">
         <div class="overlay">
             <div class="container">
-                <p class="tag"><?php echo $sector['hero']['tag'] ?? '' ?></p>
-                <h1><?php echo $sector['hero']['headline'] ?? '' ?></h1>
-                <p class="sub"><?php echo $sector['hero']['sub'] ?? '' ?></p>
+                <p class="tag"><?php echo isset($sector['hero']['tag']) ? $sector['hero']['tag'] : '' ?></p>
+                <h1><?php echo isset($sector['hero']['headline']) ? $sector['hero']['headline'] : '' ?></h1>
+                <p class="sub"><?php echo isset($sector['hero']['sub']) ? $sector['hero']['sub'] : '' ?></p>
 
                 <?php if (!empty($sector['hero']['cta_text'])): ?>
                     <a href="<?php echo $sector['hero']['cta_link'] ?>" class="btn-cta">

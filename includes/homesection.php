@@ -99,11 +99,11 @@ include_once("includes/data/aboutdata.php");
                             <?php foreach ($whySC as $id => $item): ?>
 
                                 <?php
-                                $hasAny = !empty($item['tabname'] ?? null);
+                                $hasAny = isset($item['tabname']) && !empty($item['tabname']);
 
                                 if (!$hasAny) continue;
 
-                                $label = $item['tabname'] ?? 'Section ' . $id;
+                                $label = isset($item['tabname']) ? $item['tabname'] : 'Section ' . $id;
                                 ?>
 
                                 <li class="nav-item ">
@@ -127,9 +127,9 @@ include_once("includes/data/aboutdata.php");
                             <?php foreach ($whySC as $id => $item): ?>
 
                                 <?php
-                                $hasTitle = !empty($item['title'] ?? null);
-                                $hasText  = !empty($item['text'] ?? null);
-                                $hasImage = !empty($item['image'] ?? null);
+                                $hasTitle = isset($item['title']) && !empty($item['title']);
+                                $hasText  = isset($item['text']) && !empty($item['text']);
+                                $hasImage = isset($item['image']) && !empty($item['image']);
 
                                 $hasContent = $hasTitle || $hasText;
                                 ?>
@@ -161,7 +161,7 @@ include_once("includes/data/aboutdata.php");
                                                 <img
                                                     src="<?php echo htmlspecialchars($item['image']) ?>"
                                                     class="zoomable img-fluid rounded"
-                                                    alt="<?php echo htmlspecialchars($item['title'] ?? 'image') ?>">
+                                                    alt="<?php echo htmlspecialchars(isset($item['title']) ? $item['title'] : 'image') ?>">
                                             </div>
                                         <?php endif; ?>
 
@@ -199,7 +199,7 @@ include_once("includes/data/aboutdata.php");
                     <div class="service-card h-100">
 
                         <div class="service-image">
-                            <img src="<?php echo htmlspecialchars($service['image'] ?? $service['hero_image'] ?? 'assets/images/default.jpg') ?>"
+                            <img src="<?php echo htmlspecialchars(isset($service['image']) ? $service['image'] : (isset($service['hero_image']) ? $service['hero_image'] : 'assets/images/default.jpg')) ?>"
                                 alt="<?php echo htmlspecialchars($service['title']) ?>"
                                 class="img-fluid"
                                 loading="lazy">
@@ -211,7 +211,7 @@ include_once("includes/data/aboutdata.php");
                             </div>
 
                             <ul class="service-desc">
-                                <?php foreach (array_slice($service['sub_services'] ?? [], 0, 6) as $sub): ?>
+                                <?php foreach (array_slice(isset($service['sub_services']) ? $service['sub_services'] : [], 0, 6) as $sub): ?>
                                     <li><?php echo htmlspecialchars($sub['title']) ?></li>
                                 <?php endforeach; ?>
                             </ul>

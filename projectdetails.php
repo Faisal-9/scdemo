@@ -4,7 +4,7 @@
 include("includes/head.php");
 include("includes/data/projectsdata.php");
 
-$id = $_GET['id'] ?? '';
+$id = isset($_GET['id']) ? $_GET['id'] : '';
 
 $project = null;
 

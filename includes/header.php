@@ -131,7 +131,7 @@ include_once("includes/data/projectsdata.php");
                                                         </h4>
 
                                                         <ul class="dropdown-list">
-                                                            <?php foreach ($service['sub_services'] ?? [] as $sub): ?>
+                                                            <?php foreach ((isset($service['sub_services']) ? $service['sub_services'] : []) as $sub): ?>
                                                                 <li>
                                                                     <a href="services.php?tab=<?php echo urlencode($serviceKey) ?>#<?php echo htmlspecialchars($serviceKey . '-' . $sub['id']) ?>" class="dropdown-link">
                                                                         <?php echo htmlspecialchars($sub['title']) ?>

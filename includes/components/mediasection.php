@@ -1,6 +1,6 @@
 <?php
-$media_items = $media_items ?? [];
-$tab_key     = $tab_key ?? 'items';
+$media_items = isset($media_items) ? $media_items : [];
+$tab_key     = isset($tab_key) ? $tab_key : 'items';
 
 usort($media_items, function ($a, $b) {
     return parseMediaDate($b['date']) - parseMediaDate($a['date']);

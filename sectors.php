@@ -3,7 +3,7 @@
 $page_title = "Sectors - State Corps";
 include("includes/head.php");
 include("includes/data/sectorsdata.php");
-$activeTab = $_GET['tab'] ?? array_key_first($sectors);
+$activeTab = isset($_GET['tab']) ? $_GET['tab'] : array_key_first($sectors);
 ?>
 
 <body>

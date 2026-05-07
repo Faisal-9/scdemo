@@ -9,7 +9,7 @@ function parseMediaDate($date)
     $clean = str_replace(',', '', $date); // remove comma
     return strtotime($clean) ?: 0;
 }
-$active_tab = $_GET['tab'] ?? 'news';
+$active_tab = isset($_GET['tab']) ? $_GET['tab'] : 'news';
 
 // Building recents: merge all items, tag with type, sort newest-first, take 5
 $all_recents = [];
