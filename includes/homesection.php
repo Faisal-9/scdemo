@@ -321,7 +321,7 @@ if (isset($projects) && is_array($projects)) {
                                     class="img-fluid rounded">
                             </div>
                             <div class="category-choice mb-3">
-                                <strong>MY CHOOSEN:</strong>
+                                <strong>Relevant Projects:</strong>
                                 <?php if (!empty($group['chosen'])): ?>
                                     <ul class="mb-0 ps-3">
                                         <?php foreach ($group['chosen'] as $chosenProject): ?>
