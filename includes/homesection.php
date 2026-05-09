@@ -313,8 +313,8 @@ if (isset($projects) && is_array($projects)) {
                 ?>
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="category-project-card card border-0 h-100">
-                        <div class="card-body p-3 d-flex flex-column">
-                            <h3 class="card-title fs-5 mb-3"><?php echo htmlspecialchars($group['label']); ?></h3>
+                        <div class="card-body p-2 d-flex flex-column">
+                            <h3 class="card-title text-center mb-3"><?php echo htmlspecialchars($group['label']); ?></h3>
                             <div class="category-card-image mb-3">
                                 <img src="<?php echo htmlspecialchars($heroImage); ?>"
                                     alt="<?php echo htmlspecialchars($heroProject['name']); ?>"
