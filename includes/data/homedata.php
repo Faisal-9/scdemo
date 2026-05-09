@@ -167,26 +167,25 @@ $major_projects = [
 
 
 /* ================= NEWS ================= */
-$newsItems = [
-    [
-        'image' => 'assets/images/gardez.jpg',
-        'author' => 'Mayar',
-        'comments' => '2 Sep, 2025',
-        'title' => 'Completion of named project'
-    ],
-    [
-        'image' => 'assets/images/gardiz.jpg',
-        'author' => 'Mayar',
-        'comments' => '2 Sep, 2025',
-        'title' => 'A look to our 70% completed project'
-    ],
-    [
-        'image' => 'assets/images/gulbahar.jpg',
-        'author' => 'Mayar',
-        'comments' => '2 Sep, 2025',
-        'title' => 'Afghanistan 6th International EXRO  Participation Participation Participation Participation'
-    ]
-];
+// $newsItems = [
+//     [
+//         'image' => 'assets/images/gardez.jpg',
+//         'comments' => '2 Sep, 2025',
+//         'title' => 'Completion of named project'
+//     ],
+//     [
+//         'image' => 'assets/images/gardiz.jpg',
+//         'author' => 'Mayar',
+//         'comments' => '2 Sep, 2025',
+//         'title' => 'A look to our 70% completed project'
+//     ],
+//     [
+//         'image' => 'assets/images/gulbahar.jpg',
+//         'author' => 'Mayar',
+//         'comments' => '2 Sep, 2025',
+//         'title' => 'Afghanistan 6th International EXRO  Participation Participation Participation Participation'
+//     ]
+// ];
 
 
 /* ================= CLIENTS ================= */

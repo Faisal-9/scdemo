@@ -9,6 +9,12 @@ $id = isset($_GET['id']) ? $_GET['id'] : '';
 $project = null;
 
 foreach ($projects as $p) {
+    if (!is_array($p)) {
+        continue;
+    }
+    if (!isset($p['id'])) {
+        continue;
+    }
     if ($p['id'] === $id) {
         $project = $p;
         break;

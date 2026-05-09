@@ -1,7 +1,29 @@
 <?php
 include("includes/data/homedata.php");
+include_once("includes/data/projectsdata.php");
 include_once("includes/data/servicesdata.php");
 include_once("includes/data/aboutdata.php");
+include_once("includes/data/mediadata.php");
+
+function parseMediaDate($date)
+{
+    $clean = str_replace(',', '', $date);
+    return strtotime($clean) ?: 0;
+}
+
+$latestActivityItems = [];
+foreach (['news', 'events'] as $type) {
+    if (isset($media[$type]) && is_array($media[$type])) {
+        foreach ($media[$type] as $item) {
+            $item['_type'] = ucfirst($type);
+            $latestActivityItems[] = $item;
+        }
+    }
+}
+usort($latestActivityItems, function ($a, $b) {
+    return parseMediaDate($b['date']) - parseMediaDate($a['date']);
+});
+$latestActivityItems = array_slice($latestActivityItems, 0, 3);
 ?>
 
 
@@ -233,35 +255,102 @@ include_once("includes/data/aboutdata.php");
 
 
 <!-- ================= FEATURED PROJECTS ================= -->
+<?php
+$homepageCategories = [
+    'substation' => 'Substation',
+    'transmission line' => 'Transmission',
+    'vertical construction' => 'Building',
+    'mineral processing' => 'Mining',
+];
+$categoryGroups = [];
+foreach ($homepageCategories as $categoryKey => $categoryLabel) {
+    $categoryGroups[$categoryKey] = [
+        'label' => $categoryLabel,
+        'projects' => [],
+        'chosen' => [],
+    ];
+}
+if (isset($projects) && is_array($projects)) {
+    foreach ($projects as $project) {
+        if (!is_array($project) || !isset($project['category'])) {
+            continue;
+        }
+        $projectCategory = strtolower(trim($project['category']));
+        if (!isset($categoryGroups[$projectCategory])) {
+            continue;
+        }
+        $categoryGroups[$projectCategory]['projects'][] = $project;
+        if (isset($project['inhome']) && $project['inhome'] === 'yes') {
+            $categoryGroups[$projectCategory]['chosen'][] = $project;
+        }
+    }
+}
+?>
 <section class="major-projects-section py-4">
     <div class="container major-projects-container">
 
-
         <div class="text-center mb-4">
-            <h2 class="fw-bold fs-2">
-                Featured Projects
-            </h2>
+            <h2 class="fw-bold fs-2">Featured Projects</h2>
         </div>
-        <div class="row g-4">
-            <?php foreach ($major_projects as $project): ?>
-                <div class="col-6 col-md-6 col-lg-3">
-                    <div class="major-project-card">
-                        <img src="<?php echo $project['image'] ?>"
-                            alt="<?php echo $project['title'] ?>"
-                            class="major-project-img zoomable">
 
-                        <div class="major-project-overlay">
-                            <div class="major-project-title">
-                                <?php echo $project['title'] ?>
+        <div class="row g-4">
+            <?php foreach ($categoryGroups as $group): ?>
+                <?php if (empty($group['projects'])): ?>
+                    <?php continue; ?>
+                <?php endif; ?>
+                <?php
+                $catImageProject = null;
+                foreach ($group['projects'] as $proj) {
+                    if (isset($proj['catimage']) && $proj['catimage'] === 'yes') {
+                        $catImageProject = $proj;
+                        break;
+                    }
+                }
+                $heroProject = $catImageProject ?: (!empty($group['chosen']) ? $group['chosen'][0] : $group['projects'][0]);
+                $heroImage = isset($heroProject['thumbnail']) && trim($heroProject['thumbnail']) !== ''
+                    ? $heroProject['thumbnail']
+                    : 'assets/images/default.jpg';
+                ?>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="category-project-card card border-0 h-100">
+                        <div class="card-body p-3 d-flex flex-column">
+                            <h3 class="card-title fs-5 mb-3"><?php echo htmlspecialchars($group['label']); ?></h3>
+                            <div class="category-card-image mb-3">
+                                <img src="<?php echo htmlspecialchars($heroImage); ?>"
+                                    alt="<?php echo htmlspecialchars($heroProject['name']); ?>"
+                                    class="img-fluid rounded">
+                            </div>
+                            <div class="category-choice mb-3">
+                                <strong>MY CHOOSEN:</strong>
+                                <?php if (!empty($group['chosen'])): ?>
+                                    <ul class="mb-0 ps-3">
+                                        <?php foreach ($group['chosen'] as $chosenProject): ?>
+                                            <li class="chosen-project-item">
+                                                <a href="projectdetails.php?id=<?php echo urlencode($chosenProject['id']); ?>"
+                                                    class="text-decoration-none">
+                                                    <?php echo htmlspecialchars($chosenProject['name']); ?>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php else: ?>
+                                    <span>No chosen project</span>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
+
+        <!-- View All Projects Button -->
+        <div class="text-center mt-4">
+            <a href="projects.php" class="service-btn serif-link">
+                View All Projects +
+            </a>
+        </div>
     </div>
 </section>
-
 
 
 <!-- ================= CLIENTS ================= -->
@@ -303,13 +392,13 @@ include_once("includes/data/aboutdata.php");
 
         <div class="row g-4">
 
-            <?php foreach (array_slice($newsItems, 0, 3) as $index => $news): ?>
+            <?php foreach ($latestActivityItems as $index => $news): ?>
                 <div class="col-lg-4 col-md-6 col-12 <?php echo $index >= 1 ? 'd-none d-md-block' : '' ?>">
                     <article class="index-news-card">
 
                         <div class="index-news-image">
-                            <img src="<?php echo $news['image']; ?>"
-                                alt="<?php echo $news['title']; ?>"
+                            <img src="<?php echo htmlspecialchars($news['image']); ?>"
+                                alt="<?php echo htmlspecialchars($news['title']); ?>"
                                 class="img-fluid lazy"
                                 loading="lazy">
                         </div>
@@ -319,12 +408,12 @@ include_once("includes/data/aboutdata.php");
                             <div class="index-news-meta">
                                 <span>
                                     <i class="fa-regular fa-calendar-check"></i>
-                                    <?php echo $news['comments']; ?>
+                                    <?php echo htmlspecialchars($news['date']); ?>
                                 </span>
                             </div>
 
                             <h3 class="index-news-title serif-link">
-                                <a href="#">
+                                <a href="<?php echo isset($news['link']) ? htmlspecialchars($news['link']) : 'media.php?tab=' . strtolower(htmlspecialchars($news['_type'])); ?>">
                                     <?php echo htmlspecialchars($news['title']); ?>
                                 </a>
                             </h3>
@@ -339,7 +428,7 @@ include_once("includes/data/aboutdata.php");
 
         <!-- View All Button -->
         <div class="text-center mt-4">
-            <a href="media.php" class="index-news-btn serif-link">
+            <a href="media.php" class="service-btn serif-link">
                 View More
             </a>
         </div>
