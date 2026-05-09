@@ -551,7 +551,7 @@ $sectors = [
             ["value" => "12+", "label" => "Years of Experience"],
             ["value" => "100,000+", "label" => "Tons Processing Capacity"],
             ["value" => "5+", "label" => "Projects Delivered"],
-            ["value" => "$150M+", "label" => "Value"],
+            ["value" => "$5M+", "label" => "Value"],
         ],
 
         "why" => [
