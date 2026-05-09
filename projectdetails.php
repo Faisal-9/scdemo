@@ -39,7 +39,7 @@ if (!$project) {
 
                 <div class="project-back">
                     <button onclick="goBackToProjects()" class="back-btn">
-                        Back to Projects
+                        Back
                     </button>
                 </div>
 
