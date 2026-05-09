@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!track || !section) return;
 
     let position = 0;
-    let speed = 0.9;
+    let speed = 0.6;
     let isRunning = false;
     let animationFrame;
 
