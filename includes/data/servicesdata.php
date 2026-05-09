@@ -372,148 +372,243 @@ $services = [
 
 
     "implementation" => [
+        "title"      => "Project Delivery",
         "hero_image" => "assets/images/slider_03.jpg",
-        "title" => "Project Delivery",
-        "hero_text"  => "Delivering integrated engineering and design solutions across every discipline.",
+        "hero_text"  => "Delivering integrated project delivery solutions from execution and construction through commissioning, operations, and long-term asset performance.",
 
         "sub_services" => [
-            [
-                "id"    => "project-delivery",
-                "title" => "Project Delivery",
-                "items" => [
 
+            [
+                "id"    => "project-management",
+                "title" => "Project Management",
+                "items" => [
                     [
                         "title"      => "Project Management and Execution",
-                        "image"      => "assets/images/services/project1.jpg",
-                        "short_desc" => "We provide end-to-end project management services, ensuring seamless coordination from concept to completion with full control over scope, cost, schedule, and quality.",
-                        "why"        => "Our integrated management approach ensures projects are delivered on time, within budget, and aligned with strategic objectives while minimizing risks.",
+                        "image"      => "assets/images/services/project-management.jpg",
+                        "short_desc" => "We provide comprehensive project management and execution services across the full project lifecycle, ensuring effective coordination of scope, schedule, cost, quality, and resources while maintaining alignment with client objectives, operational requirements, and industry standards for successful project delivery.",
+                        "why"        => "Our structured management systems improve coordination, reduce delays, and ensure projects are delivered safely, efficiently, and within budget.",
                         "features"   => [
                             "End-to-end project lifecycle management",
-                            "Cost, schedule, and risk control systems",
+                            "Integrated cost and schedule control",
                             "Stakeholder and contractor coordination",
                             "Performance monitoring and reporting",
                         ],
                     ],
-
                     [
-                        "title"      => "Engineering, Procurement and Construction (EPC)",
-                        "image"      => "assets/images/services/project1.jpg",
-                        "short_desc" => "We deliver turnkey EPC solutions, managing engineering, procurement, and construction under a single contract to ensure streamlined execution and accountability.",
-                        "why"        => "Single-point responsibility reduces complexity, accelerates timelines, and ensures consistent quality across all project phases.",
+                        "title"      => "EPC Project Delivery",
+                        "image"      => "assets/images/services/epc-project.jpg",
+                        "short_desc" => "We deliver Engineering, Procurement, and Construction (EPC) solutions under a single-point responsibility model, integrating engineering design, procurement management, construction execution, and commissioning to streamline project delivery while ensuring quality, accountability, and efficient coordination across all project phases.",
+                        "why"        => "Single-source EPC delivery simplifies execution, reduces interface risks, and ensures consistent quality and accountability throughout the project lifecycle.",
                         "features"   => [
-                            "Turnkey project delivery",
-                            "Integrated engineering and construction",
-                            "Procurement and supply chain management",
-                            "Quality assurance and compliance",
+                            "Turnkey engineering and construction delivery",
+                            "Integrated procurement management",
+                            "Construction coordination and supervision",
+                            "Quality assurance and compliance systems",
                         ],
                     ],
-
                     [
                         "title"      => "EPCM & Owner's Engineer Services",
-                        "image"      => "assets/images/services/project1.jpg",
-                        "short_desc" => "We act as your trusted partner under EPCM or Owner's Engineer models, managing contractors and ensuring project alignment with client objectives.",
-                        "why"        => "Flexible delivery models provide greater control, transparency, and optimized cost management for complex projects.",
+                        "image"      => "assets/images/services/owners-engineer.jpg",
+                        "short_desc" => "We provide EPCM and Owner's Engineer services that represent client interests throughout project execution, overseeing engineering, procurement, construction, and contractor performance to ensure projects meet technical, financial, operational, and regulatory requirements while maintaining transparency and effective risk management.",
+                        "why"        => "Independent oversight enhances transparency, improves contractor performance, and ensures alignment with client expectations and project objectives.",
                         "features"   => [
+                            "Engineering review and technical oversight",
                             "Contractor and vendor management",
-                            "Engineering oversight and design review",
-                            "Procurement supervision",
-                            "Construction monitoring and control",
+                            "Procurement supervision and coordination",
+                            "Construction monitoring and reporting",
                         ],
                     ],
+                ],
+            ],
 
+            [
+                "id"    => "procurement-logistics",
+                "title" => "Procurement & Supply Chain",
+                "items" => [
                     [
                         "title"      => "Procurement and Supply Chain Management",
-                        "image"      => "assets/images/services/project1.jpg",
-                        "short_desc" => "We manage global procurement processes, ensuring timely sourcing of high-quality equipment and materials while optimizing costs and logistics.",
-                        "why"        => "Efficient procurement reduces delays, controls costs, and ensures reliable project execution.",
+                        "image"      => "assets/images/services/procurement.jpg",
+                        "short_desc" => "We manage procurement and supply chain operations for complex industrial and infrastructure projects, ensuring timely sourcing of quality materials, equipment, and services while optimising costs, managing logistics, and maintaining supply continuity throughout project execution phases.",
+                        "why"        => "Efficient procurement and logistics reduce delays, improve cost control, and ensure reliable access to critical project resources.",
                         "features"   => [
-                            "Global sourcing and vendor evaluation",
-                            "Contract negotiation and tendering",
-                            "Logistics and supply chain optimization",
-                            "Cost control and transparency",
+                            "Strategic sourcing and vendor evaluation",
+                            "Tendering and contract negotiations",
+                            "Supply chain coordination and tracking",
+                            "Procurement cost optimisation",
                         ],
                     ],
+                    [
+                        "title"      => "Logistics and Material Management",
+                        "image"      => "assets/images/services/logistics.jpg",
+                        "short_desc" => "We coordinate transportation, warehousing, customs clearance, and material handling processes to ensure efficient delivery and management of project equipment and materials, minimising disruptions while supporting smooth site operations and construction activities.",
+                        "why"        => "Well-managed logistics improve delivery reliability, reduce downtime, and support uninterrupted project execution across remote and challenging locations.",
+                        "features"   => [
+                            "Transportation and freight coordination",
+                            "Warehouse and inventory management",
+                            "Customs and import/export support",
+                            "Material tracking and reporting systems",
+                        ],
+                    ],
+                    [
+                        "title"      => "Vendor and Contract Management",
+                        "image"      => "assets/images/services/vendor-management.jpg",
+                        "short_desc" => "We administer supplier and contractor agreements throughout procurement and execution stages, ensuring compliance with contractual obligations, performance standards, schedules, and quality requirements while supporting transparent communication and dispute resolution processes.",
+                        "why"        => "Strong contract management improves accountability, minimises commercial risks, and strengthens supplier and contractor performance.",
+                        "features"   => [
+                            "Contract administration and compliance",
+                            "Supplier performance evaluation",
+                            "Commercial risk management",
+                            "Claims and variation management",
+                        ],
+                    ],
+                ],
+            ],
 
+            [
+                "id"    => "construction-site-development",
+                "title" => "Construction & Site Development",
+                "items" => [
                     [
                         "title"      => "Construction and Site Development",
-                        "image"      => "assets/images/services/project2.jpg",
-                        "short_desc" => "We execute safe and efficient construction services, including civil works, mechanical installation, and infrastructure development for mining operations.",
-                        "why"        => "Our construction expertise ensures high-quality execution with strict adherence to safety and schedule requirements.",
+                        "image"      => "assets/images/services/construction-site.jpg",
+                        "short_desc" => "We execute civil, structural, mechanical, and infrastructure construction works for industrial, mining, and commercial projects, ensuring safe, efficient, and high-quality delivery through disciplined site management, skilled supervision, and compliance with engineering and regulatory standards.",
+                        "why"        => "Our construction expertise ensures quality execution, improved safety performance, and reliable project delivery under demanding site conditions.",
                         "features"   => [
-                            "Civil, structural, and mechanical works",
-                            "Electrical and instrumentation installation",
-                            "Modular construction and assembly",
+                            "Civil and structural construction works",
+                            "Mechanical and piping installation",
+                            "Electrical and instrumentation works",
                             "Site supervision and quality control",
                         ],
                     ],
-
                     [
-                        "title"      => "Modularization and Offsite Fabrication",
-                        "image"      => "assets/images/services/project2.jpg",
-                        "short_desc" => "We utilize modular construction techniques to fabricate components offsite, reducing onsite complexity and accelerating project timelines.",
-                        "why"        => "Modular solutions improve efficiency, reduce risks, and enable faster project delivery.",
+                        "title"      => "Earthworks and Infrastructure Development",
+                        "image"      => "assets/images/services/earthworks.jpg",
+                        "short_desc" => "We perform bulk earthworks, grading, roadworks, drainage installation, and supporting infrastructure development to prepare and optimise project sites for construction and operations while ensuring stability, accessibility, and long-term operational performance.",
+                        "why"        => "Proper site preparation improves construction efficiency, reduces operational risks, and supports durable infrastructure performance.",
                         "features"   => [
-                            "Pre-fabricated plant modules",
-                            "Reduced on-site construction time",
-                            "Improved quality control",
-                            "Logistics and installation planning",
+                            "Bulk earthworks and grading",
+                            "Road and access infrastructure",
+                            "Drainage and stormwater systems",
+                            "Utility installation and coordination",
+                        ],
+                    ],
+                    [
+                        "title"      => "Mechanical and Plant Installation",
+                        "image"      => "assets/images/services/plant-installation.jpg",
+                        "short_desc" => "We install industrial process equipment, mechanical systems, piping networks, and supporting plant infrastructure, ensuring accurate alignment, reliable operation, and integration with electrical, control, and structural systems across industrial and mining facilities.",
+                        "why"        => "Precise installation improves operational reliability, minimises commissioning issues, and supports long-term plant efficiency.",
+                        "features"   => [
+                            "Process equipment installation",
+                            "Piping fabrication and erection",
+                            "Structural steel assembly",
+                            "Alignment and commissioning support",
+                        ],
+                    ],
+                ],
+            ],
+
+            [
+                "id"    => "testing-commissioning",
+                "title" => "Testing & Commissioning",
+
+                "items" => [
+                    [
+                        "title"      => "Testing and Validation",
+                        "image"      => "assets/images/services/testing-validation.jpg",
+                        "short_desc" => "We perform comprehensive testing and validation of mechanical, electrical, instrumentation, and control systems to verify functionality, safety, compliance, and operational performance before commissioning and final project handover across industrial, infrastructure, and energy facilities.",
+                        "why"        => "Thorough testing identifies issues early, improves system reliability, and ensures equipment and installations meet operational and regulatory requirements.",
+                        "features"   => [
+                            "Mechanical and electrical system testing",
+                            "Instrumentation loop checks and calibration",
+                            "Factory and Site Acceptance Testing (FAT/SAT)",
+                            "Performance verification and compliance testing",
                         ],
                     ],
 
                     [
                         "title"      => "Commissioning and Start-Up",
-                        "image"      => "assets/images/services/project3.jpg",
-                        "short_desc" => "We ensure smooth commissioning and start-up of mining facilities, verifying system performance and operational readiness.",
-                        "why"        => "Efficient commissioning reduces delays and ensures rapid transition to full production capacity.",
+                        "image"      => "assets/images/services/commissioning.jpg",
+                        "short_desc" => "We manage commissioning and start-up activities to ensure systems, equipment, and operational processes are safely integrated, tested, and transitioned into full operational service while achieving performance targets, operational reliability, and compliance with project specifications.",
+                        "why"        => "Structured commissioning minimises start-up risks, accelerates operational readiness, and ensures stable, efficient facility performance.",
                         "features"   => [
-                            "System testing and validation",
-                            "Performance verification",
-                            "Operational readiness checks",
-                            "Training and handover support",
+                            "Pre-commissioning and commissioning activities",
+                            "System integration and functional testing",
+                            "Operational readiness assessments",
+                            "Start-up support and troubleshooting",
                         ],
                     ],
 
                     [
-                        "title"      => "Integrated EPC+O (Execution to Operation)",
-                        "image"      => "assets/images/services/project3.jpg",
-                        "short_desc" => "We deliver integrated EPC+O solutions, extending our responsibility from construction through to operation and performance optimization.",
-                        "why"        => "This approach ensures continuity, reduces operational risks, and maximizes long-term asset performance.",
+                        "title"      => "Operational Readiness and Handover",
+                        "image"      => "assets/images/services/operational-readiness.jpg",
+                        "short_desc" => "We prepare operational teams and facilities for seamless transition into production by developing procedures, maintenance systems, training programmes, and asset documentation that support safe, efficient, and sustainable long-term operations.",
+                        "why"        => "Effective readiness planning ensures smooth handover, improves operational safety, and enhances long-term asset reliability and performance.",
                         "features"   => [
-                            "End-to-end lifecycle responsibility",
-                            "Operational performance optimization",
-                            "Maintenance and support services",
+                            "Operations and maintenance planning",
+                            "Training and competency development",
+                            "Asset documentation and turnover",
+                            "Operational risk and readiness reviews",
+                        ],
+                    ],
+
+                    [
+                        "title"      => "Integrated EPC+O Solutions",
+                        "image"      => "assets/images/services/epco.jpg",
+                        "short_desc" => "We deliver integrated EPC+O solutions that extend responsibility beyond project execution into operations, maintenance, and performance optimisation, ensuring continuity, improved operational efficiency, and long-term asset value throughout the facility lifecycle.",
+                        "why"        => "Integrated execution and operations support improve continuity, reduce operational risks, and maximise long-term project and asset performance.",
+                        "features"   => [
+                            "Execution-to-operation integration",
+                            "Operational performance optimisation",
+                            "Maintenance and reliability support",
                             "Continuous improvement strategies",
                         ],
                     ],
+                ],
+            ],
 
+            [
+                "id"    => "digital-quality-hse",
+                "title" => "Digital Delivery, Quality & HSE",
+                "items" => [
                     [
                         "title"      => "Digital Project Management and Smart Delivery",
-                        "image"      => "assets/images/services/project4.jpg",
-                        "short_desc" => "We leverage digital tools, AI, and real-time data systems to enhance project visibility, coordination, and decision-making.",
-                        "why"        => "Digitalization improves efficiency, reduces delays, and enables proactive risk management.",
+                        "image"      => "assets/images/services/digital-project.jpg",
+                        "short_desc" => "We implement advanced digital technologies, real-time monitoring systems, BIM platforms, and data-driven management tools to improve project visibility, collaboration, forecasting, and decision-making throughout engineering, procurement, construction, and operational phases.",
+                        "why"        => "Digital solutions improve efficiency, enhance coordination, and enable proactive management of project risks and performance.",
                         "features"   => [
-                            "Digital dashboards and reporting",
-                            "AI-driven scheduling and forecasting",
+                            "Digital dashboards and reporting systems",
                             "BIM and digital twin integration",
+                            "AI-assisted planning and forecasting",
                             "Real-time project monitoring",
                         ],
                     ],
-
+                    [
+                        "title"      => "Quality Assurance and Control",
+                        "image"      => "assets/images/services/quality-control.jpg",
+                        "short_desc" => "We implement quality assurance and quality control systems across all project phases to ensure materials, workmanship, processes, and deliverables comply with technical specifications, regulatory requirements, and international quality standards.",
+                        "why"        => "Strong quality systems reduce defects, minimise rework, and ensure consistent delivery of reliable project outcomes.",
+                        "features"   => [
+                            "Inspection and Test Plans (ITPs)",
+                            "Quality audits and compliance reviews",
+                            "Material verification and traceability",
+                            "Non-conformance management",
+                        ],
+                    ],
                     [
                         "title"      => "Health, Safety and ESG Compliance",
-                        "image"      => "assets/images/services/project4.jpg",
-                        "short_desc" => "We ensure all project activities meet the highest standards of safety, environmental responsibility, and regulatory compliance.",
-                        "why"        => "Strong HSE practices protect people, reduce risks, and enhance project sustainability.",
+                        "image"      => "assets/images/services/hse.jpg",
+                        "short_desc" => "We develop and implement integrated health, safety, environmental, and ESG management systems that promote safe working environments, regulatory compliance, environmental protection, and responsible project delivery across all operational and construction activities.",
+                        "why"        => "Effective HSE and ESG systems protect personnel, reduce operational risks, and support sustainable, responsible project execution.",
                         "features"   => [
                             "Health and safety management systems",
                             "Environmental compliance monitoring",
-                            "ESG integration and reporting",
-                            "Risk assessment and mitigation",
+                            "ESG reporting and implementation",
+                            "Risk assessment and mitigation planning",
                         ],
                     ],
-
                 ],
             ],
+
         ],
     ],
 
