@@ -3,12 +3,12 @@ $media = [
     'news' => [
         [
             'id' => 'n1',
-            'date' => '5 Sep, 2024',
-            'title' => 'Completion of 60 Projects Milestone',
-            'description' => 'State Corps has successfully completed over 60 major infrastructure projects valued at more than $400 million, marking a significant milestone in the company\'s history of delivering world-class engineering solutions across Afghanistan.',
-            'image' => 'assets/images/2.jpg',
-            'link' => 'https://scdemo.gt.tc/media.php',
-            'tags' => ['Milestone', 'Projects'],
+            'date' => '23 Dec, 2025',
+            'title' => '$28.4M Power Supply Deal for 2 Jawzjan Districts',
+            'description' => ['The project, worth $28.4 million (over 1.8 billion Afghanis), was signed with the domestic company “State Corps. Once implemented, the project will transmit electricity from the center of Jawzjan over a distance of 85.4 kilometers, establish substations, and build distribution networks in the Qosh Tepa and Darzab districts, ensuring nearly all households in these districts have access to electricity.', 'This initiative is part of the Afghan government\'s broader efforts to enhance energy infrastructure and improve living standards across the country, particularly in underserved regions. The project is expected to significantly boost economic development and quality of life for residents in these districts.'],
+            'image' => 'assets/images/media/23-1225-Jawzjan.png',
+            'link' => 'https://en.didpress.com/23402/',
+            'tags' => ['Deal', 'Power Supply', 'Energy'],
         ],
         [
             'id' => 'n2',

@@ -2,83 +2,165 @@
 $media_items = isset($media_items) ? $media_items : [];
 $tab_key     = isset($tab_key) ? $tab_key : 'items';
 
+/* SORT LATEST FIRST */
 usort($media_items, function ($a, $b) {
-    return parseMediaDate($b['date']) - parseMediaDate($a['date']);
-});
 
-$initial_show = 5;
+    $dateA = strtotime(trim(str_replace(',', ' ', $a['date'] ?? '')));
+    $dateB = strtotime(trim(str_replace(',', ' ', $b['date'] ?? '')));
+
+    return $dateB <=> $dateA;
+});
 ?>
 
-<div class="tab-main-list"
-    id="list-<?php echo $tab_key ?>"
-    data-tab="<?php echo $tab_key ?>"
-    data-visible="<?php echo $initial_show ?>">
+<?php if (empty($media_items)): ?>
+    <p class="no-items">No items available.</p>
 
-    <?php if (empty($media_items)): ?>
-        <p class="no-items">No items available.</p>
-    <?php else: ?>
+<?php else: ?>
 
-        <?php foreach ($media_items as $i => $item): ?>
-            <article class="media-card <?php echo $i >= $initial_show ? 'media-card--hidden' : '' ?>"
-                data-index="<?php echo $i ?>">
+    <div class="media-split">
 
-                <!-- IMAGE -->
-                <div class="media-card__img-wrap">
-                    <img src="<?php echo htmlspecialchars($item['image']) ?>"
-                        alt="<?php echo htmlspecialchars($item['title']) ?>"
-                        class="media-card__img"
-                        loading="lazy">
+        <!-- LEFT SIDE -->
+        <div class="media-split__list">
 
-                    <?php if (!empty($item['tags'])): ?>
-                        <div class="media-card__tags">
-                            <?php foreach ($item['tags'] as $tag): ?>
-                                <span class="media-card__tag"><?php echo htmlspecialchars($tag) ?></span>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
+            <?php foreach ($media_items as $i => $item): ?>
 
-                <!-- BODY -->
-                <div class="media-card__body">
+                <div class="media-list-item <?php echo ($i === 0) ? 'active' : '' ?>"
+                    data-target="<?php echo $tab_key . '-' . $i; ?>"
+                    data-tab="<?php echo $tab_key; ?>">
 
-                    <span class="media-card__date">
-                        <?php echo htmlspecialchars($item['date']) ?>
-                    </span>
+                    <div class="media-list-item__meta">
 
-                    <h3 class="media-card__title">
-                        <?php echo htmlspecialchars($item['title']) ?>
-                    </h3>
+                        <span class="media-list-item__date">
+                            <?php echo htmlspecialchars($item['date']); ?>
+                        </span>
 
-                    <?php if (!empty($item['description'])): ?>
-                        <p class="media-card__desc">
-                            <?php echo htmlspecialchars($item['description']) ?>
-                        </p>
-                    <?php endif; ?>
+                        <?php if (!empty($item['tags'][0])): ?>
+                            <span class="media-list-item__first-tag">
+                                <?php echo htmlspecialchars($item['tags'][0]); ?>
+                            </span>
+                        <?php endif; ?>
 
-                    <?php if (!empty($item['link'])): ?>
-                        <div class="media-card__reference">
-                            Reference:
-                            <a href="<?php echo htmlspecialchars($item['link']) ?>" target="_blank">
-                                🔗 View Source
-                            </a>
-                        </div>
-                    <?php endif; ?>
+                    </div>
+
+                    <p class="media-list-item__title">
+                        <?php echo htmlspecialchars($item['title']); ?>
+                    </p>
+
+                    <span class="media-list-item__arrow">→</span>
 
                 </div>
 
-            </article>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
 
-        <!-- SHOW MORE -->
-        <?php if (count($media_items) > $initial_show): ?>
-            <div class="media-show-more-wrap">
-                <button class="media-show-more-btn"
-                    data-tab="<?php echo $tab_key ?>">
-                    Show More
-                </button>
-            </div>
-        <?php endif; ?>
+        </div>
 
-    <?php endif; ?>
+        <!-- RIGHT SIDE -->
+        <div class="media-split__detail-wrap">
 
-</div>
+            <?php foreach ($media_items as $i => $item): ?>
+
+                <div class="media-detail-panel <?php echo ($i === 0) ? 'active' : '' ?>"
+                    id="<?php echo $tab_key . '-' . $i; ?>">
+
+                    <div class="media-split__detail">
+
+                        <div class="media-detail__img-wrap">
+                            <img
+                                src="<?php echo htmlspecialchars($item['image']); ?>"
+                                alt="<?php echo htmlspecialchars($item['title']); ?>"
+                                class="media-detail__img">
+                        </div>
+
+                        <div class="media-detail__body">
+
+                            <div class="media-detail__meta">
+
+                                <span class="media-detail__date">
+                                    <?php echo htmlspecialchars($item['date']); ?>
+                                </span>
+
+                                <div class="media-detail__tags">
+
+                                    <?php if (!empty($item['tags'])): ?>
+
+                                        <?php foreach ($item['tags'] as $tag): ?>
+
+                                            <span class="media-detail__tag">
+                                                <?php echo htmlspecialchars($tag); ?>
+                                            </span>
+
+                                        <?php endforeach; ?>
+
+                                    <?php endif; ?>
+
+                                </div>
+
+                            </div>
+
+                            <h3 class="media-detail__title">
+                                <?php echo htmlspecialchars($item['title']); ?>
+                            </h3>
+
+                            <div class="media-detail__desc">
+
+                                <?php if (is_array($item['description'])): ?>
+
+                                    <?php foreach ($item['description'] as $paragraph): ?>
+
+                                        <p>
+                                            <?php echo htmlspecialchars($paragraph); ?>
+                                        </p>
+
+                                    <?php endforeach; ?>
+
+                                <?php else: ?>
+
+                                    <p>
+                                        <?php echo htmlspecialchars($item['description']); ?>
+                                    </p>
+
+                                <?php endif; ?>
+
+                            </div>
+
+                            <?php if (!empty($item['link'])): ?>
+
+                                <div class="media-detail__link">
+
+                                    <a
+                                        href="<?php echo htmlspecialchars($item['link']); ?>"
+                                        target="_blank"
+                                        rel="noopener"
+                                        class="media-detail__ref-link">
+
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                            <polyline points="15 3 21 3 21 9" />
+                                            <line x1="10" y1="14" x2="21" y2="3" />
+
+                                        </svg>
+
+                                        View Source
+
+                                    </a>
+
+                                </div>
+
+                            <?php endif; ?>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            <?php endforeach; ?>
+
+        </div>
+
+    </div>
+
+<?php endif; ?>

@@ -398,23 +398,28 @@ document.addEventListener("DOMContentLoaded", function () {
   })();
 
   /* ==========================
-     Header Shrink
-  ========================== */
+   Header Shrink
+========================== */
 
   const header = document.querySelector(".header");
-  let isSmall = false;
 
-  window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
-    if (!isSmall && scrollY > 100) {
-      header.classList.add("header-small");
-      isSmall = true;
-    }
-    if (isSmall && scrollY < 60) {
-      header.classList.remove("header-small");
-      isSmall = false;
-    }
-  });
+  if (header) {
+    let isSmall = false;
+
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+
+      if (!isSmall && scrollY > 100) {
+        header.classList.add("header-small");
+        isSmall = true;
+      }
+
+      if (isSmall && scrollY < 60) {
+        header.classList.remove("header-small");
+        isSmall = false;
+      }
+    });
+  }
 
   /* ==========================
    About Page Section System (FINAL)
@@ -1101,120 +1106,71 @@ document.addEventListener("DOMContentLoaded", function () {
 
   initProjectSwiper();
 
-  /* ==========================
-     TABS 
-  ========================== */
-  const tabs = document.querySelectorAll(".media-menu li");
-  const contents = document.querySelectorAll(".media-tab-content");
+  (function () {
+    /* =========================
+       TOP MEDIA TABS
+    ========================= */
+    const mediaTabs = document.querySelectorAll(".media-menu li");
+    const mediaContents = document.querySelectorAll(".media-tab-content");
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", function () {
-      tabs.forEach((t) => t.classList.remove("active"));
-      contents.forEach((c) => c.classList.remove("active"));
+    mediaTabs.forEach((tab) => {
+      tab.addEventListener("click", function () {
+        const targetTab = this.dataset.tab;
 
-      this.classList.add("active");
+        /* active menu */
+        mediaTabs.forEach((t) => t.classList.remove("active"));
+        this.classList.add("active");
 
-      const target = document.getElementById("tab-" + this.dataset.tab);
-      if (target) target.classList.add("active");
-    });
-  });
+        /* active content */
+        mediaContents.forEach((content) => {
+          content.classList.remove("active");
+        });
 
-  /* 
-     SHOW MORE
-   */
-  const buttons = document.querySelectorAll(".media-show-more-btn");
+        const targetContent = document.getElementById("tab-" + targetTab);
 
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", function () {
-      const tabKey = this.dataset.tab;
-      const list = document.getElementById("list-" + tabKey);
-
-      if (!list) return;
-
-      const cards = list.querySelectorAll(".media-card");
-      let visible = parseInt(list.getAttribute("data-visible")) || 5;
-
-      const nextLimit = visible + 5;
-
-      cards.forEach((card, index) => {
-        if (index < nextLimit) {
-          card.classList.remove("media-card--hidden");
+        if (targetContent) {
+          targetContent.classList.add("active");
         }
       });
-
-      list.setAttribute("data-visible", nextLimit);
-
-      // hide button if all shown
-      if (nextLimit >= cards.length) {
-        this.style.display = "none";
-      }
     });
-  });
 
-  /* =============================
-     SIDEBAR CLICK TO FEATURED
-  ============================= */
-  const sidebarItems = document.querySelectorAll(".media-sidebar-item");
+    /* =========================
+       LEFT MEDIA ITEM CLICK
+    ========================= */
+    function initializeMediaPanels() {
+      const mediaLists = document.querySelectorAll(".media-split");
 
-  sidebarItems.forEach((item) => {
-    item.addEventListener("click", function () {
-      const parentTab = this.closest(".media-tab-content");
-      const featured = parentTab.querySelector(".media-featured");
+      mediaLists.forEach((split) => {
+        const items = split.querySelectorAll(".media-list-item");
+        const panels = split.querySelectorAll(".media-detail-panel");
 
-      // Update featured content
-      const img = featured.querySelector(".media-featured-img");
-      const title = featured.querySelector(".media-featured-title");
-      const desc = featured.querySelector(".media-featured-desc");
-      const date = featured.querySelector(".media-featured-date");
-      const tagsContainer = featured.querySelector(".media-tags");
+        items.forEach((item) => {
+          item.addEventListener("click", function () {
+            const targetId = this.dataset.target;
 
-      // Update values
-      img.src = this.querySelector("img")?.src || this.dataset.image;
-      img.alt = this.querySelector(".media-sidebar-title").innerText;
-      title.innerText = this.querySelector(".media-sidebar-title").innerText;
-      date.innerText = this.querySelector(".media-sidebar-date").innerText;
-      desc.innerText = this.dataset.description || this.dataset.desc || "";
+            /* remove active from all left items */
+            items.forEach((i) => i.classList.remove("active"));
 
-      // Update tags
-      if (tagsContainer) {
-        tagsContainer.innerHTML = "";
-        const tags = JSON.parse(this.dataset.tags || "[]");
-        tags.forEach((tag) => {
-          const span = document.createElement("span");
-          span.className = "media-tag";
-          span.innerText = tag;
-          tagsContainer.appendChild(span);
+            /* remove active from all right panels */
+            panels.forEach((panel) => {
+              panel.classList.remove("active");
+            });
+
+            /* activate clicked item */
+            this.classList.add("active");
+
+            /* activate matching panel */
+            const targetPanel = split.querySelector("#" + targetId);
+
+            if (targetPanel) {
+              targetPanel.classList.add("active");
+            }
+          });
         });
-      }
-    });
-  });
-
-  /* 
-   SIDEBAR PAGINATION
- */
-  (function () {
-    let currentPage = 0;
-    const sidebarList = document.getElementById("mediaSidebarList");
-    if (!sidebarList) return;
-
-    const itemsPerPage = parseInt(sidebarList.dataset.itemsPerPage) || 5;
-    const sidebarItems = sidebarList.querySelectorAll(".media-sidebar-item");
-    const totalPages = Math.ceil(sidebarItems.length / itemsPerPage);
-
-    window.mediaPage = function (dir) {
-      currentPage += dir;
-      if (currentPage < 0) currentPage = 0;
-      if (currentPage >= totalPages) currentPage = totalPages - 1;
-
-      sidebarItems.forEach((el, i) => {
-        const page = Math.floor(i / itemsPerPage);
-        el.classList.toggle("d-none", page !== currentPage);
       });
+    }
 
-      document.getElementById("mediaPrev").disabled = currentPage === 0;
-      document.getElementById("mediaNext").disabled =
-        currentPage >= totalPages - 1;
-    };
+    initializeMediaPanels();
   })();
 
   /* =============================
