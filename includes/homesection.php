@@ -87,6 +87,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
 
         <div class="row align-items-center">
 
+            <!-- STATS -->
             <div class="col-lg-3 col-md-12">
                 <div class="row g-4 text-center text-lg-start">
 
@@ -110,10 +111,12 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
                 </div>
             </div>
 
+            <!-- TABS AREA -->
             <div class="col-lg-9 col-md-8 d-none d-md-flex">
 
                 <section class="index-about-us">
                     <div class="index-about-us-container">
+
                         <!-- TABS -->
                         <ul class="nav nav-tabs border-0 mb-4">
                             <?php $first = true; ?>
@@ -121,19 +124,18 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
                             <?php foreach ($whySC as $id => $item): ?>
 
                                 <?php
-                                $hasAny = isset($item['tabname']) && !empty($item['tabname']);
-
-                                if (!$hasAny) continue;
-
-                                $label = isset($item['tabname']) ? $item['tabname'] : 'Section ' . $id;
+                                if (empty($item['tabname'])) continue;
+                                $label = $item['tabname'];
                                 ?>
 
-                                <li class="nav-item ">
+                                <li class="nav-item">
                                     <button
                                         class="nav-link serif-link <?php echo $first ? 'active' : '' ?>"
                                         data-bs-toggle="tab"
                                         data-bs-target="#why<?php echo $id ?>">
+
                                         <?php echo htmlspecialchars($label) ?>
+
                                     </button>
                                 </li>
 
@@ -144,50 +146,87 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
 
                         <!-- TAB CONTENT -->
                         <div class="tab-content">
+
                             <?php $first = true; ?>
 
                             <?php foreach ($whySC as $id => $item): ?>
 
                                 <?php
-                                $hasTitle = isset($item['title']) && !empty($item['title']);
-                                $hasText  = isset($item['text']) && !empty($item['text']);
-                                $hasImage = isset($item['image']) && !empty($item['image']);
-
+                                $hasTitle = !empty($item['title']);
+                                $hasText  = !empty($item['text']);
+                                $hasImage = !empty($item['image']);
                                 $hasContent = $hasTitle || $hasText;
                                 ?>
 
                                 <div class="tab-pane fade <?php echo $first ? 'show active' : '' ?>" id="why<?php echo $id ?>">
-                                    <div class="row align-items-center">
+
+                                    <div class="row align-items-stretch g-4">
 
                                         <?php if ($hasContent): ?>
-                                            <div class="<?php echo $hasImage ? 'col-md-6' : 'col-md-12' ?>">
+                                            <div class="<?php echo $hasImage ? 'col-md-6' : 'col-md-12' ?> d-flex">
 
-                                                <?php if ($hasTitle): ?>
-                                                    <h2 class="text-orange">
-                                                        <?php echo htmlspecialchars($item['title']) ?>
-                                                    </h2>
-                                                <?php endif; ?>
+                                                <div class="tab-content-box w-100">
 
-                                                <?php if ($hasText): ?>
-                                                    <p>
-                                                        <?php echo htmlspecialchars($item['text']) ?>
-                                                    </p>
-                                                <?php endif; ?>
+                                                    <?php if ($hasTitle): ?>
+                                                        <h2 class="text-orange mb-3">
+                                                            <?php echo htmlspecialchars($item['title']) ?>
+                                                        </h2>
+                                                    <?php endif; ?>
+
+                                                    <?php if ($hasText): ?>
+
+                                                        <?php if (is_array($item['text'])): ?>
+
+                                                            <ul class="list-unstyled mt-3">
+
+                                                                <?php foreach ($item['text'] as $point): ?>
+                                                                    <li class="d-flex align-items-start mb-3">
+
+                                                                        <span class="me-2 text-orange">
+                                                                            <i class="fa-solid fa-hand-point-right"></i>
+                                                                        </span>
+
+                                                                        <span>
+                                                                            <?php echo htmlspecialchars($point) ?>
+                                                                        </span>
+
+                                                                    </li>
+                                                                <?php endforeach; ?>
+
+                                                            </ul>
+
+                                                        <?php else: ?>
+
+                                                            <p>
+                                                                <?php echo htmlspecialchars($item['text']) ?>
+                                                            </p>
+
+                                                        <?php endif; ?>
+
+                                                    <?php endif; ?>
+
+                                                </div>
 
                                             </div>
                                         <?php endif; ?>
 
-
                                         <?php if ($hasImage): ?>
-                                            <div class="<?php echo $hasContent ? 'col-md-6' : 'col-md-12' ?>">
-                                                <img
-                                                    src="<?php echo htmlspecialchars($item['image']) ?>"
-                                                    class="zoomable img-fluid rounded"
-                                                    alt="<?php echo htmlspecialchars(isset($item['title']) ? $item['title'] : 'image') ?>">
+                                            <div class="<?php echo $hasContent ? 'col-md-6' : 'col-md-12' ?> d-flex">
+
+                                                <div class="tab-image-box w-100">
+
+                                                    <img
+                                                        src="<?php echo htmlspecialchars($item['image']) ?>"
+                                                        class="zoomable tab-img"
+                                                        alt="<?php echo htmlspecialchars($item['title'] ?? 'image') ?>">
+
+                                                </div>
+
                                             </div>
                                         <?php endif; ?>
 
                                     </div>
+
                                 </div>
 
                                 <?php $first = false; ?>
@@ -195,13 +234,15 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
                             <?php endforeach; ?>
 
                         </div>
+
                     </div>
                 </section>
 
             </div>
-        </div>
-    </div>
 
+        </div>
+
+    </div>
 </section>
 
 
@@ -321,7 +362,7 @@ if (isset($projects) && is_array($projects)) {
                                     class="img-fluid rounded">
                             </div>
                             <div class="category-choice mb-3">
-                                <strong>Relevant Projects:</strong>
+                                <strong class="category-choice-header">Relevant Projects:</strong>
                                 <?php if (!empty($group['chosen'])): ?>
                                     <ul class="mb-0 ps-3">
                                         <?php foreach ($group['chosen'] as $chosenProject): ?>

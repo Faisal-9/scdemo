@@ -14,18 +14,8 @@ $heroSlides = [
     ],
 
     [
-        "id" => "structure",
-        "title" => "Physical Structure<br>& Real Estate",
-        "desc" => "Engineering and constructing modern commercial, residential, and industrial structures with a focus on durability, efficiency, and long-term value.",
-        "image" => "assets/images/slider_imgs/hero_structure1.png",
-        "button" => "Read More",
-        "link" => "#",
-        "indicator" => "Structure & Building"
-    ],
-
-    [
         "id" => "transport",
-        "title" => "Transportation<br>Infrastructure",
+        "title" => "Transportation",
         "desc" => "Designing and developing roads, highways, and transport networks that enhance connectivity, trade flow, and regional economic integration.",
         "image" => "assets/images/slider_03.jpg",
         "button" => "Read More",
@@ -34,8 +24,18 @@ $heroSlides = [
     ],
 
     [
+        "id" => "structure",
+        "title" => "Building",
+        "desc" => "Engineering and constructing modern commercial, residential, and industrial structures with a focus on durability, efficiency, and long-term value.",
+        "image" => "assets/images/slider_imgs/hero_structure1.png",
+        "button" => "Read More",
+        "link" => "#",
+        "indicator" => "Structure & Building"
+    ],
+
+    [
         "id" => "water",
-        "title" => "Water Resources<br>& Dams Infrastructure",
+        "title" => "Water Resources",
         "desc" => "Building sustainable water systems, dams, and irrigation infrastructure to support agriculture, energy generation, and long-term water security.",
         "image" => "assets/images/slider_03.jpg",
         "button" => "Read More",
@@ -80,7 +80,13 @@ $whySC = [
     '01' => [
         'tabname' => 'Delivering Experience',
         'title' => 'Delivering Experience',
-        'text' => 'With a proven track record across diverse and challenging environments, we bring deep industry experience to every project we undertake. Our team is driven by a commitment to excellence, delivering projects on time, within budget, and to the highest standards of quality and safety. By combining practical expertise with a results-oriented approach, we ensure consistent performance, reliability, and value for our clients across energy, infrastructure, and mining sectors.',
+        'text' => [
+            'Proven track record across diverse and challenging project environments.',
+            'Deep industry expertise in energy, infrastructure, and mining sectors.',
+            'Commitment to delivering projects on time and within budget.',
+            'Strong focus on quality, safety, reliability, and operational excellence.',
+            'Results-driven approach that ensures long-term value for clients.'
+        ],
         'image' => 'assets/images/12.jpg'
     ],
     '02' => [
@@ -92,7 +98,13 @@ $whySC = [
     '03' => [
         'tabname' => 'Technical Capabilities',
         'title' => 'Technical Capabilities',
-        'text' => 'We combine advanced engineering expertise with cutting-edge technologies to deliver complex projects across energy, infrastructure, and mining sectors. Our multidisciplinary teams bring precision, innovation, and efficiency to every phase—from design and planning to execution and commissioning. With a focus on quality, safety, and sustainability, we provide reliable, scalable solutions that meet the highest industry standards and drive long-term value.',
+        'text' => [
+            'Advanced engineering solutions for energy, infrastructure, and mining projects.',
+            'Multidisciplinary teams managing projects from design and planning to execution and commissioning.',
+            'Use of modern technologies and industry best practices to improve efficiency, precision, and performance.',
+            'Strong commitment to quality, safety, sustainability, and international standards.',
+            'Delivery of reliable and scalable solutions that create long-term operational value.'
+        ],
         'image' => 'assets/images/11.jpg'
     ]
 ];
