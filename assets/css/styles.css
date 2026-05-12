@@ -1900,10 +1900,12 @@ img {
 /* CTA */
 .btn-cta {
   display: inline-block;
+  margin-top: 1dvh;
   padding: 10px 20px;
   background: #e8461e;
   color: #fff;
   text-decoration: none;
+  border-radius: 4px;
 }
 
 .btn-cta.small {
