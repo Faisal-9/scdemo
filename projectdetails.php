@@ -111,9 +111,9 @@ if (!$project) {
     <?php include("includes/footerLink.php"); ?>
 
 
-    /* ==========================
-    PROJECT BACK BUTTON (SMART)
-    ========================== */
+
+    <!-- PROJECT BACK BUTTON (SMART) -->
+
     <script>
         function goBackToProjects() {
             const lastPage = sessionStorage.getItem("projectsPage");
@@ -121,7 +121,6 @@ if (!$project) {
             if (lastPage) {
                 window.location.href = lastPage;
             } else {
-                // fallback (if user opened directly)
                 history.back();
             }
         }

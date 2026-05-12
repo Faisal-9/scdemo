@@ -20,13 +20,13 @@ $projects = [
         ],
 
         'description' =>
-        'Single circuit 220 kV electrical transmission system about 60KM and delivers power from Pul-Alam Substation located in Pul-e-Alam, Logar to a new substation, Gardez Substation, located in Gardez, Paktiya.The transmission system towers are installed  for double circuit 220 kV transmission lines.',
+        'This was a Design-Build / EPC project for a 220kV single-circuit transmission line (approx. 60 km) from Pul-e-Alam to Gardez, including towers designed for double-circuit capability. The scope included conductors, OPGW communication system, foundations, stringing, ROW clearance, security, and demining across rough and hilly terrain. The project has been successfully completed.',
 
         'scope' => [
-            'Single circuit 220 kV',
-            '60KM and power delivery',
-            'From Pul-Alam Substation Gardez Substation',
-            'Double circuit 220 kV transmission lines',
+            'Construction of a 220kV transmission line from Pul-e-Alam to Gardez',
+            'Installation of towers, conductors, and OPGW system',
+            'Foundation, stringing, ROW, security, and demining works',
+            'Construction across rough and hilly terrain',
         ]
 
     ],
@@ -51,13 +51,13 @@ $projects = [
         ],
 
         'description' =>
-        'Single circuit 220 kV electrical transmission system is delivering power from Charikar Substation located in Charikar, Parwan to a new substation, Gulbahar Substation, located in Gulbahar, Kapisa. The transmission system towers are installed  for double circuit 220 kV transmission lines.',
+        'This was a Design-Build / EPC project for a 220kV single-circuit transmission line from Charikar to Gulbahar. The scope included towers, conductors, insulators, OPGW system, foundations, ROW management, security, and civil works, with towers designed for future double-circuit expansion. The project has been successfully completed.',
 
         'scope' => [
-            'Single circuit 220 kV',
-            'from Charikar Substation',
-            'double circuit 220 kV transmission line',
-            '',
+            'Construction of a 220kV transmission line from Charikar to Gulbahar',
+            'Installation of towers, conductors, insulators, and OPGW system',
+            'Foundation, ROW, security, and civil works',
+            'Construction across rough, hilly, and desert terrain',
         ]
 
     ],
@@ -81,13 +81,13 @@ $projects = [
         ],
 
         'description' =>
-        'Single circuit 110 kV electrical transmission system is delivering power from Gulbahar Substation located in Gulbahar, Kapisa to a new substation, Nejrab Substation, located in Nejrab, Kapisa.',
+        'This was a Design-Build / EPC project for a 110kV single-circuit transmission line from Gulbahar to Nejrab. The scope included towers, conductors, OPGW communication system, foundations, ROW coordination, security, and demining in mountainous terrain. The project has been successfully completed.',
 
         'scope' => [
-            'Single circuit 110 kV',
-            ' from Gulbahar Substation',
-            '',
-            '',
+            'Construction of a 110kV transmission line from Gulbahar to Nejrab',
+            'Installation of towers, conductors, and OPGW communication system',
+            'Foundation, ROW, security, and demining works',
+            'Construction across mountainous and difficult terrain',
         ]
 
     ],
@@ -111,13 +111,14 @@ $projects = [
         ],
 
         'description' =>
-        'Gardiz Substation is located in Gardiz city Paktya Province. Gardiz substation have one 220 kV line bay, 20 kV yard with indoor switchgear, two 20 kV line bays each capable of expansion to 34 MVA, line dead-end structures for connection to four 20 kV distribution lines. One high voltage 220/20 kV 16 MVA transformer. Substation designs include a control building utilizing the OPGW for SCADA/EMS. The control building have DABS industry standard bus, transformers, breakers, and line protection. The Substation is designed and constructed according to International standards, it is fully automatic substation and can be controlled from National Load Center via Optical fibers link and SCADA system.',
+        'This was a Design-Build / EPC project for a new 220kV substation located in Gardez, Paktya Province, including 20kV switchgear, a 220/20kV transformer (16 MVA), SCADA/EMS, OPGW communication, grounding, civil works, and provision for future expansion. The project has been successfully completed.',
 
         'scope' => [
             '',
-            'One high voltage 220/20 kV 16 MVA transformer',
-            'one 220 kV line bay, 20 kV yard with indoor switchgear, two 20 kV line bays',
-            '',
+            'Construction of a new 220kV substation in Gardez',
+            'Installation of 20kV switchgear, protection, and SCADA systems',
+            'OPGW communication, grounding, and civil works',
+            'Future expansion capability included',
         ]
 
     ],
@@ -143,13 +144,13 @@ $projects = [
         ],
 
         'description' =>
-        'Gulbahar substation will serve the area of Gulbahar and is a junction point for high voltage transmission line to other substations located in Panjshir and Kapisa Provinces.Gulbahar substation have one 220 kV line bay and two 110 kV line bays. The 220 kV line bay will be used for the connection to the new single circuit transmission system from Charikar Substaion. The 110 kV line bays will be used for distribution to a new substation located in Bazarak, Panjshir and an additional 110 kV line bay for distribution to a new substation, located in Nejrab, Kapisa. It has a 20 kV yard with indoor switchgear, connection to two 220/20 kV transformers rated 16 MVA each, and four 20 kV line bays each capable of expansion to 34 MVA. The 20 kV line bays will be designed and installed. It has two 220/110 kV autotransformer for distribution to other substations rated 160 MVA each. Substation designs include a control building utilizing the OPGW for SCADA/EMS. The control building include DABS industry standard bus, transformers, breakers, and line protection. It has been sized and equipped with panels to allow expansion as indicated for substation line bays.',
+        'This was a Design-Build / EPC project for a new 220kV/110kV/20kV substation located in Gulbahar, Kapisa Province, serving as a major grid interconnection hub, including transformers, switchgear, SCADA/EMS, OPGW communication, civil works, and future expansion capability. The project has been successfully completed.',
 
         'scope' => [
-            ' one 220 kV line bay and two 110 kV line bays',
-            '',
-            '',
-            '',
+            'Construction of a new 220kV/110kV/20kV substation in Gulbahar',
+            'Installation of transformers, switchgear, protection, and SCADA systems',
+            'OPGW communication and civil works',
+            'Designed for future expansion',
         ]
 
     ],

@@ -1900,7 +1900,7 @@ img {
 /* CTA */
 .btn-cta {
   display: inline-block;
-  margin: 1dvh 0 ;
+  margin: 1dvh 0;
   padding: 10px 20px;
   background: #e8461e;
   color: #fff;
@@ -2219,7 +2219,12 @@ img {
   margin-bottom: 5px;
   font-size: 15px;
   color: #444;
-  line-height: 1.6;
+  line-height: 1.5;
+}
+
+.project-description-box p {
+  text-align: justify;
+  margin: 0;
 }
 
 /* Left Info Column */
