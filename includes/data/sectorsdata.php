@@ -130,11 +130,11 @@ $sectors = [
         ],
 
         "stats" => [
-            ["value" => "30+", "label" => "Projects"],
-            ["value" => "8+",    "label" => "Substations"],
-            ["value" => "500km+", "label" => "Transmission Lines"],
-            ["value" => "220kV", "label" => "Max Voltage"],
-            ["value" => "$200M+", "label" => "Total Value"],
+            ["value" => "50+", "label" => "Projects"],
+            ["value" => "30+",    "label" => "Substations"],
+            ["value" => "700km+", "label" => "Transmission Lines"],
+            ["value" => "500kV", "label" => "Max Voltage"],
+            ["value" => "$350M+", "label" => "Total Value"],
         ],
 
         "why" => [
