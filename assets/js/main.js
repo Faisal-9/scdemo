@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+
   /* =====================================
      COUNTER ANIMATION
   ===================================== */

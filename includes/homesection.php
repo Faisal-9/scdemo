@@ -4,6 +4,7 @@ include_once("includes/data/projectsdata.php");
 include_once("includes/data/servicesdata.php");
 include_once("includes/data/aboutdata.php");
 include_once("includes/data/mediadata.php");
+$selected_sector = isset($_GET['sector']) ? strtolower($_GET['sector']) : 'all';
 
 function parseMediaDate($date)
 {
@@ -43,7 +44,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
                             <p class="hero-desc">
                                 <?php echo $slide['desc'] ?>
                             </p>
-                            <a href="<?php echo $slide['link'] ?>" class="hero-btn">
+                            <a href="projects.php" class="hero-btn">
                                 Explore Projects
                             </a>
                         </div>
