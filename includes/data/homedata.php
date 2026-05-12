@@ -17,10 +17,10 @@ $heroSlides = [
         "id" => "transport",
         "title" => "Transportation",
         "desc" => "Designing and developing roads, highways, and transport networks that enhance connectivity, trade flow, and regional economic integration.",
-        "image" => "assets/images/slider_03.jpg",
+        "image" => "assets/images/slider_imgs/transportation.jpeg",
         "button" => "Read More",
         "link" => "#",
-        "indicator" => "Transport Engineering & Development"
+        "indicator" => "Transportation Infrastructure"
     ],
 
     [
@@ -30,7 +30,7 @@ $heroSlides = [
         "image" => "assets/images/slider_imgs/hero_structure1.png",
         "button" => "Read More",
         "link" => "#",
-        "indicator" => "Structure & Building"
+        "indicator" => "Structural & Building Engineering"
     ],
 
     [
@@ -46,7 +46,7 @@ $heroSlides = [
     [
         "id" => "mining",
         "title" => "Mining",
-        "desc" => "Providing end-to-end mining solutions including exploration support, site development, and infrastructure for efficient mineral extraction.",
+        "desc" => "Providing end-to-end mining solutions, including exploration support, site development, and infrastructure for efficient mineral extraction.",
         "image" => "assets/images/slider_imgs/heromining1.png",
         "button" => "Read More",
         "link" => "#",
@@ -158,24 +158,24 @@ $indexservices = [
 
 /* ================= ABOUT US ================= */
 /*  FEATURED PROJECTS  */
-$major_projects = [
-    [
-        'title' => 'ABC Infrastructure Project',
-        'image' => 'assets/images/3.jpg'
-    ],
-    [
-        'title' => 'Highway Construction Project',
-        'image' => 'assets/images/4.jpg'
-    ],
-    [
-        'title' => 'International Airport Development',
-        'image' => 'assets/images/4.jpg'
-    ],
-    [
-        'title' => 'International Airport Development',
-        'image' => 'assets/images/4.jpg'
-    ],
-];
+// $major_projects = [
+//     [
+//         'title' => 'ABC Infrastructure Project',
+//         'image' => 'assets/images/3.jpg'
+//     ],
+//     [
+//         'title' => 'Highway Construction Project',
+//         'image' => 'assets/images/4.jpg'
+//     ],
+//     [
+//         'title' => 'International Airport Development',
+//         'image' => 'assets/images/4.jpg'
+//     ],
+//     [
+//         'title' => 'International Airport Development',
+//         'image' => 'assets/images/4.jpg'
+//     ],
+// ];
 
 
 /* ================= NEWS ================= */

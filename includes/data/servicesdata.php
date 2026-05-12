@@ -10,8 +10,8 @@ $services = [
         "sub_services" => [
 
             [
-                "id"    => "engineering-survey",
-                "title" => "Engineering Survey",
+                "id"    => "engineering-surveys",
+                "title" => "Engineering Surveys",
                 "items" => [
                     [
                         "title"      => "Feasibility Studies",

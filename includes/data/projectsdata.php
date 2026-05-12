@@ -4,7 +4,7 @@ $projects = [
 
     [
         'id' => 'p1',
-        'name' => 'Logar-Gardiz 220 kV TL',
+        'name' => 'Logar-Gardiz 220 kV Transmission Line ',
         'sector' => 'Power and Energy',
         'category' => 'transmission line',
         'status' => 'Completed',
@@ -1569,7 +1569,7 @@ $projects = [
 
     [
         'id' => 'p74',
-        'name' => 'Amu Darya Crossing Special project',
+        'name' => 'Amu Darya Crossing Special Project',
         'sector' => 'Power and Energy',
         'category' => 'transmission line',
         'status' => 'Ongoing',
@@ -1601,7 +1601,7 @@ $projects = [
 
     [
         'id' => 'p75',
-        'name' => 'Hairatan to Dashti Alwan 500 kV TL',
+        'name' => 'Hairatan to Dasht-e-Alwan 500 kV TL',
         'sector' => 'Power and Energy',
         'category' => 'transmission line',
         'status' => 'Ongoing',
@@ -1665,7 +1665,7 @@ $projects = [
 
     [
         'id' => 'p77',
-        'name' => 'Dashti Alwan 500 kV SS with Shunt Reactor System',
+        'name' => 'Dasht-e-Alwan 500 kV SS with Shunt Reactor System',
         'sector' => 'Power and Energy',
         'category' => 'substation',
         'status' => 'Ongoing',
