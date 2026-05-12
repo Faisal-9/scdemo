@@ -1900,7 +1900,7 @@ img {
 /* CTA */
 .btn-cta {
   display: inline-block;
-  margin-top: 1dvh;
+  margin: 1dvh 0 ;
   padding: 10px 20px;
   background: #e8461e;
   color: #fff;
