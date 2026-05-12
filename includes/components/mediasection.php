@@ -24,29 +24,45 @@ usort($media_items, function ($a, $b) {
 
             <?php foreach ($media_items as $i => $item): ?>
 
-                <div class="media-list-item <?php echo ($i === 0) ? 'active' : '' ?>"
+                <div class="media-list-item <?php echo (
+                                                (!empty($active_id) && $active_id === $item['id']) ||
+                                                (empty($active_id) && $i === 0)
+                                            ) ? 'active' : '' ?>"
                     data-target="<?php echo $tab_key . '-' . $i; ?>"
-                    data-tab="<?php echo $tab_key; ?>">
+                    data-tab="<?php echo $tab_key; ?>"
+                    data-id="<?php echo htmlspecialchars($item['id']); ?>">>
 
-                    <div class="media-list-item__meta">
+                    <!-- THUMBNAIL -->
+                    <div class="media-list-item__thumb">
 
-                        <span class="media-list-item__date">
-                            <?php echo htmlspecialchars($item['date']); ?>
-                        </span>
-
-                        <?php if (!empty($item['tags'][0])): ?>
-                            <span class="media-list-item__first-tag">
-                                <?php echo htmlspecialchars($item['tags'][0]); ?>
-                            </span>
-                        <?php endif; ?>
+                        <img
+                            src="<?php echo htmlspecialchars($item['image']); ?>"
+                            alt="<?php echo htmlspecialchars($item['title']); ?>">
 
                     </div>
 
-                    <p class="media-list-item__title">
-                        <?php echo htmlspecialchars($item['title']); ?>
-                    </p>
+                    <!-- CONTENT -->
+                    <div class="media-list-item__content">
 
-                    <span class="media-list-item__arrow">→</span>
+                        <div class="media-list-item__meta">
+
+                            <span class="media-list-item__date">
+                                <?php echo htmlspecialchars($item['date']); ?>
+                            </span>
+
+                            <?php if (!empty($item['tags'][0])): ?>
+                                <span class="media-list-item__first-tag">
+                                    <?php echo htmlspecialchars($item['tags'][0]); ?>
+                                </span>
+                            <?php endif; ?>
+
+                        </div>
+
+                        <p class="media-list-item__title">
+                            <?php echo htmlspecialchars($item['title']); ?>
+                        </p>
+
+                    </div>
 
                 </div>
 
@@ -59,7 +75,10 @@ usort($media_items, function ($a, $b) {
 
             <?php foreach ($media_items as $i => $item): ?>
 
-                <div class="media-detail-panel <?php echo ($i === 0) ? 'active' : '' ?>"
+                <div class="media-detail-panel <?php echo (
+                                                    (!empty($active_id) && $active_id === $item['id']) ||
+                                                    (empty($active_id) && $i === 0)
+                                                ) ? 'active' : '' ?>"
                     id="<?php echo $tab_key . '-' . $i; ?>">
 
                     <div class="media-split__detail">

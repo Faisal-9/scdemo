@@ -167,11 +167,11 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
 
                                                 <div class="tab-content-box w-100">
 
-                                                    <?php if ($hasTitle): ?>
+                                                    <!-- <?php if ($hasTitle): ?>
                                                         <h2 class="text-orange mb-3">
                                                             <?php echo htmlspecialchars($item['title']) ?>
                                                         </h2>
-                                                    <?php endif; ?>
+                                                    <?php endif; ?> -->
 
                                                     <?php if ($hasText): ?>
 
@@ -454,9 +454,13 @@ if (isset($projects) && is_array($projects)) {
                             </div>
 
                             <h3 class="index-news-title serif-link">
-                                <a href="<?php echo isset($news['link']) ? htmlspecialchars($news['link']) : 'media.php?tab=' . strtolower(htmlspecialchars($news['_type'])); ?>">
+
+                                <a href="media.php?tab=<?php echo strtolower(htmlspecialchars($news['_type'])); ?>&id=<?php echo htmlspecialchars($news['id']); ?>">
+
                                     <?php echo htmlspecialchars($news['title']); ?>
+
                                 </a>
+
                             </h3>
 
                         </div>
@@ -476,7 +480,6 @@ if (isset($projects) && is_array($projects)) {
 
     </div>
 </section>
-
 
 
 

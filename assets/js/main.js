@@ -1147,6 +1147,8 @@ document.addEventListener("DOMContentLoaded", function () {
         items.forEach((item) => {
           item.addEventListener("click", function () {
             const targetId = this.dataset.target;
+            const itemId = this.dataset.id;
+            const tabName = this.dataset.tab;
 
             /* remove active from all left items */
             items.forEach((i) => i.classList.remove("active"));
@@ -1165,6 +1167,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (targetPanel) {
               targetPanel.classList.add("active");
             }
+
+            /* update URL (NO reload, smooth behavior) */
+            const newUrl =
+              window.location.pathname + "?tab=" + tabName + "&id=" + itemId;
+
+            history.replaceState(null, "", newUrl);
           });
         });
       });
