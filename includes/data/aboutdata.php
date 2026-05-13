@@ -2,7 +2,7 @@
 
 $generalInfo = [
     'title' => 'Company Overview',
-    'content' => "Since 2007, State Corps has grown into one of Afghanistan's leading infrastructure and energy companies, delivering complex projects for public institutions and international partners. Our core strength lies in power infrastructure, including transmission lines, substations, and distribution systems, supported by extensive capabilities in design, construction, and strategic project execution.",
+    'content' => "State Corps warmly welcomes you and appreciates your interest in our company. For approximately two decades, we have grown into one of Afghanistan's leading construction and energy firms, delivering high-quality projects through our skilled workforce and experienced management. From major USACE projects to high-voltage transmission lines and substations, we remain committed to excellence, innovation, and contributing to Afghanistan's development.",
     'items' => [
         [
             'year' => '2007',
@@ -20,7 +20,7 @@ $generalInfo = [
             'year' => '2014',
             'title' => 'International Expansion',
             'description' => 'Established offices in Türkiye and the United States.',
-            'img' => 'assets/images/2.jpg',
+            'img' => 'assets/images/about/presenceindex.jpeg',
         ],
         [
             'year' => '2021',
@@ -38,7 +38,7 @@ $generalInfo = [
             'year' => '2025',
             'title' => 'Uzbek-Afghan Energy Projects',
             'description' => 'Transmission Lines, Substations, and Distribution projects with MEW.',
-            'img' => 'assets/images/2.jpg',
+            'img' => 'assets/images/about/0925-kabul.jpeg',
         ]
     ]
 ];
@@ -47,10 +47,10 @@ $generalInfo = [
 $missionVision = [
     'title'           => 'Mission & Vision',
 
-    'mission'         => "State Corps' mission is to strengthen Afghanistan's future by delivering high-impact projects across transportation, manufacturing, energy, and mining — creating lasting economic value and advancing the nation toward self-reliance and sustainable growth.",
+    'mission'         => "To engineer a sustainable and empowered future for Afghanistan through reliable energy and robust infrastructure, delivering excellence, innovation, and value in every project we undertake.",
 
     'mission_img'     => 'assets/images/growth.jpg',
-    'vision'          => "State Corps aspires to be Afghanistan's leading strategic investor and developer — advancing progress across Transportation, Manufacturing, Energy, and Mining through innovation, strategic partnerships, and responsible investment.",
+    'vision'          => "To be the leading and most trusted engineering and construction partner in the region, recognized for our technical expertise and transformative impact on infrastructure and energy development.",
 
     'vision_img'      => 'assets/images/growth.jpg',
     'core_values_img' => 'assets/images/growth.jpg',
@@ -158,6 +158,14 @@ $awards = [
         [
             'name' => 'Operational Safety Recognition',
             'logo' => 'assets/images/awards/3_Cert.jpg'
+        ],
+        [
+            'name' => 'VAT Registration Certificate',
+            'logo' => 'assets/images/awards/VAT-certificate.png'
+        ],
+        [
+            'name' => 'BECO Expo Certificate',
+            'logo' => 'assets/images/awards/beco-expo-cert.png'
         ]
     ]
 ];
