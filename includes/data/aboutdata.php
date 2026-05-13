@@ -2,7 +2,7 @@
 
 $generalInfo = [
     'title' => 'Company Overview',
-    'content' => "Since 2007, State Corps has grown into one of Afghanistan's leading infrastructure and energy companies, delivering complex projects for public institutions and international partners. Our core strength lies in power infrastructure, including transmission lines, substations, and distribution systems, supported by broader capabilities in design, construction, and strategic project delivery.",
+    'content' => "Since 2007, State Corps has grown into one of Afghanistan's leading infrastructure and energy companies, delivering complex projects for public institutions and international partners. Our core strength lies in power infrastructure, including transmission lines, substations, and distribution systems, supported by extensive capabilities in design, construction, and strategic project execution.",
     'image' => 'assets/images/12.jpg',
 ];
 
