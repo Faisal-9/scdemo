@@ -1244,13 +1244,15 @@ $projects = [
         ],
 
         'description' =>
-        'This contract was signed between Da Afghanistan Breshna Sherkat (DABS) and State Corps, The project covers the -Design, Supply, Construction, Erection, Testing and Commissioning of Four Substations of 110/20 kV at Chesht Sharif, Hobi, Karokh & Pashton Zarghoon districts of Herat province of Afghanistan',
+        'This Design-Build / EPC project was executed by State Corps as a subcontractor to Angelique International Ltd., with Da Afghanistan Breshna Sherkat (DABS) as the end client, involving engineering, supply, installation, testing, and commissioning of 20kV MV and LV distribution networks in Wazai Zadran and Gardez Districts, Paktya Province. The scope included construction of 6 MV feeders (159.9 km) and LV network (283.45 km), installation of 160 distribution transformers, 7,727 concrete poles, and 2,410 meter boxes, along with complete system integration and commissioning for reliable power distribution.',
 
         'scope' => [
-            'Four Substations of 110/20 kV',
-            '',
-            '',
-            '',
+            'Design-Build / EPC project',
+            'Survey, design, installation, testing, and commissioning of MV/LV networks',
+            'Construction of 6 MV feeders (159.9 km) and LV network (283.45 km)',
+            'Installation of 160 distribution transformers and 7,727 concrete poles',
+            'Installation of 2,410 meter boxes',
+            'Complete MV/LV network execution and commissioning for reliable power distribution'
         ]
 
     ],
