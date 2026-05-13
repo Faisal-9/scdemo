@@ -7,7 +7,7 @@ $heroSlides = [
         "id" => "energy",
         "title" => "Power & Energy",
         "desc" => "Delivering large-scale power generation, transmission, and energy infrastructure projects that ensure reliable and sustainable energy supply for national and industrial growth.",
-        "image" => "assets/images/slider_imgs/hero_energy1.jpg",
+        "image" => "assets/images/home/slider_imgs/hero_energy1.jpg",
         "button" => "Read More",
         "link" => "#",
         "indicator" => "Our Energy Expertise"
@@ -17,7 +17,7 @@ $heroSlides = [
         "id" => "transport",
         "title" => "Transportation",
         "desc" => "Designing and developing roads, highways, and transport networks that enhance connectivity, trade flow, and regional economic integration.",
-        "image" => "assets/images/slider_imgs/transportation.jpeg",
+        "image" => "assets/images/home/slider_imgs/hero_transportation1.jpg",
         "button" => "Read More",
         "link" => "#",
         "indicator" => "Transportation Infrastructure"
@@ -27,7 +27,7 @@ $heroSlides = [
         "id" => "structure",
         "title" => "Building",
         "desc" => "Engineering and constructing modern commercial, residential, and industrial structures with a focus on durability, efficiency, and long-term value.",
-        "image" => "assets/images/slider_imgs/hero_structure1.png",
+        "image" => "assets/images/home/slider_imgs/hero_structure1.png",
         "button" => "Read More",
         "link" => "#",
         "indicator" => "Structural & Building Engineering"
@@ -37,7 +37,7 @@ $heroSlides = [
         "id" => "water",
         "title" => "Water Resources",
         "desc" => "Building sustainable water systems, dams, and irrigation infrastructure to support agriculture, energy generation, and long-term water security.",
-        "image" => "assets/images/slider_03.jpg",
+        "image" => "assets/images/home/slider_imgs/hero_water1.jpg",
         "button" => "Read More",
         "link" => "#",
         "indicator" => "Sustainable Water Management"
@@ -47,7 +47,7 @@ $heroSlides = [
         "id" => "mining",
         "title" => "Mining",
         "desc" => "Providing end-to-end mining solutions, including exploration support, site development, and infrastructure for efficient mineral extraction.",
-        "image" => "assets/images/slider_imgs/heromining1.png",
+        "image" => "assets/images/home/slider_imgs/hero_mining1.png",
         "button" => "Read More",
         "link" => "#",
         "indicator" => "Mining & Mineral Operations"
@@ -57,7 +57,7 @@ $heroSlides = [
 
 
 /* ================= WHY STATE CORPS ================= */
-$statsBg = "assets/images/about.jpg";
+$statsBg = "assets/images/home/whybg1.jpg";
 
 $stats = [
     ['number' => 19, 'suffix' => '+', 'label' => 'Years of Excellence'],

@@ -4,7 +4,7 @@ $services = [
 
     "engineeringanddesign" => [
         "title"      => "Engineering and Design",
-        "hero_image" => "assets/images/8.jpg",
+        "hero_image" => "assets/images/services/service-eng-hero.jpg",
         "hero_text"  => "Delivering integrated engineering and design solutions across every discipline.",
 
         "sub_services" => [
@@ -373,7 +373,7 @@ $services = [
 
     "implementation" => [
         "title"      => "Project Delivery",
-        "hero_image" => "assets/images/slider_03.jpg",
+        "hero_image" => "assets/images/services/service-del-hero.jpg",
         "hero_text"  => "Delivering integrated project delivery solutions from execution and construction through commissioning, operations, and long-term asset performance.",
 
         "sub_services" => [
@@ -616,7 +616,7 @@ $services = [
 
     "mining" => [
         "title" => "Mining",
-        "hero_image" => "assets/images/slider_imgs/heromining1.png",
+        "hero_image" => "assets/images/services/service-mining-hero.png",
         "hero_text" => "Delivering comprehensive mining solutions from exploration to sustainable extraction.",
 
         "sub_services" => [
