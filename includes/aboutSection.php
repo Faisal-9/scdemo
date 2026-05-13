@@ -4,7 +4,6 @@ include("includes/data/aboutdata.php");
 $aboutSections = [
     'general-info' => $generalInfo,
     'mission-vision' => $missionVision,
-    'milestones' => $milestones,
     'clients' => $clients,
     'certificates' => $certificates,
     'awards' => $awards,
@@ -41,17 +40,57 @@ $aboutSections = [
 
                     <!-- COMPANY OVERVIEW -->
                     <section id="general-info" class="about-section-block about-panel active py-1">
-                        <h2 class="text-center mb-3">Company Overview</h2>
+                        <h2 class="text-center mb-3"><?php echo $generalInfo['title'] ?></h2>
                         <div class="general-info-content">
                             <p><?php echo $generalInfo['content'] ?></p>
                         </div>
-                        <?php if (!empty($generalInfo['image'])): ?>
-                            <div class="general-info-image mt-4">
-                                <img src="<?php echo $generalInfo['image'] ?>"
-                                    alt="State Corps Company Overview"
-                                    class="zoomable img-fluid rounded-3 w-100 center center ">
+
+                        <!-- GROWTH TIMELINE -->
+                        <div class="mt-4">
+                            <div class="row g-4 align-items-start">
+
+                                <!-- TIMELINE LIST -->
+                                <div class="col-lg-5">
+                                    <div class="timeline-list">
+
+                                        <?php foreach ($generalInfo['items'] as $i => $mile): ?>
+                                            <div class="timeline-item <?php echo $i === 0 ? 'active' : '' ?>"
+                                                data-index="<?php echo $i ?>"
+                                                data-year="<?php echo htmlspecialchars($mile['year']) ?>"
+                                                data-title="<?php echo htmlspecialchars($mile['title']) ?>"
+                                                data-desc="<?php echo htmlspecialchars($mile['description']) ?>"
+                                                data-img="<?php echo htmlspecialchars($mile['img']) ?>">
+
+                                                <span class="year-badge"><?php echo $mile['year'] ?></span>
+                                                <span class="title-text serif-link"><?php echo $mile['title'] ?></span>
+
+                                            </div>
+                                        <?php endforeach; ?>
+
+                                    </div>
+                                </div>
+
+                                <!-- DETAIL PANEL -->
+                                <div class="col-lg-7">
+                                    <div class="timeline-detail">
+
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <h4 id="mileTitle"><?php echo $generalInfo['items'][0]['title'] ?></h4>
+                                            <span id="mileYear" class="year-badge"><?php echo $generalInfo['items'][0]['year'] ?></span>
+                                        </div>
+
+                                        <p id="mileDesc"><?php echo $generalInfo['items'][0]['description'] ?></p>
+
+                                        <img id="mileImg"
+                                            src="<?php echo htmlspecialchars($generalInfo['items'][0]['img']) ?>"
+                                            alt="<?php echo htmlspecialchars($generalInfo['items'][0]['title']) ?>"
+                                            class="img-fluid rounded-3 mt-2 zoomable">
+
+                                    </div>
+                                </div>
+
                             </div>
-                        <?php endif; ?>
+                        </div>
                     </section>
 
                     <!-- MISSION & VISION -->
@@ -112,53 +151,6 @@ $aboutSections = [
 
                     </section>
 
-                    <!-- GROWTH -->
-                    <section id="milestones" class="about-section-block about-panel py-1">
-                        <h2 class="text-center mb-4"><?php echo $milestones['title'] ?></h2>
-
-                        <div class="row g-4 align-items-start">
-
-                            <!-- TIMELINE -->
-                            <div class="col-lg-5">
-                                <div class="timeline-list">
-
-                                    <?php foreach ($milestones['items'] as $i => $mile): ?>
-                                        <div class="timeline-item <?php echo $i === 0 ? 'active' : '' ?>"
-                                            data-index="<?php echo $i ?>"
-                                            data-year="<?php echo $mile['year'] ?>"
-                                            data-title="<?php echo $mile['title'] ?>"
-                                            data-desc="<?php echo $mile['description'] ?>"
-                                            data-img="assets/images/taloqan.jpg">
-
-                                            <span class="year-badge"><?php echo $mile['year'] ?></span>
-                                            <span class="title-text serif-link"><?php echo $mile['title'] ?></span>
-
-                                        </div>
-                                    <?php endforeach; ?>
-
-                                </div>
-                            </div>
-
-                            <!-- DETAIL -->
-                            <div class="col-lg-7">
-                                <div class="timeline-detail">
-
-                                    <img id="mileImg"
-                                        src="assets/images/taloqan.jpg"
-                                        class="img-fluid rounded-3 mb-3 zoomable">
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <h4 id="mileTitle"><?php echo $milestones['items'][0]['title'] ?></h4>
-                                        <span id="mileYear"><?php echo $milestones['items'][0]['year'] ?></span>
-                                    </div>
-
-                                    <p id="mileDesc"><?php echo $milestones['items'][0]['description'] ?></p>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </section>
 
                     <!-- CLIENTS -->
                     <section id="clients" class="about-section-block client-section about-panel py-1">

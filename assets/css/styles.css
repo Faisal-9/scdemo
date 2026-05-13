@@ -1164,10 +1164,7 @@ img {
 
 /* ================= ABOUT PAGE ================= */
 
-.sidebarr {
-  position: relative;
-}
-
+/* SIDEBAR DIVIDER */
 .sidebarr::after {
   content: "";
   position: absolute;
@@ -1178,11 +1175,14 @@ img {
   background: #03142e;
 }
 
-/*  SIDEBAR  */
+.sidebarr {
+  position: relative;
+}
 
+/* SIDEBAR NAV */
 .about-sidebar {
   position: sticky;
-  top: 100px;
+  top: 120px;
   background: #f7f7f7;
   padding: 10px;
   border-radius: 10px;
@@ -1215,19 +1215,16 @@ img {
   background: #fff;
 }
 
-/*  PANELS  */
-
+/* PANELS */
 .about-panel {
   display: none;
+}
+.about-panel.active {
+  display: block;
   animation: fadeIn 0.3s ease;
 }
 
-.about-panel.active {
-  display: block;
-}
-
-/*  SECTION  */
-
+/* SECTION BLOCKS */
 .about-section-block {
   scroll-margin-top: 120px;
   margin-bottom: 10px;
@@ -1248,8 +1245,7 @@ img {
   color: #0b1d4f;
 }
 
-/*  GENERAL INFO  */
-
+/* GENERAL INFO */
 .general-info-content p {
   font-size: 15px;
   line-height: 1.8;
@@ -1257,16 +1253,46 @@ img {
   text-align: justify;
 }
 
-.general-info-image img {
-  border-radius: 10px;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+/* TIMELINE */
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.25s;
+}
+
+.timeline-item:hover {
+  background: #f5f7fb;
+}
+.timeline-item.active {
+  background: #0b1d4f;
+  color: #fff;
+}
+
+.year-badge {
+  padding: 4px 10px;
+  background: #333;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.timeline-detail img {
   width: 100%;
-  height: auto;
+  height: 280px;
   object-fit: cover;
 }
 
-/*  MISSION / VISION  */
-
+/* MISSION / VISION */
 .mv-heading {
   font-size: 22px;
   font-weight: 700;
@@ -1280,18 +1306,151 @@ img {
 
 .mv-img {
   width: 100%;
-  height: 280px;
+  height: auto;
   object-fit: cover;
 }
 
 .mv-values-list li {
   display: flex;
   gap: 10px;
-  padding: 8px 0;
+  /* padding: 8px 0; */
+}
+
+/* CLIENTS */
+.client-card {
+  min-height: 100px;
+  transition: all 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.client-logo {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.client-card:hover img {
+  opacity: 1;
+}
+
+/* CERTIFICATES */
+.certificate-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.certificate-img {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.certificate-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0b1d4f;
+  margin-top: auto;
+  line-height: 1.4;
+}
+
+/* AWARDS */
+.award-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.award-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.award-img {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.award-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.award-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0b1d4f;
+  margin-top: auto;
+  line-height: 1.4;
+}
+
+/* SISTER COMPANIES */
+.sister-card {
+  min-height: 180px;
+  transition: all 0.3s ease;
+}
+
+.sister-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.sister-logo {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sister-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.sister-name {
+  font-size: 13px;
+  color: #0b1d4f;
+  margin-top: auto;
 }
 
 /*  TABLET (max 991px)  */
-
 @media (max-width: 991px) {
   .sidebarr::after {
     display: none;
@@ -1331,41 +1490,36 @@ img {
     background: #0b1d4f;
     color: #fff;
   }
+
+  .client-logo {
+    height: 70px;
+  }
+  .certificate-img {
+    height: 200px;
+  }
+  .award-img {
+    height: 120px;
+  }
+  .sister-logo {
+    height: 100px;
+  }
 }
 
 /*  MOBILE (max 768px)  */
-
 @media (max-width: 768px) {
   body {
     background: #f5f7fb;
   }
 
-  /* Hide sidebar entirely, show all panels */
   .sidebarr,
   .about-sidebar {
     display: none;
-  }
-
-  .about-content h2 {
-    font-size: 18px;
-  }
-
-  .about-content h3 {
-    font-size: 15px;
-  }
-
-  .about-content p {
-    font-size: 15px;
-    line-height: 1.2;
-    color: #444;
-    text-align: justify;
   }
 
   .about-panel {
     display: block !important;
   }
 
-  /* Section card style */
   .about-section-block {
     border: none;
     border-radius: 14px;
@@ -1383,118 +1537,25 @@ img {
     z-index: 5;
   }
 
-  /* Images */
-  .general-info-image img {
-    height: 220px;
+  .about-content h2 {
+    font-size: 18px;
+  }
+  .about-content h3 {
+    font-size: 15px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+    line-height: 1.2;
+    color: #444;
+    text-align: justify;
   }
 
   .mv-img {
     height: 200px;
   }
-}
 
-/* ================= CLIENTS ================= */
-
-.client-card {
-  height: 100%;
-  min-height: 100px;
-  transition: all 0.3s ease;
-}
-
-.client-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-/* LOGO CONTAINER (KEY FIX) */
-.client-logo {
-  width: 100%;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* LOGO IMAGE FIX */
-.client-logo img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  opacity: 0.9;
-  transition: all 0.3s ease;
-}
-
-/* Hover effect */
-.client-card:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
-}
-
-/* Tablet */
-@media (min-width: 768px) {
-  .client-logo {
-    height: 70px;
-  }
-}
-
-/* Desktop */
-@media (min-width: 1200px) {
-  .client-logo {
-    height: 80px;
-  }
-
-  .client-card {
-    min-height: 120px;
-  }
-}
-
-/*  MILESTONES  */
-.timeline-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* Timeline item */
-.timeline-item {
-  display: flex;
-  gap: 10px;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: 0.25s;
-}
-
-.timeline-item:hover {
-  background: #f5f7fb;
-}
-
-.timeline-item.active {
-  background: #0b1d4f;
-  color: #fff;
-}
-
-/* Year badge */
-.year-badge {
-  padding: 4px 10px;
-  background: #333;
-  color: #fff;
-  border-radius: 20px;
-  font-size: 12px;
-  white-space: nowrap;
-}
-
-/* Detail */
-.timeline-detail img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-}
-
-/*  MOBILE  */
-
-@media (max-width: 768px) {
-  /* Horizontal timeline */
+  /* Timeline horizontal scroll on mobile */
   .timeline-list {
     flex-direction: row;
     overflow-x: auto;
@@ -1512,7 +1573,6 @@ img {
     color: #fff;
   }
 
-  /* Detail card */
   .timeline-detail {
     margin-top: 10px;
     background: #f5f7fb;
@@ -1524,162 +1584,49 @@ img {
     height: 200px;
     border-radius: 10px;
   }
-}
 
-/*  CERTIFICATES */
+  .client-logo {
+    height: 60px;
+  }
 
-.certificate-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  transition: all 0.3s ease;
-}
-
-.certificate-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-/* Image container */
-.certificate-img {
-  width: 100%;
-  height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.certificate-img img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 6px;
-}
-
-/* Title */
-.certificate-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: #0b1d4f;
-  margin-top: auto;
-  line-height: 1.4;
-}
-
-/* Tablet */
-@media (min-width: 768px) {
   .certificate-img {
-    height: 200px;
+    height: 160px;
+  }
+
+  .award-img {
+    height: 100px;
+  }
+
+  .sister-card {
+    min-height: 160px;
+  }
+  .sister-logo {
+    height: 80px;
+  }
+
+  /* Desktop-only size overrides reset */
+  .client-card {
+    min-height: 100px;
   }
 }
 
-/* Desktop */
+/* ================= DESKTOP (min 1200px) ================= */
 @media (min-width: 1200px) {
+  .client-logo {
+    height: 80px;
+  }
+  .client-card {
+    min-height: 120px;
+  }
   .certificate-img {
     height: 240px;
   }
-}
-
-/*  AWARDS */
-
-.award-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  transition: all 0.3s ease;
-}
-
-.award-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-/* Image container */
-.award-img {
-  width: 100%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.award-img img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-/* Title */
-.award-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: #0b1d4f;
-  margin-top: auto;
-  line-height: 1.4;
-}
-
-/* Tablet */
-@media (min-width: 768px) {
-  .award-img {
-    height: 120px;
-  }
-}
-
-/* Desktop */
-@media (min-width: 1200px) {
   .award-img {
     height: 140px;
   }
-}
-
-/*  SISTER COMPANIES */
-.sister-card {
-  height: 100%;
-  min-height: 180px;
-  transition: all 0.3s ease;
-}
-
-.sister-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-/* LOGO BOX (VERY IMPORTANT FIX) */
-.sister-logo {
-  width: 100%;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* LOGO IMAGE FIX */
-.sister-logo img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* 🔥 keeps logos perfect */
-}
-
-/* TEXT */
-.sister-name {
-  font-size: 13px;
-  color: #0b1d4f;
-  margin-top: auto;
-}
-
-/* Tablet */
-@media (min-width: 768px) {
-  .sister-logo {
-    height: 100px;
-  }
-}
-
-/* Desktop */
-@media (min-width: 1200px) {
   .sister-logo {
     height: 120px;
   }
-
   .sister-card {
     min-height: 220px;
   }

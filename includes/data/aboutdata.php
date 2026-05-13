@@ -3,7 +3,44 @@
 $generalInfo = [
     'title' => 'Company Overview',
     'content' => "Since 2007, State Corps has grown into one of Afghanistan's leading infrastructure and energy companies, delivering complex projects for public institutions and international partners. Our core strength lies in power infrastructure, including transmission lines, substations, and distribution systems, supported by extensive capabilities in design, construction, and strategic project execution.",
-    'image' => 'assets/images/12.jpg',
+    'items' => [
+        [
+            'year' => '2007',
+            'title' => 'State Corps Established',
+            'description' => 'Establishment of the company in Afghanistan.',
+            'img' => 'assets/images/2.jpg',
+        ],
+        [
+            'year' => '2010',
+            'title' => 'First Major Project',
+            'description' => 'Completion of a major infrastructure project.',
+            'img' => 'assets/images/2.jpg',
+        ],
+        [
+            'year' => '2014',
+            'title' => 'International Expansion',
+            'description' => 'Established offices in Türkiye and the United States.',
+            'img' => 'assets/images/2.jpg',
+        ],
+        [
+            'year' => '2021',
+            'title' => 'Major Project Milestone',
+            'description' => 'Completed over 60 projects valued at more than $400 million.',
+            'img' => 'assets/images/2.jpg',
+        ],
+        [
+            'year' => '2024',
+            'title' => 'MOEW & DABS Recognition',
+            'description' => 'Awarded recognition for successful energy infrastructure projects.',
+            'img' => 'assets/images/2.jpg',
+        ],
+        [
+            'year' => '2025',
+            'title' => 'Uzbek-Afghan Energy Projects',
+            'description' => 'Transmission Lines, Substations, and Distribution projects with MEW.',
+            'img' => 'assets/images/2.jpg',
+        ]
+    ]
 ];
 
 
@@ -28,41 +65,41 @@ $missionVision = [
 ];
 
 
-$milestones = [
-    'title' => 'Growth Timeline',
-    'items' => [
-        [
-            'year' => '2007',
-            'title' => 'State Corps Established',
-            'description' => 'Establishment of the company in Afghanistan.'
-        ],
-        [
-            'year' => '2010',
-            'title' => 'First Major Project',
-            'description' => 'Completion of a major infrastructure project.'
-        ],
-        [
-            'year' => '2014',
-            'title' => 'International Expansion',
-            'description' => 'Established offices in Türkiye and the United States.'
-        ],
-        [
-            'year' => '2021',
-            'title' => 'Major Project Milestone',
-            'description' => 'Completed over 60 projects valued at more than $400 million.'
-        ],
-        [
-            'year' => '2024',
-            'title' => 'MOEW & DABS Recognition',
-            'description' => 'Awarded recognition for successful energy infrastructure projects.'
-        ],
-        [
-            'year' => '2025',
-            'title' => 'Uzbek-Afghan Energy Projects',
-            'description' => 'Transmission Lines, Substations, and Distribution projects with MEW.'
-        ]
-    ]
-];
+// $milestones = [
+//     'title' => 'Growth Timeline',
+//     'items' => [
+//         [
+//             'year' => '2007',
+//             'title' => 'State Corps Established',
+//             'description' => 'Establishment of the company in Afghanistan.'
+//         ],
+//         [
+//             'year' => '2010',
+//             'title' => 'First Major Project',
+//             'description' => 'Completion of a major infrastructure project.'
+//         ],
+//         [
+//             'year' => '2014',
+//             'title' => 'International Expansion',
+//             'description' => 'Established offices in Türkiye and the United States.'
+//         ],
+//         [
+//             'year' => '2021',
+//             'title' => 'Major Project Milestone',
+//             'description' => 'Completed over 60 projects valued at more than $400 million.'
+//         ],
+//         [
+//             'year' => '2024',
+//             'title' => 'MOEW & DABS Recognition',
+//             'description' => 'Awarded recognition for successful energy infrastructure projects.'
+//         ],
+//         [
+//             'year' => '2025',
+//             'title' => 'Uzbek-Afghan Energy Projects',
+//             'description' => 'Transmission Lines, Substations, and Distribution projects with MEW.'
+//         ]
+//     ]
+// ];
 
 
 $clients = [
@@ -165,10 +202,6 @@ $aboutSections = [
     [
         'id' => 'mission-vision',
         'data' => $missionVision
-    ],
-    [
-        'id' => 'milestones',
-        'data' => $milestones
     ],
     [
         'id' => 'clients',

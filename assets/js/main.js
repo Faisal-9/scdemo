@@ -610,22 +610,16 @@ document.addEventListener("DOMContentLoaded", function () {
    Growth Timeline
 ========================== */
 
-  // make function GLOBAL
   window.showMilestone = function (el) {
     const items = document.querySelectorAll(".timeline-item");
     const detail = document.querySelector(".timeline-detail");
 
-    // remove active
     items.forEach((item) => item.classList.remove("active"));
-
-    // set active
     el.classList.add("active");
 
-    // fade out
     if (detail) detail.style.opacity = 0;
 
     setTimeout(() => {
-      // update content
       const titleEl = document.getElementById("mileTitle");
       const yearEl = document.getElementById("mileYear");
       const descEl = document.getElementById("mileDesc");
@@ -636,7 +630,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (descEl) descEl.innerText = el.dataset.desc;
       if (imgEl) imgEl.src = el.dataset.img;
 
-      // fade in
       if (detail) detail.style.opacity = 1;
     }, 200);
   };
@@ -646,7 +639,8 @@ document.addEventListener("DOMContentLoaded", function () {
 ========================== */
 
   (function () {
-    const section = document.getElementById("milestones");
+    // ✅ Changed from #milestones to #general-info
+    const section = document.getElementById("general-info");
     const items = document.querySelectorAll(".timeline-item");
 
     if (!section || !items.length) return;
@@ -654,40 +648,39 @@ document.addEventListener("DOMContentLoaded", function () {
     let index = 0;
     let interval = null;
 
-    /* ===== CORE FUNCTION ===== */
     function show(item) {
       items.forEach((el) => el.classList.remove("active"));
       item.classList.add("active");
 
-      document.getElementById("mileTitle").innerText = item.dataset.title;
-      document.getElementById("mileYear").innerText = item.dataset.year;
-      document.getElementById("mileDesc").innerText = item.dataset.desc;
-      document.getElementById("mileImg").src = item.dataset.img;
+      const titleEl = document.getElementById("mileTitle");
+      const yearEl = document.getElementById("mileYear");
+      const descEl = document.getElementById("mileDesc");
+      const imgEl = document.getElementById("mileImg");
+
+      if (titleEl) titleEl.innerText = item.dataset.title;
+      if (yearEl) yearEl.innerText = item.dataset.year;
+      if (descEl) descEl.innerText = item.dataset.desc;
+      if (imgEl) imgEl.src = item.dataset.img;
     }
 
-    /* ===== AUTOPLAY ===== */
     function playTimeline() {
       clearInterval(interval);
-
       interval = setInterval(() => {
         index = (index + 1) % items.length;
         show(items[index]);
-      }, 2500); // ⏱ slightly smoother timing
+      }, 2500);
     }
 
     function stopTimeline() {
       clearInterval(interval);
     }
 
-    /* ===== OBSERVER ===== */
+    // ✅ Observer now watches #general-info
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            playTimeline();
-          } else {
-            stopTimeline();
-          }
+          if (entry.isIntersecting) playTimeline();
+          else stopTimeline();
         });
       },
       { threshold: 0.3 },
@@ -695,24 +688,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(section);
 
-    /* ===== CLICK ===== */
+    // Click to jump + restart autoplay
     items.forEach((item, i) => {
       item.addEventListener("click", function () {
         index = i;
         show(this);
-        playTimeline(); // restart from clicked
+        playTimeline();
       });
     });
 
-    /* ===== HOVER PAUSE ===== */
+    // Hover pause on detail panel
     const detail = document.querySelector(".timeline-detail");
-
     if (detail) {
       detail.addEventListener("mouseenter", stopTimeline);
       detail.addEventListener("mouseleave", playTimeline);
     }
 
-    /* ===== INIT ===== */
     show(items[0]);
   })();
 
