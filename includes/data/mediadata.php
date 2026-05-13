@@ -30,6 +30,14 @@ $media = [
             'image' => 'assets/images/media/12-0226-beco.jpeg',
             'tags' => ['Exhibition'],
         ],
+        [
+            'id' => 'n3',
+            'date' => '28 Apr, 2026',
+            'title' => 'Electrification projects Cermoney of Jawzjan, sar-e-pul and faryab Provinces',
+            'description' => ['should be updated'],
+            'image' => 'assets/images/media/28-0426-qoshtepa.jpeg',
+            'tags' => ['Cermony', 'Energy'],
+        ],
     ],
 
     'gallery' => [
