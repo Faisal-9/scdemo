@@ -355,9 +355,9 @@ img {
   }
 }
 
-/*  INDEX STATS & ABOUT US SECTION  */
+/* ================= INDEX STATS & ABOUT US SECTION ================= */
+
 .index-stats-section {
-  /* padding: 60px 0; */
   background-size: cover;
   background-position: left center;
   background-attachment: fixed;
@@ -367,6 +367,8 @@ img {
 .index-about-us-header h2 {
   color: #ffffff;
 }
+
+/* ================= STATS ================= */
 
 .stat-item {
   position: relative;
@@ -391,22 +393,36 @@ img {
   opacity: 0.9;
 }
 
-/* About Us tabs inside stats section */
+/* ================= ABOUT US ================= */
+
 .index-stats-section .index-about-us {
   padding: 0;
 }
 
+.index-about-us-container {
+  width: 100%;
+}
+
+/* ================= NAV TABS ================= */
+
 .index-about-us .nav-tabs {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .index-stats-section .index-about-us .nav-tabs .nav-link {
   color: rgba(255, 255, 255, 0.7);
   font-weight: 600;
   border: none;
-  margin-right: 25px;
   background: transparent;
   padding-bottom: 12px;
+  margin-right: 0;
+  transition: 0.3s ease;
+}
+
+.index-stats-section .index-about-us .nav-tabs .nav-link:hover {
+  color: #ffffff;
 }
 
 .index-stats-section .index-about-us .nav-tabs .nav-link.active {
@@ -415,23 +431,99 @@ img {
   background: transparent;
 }
 
+/* ================= TAB CONTENT ================= */
+
 .index-stats-section .index-about-us .tab-content {
   position: relative;
   min-height: 500px;
-  height: auto;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
   margin-top: 20px;
 }
+
+.tab-pane {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= TEXT CONTENT BOX ================= */
+
+.tab-content-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  padding: 25px;
+  border-radius: 12px;
+
+  backdrop-filter: blur(4px);
+}
+
+.tab-content-box p,
+.tab-content-box li {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.tab-content-box ul {
+  margin-bottom: 0;
+}
+
+/* ================= IMAGE BOX ================= */
+
+.tab-image-box {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+}
+
+.tab-img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+
+  border-radius: 12px;
+
+  transition: transform 0.5s ease;
+}
+
+.tab-image-box:hover .tab-img {
+  transform: scale(1.05);
+}
+
+/* ================= HISTORY BOX ================= */
 
 .index-stats-section .index-about-us .history-box {
   height: 100%;
   display: flex;
   flex-direction: column;
+
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
+
   color: #fff;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -439,6 +531,7 @@ img {
 
 .index-stats-section .index-about-us .history-box:hover {
   transform: translateY(-6px);
+
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
@@ -448,21 +541,43 @@ img {
 
 .index-stats-section .index-about-us .year {
   background: rgba(255, 90, 31, 0.3);
+
   color: #ff5a1f;
+
   padding: 8px;
   display: inline-block;
+
   margin-bottom: 8px;
 }
 
 .index-stats-section #history .history-box {
   height: 220px;
+
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
+/* ================= UTILITIES ================= */
+
 .index-stats-section .text-orange {
   color: #ff5a1f;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 991px) {
+  .index-stats-section {
+    background-attachment: scroll;
+  }
+
+  .tab-image-box {
+    min-height: 320px;
+  }
+
+  .index-stats-section .index-about-us .tab-content {
+    min-height: auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -474,21 +589,23 @@ img {
 
   .stat-number {
     font-size: 32px;
-    font-weight: 700;
-    line-height: 1;
   }
 
-  .index-stats-section {
-    background-attachment: scroll;
+  .tab-content-box {
+    padding: 20px;
   }
 
-  .index-stats-section .index-about-us .tab-content {
-    height: auto;
+  .tab-image-box {
+    min-height: 280px;
   }
 
-  .index-stats-section #mission,
-  .index-stats-section #vision {
-    height: auto;
+  .index-about-us .nav-tabs {
+    justify-content: center;
+  }
+
+  .index-stats-section .index-about-us .nav-tabs .nav-link {
+    font-size: 14px;
+    padding-bottom: 8px;
   }
 }
 

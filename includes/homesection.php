@@ -219,7 +219,8 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
                                                     <img
                                                         src="<?php echo htmlspecialchars($item['image']) ?>"
                                                         class="zoomable tab-img"
-                                                        alt="<?php echo htmlspecialchars($item['title'] ?? 'image') ?>">
+                                                        alt="<?php echo htmlspecialchars($item['title'] ?? 'image') ?>"
+                                                        loading="lazy">
 
                                                 </div>
 

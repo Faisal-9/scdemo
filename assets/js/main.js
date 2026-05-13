@@ -87,28 +87,67 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-
   /* =====================================
-     COUNTER ANIMATION
+     COUNTER ANIMATION (ON VIEW)
   ===================================== */
 
-  const counters = document.querySelectorAll(".counter");
+  (function () {
+    const counters = document.querySelectorAll(".counter");
+    const statsSection = document.querySelector(".index-stats-section");
 
-  counters.forEach((counter) => {
-    const target = +counter.dataset.target;
-    let count = 0;
-    const update = () => {
-      const increment = target / 100;
-      count += increment;
-      if (count < target) {
-        counter.innerText = Math.floor(count);
-        requestAnimationFrame(update);
-      } else {
-        counter.innerText = target;
-      }
-    };
-    update();
-  });
+    if (!counters.length || !statsSection) return;
+
+    function animateCounter(counter) {
+      const target = +counter.dataset.target;
+
+      let current = 0;
+
+      // animation duration
+      const duration = 2000;
+
+      // frame rate
+      const stepTime = 16;
+
+      const totalSteps = duration / stepTime;
+
+      const increment = target / totalSteps;
+
+      counter.innerText = "0";
+
+      const timer = setInterval(() => {
+        current += increment;
+
+        if (current >= target) {
+          counter.innerText = target.toLocaleString();
+          clearInterval(timer);
+        } else {
+          counter.innerText = Math.floor(current).toLocaleString();
+        }
+      }, stepTime);
+    }
+
+    function startCounters() {
+      counters.forEach((counter) => {
+        animateCounter(counter);
+      });
+    }
+
+    // Observe section visibility
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startCounters();
+          }
+        });
+      },
+      {
+        threshold: 0.4,
+      },
+    );
+
+    observer.observe(statsSection);
+  })();
 
   /* =====================================
      Lazy Load Images

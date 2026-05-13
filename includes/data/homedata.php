@@ -87,7 +87,7 @@ $whySC = [
             'Strong focus on quality, safety, reliability, and operational excellence.',
             'Results-driven approach that ensures long-term value for clients.'
         ],
-        'image' => 'assets/images/12.jpg'
+        'image' => 'assets/images/home/homedeliveryexperince.jpeg'
     ],
     '02' => [
         'tabname' => 'Regional Presence',
