@@ -83,7 +83,13 @@ $sector = isset($sector) ? $sector : [];
         <!-- DESCRIPTION -->
         <?php if (!empty($sector['description'])): ?>
             <div class="sector-desc container">
-                <p><?php echo $sector['description'] ?></p>
+                <?php if (is_array($sector['description'])): ?>
+                    <?php foreach ($sector['description'] as $para): ?>
+                        <p><?php echo $para ?></p>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p><?php echo $sector['description'] ?></p>
+                <?php endif; ?>
             </div>
         <?php endif; ?>
 

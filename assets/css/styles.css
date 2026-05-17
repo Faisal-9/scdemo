@@ -2025,6 +2025,11 @@ img {
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.sector-desc p:last-child {
+  margin-bottom: 0;
 }
 
 /* LEFT COLUMN STACK */
@@ -2054,7 +2059,7 @@ img {
 
 .sector-project-card img {
   width: 100%;
-  height: auto;
+  height: 410px;
   object-fit: cover;
   border-radius: 10px;
 }
