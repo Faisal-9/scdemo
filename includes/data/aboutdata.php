@@ -23,12 +23,6 @@ $generalInfo = [
             'img' => 'assets/images/about/presenceindex.jpeg',
         ],
         [
-            'year' => '2021',
-            'title' => 'Major Project Milestone',
-            'description' => 'Completed over 60 projects valued at more than $400 million.',
-            'img' => 'assets/images/2.jpg',
-        ],
-        [
             'year' => '2024',
             'title' => 'MOEW & DABS Recognition',
             'description' => 'Awarded recognition for successful energy infrastructure projects.',
@@ -39,7 +33,13 @@ $generalInfo = [
             'title' => 'Uzbek-Afghan Energy Projects',
             'description' => 'Transmission Lines, Substations, and Distribution projects with MEW.',
             'img' => 'assets/images/about/0925-kabul.jpeg',
-        ]
+        ],
+        [
+            'year' => '2025',
+            'title' => 'Major Project Milestone',
+            'description' => 'Completed over 100 projects valued at more than $500 million.',
+            'img' => 'assets/images/about/projectsmaliston.png',
+        ],
     ]
 ];
 
@@ -49,11 +49,11 @@ $missionVision = [
 
     'mission'         => "To engineer a sustainable and empowered future for Afghanistan through reliable energy and robust infrastructure, delivering excellence, innovation, and value in every project we undertake.",
 
-    'mission_img'     => 'assets/images/growth.jpg',
+    'mission_img'     => 'assets/images/6.jpg',
     'vision'          => "To be the leading and most trusted engineering and construction partner in the region, recognized for our technical expertise and transformative impact on infrastructure and energy development.",
 
-    'vision_img'      => 'assets/images/growth.jpg',
-    'core_values_img' => 'assets/images/growth.jpg',
+    'vision_img'      => 'assets/images/substation01.jpg',
+    'core_values_img' => 'assets/images/manpower.jpeg',
     'core_values'     => [
         'Integrity — We operate with transparency and honesty in everything we do.',
         'Excellence — We pursue the highest standards in engineering and delivery.',

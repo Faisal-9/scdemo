@@ -126,7 +126,7 @@ $sectors = [
             "sub" => "High Voltage • Transmission • Renewable Energy",
             "cta_text" => "Explore Opportunities",
             "cta_link" => "contact.php",
-            "image" => "assets/images/slider_imgs/hero_energy1.jpg"
+            "image" => "assets/images/home/slider_imgs/hero_energy1.jpg"
         ],
 
         "stats" => [
@@ -160,8 +160,8 @@ $sectors = [
         ],
 
         "project" => [
-            "name" => "220kV National Transmission Project",
-            "image" => "assets/images/2.jpg",
+            "name" => "Herat Substation Project",
+            "image" => "assets/images/energy-sector-herat.jpeg",
             "cta_text" => "View Projects",
             "cta_link" => "projects.php?category=powerenergy"
         ],
@@ -178,7 +178,7 @@ $sectors = [
             "sub" => "Engineering Excellence in Mobility Solutions",
             "cta_text" => "Explore Projects",
             "cta_link" => "projects.php?category=transport",
-            "image" => "assets/images/slider_imgs/herotransport1.png"
+            "image" => "assets/images/home/slider_imgs/hero_transportation1.jpg"
         ],
 
         "stats" => [
@@ -209,7 +209,7 @@ $sectors = [
 
         "project" => [
             "name" => "National Highway Development Project",
-            "image" => "assets/images/2.jpg",
+            "image" => "assets/images/projects/06-kabul-2.png",
             "cta_text" => "View Projects",
             "cta_link" => "projects.php?category=transport"
         ],
@@ -287,7 +287,7 @@ $sectors = [
             "sub" => "Engineering Excellence in Built Environments",
             "cta_text" => "Explore Projects",
             "cta_link" => "projects.php?category=infrastructure",
-            "image" => "assets/images/slider_imgs/hero_structure1.png"
+            "image" => "assets/images/home/slider_imgs/hero_structure1.png"
         ],
 
         "stats" => [
@@ -318,7 +318,7 @@ $sectors = [
 
         "project" => [
             "name" => "National Infrastructure Development Project",
-            "image" => "assets/images/2.jpg",
+            "image" => "assets/images/projects/07-kabul-1.png",
             "cta_text" => "View Projects",
             "cta_link" => "projects.php?category=infrastructure"
         ],
@@ -387,7 +387,6 @@ $sectors = [
         "description" => "The infrastructure and construction sector focuses on delivering high-quality, sustainable, and modern built environments including residential, commercial, and industrial developments. With strong engineering expertise, advanced construction methodologies, and adherence to international standards, the company ensures reliable and efficient project delivery. From buildings and bridges to tunnels and large-scale infrastructure, every project is executed with a commitment to safety, durability, and long-term value creation."
     ],
 
-
     "water" => [
         "title" => "Water Resources",
 
@@ -397,7 +396,7 @@ $sectors = [
             "sub" => "Engineering Water for Life & Development",
             "cta_text" => "Explore Projects",
             "cta_link" => "projects.php?category=water",
-            "image" => "assets/images/slider_imgs/herowater1.png"
+            "image" => "assets/images/home/slider_imgs/hero_water1.jpg"
         ],
 
         "stats" => [
@@ -428,7 +427,7 @@ $sectors = [
 
         "project" => [
             "name" => "Regional Water Management Project",
-            "image" => "assets/images/2.jpg",
+            "image" => "assets/images/projects/28-balkh-1.png",
             "cta_text" => "View Projects",
             "cta_link" => "projects.php?category=water"
         ],
@@ -544,7 +543,7 @@ $sectors = [
             "sub" => "ISO Certified Operations",
             "cta_text" => "Invest With Us",
             "cta_link" => "contact.php",
-            "image" => "assets/images/slider_imgs/heromining1.png"
+            "image" => "assets/images/home/slider_imgs/hero_mining1.png"
         ],
 
         "stats" => [
@@ -569,16 +568,21 @@ $sectors = [
             "Extraction",
             "Processing",
             "Trade",
+            "Consultancy",
         ],
 
         "project" => [
-            "name" => "Copper Extraction Project",
-            "image" => "assets/images/2.jpg",
+            "name" => "Talc Processing Plant",
+            "image" => "assets/images/projects/processingplant1.jpg",
             "cta_text" => "View Projects",
-            "cta_link" => "projects.php?category=mining"
+            "cta_link" => "projects.php?category=mining",
         ],
 
-        "description" => "The mining sector at Arya Mineral is focused on delivering efficient, sustainable, and large-scale extraction of industrial minerals and gemstones. Leveraging modern technologies and advanced engineering practices, the company ensures optimized production while maintaining high safety and environmental standards. Its expertise spans mine planning, operational management, and economic analysis, enabling projects to achieve both technical and financial success. With a strong presence in key resource areas such as talc concessions, Arya Mineral combines local knowledge with international expertise to maximize resource value, support regional development, and contribute to long-term growth in Afghanistan's mining industry."
+        "description" => [
+            "The mining sector at Arya Mineral is focused on delivering efficient, sustainable, and large-scale extraction of industrial minerals and gemstones. Leveraging modern technologies and advanced engineering practices, the company ensures optimized production while maintaining high safety and environmental standards. Its expertise spans mine planning, operational management, and economic analysis, enabling projects to achieve both technical and financial success. With a strong presence in key resource areas such as talc concessions, Arya Mineral combines local knowledge with international expertise to maximize resource value, support regional development, and contribute to long-term growth in Afghanistan's mining industry.",
+            "2019: Brand Launch and Global Outreach At the beginning of 2019, the company successfully produced and exported its specialized A grade ultra-fine Afghan talc powder under its own brand name. This achievement was particularly historic as it marked the first-ever shipment of talc from Afghanistan to Jordan. Throughout 2019, Arya Mineral rapidly expanded its footprint, exporting processed talc to a wide array of international markets, including: •	Asia: India, Japan, South Korea, Kazakhstan, and Tajikistan.•	Middle East: Jordan, Iraq, and Turkey.•	Europe & Eurasia: Germany and Russia.",
+            "2019-2021: Market Expansion and Partnerships Between 2019 and 2021, Arya Mineral secured a strategic collaboration and contract with a Chinese firm to penetrate and expand its presence within the Chinese markets. By May 27, 2021, the company remained highly active in the processing and export sector, continuing to build upon the foundation of its established factory and its track record of successful international trade"
+        ]
     ],
 
 

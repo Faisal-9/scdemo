@@ -15,7 +15,7 @@ $services = [
                 "items" => [
                     [
                         "title"      => "Feasibility Studies",
-                        "image"      => "assets/images/services/SC10.jpg",
+                        "image"      => "assets/images/services/feasibilitystu1.jpg",
                         "short_desc" => "We provide comprehensive feasibility studies that include initial concept development, technical and financial evaluations, and early-stage planning to assess project viability, identify constraints, and outline practical solutions before moving into detailed design and execution phases.",
                         "why"        => "Our studies minimise risks by identifying constraints, validating assumptions, and ensuring informed, cost-effective project decisions from the outset.",
                         "features"   => [
@@ -27,7 +27,7 @@ $services = [
                     ],
                     [
                         "title"      => "GIS Mapping and Analysis",
-                        "image"      => "assets/images/services/SC10.jpg",
+                        "image"      => "assets/images/services/gis1.jpg",
                         "short_desc" => "Our GIS mapping and analysis services involve collecting, processing, and interpreting spatial data using advanced geospatial technologies to support accurate planning, decision-making, and visualization for infrastructure, environmental studies, and land management projects across diverse and complex terrains.",
                         "why"        => "We deliver precise geospatial insights that improve planning accuracy, optimise resource allocation, and support efficient, data-driven project decisions.",
                         "features"   => [
@@ -39,7 +39,7 @@ $services = [
                     ],
                     [
                         "title"      => "Environmental and Social Assessments",
-                        "image"      => "assets/images/services/SC10.jpg",
+                        "image"      => "assets/images/services/enviromental1.jpg",
                         "short_desc" => "We conduct detailed environmental and social assessments to evaluate potential project impacts, ensure regulatory compliance, and promote sustainable development by integrating environmental protection measures and community considerations into planning and execution processes.",
                         "why"        => "We ensure regulatory compliance while reducing environmental impact and enhancing positive social outcomes for sustainable project success.",
                         "features"   => [
@@ -58,7 +58,7 @@ $services = [
                 "items" => [
                     [
                         "title"      => "Conceptual Engineering Studies",
-                        "image"      => "assets/images/services/SC10.jpg",
+                        "image"      => "assets/images/services/conceptualdesign1.jpg",
                         "short_desc" => "We develop early-stage engineering concepts that translate project objectives into technically sound, feasible, and cost-effective solutions, enabling informed decision-making while aligning design approaches with project goals, site conditions, and stakeholder expectations before advancing into detailed design phases.",
                         "why"        => "Strong concepts reduce redesign risks, align stakeholders early, and provide a clear, efficient direction for all subsequent design stages.",
                         "features"   => [
@@ -70,7 +70,7 @@ $services = [
                     ],
                     [
                         "title"      => "Architectural Design",
-                        "image"      => "assets/images/services/SC10.jpg",
+                        "image"      => "assets/images/services/architecturaldesign.jpg",
                         "short_desc" => "Our architectural design services deliver innovative and functional solutions across residential, commercial, and infrastructure projects, integrating aesthetics, spatial planning, and technical requirements to create environments that are visually appealing, efficient, and aligned with user needs and regulatory standards.",
                         "why"        => "We create designs that balance creativity, functionality, and practicality, ensuring visually compelling spaces that perform efficiently and meet project goals.",
                         "features"   => [
@@ -82,7 +82,7 @@ $services = [
                     ],
                     [
                         "title"      => "Civil Design",
-                        "image"      => "assets/images/services/SC10.jpg",
+                        "image"      => "assets/images/services/civildesign.jpg",
                         "short_desc" => "We provide detailed civil engineering design for roads, drainage systems, grading, and site infrastructure, ensuring efficient land use, proper water management, and long-term durability while meeting regulatory requirements and supporting smooth construction processes across a wide range of infrastructure projects.",
                         "why"        => "Accurate civil design ensures efficient construction, regulatory compliance, and long-term performance of infrastructure under varying site conditions.",
                         "features"   => [
@@ -94,7 +94,7 @@ $services = [
                     ],
                     [
                         "title"      => "Structural Design",
-                        "image"      => "assets/images/services/SC10.jpg",
+                        "image"      => "assets/images/services/structuraldesign.jpg",
                         "short_desc" => "We deliver safe and efficient structural design solutions for buildings, bridges, and industrial facilities, combining advanced analysis with practical construction considerations to ensure stability, durability, and optimal material use while meeting safety standards and project-specific performance requirements.",
                         "why"        => "Our structural solutions enhance safety, optimise material use, and ensure reliable performance under environmental and operational loads.",
                         "features"   => [
@@ -106,7 +106,7 @@ $services = [
                     ],
                     [
                         "title"      => "Electrical Design",
-                        "image"      => "assets/images/services/SC10.jpg",
+                        "image"      => "assets/images/services/electricaldesign1.jpeg",
                         "short_desc" => "We design comprehensive electrical systems covering power distribution, lighting, instrumentation, and control, ensuring reliable and efficient operation while supporting safety, scalability, and future expansion needs for various building and infrastructure projects across different sectors.",
                         "why"        => "Our designs ensure safe, reliable power systems that support operational efficiency, adaptability, and long-term infrastructure performance.",
                         "features"   => [
@@ -118,7 +118,7 @@ $services = [
                     ],
                     [
                         "title"      => "Mechanical Design",
-                        "image"      => "assets/images/services/SC10.jpg",
+                        "image"      => "assets/images/services/mechanicaldesign1.jpeg",
                         "short_desc" => "Our mechanical design services cover HVAC, plumbing, fire protection, and process systems, delivering integrated solutions that enhance energy efficiency, occupant comfort, and system reliability while aligning with project specifications and operational requirements across diverse facility types.",
                         "why"        => "Integrated mechanical systems improve efficiency, reduce energy costs, and ensure comfortable, safe, and reliable building operations.",
                         "features"   => [
@@ -225,7 +225,7 @@ $services = [
                         "items" => [
                             [
                                 "title"      => "Transmission Line Engineering",
-                                "image"      => "assets/images/services/transmission-line.jpg",
+                                "image"      => "assets/images/services/transmission1.jpg",
                                 "short_desc" => "We design high-voltage overhead and underground transmission systems, including route selection, structural design, and conductor analysis, ensuring reliable, efficient, and safe power delivery across long distances while meeting regulatory and environmental requirements.",
                                 "why"        => "We ensure reliable, efficient transmission systems through optimised design, improving performance and supporting stable power infrastructure.",
                                 "features"   => [
@@ -237,7 +237,7 @@ $services = [
                             ],
                             [
                                 "title"      => "Electrical Substation Engineering",
-                                "image"      => "assets/images/services/substation.jpg",
+                                "image"      => "assets/images/services/substation1.png",
                                 "short_desc" => "We provide comprehensive engineering for substations across all voltage levels, covering primary and secondary systems, equipment specification, and integration to ensure safe, reliable, and efficient power transformation and distribution.",
                                 "why"        => "Our substation designs ensure reliability, safety, and compliance, supporting efficient power distribution and long-term infrastructure stability.",
                                 "features"   => [
@@ -249,7 +249,7 @@ $services = [
                             ],
                             [
                                 "title"      => "Power Distribution Engineering",
-                                "image"      => "assets/images/services/power-distribution.jpg",
+                                "image"      => "assets/images/services/distribution1.jpg",
                                 "short_desc" => "We design medium and low-voltage distribution networks for urban and rural areas, ensuring efficient energy delivery, reduced losses, and reliable supply while supporting future expansion and increasing demand across diverse infrastructure environments.",
                                 "why"        => "Efficient distribution networks reduce losses, improve reliability, and support growing energy demands with scalable infrastructure solutions.",
                                 "features"   => [
@@ -297,7 +297,7 @@ $services = [
                         "items" => [
                             [
                                 "title"      => "Master Plan and Urban Design",
-                                "image"      => "assets/images/services/master-plan.jpg",
+                                "image"      => "assets/images/services/urbandev1.jpg",
                                 "short_desc" => "We develop strategic master plans and urban design frameworks that guide sustainable development, integrating land use, infrastructure, mobility, and public spaces to create functional, connected, and resilient communities aligned with long-term growth objectives.",
                                 "why"        => "Effective master planning creates sustainable, connected communities that support growth, enhance livability, and ensure long-term urban resilience.",
                                 "features"   => [
@@ -628,7 +628,7 @@ $services = [
 
                     [
                         "title"      => "Geological Surveys and Mapping",
-                        "image"      => "assets/images/services/mining1.jpg",
+                        "image"      => "assets/images/services/geo-survey1.jpg",
                         "short_desc" => "We conduct comprehensive geological surveys using advanced mapping techniques, satellite imagery, and field data collection to accurately identify mineral deposits and define exploration targets across diverse terrains.",
                         "why"        => "Our precise geological insights reduce uncertainty, enabling faster discovery and more confident investment decisions.",
                         "features"   => [
@@ -641,7 +641,7 @@ $services = [
 
                     [
                         "title"      => "Geophysical and Remote Sensing",
-                        "image"      => "assets/images/services/mining1.jpg",
+                        "image"      => "assets/images/services/sensing1.jpg",
                         "short_desc" => "We utilize cutting-edge geophysical methods and remote sensing technologies to detect subsurface mineralization, providing accurate, non-invasive exploration solutions.",
                         "why"        => "Advanced detection technologies minimise exploration risk while improving accuracy and efficiency.",
                         "features"   => [
@@ -654,7 +654,7 @@ $services = [
 
                     [
                         "title"      => "Resource Estimation and Modeling",
-                        "image"      => "assets/images/services/mining1.jpg",
+                        "image"      => "assets/images/services/resourse-estimation1.jpg",
                         "short_desc" => "Our team develops accurate resource and reserve models using advanced software and data analytics to support reliable planning and reporting.",
                         "why"        => "We ensure compliance with international standards while maximizing resource confidence and project value.",
                         "features"   => [
@@ -667,7 +667,7 @@ $services = [
 
                     [
                         "title"      => "Feasibility and Pre-Feasibility Studies",
-                        "image"      => "assets/images/services/mining1.jpg",
+                        "image"      => "assets/images/services/feasibilitystu1.jpg",
                         "short_desc" => "We provide detailed technical and financial feasibility studies to evaluate mining projects and determine their economic viability.",
                         "why"        => "Our studies reduce financial risk and guide strategic decision-making from early project stages.",
                         "features"   => [
@@ -688,7 +688,7 @@ $services = [
 
                     [
                         "title"      => "Surface and Open-Pit Mining",
-                        "image"      => "assets/images/services/mining2.jpg",
+                        "image"      => "assets/images/services/open-pit-mining1.jpg",
                         "short_desc" => "We deliver efficient surface mining solutions using modern equipment and optimized extraction techniques to maximize productivity and safety.",
                         "why"        => "Optimized operations ensure higher output with reduced operational costs.",
                         "features"   => [
@@ -701,7 +701,7 @@ $services = [
 
                     [
                         "title"      => "Underground Mining Systems",
-                        "image"      => "assets/images/services/mining2.jpg",
+                        "image"      => "assets/images/services/underground-mining1.jpg",
                         "short_desc" => "Our underground mining services include advanced excavation, ventilation, and safety systems tailored for complex geological conditions.",
                         "why"        => "We enhance safety while maximizing recovery in challenging underground environments.",
                         "features"   => [
@@ -714,7 +714,7 @@ $services = [
 
                     [
                         "title"      => "Drilling and Blasting Optimization",
-                        "image"      => "assets/images/services/mining2.jpg",
+                        "image"      => "assets/images/services/drill-blast1.jpg",
                         "short_desc" => "We design and execute precision drilling and blasting operations to improve fragmentation and operational efficiency.",
                         "why"        => "Optimized blasting reduces costs and improves downstream processing performance.",
                         "features"   => [
@@ -727,7 +727,7 @@ $services = [
 
                     [
                         "title"      => "Smart Mine Planning and Scheduling",
-                        "image"      => "assets/images/services/mining2.jpg",
+                        "image"      => "assets/images/services/",
                         "short_desc" => "We leverage digital tools and real-time data to create optimized mine plans and production schedules.",
                         "why"        => "Data-driven planning increases efficiency and reduces downtime.",
                         "features"   => [
@@ -748,7 +748,7 @@ $services = [
 
                     [
                         "title"      => "Crushing and Grinding Optimization",
-                        "image"      => "assets/images/services/mining3.jpg",
+                        "image"      => "assets/images/services/crushers1.jpg",
                         "short_desc" => "We optimize comminution processes to improve energy efficiency and throughput in mineral processing plants.",
                         "why"        => "Enhanced efficiency reduces energy costs and increases production output.",
                         "features"   => [
@@ -761,7 +761,7 @@ $services = [
 
                     [
                         "title"      => "Advanced Mineral Separation",
-                        "image"      => "assets/images/services/mining3.jpg",
+                        "image"      => "assets/images/services/mineralseparation1.jpg",
                         "short_desc" => "We implement modern separation technologies to maximize recovery rates and product quality.",
                         "why"        => "Higher recovery ensures better profitability and resource utilization.",
                         "features"   => [
@@ -774,7 +774,7 @@ $services = [
 
                     [
                         "title"      => "Tailings and Waste Management",
-                        "image"      => "assets/images/services/mining3.jpg",
+                        "image"      => "assets/images/services/waste-management.webp",
                         "short_desc" => "We design safe and sustainable tailings management systems to minimize environmental impact.",
                         "why"        => "Responsible waste management ensures compliance and long-term sustainability.",
                         "features"   => [
@@ -788,67 +788,6 @@ $services = [
                 ],
             ],
 
-            // [
-            //     "id"    => "digital-mining-smart-technologies",
-            //     "title" => "Digital Mining & Smart Technologies",
-            //     "items" => [
-
-            //         [
-            //             "title"      => "IoT and Smart Sensors",
-            //             "image"      => "assets/images/services/mining4.jpg",
-            //             "short_desc" => "We deploy IoT-enabled sensors across mining operations to monitor performance, safety, and environmental conditions in real time.",
-            //             "why"        => "Real-time monitoring enhances safety and operational efficiency.",
-            //             "features"   => [
-            //                 "Equipment performance tracking",
-            //                 "Environmental monitoring systems",
-            //                 "Real-time data collection",
-            //                 "Remote monitoring platforms",
-            //             ],
-            //         ],
-
-            //         [
-            //             "title"      => "AI and Predictive Analytics",
-            //             "image"      => "assets/images/services/mining4.jpg",
-            //             "short_desc" => "We apply artificial intelligence and advanced analytics to predict failures, optimize processes, and support data-driven decisions.",
-            //             "why"        => "Predictive insights reduce downtime and improve productivity.",
-            //             "features"   => [
-            //                 "Predictive maintenance",
-            //                 "Operational analytics",
-            //                 "Risk forecasting",
-            //                 "Data-driven optimization",
-            //             ],
-            //         ],
-
-            //         [
-            //             "title"      => "Autonomous Mining Systems",
-            //             "image"      => "assets/images/services/mining4.jpg",
-            //             "short_desc" => "We implement autonomous equipment and remote-controlled operations to enhance safety and efficiency.",
-            //             "why"        => "Automation reduces human exposure to hazards while improving productivity. :contentReference[oaicite:0]{index=0}",
-            //             "features"   => [
-            //                 "Autonomous haulage systems",
-            //                 "Robotic drilling equipment",
-            //                 "Remote operation centers",
-            //                 "Fleet automation",
-            //             ],
-            //         ],
-
-            //         [
-            //             "title"      => "Digital Twin and Simulation",
-            //             "image"      => "assets/images/services/mining4.jpg",
-            //             "short_desc" => "We create digital replicas of mining operations to simulate scenarios and optimize performance.",
-            //             "why"        => "Digital twins enable risk-free testing and better strategic planning. :contentReference[oaicite:1]{index=1}",
-            //             "features"   => [
-            //                 "Virtual mine modelling",
-            //                 "Scenario simulation",
-            //                 "Performance optimization",
-            //                 "Real-time system integration",
-            //             ],
-            //         ],
-
-            //     ],
-            // ],
-
-
             [
                 "id"    => "environmental-sustainability",
                 "title" => "Environmental and Sustainability Services",
@@ -856,7 +795,7 @@ $services = [
 
                     [
                         "title"      => "Environmental Impact Assessment (EIA)",
-                        "image"      => "assets/images/services/mining5.jpg",
+                        "image"      => "assets/images/services/EIA.webp",
                         "short_desc" => "We assess environmental risks and impacts to ensure sustainable mining practices and regulatory compliance.",
                         "why"        => "We help clients operate responsibly while minimizing environmental risks.",
                         "features"   => [
@@ -869,7 +808,7 @@ $services = [
 
                     [
                         "title"      => "Mine Closure and Rehabilitation",
-                        "image"      => "assets/images/services/mining5.jpg",
+                        "image"      => "assets/images/services/mine-closure1.jpg",
                         "short_desc" => "We develop and implement closure plans to restore mined land and ensure long-term environmental stability.",
                         "why"        => "Sustainable closure enhances corporate reputation and meets legal requirements.",
                         "features"   => [
@@ -882,7 +821,7 @@ $services = [
 
                     [
                         "title"      => "ESG and Sustainability Consulting",
-                        "image"      => "assets/images/services/mining5.jpg",
+                        "image"      => "assets/images/services/ESG1.png",
                         "short_desc" => "We support clients in developing ESG strategies aligned with global sustainability standards.",
                         "why"        => "Strong ESG performance improves investor confidence and long-term success.",
                         "features"   => [
@@ -896,47 +835,65 @@ $services = [
                 ],
             ],
 
+            // [
+            //     "id"    => "trade",
+            //     "title" => "Trade",
+            //     "items" => [
+
+            //         [
+            //             "title"      => "Environmental Impact Assessment (EIA)",
+            //             "image"      => "assets/images/services/mining5.jpg",
+            //             "short_desc" => "2019: Brand Launch and Global Outreach At the beginning of 2019, the company successfully produced and exported its specialized 'A grade ultra-fine Afghan talc powder' under its own brand name. This achievement was particularly historic as it marked the first-ever shipment of talc from Afghanistan to Jordan. Throughout 2019, Arya Mineral rapidly expanded its footprint, exporting processed talc to a wide array of international markets, including:",
+            //             "why"        => "We help clients operate responsibly while minimizing environmental risks.",
+            //             "features"   => [
+            //                 "Impact analysis",
+            //                 "Regulatory compliance",
+            //                 "Environmental monitoring",
+            //                 "Mitigation planning",
+            //             ],
+            //         ],
+
+            //         [
+            //             "title"      => "Mine Closure and Rehabilitation",
+            //             "image"      => "assets/images/services/mining5.jpg",
+            //             "short_desc" => "2019-2021: Market Expansion and Partnerships Between 2019 and 2021, Arya Mineral secured a strategic collaboration and contract with a Chinese firm to penetrate and expand its presence within the Chinese markets. By May 27, 2021, the company remained highly active in the processing and export sector, continuing to build upon the foundation of its established factory and its track record of successful international trade",
+            //             "why"        => "Sustainable closure enhances corporate reputation and meets legal requirements.",
+            //             "features"   => [
+            //                 "Land restoration",
+            //                 "Rehabilitation planning",
+            //                 "Post-closure monitoring",
+            //                 "Sustainable land use design",
+            //             ],
+            //         ],
+
+            //         [
+            //             "title"      => "ESG and Sustainability Consulting",
+            //             "image"      => "assets/images/services/mining5.jpg",
+            //             "short_desc" => "We support clients in developing ESG strategies aligned with global sustainability standards.",
+            //             "why"        => "Strong ESG performance improves investor confidence and long-term success.",
+            //             "features"   => [
+            //                 "ESG reporting",
+            //                 "Carbon reduction strategies",
+            //                 "Stakeholder engagement",
+            //                 "Sustainability frameworks",
+            //             ],
+            //         ],
+
+            //     ],
+            // ],
+
             [
-                "id"    => "trade",
-                "title" => "Trade",
+                "id"    => "consulting",
+                "title" => "Consulting",
                 "items" => [
 
                     [
-                        "title"      => "Environmental Impact Assessment (EIA)",
-                        "image"      => "assets/images/services/mining5.jpg",
-                        "short_desc" => "We assess environmental risks and impacts to ensure sustainable mining practices and regulatory compliance.",
-                        "why"        => "We help clients operate responsibly while minimizing environmental risks.",
+                        "title"      => "Consulting and Advisory Services",
+                        "image"      => "assets/images/services/consulting.jpg",
+                        "short_desc" => "Arya mineral render consultancy services to the mining and mega infrastructural projects. The scope of our services includes prospection and exploration of mineral resources; provide trainings in mining optimization techniques, environmental and social assessments of mining and infrastructural projects. With our team of professional and experienced geologists and our management, we provide the contemporary exploration, mining facilities to our clients in consideration to their requirements.",
+                        "why"        => "tobe added",
                         "features"   => [
-                            "Impact analysis",
-                            "Regulatory compliance",
-                            "Environmental monitoring",
-                            "Mitigation planning",
-                        ],
-                    ],
-
-                    [
-                        "title"      => "Mine Closure and Rehabilitation",
-                        "image"      => "assets/images/services/mining5.jpg",
-                        "short_desc" => "We develop and implement closure plans to restore mined land and ensure long-term environmental stability.",
-                        "why"        => "Sustainable closure enhances corporate reputation and meets legal requirements.",
-                        "features"   => [
-                            "Land restoration",
-                            "Rehabilitation planning",
-                            "Post-closure monitoring",
-                            "Sustainable land use design",
-                        ],
-                    ],
-
-                    [
-                        "title"      => "ESG and Sustainability Consulting",
-                        "image"      => "assets/images/services/mining5.jpg",
-                        "short_desc" => "We support clients in developing ESG strategies aligned with global sustainability standards.",
-                        "why"        => "Strong ESG performance improves investor confidence and long-term success.",
-                        "features"   => [
-                            "ESG reporting",
-                            "Carbon reduction strategies",
-                            "Stakeholder engagement",
-                            "Sustainability frameworks",
+                            "tobe added",
                         ],
                     ],
 
