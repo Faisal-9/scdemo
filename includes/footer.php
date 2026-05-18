@@ -1,6 +1,6 @@
 <?php $current_year = date("Y"); ?>
 
-<footer class="site-footer py-4">
+<footer class="site-footer py-3">
     <div class="container">
 
         <!-- TOP SECTION -->
@@ -8,13 +8,18 @@
 
             <!-- LEFT -->
             <div class="col-lg-5 col-12 footer-left text-center text-lg-start">
+                <p>STATE CORPS, Building Afghanistan's Future</p>
+                <p class="footer-tagline">
+                    ISO 18001:2007 Certified
+                </p>
+                <p class="footer-tagline">
+                    ISO 14001:2015 Certified
+                </p>
                 <p class="footer-tagline">
                     ISO 9001:2015 Certified
-                    <span class="divider-dot">|</span>
-                    Building Afghanistan's Future
                 </p>
 
-                <div class="social-icons mt-3 justify-content-center justify-content-lg-start">
+                <!-- <div class="social-icons mt-3 justify-content-center justify-content-lg-start">
                     <a href="https://www.facebook.com/StateCorpsInc/" target="_blank" aria-label="Facebook">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
@@ -24,7 +29,7 @@
                     <a href="https://www.linkedin.com/company/state-corps" target="_blank" aria-label="LinkedIn">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
-                </div>
+                </div> -->
             </div>
 
             <!-- RIGHT -->

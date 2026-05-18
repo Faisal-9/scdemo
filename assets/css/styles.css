@@ -3271,7 +3271,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 10px 18px;
+  gap: 2px 18px;
 }
 
 .footer-links ul li {
@@ -3312,7 +3312,7 @@ img {
 .footer-divider {
   height: 1px;
   background: rgba(255, 255, 255, 0.12);
-  margin: 20px 0 15px;
+  margin: 7px 0 15px;
 }
 
 /* BOTTOM */
