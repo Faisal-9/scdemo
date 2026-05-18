@@ -2175,7 +2175,7 @@ $projects = [
 
 
 $projecthero = [
-    'background' => 'assets/images/phero.png',
+    'background' => 'assets/images/slider_04.jpg',
     'title' => 'Turning Ambition Into <span>Lasting</span> Impact',
     'subtitle' => 'Delivering infrastructure, power & energy, mining, and development projects across regions.',
     'stats' => [
@@ -2183,6 +2183,7 @@ $projecthero = [
         // ['count' => count($projects) . '+', 'label' => 'Projects'],
         // ['count' => count(array_unique(array_column($projects, 'sector'))) . '+', 'label' => 'Sectors'],
         ['count' => '100%', 'label' => 'On Time Delivery'],
+        ['count' => '99%' . ' +', 'label' => 'Accuracy'],
     ]
 ];
 

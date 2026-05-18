@@ -301,7 +301,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
 <?php
 $homepageCategories = [
     'substation' => 'Substation',
-    'transmission line' => 'Transmission',
+    'transmission line' => 'Transmission Line',
     'vertical construction' => 'Building',
     'mineral processing' => 'Mining',
 ];

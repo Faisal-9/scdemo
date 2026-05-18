@@ -30,7 +30,7 @@ usort($media_items, function ($a, $b) {
                                             ) ? 'active' : '' ?>"
                     data-target="<?php echo $tab_key . '-' . $i; ?>"
                     data-tab="<?php echo $tab_key; ?>"
-                    data-id="<?php echo htmlspecialchars($item['id']); ?>">>
+                    data-id="<?php echo htmlspecialchars($item['id']); ?>">
 
                     <!-- THUMBNAIL -->
                     <div class="media-list-item__thumb">

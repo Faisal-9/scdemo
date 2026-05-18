@@ -141,7 +141,7 @@ $services = [
                         "subitems" => [
                             [
                                 "title"      => "Building Design",
-                                "image"      => "assets/images/services/SC10.jpg",
+                                "image"      => "assets/images/projects/07-kabul-1.png",
                                 "short_desc" => "We deliver full-cycle structural design for residential, commercial, and mixed-use buildings, covering concept development through detailed engineering to tender documentation, ensuring safety, efficiency, and adaptability while aligning with project requirements, site conditions, and long-term performance expectations.",
                                 "why"        => "Our designs ensure safety, cost efficiency, and adaptability, creating structures that meet current needs while accommodating future expansion.",
                                 "features"   => [
@@ -373,7 +373,7 @@ $services = [
 
     "implementation" => [
         "title"      => "Project Delivery",
-        "hero_image" => "assets/images/services/service-del-hero.jpg",
+        "hero_image" => "assets/images/services/service-hero.jpg",
         "hero_text"  => "Delivering integrated project delivery solutions from execution and construction through commissioning, operations, and long-term asset performance.",
 
         "sub_services" => [

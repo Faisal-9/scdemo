@@ -16,7 +16,7 @@ $media = [
             'title' => '$243 Million Strategic Agreement Signed Between State Corporations and METQ for Afghan-Uzbek Five Projects',
             'description' => ['The Afghan-Uzbek power infrastructure initiative comprises major transmission line and substation projects designed to strengthen Afghanistan\'s national grid, regional connectivity, and long-term energy reliability. The program includes the 201 km Hairatan-Dashti Alwan 500 kV transmission line, the 114 km Kabul-Jalalabad 220 kV transmission line, and strategic expansions of the Dashti Alwan, Shaikh Mesri, Hamisha Bahar, and Arghandi substations.', 'The projects cover complete EPC and turnkey services including survey, engineering, design, procurement, construction, installation, testing, commissioning, grid integration, and operation & maintenance support. Key infrastructure components include high-voltage transmission lines, AIS substations, transformer bays, line bays, and advanced shunt reactor systems for voltage control and reactive power compensation.', 'Together, these developments aim to improve transmission capacity, operational flexibility, grid stability, and secure power delivery across Afghanistan while supporting regional energy cooperation and future network expansion.'],
             'image' => 'assets/images/media/0925-kabul.jpeg',
-            // 'link' => 'https://en.didpress.com/23402/',
+            // 'link' => '',
             'tags' => ['Deal', 'Power Supply', 'Energy'],
         ],
     ],
