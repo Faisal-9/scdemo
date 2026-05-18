@@ -15,14 +15,14 @@
                 </p>
 
                 <div class="social-icons mt-3 justify-content-center justify-content-lg-start">
-                    <a href="https://www.linkedin.com/company/statecorps" target="_blank" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
                     <a href="https://www.facebook.com/StateCorpsInc/" target="_blank" aria-label="Facebook">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
                     <a href="https://twitter.com/StateCorps" target="_blank" aria-label="Twitter">
                         <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/state-corps" target="_blank" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
                     </a>
                 </div>
             </div>
@@ -32,11 +32,18 @@
 
                 <div class="footer-links">
                     <ul>
-                        <li><a href="sectors.php?tab=energy#energy-transmission">Transmission Lines</a></li>
-                        <li><a href="sectors.php?tab=energy#energy-substations">Substations</a></li>
-                        <li><a href="sectors.php?tab=structure#structure-roads">Roads &amp; Highways</a></li>
-                        <li><a href="sectors.php?tab=energy#energy-hydropower">Hydropower</a></li>
-                        <li><a href="sectors.php?tab=energy#energy-distribution">Distribution Networks</a></li>
+                        <li><a href="services.php?tab=engineeringanddesign#engineeringanddesign-engineering-services">Engineering services</a></li>
+                        <li><a href="services.php?tab=engineeringanddesign#engineeringanddesign-design-services">Design services</a></li>
+                        <li><a href="services.php?tab=mining">Mining Services</a></li>
+                        <li><a href="services.php?tab=implementation#implementation-project-management">Project Management</a></li>
+                        <li><a href="sectors.php?tab=powerenergy">Power &amp; Energy sector</a></li>
+                        <li><a href="publicv6/sectors.php?tab=transport">Transport sector</a></li> 
+                        <li><a href="publicv6/sectors.php?tab=Infrastructure">Transport sector</a></li> 
+                        <li><a href="sectors.php?tab=mining">Mining sector</a></li>
+                        <li><a href="projects.php">Our Projects</a></li>
+                        <li><a href="about.php#general-info">Company Overview</a></li>
+                        <li><a href="about.php#mission-vision">Our Mission & Vision</a></li>
+                        <li><a href="about.php#clients">Our Clients</a></li>
                     </ul>
                 </div>
 

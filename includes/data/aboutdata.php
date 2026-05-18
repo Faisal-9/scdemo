@@ -65,43 +65,6 @@ $missionVision = [
 ];
 
 
-// $milestones = [
-//     'title' => 'Growth Timeline',
-//     'items' => [
-//         [
-//             'year' => '2007',
-//             'title' => 'State Corps Established',
-//             'description' => 'Establishment of the company in Afghanistan.'
-//         ],
-//         [
-//             'year' => '2010',
-//             'title' => 'First Major Project',
-//             'description' => 'Completion of a major infrastructure project.'
-//         ],
-//         [
-//             'year' => '2014',
-//             'title' => 'International Expansion',
-//             'description' => 'Established offices in Türkiye and the United States.'
-//         ],
-//         [
-//             'year' => '2021',
-//             'title' => 'Major Project Milestone',
-//             'description' => 'Completed over 60 projects valued at more than $400 million.'
-//         ],
-//         [
-//             'year' => '2024',
-//             'title' => 'MOEW & DABS Recognition',
-//             'description' => 'Awarded recognition for successful energy infrastructure projects.'
-//         ],
-//         [
-//             'year' => '2025',
-//             'title' => 'Uzbek-Afghan Energy Projects',
-//             'description' => 'Transmission Lines, Substations, and Distribution projects with MEW.'
-//         ]
-//     ]
-// ];
-
-
 $clients = [
     'title' => 'Our Clients',
     'items' => [
@@ -216,15 +179,15 @@ $aboutSections = [
         'data' => $clients
     ],
     [
-        'id' => 'sister',
-        'data' => $sisterCompanies
+        'id' => 'certificates',
+        'data' => $certificates
     ],
     [
         'id' => 'awards',
         'data' => $awards
     ],
     [
-        'id' => 'certificates',
-        'data' => $certificates
+        'id' => 'sister',
+        'data' => $sisterCompanies
     ],
 ];

@@ -68,7 +68,7 @@ include_once("includes/data/projectsdata.php");
                                     <i class="fa-brands fa-x-twitter"></i>
                                 </a>
 
-                                <a href="https://www.linkedin.com/company/statecorps" class="social-link-header" target="_blank">
+                                <a href="https://www.linkedin.com/company/state-corps" class="social-link-header" target="_blank">
                                     <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
