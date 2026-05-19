@@ -840,6 +840,7 @@ $projects = [
     // ],
 
 
+    
     [
         'id' => 'w28',
         'name' => 'Elevated Water Tower, Balkh',
@@ -871,6 +872,34 @@ $projects = [
 
     ],
 
+    [
+        'id' => 'w28-1',
+        'name' => 'Water Distribution, Kabul',
+        'sector' => 'water Resources',
+        'category' => 'water supply networks',
+        'status' => 'completed',
+        'completion-year' => 2020,
+        'location' => 'Kabul',
+        'client' => '',
+        'inhome' => 'no',
+        'catimage' => 'no',
+        'thumbnail' => 'assets/images/projects/28-1-kabul-1.jpeg',
+
+        'images' => [
+            'assets/images/projects/28-1-kabul-1.jpeg',
+        ],
+
+        'description' =>
+        'tobe added',
+
+        'scope' => [
+            '',
+            '',
+            '',
+            '',
+        ]
+
+    ],
 
     // [
     //     'id' => 'b29',
