@@ -1270,7 +1270,7 @@ img {
 }
 
 .timeline-item:hover {
-  background: #f5f7fb;
+  background: #eef0f3;
 }
 .timeline-item.active {
   background: #0b1d4f;
@@ -1678,7 +1678,7 @@ img {
   justify-content: center;
   gap: 8px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #0b1d4f;
   position: sticky;
   top: 80px;
   background: #fff;
@@ -1689,7 +1689,7 @@ img {
   padding: 12px 24px;
   border: 1px solid transparent;
   border-radius: 0 0 10px 10px;
-  background: #f6f2ed;
+  background: #eef0f3;
   color: #333;
   font-weight: 600;
   text-align: center;
@@ -1703,15 +1703,14 @@ img {
 }
 
 .sub-tab:hover {
-  background: #e8461e;
+  background: #0b1d4f;
   color: #fff;
-  transform: translateY(-1px);
 }
 
 .sub-tab.active {
-  background: #e8461e;
+  background: #0b1d4f;
   color: #fff;
-  border-color: #e8461e;
+  border-color: #0b1d4f;
 }
 
 .sub-sub-menu {
@@ -1966,10 +1965,19 @@ img {
   display: inline-block;
   margin: 1dvh 0;
   padding: 10px 20px;
-  background: #e8461e;
-  color: #fff;
-  text-decoration: none;
+  background: #eef0f3;
+  color: #0b1d4f;
+  text-decoration: underline;
   border-radius: 4px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
+  white-space: nowrap;
+}
+.btn-cta:hover {
+  background: #0b1d4f;
+  color: #fff;
 }
 
 .btn-cta.small {
@@ -2188,6 +2196,36 @@ img {
   border-bottom: 1px solid #eee;
   border-radius: 10px;
   padding: 10px;
+}
+
+.projects-page .project-filter-btn {
+  padding: 8px 16px;
+  border: 1px solid transparent !important;
+  background: #eef0f3;
+  color: #0b1d4f;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.projects-page .project-filter-btn:hover {
+  background: #0b1d4f !important;
+  color: #fff !important;
+}
+
+.projects-page .project-filter-btn.active {
+  background: #0b1d4f;
+  color: #fff;
+}
+
+.projects-page .statusfilter-options {
+  background: #eef0f3;
+  color: #0b1d4f;
 }
 
 .project-page-card {
@@ -2436,6 +2474,7 @@ img {
 .project-category-section h2 {
   font-size: 28px;
   font-weight: 700;
+  color: #0b1d4f;
 }
 
 .project-count {

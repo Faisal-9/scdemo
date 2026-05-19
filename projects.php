@@ -47,13 +47,12 @@ $urlSector = isset($_GET['sector']) ? strtolower(trim($_GET['sector'])) : 'all';
                         <div class="col-lg-10">
                             <div class="btn-group project-filters flex-wrap gap-2">
 
-                                <button class="btn btn-outline-dark active" data-sector="all">All</button>
+                                <button class="btn project-filter-btn active" data-sector="all">All</button>
 
                                 <?php
                                 $sectors = array_unique(array_map('strtolower', array_column($projects, 'sector')));
-                                foreach ($sectors as $sector):
-                                ?>
-                                    <button class="btn btn-outline-dark" data-sector="<?php echo $sector ?>">
+                                foreach ($sectors as $sector): ?>
+                                    <button class="btn project-filter-btn" data-sector="<?php echo $sector ?>">
                                         <?php echo ucfirst($sector) ?>
                                     </button>
                                 <?php endforeach; ?>
@@ -63,12 +62,12 @@ $urlSector = isset($_GET['sector']) ? strtolower(trim($_GET['sector'])) : 'all';
 
                         <div class="col-lg-2">
                             <select class="statusfilter form-select" id="statusFilter">
-                                <option value="all">All Status</option>
+                                <option class="statusfilter-options" value="all">All Status</option>
                                 <?php
                                 $statuses = array_unique(array_map('strtolower', array_column($projects, 'status')));
                                 foreach ($statuses as $status):
                                 ?>
-                                    <option value="<?php echo $status ?>"><?php echo ucfirst($status) ?></option>
+                                    <option class="statusfilter-options" value="<?php echo $status ?>"><?php echo ucfirst($status) ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
