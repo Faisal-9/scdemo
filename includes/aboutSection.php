@@ -95,7 +95,7 @@ $aboutSections = [
 
                     <!-- MISSION & VISION -->
                     <section id="mission-vision" class="about-section-block about-panel py-1">
-                        <h2 class="text-center mb-3">Mission, Vision & Core Values</h2>
+                        <h2 class="text-center mb-4">Mission, Vision & Core Values</h2>
 
                         <!-- ROW 1: Mission — text left, image right -->
                         <div class="row align-items-center g-4 mb-5">
