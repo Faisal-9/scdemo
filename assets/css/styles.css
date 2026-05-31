@@ -1136,32 +1136,6 @@ img {
   transform: scale(0.97);
 }
 
-/*  CONTACT QUICK  */
-
-/* .index-contact-section {
-  background: #f5f5f5;
-}
-
-.index-contact-section .contact-title span {
-  color: #e6a73c;
-} */
-
-/* .index-contact-section .contact-item {
-  padding: 20px;
-} */
-
-/* .index-contact-section .contact-icon {
-  font-size: 40px;
-  color: #e6a73c;
-  margin-bottom: 15px;
-} */
-
-/* .index-contact-section .contact-text {
-  color: #555;
-  line-height: 1.7;
-  font-size: 16px;
-}
-
 /* ================= ABOUT PAGE ================= */
 
 /* SIDEBAR DIVIDER */
@@ -3426,10 +3400,11 @@ img {
 
 /* ================= CONTACT ================= */
 .contact {
-  background: #ecebeb !important;
+  background: #fff;
 }
 
-.contact .container {
+.contact .contactcontainer {
+  background: #ecebeb !important;
   position: relative;
   z-index: 2;
 }

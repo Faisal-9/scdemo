@@ -66,7 +66,7 @@ $international_offices = [
 ?>
 
 <section class="contact py-4">
-    <div class="container">
+    <div class="container contactcontainer rounded">
 
         <h2 class="text-center fw-bold mb-4">Reach Us</h2>
 
