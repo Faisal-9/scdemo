@@ -840,7 +840,7 @@ $projects = [
     // ],
 
 
-    
+
     [
         'id' => 'w28',
         'name' => 'Elevated Water Tower, Balkh',
@@ -1308,13 +1308,13 @@ $projects = [
         ],
 
         'description' =>
-        'This contract was signed between Da Afghanistan Breshna Sherkat (DABS) and State Corps, The project covers the -Design, Supply, Construction, Erection, Testing and Commissioning of Four Substations of 110/20 kV at Chesht Sharif, Hobi, Karokh & Pashton Zarghoon districts of Herat province of Afghanistan',
+        'This EPC contract was signed between Da Afghanistan Breshna Sherkat (DABS) and the ASTER Private Limited - State Corps JV. The scope of work comprises Engineering, Procurement, and Construction (EPC), including design, supply, construction, erection, testing, and commissioning of four (4) 110/20 kV substations located in Chesht Sharif, Aobey, Karokh, and Pashton Zarghoon districts of Herat Province, Afghanistan.',
 
         'scope' => [
-            'Four Substations of 110/20 kV',
-            '',
-            '',
-            '',
+            '110/20 kV Chesht Substation (8/10 MVA)',
+            '110/20 kV Hobai Substation (8/10 MVA)',
+            '110/20 kV Karokh Substation (8/10 MVA)',
+            '110/20 kV Pashton Zarghoon Substation (8/10 MVA)'
         ]
 
     ],
@@ -1599,36 +1599,36 @@ $projects = [
     // ],
 
 
-    [
-        'id' => 'p74',
-        'name' => 'Amu Darya Crossing Special Project',
-        'sector' => 'Power and Energy',
-        'category' => 'transmission line',
-        'status' => 'Ongoing',
-        'completion-year' => 'Ongoing',
-        'location' => 'Hairatan',
-        'client' => 'METQ',
-        'inhome' => 'yes',
-        'catimage' => 'no',
-        'thumbnail' => '',
+    // [
+    //     'id' => 'p74',
+    //     'name' => 'Amu Darya Crossing Special Project',
+    //     'sector' => 'Power and Energy',
+    //     'category' => 'transmission line',
+    //     'status' => 'Ongoing',
+    //     'completion-year' => 'Ongoing',
+    //     'location' => 'Hairatan',
+    //     'client' => 'METQ',
+    //     'inhome' => 'yes',
+    //     'catimage' => 'no',
+    //     'thumbnail' => '',
 
-        'images' => [
-            '',
-            '',
-            ''
-        ],
+    //     'images' => [
+    //         '',
+    //         '',
+    //         ''
+    //     ],
 
-        'description' =>
-        '',
+    //     'description' =>
+    //     '',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
+    // ],
 
 
     [
@@ -1791,36 +1791,36 @@ $projects = [
     ],
 
 
-    [
-        'id' => 'p80',
-        'name' => 'Design Service for Uzbek Afghan 500Kv 5 projects',
-        'sector' => 'Power and Energy',
-        'category' => 'design',
-        'status' => 'Ongoing',
-        'completion-year' => 'Ongoing',
-        'location' => 'StateCorps Turkey',
-        'client' => 'METQ',
-        'inhome' => 'no',
-        'catimage' => 'no',
-        'thumbnail' => '',
+    // [
+    //     'id' => 'p80',
+    //     'name' => 'Design Service for Uzbek Afghan 500Kv 5 projects',
+    //     'sector' => 'Power and Energy',
+    //     'category' => 'design',
+    //     'status' => 'Ongoing',
+    //     'completion-year' => 'Ongoing',
+    //     'location' => 'StateCorps Turkey',
+    //     'client' => 'METQ',
+    //     'inhome' => 'no',
+    //     'catimage' => 'no',
+    //     'thumbnail' => '',
 
-        'images' => [
-            '',
-            '',
-            ''
-        ],
+    //     'images' => [
+    //         '',
+    //         '',
+    //         ''
+    //     ],
 
-        'description' =>
-        '',
+    //     'description' =>
+    //     '',
 
-        'scope' => [
-            '',
-            '',
-            '',
-            '',
-        ]
+    //     'scope' => [
+    //         '',
+    //         '',
+    //         '',
+    //         '',
+    //     ]
 
-    ],
+    // ],
 
 
     [
@@ -1985,9 +1985,9 @@ $projects = [
 
     [
         'id' => 'p91',
-        'name' => 'Pul-e-Khorasan - Qush Tepa - Darazab 220 kV TL',
+        'name' => 'Electrification of Qush Tepa and Darzaab Districts of Jawzjan Province Project ',
         'sector' => 'Power and Energy',
-        'category' => 'transmission line',
+        'category' => 'multi-service',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
         'location' => 'Jawzjan',
@@ -2003,85 +2003,27 @@ $projects = [
         ],
 
         'description' =>
-        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Qush Tepa and Darzaab districts. One of the key components of this project is the construction of an 85.24 km 220 kV transmission line, The line consists of 52.76 km from Pul-e-Khorasan to Qush Tepa Substation and 32.48 km from Qush Tepa to Darzab Substation.',
+        'This is a Design-Build / EPC project currently being executed under a contract between the Ministry of Water and Energy (MoWE) and State Corps, covering the development of the power network in Qush Tepa and Darzab districts of Afghanistan. The scope includes the construction of two new substations with capacities of 20 MVA in Qush Tepa and 32 MVA in Darzab, along with associated 20/0.4 kV MV and LV distribution networks with total capacities of 16 MVA in Qush Tepa and 20 MVA in Darzab. It also involves the construction of an 85.24 km 220 kV transmission line from Pul-e-Khorasan to Qush Tepa and onward to Darzab, along with a 220 kV line bay at Pul-e-Khorasan Substation for integration into the national grid.',
 
         'scope' => [
-            'Survey, design, procurement, construction, testing, and commissioning of the 220 kV transmission line from Pul-e-Khorasan to Qush Tepa and Darzaab Substations.',
-            'Construction of an overhead 220 kV single-circuit line from Pul-e-Khorasan Substation to Qush Tepa Substation (52.76 km) and from Qush Tepa Substation to Darzaab Substation (32.48 km).',
-            'Optical Ground Wire (OPGW) for communication and protection purposes',
+            'Pul-e-Khorasan - Qush Tepa (52.76 km) 220 kV TL',
+            'Qush Tepa - Darzab (32.48 km) 220 kV TL',
+            'OPGW communication & protection system installation',
+            '220/20 kV Substation, Qush Tepa (20 MVA)',
+            '220/20 kV Substation, Darzab (32 MVA)',
+            '220 kV line bay at Pul-e-Khorasan Substation',
+            '20/0.4 kV MV/LV distribution networks (Qush Tepa & Darzab)',
+            'Distribution capacity: 16 MVA (Qush Tepa)',
+            'Distribution capacity: 20 MVA (Darzab)',
         ]
 
     ],
-
-
-    [
-        'id' => 'p92',
-        'name' => 'Qush Tepa & Darzab Substations',
-        'sector' => 'Power and Energy',
-        'category' => 'substation',
-        'status' => 'Ongoing',
-        'completion-year' => 'Ongoing',
-        'location' => 'Jawzjan',
-        'client' => 'MoWE',
-        'inhome' => 'no',
-        'catimage' => 'no',
-        'thumbnail' => '',
-
-        'images' => [
-            '',
-            '',
-            ''
-        ],
-
-        'description' =>
-        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Qush Tepa and Darzab districts. One of the key components of this project is the construction of two new substations to ensure efficient power transformation and distribution, including a 20 MVA (2*10 MVA) substation in Qush Tepa District and a 32 MVA (2*16 MVA) substation in Darzab District. In addition, one 220 kV line bay will be established at Pul-e-Khorasan Substation to facilitate the integration of the new substations into the national grid.',
-
-        'scope' => [
-            'Survey, design, procurement, construction, testing, and commissioning of two new substations in Qush Tepa and Darzab districts.',
-            '20 MVA (2*10 MVA) substation in Qush Tepa District',
-            '32 MVA (2*16 MVA) substation in Darzaab District',
-            'Establishment of one 220 kV systems (line Bay) in Pul-e-Khorasan Substation.',
-        ]
-
-    ],
-
-
-    [
-        'id' => 'p93',
-        'name' => 'Qush Tepa & Darzab Distribution Networks',
-        'sector' => 'Power and Energy',
-        'category' => 'distribution networks',
-        'status' => 'Ongoing',
-        'completion-year' => 'Ongoing',
-        'location' => 'Jawzjan',
-        'client' => 'MoWE',
-        'inhome' => 'no',
-        'catimage' => 'no',
-        'thumbnail' => '',
-
-        'images' => [
-            '',
-            '',
-            ''
-        ],
-
-        'description' =>
-        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Qush Tepa and Darzab districts. One of the key components of this project is the development of medium- and low-voltage (20/0.4 Kv) distribution networks to provide electricity to households, public services, and businesses in both districts, including a total distribution capacity of 16 MVA in Qush Tepa District and 20 MVA in Darzab District.',
-
-        'scope' => [
-            'Construction of medium- and low-voltage (20/0.4 kV) distribution networks to provide electricity to households, public services, and businesses in Qush Tepa and Darzaab Districts.',
-            'The total distribution capacity in Qush Tepa District is 16 MVA',
-            'The total distribution capacity in Darzaab District is 20 MVA'
-        ]
-
-    ],
-
 
     [
         'id' => 'p94',
-        'name' => 'Sare Pul to Sancharak 110 kV TL',
+        'name' => 'Electrification of Sangcharak, Sozmaqala & Gusfandi Districts of Sar-e-Pul Province, Afghanistan ',
         'sector' => 'Power and Energy',
-        'category' => 'transmission line',
+        'category' => 'multi-service',
         'status' => 'Ongoing',
         'completion-year' => 'Ongoing',
         'location' => 'Sare Pul',
@@ -2097,21 +2039,26 @@ $projects = [
         ],
 
         'description' =>
-        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Sangcharak, Sozmaqala, and Gusfandi districts. One of the key components of this project is the construction of a 60 km, 110 kV transmission line from Sar-e Pul to Sangcharak Substation.',
+        'This is a Design-Build / EPC project currently being executed under a contract between the Ministry of Water and Energy (MoWE) and State Corps, covering the electrification of Sangcharak, Sozmaqala, and Gusfandi districts of Afghanistan. The scope includes the construction of a 60 km, 110 kV transmission line from Sar-e Pul to Sangcharak Substation, along with a new 110/20 kV Sangcharak Substation with a capacity of 32 MVA (2x16 MVA). It also includes the construction of a 110 kV line bay at Sar-e Pul Substation for integration into the national grid. In addition, the project involves the development of 20/0.4 kV MV/LV distribution networks with total capacities of 3 MVA in Sangcharak, 18 MVA in Sozmaqala, and 5 MVA in Gusfandi districts.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Sar-e Pul - Sangcharak Substation (60 km)',
+            'Overhead 110 kV single-circuit transmission line',
+            'OPGW communication and protection system installation',
+            '110/20 kV Sangcharak Substation (32 MVA, 2x16 MVA)',
+            '110 kV line bay at Sar-e Pul Substation',
+            '20/0.4 kV MV/LV distribution networks in three districts',
+            ' Distribution capacity: 3 MVA (Sangcharak)',
+            ' Distribution capacity: 18 MVA (Sozmaqala)',
+            ' Distribution capacity: 5 MVA (Gusfandi)',
         ]
 
     ],
 
 
     [
-        'id' => 'p95',
-        'name' => 'Sancharak SS and Sare Pul Line Bay',
+        'id' => 'p96',
+        'name' => 'Electrification of Balchiragh, Garziwan and Pashtun Kot Districts of Faryab Province ',
         'sector' => 'Power and Energy',
         'category' => 'multi-service',
         'status' => 'Ongoing',
@@ -2129,43 +2076,19 @@ $projects = [
         ],
 
         'description' =>
-        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Sangcharak, Sozmaqala, and Gusfandi districts. One of the key components of this project is the construction of a new 32 MVA (2*16 MVA) substation to ensure efficient power transformation and distribution. In addition, a 110 kV line bay will be established at Sar-e Pul Substation to facilitate the integration of the new substation into the national grid.',
+        'This is a Design-Build / Istisna (EPC) project currently being implemented under a contract between the Ministry of Water and Energy (MoWE) and State Corps, covering the development of the power supply network in Balchiragh, Garziwan, and Pashtun Kot districts of Faryab Province, Afghanistan. The scope of works includes the construction of a 65 km, 110 kV overhead single-circuit transmission line from Maimana Substation to Balchiragh Substation and onward to Garziwan Substation, the establishment of two new 110/20 kV substations at Balchiragh (10 MVA, 2x5 MVA) and Garziwan (10 MVA, 2x5 MVA), the construction of a 110 kV line bay at Maimana Substation for grid integration, and the development of 20/0.4 kV medium- and low-voltage distribution networks to supply residential, commercial, and public service consumers, with total distribution capacities of 8 MVA in Balchiragh, 16 MVA in Garziwan, and 5 MVA in Pashtun Kot',
 
         'scope' => [
-            'Survey, design, procurement, construction, testing, and commissioning of a 32 MVA (2*16 MVA) substation in Sangcharak District',
-            'Establishment of one 110 kV systems (line Bay) in Sar-e Pul Substation',
-        ]
-
-    ],
-
-
-    [
-        'id' => 'p96',
-        'name' => 'Sancharak, Sozmaqala & Gosfandi Distribution Networks',
-        'sector' => 'Power and Energy',
-        'category' => 'distribution networks',
-        'status' => 'Ongoing',
-        'completion-year' => 'Ongoing',
-        'location' => 'Sare Pul',
-        'client' => 'MoWE',
-        'inhome' => 'no',
-        'catimage' => 'no',
-        'thumbnail' => '',
-
-        'images' => [
-            '',
-            '',
-            ''
-        ],
-
-        'description' =>
-        'This contract was signed between the Ministry of Water and Energy (MoWE) and State Corps. The project covers the electrification of Sangcharak, Sozmaqala, and Gusfandi districts. One of the key components of this project is the development of medium- and low-voltage (20/0.4 Kv) distribution networks to provide electricity to households, public services, and businesses in three districts, including a total distribution capacity of 3 MVA in Sangcharak District,18 MVA in Sozmaqala District and 5 MVA in Gusfandi District.',
-
-        'scope' => [
-            'Construction of medium- and low-voltage (20/0.4 kV) distribution networks to provide electricity to households, public services, and businesses in Sangcharak, Sozmaqala and Gusfandi Districts.',
-            'The total distribution capacity in Sangcharak District is 3 MVA',
-            'The total distribution capacity in Sozmaqala District is 18 MVA',
-            'The total distribution capacity in Gusfandi District is 5 MVA',
+            'Maimana - Balchiragh Substation (44 km) 110 kV TL',
+            'Balchiragh - Garziwan Substation (21 km) 110 kV TL',
+            'Overhead 110 kV single-circuit transmission line',
+            '110/20 kV Balchiragh Substation (10 MVA, 2x5 MVA)',
+            '110/20 kV Garziwan Substation (10 MVA, 2x5 MVA)',
+            '110 kV line bay at Maimana Substation',
+            '20/0.4 kV MV/LV distribution networks in three districts',
+            'Distribution capacity: 8 MVA (Balchiragh)',
+            'Distribution capacity: 16 MVA (Garziwan)',
+            'Distribution capacity: 5 MVA (Pashtun Kot)',
         ]
     ],
 
