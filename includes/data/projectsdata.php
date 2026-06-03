@@ -135,12 +135,12 @@ $projects = [
         'client' => '',
         'inhome' => 'yes',
         'catimage' => 'no',
-        'thumbnail' => '',
+        'thumbnail' => 'assets/images/projects/05-gulbahar-1.jpeg',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/05-gulbahar-1.jpeg',
+            'assets/images/projects/05-gulbahar-2.jpeg',
+            'assets/images/projects/05-gulbahar-3.jpeg'
         ],
 
         'description' =>
@@ -199,7 +199,7 @@ $projects = [
         'client' => 'USACE',
         'inhome' => 'yes',
         'catimage' => 'yes',
-        'thumbnail' => 'assets/images/projects/07-kabul-2.png',
+        'thumbnail' => 'assets/images/projects/07-kabul-1.png',
 
         'images' => [
             'assets/images/projects/07-kabul-1.png',
@@ -1298,13 +1298,13 @@ $projects = [
         'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
         'inhome' => 'no',
         'catimage' => 'no',
-        'thumbnail' => 'assets/images/projects/41-herat-1.png',
+        'thumbnail' => 'assets/images/projects/41-herat-1.jpeg',
 
         'images' => [
-            'assets/images/projects/41-herat-1.png',
-            'assets/images/projects/41-herat-2.png',
-            'assets/images/projects/41-herat-3.png',
-            'assets/images/projects/41-herat-4.png'
+            'assets/images/projects/41-herat-1.jpeg',
+            'assets/images/projects/41-herat-2.jpeg',
+            'assets/images/projects/41-herat-3.jpeg',
+            'assets/images/projects/41-herat-4.jpeg'
         ],
 
         'description' =>
@@ -1738,16 +1738,16 @@ $projects = [
         'client' => 'METQ',
         'inhome' => 'no',
         'catimage' => 'no',
-        'thumbnail' => '',
+        'thumbnail' => 'assets/images/projects/78-shaikhmesri-1.jpeg',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/78-shaikhmesri-1.jpeg',
+            'assets/images/projects/78-shaikhmesri-2.jpeg',
+            'assets/images/projects/78-shaikhmesri-3.jpeg'
         ],
 
         'description' =>
-        '',
+        'This is a Design-Build / EPC program executed under contracts between JSC METQ and State Corps for the expansion of Afghanistan high-voltage power transmission network. The projects include key infrastructure such as the Kabul-Jalalabad 220 kV transmission line, covering full scope of survey, design, procurement, civil works, tower erection, stringing, testing, and commissioning.These works are aimed at strengthening national grid stability, increasing transmission capacity, and enhancing regional power connectivity.',
 
         'scope' => [
             '',
