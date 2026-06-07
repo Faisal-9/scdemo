@@ -28,7 +28,7 @@ $active_id = isset($_GET['id']) ? $_GET['id'] : '';
 
     <main>
 
-        <section class="media-page py-3">
+        <section class="media-page py-2">
 
             <div class="container">
 
