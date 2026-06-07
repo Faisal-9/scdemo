@@ -73,10 +73,10 @@ $projects = [
         'client' => '',
         'inhome' => 'yes',
         'catimage' => 'yes',
-        'thumbnail' => 'assets/images/projects/02-gulbahar-nijrab-1.png',
+        'thumbnail' => 'assets/images/projects/03-gulbahar-nijrab-1.png',
 
         'images' => [
-            'assets/images/projects/02-gulbahar-nijrab-1.png',
+            'assets/images/projects/03-gulbahar-nijrab-1.png',
         ],
 
         'description' =>
