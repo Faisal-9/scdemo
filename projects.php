@@ -43,7 +43,7 @@ $urlSector = isset($_GET['sector']) ? strtolower(trim($_GET['sector'])) : 'all';
 
                 <div class="filters-box">
 
-                    <div class="row mb-3 align-items-center">
+                    <div class="row align-items-center">
                         <div class="col-lg-10">
                             <div class="btn-group project-filters flex-wrap gap-2">
 

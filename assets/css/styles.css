@@ -2164,12 +2164,12 @@ img {
 /* ================= PROJECTS PAGE ================= */
 .projects-page .filters-box {
   position: sticky;
-  top: 65px;
+  top: 89px;
   z-index: 100;
-  background: #ffffffe7;
+  /* background: #e9e8e8e7; */
   border-bottom: 1px solid #eee;
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .projects-page .project-filter-btn {
@@ -2442,13 +2442,14 @@ img {
 
 /*  CATEGORY  */
 .project-category-section {
-  margin: 60px 0;
+  margin: 20px 0;
 }
 
 .project-category-section h2 {
   font-size: 28px;
   font-weight: 700;
   color: #0b1d4f;
+  text-decoration: underline;
 }
 
 .project-count {
