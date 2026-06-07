@@ -43,11 +43,10 @@ $projects = [
         'client' => '',
         'inhome' => 'no',
         'catimage' => 'no',
-        'thumbnail' => 'assets/images/projects/',
+        'thumbnail' => 'assets/images/projects/2-JabulSaraj-Gulbahar-1.jpeg',
 
         'images' => [
-            'assets/images/projects/',
-            '',
+            'assets/images/projects/2-JabulSaraj-Gulbahar-1.jpeg',
         ],
 
         'description' =>
@@ -131,8 +130,8 @@ $projects = [
         'category' => 'substation',
         'status' => 'Completed',
         'completion-year' => 2020,
-        'location' => 'Gulbahar',
-        'client' => '',
+        'location' => 'Kapisa',
+        'client' => 'Da Afghanistan Breshna Sherkat (DABS)',
         'inhome' => 'yes',
         'catimage' => 'no',
         'thumbnail' => 'assets/images/projects/05-gulbahar-1.jpeg',
@@ -1642,12 +1641,12 @@ $projects = [
         'client' => 'METQ',
         'inhome' => 'no',
         'catimage' => 'no',
-        'thumbnail' => '',
+        'thumbnail' => 'assets/images/projects/75-SurkhanDashtalwan-1.jpeg',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/75-SurkhanDashtalwan-1.jpeg',
+            'assets/images/projects/75-SurkhanDashtalwan-2.jpeg',
+            'assets/images/projects/75-SurkhanDashtalwan-3.jpeg'
         ],
 
         'description' =>
@@ -1834,12 +1833,12 @@ $projects = [
         'client' => 'ABC',
         'inhome' => 'no',
         'catimage' => 'no',
-        'thumbnail' => '',
+        'thumbnail' => 'assets/images/projects/85-ChemtalaTarakhail-1.jpeg',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/85-ChemtalaTarakhail-1.jpeg',
+            'assets/images/projects/85-ChemtalaTarakhail-2.jpeg',
+            'assets/images/projects/85-ChemtalaTarakhail-3.jpeg'
         ],
 
         'description' =>
@@ -1994,12 +1993,11 @@ $projects = [
         'client' => 'MoWE',
         'inhome' => 'no',
         'catimage' => 'no',
-        'thumbnail' => '',
+        'thumbnail' => 'assets/images/projects/91-QushTepaDarzaab-1.jpeg',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/91-QushTepaDarzaab-1.jpeg',
+            'assets/images/projects/91-QushTepaDarzaab-2.jpeg',
         ],
 
         'description' =>
