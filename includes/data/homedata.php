@@ -81,11 +81,11 @@ $whySC = [
         'tabname' => 'Delivering Experience',
         'title' => 'Delivering Experience',
         'text' => [
-            'Proven track record across diverse and challenging project environments.',
-            'Deep industry expertise in energy, infrastructure, and mining sectors.',
-            'Commitment to delivering projects on time and within budget.',
-            'Strong focus on quality, safety, reliability, and operational excellence.',
-            'Results-driven approach that ensures long-term value for clients.'
+            'Proven track record',
+            'Deep industrial expertise',
+            'On time and within budget delivery.',
+            'Strong focus on quality & safety',
+            'Results-driven approach ensuring long-term value.'
         ],
         'image' => 'assets/images/home/homedeliveryexperince.jpeg'
     ],
@@ -99,11 +99,14 @@ $whySC = [
         'tabname' => 'Technical Capabilities',
         'title' => 'Technical Capabilities',
         'text' => [
-            'Advanced engineering solutions for energy, infrastructure, and mining projects.',
-            'Multidisciplinary teams managing projects from design and planning to execution and commissioning.',
-            'Use of modern technologies and industry best practices to improve efficiency, precision, and performance.',
-            'Strong commitment to quality, safety, sustainability, and international standards.',
-            'Delivery of reliable and scalable solutions that create long-term operational value.'
+            'Advanced engineering solutions',
+            'Multidisciplinary teams',
+            'Modern Technologies',
+            'Innovative Solutions',
+            'Project Management Excellence',
+            'Quality Assurance Standards',
+            'Digital Transformation Capability',
+            'Sustainable Infrastructure Design',
         ],
         'image' => 'assets/images/11.jpg'
     ]
@@ -111,49 +114,49 @@ $whySC = [
 
 
 /* ================= SERVICES ================= */
-$indexservices = [
-    [
-        "image" => "assets/images/8.jpg",
-        "title" => "Planning",
-        "desc" => [
-            "Project Identification",
-            "Reconnaissance Studies",
-            "Master Plan/Pre-Feasibility",
-            "Technical & Economical Feasibility",
-            "Hydrological Studies",
-            "Geological & Hydrogeological Studies",
-            "Geotechnical Studies",
-        ],
-        "link" => "#"
-    ],
-    [
-        "image" => "assets/images/slider_03.jpg",
-        "title" => "Design",
-        "desc" => [
-            "Conceptual Design",
-            "Final / Detailed Design",
-            "Design Reports",
-            "Technical Specifications",
-            "Tender Documents",
-            "Bill of Quantities",
-            "Cost Estimates",
-        ],
-        "link" => "#"
-    ],
-    [
-        "image" => "assets/images/service02.jpg",
-        "title" => "Tender",
-        "desc" => [
-            "Tender Documentation",
-            "Prequalification",
-            "Preparation of Special Conditions",
-            "Tender Evaluation",
-            "Assistance to the Client During Contract Negotiations",
-            "Contract Finalization",
-        ],
-        "link" => "#"
-    ]
-];
+// $indexservices = [
+//     [
+//         "image" => "assets/images/8.jpg",
+//         "title" => "Planning",
+//         "desc" => [
+//             "Project Identification",
+//             "Reconnaissance Studies",
+//             "Master Plan/Pre-Feasibility",
+//             "Technical & Economical Feasibility",
+//             "Hydrological Studies",
+//             "Geological & Hydrogeological Studies",
+//             "Geotechnical Studies",
+//         ],
+//         "link" => "#"
+//     ],
+//     [
+//         "image" => "assets/images/slider_03.jpg",
+//         "title" => "Design",
+//         "desc" => [
+//             "Conceptual Design",
+//             "Final / Detailed Design",
+//             "Design Reports",
+//             "Technical Specifications",
+//             "Tender Documents",
+//             "Bill of Quantities",
+//             "Cost Estimates",
+//         ],
+//         "link" => "#"
+//     ],
+//     [
+//         "image" => "assets/images/service02.jpg",
+//         "title" => "Tender",
+//         "desc" => [
+//             "Tender Documentation",
+//             "Prequalification",
+//             "Preparation of Special Conditions",
+//             "Tender Evaluation",
+//             "Assistance to the Client During Contract Negotiations",
+//             "Contract Finalization",
+//         ],
+//         "link" => "#"
+//     ]
+// ];
 
 
 /* ================= ABOUT US ================= */

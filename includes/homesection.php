@@ -89,8 +89,8 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
         <div class="row align-items-center">
 
             <!-- STATS -->
-            <div class="col-lg-3 col-md-12">
-                <div class="row g-4 text-center text-lg-start">
+            <div class="col-lg-3 col-md-12 ">
+                <div class="row g-4 text-center text-lg-start mt-3">
 
                     <?php foreach ($stats as $stat): ?>
                         <div class="col-6 col-sm-6 col-md-3 col-lg-12">
@@ -146,7 +146,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
                         </ul>
 
                         <!-- TAB CONTENT -->
-                        <div class="tab-content">
+                        <div class="tab-content text-center">
 
                             <?php $first = true; ?>
 
@@ -214,7 +214,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
                                         <?php if ($hasImage): ?>
                                             <div class="<?php echo $hasContent ? 'col-md-6' : 'col-md-12' ?> d-flex">
 
-                                                <div class="tab-image-box w-100">
+                                                <div class="tab-image-box">
 
                                                     <img
                                                         src="<?php echo htmlspecialchars($item['image']) ?>"
@@ -253,9 +253,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
     <div class="container">
 
         <div class="section-header text-center mb-4">
-            <p class="text-muted fs-5">
-                Delivering end-to-end engineering, project execution, and Mining solutions tailored to your industry's demands.
-            </p>
+            <h2 class="fw-bold fs-2">Services</h2>
         </div>
 
         <div class="row g-4">
@@ -294,7 +292,6 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
 
     </div>
 </section>
-
 
 
 <!-- ================= FEATURED PROJECTS ================= -->
