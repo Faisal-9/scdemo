@@ -147,10 +147,10 @@ include_once("includes/data/projectsdata.php");
 
                                     <!-- EXPERTISE -->
                                     <li class="nav-item dropdown <?php echo in_array($current_page, $sectors_pages) ? 'active' : '' ?>">
-                                        <div class="nav-link has-dropdown">
+                                        <a href="sectors.php" class="nav-link has-dropdown">
                                             <span class="nav-text">Expertise</span>
                                             <span class="dropdown-arrow">▼</span>
-                                        </div>
+                                        </a>
 
                                         <div class="dropdown-menu">
                                             <ul class="dropdown-list">
@@ -167,10 +167,10 @@ include_once("includes/data/projectsdata.php");
 
                                     <!-- PROJECTS -->
                                     <li class="nav-item dropdown <?php echo ($current_page == 'projects.php') ? 'active' : '' ?>">
-                                        <div class="nav-link has-dropdown">
+                                        <a href="projects.php" class="nav-link has-dropdown">
                                             <span class="nav-text">Projects</span>
                                             <span class="dropdown-arrow">▼</span>
-                                        </div>
+                                        </a>
 
                                         <div class="dropdown-menu">
                                             <ul class="dropdown-list">
