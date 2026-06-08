@@ -65,7 +65,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
                         <?php echo str_pad($index + 1, 2, "0", STR_PAD_LEFT) ?>
                     </span>
                     <span class="hero-indicator-title">
-                        <?php echo $slide['indicator'] ?>
+                        <?php echo $slide['title'] ?>
                     </span>
 
                 </div>

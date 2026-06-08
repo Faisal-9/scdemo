@@ -5,11 +5,9 @@ $heroSlides = [
 
     [
         "id" => "energy",
-        "title" => "Power & Energy",
-        "desc" => "Delivering large-scale power generation, transmission, and energy infrastructure projects that ensure reliable and sustainable energy supply for national and industrial growth.",
+        "title" => "Energy & Power Solutions",
+        "desc" => "Delivering integrated engineering, procurement, construction, commissioning, and operation services for thermal, hydro, solar, wind, and hybrid power generation systems. ",
         "image" => "assets/images/home/slider_imgs/hero_energy1.jpg",
-        "button" => "Read More",
-        "link" => "#",
         "indicator" => "Our Energy Expertise"
     ],
 
@@ -18,29 +16,20 @@ $heroSlides = [
         "title" => "Transportation",
         "desc" => "Designing and developing roads, highways, and transport networks that enhance connectivity, trade flow, and regional economic integration.",
         "image" => "assets/images/home/slider_imgs/hero_transportation1.jpg",
-        "button" => "Read More",
-        "link" => "#",
-        "indicator" => "Transportation Infrastructure"
     ],
 
     [
         "id" => "structure",
-        "title" => "Building",
+        "title" => "Buildings & Industrial Facilities",
         "desc" => "Engineering and constructing modern commercial, residential, and industrial structures with a focus on durability, efficiency, and long-term value.",
         "image" => "assets/images/home/slider_imgs/hero_structure1.png",
-        "button" => "Read More",
-        "link" => "#",
-        "indicator" => "Structural & Building Engineering"
     ],
 
     [
         "id" => "water",
-        "title" => "Water Resources",
-        "desc" => "Building sustainable water systems, dams, and irrigation infrastructure to support agriculture, energy generation, and long-term water security.",
+        "title" => "Water Resource Management",
+        "desc" => "Providing sustainable water supply, treatment, wastewater management, irrigation, and environmental engineering solutions that support economic and social development.",
         "image" => "assets/images/home/slider_imgs/hero_water1.jpg",
-        "button" => "Read More",
-        "link" => "#",
-        "indicator" => "Sustainable Water Management"
     ],
 
     [
@@ -48,9 +37,6 @@ $heroSlides = [
         "title" => "Mining",
         "desc" => "Providing end-to-end mining solutions, including exploration support, site development, and infrastructure for efficient mineral extraction.",
         "image" => "assets/images/home/slider_imgs/hero_mining1.png",
-        "button" => "Read More",
-        "link" => "#",
-        "indicator" => "Mining & Mineral Operations"
     ],
 
 ];
