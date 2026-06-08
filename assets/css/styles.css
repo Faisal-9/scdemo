@@ -1188,6 +1188,7 @@ img {
 .about-panel.active {
   display: block;
   animation: fadeIn 0.3s ease;
+  min-height: 70vh;
 }
 
 /* SECTION BLOCKS */

@@ -1,7 +1,7 @@
 <?php
 
 $generalInfo = [
-    'title' => 'Company Overview',
+    'title' => 'Overview',
     'content' => "State Corps warmly welcomes you and appreciates your interest in our company. For approximately two decades, we have grown into one of Afghanistan's leading construction and energy firms, delivering high-quality projects through our skilled workforce and experienced management. From major USACE projects to high-voltage transmission lines and substations, we remain committed to excellence, innovation, and contributing to Afghanistan's development.",
     'items' => [
         [
@@ -66,7 +66,7 @@ $missionVision = [
 
 
 $clients = [
-    'title' => 'Our Clients',
+    'title' => 'Clients',
     'items' => [
         ['logo' => 'assets/images/clients/client_dabs_resized.png'],
         ['logo' => 'assets/images/clients/client_mew_resized.png'],
@@ -164,6 +164,17 @@ $sisterCompanies = [
     ]
 ];
 
+$hse = [
+    'title' => 'Health, Safety & Environment (HSE)',
+    'content' => "We are committed to protecting people, assets, and the environment through a strong safety culture, proactive risk management, and sustainable operational practices.",
+];
+
+$cprofile = [
+    'title' => 'Company Profile',
+    'content' => "Click the link below to download our comprehensive company profile, showcasing our expertise, project portfolio, and commitment to excellence in engineering and construction.",
+    'link' => 'assets/documents/State_Corps_Company_Profile.pdf',
+];
+
 
 $aboutSections = [
     [
@@ -189,5 +200,13 @@ $aboutSections = [
     [
         'id' => 'sister',
         'data' => $sisterCompanies
+    ],
+    [
+        'id' => 'hse',
+        'data' => $hse
+    ],
+    [
+        'id' => 'cprofile',
+        'data' => $cprofile
     ],
 ];

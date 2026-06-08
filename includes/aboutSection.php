@@ -8,6 +8,8 @@ $aboutSections = [
     'certificates' => $certificates,
     'awards' => $awards,
     'sister' => $sisterCompanies,
+    'hse' => $hse,
+    'cprofile' => $cprofile,
 ];
 ?>
 
@@ -256,6 +258,40 @@ $aboutSections = [
                             </div>
 
                         </div>
+                    </section>
+
+                    <!-- HEALTH, SAFETY & ENVIRONMENT -->
+                    <section id="hse" class="about-section-block about-panel py-1">
+
+                        <div class="container">
+                            <h2 class="text-center mb-3"><?php echo $hse['title'] ?></h2>
+                            <div class="hse-content text-center mb-4">
+                                <p><?php echo $hse['content'] ?></p>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <!-- COMPANY PROFILE -->
+                    <section id="cprofile" class="about-section-block about-panel py-1">
+                        
+                        <div class="container">
+                            <h2 class="text-center mb-3">
+                                <?php echo $cprofile['title']; ?>
+                            </h2>
+                            <div class="c-content text-center">
+                                <p class="mb-4">
+                                    <?php echo $cprofile['content']; ?>
+                                </p>
+                                <a href="<?php echo $cprofile['link']; ?>"
+                                    class="btn btn-primary btn-lg"
+                                    download>
+                                    <i class="fas fa-download me-2"></i>
+                                    Download Company Profile
+                                </a>
+                            </div>
+                        </div>
+
                     </section>
 
                 </div>
