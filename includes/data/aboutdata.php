@@ -68,21 +68,21 @@ $missionVision = [
 $clients = [
     'title' => 'Our Clients',
     'items' => [
+        ['logo' => 'assets/images/clients/client_dabs_resized.png'],
+        ['logo' => 'assets/images/clients/client_mew_resized.png'],
+        ['logo' => 'assets/images/clients/client_metq_resized.png'],
+        ['logo' => 'assets/images/clients/client_ABC_resized.png'],
+        ['logo' => 'assets/images/clients/client_ghazanfar_group.jpg'],
+        ['logo' => 'assets/images/clients/client_kabul_municipality.png'],
+        ['logo' => 'assets/images/clients/client_usace_resized.png'],
         ['logo' => 'assets/images/clients/client_worldbank_resized.png'],
+        ['logo' => 'assets/images/clients/client_unama.png'],
         ['logo' => 'assets/images/clients/client_unhcr.png'],
         ['logo' => 'assets/images/clients/client_ADB_resized.png'],
+        ['logo' => 'assets/images/clients/client_unops_resized.png'],
         ['logo' => 'assets/images/clients/client_wfp.png'],
         ['logo' => 'assets/images/clients/client_fao_resized.png'],
-        ['logo' => 'assets/images/clients/client_unama.png'],
-        ['logo' => 'assets/images/clients/client_unops_resized.png'],
-        ['logo' => 'assets/images/clients/client_usace_resized.png'],
         ['logo' => 'assets/images/clients/client_dacaar.png'],
-        ['logo' => 'assets/images/clients/client_dabs_resized.png'],
-        ['logo' => 'assets/images/clients/client_metq_resized.png'],
-        ['logo' => 'assets/images/clients/client_kabul_municipality.png'],
-        ['logo' => 'assets/images/clients/client_ghazanfar_group.jpg'],
-        ['logo' => 'assets/images/clients/client_ABC_resized.png'],
-        ['logo' => 'assets/images/clients/client_mew_resized.png'],
 
     ]
 ];
