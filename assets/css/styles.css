@@ -3335,8 +3335,32 @@ img {
 
 @media (max-width: 768px) {
   .footer-main {
-    grid-template-columns: 1fr;
-    gap: 35px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .footer-name {
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .footer-col{
+    line-height: 1.2;
+  }
+
+  .footer-statement {
+    font-weight: 500;
+    font-size: 13px;
+    border-left: 3px solid #d4af37;
+    padding-left: 10px;
+    line-height: 1.2;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 700;
   }
 
   .footer-bottom {
@@ -3347,6 +3371,11 @@ img {
   .footer-policy {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .footer-bottom {
+    gap: 7px;
+    font-size: 11px;
   }
 }
 

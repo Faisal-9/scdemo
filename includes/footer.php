@@ -83,8 +83,8 @@
                     </li>
 
                     <li>
-                        <a href="media.php">
-                            News & Media
+                        <a href="about.php#cprofile">
+                            Company Profile
                         </a>
                     </li>
 
@@ -106,7 +106,7 @@
                 <ul class="footer-contact">
 
                     <li>
-                        <i class="fa-solid fa-location-dot"></i>kart-e-char Kabul, Afghanistan
+                        <i class="fa-solid fa-location-dot"></i>Kart-e-Char Kabul, Afghanistan
                     </li>
 
                     <li>
