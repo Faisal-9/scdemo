@@ -1650,13 +1650,14 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This is a Design-Build / EPC program executed under contracts between JSC METQ and State Corps for the expansion of Afghanistan’s high-voltage power transmission network. The projects include key infrastructure such as the Amu Darya Crossing Special Project in Hairatan, the Hairatan–Dashti Alwan 500 kV transmission line, and the Kabul–Jalalabad 220 kV transmission line, covering full scope of survey, design, procurement, civil works, tower erection, stringing, testing, and commissioning. These works are aimed at strengthening national grid stability, increasing transmission capacity, and enhancing regional power connectivity.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Surkhan - Dashti Alwan Substation (500 kV Single Circuit Triple Conductor)',
+            'Butkhak – Sheikh Mesri 220 kV double-circuit double-conductor transmission line.',
+            '500 kV Dashti Alwan Substation ',
+            ' 220/110/20 kV Shaikh Mesri Substation',
+            '500/220/20 kV Arghandi Substation and Shunt Reactor System',
         ]
 
     ],
@@ -1682,13 +1683,14 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This is a Design-Build / EPC program executed under contracts between JSC METQ and State Corps for the expansion of Afghanistan’s high-voltage power transmission network. The projects include key infrastructure such as the Amu Darya Crossing Special Project in Hairatan, the Hairatan–Dashti Alwan 500 kV transmission line, and the Kabul–Jalalabad 220 kV transmission line, covering full scope of survey, design, procurement, civil works, tower erection, stringing, testing, and commissioning. These works are aimed at strengthening national grid stability, increasing transmission capacity, and enhancing regional power connectivity.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Surkhan - Dashti Alwan Substation (500 kV Single Circuit Triple Conductor)',
+            'Butkhak – Sheikh Mesri 220 kV double-circuit double-conductor transmission line.',
+            '500 kV Dashti Alwan Substation ',
+            ' 220/110/20 kV Shaikh Mesri Substation',
+            '500/220/20 kV Arghandi Substation and Shunt Reactor System',
         ]
 
     ],
@@ -1714,13 +1716,14 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This is a Design-Build / EPC program executed under contracts between JSC METQ and State Corps for the expansion of Afghanistan’s high-voltage power transmission network. The projects include key infrastructure such as the Amu Darya Crossing Special Project in Hairatan, the Hairatan–Dashti Alwan 500 kV transmission line, and the Kabul–Jalalabad 220 kV transmission line, covering full scope of survey, design, procurement, civil works, tower erection, stringing, testing, and commissioning. These works are aimed at strengthening national grid stability, increasing transmission capacity, and enhancing regional power connectivity.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Surkhan - Dashti Alwan Substation (500 kV Single Circuit Triple Conductor)',
+            'Butkhak – Sheikh Mesri 220 kV double-circuit double-conductor transmission line.',
+            '500 kV Dashti Alwan Substation ',
+            ' 220/110/20 kV Shaikh Mesri Substation',
+            '500/220/20 kV Arghandi Substation and Shunt Reactor System',
         ]
 
     ],
@@ -1746,13 +1749,14 @@ $projects = [
         ],
 
         'description' =>
-        'This is a Design-Build / EPC program executed under contracts between JSC METQ and State Corps for the expansion of Afghanistan high-voltage power transmission network. The projects include key infrastructure such as the Kabul-Jalalabad 220 kV transmission line, covering full scope of survey, design, procurement, civil works, tower erection, stringing, testing, and commissioning.These works are aimed at strengthening national grid stability, increasing transmission capacity, and enhancing regional power connectivity.',
+        'This is a Design-Build / EPC program executed under contracts between JSC METQ and State Corps for the expansion of Afghanistan’s high-voltage power transmission network. The projects include key infrastructure such as the Amu Darya Crossing Special Project in Hairatan, the Hairatan–Dashti Alwan 500 kV transmission line, and the Kabul–Jalalabad 220 kV transmission line, covering full scope of survey, design, procurement, civil works, tower erection, stringing, testing, and commissioning. These works are aimed at strengthening national grid stability, increasing transmission capacity, and enhancing regional power connectivity.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Surkhan - Dashti Alwan Substation (500 kV Single Circuit Triple Conductor)',
+            'Butkhak – Sheikh Mesri 220 kV double-circuit double-conductor transmission line.',
+            '500 kV Dashti Alwan Substation ',
+            ' 220/110/20 kV Shaikh Mesri Substation',
+            '500/220/20 kV Arghandi Substation and Shunt Reactor System',
         ]
 
     ],
@@ -1769,22 +1773,21 @@ $projects = [
         'client' => 'METQ',
         'inhome' => 'no',
         'catimage' => 'no',
-        'thumbnail' => '',
+        'thumbnail' => 'assets/images/projects/79-arghandi-1.jpeg',
 
         'images' => [
-            '',
-            '',
-            ''
+            'assets/images/projects/79-arghandi-1.jpeg',
         ],
 
         'description' =>
-        '',
+        'This is a Design-Build / EPC program executed under contracts between JSC METQ and State Corps for the expansion of Afghanistan’s high-voltage power transmission network. The projects include key infrastructure such as the Amu Darya Crossing Special Project in Hairatan, the Hairatan–Dashti Alwan 500 kV transmission line, and the Kabul–Jalalabad 220 kV transmission line, covering full scope of survey, design, procurement, civil works, tower erection, stringing, testing, and commissioning. These works are aimed at strengthening national grid stability, increasing transmission capacity, and enhancing regional power connectivity.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Surkhan - Dashti Alwan Substation (500 kV Single Circuit Triple Conductor)',
+            'Butkhak – Sheikh Mesri 220 kV double-circuit double-conductor transmission line.',
+            '500 kV Dashti Alwan Substation ',
+            ' 220/110/20 kV Shaikh Mesri Substation',
+            '500/220/20 kV Arghandi Substation and Shunt Reactor System',
         ]
 
     ],
@@ -1842,13 +1845,16 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This was a Design-Build / EPC project awarded to State Corps for the Ministry of Energy and Water (MEW), with financing provided by Awfi Bahram Companies under approvals of the High Economic Council (HEC) and the Economic Deputy Office of the Islamic Emirate of Afghanistan. The project covers the construction of 220 kV double-circuit transmission lines from Chemtala to Tarakhail and from Arghandi to Butkhak, development of 220 kV Tarakhail and Butkhak substations in Kabul, and installation of two 500 kV, 80 MVAR double-bus reactors at Arghandi Substation to enhance the reliability, stability, and operational performance of Afghanistan’s national power system. The project is currently under execution.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Chemtala – Tarakhail (23 km) 220 kV TL',
+            'Arghandi – Butkhak (56 km) 220 kV TL',
+            'OPGW communication & protection system installation',
+            'Tarakhail Substation (220/110/20 kV, 3×63 MVA)',
+            'Butkhak Substation (220/110/20 kV, 4×63 MVA)',
+            'Butkhak Substation Reactor Bays',
+            'Arghandi 500 kV Substation Reactor bays',
         ]
 
     ],
@@ -1874,13 +1880,16 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This was a Design-Build / EPC project awarded to State Corps for the Ministry of Energy and Water (MEW), with financing provided by Awfi Bahram Companies under approvals of the High Economic Council (HEC) and the Economic Deputy Office of the Islamic Emirate of Afghanistan. The project covers the construction of 220 kV double-circuit transmission lines from Chemtala to Tarakhail and from Arghandi to Butkhak, development of 220 kV Tarakhail and Butkhak substations in Kabul, and installation of two 500 kV, 80 MVAR double-bus reactors at Arghandi Substation to enhance the reliability, stability, and operational performance of Afghanistan’s national power system. The project is currently under execution.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Chemtala – Tarakhail (23 km) 220 kV TL',
+            'Arghandi – Butkhak (56 km) 220 kV TL',
+            'OPGW communication & protection system installation',
+            'Tarakhail Substation (220/110/20 kV, 3×63 MVA)',
+            'Butkhak Substation (220/110/20 kV, 4×63 MVA)',
+            'Butkhak Substation Reactor Bays',
+            'Arghandi 500 kV Substation Reactor bays',
         ]
 
     ],
@@ -1906,13 +1915,16 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This was a Design-Build / EPC project awarded to State Corps for the Ministry of Energy and Water (MEW), with financing provided by Awfi Bahram Companies under approvals of the High Economic Council (HEC) and the Economic Deputy Office of the Islamic Emirate of Afghanistan. The project covers the construction of 220 kV double-circuit transmission lines from Chemtala to Tarakhail and from Arghandi to Butkhak, development of 220 kV Tarakhail and Butkhak substations in Kabul, and installation of two 500 kV, 80 MVAR double-bus reactors at Arghandi Substation to enhance the reliability, stability, and operational performance of Afghanistan’s national power system. The project is currently under execution.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Chemtala – Tarakhail (23 km) 220 kV TL',
+            'Arghandi – Butkhak (56 km) 220 kV TL',
+            'OPGW communication & protection system installation',
+            'Tarakhail Substation (220/110/20 kV, 3×63 MVA)',
+            'Butkhak Substation (220/110/20 kV, 4×63 MVA)',
+            'Butkhak Substation Reactor Bays',
+            'Arghandi 500 kV Substation Reactor bays',
         ]
 
     ],
@@ -1938,13 +1950,16 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This was a Design-Build / EPC project awarded to State Corps for the Ministry of Energy and Water (MEW), with financing provided by Awfi Bahram Companies under approvals of the High Economic Council (HEC) and the Economic Deputy Office of the Islamic Emirate of Afghanistan. The project covers the construction of 220 kV double-circuit transmission lines from Chemtala to Tarakhail and from Arghandi to Butkhak, development of 220 kV Tarakhail and Butkhak substations in Kabul, and installation of two 500 kV, 80 MVAR double-bus reactors at Arghandi Substation to enhance the reliability, stability, and operational performance of Afghanistan’s national power system. The project is currently under execution.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Chemtala – Tarakhail (23 km) 220 kV TL',
+            'Arghandi – Butkhak (56 km) 220 kV TL',
+            'OPGW communication & protection system installation',
+            'Tarakhail Substation (220/110/20 kV, 3×63 MVA)',
+            'Butkhak Substation (220/110/20 kV, 4×63 MVA)',
+            'Butkhak Substation Reactor Bays',
+            'Arghandi 500 kV Substation Reactor bays',
         ]
 
     ],
@@ -1970,13 +1985,16 @@ $projects = [
         ],
 
         'description' =>
-        '',
+        'This was a Design-Build / EPC project awarded to State Corps for the Ministry of Energy and Water (MEW), with financing provided by Awfi Bahram Companies under approvals of the High Economic Council (HEC) and the Economic Deputy Office of the Islamic Emirate of Afghanistan. The project covers the construction of 220 kV double-circuit transmission lines from Chemtala to Tarakhail and from Arghandi to Butkhak, development of 220 kV Tarakhail and Butkhak substations in Kabul, and installation of two 500 kV, 80 MVAR double-bus reactors at Arghandi Substation to enhance the reliability, stability, and operational performance of Afghanistan’s national power system. The project is currently under execution.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Chemtala – Tarakhail (23 km) 220 kV TL',
+            'Arghandi – Butkhak (56 km) 220 kV TL',
+            'OPGW communication & protection system installation',
+            'Tarakhail Substation (220/110/20 kV, 3×63 MVA)',
+            'Butkhak Substation (220/110/20 kV, 4×63 MVA)',
+            'Butkhak Substation Reactor Bays',
+            'Arghandi 500 kV Substation Reactor bays',
         ]
 
     ],
