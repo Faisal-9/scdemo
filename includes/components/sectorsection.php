@@ -27,7 +27,7 @@ $sector = isset($sector) ? $sector : [];
             <div class="sector-stats">
                 <?php foreach ($sector['stats'] as $s): ?>
                     <div class="stat">
-                        <h3><?php echo $s['value'] ?></h3>
+                        <h2><?php echo $s['value'] ?></h2>
                         <p><?php echo $s['label'] ?></p>
                     </div>
                 <?php endforeach; ?>
@@ -44,7 +44,7 @@ $sector = isset($sector) ? $sector : [];
 
                 <?php if (!empty($sector['why'])): ?>
                     <div class="why">
-                        <h4>Why Choose Us</h4>
+                        <h2>Why Choose Us</h2>
                         <ul>
                             <?php foreach ($sector['why'] as $w): ?>
                                 <li><?php echo $w ?></li>
@@ -55,7 +55,7 @@ $sector = isset($sector) ? $sector : [];
 
                 <?php if (!empty($sector['areas'])): ?>
                     <div class="areas">
-                        <h4>Areas of Expertise</h4>
+                        <h2>Areas of Expertise</h2>
                         <ul>
                             <?php foreach ($sector['areas'] as $a): ?>
                                 <li><?php echo $a ?></li>
@@ -69,7 +69,7 @@ $sector = isset($sector) ? $sector : [];
             <!-- RIGHT COLUMN -->
             <?php if (!empty($sector['project'])): ?>
                 <div class="sector-project-card">
-                    <h4><?php echo $sector['project']['name'] ?></h4>
+                    <h2><?php echo $sector['project']['name'] ?></h2>
                     <img src="<?php echo $sector['project']['image'] ?>" alt="">
                     <a href="<?php echo $sector['project']['cta_link'] ?>" class="btn-cta small">
                         <?php echo $sector['project']['cta_text'] ?>

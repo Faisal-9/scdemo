@@ -1515,7 +1515,7 @@ img {
   padding: 20px;
 }
 
-.stat h3 {
+.stat h2 {
   color: #0a2a66;
 }
 
@@ -2923,7 +2923,7 @@ img {
     text-align: center;
   }
 
-  .stat h3 {
+  .stat h2 {
     color: #0a2a66;
     font-size: 24px;
     font-weight: 600;
@@ -3242,6 +3242,44 @@ img {
 
   .service-detail-img {
     max-height: 35dvh;
+  }
+
+  /* STATS */
+  .sector-stats {
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stat {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .stat h2 {
+    color: #0a2a66;
+    font-size: var(--font-size-h2-s);
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .stat p {
+    font-size: var(--font-size-text1-s);
+    color: #555;
+    margin: 0;
+  }
+
+  .sector-left li{
+    margin: 0 !important;
+  }
+
+  .sector-desc p{
+    font-size: var(--font-size-text1-s);
+    line-height: 1.2;
+    padding-bottom: 10px;
   }
 
   .footer-main {
