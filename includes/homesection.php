@@ -83,7 +83,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
     <div class="container">
 
         <div class="index-about-us-header text-center mb-4">
-            <h2 class="fw-bold fs-2">Why State Corps</h2>
+            <h2 class="">Why State Corps</h2>
         </div>
 
         <div class="row align-items-center">
@@ -253,7 +253,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
     <div class="container">
 
         <div class="section-header text-center mb-4">
-            <h2 class="fw-bold fs-2">Services</h2>
+            <h2 class="">Services</h2>
         </div>
 
         <div class="row g-4">
@@ -269,9 +269,9 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
                         </div>
 
                         <div class="service-content">
-                            <div class="service-title">
+                            <h3 class="service-title">
                                 <?php echo htmlspecialchars($service['title']) ?>
-                            </div>
+                            </h3>
 
                             <ul class="service-desc">
                                 <?php foreach (array_slice(isset($service['sub_services']) ? $service['sub_services'] : [], 0, 6) as $sub): ?>
@@ -330,7 +330,7 @@ if (isset($projects) && is_array($projects)) {
     <div class="container major-projects-container">
 
         <div class="text-center mb-4">
-            <h2 class="fw-bold fs-2">Featured Projects</h2>
+            <h2 class="">Featured Projects</h2>
         </div>
 
         <div class="row g-4">
@@ -400,7 +400,7 @@ if (isset($projects) && is_array($projects)) {
         <div class="clients-container">
 
             <div class="text-center mb-4">
-                <h2 class="fw-bold fs-2">Our Clients</h2>
+                <h2 class="">Our Clients</h2>
             </div>
 
             <div class="clients-slider">
@@ -427,7 +427,7 @@ if (isset($projects) && is_array($projects)) {
     <div class="container">
 
         <div class="index-news-header text-center mb-4">
-            <h2 class="index-news-head fw-bold fs-2">Recent Activities</h2>
+            <h2 class="index-news-head">Recent Activities</h2>
         </div>
 
         <div class="row g-4">
@@ -480,68 +480,3 @@ if (isset($projects) && is_array($projects)) {
     </div>
 </section>
 
-
-
-<!-- ================= CONTACT QUICK SECTION ================= -->
-<!-- <section class="index-contact-section py-4">
-
-    <div class="container">
-
-        // Title 
-        <div class="text-center mb-2">
-            <h2 class="contact-title fw-bold fs-2">
-                <span>Get In</span> Touch
-            </h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-10 text-center g-2">
-
-                // Phone 
-                <div class="contact-item d-flex align-items-center justify-content-center gap-2">
-                    <div class="contact-icon">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-
-                    <p class="contact-text mb-0">
-                        +93 700 000 000
-                    </p>
-                </div>
-
-                // Address
-                <div class="contact-item d-flex align-items-center justify-content-center gap-2 mt-2">
-                    <div class="contact-icon">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-
-                    <div>
-                        <h6 class="mb-1">Corporate Office</h6>
-                        <p class="contact-text mb-0">
-                            Kart-e-Char D#3, Kabul Afghanistan <br>
-                            State Corps Headquarters
-                        </p>
-                    </div>
-                </div>
-
-                // Email 
-                <div class="contact-item d-flex align-items-center justify-content-center gap-2 mt-2">
-                    <div class="contact-icon">
-                        <i class="fa-regular fa-envelope"></i>
-                    </div>
-
-                    <p class="contact-text mb-0">
-                        comms@statecorps.com
-                    </p>
-                </div>
-
-            </div>
-
-            // Button 
-            <div class="col-lg-2 text-center mt-5">
-                <a href="contact.php" class="contact-btn">
-                    CONTACT US
-                </a>
-            </div>
-        </div>
-    </div>
-
-</section> -->
