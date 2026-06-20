@@ -497,7 +497,7 @@ RESPONSIVE
   .nav-link,
   .nav-link-top {
     width: 100%;
-    padding: 14px 18px;
+    /* padding: 14px 18px; */
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
@@ -546,12 +546,34 @@ RESPONSIVE
     color: #fff;
   }
 
+  .social-divider {
+    display: none;
+  }
+
   /* =========================
      SOCIAL AREA CLEANUP
   ========================= */
   .top-row-social {
     padding: 12px 15px;
     border-bottom: none;
+    margin: 0;
+  }
+
+  .top-row-social .social-link-header {
+    color: #fff !important;
+  }
+
+  .top-row-social .social-link-header i {
+    color: inherit !important;
+  }
+
+  .social-link-header {
+    display: inline-block;
+    transition: transform 0.25s ease;
+  }
+
+  .social-link-header:hover {
+    transform: translateY(-5px);
   }
 
   /* =========================
