@@ -128,7 +128,7 @@ if (!function_exists('renderServiceDetailPanel')) {
             <div class="subservice-content <?php echo $sIndex === 0 ? 'active' : '' ?>"
                 id="<?php echo htmlspecialchars($tabId) ?>">
 
-                <div class="row">
+                <div class=" content-center">
 
                     <!-- LEFT MENU -->
                     <div class="col-lg-4 sub-sub-menu">

@@ -3199,7 +3199,8 @@ img {
   .subservice-tabs {
     position: relative;
     top: 0;
-    padding-bottom: 8px;
+    /* padding-bottom: 8px; */
+    padding: 3px 5px;
   }
 
   .sub-tab {
@@ -3208,18 +3209,23 @@ img {
   }
 
   .sub-sub-menu {
-    position: static;
+    position: center;
     top: auto;
-    margin-bottom: 20px;
+    margin: 10px;
+    width: auto;
   }
 
   .sub-sub-list {
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
   }
 
   .sub-sub-list li {
     border-left: none;
     border-radius: 10px;
+    max-width: cover;
   }
 
   .service-detail-title {
