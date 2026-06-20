@@ -6,13 +6,11 @@
   --font-size-h3-s: 16px;
   --font-size-h4-s: 12px;
 
-
   /* headers font weight */
   --font-size-hw1-s: 700;
   --font-size-hw2-s: 600;
   --font-size-hw3-s: 500;
   --font-size-hw4-s: 500;
-
 
   /* text font sizes */
   --font-size-text1-s: 13px;
@@ -1222,7 +1220,6 @@ img {
   color: #0b1d4f;
   margin-top: auto;
 }
-
 
 /* ================= DESKTOP (min 1200px) ================= */
 @media (min-width: 1200px) {
@@ -2646,7 +2643,6 @@ img {
   }
 }
 
-
 @media (max-width: 901px) {
   .hero-desc {
     max-width: 70%;
@@ -3093,6 +3089,10 @@ img {
   .sidebarr,
   .about-sidebar {
     display: none;
+  }
+
+  .about-content {
+    padding-top: 8%;
   }
 
   .about-panel {
