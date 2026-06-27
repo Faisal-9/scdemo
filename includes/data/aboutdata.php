@@ -172,7 +172,7 @@ $hse = [
 $cprofile = [
     'title' => 'Company Profile',
     'content' => "Click the link below to download our comprehensive company profile, showcasing our expertise, project portfolio, and commitment to excellence in engineering and construction.",
-    'link' => 'assets/documents/State_Corps_Company_Profile.pdf',
+    'link' => 'assets/documents/SCProfileLight.pdf',
 ];
 
 

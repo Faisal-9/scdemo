@@ -274,22 +274,57 @@ $aboutSections = [
 
                     <!-- COMPANY PROFILE -->
                     <section id="cprofile" class="about-section-block about-panel py-1">
-                        
+
                         <div class="container">
+
                             <h2 class="text-center mb-3">
                                 <?php echo $cprofile['title']; ?>
                             </h2>
+
                             <div class="c-content text-center">
+
                                 <p class="mb-4">
                                     <?php echo $cprofile['content']; ?>
                                 </p>
-                                <a href="<?php echo $cprofile['link']; ?>"
-                                    class="btn btn-primary btn-lg"
-                                    download>
-                                    <i class="fas fa-download me-2"></i>
-                                    Download Company Profile
-                                </a>
+
+                                <!-- ACTION BUTTONS -->
+                                <div class="profile-actions mb-3">
+
+                                    <a href="<?php echo $cprofile['link']; ?>"
+                                        class="profilebtn .serif-link"
+                                        download>
+
+                                        <i class="fas fa-download me-2"></i>
+                                        Download Company Profile
+
+                                    </a>
+
+                                    <a href="<?php echo $cprofile['link']; ?>"
+                                        class="profilebtn .serif-link"
+                                        target="_blank">
+
+                                        <i class="fas fa-external-link-alt me-2"></i>
+                                        Open in New Tab
+
+                                    </a>
+
+                                </div>
+
+                                <!-- PDF VIEWER -->
+                                <div class="company-profile-viewer">
+
+                                    <iframe
+                                        src="<?php echo $cprofile['link']; ?>#toolbar=1&navpanes=0&scrollbar=1"
+                                        width="100%"
+                                        height="900"
+                                        title="State Corps Company Profile">
+
+                                    </iframe>
+
+                                </div>
+
                             </div>
+
                         </div>
 
                     </section>
