@@ -89,7 +89,7 @@ $clients = [
 
 
 $certificates = [
-    'title' => 'Certifications',
+    'title' => 'ISO Certifications',
     'items' => [
         [
             'name' => 'Quality Management System (ISO 9001)',

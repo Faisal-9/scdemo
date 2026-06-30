@@ -191,9 +191,9 @@ $aboutSections = [
                                             <img src="<?php echo $cert['logo'] ?>" alt="<?php echo $cert['name'] ?>" class="img-fluid zoomable">
                                         </div>
 
-                                        <h6 class="certificate-name">
+                                        <p class="certificate-name">
                                             <?php echo $cert['name'] ?>
-                                        </h6>
+                                        </p>
 
                                     </div>
                                 </div>
@@ -216,9 +216,9 @@ $aboutSections = [
                                             <img src="<?php echo $award['logo'] ?>" class="img-fluid zoomable">
                                         </div>
 
-                                        <h6 class="award-title">
+                                        <p class="award-title">
                                             <?php echo $award['name'] ?>
-                                        </h6>
+                                        </p>
 
                                     </div>
                                 </div>

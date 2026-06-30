@@ -13,7 +13,7 @@ $heroSlides = [
 
     [
         "id" => "transport",
-        "title" => "Transportation",
+        "title" => "Transportation Infrastrution",
         "desc" => "Designing and developing roads, highways, and transport networks that enhance connectivity, trade flow, and regional economic integration.",
         "image" => "assets/images/home/slider_imgs/hero_transportation1.jpg",
     ],
