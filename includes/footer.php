@@ -121,7 +121,7 @@
 
                 <div class="footer-social">
 
-                    <a href="#">
+                    <a href="https://www.linkedin.com/company/state-corps/">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
 
@@ -129,7 +129,7 @@
                         <i class="fab fa-facebook-f"></i>
                     </a>
 
-                    <a href="#">
+                    <a href="https://x.com/StateCorps">
                         <i class="fab fa-x-twitter"></i>
                     </a>
 
