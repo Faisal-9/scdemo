@@ -68,9 +68,9 @@ $international_offices = [
 <section class="contact py-4">
     <div class="container contactcontainer rounded">
 
-        <h2 class="text-center fw-bold mb-4">Reach Us</h2>
+        <h1 class="contactheading text-center fw-bold mb-4 p-3">Reach Us</h1>
 
-        <div class="p-4 rounded shadow-sm">
+        <div class="text p-4 rounded shadow-sm">
 
             <!-- TOP ROW -->
             <div class="row g-4">
@@ -79,7 +79,7 @@ $international_offices = [
                 <div class="col-lg-6">
                     <div class="p-4 rounded h-100">
 
-                        <h4 class="fw-bold "><?php echo $head_office['title'] ?></h4>
+                        <h2 class="fw-bold "><?php echo $head_office['title'] ?></h2>
 
                         <p class="mb-2">
                             <strong>Phone:</strong>
@@ -110,7 +110,7 @@ $international_offices = [
                         <div class="row text-center g-3 mt-3">
                             <?php foreach ($head_office['qr_codes'] as $qr): ?>
                                 <div class="col-6">
-                                    <div class="p-2 bg-white rounded shadow-sm">
+                                    <div class="rounded shadow-sm">
                                         <img src="<?php echo $qr['image'] ?>" class="img-fluid mb-2" style="max-height:100px;">
                                         <div class="small fw-semibold"><?php echo $qr['label'] ?></div>
                                     </div>
@@ -125,7 +125,7 @@ $international_offices = [
                 <div class="col-lg-6">
                     <div class="position-relative rounded overflow-hidden">
 
-                        <div class="position-absolute top-0 start-0 bg-dark text-white px-3 py-1 small z-3">
+                        <div class="position-absolute top-end start-0 bg-black text-white px-3 py-1 small z-3">
                             Kart-e-Char, Kabul, Afghanistan
                         </div>
 
@@ -143,9 +143,9 @@ $international_offices = [
         </div>
 
         <!-- FORM -->
-        <div class="bg-white p-4 rounded shadow-sm mt-4">
+        <div class="bg-white p-4 rounded shadow-sm mt-4 mx-4">
 
-            <h4 class="text-center fw-bold mb-4">Drop Message</h4>
+            <h3 class="text-center fw-bold mb-4">Drop Message</h3>
 
             <?php if ($success != "") { ?>
                 <div class="alert alert-success"><?php echo $success ?></div>
@@ -189,8 +189,8 @@ $international_offices = [
         <!-- INTERNATIONAL OFFICES -->
         <div class="international-offices p-5 rounded">
 
-            <h3 class="text-center fw-bold">Overseas Companies Offices</h3>
-            <p class="text-center mb-4">
+            <h3 class="text-white text-center fw-bold">Overseas Companies</h3>
+            <p class="text-white text-center mb-4">
                 Contact our offices worldwide for assistance and support.
             </p>
 

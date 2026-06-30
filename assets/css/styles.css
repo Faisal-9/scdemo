@@ -2711,8 +2711,16 @@ img {
   background: #fff;
 }
 
+.contact .contactheading{
+  color: white;
+}
+
+.contact .text{
+  color: white;
+}
+
 .contact .contactcontainer {
-  background: #ecebeb !important;
+  background: #0c1c3d !important;
   position: relative;
   z-index: 2;
 }
