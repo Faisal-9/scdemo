@@ -1,6 +1,6 @@
 <?php
 include("includes/head.php");
-include("includes/data/privacypolicydata.php");
+include("includes/data/policiesdata.php");
 ?>
 
 <body>

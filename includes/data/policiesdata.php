@@ -73,6 +73,30 @@ $policies = [
             ]
 
         ]
-    ]
+    ],
+
+    "trademarks" => [
+        "title" => "Trademarks Policy",
+        "sections" => [
+
+            [
+                "title" => "Effective Date: ",
+                "content" => "03 May 2026"
+            ],
+
+            [
+                "title" => "Must Read Trademarks Policy",
+                "list" => [
+                    "All trademarks, logos, service marks, trade names, and other branding displayed on the StateCorps website are the property of StateCorps or their respective owners and are protected by applicable trademark and intellectual property laws.",
+                    "You may not copy, reproduce, modify, distribute, or use any StateCorps trademarks, logos, or branding without our prior written permission. Unauthorized use that may cause confusion, imply endorsement, or misrepresent an association with StateCorps is strictly prohibited.",
+                    "You may refer to the StateCorps name for factual or informational purposes, provided such use is accurate, lawful, and does not suggest sponsorship, partnership, or approval by StateCorps.",
+                    "If you wish to use our trademarks, logos, or brand assets for business, media, partnership, or promotional purposes, you must obtain written authorization from StateCorps in advance.",
+                    "StateCorps reserves all rights to its intellectual property and may take appropriate legal action against unauthorized or improper use of its trademarks or branding.",
+                    "For trademark permissions, licensing requests, or to report unauthorized use, please contact us at comms@statecorps.com.",
+                ]
+            ],
+
+        ]
+    ],
 
 ];

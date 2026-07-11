@@ -148,16 +148,12 @@
 
             <div class="footer-policy">
 
-                <a href="privacypolicy.php">
-                    Privacy Policy
+                <a href="policies.php">
+                    Policies
                 </a>
 
                 <a href="termsOfServices.php">
                     Terms of Service
-                </a>
-
-                <a href="trademarks.php">
-                    Trademarks
                 </a>
 
             </div>
