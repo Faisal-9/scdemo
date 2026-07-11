@@ -152,11 +152,11 @@
                     Privacy Policy
                 </a>
 
-                <a href="terms.php">
+                <a href="termsOfServices.php">
                     Terms of Service
                 </a>
 
-                <a href="#">
+                <a href="trademarks.php">
                     Trademarks
                 </a>
 
