@@ -7,32 +7,37 @@ $policies = [
         "sections" => [
 
             [
-                "title" => "Introduction",
-                "content" => "We value your privacy and are committed to protecting your personal data. This policy explains how we collect, use, and safeguard your information."
+                "title" => "Effective Date: ",
+                "content" => "03 May 2026"
             ],
 
             [
-                "title" => "Information We Collect",
+                "title" => "Must Read Privacy Policy",
                 "list" => [
-                    "Personal identification details",
-                    "Contact information",
-                    "Usage data and analytics"
+                    "At StateCorps, we are committed to protecting your privacy and handling your personal information responsibly. This Privacy Policy explains how we collect, use, and safeguard the information you provide when visiting our website or contacting us.",
+                    "We may collect personal information such as your name, email address, phone number, company name, and any details you voluntarily submit through our contact forms. We may also collect basic technical information, including your IP address, browser type, and website usage data, to improve website performance and security.",
+                    "Your information is used to respond to your inquiries, provide our services, improve our website, communicate with you about our business, and maintain the security and functionality of our systems.",
+                    "StateCorps does not sell, rent, or trade your personal information. We may share information only with trusted service providers who support our operations or when required by applicable laws or legal authorities.",
+                    "We implement appropriate technical and organizational measures to protect your information from unauthorized access, disclosure, alteration, or loss.",
+                    "Our website may use cookies to improve your browsing experience. You can manage cookie preferences through your browser settings.",
+                    "By using our website, you agree to this Privacy Policy. We may update this policy periodically, and any changes will be posted on this page with a revised effective date.",
+                    "If you have any questions about this Privacy Policy or your personal information, please contact us at privacy@statecorps.com."
                 ]
             ],
 
-            [
-                "title" => "How We Use Information",
-                "list" => [
-                    "To provide and improve services",
-                    "To communicate with users",
-                    "To ensure security and compliance"
-                ]
-            ],
+            // [
+            //     "title" => "How We Use Information",
+            //     "list" => [
+            //         "To provide and improve services",
+            //         "To communicate with users",
+            //         "To ensure security and compliance"
+            //     ]
+            // ],
 
-            [
-                "title" => "Data Protection",
-                "content" => "We implement strict security measures to protect your data against unauthorized access."
-            ]
+            // [
+            //     "title" => "Data Protection",
+            //     "content" => "We implement strict security measures to protect your data against unauthorized access."
+            // ]
 
         ]
     ],
