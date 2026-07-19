@@ -97,8 +97,15 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
                             <div class="stat-item">
 
                                 <div class="stat-number">
+                                    <?php if (!empty($stat['prefix'])): ?>
+                                        <span class="prefix"><?php echo $stat['prefix']; ?></span>
+                                    <?php endif; ?>
+
                                     <span class="counter" data-target="<?php echo $stat['number'] ?>">0</span>
-                                    <span class="suffix"><?php echo $stat['suffix'] ?></span>
+                                    <?php if (!empty($stat['suffix'])): ?>
+                                        <span class="suffix"><?php echo $stat['suffix']; ?></span>
+                                    <?php endif; ?>
+
                                 </div>
 
                                 <div class="stat-label">
@@ -409,7 +416,7 @@ if (isset($projects) && is_array($projects)) {
                     <?php foreach ($logos as $client): ?>
                         <div class="client-item">
                             <div class="client-logo-box">
-                                <img src="<?php echo htmlspecialchars($client['logo']) ?>" class="zoomable" alt="Client Logo">
+                                <img src="<?php echo htmlspecialchars($client['logo']) ?>" alt="Client Logo">
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -479,4 +486,3 @@ if (isset($projects) && is_array($projects)) {
 
     </div>
 </section>
-

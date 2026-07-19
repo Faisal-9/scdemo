@@ -106,7 +106,7 @@
                 <ul class="footer-contact">
 
                     <li>
-                        <i class="fa-solid fa-location-dot"></i>Kart-e-Char Kabul, Afghanistan
+                        <i class="fa-solid fa-location-dot"></i>Karte Char, D3, Kabul, Afghanistan
                     </li>
 
                     <li>
