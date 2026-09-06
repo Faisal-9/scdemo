@@ -121,15 +121,15 @@
 
                 <div class="footer-social">
 
-                    <a href="https://www.linkedin.com/company/state-corps/">
+                    <a href="https://www.linkedin.com/company/state-corps/" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
 
-                    <a href="#">
+                    <a href="#" target="_blank">
                         <i class="fab fa-facebook-f"></i>
                     </a>
 
-                    <a href="https://x.com/StateCorps">
+                    <a href="https://x.com/StateCorps" target="_blank">
                         <i class="fab fa-x-twitter"></i>
                     </a>
 

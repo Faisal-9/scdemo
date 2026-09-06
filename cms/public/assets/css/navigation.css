@@ -1,0 +1,585 @@
+/* ==========================================================
+HEADER
+========================================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+}
+
+.header-inner,
+.main-navigation,
+.nav-rows {
+  width: 100%;
+  position: relative;
+  background: #0c1c3d;
+}
+
+/* ==========================================================
+FLOATING LOGO
+========================================================== */
+
+.floating-logo {
+  position: absolute;
+  top: 4px;
+  left: 45%;
+  transform: translateX(-570px);
+  z-index: 1005;
+  width: 140px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255, 255, 255);
+  /* border: 2px solid #a6a5a5; */
+  padding: 5px 0;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logo-img {
+  height: 90px;
+  width: auto;
+  transition: 0.3s ease;
+  /* filter: drop-shadow(0 0 2px rgba(18, 18, 18, 0.7))
+    drop-shadow(0 0 8px rgba(32, 32, 32, 0.35))
+    drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25)); */
+}
+
+/* ==========================================================
+FULL WIDTH ROWS
+========================================================== */
+
+.nav-row-top {
+  width: 100%;
+  background: #fff;
+  padding: 6px 0 !important;
+}
+
+.nav-row-bottom {
+  width: 100%;
+  background: #0c1c3d;
+  padding: 6px 0 !important;
+}
+
+/* ==========================================================
+CONTAINER CONTENT ONLY
+========================================================== */
+
+.nav-row-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: inherit;
+}
+
+.nav-row-bottom .container {
+  padding-right: 0 !important;
+}
+
+/* ==========================================================
+TOP MENU
+========================================================== */
+
+.nav-list-top,
+.nav-list-bottom {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list-top {
+  gap: 5px;
+}
+
+.nav-link-top {
+  color: #000000;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.nav-link-top:hover,
+.nav-link-top.active {
+  color: #a8b8d8;
+}
+
+/* ==========================================================
+SOCIAL
+========================================================== */
+
+.top-row-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.social-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.social-link-header {
+  color: #000000;
+}
+
+.social-link-header:hover {
+  /* color: #a8b8d8; */
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+BOTTOM MENU
+========================================================== */
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: #ffffff;
+  /* padding-right: 0 !important; */
+  padding: 8px 14px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 4px;
+}
+
+.nav-link:hover {
+  background: #eeeeee;
+  color: #0c1c3d;
+}
+
+.nav-item.active .nav-link {
+  font-weight: 600;
+}
+
+/* underline */
+
+.nav-text {
+  position: relative;
+}
+
+.nav-text::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+
+.nav-link:hover .nav-text::after,
+.nav-item.active .nav-text::after {
+  width: 80%;
+}
+
+/* ==========================================================
+DROPDOWN
+========================================================== */
+
+.dropdown-arrow {
+  font-size: 0.5rem;
+}
+
+/* ==========================================================
+DROPDOWN
+========================================================== */
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: auto;
+  right: 0;
+  min-width: 250px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 5px;
+  display: none;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 3px 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-link:hover {
+  background: #0b1d4f;
+  color: #ffffff;
+  border-radius: 7px;
+}
+
+/* ==========================================================
+MEGA MENU
+========================================================== */
+
+.mega-menu {
+  min-width: 760px;
+}
+
+.mega-menu-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 15px;
+}
+
+.mega-title {
+  position: relative;
+  /* margin: 0 0 5px; */
+  padding: 0 0 5px;
+  font-size: 1rem;
+}
+
+.mega-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.mega-title:hover {
+  text-decoration: underline;
+}
+
+.mega-title-link {
+  color: #0c1c3d;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ==========================================================
+RESPONSIVE
+========================================================== */
+
+/* Mobile toggle button */
+.mobile-menu-toggle {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1010;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+/* Animate to X when active */
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 1200px) {
+  .floating-logo {
+    left: 15px;
+    transform: none;
+  }
+}
+
+@media (max-width: 991px) {
+  /* =========================
+     HEADER BAR (FIXED TOP)
+  ========================= */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #0c1c3d;
+    z-index: 2000;
+  }
+
+  .header-inner {
+    padding: 0;
+  }
+
+  /* =========================
+     TOP BAR (LOGO + TOGGLE)
+  ========================= */
+  .main-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  /* LOGO LEFT */
+  .floating-logo {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    order: 1;
+    border-radius: 0 0 9px 9px;
+    z-index: 2100;
+  }
+
+  .logo-img {
+    height: 45px;
+  }
+
+  /* TOGGLE RIGHT */
+  .mobile-menu-toggle {
+    position: relative;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    order: 2;
+    z-index: 2100;
+  }
+
+  .mobile-menu-toggle span {
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    display: block;
+    border-radius: 2px;
+  }
+
+  /* =========================
+   HEADER DIVIDER (NO SPACE ADDED)
+========================= */
+
+  .main-navigation::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    height: 2px;
+
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    );
+
+    z-index: 2200;
+    pointer-events: none;
+  }
+
+  /* =========================
+     OVERLAY MENU
+  ========================= */
+  .nav-rows {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100dvh;
+    background: #0c1c3d;
+    z-index: 2050;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.5s ease;
+    overflow-y: auto;
+    padding-top: 70px; /* space for header */
+  }
+
+  /* ACTIVE STATE */
+  .nav-rows.active {
+    left: 0;
+  }
+
+  /* BACKDROP */
+  /* .nav-rows::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+
+  .nav-rows.active::before {
+    opacity: 1;
+    pointer-events: auto;
+  } */
+
+  /* =========================
+     ORDER CONTROL 
+  ========================= */
+
+  .nav-rows {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* MAIN MENU FIRST */
+  .nav-row-bottom {
+    order: 1;
+  }
+
+  /* TOP ROW AT BOTTOM */
+  .nav-row-top {
+    order: 2;
+    margin-top: auto; /*pushes to bottom */
+    background: #162d5e;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    /* padding: 10px 0; */
+  }
+
+  /* =========================
+     STACK MENU ITEMS
+  ========================= */
+  .nav-row-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list-top,
+  .nav-list-bottom {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+  }
+
+  .nav-link,
+  .nav-link-top {
+    width: 100%;
+    /* padding: 14px 18px; */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Slight visual hierarchy */
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .nav-link-top {
+    font-size: 0.8rem;
+    color: #a8b8d8;
+  }
+
+  /* =========================
+     DROPDOWN FIX
+  ========================= */
+  .dropdown-menu,
+  .mega-menu {
+    position: static;
+    display: none;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .dropdown-menu.active {
+    display: block;
+  }
+
+  .dropdown-link {
+    color: #a8b8d8;
+    width: cover;
+  }
+
+  .dropdown-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+
+  .mega-menu-content {
+    grid-template-columns: 1fr;
+  }
+
+  .mega-title-link {
+    color: #fff;
+  }
+
+  .social-divider {
+    display: none;
+  }
+
+  /* =========================
+     SOCIAL AREA CLEANUP
+  ========================= */
+  .top-row-social {
+    padding: 12px 15px;
+    border-bottom: none;
+    margin: 0;
+  }
+
+  .top-row-social .social-link-header {
+    color: #fff !important;
+  }
+
+  .top-row-social .social-link-header i {
+    color: inherit !important;
+  }
+
+  .social-link-header {
+    display: inline-block;
+    transition: transform 0.25s ease;
+  }
+
+  .social-link-header:hover {
+    transform: translateY(-5px);
+  }
+
+  /* =========================
+     PREVENT BACKGROUND SCROLL
+  ========================= */
+  body.menu-open {
+    overflow: hidden;
+  }
+}
