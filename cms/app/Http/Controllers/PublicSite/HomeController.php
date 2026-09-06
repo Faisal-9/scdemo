@@ -16,7 +16,7 @@ class HomeController extends Controller
     {
         $settings = Schema::hasTable('site_settings')
             ? SiteSetting::query()->where('group', 'homepage')->get()->mapWithKeys(
-                fn (SiteSetting $setting): array => [$setting->key => $setting->value]
+                fn(SiteSetting $setting): array => [$setting->key => $setting->value]
             )
             : collect();
 
@@ -25,7 +25,7 @@ class HomeController extends Controller
             : collect();
 
         $services = Schema::hasTable('services')
-            ? Service::query()->where('status', 'published')->with(['items' => fn ($query) => $query->whereNull('parent_id')->orderBy('sort_order')])->orderBy('title')->get()
+            ? Service::query()->where('status', 'published')->with(['items' => fn($query) => $query->whereNull('parent_id')->orderBy('sort_order')])->orderBy('title')->get()
             : collect();
 
         $activities = Schema::hasTable('media_posts')

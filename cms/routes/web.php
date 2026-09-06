@@ -13,7 +13,7 @@ Route::get('/contact', [ContactController::class, 'create'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->middleware('throttle:5,10')->name('contact.store');
 Route::get('/projects', [PublicProjectController::class, 'index'])->name('projects.index');
 Route::get('/projects/{project:slug}', [PublicProjectController::class, 'show'])->name('projects.show');
-Route::get('/projects.php', fn () => redirect()->route('projects.index', request()->query(), 301));
+Route::get('/projects.php', fn() => redirect()->route('projects.index', request()->query(), 301));
 Route::get('/projectdetails.php', [PublicProjectController::class, 'legacy']);
 
 Route::middleware('guest')->group(function (): void {

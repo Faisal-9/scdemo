@@ -20,6 +20,6 @@ class ScheduledProjectTest extends TestCase
         ]);
 
         $this->get('/projects')->assertOk()->assertDontSee($project->title);
-        $this->get('/projects/'.$project->slug)->assertNotFound();
+        $this->get('/projects/' . $project->slug)->assertNotFound();
     }
 }

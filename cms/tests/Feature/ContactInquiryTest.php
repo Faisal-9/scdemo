@@ -25,7 +25,7 @@ class ContactInquiryTest extends TestCase
 
         $response->assertRedirect();
         $this->assertDatabaseHas('contact_inquiries', ['email' => 'visitor@example.com', 'status' => 'new']);
-        Mail::assertSent(ContactInquiryReceived::class, fn (ContactInquiryReceived $mail): bool => $mail->hasTo('comms@statecorps.com'));
+        Mail::assertSent(ContactInquiryReceived::class, fn(ContactInquiryReceived $mail): bool => $mail->hasTo('comms@statecorps.com'));
     }
 
     public function test_honeypot_submission_is_rejected(): void

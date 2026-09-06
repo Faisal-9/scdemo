@@ -20,7 +20,7 @@ class ProjectController extends Controller
     {
         $projects = Project::query()
             ->with('images')
-            ->when($request->string('search')->toString(), fn ($query, $search) => $query->where('title', 'like', "%{$search}%"))
+            ->when($request->string('search')->toString(), fn($query, $search) => $query->where('title', 'like', "%{$search}%"))
             ->latest('updated_at')
             ->paginate(20)
             ->withQueryString();
@@ -101,7 +101,7 @@ class ProjectController extends Controller
         ]);
 
         $before = $project->exists ? $project->toArray() : null;
-        $data['slug'] = $project->slug ?: Str::slug($data['title']).'-'.Str::lower(Str::random(6));
+        $data['slug'] = $project->slug ?: Str::slug($data['title']) . '-' . Str::lower(Str::random(6));
         $data['scope'] = collect(preg_split('/\r\n|\r|\n/', $data['scope_text'] ?? ''))->filter()->values()->all();
         unset($data['scope_text']);
         $data['is_featured'] = $request->boolean('is_featured');
