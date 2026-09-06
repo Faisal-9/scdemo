@@ -123,6 +123,10 @@ class ImportLegacyContent extends Command
                     );
                 }
             }
+            $projectVariables = $this->includeFile($legacyPath.'/projectsdata.php');
+            if (array_key_exists('projecthero', $projectVariables)) {
+                $this->saveSetting('projects', 'hero', $projectVariables['projecthero']);
+            }
 
             $media = $this->load($legacyPath.'/mediadata.php', 'media');
             foreach ($media as $type => $items) {

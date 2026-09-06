@@ -96,6 +96,8 @@ class ProjectController extends Controller
             'is_featured' => ['nullable', 'boolean'],
             'is_home_featured' => ['nullable', 'boolean'],
             'workflow_action' => ['required', 'in:draft,review,publish'],
+            'scheduled_at' => ['nullable', 'date', 'after:now'],
+            'review_note' => ['nullable', 'string', 'max:5000'],
         ]);
 
         $before = $project->exists ? $project->toArray() : null;
@@ -105,6 +107,7 @@ class ProjectController extends Controller
         $data['is_featured'] = $request->boolean('is_featured');
         $data['is_home_featured'] = $request->boolean('is_home_featured');
         $data['status'] = $this->statusFor($request);
+        $data['review_note'] = $data['review_note'] ?? null;
         unset($data['workflow_action']);
 
         if ($request->hasFile('thumbnail')) {
@@ -112,7 +115,16 @@ class ProjectController extends Controller
         }
         if ($data['status'] === 'published') {
             $data['published_by'] = $request->user()->id;
-            $data['published_at'] = now();
+            $data['published_at'] = $data['scheduled_at'] ?? now();
+            $data['scheduled_at'] = null;
+        } elseif ($data['status'] === 'review') {
+            $data['reviewed_by'] = null;
+            $data['reviewed_at'] = null;
+            $data['published_by'] = null;
+            $data['published_at'] = null;
+        } else {
+            $data['published_by'] = null;
+            $data['published_at'] = null;
         }
 
         $project->fill($data)->save();

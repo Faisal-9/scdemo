@@ -4,6 +4,8 @@
 
 Use separate cPanel subdomains, databases, `.env` files, and storage directories for staging and production. Never copy a staging `.env` file to production.
 
+For local XAMPP development, the checked-in default uses SQLite and Laravel's log mailer. Start from `C:\xampp\htdocs\publicV6\cms` with `C:\xampp\php\php.exe artisan serve`; this keeps the Laravel root private while the public site is being migrated.
+
 ## cPanel requirements
 
 The domain or subdomain document root must point to `cms/public`; the Laravel root must not be web-accessible. Ensure the PHP version is 8.2 or later and enable `mbstring`, `openssl`, `pdo_mysql`, `fileinfo`, and `zip`.
@@ -17,6 +19,12 @@ The domain or subdomain document root must point to `cms/public`; the Laravel ro
 5. Run `php artisan key:generate`, `php artisan migrate --force`, and `php artisan storage:link`.
 6. Run `php artisan statecorps:create-admin --role=super_admin` privately over SSH.
 7. Cache application configuration only after `.env` is complete: `php artisan config:cache` and `php artisan route:cache`.
+
+## Content workflow
+
+Editors save projects as drafts or submit them for review. Admins and super admins publish approved content immediately or select a future publication time. Add the scheduler cron entry below so scheduled publications are processed every minute.
+
+Contact inquiries are stored in the CMS and sent to `CONTACT_MAIL_TO`, which defaults to `comms@statecorps.com`. Configure the domain SMTP values in the environment before enabling SMTP delivery.
 
 ## Cron
 

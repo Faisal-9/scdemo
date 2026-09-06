@@ -1,5 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Schedule;
+
+Schedule::command('statecorps:publish-scheduled')->everyMinute();
+
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 

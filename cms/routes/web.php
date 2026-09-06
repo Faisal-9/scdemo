@@ -3,9 +3,18 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\PublicSite\ProjectController as PublicProjectController;
+use App\Http\Controllers\PublicSite\ContactController;
+use App\Http\Controllers\PublicSite\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'public.placeholder')->name('home');
+Route::get('/', HomeController::class)->name('home');
+Route::get('/contact', [ContactController::class, 'create'])->name('contact');
+Route::post('/contact', [ContactController::class, 'store'])->middleware('throttle:5,10')->name('contact.store');
+Route::get('/projects', [PublicProjectController::class, 'index'])->name('projects.index');
+Route::get('/projects/{project:slug}', [PublicProjectController::class, 'show'])->name('projects.show');
+Route::get('/projects.php', fn () => redirect()->route('projects.index', request()->query(), 301));
+Route::get('/projectdetails.php', [PublicProjectController::class, 'legacy']);
 
 Route::middleware('guest')->group(function (): void {
     Route::get('/admin/login', [LoginController::class, 'create'])->name('login');

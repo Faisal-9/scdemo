@@ -13,6 +13,8 @@
 <label>Thumbnail <input type="file" name="thumbnail" accept="image/*"></label><br>
 <label><input type="checkbox" name="is_featured" value="1" @checked(old('is_featured', $project->is_featured))> Featured</label>
 <label><input type="checkbox" name="is_home_featured" value="1" @checked(old('is_home_featured', $project->is_home_featured))> Show on homepage</label><br>
+<label>Publish at (optional, future date/time)<input type="datetime-local" name="scheduled_at" value="{{ old('scheduled_at', $project->scheduled_at?->format('Y-m-d\\TH:i')) }}"></label><br>
+<label>Review note<textarea name="review_note">{{ old('review_note', $project->review_note) }}</textarea></label><br>
 <button name="workflow_action" value="draft">Save draft</button><button name="workflow_action" value="review">Send for review</button>
 @if(auth()->user()->hasAnyRole('super_admin', 'admin'))<button name="workflow_action" value="publish">Publish</button>@endif
 </form>

@@ -16,6 +16,8 @@ return [
 
     'default' => env('MAIL_MAILER', 'log'),
 
+    'contact_to' => env('CONTACT_MAIL_TO', 'comms@statecorps.com'),
+
     /*
     |--------------------------------------------------------------------------
     | Mailer Configurations
