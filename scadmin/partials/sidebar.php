@@ -24,7 +24,7 @@ $navigation = [
     [
         'key' => 'projects',
         'label' => 'Projects',
-        'url' => null,
+        'url' => adminUrl('Projects/'),
         'permission' => 'manage_projects',
     ],
     [
