@@ -10,7 +10,7 @@ $projects = [
         'status' => 'Completed',
         'completion-year' => 2019,
         'location' => 'Logar-Gardiz',
-        'client' => '',
+        'client' => 'USACE',
         'inhome' => 'yes',
         'catimage' => 'yes',
         'thumbnail' => 'assets/images/projects/01-logar-gardiz-1.jpg',
@@ -179,17 +179,17 @@ $projects = [
         'This contract was signed between Kabul Municipality (KM) and State Corps. Through this project the construction of 12.38 Km rigid pavement alongside with water drainage structure in Dasht-e-Barchi region of Kabul province of Afghanistan was accomplished. ',
 
         'scope' => [
-            'construction of 12.38 Km rigid pavement alongside with water drainage structure',
-            '',
-            '',
-            '',
+            'Construction of 12.38 Km rigid pavement',
+            'Construction of water drainage structures',
+            'Site preparation and related civil works',
+            'Drainage integration to improve stormwater management',
         ]
 
     ],
 
     [
         'id' => 'b7',
-        'name' => 'Marshal Fahim National Defense University Phase IIIA (MFNDU - ANDU)',
+        'name' => 'National Defense University Phase IIIA (MFNDU - ANDU)',
         'sector' => 'Building',
         'category' => 'vertical construction',
         'status' => 'completed',
@@ -207,13 +207,15 @@ $projects = [
         ],
 
         'description' =>
-        'This contract was signed between USACE and State Corps. Through this project the construction of Marshal Fahim national Defense University Complex Phase IIIA for Afghan National Army in Qargha Area of Kabul City, Afghanistan was accomplished.',
+        'This contract was signed between USACE and State Corps. Through this project the construction of National Defense University Complex Phase IIIA for Afghan National Army in Qargha Area of Kabul City, Afghanistan was accomplished.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Construction of the Afghanistan National Defense University campus',
+            'Construction of academic, administrative, and support buildings',
+            'Development of internal roads and parking areas',
+            'Construction of utilities and site infrastructure',
+            'Complete site development and associated civil works',
+            'Full site execution, construction management, and project coordination',
         ]
 
     ],
@@ -1178,10 +1180,10 @@ $projects = [
         'This contract was signed between Ministry of Public Work (MOPW) and State Corps. The project covers design and construction of ARA Admin building of Kandahar province, Afghanistan.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Complete site preparation, grading, landscaping, tree planting, grass planting, and related external works.',
+            'Provision and installation of all required site facilities, utilities, and supporting infrastructure.',
+            'Establishment and furnishing of a site testing laboratory for material and construction quality control.',
+            'Comprehensive management of mobilization, demobilization, health and safety, quality control, resource coordination, and construction scheduling.',
         ]
 
     ],
@@ -1210,10 +1212,10 @@ $projects = [
         'This contract was signed between Ministry of Public Work (MOPW) and State Corps. The project covers design and construction of ARA Admin building of Herat province, Afghanistan.',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Construction of a new administrative facility for the Afghanistan Railway Authority in Herat.',
+            'Full construction, completion, testing, commissioning, and handover of the facility in accordance with approved drawings, specifications, and BoQ.',
+            'Execution of works in compliance with applicable technical standards, project requirements, and relevant regulations.',
+            'Identification and correction of construction defects during the defects liability period.',
         ]
 
     ],
@@ -1242,10 +1244,10 @@ $projects = [
         'This contract was signed between Ministry of Public Work (MOPW) and State Corps. The project covers design and construction of ARA Admin building of Balkh province, Afghanistan. ',
 
         'scope' => [
-            '',
-            '',
-            '',
-            '',
+            'Construction of a new administrative facility for the Afghanistan Railway Authority in Mazar-i-Sharif, Balkh Province.',
+            'Execution of all works in accordance with project requirements, applicable standards, and relevant regulations.',
+            'Management of site activities, resources, quality control, health and safety, and coordination through project completion and handover.',
+            'Provision and integration of essential electrical, plumbing, HVAC, drainage, and external site infrastructure to ensure safe, functional, and efficient building operations.',
         ]
 
     ],

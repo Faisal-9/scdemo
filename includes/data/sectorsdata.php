@@ -36,12 +36,12 @@ $sectors = [
         ],
 
         "areas" => [
-            "Substation Engineering",
-            "Transmission Line Construction",
+            "Substation Engineering and Construction",
+            "Transmission Line Engineering and Construction",
             "Power Distribution Networks",
             "Hydropower Development",
             "Solar Energy Systems",
-            "Wind Energy Projects"
+            "Wind Energy Systems"
         ],
 
         "project" => [

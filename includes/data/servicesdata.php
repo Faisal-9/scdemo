@@ -10,13 +10,13 @@ $services = [
         "sub_services" => [
 
             [
-                "id"    => "engineering-surveys",
-                "title" => "Engineering Surveys",
+                "id"    => "Feasibility-Studies",
+                "title" => "Feasibility-Studies",
                 "items" => [
                     [
                         "title"      => "Feasibility Studies",
                         "image"      => "assets/images/services/feasibilitystu1.jpg",
-                        "short_desc" => "We provide comprehensive feasibility studies that include initial concept development, technical and financial evaluations, and early-stage planning to assess project viability, identify constraints, and outline practical solutions before moving into detailed design and execution phases.",
+                        "short_desc" => "Our experienced engineering and technical team provides comprehensive feasibility studies covering demand-side and market assessments, technical and engineering evaluations, preliminary engineering calculations, alternative design comparisons, financial and economic analysis, risk and constraint identification, and early-stage planning.",
                         "why"        => "Our studies minimise risks by identifying constraints, validating assumptions, and ensuring informed, cost-effective project decisions from the outset.",
                         "features"   => [
                             "Site assessment and constraint mapping",
@@ -26,21 +26,9 @@ $services = [
                         ],
                     ],
                     [
-                        "title"      => "GIS Mapping and Analysis",
-                        "image"      => "assets/images/services/gis1.jpg",
-                        "short_desc" => "Our GIS mapping and analysis services involve collecting, processing, and interpreting spatial data using advanced geospatial technologies to support accurate planning, decision-making, and visualization for infrastructure, environmental studies, and land management projects across diverse and complex terrains.",
-                        "why"        => "We deliver precise geospatial insights that improve planning accuracy, optimise resource allocation, and support efficient, data-driven project decisions.",
-                        "features"   => [
-                            "Topographic and cadastral mapping",
-                            "Aerial and satellite imagery analysis",
-                            "3D terrain modelling",
-                            "Geospatial data management",
-                        ],
-                    ],
-                    [
                         "title"      => "Environmental and Social Assessments",
                         "image"      => "assets/images/services/enviromental1.jpg",
-                        "short_desc" => "We conduct detailed environmental and social assessments to evaluate potential project impacts, ensure regulatory compliance, and promote sustainable development by integrating environmental protection measures and community considerations into planning and execution processes.",
+                        "short_desc" => "We conduct Environmental and Social Impact Assessments (ESIA) using baseline studies, GIS analysis, impact and risk assessment techniques, stakeholder engagement, and mitigation planning. Our specialists develop practical Environmental and Social Management Plans (ESMPs) to ensure regulatory compliance, minimize impacts, and support sustainable project development.",
                         "why"        => "We ensure regulatory compliance while reducing environmental impact and enhancing positive social outcomes for sustainable project success.",
                         "features"   => [
                             "Environmental Impact Assessment (EIA)",
@@ -49,6 +37,54 @@ $services = [
                             "Mitigation and management plans",
                         ],
                     ],
+                    [
+                        "title"      => "Economical Assessments",
+                        "image"      => "assets/images/services/feasibilitystu1.jpg",
+                        "short_desc" => "We evaluate project costs, revenues, cash flows, profitability, and economic benefits using Capital Expenditure  (CAPEX) and Operating Expenditure  (OPEX) analysis, cost–benefit analysis, NPV, IRR, payback period, break-even analysis, and sensitivity analysis to determine project viability and investment potential.",
+                        "why"        => "Our experienced team provides data-driven financial and economic analysis using proven evaluation techniques to assess project profitability, investment potential, risks, and long-term financial sustainability, supporting confident investment decisions.",
+                        "features"   => [
+                            "APEX and OPEX analysis",
+                            "Cost–benefit analysis",
+                            "Break-even and sensitivity analysiss",
+                            "Investment and profitability assessment",
+                        ],
+                    ],
+                    [
+                        "title"      => "Engineering surveys",
+                        "image"      => "assets/images/services/feasibilitystu1.jpg",
+                        "short_desc" => "We conduct comprehensive engineering surveys to collect accurate site and project data for planning, design, and construction. Our services include topographic and site surveys, route and alignment surveys, utility investigations, geospatial data collection, and field measurements using modern surveying equipment and GIS-based techniques.",
+                        "why"        => "Our experienced team delivers accurate, reliable survey data using modern equipment and techniques to support design, planning, and construction.",
+                        "features"   => [
+                            "Accurate topographic and site surveys",
+                            "Modern surveying equipment and techniques",
+                            "GIS-based data collection and mapping",
+                            "Precise field measurements and documentation",
+                        ],
+                    ],
+                    [
+                        "title"      => "GIS Mapping and Analysis",
+                        "image"      => "assets/images/services/gis1.jpg",
+                        "short_desc" => "Our GIS mapping and spatial analysis services use advanced geospatial techniques for spatial data acquisition, processing, analysis, terrain modeling, thematic mapping, and visualization. We utilize ArcGIS Pro, Global Mapper, and Civil 3D to support site assessment, infrastructure planning, environmental analysis, land-use mapping, and engineering design across complex terrains.",
+                        "why"        => "We deliver precise geospatial insights that improve planning accuracy, optimise resource allocation, and support efficient, data-driven project decisions.",
+                        "features"   => [
+                            "Topographic and cadastral mapping",
+                            "Aerial and satellite imagery analysis",
+                            "3D terrain modelling",
+                            "Geospatial data management",
+                        ],
+                    ],
+                    // [
+                    //     "title"      => "Economical Assessments",
+                    //     "image"      => "assets/images/services/feasibilitystu1.jpg",
+                    //     "short_desc" => "We evaluate project costs, revenues, cash flows, profitability, and economic benefits using Capital Expenditure  (CAPEX) and Operating Expenditure  (OPEX) analysis, cost–benefit analysis, NPV, IRR, payback period, break-even analysis, and sensitivity analysis to determine project viability and investment potential.",
+                    //     "why"        => "Our experienced team provides data-driven financial and economic analysis using proven evaluation techniques to assess project profitability, investment potential, risks, and long-term financial sustainability, supporting confident investment decisions.",
+                    //     "features"   => [
+                    //         "APEX and OPEX analysis",
+                    //         "Cost–benefit analysis",
+                    //         "Break-even and sensitivity analysiss",
+                    //         "Investment and profitability assessment",
+                    //     ],
+                    // ],
                 ],
             ],
 
@@ -60,7 +96,7 @@ $services = [
                         "title"      => "Conceptual Engineering Studies",
                         "image"      => "assets/images/services/conceptualdesign1.jpg",
                         "short_desc" => "We develop early-stage engineering concepts that translate project objectives into technically sound, feasible, and cost-effective solutions, enabling informed decision-making while aligning design approaches with project goals, site conditions, and stakeholder expectations before advancing into detailed design phases.",
-                        "why"        => "Strong concepts reduce redesign risks, align stakeholders early, and provide a clear, efficient direction for all subsequent design stages.",
+                        "why"        => "Our experienced engineering team develops practical, technically sound, and cost-effective concepts, considering project objectives, site conditions, technical requirements, and stakeholder needs to establish a clear direction for detailed design.",
                         "features"   => [
                             "Alternatives analysis",
                             "Concept-level cost estimates",
@@ -84,7 +120,7 @@ $services = [
                         "title"      => "Civil Design",
                         "image"      => "assets/images/services/civildesign.jpg",
                         "short_desc" => "We provide detailed civil engineering design for roads, drainage systems, grading, and site infrastructure, ensuring efficient land use, proper water management, and long-term durability while meeting regulatory requirements and supporting smooth construction processes across a wide range of infrastructure projects.",
-                        "why"        => "Accurate civil design ensures efficient construction, regulatory compliance, and long-term performance of infrastructure under varying site conditions.",
+                        "why"        => "Our experienced civil engineering team delivers accurate, practical, and constructible designs, considering site conditions, drainage, grading, infrastructure requirements, and applicable standards to ensure efficient construction and long-term performance.",
                         "features"   => [
                             "Grading and earthwork design",
                             "Stormwater and drainage systems",
@@ -120,7 +156,7 @@ $services = [
                         "title"      => "Mechanical Design",
                         "image"      => "assets/images/services/mechanicaldesign1.jpeg",
                         "short_desc" => "Our mechanical design services cover HVAC, plumbing, fire protection, and process systems, delivering integrated solutions that enhance energy efficiency, occupant comfort, and system reliability while aligning with project specifications and operational requirements across diverse facility types.",
-                        "why"        => "Integrated mechanical systems improve efficiency, reduce energy costs, and ensure comfortable, safe, and reliable building operations.",
+                        "why"        => "Our experienced mechanical engineering team delivers integrated, energy-efficient, and reliable system designs, considering project requirements, operational needs, applicable standards, and long-term performance to ensure safe and comfortable facility operations.",
                         "features"   => [
                             "HVAC load calculations and system selection",
                             "Plumbing and sanitation layouts",
@@ -167,7 +203,7 @@ $services = [
                                 "title"      => "Building Retrofit",
                                 "image"      => "assets/images/services/building-retrofit.jpg",
                                 "short_desc" => "We assess and upgrade existing structures to meet current codes, improve performance, and extend service life, incorporating modern engineering solutions to enhance safety, functionality, and sustainability while preserving structural integrity and accommodating new usage or regulatory requirements.",
-                                "why"        => "Retrofitting enhances safety, extends asset life, and offers a sustainable, cost-effective alternative to complete reconstruction.",
+                                "why"        => "Our experienced team provides practical and cost-effective retrofit solutions that improve structural safety, building performance, energy efficiency, and service life while meeting current codes and minimizing disruption to existing facilities.",
                                 "features"   => [
                                     "Structural condition assessment",
                                     "Seismic retrofitting and strengthening",
@@ -251,7 +287,7 @@ $services = [
                                 "title"      => "Power Distribution Engineering",
                                 "image"      => "assets/images/services/distribution1.jpg",
                                 "short_desc" => "We design medium and low-voltage distribution networks for urban and rural areas, ensuring efficient energy delivery, reduced losses, and reliable supply while supporting future expansion and increasing demand across diverse infrastructure environments.",
-                                "why"        => "Efficient distribution networks reduce losses, improve reliability, and support growing energy demands with scalable infrastructure solutions.",
+                                "why"        => "Our experienced electrical engineering team delivers reliable, efficient, and scalable distribution designs, considering load requirements, voltage levels, network capacity, system losses, and future demand to ensure safe and dependable power supply.",
                                 "features"   => [
                                     "Network load flow and fault studies",
                                     "Distribution automation design",
@@ -269,7 +305,7 @@ $services = [
                                 "title"      => "HVAC Design",
                                 "image"      => "assets/images/services/hvac-design.jpg",
                                 "short_desc" => "We design heating, ventilation, and air-conditioning systems for residential, commercial, and industrial applications, ensuring energy efficiency, indoor air quality, and occupant comfort while integrating advanced technologies and control systems for optimal performance.",
-                                "why"        => "Energy-efficient HVAC systems reduce operating costs while maintaining comfort, improving air quality, and supporting sustainable building performance.",
+                                "why"        => "Our experienced HVAC team delivers energy-efficient and reliable system designs, considering cooling and heating loads, indoor air quality, ventilation requirements, equipment selection, and applicable standards to ensure comfortable and efficient building operation.",
                                 "features"   => [
                                     "Thermal load calculations",
                                     "Air handling unit and duct design",
@@ -281,7 +317,7 @@ $services = [
                                 "title"      => "Plumbing Design",
                                 "image"      => "assets/images/services/plumbing-design.jpg",
                                 "short_desc" => "We design water supply, drainage, and specialised plumbing systems for various building types, ensuring efficient water management, hygiene, and compliance with regulations while supporting sustainability through modern design approaches and technologies.",
-                                "why"        => "Well-designed plumbing systems ensure health, water efficiency, and compliance while supporting sustainable and reliable building operations.",
+                                "why"        => "Our experienced plumbing engineering team delivers efficient, reliable, and code-compliant designs, considering water demand, drainage requirements, system capacity, water efficiency, and long-term performance to ensure safe and sustainable building operations.",
                                 "features"   => [
                                     "Domestic water supply and distribution",
                                     "Sanitary and waste drainage design",
@@ -299,7 +335,7 @@ $services = [
                                 "title"      => "Master Plan and Urban Design",
                                 "image"      => "assets/images/services/urbandev1.jpg",
                                 "short_desc" => "We develop strategic master plans and urban design frameworks that guide sustainable development, integrating land use, infrastructure, mobility, and public spaces to create functional, connected, and resilient communities aligned with long-term growth objectives.",
-                                "why"        => "Effective master planning creates sustainable, connected communities that support growth, enhance livability, and ensure long-term urban resilience.",
+                                "why"        => "Our experienced planning and urban design team develops integrated, sustainable, and practical master plans, considering land use, mobility, infrastructure, public spaces, development potential, and long-term growth to create connected and resilient communities.",
                                 "features"   => [
                                     "Land-use zoning and density studies",
                                     "Movement and connectivity networks",
@@ -311,7 +347,7 @@ $services = [
                                 "title"      => "Landscape Architecture",
                                 "image"      => "assets/images/services/landscape-architecture.jpg",
                                 "short_desc" => "We design outdoor environments that integrate natural systems with human activity, enhancing aesthetics, ecological value, and user experience while supporting sustainability, biodiversity, and long-term environmental performance.",
-                                "why"        => "Quality landscape design enhances environmental value, improves user wellbeing, and creates attractive, sustainable outdoor spaces.",
+                                "why"        => "Our experienced landscape architecture team creates functional, sustainable, and visually integrated outdoor spaces, considering site conditions, ecology, biodiversity, user needs, and long-term environmental performance.",
                                 "features"   => [
                                     "Site analysis and concept design",
                                     "Planting design and species selection",
@@ -329,7 +365,7 @@ $services = [
                                 "title"      => "Project Planning and Scheduling",
                                 "image"      => "assets/images/services/project-planning.jpg",
                                 "short_desc" => "We develop detailed project plans, schedules, and resource strategies using industry-standard tools to ensure efficient execution, timely delivery, and effective coordination across all project phases while managing risks and adapting to changing conditions.",
-                                "why"        => "Structured planning ensures timely delivery, optimises resources, and helps manage risks effectively throughout the project lifecycle.",
+                                "why"        => "Our experienced project management team develops structured, realistic, and resource-efficient schedules, considering project scope, resources, dependencies, critical activities, risks, and deadlines to support timely and effective project delivery.",
                                 "features"   => [
                                     "Master programme development (Primavera / MS Project)",
                                     "Critical path and float analysis",
@@ -341,7 +377,7 @@ $services = [
                                 "title"      => "Quality Management",
                                 "image"      => "assets/images/services/quality-management.jpg",
                                 "short_desc" => "We implement quality management systems to ensure that materials, processes, and workmanship meet required standards, reducing defects and ensuring consistent performance while supporting compliance and long-term asset reliability.",
-                                "why"        => "Strong quality management reduces errors, prevents rework, and ensures consistent delivery of high-performance, compliant project outcomes.",
+                                "why"        => "Our experienced quality team ensures consistent, standards-compliant project delivery, using quality control procedures, inspections, testing, documentation, and performance monitoring to minimize defects, reduce rework, and ensure long-term asset reliability.",
                                 "features"   => [
                                     "Quality Management Plan (QMP) development",
                                     "Inspection and Test Plans (ITPs)",
@@ -353,7 +389,7 @@ $services = [
                                 "title"      => "Cost Estimation",
                                 "image"      => "assets/images/services/cost-estimation.jpg",
                                 "short_desc" => "We provide accurate cost estimation and quantity take-offs throughout all project stages, enabling effective budgeting, financial planning, and control while supporting informed decision-making and minimising cost overruns.",
-                                "why"        => "Accurate cost estimation supports better budgeting, informed decisions, and effective control of project finances and risks.",
+                                "why"        => "Our experienced team delivers accurate and reliable cost estimates, using quantity take-offs, unit-rate analysis, market pricing, and cost benchmarking to support effective budgeting, financial planning, and cost control.",
                                 "features"   => [
                                     "Class 1–5 cost estimates (AACE)",
                                     "Bill of Quantities (BOQ) preparation",
@@ -385,13 +421,14 @@ $services = [
                     [
                         "title"      => "Project Management and Execution",
                         "image"      => "assets/images/services/project-management.jpg",
-                        "short_desc" => "We provide comprehensive project management and execution services across the full project lifecycle, ensuring effective coordination of scope, schedule, cost, quality, and resources while maintaining alignment with client objectives, operational requirements, and industry standards for successful project delivery.",
+                        "short_desc" => "We provide comprehensive project management and execution services across the full project lifecycle, led by our experienced project management and engineering team. We effectively manage scope, schedule, cost, quality, resources, risks, and stakeholder coordination to ensure efficient execution and successful project delivery in line with client objectives and industry standards.",
                         "why"        => "Our structured management systems improve coordination, reduce delays, and ensure projects are delivered safely, efficiently, and within budget.",
                         "features"   => [
                             "End-to-end project lifecycle management",
                             "Integrated cost and schedule control",
                             "Stakeholder and contractor coordination",
                             "Performance monitoring and reporting",
+                            "Experienced project management and engineering staff",
                         ],
                     ],
                     [
@@ -418,6 +455,45 @@ $services = [
                             "Construction monitoring and reporting",
                         ],
                     ],
+
+                    [
+                        "title"      => "Quality Assurance and Control",
+                        "image"      => "assets/images/services/quality-control.jpg",
+                        "short_desc" => "We implement quality assurance and quality control systems across all project phases to ensure materials, workmanship, processes, and deliverables comply with technical specifications, regulatory requirements, and international quality standards.",
+                        "why"        => "Strong quality systems reduce defects, minimise rework, and ensure consistent delivery of reliable project outcomes.",
+                        "features"   => [
+                            "Inspection and Test Plans (ITPs)",
+                            "Quality audits and compliance reviews",
+                            "Material verification and traceability",
+                            "Non-conformance management",
+                        ],
+                    ],
+                    [
+                        "title"      => "Health, Safety and ESG Compliance",
+                        "image"      => "assets/images/services/hse.jpg",
+                        "short_desc" => "We develop and implement integrated health, safety, environmental, and ESG management systems that promote safe working environments, regulatory compliance, environmental protection, and responsible project delivery across all operational and construction activities.",
+                        "why"        => "Effective HSE and ESG systems protect personnel, reduce operational risks, and support sustainable, responsible project execution.",
+                        "features"   => [
+                            "Health and safety management systems",
+                            "Environmental compliance monitoring",
+                            "ESG reporting and implementation",
+                            "Risk assessment and mitigation planning",
+                        ],
+                    ],
+                    [
+                        "title"      => "Digital Project Management and Smart Delivery",
+                        "image"      => "assets/images/services/digital-project.jpg",
+                        "short_desc" => "We implement advanced digital technologies, real-time monitoring systems, BIM platforms, and data-driven management tools to improve project visibility, collaboration, forecasting, and decision-making throughout engineering, procurement, construction, and operational phases.",
+                        "why"        => "Digital solutions improve efficiency, enhance coordination, and enable proactive management of project risks and performance.",
+                        "features"   => [
+                            "Digital dashboards and reporting systems",
+                            "BIM and digital twin integration",
+                            "AI-assisted planning and forecasting",
+                            "Real-time project monitoring",
+                        ],
+                    ],
+
+
                 ],
             ],
 
@@ -428,7 +504,7 @@ $services = [
                     [
                         "title"      => "Procurement and Supply Chain Management",
                         "image"      => "assets/images/services/procurement.jpg",
-                        "short_desc" => "We manage procurement and supply chain operations for complex industrial and infrastructure projects, ensuring timely sourcing of quality materials, equipment, and services while optimising costs, managing logistics, and maintaining supply continuity throughout project execution phases.",
+                        "short_desc" => "We manage procurement and supply chain operations for complex industrial and infrastructure projects, combining global sourcing capabilities with strong local market expertise. Our experienced team ensures timely sourcing of quality materials, equipment, and services, while optimising costs, logistics, supplier coordination, and supply continuity throughout project execution.",
                         "why"        => "Efficient procurement and logistics reduce delays, improve cost control, and ensure reliable access to critical project resources.",
                         "features"   => [
                             "Strategic sourcing and vendor evaluation",
@@ -566,48 +642,13 @@ $services = [
                 ],
             ],
 
-            [
-                "id"    => "digital-quality-hse",
-                "title" => "Digital Delivery, Quality & HSE",
-                "items" => [
-                    [
-                        "title"      => "Digital Project Management and Smart Delivery",
-                        "image"      => "assets/images/services/digital-project.jpg",
-                        "short_desc" => "We implement advanced digital technologies, real-time monitoring systems, BIM platforms, and data-driven management tools to improve project visibility, collaboration, forecasting, and decision-making throughout engineering, procurement, construction, and operational phases.",
-                        "why"        => "Digital solutions improve efficiency, enhance coordination, and enable proactive management of project risks and performance.",
-                        "features"   => [
-                            "Digital dashboards and reporting systems",
-                            "BIM and digital twin integration",
-                            "AI-assisted planning and forecasting",
-                            "Real-time project monitoring",
-                        ],
-                    ],
-                    [
-                        "title"      => "Quality Assurance and Control",
-                        "image"      => "assets/images/services/quality-control.jpg",
-                        "short_desc" => "We implement quality assurance and quality control systems across all project phases to ensure materials, workmanship, processes, and deliverables comply with technical specifications, regulatory requirements, and international quality standards.",
-                        "why"        => "Strong quality systems reduce defects, minimise rework, and ensure consistent delivery of reliable project outcomes.",
-                        "features"   => [
-                            "Inspection and Test Plans (ITPs)",
-                            "Quality audits and compliance reviews",
-                            "Material verification and traceability",
-                            "Non-conformance management",
-                        ],
-                    ],
-                    [
-                        "title"      => "Health, Safety and ESG Compliance",
-                        "image"      => "assets/images/services/hse.jpg",
-                        "short_desc" => "We develop and implement integrated health, safety, environmental, and ESG management systems that promote safe working environments, regulatory compliance, environmental protection, and responsible project delivery across all operational and construction activities.",
-                        "why"        => "Effective HSE and ESG systems protect personnel, reduce operational risks, and support sustainable, responsible project execution.",
-                        "features"   => [
-                            "Health and safety management systems",
-                            "Environmental compliance monitoring",
-                            "ESG reporting and implementation",
-                            "Risk assessment and mitigation planning",
-                        ],
-                    ],
-                ],
-            ],
+            // [
+            //     "id"    => "digital-quality-hse",
+            //     "title" => "Digital Delivery, Quality & HSE",
+            //     "items" => [
+
+            //     ],
+            // ],
 
         ],
     ],
@@ -621,219 +662,219 @@ $services = [
 
         "sub_services" => [
 
-            [
-                "id"    => "exploration",
-                "title" => "Exploration",
-                "items" => [
+            // [
+            //     "id"    => "exploration",
+            //     "title" => "Exploration",
+            //     "items" => [
 
-                    [
-                        "title"      => "Geological Surveys and Mapping",
-                        "image"      => "assets/images/services/geo-survey1.jpg",
-                        "short_desc" => "We conduct comprehensive geological surveys using advanced mapping techniques, satellite imagery, and field data collection to accurately identify mineral deposits and define exploration targets across diverse terrains.",
-                        "why"        => "Our precise geological insights reduce uncertainty, enabling faster discovery and more confident investment decisions.",
-                        "features"   => [
-                            "High-resolution geological mapping",
-                            "Remote sensing and satellite analysis",
-                            "3D geological modelling",
-                            "Mineral targeting and evaluation",
-                        ],
-                    ],
+            //         [
+            //             "title"      => "Geological Surveys and Mapping",
+            //             "image"      => "assets/images/services/geo-survey1.jpg",
+            //             "short_desc" => "We conduct comprehensive geological surveys using advanced mapping techniques, satellite imagery, and field data collection to accurately identify mineral deposits and define exploration targets across diverse terrains.",
+            //             "why"        => "Our precise geological insights reduce uncertainty, enabling faster discovery and more confident investment decisions.",
+            //             "features"   => [
+            //                 "High-resolution geological mapping",
+            //                 "Remote sensing and satellite analysis",
+            //                 "3D geological modelling",
+            //                 "Mineral targeting and evaluation",
+            //             ],
+            //         ],
 
-                    [
-                        "title"      => "Geophysical and Remote Sensing",
-                        "image"      => "assets/images/services/sensing1.jpg",
-                        "short_desc" => "We utilize cutting-edge geophysical methods and remote sensing technologies to detect subsurface mineralization, providing accurate, non-invasive exploration solutions.",
-                        "why"        => "Advanced detection technologies minimise exploration risk while improving accuracy and efficiency.",
-                        "features"   => [
-                            "Magnetic and seismic surveys",
-                            "Drone-based exploration",
-                            "LiDAR and hyperspectral imaging",
-                            "Subsurface anomaly detection",
-                        ],
-                    ],
+            //         [
+            //             "title"      => "Geophysical and Remote Sensing",
+            //             "image"      => "assets/images/services/sensing1.jpg",
+            //             "short_desc" => "We utilize cutting-edge geophysical methods and remote sensing technologies to detect subsurface mineralization, providing accurate, non-invasive exploration solutions.",
+            //             "why"        => "Advanced detection technologies minimise exploration risk while improving accuracy and efficiency.",
+            //             "features"   => [
+            //                 "Magnetic and seismic surveys",
+            //                 "Drone-based exploration",
+            //                 "LiDAR and hyperspectral imaging",
+            //                 "Subsurface anomaly detection",
+            //             ],
+            //         ],
 
-                    [
-                        "title"      => "Resource Estimation and Modeling",
-                        "image"      => "assets/images/services/resourse-estimation1.jpg",
-                        "short_desc" => "Our team develops accurate resource and reserve models using advanced software and data analytics to support reliable planning and reporting.",
-                        "why"        => "We ensure compliance with international standards while maximizing resource confidence and project value.",
-                        "features"   => [
-                            "3D resource modelling",
-                            "Ore body simulation",
-                            "Data validation and QA/QC",
-                            "JORC/NI 43-101 compliant reporting",
-                        ],
-                    ],
+            //         [
+            //             "title"      => "Resource Estimation and Modeling",
+            //             "image"      => "assets/images/services/resourse-estimation1.jpg",
+            //             "short_desc" => "Our team develops accurate resource and reserve models using advanced software and data analytics to support reliable planning and reporting.",
+            //             "why"        => "We ensure compliance with international standards while maximizing resource confidence and project value.",
+            //             "features"   => [
+            //                 "3D resource modelling",
+            //                 "Ore body simulation",
+            //                 "Data validation and QA/QC",
+            //                 "JORC/NI 43-101 compliant reporting",
+            //             ],
+            //         ],
 
-                    [
-                        "title"      => "Feasibility and Pre-Feasibility Studies",
-                        "image"      => "assets/images/services/feasibilitystu1.jpg",
-                        "short_desc" => "We provide detailed technical and financial feasibility studies to evaluate mining projects and determine their economic viability.",
-                        "why"        => "Our studies reduce financial risk and guide strategic decision-making from early project stages.",
-                        "features"   => [
-                            "Technical and economic analysis",
-                            "Risk identification and mitigation",
-                            "Capital and operational cost estimation",
-                            "Project viability assessment",
-                        ],
-                    ],
+            //         [
+            //             "title"      => "Feasibility and Pre-Feasibility Studies",
+            //             "image"      => "assets/images/services/feasibilitystu1.jpg",
+            //             "short_desc" => "We provide detailed technical and financial feasibility studies to evaluate mining projects and determine their economic viability.",
+            //             "why"        => "Our studies reduce financial risk and guide strategic decision-making from early project stages.",
+            //             "features"   => [
+            //                 "Technical and economic analysis",
+            //                 "Risk identification and mitigation",
+            //                 "Capital and operational cost estimation",
+            //                 "Project viability assessment",
+            //             ],
+            //         ],
 
-                ],
-            ],
+            //     ],
+            // ],
 
-            [
-                "id"    => "mining-extraction",
-                "title" => "Mining Extraction",
-                "items" => [
+            // [
+            //     "id"    => "mining-extraction",
+            //     "title" => "Mining Extraction",
+            //     "items" => [
 
-                    [
-                        "title"      => "Surface and Open-Pit Mining",
-                        "image"      => "assets/images/services/open-pit-mining1.jpg",
-                        "short_desc" => "We deliver efficient surface mining solutions using modern equipment and optimized extraction techniques to maximize productivity and safety.",
-                        "why"        => "Optimized operations ensure higher output with reduced operational costs.",
-                        "features"   => [
-                            "Open-pit mine planning",
-                            "Overburden removal optimization",
-                            "Haulage and fleet management",
-                            "Production scheduling",
-                        ],
-                    ],
+            //         [
+            //             "title"      => "Surface and Open-Pit Mining",
+            //             "image"      => "assets/images/services/open-pit-mining1.jpg",
+            //             "short_desc" => "We deliver efficient surface mining solutions using modern equipment and optimized extraction techniques to maximize productivity and safety.",
+            //             "why"        => "Optimized operations ensure higher output with reduced operational costs.",
+            //             "features"   => [
+            //                 "Open-pit mine planning",
+            //                 "Overburden removal optimization",
+            //                 "Haulage and fleet management",
+            //                 "Production scheduling",
+            //             ],
+            //         ],
 
-                    [
-                        "title"      => "Underground Mining Systems",
-                        "image"      => "assets/images/services/underground-mining1.jpg",
-                        "short_desc" => "Our underground mining services include advanced excavation, ventilation, and safety systems tailored for complex geological conditions.",
-                        "why"        => "We enhance safety while maximizing recovery in challenging underground environments.",
-                        "features"   => [
-                            "Mine development and tunneling",
-                            "Ventilation and safety systems",
-                            "Ground support solutions",
-                            "Underground logistics optimization",
-                        ],
-                    ],
+            //         [
+            //             "title"      => "Underground Mining Systems",
+            //             "image"      => "assets/images/services/underground-mining1.jpg",
+            //             "short_desc" => "Our underground mining services include advanced excavation, ventilation, and safety systems tailored for complex geological conditions.",
+            //             "why"        => "We enhance safety while maximizing recovery in challenging underground environments.",
+            //             "features"   => [
+            //                 "Mine development and tunneling",
+            //                 "Ventilation and safety systems",
+            //                 "Ground support solutions",
+            //                 "Underground logistics optimization",
+            //             ],
+            //         ],
 
-                    [
-                        "title"      => "Drilling and Blasting Optimization",
-                        "image"      => "assets/images/services/drill-blast1.jpg",
-                        "short_desc" => "We design and execute precision drilling and blasting operations to improve fragmentation and operational efficiency.",
-                        "why"        => "Optimized blasting reduces costs and improves downstream processing performance.",
-                        "features"   => [
-                            "Blast design and simulation",
-                            "Controlled blasting techniques",
-                            "Vibration and impact monitoring",
-                            "Fragmentation analysis",
-                        ],
-                    ],
+            //         [
+            //             "title"      => "Drilling and Blasting Optimization",
+            //             "image"      => "assets/images/services/drill-blast1.jpg",
+            //             "short_desc" => "We design and execute precision drilling and blasting operations to improve fragmentation and operational efficiency.",
+            //             "why"        => "Optimized blasting reduces costs and improves downstream processing performance.",
+            //             "features"   => [
+            //                 "Blast design and simulation",
+            //                 "Controlled blasting techniques",
+            //                 "Vibration and impact monitoring",
+            //                 "Fragmentation analysis",
+            //             ],
+            //         ],
 
-                    [
-                        "title"      => "Smart Mine Planning and Scheduling",
-                        "image"      => "assets/images/services/",
-                        "short_desc" => "We leverage digital tools and real-time data to create optimized mine plans and production schedules.",
-                        "why"        => "Data-driven planning increases efficiency and reduces downtime.",
-                        "features"   => [
-                            "Short- and long-term planning",
-                            "AI-assisted scheduling",
-                            "Production forecasting",
-                            "Operational optimization",
-                        ],
-                    ],
+            //         [
+            //             "title"      => "Smart Mine Planning and Scheduling",
+            //             "image"      => "assets/images/services/",
+            //             "short_desc" => "We leverage digital tools and real-time data to create optimized mine plans and production schedules.",
+            //             "why"        => "Data-driven planning increases efficiency and reduces downtime.",
+            //             "features"   => [
+            //                 "Short- and long-term planning",
+            //                 "AI-assisted scheduling",
+            //                 "Production forecasting",
+            //                 "Operational optimization",
+            //             ],
+            //         ],
 
-                ],
-            ],
+            //     ],
+            // ],
 
-            [
-                "id"    => "mineral-processing",
-                "title" => "Mineral Processing",
-                "items" => [
+            // [
+            //     "id"    => "mineral-processing",
+            //     "title" => "Mineral Processing",
+            //     "items" => [
 
-                    [
-                        "title"      => "Crushing and Grinding Optimization",
-                        "image"      => "assets/images/services/crushers1.jpg",
-                        "short_desc" => "We optimize comminution processes to improve energy efficiency and throughput in mineral processing plants.",
-                        "why"        => "Enhanced efficiency reduces energy costs and increases production output.",
-                        "features"   => [
-                            "Process optimization",
-                            "Energy-efficient systems",
-                            "Performance monitoring",
-                            "Throughput enhancement",
-                        ],
-                    ],
+            //         [
+            //             "title"      => "Crushing and Grinding Optimization",
+            //             "image"      => "assets/images/services/crushers1.jpg",
+            //             "short_desc" => "We optimize comminution processes to improve energy efficiency and throughput in mineral processing plants.",
+            //             "why"        => "Enhanced efficiency reduces energy costs and increases production output.",
+            //             "features"   => [
+            //                 "Process optimization",
+            //                 "Energy-efficient systems",
+            //                 "Performance monitoring",
+            //                 "Throughput enhancement",
+            //             ],
+            //         ],
 
-                    [
-                        "title"      => "Advanced Mineral Separation",
-                        "image"      => "assets/images/services/mineralseparation1.jpg",
-                        "short_desc" => "We implement modern separation technologies to maximize recovery rates and product quality.",
-                        "why"        => "Higher recovery ensures better profitability and resource utilization.",
-                        "features"   => [
-                            "Flotation and gravity separation",
-                            "Magnetic and electrostatic methods",
-                            "Sensor-based ore sorting",
-                            "Process automation",
-                        ],
-                    ],
+            //         [
+            //             "title"      => "Advanced Mineral Separation",
+            //             "image"      => "assets/images/services/mineralseparation1.jpg",
+            //             "short_desc" => "We implement modern separation technologies to maximize recovery rates and product quality.",
+            //             "why"        => "Higher recovery ensures better profitability and resource utilization.",
+            //             "features"   => [
+            //                 "Flotation and gravity separation",
+            //                 "Magnetic and electrostatic methods",
+            //                 "Sensor-based ore sorting",
+            //                 "Process automation",
+            //             ],
+            //         ],
 
-                    [
-                        "title"      => "Tailings and Waste Management",
-                        "image"      => "assets/images/services/waste-management.webp",
-                        "short_desc" => "We design safe and sustainable tailings management systems to minimize environmental impact.",
-                        "why"        => "Responsible waste management ensures compliance and long-term sustainability.",
-                        "features"   => [
-                            "Tailings storage facility design",
-                            "Water recovery systems",
-                            "Waste reduction strategies",
-                            "Environmental monitoring",
-                        ],
-                    ],
+            //         [
+            //             "title"      => "Tailings and Waste Management",
+            //             "image"      => "assets/images/services/waste-management.webp",
+            //             "short_desc" => "We design safe and sustainable tailings management systems to minimize environmental impact.",
+            //             "why"        => "Responsible waste management ensures compliance and long-term sustainability.",
+            //             "features"   => [
+            //                 "Tailings storage facility design",
+            //                 "Water recovery systems",
+            //                 "Waste reduction strategies",
+            //                 "Environmental monitoring",
+            //             ],
+            //         ],
 
-                ],
-            ],
+            //     ],
+            // ],
 
-            [
-                "id"    => "environmental-sustainability",
-                "title" => "Environmental and Sustainability Services",
-                "items" => [
+            // [
+            //     "id"    => "environmental-sustainability",
+            //     "title" => "Environmental and Sustainability Services",
+            //     "items" => [
 
-                    [
-                        "title"      => "Environmental Impact Assessment (EIA)",
-                        "image"      => "assets/images/services/EIA.webp",
-                        "short_desc" => "We assess environmental risks and impacts to ensure sustainable mining practices and regulatory compliance.",
-                        "why"        => "We help clients operate responsibly while minimizing environmental risks.",
-                        "features"   => [
-                            "Impact analysis",
-                            "Regulatory compliance",
-                            "Environmental monitoring",
-                            "Mitigation planning",
-                        ],
-                    ],
+            //         [
+            //             "title"      => "Environmental Impact Assessment (EIA)",
+            //             "image"      => "assets/images/services/EIA.webp",
+            //             "short_desc" => "We assess environmental risks and impacts to ensure sustainable mining practices and regulatory compliance.",
+            //             "why"        => "We help clients operate responsibly while minimizing environmental risks.",
+            //             "features"   => [
+            //                 "Impact analysis",
+            //                 "Regulatory compliance",
+            //                 "Environmental monitoring",
+            //                 "Mitigation planning",
+            //             ],
+            //         ],
 
-                    [
-                        "title"      => "Mine Closure and Rehabilitation",
-                        "image"      => "assets/images/services/mine-closure1.jpg",
-                        "short_desc" => "We develop and implement closure plans to restore mined land and ensure long-term environmental stability.",
-                        "why"        => "Sustainable closure enhances corporate reputation and meets legal requirements.",
-                        "features"   => [
-                            "Land restoration",
-                            "Rehabilitation planning",
-                            "Post-closure monitoring",
-                            "Sustainable land use design",
-                        ],
-                    ],
+            //         [
+            //             "title"      => "Mine Closure and Rehabilitation",
+            //             "image"      => "assets/images/services/mine-closure1.jpg",
+            //             "short_desc" => "We develop and implement closure plans to restore mined land and ensure long-term environmental stability.",
+            //             "why"        => "Sustainable closure enhances corporate reputation and meets legal requirements.",
+            //             "features"   => [
+            //                 "Land restoration",
+            //                 "Rehabilitation planning",
+            //                 "Post-closure monitoring",
+            //                 "Sustainable land use design",
+            //             ],
+            //         ],
 
-                    [
-                        "title"      => "ESG and Sustainability Consulting",
-                        "image"      => "assets/images/services/ESG1.png",
-                        "short_desc" => "We support clients in developing ESG strategies aligned with global sustainability standards.",
-                        "why"        => "Strong ESG performance improves investor confidence and long-term success.",
-                        "features"   => [
-                            "ESG reporting",
-                            "Carbon reduction strategies",
-                            "Stakeholder engagement",
-                            "Sustainability frameworks",
-                        ],
-                    ],
+            //         [
+            //             "title"      => "ESG and Sustainability Consulting",
+            //             "image"      => "assets/images/services/ESG1.png",
+            //             "short_desc" => "We support clients in developing ESG strategies aligned with global sustainability standards.",
+            //             "why"        => "Strong ESG performance improves investor confidence and long-term success.",
+            //             "features"   => [
+            //                 "ESG reporting",
+            //                 "Carbon reduction strategies",
+            //                 "Stakeholder engagement",
+            //                 "Sustainability frameworks",
+            //             ],
+            //         ],
 
-                ],
-            ],
+            //     ],
+            // ],
 
             // [
             //     "id"    => "trade",
