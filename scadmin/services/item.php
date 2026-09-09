@@ -47,13 +47,15 @@ if (isPost()) {
         if ($action === 'delete_item') {
 
             /*
-     * Read the ID directly from POST.
-     * This is more reliable here than filter_input()
-     * when the form has already been validated as a CMS POST.
+     * Read the ID from POST first, then fall back to GET.
      */
             $postedId = isset($_POST['item_id'])
                 ? (int) $_POST['item_id']
                 : 0;
+
+            if ($postedId <= 0) {
+                $postedId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) ?: 0;
+            }
 
             if ($postedId <= 0) {
                 throw new RuntimeException(
