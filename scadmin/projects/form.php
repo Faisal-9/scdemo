@@ -58,7 +58,7 @@ $scopeRows = $project['scope'] ?? [];
                     <datalist id="sector-options">
                         <?php foreach ($sectors as $sector): ?>
                             <option value="<?= e((string) $sector) ?>">
-                        <?php endforeach; ?>
+                            <?php endforeach; ?>
                     </datalist>
                 </div>
 

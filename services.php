@@ -2,7 +2,8 @@
 <?php
 $page_title = "Services - State Corps";
 include("includes/head.php");
-include("includes/data/servicesdata.php");
+require_once __DIR__ . '/app/public_bootstrap.php';
+$services = ServiceFrontend::all();
 ?>
 
 <body>

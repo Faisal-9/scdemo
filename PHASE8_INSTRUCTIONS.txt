@@ -1,0 +1,137 @@
+STATE CORPS CMS — PHASE 8
+=========================
+
+Purpose
+-------
+Convert Services from static PHP data to MySQL while preserving the existing
+public Services HTML, CSS, JS, tabs and nested rendering.
+
+Source structure verified
+-------------------------
+services.php currently loads includes/data/servicesdata.php, loops over $services,
+and passes each $service to includes/components/servicessection.php.
+servicessection.php expects:
+  service.title
+  service.hero_image
+  service.hero_text
+  service.sub_services[]
+  sub.id
+  sub.title
+  sub.items[]
+  item.title
+  item.image
+  item.short_desc
+  item.why
+  item.features[]
+  item.subitems[] when nested
+
+This phase keeps that same PHP array shape using ServiceFrontend::all().
+
+FILES
+-----
+app/core/ServiceManager.php
+app/core/ServiceFrontend.php
+scadmin/services/index.php
+scadmin/services/group.php
+scadmin/services/category.php
+scadmin/services/item.php
+scadmin/services/services.css
+database/phase8_services.sql
+
+INTEGRATION 1 — BOOTSTRAP
+-------------------------
+Open app/bootstrap.php and add:
+
+require_once __DIR__ . '/core/ServiceManager.php';
+
+Keep all existing Phase 1–7 bootstrap code.
+
+INTEGRATION 2 — PUBLIC BOOTSTRAP
+--------------------------------
+Open app/public_bootstrap.php created in Phase 7 and add:
+
+require_once __DIR__ . '/core/ServiceFrontend.php';
+
+Keep the existing public DB bootstrap code.
+
+INTEGRATION 3 — SERVICES PAGE
+-----------------------------
+Open services.php.
+
+Replace ONLY this:
+
+include("includes/data/servicesdata.php");
+
+with:
+
+require_once __DIR__ . '/app/public_bootstrap.php';
+$services = ServiceFrontend::all();
+
+Keep everything else in services.php unchanged.
+
+DO NOT modify:
+- includes/components/servicessection.php
+- assets/css/styles.css
+- assets/css/navigation.css
+- assets/js/main.js
+- assets/js/navigation.js
+
+INTEGRATION 4 — SERVICES CMS CSS
+-----------------------------
+Append the contents of scadmin/services/services.css to your existing
+scadmin/assets/css/admin.css. Keep all existing Phase 5 styles.
+
+INTEGRATION 5 — SIDEBAR
+-----------------------
+In scadmin/partials/sidebar.php, change the Services nav item from:
+
+'url' => null,
+
+to:
+
+'url' => adminUrl('services/'),
+
+Keep permission:
+
+'permission' => 'manage_services',
+
+DATABASE
+--------
+If the Phase 1/2 database already contains service_items.parent_id, no DB action
+is necessary. Otherwise run/import database/phase8_services.sql.
+
+The SQL is idempotent for the parent column/index/FK.
+
+ADMIN URLS
+----------
+/scadmin/services/
+/scadmin/services/group.php
+/scadmin/services/category.php
+/scadmin/services/item.php
+
+IMPORTANT CONTENT RULE
+----------------------
+Do NOT delete includes/data/servicesdata.php yet.
+Keep it as the migration/reference copy until the MySQL rendering has been
+verified against the current website.
+
+TESTING
+-------
+1. Open /services.php before making changes and keep a screenshot/reference.
+2. Apply the public services.php integration above.
+3. Reload /services.php.
+4. Verify every top-level Service Group is present and in the same order.
+5. Verify every category/tab is present and in the same order.
+6. Verify normal service items are present.
+7. Verify nested service groups still display the same child service items.
+8. Verify images, short descriptions, Why text and feature lists match.
+9. Open /scadmin/services/ as an authorized Admin/Editor.
+10. Edit one harmless value, save it, then verify the public page reflects it.
+11. Turn a group/category/item inactive and verify it disappears only after the
+    public adapter is used.
+12. Test an unauthorized Editor; /scadmin/services/ must return 403.
+
+DESIGN SAFETY
+-------------
+This phase intentionally changes the DATA SOURCE only. The public Services
+component is not replaced or redesigned.

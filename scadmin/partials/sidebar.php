@@ -1,4 +1,5 @@
 <?php
+
 /** @var string $activeNav */
 $activeNav = $activeNav ?? '';
 
@@ -30,7 +31,7 @@ $navigation = [
     [
         'key' => 'services',
         'label' => 'Services',
-        'url' => null,
+        'url' => adminUrl('services/'),
         'permission' => 'manage_services',
     ],
     [
@@ -71,8 +72,7 @@ $navigation = [
                 <?php if ($item['url'] !== null): ?>
                     <a
                         class="admin-nav-link <?= e(adminActive($item['key'], $activeNav)) ?>"
-                        href="<?= e($item['url']) ?>"
-                    >
+                        href="<?= e($item['url']) ?>">
                         <?= e($item['label']) ?>
                     </a>
                 <?php else: ?>
@@ -88,8 +88,7 @@ $navigation = [
 
                 <a
                     class="admin-nav-link <?= e(adminActive('editors', $activeNav)) ?>"
-                    href="<?= e(adminUrl('editors/')) ?>"
-                >
+                    href="<?= e(adminUrl('editors/')) ?>">
                     Editors
                 </a>
 

@@ -90,62 +90,62 @@ require __DIR__ . '/../partials/sidebar.php';
         <div class="table-wrap">
             <table class="admin-table project-table">
                 <thead>
-                <tr>
-                    <th>Project</th>
-                    <th>Sector</th>
-                    <th>Status</th>
-                    <th>Year</th>
-                    <th>Published</th>
-                    <th>Home</th>
-                    <th>Order</th>
-                    <th></th>
-                </tr>
+                    <tr>
+                        <th>Project</th>
+                        <th>Sector</th>
+                        <th>Status</th>
+                        <th>Year</th>
+                        <th>Published</th>
+                        <th>Home</th>
+                        <th>Order</th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
-                <?php if ($projects === []): ?>
-                    <tr>
-                        <td colspan="8" class="empty-state">No projects matched your filters.</td>
-                    </tr>
-                <?php else: ?>
-                    <?php foreach ($projects as $project): ?>
+                    <?php if ($projects === []): ?>
                         <tr>
-                            <td>
-                                <strong><?= e($project['name']) ?></strong>
-                                <small class="table-secondary-line">
-                                    ID: <?= e((string) ($project['legacy_id'] ?? $project['id'])) ?>
-                                </small>
-                            </td>
-                            <td><?= e((string) ($project['sector_name'] ?? '—')) ?></td>
-                            <td><?= e((string) ($project['status'] ?? '—')) ?></td>
-                            <td><?= e((string) ($project['completion_year'] ?? '—')) ?></td>
-                            <td>
-                                <span class="status-badge <?= (int) $project['published'] === 1 ? 'status-active' : 'status-inactive' ?>">
-                                    <?= (int) $project['published'] === 1 ? 'Yes' : 'No' ?>
-                                </span>
-                            </td>
-                            <td><?= (int) $project['show_on_home'] === 1 ? 'Yes' : 'No' ?></td>
-                            <td><?= e((string) $project['sort_order']) ?></td>
-                            <td class="actions-cell">
-                                <a class="small-button" href="<?= e(adminUrl('projects/edit.php?id=' . (int) $project['id'])) ?>">Edit</a>
-
-                                <form method="post" action="<?= e(adminUrl('projects/toggle.php')) ?>" class="inline-form">
-                                    <?= CSRF::field() ?>
-                                    <input type="hidden" name="id" value="<?= e((string) $project['id']) ?>">
-                                    <input type="hidden" name="published" value="<?= (int) $project['published'] === 1 ? '0' : '1' ?>">
-                                    <button type="submit" class="small-button">
-                                        <?= (int) $project['published'] === 1 ? 'Unpublish' : 'Publish' ?>
-                                    </button>
-                                </form>
-
-                                <form method="post" action="<?= e(adminUrl('projects/delete.php')) ?>" class="inline-form" onsubmit="return confirm('Delete this project and its gallery/scope data? This cannot be undone.');">
-                                    <?= CSRF::field() ?>
-                                    <input type="hidden" name="id" value="<?= e((string) $project['id']) ?>">
-                                    <button type="submit" class="small-button small-button-danger">Delete</button>
-                                </form>
-                            </td>
+                            <td colspan="8" class="empty-state">No projects matched your filters.</td>
                         </tr>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+                    <?php else: ?>
+                        <?php foreach ($projects as $project): ?>
+                            <tr>
+                                <td>
+                                    <strong><?= e($project['name']) ?></strong>
+                                    <small class="table-secondary-line">
+                                        ID: <?= e((string) ($project['legacy_id'] ?? $project['id'])) ?>
+                                    </small>
+                                </td>
+                                <td><?= e((string) ($project['sector_name'] ?? '—')) ?></td>
+                                <td><?= e((string) ($project['status'] ?? '—')) ?></td>
+                                <td><?= e((string) ($project['completion_year'] ?? '—')) ?></td>
+                                <td>
+                                    <span class="status-badge <?= (int) $project['published'] === 1 ? 'status-active' : 'status-inactive' ?>">
+                                        <?= (int) $project['published'] === 1 ? 'Yes' : 'No' ?>
+                                    </span>
+                                </td>
+                                <td><?= (int) $project['show_on_home'] === 1 ? 'Yes' : 'No' ?></td>
+                                <td><?= e((string) $project['sort_order']) ?></td>
+                                <td class="actions-cell">
+                                    <a class="small-button" href="<?= e(adminUrl('projects/edit.php?id=' . (int) $project['id'])) ?>">Edit</a>
+
+                                    <form method="post" action="<?= e(adminUrl('projects/toggle.php')) ?>" class="inline-form">
+                                        <?= CSRF::field() ?>
+                                        <input type="hidden" name="id" value="<?= e((string) $project['id']) ?>">
+                                        <input type="hidden" name="published" value="<?= (int) $project['published'] === 1 ? '0' : '1' ?>">
+                                        <button type="submit" class="small-button">
+                                            <?= (int) $project['published'] === 1 ? 'Unpublish' : 'Publish' ?>
+                                        </button>
+                                    </form>
+
+                                    <form method="post" action="<?= e(adminUrl('projects/delete.php')) ?>" class="inline-form" onsubmit="return confirm('Delete this project and its gallery/scope data? This cannot be undone.');">
+                                        <?= CSRF::field() ?>
+                                        <input type="hidden" name="id" value="<?= e((string) $project['id']) ?>">
+                                        <button type="submit" class="small-button small-button-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>
