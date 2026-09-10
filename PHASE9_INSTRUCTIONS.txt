@@ -1,0 +1,29 @@
+PHASE 9 - SECTORS CMS + FRONTEND
+
+Merge into your existing publicV6 branch; this package intentionally does not replace
+existing Phase 1-8 files.
+
+1) Add app/core/SectorManager.php
+2) Add app/core/SectorFrontend.php
+3) In app/bootstrap.php add:
+   require_once __DIR__ . '/core/SectorManager.php';
+4) In app/public_bootstrap.php add:
+   require_once __DIR__ . '/core/SectorFrontend.php';
+5) Import database/phase9_sectors.sql.
+6) In scadmin/partials/sidebar.php change the Sectors item URL to:
+   adminUrl('sectors/')
+   Keep permission = manage_sectors.
+7) Add scadmin/sectors/ and its files.
+8) Replace only the static data-loading line in sectors.php with:
+   require_once __DIR__ . '/app/public_bootstrap.php';
+   $sectors = SectorFrontend::all();
+   Do NOT redesign sectors.php or includes/components/sectorsection.php.
+9) Keep includes/data/sectorsdata.php for rollback until the full CMS migration is
+   accepted.
+
+IMPORTANT
+- The adapter preserves the Mining description as an array using a private DB marker,
+  so the original data type can be reconstructed without flattening the content.
+- Existing image paths are left untouched.
+- Do not change sector keys during migration unless you intentionally accept any
+  filter/URL consequences.

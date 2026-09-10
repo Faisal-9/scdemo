@@ -1,0 +1,53 @@
+PHASE 9 FIX — Sectors not showing
+===================================
+
+The current publicV6 structure does not contain the Phase 9 adapter files.
+Add these files first:
+  app/core/SectorFrontend.php
+  app/core/SectorManager.php
+
+Then update app/bootstrap.php with:
+  require_once __DIR__ . '/core/SectorManager.php';
+
+Update app/public_bootstrap.php. If that file does not exist yet, create it:
+
+<?php
+require_once __DIR__ . '/config/config.php';
+require_once __DIR__ . '/core/Database.php';
+require_once __DIR__ . '/helpers/functions.php';
+require_once __DIR__ . '/core/SectorFrontend.php';
+
+Then in sectors.php replace ONLY the old static data load:
+  include("includes/data/sectorsdata.php");
+
+with:
+  require_once __DIR__ . '/app/public_bootstrap.php';
+  $sectors = SectorFrontend::all();
+
+IMPORTANT:
+Do not change includes/components/sectorsection.php.
+Do not change CSS/JS.
+Do not delete sectorsdata.php yet.
+
+Database check:
+Run in phpMyAdmin:
+  SELECT COUNT(*) FROM sectors;
+  SELECT sector_key, title, is_active FROM sectors ORDER BY sort_order;
+
+If COUNT(*) is 0, Phase 2 did not populate the sectors table. The frontend
+adapter will correctly return no sectors until the static data migration is
+repaired/re-run.
+
+If rows exist but is_active = 0, the public adapter intentionally hides them.
+Run:
+  UPDATE sectors SET is_active = 1;
+
+If description is literally 'Array', Phase 2 lost an array-valued description.
+Run:
+  php database/repair_sector_descriptions.php
+The script only reports affected rows. Use the original sectorsdata.php as
+source for restoring those descriptions; do not invent replacement text.
+
+After installing, test:
+  /sectors.php
+  /scadmin/sectors/

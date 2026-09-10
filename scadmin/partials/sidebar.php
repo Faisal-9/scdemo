@@ -37,7 +37,7 @@ $navigation = [
     [
         'key' => 'sectors',
         'label' => 'Sectors',
-        'url' => null,
+        'url' => adminUrl('sectors/'),
         'permission' => 'manage_sectors',
     ],
     [

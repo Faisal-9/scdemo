@@ -11,3 +11,5 @@ require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/core/Database.php';
 require_once __DIR__ . '/helpers/functions.php';
 require_once __DIR__ . '/core/ProjectFrontend.php';
+require_once __DIR__ . '/core/ServiceFrontend.php';
+require_once __DIR__ . '/core/SectorFrontend.php';
