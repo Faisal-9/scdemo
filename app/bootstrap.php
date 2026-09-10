@@ -13,5 +13,6 @@ require_once __DIR__ . '/core/EditorManager.php';
 require_once __DIR__ . '/core/ProjectManager.php';
 require_once __DIR__ . '/core/ServiceManager.php';
 require_once __DIR__ . '/core/SectorManager.php';
+require_once __DIR__ . '/core/HomeManager.php';
 
 Session::start();

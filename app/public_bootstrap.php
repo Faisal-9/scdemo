@@ -13,3 +13,4 @@ require_once __DIR__ . '/helpers/functions.php';
 require_once __DIR__ . '/core/ProjectFrontend.php';
 require_once __DIR__ . '/core/ServiceFrontend.php';
 require_once __DIR__ . '/core/SectorFrontend.php';
+require_once __DIR__ . '/core/HomeFrontend.php';

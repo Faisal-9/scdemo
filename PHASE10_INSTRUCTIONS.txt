@@ -1,0 +1,79 @@
+STATE CORPS CMS - PHASE 10
+==========================
+
+Purpose
+-------
+Move the existing homepage data into live MySQL reads while keeping the current
+homepage markup, CSS, JavaScript and component structure untouched.
+
+SOURCE CONFIRMED
+----------------
+The current homedata.php defines exactly:
+- $heroSlides
+- $statsBg
+- $stats
+- $history
+- $whySC
+The active source has 5 hero slides, 4 statistics, 7 history entries, and 3
+Why State Corps tabs. The energy slide has an indicator; the second Why tab has
+no title/text list, so those missing fields must remain missing/optional.
+
+FILES TO ADD
+------------
+app/core/HomeFrontend.php
+app/core/HomeManager.php
+scadmin/homepage/index.php
+scadmin/homepage/slide.php
+scadmin/homepage/stat.php
+scadmin/homepage/history.php
+scadmin/homepage/why.php
+scadmin/homepage/background.php
+
+INTEGRATION 1 - app/bootstrap.php
+---------------------------------
+Add:
+require_once __DIR__ . '/core/HomeManager.php';
+
+INTEGRATION 2 - app/public_bootstrap.php
+----------------------------------------
+Add:
+require_once __DIR__ . '/core/HomeFrontend.php';
+
+If your branch uses a different lightweight public bootstrap path, add the
+require there instead. Do not load the Admin session just for frontend data.
+
+INTEGRATION 3 - index.php
+-------------------------
+Keep the existing HTML exactly as-is.
+Find the current static homepage data include, likely:
+include("includes/data/homedata.php");
+
+Replace ONLY the data loading with:
+require_once __DIR__ . '/app/public_bootstrap.php';
+extract(HomeFrontend::data(), EXTR_OVERWRITE);
+
+This intentionally recreates $heroSlides, $statsBg, $stats, $history and $whySC
+with the names the current homepage code already uses.
+
+INTEGRATION 4 - SIDEBAR
+-----------------------
+In scadmin/partials/sidebar.php, change the Homepage item's URL to:
+adminUrl('homepage/')
+Keep permission:
+manage_homepage
+
+INTEGRATION 5 - CSS
+-------------------
+Append the provided scadmin/homepage/homepage.css to your existing
+scadmin/assets/css/admin.css if you want the small Phase 10 admin-specific
+layout styles. The public CSS is NOT touched.
+
+IMPORTANT FRONTEND RULE
+-----------------------
+Do NOT replace includes/homesection.php or rewrite the homepage markup.
+Only the data source changes.
+
+IMPORTANT CONTENT RULE
+----------------------
+Do NOT delete includes/data/homedata.php yet. Keep it as the exact fallback
+/reference until the dynamic homepage is fully verified.

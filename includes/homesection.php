@@ -1,9 +1,12 @@
 <?php
-include("includes/data/homedata.php");
+require_once __DIR__ . '/../app/public_bootstrap.php';
+extract(HomeFrontend::data(), EXTR_OVERWRITE);
+
 include_once("includes/data/projectsdata.php");
 include_once("includes/data/servicesdata.php");
 include_once("includes/data/aboutdata.php");
 include_once("includes/data/mediadata.php");
+
 $selected_sector = isset($_GET['sector']) ? strtolower($_GET['sector']) : 'all';
 
 function parseMediaDate($date)

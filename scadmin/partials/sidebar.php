@@ -13,7 +13,7 @@ $navigation = [
     [
         'key' => 'homepage',
         'label' => 'Homepage',
-        'url' => null,
+        'url' => adminUrl('homepage/'),
         'permission' => 'manage_homepage',
     ],
     [

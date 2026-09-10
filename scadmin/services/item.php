@@ -6,10 +6,22 @@ Auth::requirePermission('manage_services');
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 $categoryIdQuery = filter_input(INPUT_GET, 'category_id', FILTER_VALIDATE_INT);
-$itemId = $id ?: null;
-$item = $itemId ? ServiceManager::item((int)$itemId) : null;
-if ($itemId && !$item) redirect(adminUrl('services/'));
-$categoryId = $item ? (int)$item['category_id'] : ($categoryIdQuery ?: 0);
+
+$itemId = ($id !== false && $id !== null && $id > 0) ? (int) $id : null;
+
+$item = $itemId !== null
+    ? ServiceManager::item($itemId)
+    : null;
+
+if ($itemId !== null && $item === null) {
+    redirect(adminUrl('services/'));
+}
+
+$categoryId = $item
+    ? (int) $item['category_id']
+    : (($categoryIdQuery !== false && $categoryIdQuery !== null && $categoryIdQuery > 0)
+        ? (int) $categoryIdQuery
+        : 0);
 if ($categoryId <= 0) redirect(adminUrl('services/'));
 $category = ServiceManager::category($categoryId);
 if (!$category) redirect(adminUrl('services/'));
@@ -45,53 +57,27 @@ if (isPost()) {
             redirect(adminUrl('services/item.php?id=' . $newId));
         }
         if ($action === 'delete_item') {
+            $postedId = filter_input(INPUT_POST, 'item_id', FILTER_VALIDATE_INT);
 
-            /*
-     * Read the ID from POST first, then fall back to GET.
-     */
-            $postedId = isset($_POST['item_id'])
-                ? (int) $_POST['item_id']
-                : 0;
-
-            if ($postedId <= 0) {
-                $postedId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) ?: 0;
+            if ($postedId === false || $postedId === null || $postedId <= 0) {
+                throw new RuntimeException('Invalid service item ID.');
             }
 
-            if ($postedId <= 0) {
-                throw new RuntimeException(
-                    'Invalid service item ID.'
-                );
-            }
-
-            /*
-     * Make sure the item actually exists.
-     */
-            $existing = ServiceManager::item($postedId);
+            $existing = ServiceManager::item((int) $postedId);
 
             if ($existing === null) {
-                throw new RuntimeException(
-                    'Service item not found.'
-                );
+                throw new RuntimeException('Service item not found.');
             }
 
-            /*
-     * Remember the category before deletion.
-     */
             $categoryIdAfterDelete = (int) $existing['category_id'];
 
-            /*
-     * Delete the item and descendants.
-     */
-            ServiceManager::deleteItem($postedId);
+            ServiceManager::deleteItem((int) $postedId);
 
-            /*
-     * Record the action.
-     */
             Auth::audit(
                 Auth::id(),
                 'delete',
                 'service_item',
-                $postedId,
+                (int) $postedId,
                 'Deleted service item: ' . $existing['title']
             );
 
@@ -169,10 +155,11 @@ require __DIR__ . '/../partials/sidebar.php';
             <div class="form-actions"><a class="button-link button-secondary" href="<?= e(adminUrl('services/category.php?id=' . $categoryId)) ?>">Cancel</a><button type="submit" class="button-primary">Save Service Item</button></div>
         </form>
     </section>
-    <?php if ($item): ?>
+
+    <?php if ($item && isset($item['id']) && (int)$item['id'] > 0): ?>
+        <?php $dangerItemId = (int) $item['id']; ?>
 
         <section class="danger-zone">
-
             <h2>Danger zone</h2>
 
             <p>
@@ -182,31 +169,18 @@ require __DIR__ . '/../partials/sidebar.php';
 
             <form
                 method="post"
-                action="<?= e(adminUrl('services/item.php?id=' . (int) $item['id'])) ?>"
+                action="<?= e(adminUrl('services/item.php?id=' . $dangerItemId)) ?>"
                 onsubmit="return confirm('Delete this service item and all child items?');">
-
                 <?= CSRF::field() ?>
 
-                <input
-                    type="hidden"
-                    name="form_action"
-                    value="delete_item">
+                <input type="hidden" name="form_action" value="delete_item">
+                <input type="hidden" name="item_id" value="<?= $dangerItemId ?>">
 
-                <input
-                    type="hidden"
-                    name="item_id"
-                    value="<?= e((string) $item['id']) ?>">
-
-                <button
-                    type="submit"
-                    class="danger-button">
+                <button type="submit" class="danger-button">
                     Delete service item
                 </button>
-
             </form>
-
         </section>
-
     <?php endif; ?>
 </main>
 <?php require __DIR__ . '/../partials/footer.php'; ?>

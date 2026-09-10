@@ -1139,3 +1139,27 @@ _______________________________________________________
     grid-template-columns: 1fr;
   }
 }
+
+/* 
+_______________________________________________________
+* homepage css
+_______________________________________________________
+ */
+
+.repeat-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  margin: 8px 0;
+}
+.form-note {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+@media (max-width: 700px) {
+  .repeat-row {
+    grid-template-columns: 1fr;
+  }
+}
