@@ -7,6 +7,12 @@ require_once __DIR__ . '/../config/config.php';
 
 final class Session
 {
+    /*
+    |--------------------------------------------------------------------------
+    | Start session
+    |--------------------------------------------------------------------------
+    */
+
     public static function start(): void
     {
         if (session_status() === PHP_SESSION_ACTIVE) {
@@ -18,9 +24,9 @@ final class Session
 
 
         /*
-        |--------------------------------------------------------------------------
+        |----------------------------------------------------------------------
         | Session cookie
-        |--------------------------------------------------------------------------
+        |----------------------------------------------------------------------
         |
         | The cookie needs to cover the CMS directory.
         |
@@ -48,9 +54,9 @@ final class Session
 
 
         /*
-        |--------------------------------------------------------------------------
+        |----------------------------------------------------------------------
         | PHP session security
-        |--------------------------------------------------------------------------
+        |----------------------------------------------------------------------
         */
 
         ini_set('session.use_only_cookies', '1');
@@ -62,9 +68,9 @@ final class Session
 
 
         /*
-        |--------------------------------------------------------------------------
+        |----------------------------------------------------------------------
         | Initial session information
-        |--------------------------------------------------------------------------
+        |----------------------------------------------------------------------
         */
 
         if (!isset($_SESSION['_initialized_at'])) {
@@ -81,14 +87,123 @@ final class Session
 
 
         /*
-        |--------------------------------------------------------------------------
+        |----------------------------------------------------------------------
         | Security checks
-        |--------------------------------------------------------------------------
+        |----------------------------------------------------------------------
         */
 
         self::enforceTimeouts();
 
         self::enforceUserAgentBinding();
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Flash messages
+    |--------------------------------------------------------------------------
+    |
+    | Flash messages are stored in the session temporarily.
+    |
+    | Example:
+    |
+    |   Session::flash('success', 'Updated successfully.');
+    |
+    | Then:
+    |
+    |   Session::getFlash('success');
+    |
+    | or:
+    |
+    |   Session::pullFlash();
+    |
+    */
+
+    public static function flash(
+        string $key,
+        mixed $value
+    ): void {
+        self::start();
+
+
+        if (
+            !isset($_SESSION['_flash']) ||
+            !is_array($_SESSION['_flash'])
+        ) {
+            $_SESSION['_flash'] = [];
+        }
+
+
+        $_SESSION['_flash'][$key] = $value;
+    }
+
+
+    /*
+    |----------------------------------------------------------------------
+    | Get one flash message
+    |----------------------------------------------------------------------
+    |
+    | The message is removed after reading.
+    |
+    */
+
+    public static function getFlash(
+        string $key,
+        mixed $default = null
+    ): mixed {
+        self::start();
+
+
+        if (
+            !isset($_SESSION['_flash']) ||
+            !is_array($_SESSION['_flash']) ||
+            !array_key_exists($key, $_SESSION['_flash'])
+        ) {
+            return $default;
+        }
+
+
+        $value = $_SESSION['_flash'][$key];
+
+
+        unset($_SESSION['_flash'][$key]);
+
+
+        if ($_SESSION['_flash'] === []) {
+            unset($_SESSION['_flash']);
+        }
+
+
+        return $value;
+    }
+
+
+    /*
+    |----------------------------------------------------------------------
+    | Pull all flash messages
+    |----------------------------------------------------------------------
+    |
+    | Returns all flash messages and removes them from the session.
+    |
+    */
+
+    public static function pullFlash(): array
+    {
+        self::start();
+
+
+        $messages = $_SESSION['_flash'] ?? [];
+
+
+        if (!is_array($messages)) {
+            $messages = [];
+        }
+
+
+        unset($_SESSION['_flash']);
+
+
+        return $messages;
     }
 
 
@@ -100,6 +215,11 @@ final class Session
 
     public static function regenerate(): void
     {
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            self::start();
+        }
+
+
         session_regenerate_id(true);
     }
 

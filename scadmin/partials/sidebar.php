@@ -43,7 +43,7 @@ $navigation = [
     [
         'key' => 'media',
         'label' => 'Media',
-        'url' => null,
+        'url' => adminUrl('media/'),
         'permission' => 'manage_media',
     ],
     [

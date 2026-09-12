@@ -3,7 +3,8 @@
 $page_title = "Media - State Corps";
 
 include("includes/head.php");
-include("includes/data/mediadata.php");
+require_once __DIR__ . '/app/public_bootstrap.php';
+$media = MediaFrontend::all();
 
 function parseMediaDate($date)
 {

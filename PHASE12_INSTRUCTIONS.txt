@@ -1,0 +1,66 @@
+PHASE 12 INSTALLATION
+
+1. BACK UP YOUR CURRENT PUBLIC MEDIA FRONTEND
+   You already backed up the previous frontend integration during Phase 11. Keep includes/data/mediadata.php as a fallback during this phase.
+
+2. DATABASE
+   Import:
+       database/phase12_media.sql
+   into statecorps_db.
+   This is a safety/index patch only. It does not delete existing media rows.
+
+3. COPY CORE FILES
+   Copy these into your project:
+       app/core/MediaManager.php
+       app/core/MediaFrontend.php
+
+4. BOOTSTRAP
+   In app/bootstrap.php add, once:
+       require_once __DIR__ . '/core/MediaManager.php';
+
+   In app/public_bootstrap.php add, once:
+       require_once __DIR__ . '/core/MediaFrontend.php';
+
+5. PUBLIC MEDIA INTEGRATION
+   In media.php, replace ONLY:
+       include("includes/data/mediadata.php");
+   with:
+       require_once __DIR__ . '/app/public_bootstrap.php';
+       $media = MediaFrontend::all();
+
+   Leave the existing HTML, CSS, JavaScript, tab markup, active-tab logic, active-id logic, and includes/components/mediasection.php unchanged.
+
+6. ADMIN FILES
+   Copy the directory:
+       scadmin/media/
+   into your project.
+
+7. SIDEBAR
+   Your sidebar should show Media only when the existing permission exists:
+       manage_media
+   URL:
+       adminUrl('media/')
+
+8. OPTIONAL CSS
+   Append the contents of scadmin/media/media.css to the CMS admin stylesheet or include it from the Media admin pages. It is CMS-only and does not touch public assets.
+
+9. TEST PUBLIC MEDIA
+   Test:
+       /publicV6/media.php
+       /publicV6/media.php?tab=news
+       /publicV6/media.php?tab=events
+       /publicV6/media.php?tab=gallery
+       /publicV6/media.php?tab=news&id=n1
+       /publicV6/media.php?tab=events&id=e1
+       /publicV6/media.php?tab=gallery&id=g1
+
+10. TEST ADMIN
+   Open:
+       /publicV6/scadmin/media/
+   Verify create/edit, descriptions, tags, image path, publish state, order and delete.
+
+IMPORTANT
+- Do not delete mediadata.php yet.
+- Do not modify mediasection.php.
+- Do not upload/move image files in Phase 12; image_path remains an asset reference exactly like the existing data.
+- Existing media IDs should remain stable.

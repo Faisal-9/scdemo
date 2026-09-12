@@ -15,5 +15,6 @@ require_once __DIR__ . '/core/ServiceManager.php';
 require_once __DIR__ . '/core/SectorManager.php';
 require_once __DIR__ . '/core/HomeManager.php';
 require_once __DIR__ . '/core/AboutManager.php';
+require_once __DIR__ . '/core/MediaManager.php';
 
 Session::start();
