@@ -19,7 +19,7 @@ $navigation = [
     [
         'key' => 'about',
         'label' => 'About',
-        'url' => null,
+        'url' => adminUrl('about/'),
         'permission' => 'manage_about',
     ],
     [

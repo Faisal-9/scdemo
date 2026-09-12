@@ -1,5 +1,7 @@
 <?php
-include("includes/data/aboutdata.php");
+if (!isset($generalInfo, $missionVision, $clients, $certificates, $awards, $sisterCompanies, $hse, $cprofile)) {
+    require __DIR__ . '/data/aboutdata.php';
+}
 
 $aboutSections = [
     'general-info' => $generalInfo,

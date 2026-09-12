@@ -9,7 +9,9 @@ include("includes/head.php");
     <?php include("includes/header.php"); ?>
 
     <main>
-        <?php include("includes/aboutSection.php"); ?>
+        <?php require_once __DIR__ . '/app/public_bootstrap.php';
+        extract(AboutFrontend::data(), EXTR_OVERWRITE);
+        include("includes/aboutSection.php"); ?>
     </main>
 
     <?php include("includes/footer.php"); ?>

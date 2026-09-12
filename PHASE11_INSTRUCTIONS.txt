@@ -1,0 +1,156 @@
+PHASE 11 — ABOUT CMS + FRONTEND INTEGRATION
+============================================
+
+This is an incremental/merge package for the publicV6 branch. It does NOT replace the project.
+
+Purpose
+-------
+Move the existing About page data from includes/data/aboutdata.php into MySQL and expose it through
+/scadmin/ under the existing manage_about permission, while preserving the public About HTML, CSS,
+JS, asset paths, section IDs, and existing content.
+
+1. Copy package files
+---------------------
+Copy these files/folders into publicV6, preserving their paths:
+
+app/core/AboutManager.php
+app/core/AboutFrontend.php
+database/phase11_about.sql
+database/migrate_about.php
+scadmin/about/index.php
+scadmin/about/content.php
+scadmin/about/items.php
+scadmin/about/about.css
+
+Do not delete includes/data/aboutdata.php.
+
+2. Run the SQL
+--------------
+In phpMyAdmin, select the same database used by State Corps and run:
+
+database/phase11_about.sql
+
+This creates only the About-specific tables.
+
+3. Run the one-time migration
+-----------------------------
+From XAMPP shell/CLI, inside publicV6:
+
+php database/migrate_about.php
+
+The script loads YOUR existing includes/data/aboutdata.php before inserting anything. This keeps
+the branch's current About content as the migration source of truth. It refuses to run when any
+Phase 11 About table already contains data.
+
+4. Load the About manager in the admin bootstrap
+------------------------------------------------
+In app/bootstrap.php add once, alongside the other core managers:
+
+require_once __DIR__ . '/core/AboutManager.php';
+
+5. Load the About frontend adapter
+----------------------------------
+In app/public_bootstrap.php add:
+
+require_once __DIR__ . '/core/AboutFrontend.php';
+
+6. Change about.php data initialization
+----------------------------------------
+Keep the current page markup exactly as-is. Before:
+
+include("includes/aboutSection.php");
+
+add this line immediately before it:
+
+require_once __DIR__ . '/app/public_bootstrap.php';
+extract(AboutFrontend::data(), EXTR_OVERWRITE);
+
+So the main section becomes:
+
+<?php
+require_once __DIR__ . '/app/public_bootstrap.php';
+extract(AboutFrontend::data(), EXTR_OVERWRITE);
+include("includes/aboutSection.php");
+?>
+
+7. Prevent aboutSection.php from overwriting the dynamic variables
+-----------------------------------------------------------------
+At the top of includes/aboutSection.php, replace ONLY:
+
+include("includes/data/aboutdata.php");
+
+with:
+
+if (!isset($generalInfo, $missionVision, $clients, $certificates, $awards, $sisterCompanies, $hse, $cprofile)) {
+    require __DIR__ . '/data/aboutdata.php';
+}
+
+Do not alter the rest of aboutSection.php. Its existing markup and JavaScript depend on the current
+array structure, and Phase 11 preserves that structure.
+
+8. Add About to the CMS sidebar
+-------------------------------
+In scadmin/partials/sidebar.php, add the About link using the same permission-aware pattern used
+by the other modules:
+
+<?php if (Auth::can('manage_about')): ?>
+    <a href="<?=e(adminUrl('about/'))?>" class="sidebar-link <?=($activeNav??'')==='about'?'active':''?>">About</a>
+<?php endif; ?>
+
+Place it near Homepage / Projects in the existing navigation. Do not change the sidebar styling.
+
+9. Load the CMS-only About CSS
+------------------------------
+Append this import to scadmin/assets/css/admin.css:
+
+@import url('../../about/about.css');
+
+If the existing admin.css already has an equivalent module import pattern, use that local pattern
+instead. This CSS is used only inside /scadmin and does not touch public styles.css/navigation.css.
+
+10. Resulting admin URLs
+------------------------
+/scadmin/about/
+/scadmin/about/content.php?section=overview
+/scadmin/about/content.php?section=mission
+/scadmin/about/content.php?section=hse
+/scadmin/about/content.php?section=profile
+/scadmin/about/items.php?type=timeline
+/scadmin/about/items.php?type=values
+/scadmin/about/items.php?type=clients
+/scadmin/about/items.php?type=certificates
+/scadmin/about/items.php?type=awards
+/scadmin/about/items.php?type=sister
+
+11. What is editable
+---------------------
+Overview: title + paragraph text.
+Growth Timeline: year, title, description, image path, order, active state.
+Mission/Vision: section title, mission, mission image, vision, vision image, core-values image.
+Core Values: each bullet, order, active state.
+Clients: logo path, order, active state.
+ISO Certifications: name, logo path, order, active state.
+Awards: name, logo path, order, active state.
+Affiliated Companies: name, logo path, order, active state.
+HSE: title + paragraph text.
+Company Profile: title, description, PDF/link path.
+
+Image/PDF uploads are intentionally not introduced in Phase 11. Existing asset paths are preserved.
+
+12. Static fallback
+-------------------
+Keep includes/data/aboutdata.php during the transition. If the About DB tables are unavailable and
+about.php does not extract DB data, aboutSection.php can still fall back to the static file through
+the guard above.
+
+13. Verification checklist
+---------------------------
+- Public /about.php loads normally.
+- About sidebar still shows the same 8 sections in the same order.
+- Timeline still has the same six migrated entries.
+- Existing image paths resolve unchanged.
+- Company profile PDF still opens/downloads.
+- /scadmin/about/ is accessible only to authenticated users with manage_about (Admin bypasses perms).
+- Editing an item changes the public page after refresh without editing PHP data files.
+- Deleting a repeating item requires POST + CSRF and is audit logged.
+- Public pages still have no login requirement.
