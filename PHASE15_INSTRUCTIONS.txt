@@ -1,0 +1,51 @@
+PHASE 15 — GLOBAL SITE SETTINGS
+
+This is an incremental merge package. It does not replace the project.
+
+1. Import database/phase15_settings.sql into statecorps_db.
+   It is non-destructive.
+
+2. Copy:
+   app/core/SiteSettings.php
+   app/core/SiteSettingsManager.php
+   to:
+   publicV6/app/core/
+
+3. Add this line to app/bootstrap.php AFTER Database/Auth/Session/CSRF/helper loading:
+   require_once __DIR__ . '/core/SiteSettings.php';
+   require_once __DIR__ . '/core/SiteSettingsManager.php';
+
+4. Copy scadmin/settings/ into:
+   publicV6/scadmin/settings/
+
+5. Add Settings to the admin sidebar, permission aware:
+   if (Auth::hasPermission('manage_settings') || Auth::isAdmin()) {
+       // link to adminUrl('settings/')
+   }
+
+6. Test:
+   /publicV6/scadmin/settings/
+   Edit one existing setting and confirm it changes in MySQL.
+
+7. Public integration is deliberately NOT automatic.
+   Do not bulk-replace header/footer/contact code. Future public integrations should use:
+   SiteSettings::get('setting_key', $fallback)
+   while preserving the current markup/content.
+
+Existing settings confirmed in the supplied database include:
+   homepage_why_background
+   projects_hero_background
+   projects_hero_title
+   projects_hero_subtitle
+   projects_hero_stat_1_count
+   projects_hero_stat_1_label
+   projects_hero_stat_2_count
+   projects_hero_stat_2_label
+   projects_hero_stat_3_count
+   projects_hero_stat_3_label
+   home_stats_background
+
+Important security/content rule:
+   - Do not store passwords/API secrets in site_settings.
+   - Do not make site_settings a generic HTML injection field.
+   - Preserve the existing public design and content.

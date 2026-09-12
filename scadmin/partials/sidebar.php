@@ -10,59 +10,75 @@ $navigation = [
         'url' => adminUrl('dashboard.php'),
         'permission' => null,
     ],
+
     [
         'key' => 'homepage',
         'label' => 'Homepage',
         'url' => adminUrl('homepage/'),
         'permission' => 'manage_homepage',
     ],
+
     [
         'key' => 'about',
         'label' => 'About',
         'url' => adminUrl('about/'),
         'permission' => 'manage_about',
     ],
+
     [
         'key' => 'projects',
         'label' => 'Projects',
         'url' => adminUrl('Projects/'),
         'permission' => 'manage_projects',
     ],
+
     [
         'key' => 'services',
         'label' => 'Services',
         'url' => adminUrl('services/'),
         'permission' => 'manage_services',
     ],
+
     [
         'key' => 'sectors',
         'label' => 'Sectors',
         'url' => adminUrl('sectors/'),
         'permission' => 'manage_sectors',
     ],
+
     [
         'key' => 'media',
         'label' => 'Media',
         'url' => adminUrl('media/'),
         'permission' => 'manage_media',
     ],
+
     [
         'key' => 'legal',
         'label' => 'Policies & Terms',
         'url' => adminUrl('legal/'),
         'permission' => 'manage_legal',
     ],
+
     [
         'key' => 'messages',
         'label' => 'Messages',
         'url' => adminUrl('messages/'),
         'permission' => 'manage_messages',
     ],
+
     [
         'key' => 'contact',
         'label' => 'Contact',
         'url' => adminUrl('contact/'),
         'permission' => 'manage_messages',
+    ],
+
+    [
+        'key' => 'settings',
+        'label' => 'Settings',
+        'url' => adminUrl('settings/'),
+        'permission' => 'manage_settings',
     ],
 ];
 ?>
@@ -70,26 +86,42 @@ $navigation = [
 <aside class="sidebar" id="adminSidebar" aria-label="CMS navigation">
     <div class="sidebar-inner">
         <nav class="admin-nav">
+
             <?php foreach ($navigation as $item): ?>
+
                 <?php if (!adminHasAccess($item['permission'])): ?>
                     <?php continue; ?>
                 <?php endif; ?>
 
                 <?php if ($item['url'] !== null): ?>
+
                     <a
                         class="admin-nav-link <?= e(adminActive($item['key'], $activeNav)) ?>"
                         href="<?= e($item['url']) ?>">
                         <?= e($item['label']) ?>
                     </a>
+
                 <?php else: ?>
-                    <span class="admin-nav-link nav-disabled" aria-disabled="true" title="Available in a later CMS phase">
+
+                    <span
+                        class="admin-nav-link nav-disabled"
+                        aria-disabled="true"
+                        title="Available in a later CMS phase">
+
                         <?= e($item['label']) ?>
-                        <span class="nav-soon">Soon</span>
+
+                        <span class="nav-soon">
+                            Soon
+                        </span>
+
                     </span>
+
                 <?php endif; ?>
+
             <?php endforeach; ?>
 
             <?php if (Auth::isAdmin()): ?>
+
                 <div class="nav-separator"></div>
 
                 <a
@@ -98,16 +130,21 @@ $navigation = [
                     Editors
                 </a>
 
-                <span class="admin-nav-link nav-disabled" aria-disabled="true" title="Available in a later CMS phase">
-                    Settings
-                    <span class="nav-soon">Soon</span>
+                <span
+                    class="admin-nav-link nav-disabled"
+                    aria-disabled="true"
+                    title="Available in a later CMS phase">
+
+                    Activity Log
+
+                    <span class="nav-soon">
+                        Soon
+                    </span>
+
                 </span>
 
-                <span class="admin-nav-link nav-disabled" aria-disabled="true" title="Available in a later CMS phase">
-                    Activity Log
-                    <span class="nav-soon">Soon</span>
-                </span>
             <?php endif; ?>
+
         </nav>
     </div>
 </aside>
