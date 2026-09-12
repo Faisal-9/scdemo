@@ -1,6 +1,7 @@
 <?php
 include("includes/head.php");
-include("includes/data/termsOfServicesData.php");
+require_once __DIR__ . '/app/public_bootstrap.php';
+$TermsOfService = LegalFrontend::termsOfService();
 ?>
 
 <body>

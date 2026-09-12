@@ -1,13 +1,10 @@
-
-@import url('../../about/about.css');
 /* @import url('../../homepage/homepage.css');
 @import url('../../projects/projects.css'); */
-@import url('../../sectors/sectors.css');
-@import url('../../services/services.css');
-@import url('../../media/media.css');
-
-
-
+@import url("../../about/about.css");
+@import url("../../sectors/sectors.css");
+@import url("../../services/services.css");
+@import url("../../media/media.css");
+@import url("../../legal/legal.css");
 
 :root {
   --bg: #f4f6f8;

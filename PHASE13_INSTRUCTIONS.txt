@@ -1,0 +1,65 @@
+STATE CORPS - PHASE 13
+Policies / Terms CMS
+
+IMPORTANT
+- This is an incremental merge package.
+- Do NOT drop the existing legal_documents, legal_sections, or legal_section_items tables.
+- The database dump supplied by the project owner already contains the legal content.
+- Keep includes/data/policiesdata.php and includes/data/termsOfServicesData.php until frontend testing is complete.
+
+1. DATABASE
+Import:
+  database/phase13_legal.sql
+
+This only adds indexes. It does not delete or replace content.
+
+2. FILES
+Copy into the existing publicV6 branch:
+  app/core/LegalManager.php
+  app/core/LegalFrontend.php
+  scadmin/legal/index.php
+  scadmin/legal/document.php
+  scadmin/legal/section.php
+
+3. BOOTSTRAP
+In app/bootstrap.php add:
+  require_once __DIR__ . '/core/LegalManager.php';
+
+In app/public_bootstrap.php add:
+  require_once __DIR__ . '/core/LegalFrontend.php';
+
+4. ADMIN SIDEBAR
+Add a permission-aware Policies & Terms entry using the same pattern as the other modules:
+  permission: manage_legal
+  URL: adminUrl('legal/')
+
+5. PUBLIC POLICIES PAGE
+In policies.php, replace ONLY the static data include with:
+  require_once __DIR__ . '/app/public_bootstrap.php';
+  $policies = LegalFrontend::policies();
+
+Do not alter the existing public markup.
+
+6. PUBLIC TERMS PAGE
+In termsOfServices.php, replace ONLY the static data include with:
+  require_once __DIR__ . '/app/public_bootstrap.php';
+  $TermsOfService = LegalFrontend::termsOfService();
+
+Do not alter the existing public markup.
+
+7. TEST
+Test:
+  /policies.php
+  /termsOfServices.php
+
+Verify at least:
+  Privacy Policy
+  Whistleblower Policy
+  Trademarks Policy
+  Terms of Service
+  Effective Date: 03 May 2026
+  list sections render as lists
+  existing <i>STATE CORPS ENGINEERING</i> formatting remains intact
+
+8. FALLBACK
+Do not delete the static PHP data files during this phase. They remain the emergency fallback until the dynamic legal pages are confirmed.

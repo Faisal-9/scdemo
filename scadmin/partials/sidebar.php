@@ -49,7 +49,7 @@ $navigation = [
     [
         'key' => 'legal',
         'label' => 'Policies & Terms',
-        'url' => null,
+        'url' => adminUrl('legal/'),
         'permission' => 'manage_legal',
     ],
     [
