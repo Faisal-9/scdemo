@@ -17,3 +17,4 @@ require_once __DIR__ . '/core/HomeFrontend.php';
 require_once __DIR__ . '/core/AboutFrontend.php';
 require_once __DIR__ . '/core/MediaFrontend.php';
 require_once __DIR__ . '/core/LegalFrontend.php';
+require_once __DIR__ . '/core/ContactFrontend.php';

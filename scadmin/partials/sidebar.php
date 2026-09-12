@@ -55,7 +55,13 @@ $navigation = [
     [
         'key' => 'messages',
         'label' => 'Messages',
-        'url' => null,
+        'url' => adminUrl('messages/'),
+        'permission' => 'manage_messages',
+    ],
+    [
+        'key' => 'contact',
+        'label' => 'Contact',
+        'url' => adminUrl('contact/'),
         'permission' => 'manage_messages',
     ],
 ];

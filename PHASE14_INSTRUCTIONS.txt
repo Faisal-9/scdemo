@@ -1,0 +1,33 @@
+PHASE 14 INSTALLATION
+
+1. Back up contact.php and any contact-related frontend files.
+2. Copy:
+   app/core/ContactMessageManager.php
+   scadmin/messages/index.php
+   scadmin/messages/view.php
+   into the matching publicV6 locations.
+3. Import database/phase14_messages.sql in phpMyAdmin. If an index already exists, skip that statement and keep the existing data.
+4. Add the Messages link to the CMS sidebar using:
+   adminUrl('messages/')
+   and permission:
+   manage_messages
+5. Keep the public contact markup/design unchanged. Only route the existing POST submission through a small public endpoint.
+6. Example public endpoint content (contact_submit.php):
+
+<?php
+declare(strict_types=1);
+require_once __DIR__ . '/app/public_bootstrap.php';
+require_once __DIR__ . '/app/core/ContactMessageManager.php';
+try {
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); exit; }
+    ContactMessageManager::create($_POST);
+    header('Location: contact.php?sent=1');
+    exit;
+} catch (Throwable $e) {
+    http_response_code(422);
+    exit('Unable to submit the form.');
+}
+
+7. On the public form, change only its action target to contact_submit.php if the current action does not already process the POST.
+8. Test as a visitor: submit a message, confirm redirect, then open /scadmin/messages/ as an Admin/Editor with manage_messages.
+9. Never expose scadmin/message pages publicly without the existing Auth checks.
