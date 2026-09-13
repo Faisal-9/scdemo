@@ -89,6 +89,13 @@ $navigation = [
     ],
 
     [
+        'key' => 'redirects',
+        'label' => 'Redirects',
+        'url' => adminUrl('redirects/'),
+        'permission' => 'manage_redirects',
+    ],
+
+    [
         'key' => 'settings',
         'label' => 'Settings',
         'url' => adminUrl('settings/'),

@@ -1,4 +1,6 @@
-Add with existing core requires in publicV6/app/bootstrap.php:
+app/bootstrap.php additions:
+require_once __DIR__ . '/core/Redirect.php';
+require_once __DIR__ . '/core/RedirectManager.php';
 
-require_once __DIR__ . '/core/Seo.php';
-require_once __DIR__ . '/core/SeoManager.php';
+public_bootstrap.php public request hook (after app/bootstrap.php and before output):
+Redirect::applyCurrentRequest();

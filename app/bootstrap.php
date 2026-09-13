@@ -25,5 +25,7 @@ require_once __DIR__ . '/core/Navigation.php';
 require_once __DIR__ . '/core/NavigationManager.php';
 require_once __DIR__ . '/core/Seo.php';
 require_once __DIR__ . '/core/SeoManager.php';
+require_once __DIR__ . '/core/Redirect.php';
+require_once __DIR__ . '/core/RedirectManager.php';
 
 Session::start();
