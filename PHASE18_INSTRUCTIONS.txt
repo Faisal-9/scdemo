@@ -1,0 +1,60 @@
+PHASE 18 — SEO / PAGE METADATA CMS (INCREMENTAL / SAFE)
+
+Goal
+----
+Add database-backed per-page SEO metadata without changing public design, public content,
+or the existing <head> markup automatically.
+
+Install
+-------
+1. Import database/phase18_seo.sql into the existing State Corps database.
+   Do not drop or recreate existing CMS tables.
+
+2. Copy app/core/Seo.php and app/core/SeoManager.php into publicV6/app/core/.
+
+3. In publicV6/app/bootstrap.php add:
+   require_once __DIR__ . '/core/Seo.php';
+   require_once __DIR__ . '/core/SeoManager.php';
+
+4. Add scadmin/seo/ to the project.
+
+5. Give the Administrator manage_seo if your permission UI does not already grant it.
+   The SQL creates the permission record only; it does not grant editor access.
+
+Admin
+-----
+Open /scadmin/seo/
+The SQL safely registers known public pages, but all SEO fields are NULL initially.
+Therefore current public title/description behavior stays unchanged until an admin fills
+metadata and the public head is explicitly wired to read it.
+
+Public integration (intentionally deferred)
+---------------------------------------------
+The exact includes/head.php source was not available in the uploaded project structure.
+Do NOT overwrite it or guess its current markup.
+
+After inspecting the real head.php, the dynamic layer can be wired with:
+   $seo = Seo::meta('home', [existing fallback values]);
+
+Then preserve the existing title/meta/Open Graph structure and replace only values with
+escaped $seo fields. Suggested page keys:
+   home, about, projects, project-details, services, sectors, media, contact,
+   policies, terms-of-service
+
+For project details, use a deterministic dynamic key such as:
+   'project-details'
+while retaining record-specific fallback title/description from the project data.
+
+Security
+--------
+- Admin routes require Auth::requirePermission('manage_seo').
+- Save/toggle/delete use the existing CSRF/session stack.
+- Canonical URLs are limited to http/https absolute URLs.
+- Social image values reject whitespace.
+- No public login is introduced.
+- No public HTML/CSS/JS is overwritten.
+
+Rollback
+--------
+Remove the two Seo require_once lines and the scadmin/seo folder.
+The page_seo table and permission can remain unused, or be removed manually after backup.

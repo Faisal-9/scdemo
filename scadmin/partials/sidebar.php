@@ -82,6 +82,13 @@ $navigation = [
     ],
 
     [
+        'key' => 'seo',
+        'label' => 'Seo',
+        'url' => adminUrl('seo/'),
+        'permission' => 'manage_seo',
+    ],
+
+    [
         'key' => 'settings',
         'label' => 'Settings',
         'url' => adminUrl('settings/'),

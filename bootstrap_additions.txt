@@ -1,4 +1,4 @@
-Add these two lines to publicV6/app/bootstrap.php alongside the other core requires:
+Add with existing core requires in publicV6/app/bootstrap.php:
 
-require_once __DIR__ . '/core/Navigation.php';
-require_once __DIR__ . '/core/NavigationManager.php';
+require_once __DIR__ . '/core/Seo.php';
+require_once __DIR__ . '/core/SeoManager.php';

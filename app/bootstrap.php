@@ -23,5 +23,7 @@ require_once __DIR__ . '/core/LegalManager.php';
 require_once __DIR__ . '/core/ContactMessageManager.php';
 require_once __DIR__ . '/core/Navigation.php';
 require_once __DIR__ . '/core/NavigationManager.php';
+require_once __DIR__ . '/core/Seo.php';
+require_once __DIR__ . '/core/SeoManager.php';
 
 Session::start();
