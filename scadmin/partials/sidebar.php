@@ -167,6 +167,14 @@ $navigation = [
                     </a>
                 <?php endif; ?>
 
+                <?php if (adminHasAccess('manage_system_health')): ?>
+                    <a
+                        class="admin-nav-link <?= e(adminActive('system-health', $activeNav)) ?>"
+                        href="<?= e(adminUrl('system-health/')) ?>">
+                        System Health
+                    </a>
+                <?php endif; ?>
+
             <?php endif; ?>
 
         </nav>
