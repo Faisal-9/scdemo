@@ -183,6 +183,14 @@ $navigation = [
                     </a>
                 <?php endif; ?>
 
+                <?php if (adminHasAccess('manage_backup_vault')): ?>
+                    <a
+                        class="admin-nav-link <?= e(adminActive('backup-vault', $activeNav)) ?>"
+                        href="<?= e(adminUrl('backup-vault/')) ?>">
+                        Backup Vault
+                    </a>
+                <?php endif; ?>
+
             <?php endif; ?>
 
         </nav>

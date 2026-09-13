@@ -1,0 +1,33 @@
+STATE CORPS CMS — PHASE 26 — SECURE BACKUP VAULT
+
+Purpose
+This phase adds a secure, admin-only saved backup vault on top of Phase 25.
+It does not replace the Phase 25 Database Backup Center.
+
+Install
+1. Back up the project and database before installing.
+2. Extract this package into the existing publicV6 root.
+3. Import database/phase26_backup_vault.sql into statecorps_db.
+4. Grant the new permission `manage_backup_vault` to the administrator.
+5. Open /scadmin/backup-vault/index.php.
+
+Storage
+By default the vault resolves to a storage/backups directory beside the publicV6 tree.
+If your deployment layout differs, define SC_BACKUP_STORAGE before loading bootstrap.php,
+pointing to a private directory outside the public document root.
+
+Security
+- Saved SQL files are outside the public web root by default.
+- Every saved backup stores size + SHA-256 metadata.
+- Downloads require CMS permission and pass checksum verification.
+- Delete operations are POST-only and CSRF-protected.
+- Backup files use randomized suffixes and cannot be directly browsed through the CMS URL.
+
+Compatibility
+- XAMPP / PHP 8.2+ / MariaDB supported.
+- cPanel/shared hosting supported when the private backup directory is writable.
+- Existing public website pages and CMS content are not modified.
+
+Notes
+Phase 25 browser-streamed export remains available. Phase 26 is for retaining named,
+verified backups on the server. Also keep an independent off-server backup copy.
