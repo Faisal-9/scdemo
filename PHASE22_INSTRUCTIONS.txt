@@ -1,0 +1,47 @@
+PHASE 22 — ASSET USAGE / REFERENCE CHECKER
+
+Purpose
+-------
+Add a read-only diagnostic center for the Phase 20 Asset Library. It identifies:
+- library assets currently referenced by CMS database content;
+- library assets that are unused;
+- library records whose physical file is missing;
+- upload files that exist on disk without a media_library record.
+
+No public frontend template, CSS, JavaScript, or existing content is changed.
+No asset is automatically deleted, moved, or replaced.
+
+Install
+-------
+1. Back up the database and project.
+2. Import database/phase22_asset_reference_checker.sql into statecorps_db.
+3. Copy app/core/AssetReferenceManager.php to publicV6/app/core/.
+4. Copy the two files in scadmin/assets-library/ to publicV6/scadmin/assets-library/.
+5. The module reuses the Phase 20 permission: manage_assets.
+6. Add a sidebar link to:
+      adminUrl('assets-library/references.php')
+   guarded by the existing manage_assets permission.
+7. Open:
+      /scadmin/assets-library/references.php
+
+Safety
+------
+- Read-only diagnostic screens; there is no automatic cleanup.
+- Only assets/uploads/ is inventoried on disk.
+- Database scan is restricted to text-like columns with a primary key.
+- audit_logs and content_revisions are intentionally excluded to keep reference counts about live CMS content rather than historical records.
+- The checker does not edit public image/document paths.
+
+Using the results
+-----------------
+Unused assets can be reviewed before manual cleanup.
+Missing-file records indicate that the database still expects the asset path but the physical upload is gone.
+Unregistered files are files under assets/uploads/ that were not recorded in media_library, for example a failed/interrupted cleanup or a manual file copy.
+
+Performance
+-----------
+The database scan is intended for a modest company CMS. It scans matching text columns only and limits individual column result sets to 250 rows per asset path.
+
+XAMPP / cPanel
+--------------
+No special PHP extension beyond the existing CMS stack is required. The same files work on PHP 8.x under XAMPP and cPanel.

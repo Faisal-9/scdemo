@@ -1,0 +1,31 @@
+STATE CORPS ENGINEERING CMS — PHASE 23
+UNIFIED ASSET LIBRARY + REFERENCE MANAGEMENT
+
+Purpose:
+Consolidate the Phase 20 Asset Library and Phase 22 Asset Reference Checker into one primary admin module.
+
+What changes:
+- /scadmin/assets-library/index.php is now the single main Asset Library screen.
+- Every asset row shows its live reference count/state (In use / Unused / Missing).
+- Asset Library has one-click References and Edit actions.
+- Summary cards show total assets, images, PDFs, in-use assets, unused assets, and missing files.
+- Search/filter controls combine filename/path/category, type, and usage state.
+- The existing Phase 22 references.php and reference.php remain available so old links do not break.
+- The filesystem diagnostic remains accessible through the Asset References compatibility page.
+
+Safety:
+- No public frontend files are changed.
+- No existing asset records are deleted, renamed, moved, or imported.
+- No existing CMS content is changed.
+- The reference scanner remains read-only.
+- The existing manage_assets permission is reused.
+
+Installation:
+1. Back up the project and database.
+2. Extract this package into the existing publicV6 project root, allowing the included files to overwrite the Phase 20/22 versions.
+3. The SQL file is intentionally a no-op readiness statement. No database import is required for the UI merge.
+4. Keep the existing Phase 20 media_library table and Phase 22 AssetReferenceManager.php.
+5. Open /scadmin/assets-library/.
+
+Recommended menu behavior:
+Keep one Asset Library sidebar entry only. Do not add a separate permanent "Asset References" menu item. Existing references.php remains as a compatibility/diagnostic URL.
