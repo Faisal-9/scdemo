@@ -1,0 +1,81 @@
+STATE CORPS CMS — PHASE 28
+CENTRAL MEDIA LIBRARY + LIVE MEDIA PICKER
+
+Purpose
+-------
+Turn the Phase 20 Asset Library into one centralized media system for images and files.
+The administrator/editor can:
+- upload new images and common documents;
+- register the existing assets/images and assets/documents files without moving them;
+- search assets by typing their name;
+- choose an image/file from a visual picker;
+- change the library name;
+- rename the physical file;
+- automatically update live CMS database references after a physical rename;
+- edit alt text/category;
+- inspect references;
+- delete an unused managed asset.
+
+INSTALLATION
+1. Back up the project and database.
+2. Import database/phase28_central_media_library.sql into statecorps_db.
+3. Copy app/core/MediaLibraryManager.php into publicV6/app/core/.
+4. Copy app/helpers/media_picker.php into publicV6/app/helpers/.
+5. Copy the media-picker.css/js files into publicV6/assets/css/ and publicV6/assets/js/.
+6. Merge scadmin/assets-library/ into the existing Asset Library module.
+7. Keep the existing manage_assets permission from Phase 20.
+8. Open /scadmin/assets-library/ and click “Register Existing Assets”.
+   This registers current assets/images and assets/documents in the database WITHOUT moving files.
+
+REUSABLE MEDIA PICKER
+---------------------
+On any admin form where an asset path should be selected, include the helper:
+
+require_once __DIR__ . '/../../app/helpers/media_picker.php';
+
+Then render:
+
+mediaPickerField('image_path', (string)($row['image_path'] ?? ''), [
+    'type' => 'image',
+    'label' => 'Image'
+]);
+
+For documents:
+
+mediaPickerField('document_path', (string)($row['document_path'] ?? ''), [
+    'type' => 'document',
+    'label' => 'Document'
+]);
+
+Load the picker CSS/JS from the admin layout once:
+
+<link rel="stylesheet" href="<?= e(baseUrl('assets/css/media-picker.css')) ?>">
+<script src="<?= e(baseUrl('assets/js/media-picker.js')) ?>"></script>
+
+The picker opens a modal, searches live as the user types, shows image thumbnails, and writes the selected relative path into the form field. The actual field remains a normal text value, so current database column structures are preserved.
+
+IMPORTANT: This phase provides the reusable picker infrastructure. Existing individual admin forms should be converted one by one using the helper above after checking their exact current form markup. Do not blindly mass-replace their inputs because the public design/content requirement must remain intact.
+
+RENAME BEHAVIOR
+---------------
+Rename is different from changing only the display label. It physically renames the file and updates matching live text references across CMS database tables. It excludes audit_logs, content_revisions, and media_library itself.
+
+Deletion is blocked when live references are detected.
+
+LEGACY ASSETS
+-------------
+Existing files are marked storage_scope=legacy. They are not moved during registration. Once registered, they can be selected by the picker and their paths can be centrally managed.
+
+Supported upload types
+----------------------
+JPG, PNG, WEBP, GIF, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, ZIP.
+Images: max 8 MB. Other allowed files: max 20 MB.
+Executable/script files are not accepted.
+
+SAFETY
+------
+- No public frontend template is changed by this phase.
+- Existing public asset paths are preserved until an admin explicitly renames an asset.
+- Renames update live references transactionally and roll back the filesystem rename on failure.
+- Delete requires no live references.
+- Admin operations require manage_assets and existing CSRF/authentication.
