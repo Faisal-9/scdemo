@@ -1,0 +1,29 @@
+PHASE 16 — GLOBAL HEADER / FOOTER SETTINGS
+
+This is a SAFE incremental phase.
+
+1. Import database/phase16_global.sql into statecorps_db.
+   It only inserts missing settings and never replaces existing settings.
+
+2. Copy app/core/SiteGlobals.php into:
+   publicV6/app/core/SiteGlobals.php
+
+3. Add this once to app/bootstrap.php, after Database.php is loaded:
+   require_once __DIR__ . '/core/SiteGlobals.php';
+
+4. Because your exact current includes/header.php, includes/footer.php and includes/head.php source was not supplied as code in the conversation, do NOT overwrite those files with a generated replacement.
+
+5. In the existing header/footer/head files, replace ONLY a hard-coded global value with the matching setting call. Examples:
+   SiteGlobals::text('site_name', 'State Corps')
+   SiteGlobals::text('site_logo', 'assets/images/logo.png')
+   SiteGlobals::text('footer_logo', 'assets/images/footerlogo.png')
+   SiteGlobals::text('footer_copyright', 'State Corps')
+
+   Keep the existing HTML, classes, links, CSS, JS and layout unchanged.
+
+6. For an existing company-profile link, use:
+   SiteGlobals::text('company_profile_file', 'assets/documents/SCProfileLight.pdf')
+
+7. Do not convert navigation links to database-driven links yet. That should be a separate controlled phase because the current navigation structure and dropdown behavior must be preserved exactly.
+
+8. Existing site_settings values such as homepage_why_background and projects_hero_* remain untouched.
