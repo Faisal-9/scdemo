@@ -27,5 +27,6 @@ require_once __DIR__ . '/core/Seo.php';
 require_once __DIR__ . '/core/SeoManager.php';
 require_once __DIR__ . '/core/Redirect.php';
 require_once __DIR__ . '/core/RedirectManager.php';
+require_once __DIR__ . '/core/AssetManager.php';
 
 Session::start();

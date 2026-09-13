@@ -12,6 +12,13 @@ $navigation = [
     ],
 
     [
+        'key' => 'assets-library',
+        'label' => 'Asset Library',
+        'url' => adminUrl('assets-library/'),
+        'permission' => 'manage_assets',
+    ],
+
+    [
         'key' => 'homepage',
         'label' => 'Homepage',
         'url' => adminUrl('homepage/'),

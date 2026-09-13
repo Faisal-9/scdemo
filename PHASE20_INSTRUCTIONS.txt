@@ -1,0 +1,63 @@
+PHASE 20 — ASSET LIBRARY / FILE UPLOAD MANAGEMENT
+
+Purpose
+-------
+Give Admin/authorized Editors a reusable media/file library for images and PDFs used by the CMS.
+Existing public files are untouched and no current image/path is replaced automatically.
+
+Install
+-------
+1. Import database/phase20_assets.sql into statecorps_db.
+2. Copy app/core/AssetManager.php to publicV6/app/core/.
+3. Copy scadmin/assets-library/ to publicV6/scadmin/assets-library/.
+4. Add the AssetManager require to app/bootstrap.php with the other core files:
+   require_once __DIR__ . '/core/AssetManager.php';
+5. Grant the new manage_assets permission to whichever Editor(s) should manage uploads. The SQL
+   creates the permission record but does not automatically change editor permissions.
+6. Add an Assets / Asset Library entry to the existing scadmin sidebar using adminUrl('assets-library/')
+   and permission manage_assets.
+
+Upload storage
+--------------
+Files are stored under:
+   publicV6/assets/uploads/YYYY/MM/random-name.ext
+
+The database stores the public relative path in media_library.relative_path.
+
+Allowed files
+-------------
+JPG, PNG, WEBP, GIF: maximum 8 MB.
+PDF: maximum 15 MB.
+The MIME type is detected from the file contents, not trusted from the browser filename.
+Images are additionally validated with getimagesize().
+
+Using an uploaded file in existing CMS content
+-----------------------------------------------
+After uploading, copy the displayed relative path, e.g.:
+   assets/uploads/2026/09/abcdef1234567890abcdef1234567890.jpg
+Then paste that path into an existing CMS image/document field.
+This keeps the public HTML/CSS/JS unchanged.
+
+Deletion warning
+----------------
+Do not delete an asset while a live page still references its path. Phase 20 deliberately does not
+attempt automatic dependency scanning across every CMS table; later maintenance can add a reference checker.
+
+Security
+--------
+- Admin access requires manage_assets.
+- Upload/save/delete uses the existing CSRF/session/auth stack.
+- No executable PHP/JS files are accepted.
+- Generated filenames are random and cannot be chosen by the uploader.
+- Deletes are constrained to assets/uploads paths.
+- Public users never receive an upload interface.
+
+XAMPP note
+----------
+If PHP's upload_max_filesize or post_max_size is lower than the limits above, PHP will reject the upload
+before application validation. Adjust php.ini only if needed, then restart Apache.
+
+cPanel note
+-----------
+The same PHP code works on cPanel with PHP 8.x, provided the uploads directory is writable by PHP and
+finfo/fileinfo is enabled. Keep assets/uploads outside any server-executable PHP area if your hosting allows it.
