@@ -175,6 +175,14 @@ $navigation = [
                     </a>
                 <?php endif; ?>
 
+                <?php if (adminHasAccess('manage_database_backups')): ?>
+                    <a
+                        class="admin-nav-link <?= e(adminActive('database-backup', $activeNav)) ?>"
+                        href="<?= e(adminUrl('database-backup/')) ?>">
+                        Database Backup
+                    </a>
+                <?php endif; ?>
+
             <?php endif; ?>
 
         </nav>

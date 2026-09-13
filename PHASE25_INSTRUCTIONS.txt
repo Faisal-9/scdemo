@@ -1,0 +1,22 @@
+PHASE 25 INSTALLATION — DATABASE BACKUP CENTER
+
+1. BACK UP YOUR PROJECT FILES FIRST.
+2. Extract the package into your existing publicV6 root.
+3. Import:
+   database/phase25_database_backup.sql
+4. Grant the new permission `manage_database_backups` to the administrator account that should be allowed to create backups.
+5. Open:
+   /scadmin/database-backup/index.php
+6. Test both options:
+   - Full backup — schema + data
+   - Schema only — no table data
+
+Recommended deployment practice
+--------------------------------
+Keep downloaded .sql files OUTSIDE the public web root. Treat them as sensitive production data.
+
+This phase intentionally does NOT add a browser-based restore function. Restores should be performed through phpMyAdmin, cPanel database tools, or a controlled server process after verifying the backup file.
+
+Compatibility
+-------------
+Designed for the existing plain-PHP CMS on XAMPP and later cPanel/shared hosting. No shell command or external dependency is required.
