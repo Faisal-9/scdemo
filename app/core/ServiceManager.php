@@ -338,40 +338,26 @@ final class ServiceManager
         $pdo->beginTransaction();
 
         try {
+            $itemIds = self::descendantIds($pdo, $id);
+            $placeholders = implode(',', array_fill(0, count($itemIds), '?'));
 
-            /*
-         * First delete every descendant.
-         */
-            self::deleteItemChildren(
-                $pdo,
-                $id
+            // Clear self-references first so older restrictive constraints cannot block deletion.
+            $clearParents = $pdo->prepare(
+                "UPDATE service_items SET parent_id = NULL WHERE id IN ($placeholders)"
             );
+            $clearParents->execute($itemIds);
 
-            /*
-         * Delete features belonging to the current item.
-         */
             $deleteFeatures = $pdo->prepare(
-                'DELETE FROM service_features
-             WHERE service_item_id = :item_id'
+                "DELETE FROM service_features WHERE service_item_id IN ($placeholders)"
             );
+            $deleteFeatures->execute($itemIds);
 
-            $deleteFeatures->execute([
-                ':item_id' => $id,
-            ]);
-
-            /*
-         * Finally delete the actual service item.
-         */
-            $deleteItem = $pdo->prepare(
-                'DELETE FROM service_items
-             WHERE id = :id'
+            $deleteItems = $pdo->prepare(
+                "DELETE FROM service_items WHERE id IN ($placeholders)"
             );
+            $deleteItems->execute($itemIds);
 
-            $deleteItem->execute([
-                ':id' => $id,
-            ]);
-
-            if ($deleteItem->rowCount() !== 1) {
+            if ($deleteItems->rowCount() !== count($itemIds)) {
                 throw new RuntimeException(
                     'The service item could not be deleted.'
                 );
@@ -388,62 +374,31 @@ final class ServiceManager
         }
     }
 
-    private static function deleteItemChildren(
+    private static function descendantIds(
         PDO $pdo,
-        int $parentId
-    ): void {
+        int $rootId
+    ): array {
+        $ids = [$rootId];
+        $pending = [$rootId];
 
         $stmt = $pdo->prepare(
             'SELECT id
          FROM service_items
          WHERE parent_id = :parent_id
-         ORDER BY id DESC'
+         ORDER BY id ASC'
         );
 
-        $stmt->execute([
-            ':parent_id' => $parentId,
-        ]);
-
-        $children = $stmt->fetchAll(
-            PDO::FETCH_COLUMN
-        );
-
-        foreach ($children as $childId) {
-
-            $childId = (int) $childId;
-
-            /*
-         * Delete deeper descendants first.
-         */
-            self::deleteItemChildren(
-                $pdo,
-                $childId
-            );
-
-            /*
-         * Remove child features.
-         */
-            $deleteFeatures = $pdo->prepare(
-                'DELETE FROM service_features
-             WHERE service_item_id = :item_id'
-            );
-
-            $deleteFeatures->execute([
-                ':item_id' => $childId,
-            ]);
-
-            /*
-         * Remove child item.
-         */
-            $deleteItem = $pdo->prepare(
-                'DELETE FROM service_items
-             WHERE id = :id'
-            );
-
-            $deleteItem->execute([
-                ':id' => $childId,
-            ]);
+        while ($pending) {
+            $parentId = array_shift($pending);
+            $stmt->execute([':parent_id' => $parentId]);
+            foreach ($stmt->fetchAll(PDO::FETCH_COLUMN) as $childId) {
+                $childId = (int) $childId;
+                $ids[] = $childId;
+                $pending[] = $childId;
+            }
         }
+
+        return array_values(array_unique($ids));
     }
 
     public static function deleteCategory(int $id): void

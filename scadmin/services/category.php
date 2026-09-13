@@ -97,7 +97,16 @@ require __DIR__ . '/../partials/sidebar.php';
             <?php foreach ($items as $item): ?>
                 <?php $children = ServiceManager::items((int) $category['id'], (int) $item['id']); ?>
                 <div class="service-item-row">
-                    <div><strong><?= e($item['title']) ?></strong><span class="tree-key"><?= e((string) ($item['service_key'] ?? '')) ?></span><small><?= e((string) count($children)) ?> subitems · <?= e((string) count(ServiceManager::features((int) $item['id']))) ?> features</small></div><a class="small-button" href="<?= e(adminUrl('services/item.php?id=' . (int) $item['id'])) ?>">Edit</a>
+                    <div><strong><?= e($item['title']) ?></strong><span class="tree-key"><?= e((string) ($item['service_key'] ?? '')) ?></span><small><?= e((string) count($children)) ?> subitems · <?= e((string) count(ServiceManager::features((int) $item['id']))) ?> features</small></div>
+                    <div class="actions-cell">
+                        <a class="small-button" href="<?= e(adminUrl('services/item.php?id=' . (int) $item['id'])) ?>">Edit</a>
+                        <form method="post" action="<?= e(adminUrl('services/item.php?id=' . (int) $item['id'])) ?>" onsubmit="return confirm('Delete this service item and all child items?');">
+                            <?= CSRF::field() ?>
+                            <input type="hidden" name="form_action" value="delete_item">
+                            <input type="hidden" name="item_id" value="<?= e((string) $item['id']) ?>">
+                            <button class="small-button danger-button" type="submit">Delete</button>
+                        </form>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </section>
