@@ -108,6 +108,7 @@ $navigation = [
         'url' => adminUrl('settings/'),
         'permission' => 'manage_settings',
     ],
+
 ];
 ?>
 
@@ -158,18 +159,13 @@ $navigation = [
                     Editors
                 </a>
 
-                <span
-                    class="admin-nav-link nav-disabled"
-                    aria-disabled="true"
-                    title="Available in a later CMS phase">
-
-                    Activity Log
-
-                    <span class="nav-soon">
-                        Soon
-                    </span>
-
-                </span>
+                <?php if (adminHasAccess('manage_activity_logs')): ?>
+                    <a
+                        class="admin-nav-link <?= e(adminActive('activity-logs', $activeNav)) ?>"
+                        href="<?= e(adminUrl('activity-logs/')) ?>">
+                        Activity Logs
+                    </a>
+                <?php endif; ?>
 
             <?php endif; ?>
 
