@@ -1,0 +1,30 @@
+STATE CORPS CMS — PHASE 27 — UNIFIED DATABASE BACKUP CENTER
+
+Purpose
+Merge Phase 25 Database Backup Center and Phase 26 Secure Backup Vault into one admin interface without deleting or replacing existing backup files/metadata.
+
+What changes
+- Recommended URL: /scadmin/database-backup/
+- One interface for on-demand exports + saved vault backups.
+- Saved backups show size, creator, timestamp, SHA-256 and live integrity state.
+- Create saved Full or Schema-only backups from the same screen.
+- Download saved backups through the protected Phase 26 endpoint.
+- Delete saved backups with POST + CSRF protection.
+- Legacy /scadmin/backup-vault/ redirects to the unified screen.
+- Existing Phase 25 export URL remains supported.
+- Existing Phase 26 download URL remains supported.
+
+Installation
+1. Back up project and database first.
+2. Extract this package into the existing publicV6 root.
+3. Import database/phase27_unified_backup_center.sql into statecorps_db.
+4. Grant manage_backup_center to the administrator (and any editor who should manage backups).
+5. Existing users who already have manage_database_backups or manage_backup_vault are also accepted by the unified interface, so access is not lost during migration.
+6. Use /scadmin/database-backup/ as the single sidebar/menu entry going forward.
+
+Important
+- Do NOT drop database_backups.
+- Do NOT remove manage_database_backups or manage_backup_vault during this phase.
+- No public frontend page/content/design is changed.
+- The private vault location remains the Phase 26 default unless SC_BACKUP_STORAGE is configured.
+- Keep independent off-server backups.
