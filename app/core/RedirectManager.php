@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 final class RedirectManager
@@ -22,21 +23,35 @@ final class RedirectManager
     {
         $pdo = Database::connection();
         $data = self::validate($data, $id);
-        $userId = isset($_SESSION['user_id']) && is_numeric($_SESSION['user_id']) ? (int)$_SESSION['user_id'] : null;
+        $userId = Auth::id();
 
         if ($id !== null) {
             $stmt = $pdo->prepare('UPDATE url_redirects SET source_path=?, destination_url=?, status_code=?, preserve_query=?, note=?, sort_order=?, is_active=?, updated_by=?, updated_at=NOW() WHERE id=?');
             $stmt->execute([
-                $data['source_path'], $data['destination_url'], $data['status_code'], $data['preserve_query'], $data['note'],
-                $data['sort_order'], $data['is_active'], $userId, $id
+                $data['source_path'],
+                $data['destination_url'],
+                $data['status_code'],
+                $data['preserve_query'],
+                $data['note'],
+                $data['sort_order'],
+                $data['is_active'],
+                $userId,
+                $id
             ]);
             $savedId = $id;
             $action = 'update';
         } else {
             $stmt = $pdo->prepare('INSERT INTO url_redirects (source_path,destination_url,status_code,preserve_query,note,sort_order,is_active,created_by,updated_by) VALUES (?,?,?,?,?,?,?,?,?)');
             $stmt->execute([
-                $data['source_path'], $data['destination_url'], $data['status_code'], $data['preserve_query'], $data['note'],
-                $data['sort_order'], $data['is_active'], $userId, $userId
+                $data['source_path'],
+                $data['destination_url'],
+                $data['status_code'],
+                $data['preserve_query'],
+                $data['note'],
+                $data['sort_order'],
+                $data['is_active'],
+                $userId,
+                $userId
             ]);
             $savedId = (int)$pdo->lastInsertId();
             $action = 'create';
@@ -53,7 +68,7 @@ final class RedirectManager
     {
         $row = self::find($id);
         if (!$row) throw new RuntimeException('Redirect not found.');
-        $userId = isset($_SESSION['user_id']) && is_numeric($_SESSION['user_id']) ? (int)$_SESSION['user_id'] : null;
+        $userId = Auth::id();
         $stmt = Database::connection()->prepare('UPDATE url_redirects SET is_active=?, updated_by=?, updated_at=NOW() WHERE id=?');
         $stmt->execute([(int)$row['is_active'] === 1 ? 0 : 1, $userId, $id]);
         Redirect::clearCache();
@@ -77,14 +92,14 @@ final class RedirectManager
         $source = '/' . ltrim($source, '/');
         $sourcePathOnly = parse_url($source, PHP_URL_PATH) ?: '/';
         if ($sourcePathOnly === '/scadmin' || str_starts_with($sourcePathOnly, '/scadmin/')) throw new InvalidArgumentException('Admin paths cannot be configured as public redirects.');
-        if (in_array($sourcePathOnly, ['/redirects','/app'], true) || str_starts_with($sourcePathOnly, '/app/')) throw new InvalidArgumentException('Application paths cannot be configured as public redirects.');
+        if (in_array($sourcePathOnly, ['/redirects', '/app'], true) || str_starts_with($sourcePathOnly, '/app/')) throw new InvalidArgumentException('Application paths cannot be configured as public redirects.');
 
         $destination = trim((string)($data['destination_url'] ?? ''));
         if ($destination === '' || preg_match('/\s|javascript:|data:/i', $destination)) throw new InvalidArgumentException('Destination URL is required and must be valid.');
         if (!preg_match('#^(?:/|https?://)#i', $destination)) throw new InvalidArgumentException('Destination must be a local path or an http/https URL.');
 
         $status = (int)($data['status_code'] ?? 301);
-        if (!in_array($status, [301,302,307,308], true)) $status = 301;
+        if (!in_array($status, [301, 302, 307, 308], true)) $status = 301;
         $preserve = !empty($data['preserve_query']) ? 1 : 0;
         $note = trim((string)($data['note'] ?? ''));
         $sort = max(0, (int)($data['sort_order'] ?? 0));
@@ -97,13 +112,13 @@ final class RedirectManager
         $stmt->execute([$normalizedSource, $id ?? 0]);
         if ($stmt->fetchColumn()) throw new InvalidArgumentException('A redirect for this source path already exists.');
 
-        return compact('normalizedSource','normalizedDestination','status','preserve','note','sort','active') + [
-            'source_path'=>$normalizedSource,
-            'destination_url'=>$normalizedDestination,
-            'status_code'=>$status,
-            'preserve_query'=>$preserve,
-            'sort_order'=>$sort,
-            'is_active'=>$active,
+        return compact('normalizedSource', 'normalizedDestination', 'status', 'preserve', 'note', 'sort', 'active') + [
+            'source_path' => $normalizedSource,
+            'destination_url' => $normalizedDestination,
+            'status_code' => $status,
+            'preserve_query' => $preserve,
+            'sort_order' => $sort,
+            'is_active' => $active,
         ];
     }
 }

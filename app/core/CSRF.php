@@ -39,4 +39,9 @@ final class CSRF
             exit('Invalid security token. Please reload the page and try again.');
         }
     }
+
+    public static function check(?string $token): void
+    {
+        self::verify($token);
+    }
 }

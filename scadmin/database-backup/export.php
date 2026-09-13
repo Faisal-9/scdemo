@@ -4,7 +4,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/../../app/bootstrap.php';
 require_once __DIR__ . '/../../app/core/DatabaseBackupManager.php';
 
-$uid = isset($_SESSION['user_id']) ? (int)$_SESSION['user_id'] : 0;
+$uid = Auth::id() ?? 0;
 $allowed = false;
 try {
     $pdo = Database::connection();

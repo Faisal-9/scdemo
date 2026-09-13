@@ -22,4 +22,5 @@
 <!-- Main Custom JS -->
 <!-- When your site is fully ready for production, replace time() with a fixed version number instead: -->
 <!-- <script src="assets/js/main.js?v=2.0" defer></script> -->
-<script src="assets/js/main.js?v=time()" defer></script>
+<?php $assetVersion = $assetVersion ?? (defined('ASSET_VERSION') ? (string)constant('ASSET_VERSION') : '1.0.0'); ?>
+<script src="assets/js/main.js?v=<?php echo urlencode($assetVersion) ?>" defer></script>

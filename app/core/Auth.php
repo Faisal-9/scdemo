@@ -96,6 +96,11 @@ final class Auth
         return $user === null ? null : (int) $user['id'];
     }
 
+    public static function currentUserId(): ?int
+    {
+        return self::id();
+    }
+
     public static function role(): ?string
     {
         $user = self::user();

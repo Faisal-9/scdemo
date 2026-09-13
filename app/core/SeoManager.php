@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 final class SeoManager
@@ -22,16 +23,27 @@ final class SeoManager
     {
         $pdo = Database::connection();
         $data = self::validate($data);
-        $userId = isset($_SESSION['user_id']) && is_numeric($_SESSION['user_id']) ? (int)$_SESSION['user_id'] : null;
+        $userId = Auth::id();
 
         if ($id !== null) {
             $stmt = $pdo->prepare(
                 'UPDATE page_seo SET page_name=?, title=?, description=?, keywords=?, canonical_url=?, robots=?, og_title=?, og_description=?, og_image=?, twitter_card=?, sort_order=?, is_active=?, updated_by=?, updated_at=NOW() WHERE id=?'
             );
             $stmt->execute([
-                $data['page_name'], $data['title'], $data['description'], $data['keywords'], $data['canonical_url'],
-                $data['robots'], $data['og_title'], $data['og_description'], $data['og_image'], $data['twitter_card'],
-                $data['sort_order'], $data['is_active'], $userId, $id
+                $data['page_name'],
+                $data['title'],
+                $data['description'],
+                $data['keywords'],
+                $data['canonical_url'],
+                $data['robots'],
+                $data['og_title'],
+                $data['og_description'],
+                $data['og_image'],
+                $data['twitter_card'],
+                $data['sort_order'],
+                $data['is_active'],
+                $userId,
+                $id
             ]);
             $savedId = $id;
             $action = 'update';
@@ -40,9 +52,21 @@ final class SeoManager
                 'INSERT INTO page_seo (page_key,page_name,title,description,keywords,canonical_url,robots,og_title,og_description,og_image,twitter_card,sort_order,is_active,created_by,updated_by) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
             );
             $stmt->execute([
-                $data['page_key'], $data['page_name'], $data['title'], $data['description'], $data['keywords'], $data['canonical_url'],
-                $data['robots'], $data['og_title'], $data['og_description'], $data['og_image'], $data['twitter_card'],
-                $data['sort_order'], $data['is_active'], $userId, $userId
+                $data['page_key'],
+                $data['page_name'],
+                $data['title'],
+                $data['description'],
+                $data['keywords'],
+                $data['canonical_url'],
+                $data['robots'],
+                $data['og_title'],
+                $data['og_description'],
+                $data['og_image'],
+                $data['twitter_card'],
+                $data['sort_order'],
+                $data['is_active'],
+                $userId,
+                $userId
             ]);
             $savedId = (int)$pdo->lastInsertId();
             $action = 'create';
@@ -59,7 +83,7 @@ final class SeoManager
     {
         $row = self::find($id);
         if (!$row) throw new RuntimeException('SEO record not found.');
-        $userId = isset($_SESSION['user_id']) && is_numeric($_SESSION['user_id']) ? (int)$_SESSION['user_id'] : null;
+        $userId = Auth::id();
         $stmt = Database::connection()->prepare('UPDATE page_seo SET is_active=?, updated_by=?, updated_at=NOW() WHERE id=?');
         $stmt->execute([(int)$row['is_active'] === 1 ? 0 : 1, $userId, $id]);
         self::clearCache();
@@ -91,11 +115,11 @@ final class SeoManager
         if ($pageName === '' || mb_strlen($pageName) > 150) throw new InvalidArgumentException('Page name is required.');
 
         $robots = trim((string)($data['robots'] ?? 'index,follow'));
-        $allowedRobots = ['index,follow','index,nofollow','noindex,follow','noindex,nofollow'];
+        $allowedRobots = ['index,follow', 'index,nofollow', 'noindex,follow', 'noindex,nofollow'];
         if (!in_array($robots, $allowedRobots, true)) $robots = 'index,follow';
 
         $twitter = trim((string)($data['twitter_card'] ?? 'summary_large_image'));
-        if (!in_array($twitter, ['summary','summary_large_image',''], true)) $twitter = 'summary_large_image';
+        if (!in_array($twitter, ['summary', 'summary_large_image', ''], true)) $twitter = 'summary_large_image';
 
         $canonical = trim((string)($data['canonical_url'] ?? ''));
         if ($canonical !== '' && !preg_match('#^https?://#i', $canonical)) throw new InvalidArgumentException('Canonical URL must be absolute or empty.');
@@ -104,19 +128,19 @@ final class SeoManager
         if (preg_match('/\s/', $ogImage)) throw new InvalidArgumentException('Social image path/URL cannot contain whitespace.');
 
         return [
-            'page_key'=>$pageKey,
-            'page_name'=>$pageName,
-            'title'=>self::limitText($data['title'] ?? null, 255),
-            'description'=>self::limitText($data['description'] ?? null, 320),
-            'keywords'=>self::limitText($data['keywords'] ?? null, 500),
-            'canonical_url'=>$canonical,
-            'robots'=>$robots,
-            'og_title'=>self::limitText($data['og_title'] ?? null, 255),
-            'og_description'=>self::limitText($data['og_description'] ?? null, 320),
-            'og_image'=>self::limitText($ogImage, 500),
-            'twitter_card'=>$twitter,
-            'sort_order'=>max(0,(int)($data['sort_order'] ?? 0)),
-            'is_active'=>!empty($data['is_active']) ? 1 : 0,
+            'page_key' => $pageKey,
+            'page_name' => $pageName,
+            'title' => self::limitText($data['title'] ?? null, 255),
+            'description' => self::limitText($data['description'] ?? null, 320),
+            'keywords' => self::limitText($data['keywords'] ?? null, 500),
+            'canonical_url' => $canonical,
+            'robots' => $robots,
+            'og_title' => self::limitText($data['og_title'] ?? null, 255),
+            'og_description' => self::limitText($data['og_description'] ?? null, 320),
+            'og_image' => self::limitText($ogImage, 500),
+            'twitter_card' => $twitter,
+            'sort_order' => max(0, (int)($data['sort_order'] ?? 0)),
+            'is_active' => !empty($data['is_active']) ? 1 : 0,
         ];
     }
 

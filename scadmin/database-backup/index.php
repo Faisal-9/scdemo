@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../app/core/BackupVaultManager.php';
 
 function backupCenterAuthorize(): void
 {
-    $uid = isset($_SESSION['user_id']) ? (int)$_SESSION['user_id'] : 0;
+    $uid = Auth::id() ?? 0;
     if ($uid < 1) {
         Auth::requirePermission('manage_backup_center');
         return;
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         try {
             $action = (string)($_POST['action'] ?? '');
-            $uid = isset($_SESSION['user_id']) ? (int)$_SESSION['user_id'] : null;
+            $uid = Auth::id();
             if ($action === 'create_saved') {
                 BackupVaultManager::create((string)($_POST['type'] ?? 'full'), $uid);
                 header('Location: index.php?saved=1');

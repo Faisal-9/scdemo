@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 final class SiteSettingsManager
@@ -32,10 +33,7 @@ final class SiteSettingsManager
         }
 
         self::validate($row, $value);
-        $userId = null;
-        if (isset($_SESSION['user_id']) && is_numeric($_SESSION['user_id'])) {
-            $userId = (int)$_SESSION['user_id'];
-        }
+        $userId = Auth::id();
 
         $stmt = $pdo->prepare(
             'UPDATE site_settings

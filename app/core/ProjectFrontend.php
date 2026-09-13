@@ -35,10 +35,35 @@ final class ProjectFrontend
         );
 
         $rows = $stmt->fetchAll();
+        if ($rows === []) {
+            return [];
+        }
+
+        $projectIds = array_map(static fn(array $row): int => (int)$row['id'], $rows);
+        $placeholders = implode(',', array_fill(0, count($projectIds), '?'));
+        $imageStmt = $pdo->prepare(
+            "SELECT project_id, image_path FROM project_images
+             WHERE project_id IN ($placeholders) ORDER BY project_id ASC, sort_order ASC, id ASC"
+        );
+        $imageStmt->execute($projectIds);
+        $images = [];
+        foreach ($imageStmt->fetchAll() as $image) {
+            $images[(int)$image['project_id']][] = (string)$image['image_path'];
+        }
+        $scopeStmt = $pdo->prepare(
+            "SELECT project_id, scope_text FROM project_scope
+             WHERE project_id IN ($placeholders) ORDER BY project_id ASC, sort_order ASC, id ASC"
+        );
+        $scopeStmt->execute($projectIds);
+        $scopes = [];
+        foreach ($scopeStmt->fetchAll() as $scope) {
+            $scopes[(int)$scope['project_id']][] = (string)$scope['scope_text'];
+        }
         $projects = [];
 
         foreach ($rows as $row) {
-            $projects[] = self::toLegacyShape($row);
+            $id = (int)$row['id'];
+            $projects[] = self::toLegacyShape($row, $images[$id] ?? [], $scopes[$id] ?? []);
         }
 
         return $projects;
@@ -140,7 +165,7 @@ final class ProjectFrontend
         ];
     }
 
-    private static function toLegacyShape(array $row): array
+    private static function toLegacyShape(array $row, ?array $images = null, ?array $scope = null): array
     {
         return [
             'id' => (string) ($row['legacy_id'] ?? ''),
@@ -154,9 +179,9 @@ final class ProjectFrontend
             'inhome' => (int) ($row['show_on_home'] ?? 0) === 1 ? 'yes' : 'no',
             'catimage' => (int) ($row['show_in_category_image'] ?? 0) === 1 ? 'yes' : 'no',
             'thumbnail' => (string) ($row['thumbnail_path'] ?? ''),
-            'images' => self::images((int) $row['id']),
+            'images' => $images ?? self::images((int) $row['id']),
             'description' => (string) ($row['description'] ?? ''),
-            'scope' => self::scope((int) $row['id']),
+            'scope' => $scope ?? self::scope((int) $row['id']),
         ];
     }
 

@@ -20,7 +20,7 @@ include("includes/head.php");
 
     <!-- GLOBAL IMAGE LIGHTBOX -->
     <div id="imgLightbox" class="img-lightbox">
-        <span class="img-close">&times;</span>
+        <button type="button" class="img-close" aria-label="Close image preview">&times;</button>
         <img class="img-lightbox-content" id="lightboxImg">
     </div>
 

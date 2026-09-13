@@ -16,7 +16,19 @@
     });
   });
 
-  closeBtn.onclick = () => (lightbox.style.display = "none");
+  if (closeBtn) {
+    closeBtn.onclick = () => (lightbox.style.display = "none");
+    closeBtn.addEventListener("keydown", (event) => {
+      if (
+        event.key === "Escape" ||
+        event.key === "Enter" ||
+        event.key === " "
+      ) {
+        event.preventDefault();
+        lightbox.style.display = "none";
+      }
+    });
+  }
 
   lightbox.onclick = (e) => {
     if (e.target === lightbox) lightbox.style.display = "none";

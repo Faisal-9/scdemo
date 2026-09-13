@@ -1,11 +1,55 @@
 <?php
 // head.php - Optimized CDN Version
 
+require_once __DIR__ . '/../app/public_bootstrap.php';
+$assetVersion = defined('ASSET_VERSION') ? (string)constant('ASSET_VERSION') : '1.0.0';
+
 if (!isset($page_title))
     $page_title = "State Corps";
 
 if (!isset($page_description))
     $page_description = "Leading infrastructure company delivering 100+ projects valued at $600M+ for government and international partners since 2007";
+
+$seoPageKeys = [
+    'index.php' => 'home',
+    'about.php' => 'about',
+    'projects.php' => 'projects',
+    'projectdetails.php' => 'project-details',
+    'services.php' => 'services',
+    'sectors.php' => 'sectors',
+    'media.php' => 'media',
+    'contact.php' => 'contact',
+    'policies.php' => 'policies',
+    'termsOfServices.php' => 'terms-of-service',
+];
+$seoFallback = [
+    'title' => $page_title,
+    'description' => $page_description,
+    'keywords' => 'State Corps Engineering, statecorps, infrastructure, engineering, construction',
+    'canonical_url' => '',
+    'robots' => 'index,follow',
+    'og_title' => $page_title,
+    'og_description' => $page_description,
+    'og_image' => 'assets/images/logo.png',
+    'twitter_card' => 'summary_large_image',
+];
+$seo = $seoFallback;
+$pageKey = $seoPageKeys[basename((string)($_SERVER['PHP_SELF'] ?? 'index.php'))] ?? null;
+if ($pageKey !== null) {
+    try {
+        $seo = Seo::meta($pageKey, $seoFallback);
+    } catch (Throwable $e) {
+        error_log('SEO lookup unavailable: ' . $e->getMessage());
+    }
+}
+$page_title = (string)($seo['title'] ?: $page_title);
+$page_description = (string)($seo['description'] ?: $page_description);
+$page_keywords = (string)($seo['keywords'] ?: $seoFallback['keywords']);
+$canonical_url = (string)($seo['canonical_url'] ?: '');
+$og_title = (string)($seo['og_title'] ?: $page_title);
+$og_description = (string)($seo['og_description'] ?: $page_description);
+$og_image = (string)($seo['og_image'] ?: $seoFallback['og_image']);
+$twitter_card = (string)($seo['twitter_card'] ?: $seoFallback['twitter_card']);
 ?>
 
 <head>
@@ -18,23 +62,26 @@ if (!isset($page_description))
     <title><?php echo htmlspecialchars($page_title); ?></title>
 
     <!-- SEO -->
-    <meta name="description" content="<?php echo htmlspecialchars($page_description); ?>">
-    <meta name="keywords" content="State Corps Engineering, statecorps, STATECORPS, STATE CORPS, state corps, state corps engineering, Afghanistan infrastructure, engineering services, construction, energy projects, mining solutions, transport development, transmission lines, project management, sustainable infrastructure, government contractor">
+    <meta name="description" content="<?php echo htmlspecialchars($page_description, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta name="keywords" content="<?php echo htmlspecialchars($page_keywords, ENT_QUOTES, 'UTF-8'); ?>">
     <meta name="author" content="State Corps Engineering">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://statecorps.com/">
-    <meta property="og:title" content="<?php echo htmlspecialchars($page_title); ?>">
-    <meta property="og:description" content="<?php echo htmlspecialchars($page_description); ?>">
-    <meta property="og:image" content="https://statecorps.com/images/og-image.jpg">
+    <?php if ($canonical_url !== ''): ?>
+        <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url, ENT_QUOTES, 'UTF-8'); ?>">
+    <?php endif; ?>
+    <meta property="og:url" content="<?php echo htmlspecialchars($canonical_url, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta property="og:title" content="<?php echo htmlspecialchars($og_title, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta property="og:description" content="<?php echo htmlspecialchars($og_description, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta property="og:image" content="<?php echo htmlspecialchars($og_image, ENT_QUOTES, 'UTF-8'); ?>">
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://statecorps.com/">
-    <meta name="twitter:title" content="<?php echo htmlspecialchars($page_title); ?>">
-    <meta name="twitter:description" content="<?php echo htmlspecialchars($page_description); ?>">
-    <meta name="twitter:image" content="https://statecorps.com/images/twitter-image.jpg">
+    <meta name="twitter:card" content="<?php echo htmlspecialchars($twitter_card, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta name="twitter:url" content="<?php echo htmlspecialchars($canonical_url, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($og_title, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($og_description, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta name="twitter:image" content="<?php echo htmlspecialchars($og_image, ENT_QUOTES, 'UTF-8'); ?>">
 
     <!-- Favicon -->
     <link rel="icon" href="assets/images/favicon1.png" sizes="32x32">
@@ -63,8 +110,8 @@ if (!isset($page_description))
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
     <!-- Local Styles -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=<?php echo time() ?>">
-    <link rel="stylesheet" href="assets/css/navigation.css?v=<?php echo time() ?>">
+    <link rel="stylesheet" href="assets/css/styles.css?v=<?php echo urlencode($assetVersion) ?>">
+    <link rel="stylesheet" href="assets/css/navigation.css?v=<?php echo urlencode($assetVersion) ?>">
     <!-- <link rel="stylesheet" href="assets/css/responsive.css?v=<?php echo time() ?>"> -->
 
     <!-- Preload Important Logo -->

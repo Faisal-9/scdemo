@@ -148,7 +148,7 @@ usort($media_items, function ($a, $b) {
 
                                     <a
                                         href="<?php echo htmlspecialchars($item['link']); ?>"
-                                        target="_blank"
+                                        target="_blank" rel="noopener noreferrer"
                                         rel="noopener"
                                         class="media-detail__ref-link">
 

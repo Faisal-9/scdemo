@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 final class AssetManager
@@ -106,7 +107,7 @@ final class AssetManager
         }
 
         $relative = 'assets/uploads/' . $folder . '/' . $stored;
-        $userId = isset($_SESSION['user_id']) && is_numeric($_SESSION['user_id']) ? (int)$_SESSION['user_id'] : null;
+        $userId = Auth::id();
 
         try {
             $stmt = Database::connection()->prepare(

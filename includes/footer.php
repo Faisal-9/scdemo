@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../app/public_bootstrap.php';
+$footerContact = ContactFrontend::data()['head_office'];
+?>
 <footer class="site-footer">
 
     <div class="container">
@@ -106,30 +110,30 @@
                 <ul class="footer-contact">
 
                     <li>
-                        <i class="fa-solid fa-location-dot"></i>Karte Char, D3, Kabul, Afghanistan
+                        <i class="fa-solid fa-location-dot"></i><?= e($footerContact['address']) ?>
                     </li>
 
                     <li>
-                        <i class="fa-solid fa-phone"></i>+93 791 811 968
+                        <i class="fa-solid fa-phone"></i><?= e($footerContact['phone']) ?>
                     </li>
 
                     <li>
-                        <i class="fa-solid fa-envelope"></i>comms@statecorps.com
+                        <i class="fa-solid fa-envelope"></i><?= e($footerContact['email']) ?>
                     </li>
 
                 </ul>
 
                 <div class="footer-social">
 
-                    <a href="https://www.linkedin.com/company/state-corps/" target="_blank">
+                    <a href="https://www.linkedin.com/company/state-corps/" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
 
-                    <a href="#" target="_blank">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-facebook-f"></i>
                     </a>
 
-                    <a href="https://x.com/StateCorps" target="_blank">
+                    <a href="https://x.com/StateCorps" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-x-twitter"></i>
                     </a>
 

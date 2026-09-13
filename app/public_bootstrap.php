@@ -19,3 +19,10 @@ require_once __DIR__ . '/core/MediaFrontend.php';
 require_once __DIR__ . '/core/LegalFrontend.php';
 require_once __DIR__ . '/core/ContactFrontend.php';
 require_once __DIR__ . '/core/Redirect.php';
+require_once __DIR__ . '/core/Seo.php';
+
+try {
+    Redirect::applyCurrentRequest();
+} catch (Throwable $e) {
+    error_log('Public redirect lookup unavailable: ' . $e->getMessage());
+}

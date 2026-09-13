@@ -2,10 +2,10 @@
 require_once __DIR__ . '/../app/public_bootstrap.php';
 extract(HomeFrontend::data(), EXTR_OVERWRITE);
 
-include_once("includes/data/projectsdata.php");
-include_once("includes/data/servicesdata.php");
-include_once("includes/data/aboutdata.php");
-include_once("includes/data/mediadata.php");
+$projects = ProjectFrontend::all();
+$services = ServiceFrontend::all();
+$media = MediaFrontend::all();
+$clients = AboutFrontend::data()['clients'];
 
 $selected_sector = isset($_GET['sector']) ? strtolower($_GET['sector']) : 'all';
 
@@ -39,13 +39,13 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
             <?php foreach ($heroSlides as $slide): ?>
                 <div class="swiper-slide">
 
-                    <div class="image-layer" style="background-image:url(<?php echo $slide['image'] ?> )"></div>
+                    <div class="image-layer" style="background-image:url('<?php echo htmlspecialchars($slide['image'], ENT_QUOTES, 'UTF-8') ?>')"></div>
                     <div class="slider-overlay"></div>
                     <div class="container">
                         <div class="slider-content">
-                            <h1><?php echo $slide['title'] ?></h1>
+                            <h1><?php echo htmlspecialchars($slide['title'], ENT_QUOTES, 'UTF-8') ?></h1>
                             <p class="hero-desc">
-                                <?php echo $slide['desc'] ?>
+                                <?php echo htmlspecialchars($slide['desc'], ENT_QUOTES, 'UTF-8') ?>
                             </p>
                             <a href="projects.php" class="hero-btn">
                                 Explore Projects
@@ -68,7 +68,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
                         <?php echo str_pad($index + 1, 2, "0", STR_PAD_LEFT) ?>
                     </span>
                     <span class="hero-indicator-title">
-                        <?php echo $slide['title'] ?>
+                        <?php echo htmlspecialchars($slide['title'], ENT_QUOTES, 'UTF-8') ?>
                     </span>
 
                 </div>
@@ -82,7 +82,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
 
 
 <!-- ================= ABOUT US ================= -->
-<section class="index-stats-section py-4" style="background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('<?php echo $statsBg ?>');">
+<section class="index-stats-section py-4" style="background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('<?php echo htmlspecialchars($statsBg, ENT_QUOTES, 'UTF-8') ?>');">
     <div class="container">
 
         <div class="index-about-us-header text-center mb-4">
@@ -101,18 +101,18 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
 
                                 <div class="stat-number">
                                     <?php if (!empty($stat['prefix'])): ?>
-                                        <span class="prefix"><?php echo $stat['prefix']; ?></span>
+                                        <span class="prefix"><?php echo htmlspecialchars($stat['prefix'], ENT_QUOTES, 'UTF-8'); ?></span>
                                     <?php endif; ?>
 
-                                    <span class="counter" data-target="<?php echo $stat['number'] ?>">0</span>
+                                    <span class="counter" data-target="<?php echo htmlspecialchars((string)$stat['number'], ENT_QUOTES, 'UTF-8') ?>">0</span>
                                     <?php if (!empty($stat['suffix'])): ?>
-                                        <span class="suffix"><?php echo $stat['suffix']; ?></span>
+                                        <span class="suffix"><?php echo htmlspecialchars($stat['suffix'], ENT_QUOTES, 'UTF-8'); ?></span>
                                     <?php endif; ?>
 
                                 </div>
 
                                 <div class="stat-label">
-                                    <?php echo $stat['label'] ?>
+                                    <?php echo htmlspecialchars($stat['label'], ENT_QUOTES, 'UTF-8') ?>
                                 </div>
 
                             </div>

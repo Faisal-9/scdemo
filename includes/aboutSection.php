@@ -1,6 +1,7 @@
 <?php
 if (!isset($generalInfo, $missionVision, $clients, $certificates, $awards, $sisterCompanies, $hse, $cprofile)) {
-    require __DIR__ . '/data/aboutdata.php';
+    require_once __DIR__ . '/../app/public_bootstrap.php';
+    extract(AboutFrontend::data(), EXTR_OVERWRITE);
 }
 
 $aboutSections = [
@@ -303,7 +304,7 @@ $aboutSections = [
 
                                     <a href="<?php echo $cprofile['link']; ?>"
                                         class="profilebtn .serif-link"
-                                        target="_blank">
+                                        target="_blank" rel="noopener noreferrer">
 
                                         <i class="fas fa-external-link-alt me-2"></i>
                                         Open in New Tab

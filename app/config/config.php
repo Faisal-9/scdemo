@@ -58,11 +58,17 @@ const ADMIN_PATH = '/scadmin';
 |--------------------------------------------------------------------------
 */
 
-const DB_HOST = 'localhost';
-const DB_NAME = 'statecorps_db';
-const DB_USER = 'root';
-const DB_PASS = '';
-const DB_CHARSET = 'utf8mb4';
+function configEnv(string $name, string $fallback): string
+{
+    $value = getenv($name);
+    return $value === false ? $fallback : $value;
+}
+
+define('DB_HOST', configEnv('SC_DB_HOST', 'localhost'));
+define('DB_NAME', configEnv('SC_DB_NAME', 'statecorps_db'));
+define('DB_USER', configEnv('SC_DB_USER', 'root'));
+define('DB_PASS', configEnv('SC_DB_PASS', ''));
+define('DB_CHARSET', configEnv('SC_DB_CHARSET', 'utf8mb4'));
 
 
 /*
@@ -84,7 +90,7 @@ const SESSION_ABSOLUTE_TIMEOUT = 28800; // 8 hours
 */
 
 const LOGIN_MAX_ATTEMPTS = 20;
-const LOGIN_WINDOW_SECONDS = 9900; // 15 minutes
+const LOGIN_WINDOW_SECONDS = 900; // 15 minutes
 
 
 /*
@@ -109,7 +115,12 @@ const PASSWORD_MIN_LENGTH = 12;
 |
 */
 
-const APP_DEBUG = true;
+define(
+    'APP_DEBUG',
+    filter_var(configEnv('SC_APP_DEBUG', 'true'), FILTER_VALIDATE_BOOLEAN)
+);
+
+define('ASSET_VERSION', configEnv('SC_ASSET_VERSION', '1.0.0'));
 
 
 /*

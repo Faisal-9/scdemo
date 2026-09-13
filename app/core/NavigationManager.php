@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 final class NavigationManager
@@ -29,7 +30,7 @@ final class NavigationManager
     {
         $pdo = Database::connection();
         $data = self::validate($data, $id);
-        $userId = isset($_SESSION['user_id']) && is_numeric($_SESSION['user_id']) ? (int)$_SESSION['user_id'] : null;
+        $userId = Auth::id();
 
         if ($id !== null) {
             $stmt = $pdo->prepare(
@@ -38,8 +39,16 @@ final class NavigationManager
                  WHERE id = ?'
             );
             $stmt->execute([
-                $data['parent_id'], $data['location'], $data['label'], $data['url'], $data['target'],
-                $data['icon_class'], $data['sort_order'], $data['is_active'], $userId, $id
+                $data['parent_id'],
+                $data['location'],
+                $data['label'],
+                $data['url'],
+                $data['target'],
+                $data['icon_class'],
+                $data['sort_order'],
+                $data['is_active'],
+                $userId,
+                $id
             ]);
             $savedId = $id;
             $action = 'update';
@@ -50,8 +59,16 @@ final class NavigationManager
                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
             );
             $stmt->execute([
-                $data['parent_id'], $data['location'], $data['label'], $data['url'], $data['target'],
-                $data['icon_class'], $data['sort_order'], $data['is_active'], $userId, $userId
+                $data['parent_id'],
+                $data['location'],
+                $data['label'],
+                $data['url'],
+                $data['target'],
+                $data['icon_class'],
+                $data['sort_order'],
+                $data['is_active'],
+                $userId,
+                $userId
             ]);
             $savedId = (int)$pdo->lastInsertId();
             $action = 'create';
@@ -71,7 +88,7 @@ final class NavigationManager
             throw new RuntimeException('Navigation item not found.');
         }
         $stmt = Database::connection()->prepare('UPDATE site_navigation SET is_active = ?, updated_by = ?, updated_at = NOW() WHERE id = ?');
-        $userId = isset($_SESSION['user_id']) && is_numeric($_SESSION['user_id']) ? (int)$_SESSION['user_id'] : null;
+        $userId = Auth::id();
         $stmt->execute([(int)$row['is_active'] === 1 ? 0 : 1, $userId, $id]);
         Navigation::clearCache();
         if (class_exists('AuditLogger')) {

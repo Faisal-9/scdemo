@@ -1,13 +1,24 @@
 <?php
+require_once __DIR__ . '/../app/public_bootstrap.php';
+
 $current_page = basename($_SERVER['PHP_SELF']);
 $services_pages = ['services.php'];
 $sectors_pages  = ['sectors.php'];
 $media_pages    = ['media.php', 'news.php', 'events.php', 'gallery.php'];
 
-include_once("includes/data/aboutdata.php");
-include_once("includes/data/servicesdata.php");
-include_once("includes/data/sectorsdata.php");
-include_once("includes/data/projectsdata.php");
+$aboutSections = [];
+foreach (AboutManager::sections() as $section) {
+    if ((int)($section['is_active'] ?? 1) !== 1) {
+        continue;
+    }
+    $aboutSections[] = [
+        'id' => (string)($section['legacy_id'] ?? $section['id']),
+        'data' => ['title' => (string)$section['title']],
+    ];
+}
+$services = ServiceFrontend::all();
+$sectors = SectorFrontend::all();
+$projects = ProjectFrontend::all();
 ?>
 
 <header class="header">
@@ -60,15 +71,15 @@ include_once("includes/data/projectsdata.php");
                             <div class="top-row-social">
                                 <span class="social-divider"></span>
 
-                                <a href="https://www.facebook.com/StateCorpsInc/" class="social-link-header" target="_blank">
+                                <a href="https://www.facebook.com/StateCorpsInc/" class="social-link-header" target="_blank" rel="noopener noreferrer">
                                     <i class="fa-brands fa-facebook"></i>
                                 </a>
 
-                                <a href="https://twitter.com/StateCorps" class="social-link-header" target="_blank">
+                                <a href="https://twitter.com/StateCorps" class="social-link-header" target="_blank" rel="noopener noreferrer">
                                     <i class="fa-brands fa-x-twitter"></i>
                                 </a>
 
-                                <a href="https://www.linkedin.com/company/state-corps" class="social-link-header" target="_blank">
+                                <a href="https://www.linkedin.com/company/state-corps" class="social-link-header" target="_blank" rel="noopener noreferrer">
                                     <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>

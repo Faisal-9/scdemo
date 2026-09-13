@@ -16,22 +16,52 @@ final class ServiceFrontend
              ORDER BY sort_order ASC, id ASC'
         )->fetchAll();
 
+        if ($groups === []) {
+            return [];
+        }
+
+        $categories = $pdo->query(
+            'SELECT id, group_id, category_key, title
+             FROM service_categories
+             WHERE is_active = 1
+             ORDER BY sort_order ASC, id ASC'
+        )->fetchAll();
+        $items = $pdo->query(
+            'SELECT id, category_id, parent_id, service_key, title, image_path, short_description, why_description
+             FROM service_items
+             WHERE is_active = 1
+             ORDER BY sort_order ASC, id ASC'
+        )->fetchAll();
+        $features = $pdo->query(
+            'SELECT service_item_id, feature_text
+             FROM service_features
+             ORDER BY sort_order ASC, id ASC'
+        )->fetchAll();
+
+        $categoriesByGroup = [];
+        foreach ($categories as $category) {
+            $categoriesByGroup[(int)$category['group_id']][] = $category;
+        }
+        $itemsByCategory = [];
+        foreach ($items as $item) {
+            $itemsByCategory[(int)$item['category_id']][] = $item;
+        }
+        $featuresByItem = [];
+        foreach ($features as $feature) {
+            $featuresByItem[(int)$feature['service_item_id']][] = (string)$feature['feature_text'];
+        }
+
         $output = [];
         foreach ($groups as $group) {
-            $categories = $pdo->prepare(
-                'SELECT id, category_key, title
-                 FROM service_categories
-                 WHERE group_id = :group_id AND is_active = 1
-                 ORDER BY sort_order ASC, id ASC'
-            );
-            $categories->execute([':group_id' => (int) $group['id']]);
-
             $subServices = [];
-            foreach ($categories->fetchAll() as $category) {
+            foreach ($categoriesByGroup[(int)$group['id']] ?? [] as $category) {
                 $subServices[] = [
                     'id' => (string) ($category['category_key'] ?: $category['id']),
                     'title' => (string) $category['title'],
-                    'items' => self::buildItems($pdo, (int) $category['id']),
+                    'items' => self::buildItems(
+                        $itemsByCategory[(int)$category['id']] ?? [],
+                        $featuresByItem
+                    ),
                 ];
             }
 
@@ -46,24 +76,15 @@ final class ServiceFrontend
         return $output;
     }
 
-    private static function buildItems(PDO $pdo, int $categoryId): array
+    private static function buildItems(array $rows, array $featuresByItem): array
     {
-        $stmt = $pdo->prepare(
-            'SELECT id, parent_id, service_key, title, image_path, short_description, why_description
-             FROM service_items
-             WHERE category_id = :category_id AND is_active = 1
-             ORDER BY sort_order ASC, id ASC'
-        );
-        $stmt->execute([':category_id' => $categoryId]);
-        $rows = $stmt->fetchAll();
-
         $children = [];
         $top = [];
         foreach ($rows as $row) {
             if ($row['parent_id'] === null) {
-                $top[] = self::itemArray($pdo, $row);
+                $top[] = self::itemArray($row, $featuresByItem);
             } else {
-                $children[(int) $row['parent_id']][] = self::itemArray($pdo, $row);
+                $children[(int) $row['parent_id']][] = self::itemArray($row, $featuresByItem);
             }
         }
 
@@ -84,16 +105,8 @@ final class ServiceFrontend
         return $top;
     }
 
-    private static function itemArray(PDO $pdo, array $row): array
+    private static function itemArray(array $row, array $featuresByItem): array
     {
-        $stmt = $pdo->prepare(
-            'SELECT feature_text
-             FROM service_features
-             WHERE service_item_id = :item_id
-             ORDER BY sort_order ASC, id ASC'
-        );
-        $stmt->execute([':item_id' => (int) $row['id']]);
-
         return [
             '_db_id' => (int) $row['id'],
             'id' => (string) ($row['service_key'] ?? ''),
@@ -101,10 +114,7 @@ final class ServiceFrontend
             'image' => (string) ($row['image_path'] ?? ''),
             'short_desc' => (string) ($row['short_description'] ?? ''),
             'why' => (string) ($row['why_description'] ?? ''),
-            'features' => array_map(
-                static fn(array $feature): string => (string) $feature['feature_text'],
-                $stmt->fetchAll()
-            ),
+            'features' => $featuresByItem[(int)$row['id']] ?? [],
         ];
     }
 }
