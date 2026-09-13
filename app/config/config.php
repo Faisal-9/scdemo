@@ -84,7 +84,7 @@ const SESSION_ABSOLUTE_TIMEOUT = 28800; // 8 hours
 */
 
 const LOGIN_MAX_ATTEMPTS = 20;
-const LOGIN_WINDOW_SECONDS = 900; // 15 minutes
+const LOGIN_WINDOW_SECONDS = 9900; // 15 minutes
 
 
 /*

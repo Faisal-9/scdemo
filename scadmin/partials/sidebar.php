@@ -75,6 +75,13 @@ $navigation = [
     ],
 
     [
+        'key' => 'navigation',
+        'label' => 'Navigation',
+        'url' => adminUrl('navigation/'),
+        'permission' => 'manage_navigation',
+    ],
+
+    [
         'key' => 'settings',
         'label' => 'Settings',
         'url' => adminUrl('settings/'),

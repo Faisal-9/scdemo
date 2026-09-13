@@ -1,0 +1,4 @@
+Add these two lines to publicV6/app/bootstrap.php alongside the other core requires:
+
+require_once __DIR__ . '/core/Navigation.php';
+require_once __DIR__ . '/core/NavigationManager.php';
