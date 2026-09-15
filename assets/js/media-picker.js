@@ -80,8 +80,14 @@
     async function load(q) {
       results.innerHTML = '<div class="media-picker-loading">Searching…</div>';
       try {
+        const pickerUrl = String(
+          window.SC_MEDIA_PICKER_URL || "scadmin/assets-library/picker.php",
+        );
+        const separator = pickerUrl.includes("?") ? "&" : "?";
         const r = await fetch(
-          "../../scadmin/assets-library/picker.php?format=json&type=" +
+          pickerUrl +
+            separator +
+            "format=json&type=" +
             encodeURIComponent(type) +
             "&q=" +
             encodeURIComponent(q),

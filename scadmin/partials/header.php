@@ -5,6 +5,7 @@
 $pageTitle = $pageTitle ?? 'Admin';
 $activeNav = $activeNav ?? '';
 $user = Auth::user() ?? [];
+$assetVersion = defined('ASSET_VERSION') ? (string)constant('ASSET_VERSION') : '1.0.0';
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,9 +15,9 @@ $user = Auth::user() ?? [];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow,noarchive">
     <title><?= e($pageTitle) ?> - <?= e(APP_NAME) ?></title>
-    <link rel="stylesheet" href="<?= e(adminUrl('assets/css/admin.css')) ?>">
-    <link rel="stylesheet" href="<?= e(baseUrl('assets/css/media-picker.css')) ?>">
-    <script src="<?= e(baseUrl('assets/js/media-picker.js')) ?>" defer></script>
+    <link rel="stylesheet" href="<?= e(adminUrl('assets/css/admin.css') . '?v=' . urlencode($assetVersion)) ?>">
+    <link rel="stylesheet" href="<?= e(baseUrl('assets/css/media-picker.css') . '?v=' . urlencode($assetVersion)) ?>">
+    <script src="<?= e(baseUrl('assets/js/media-picker.js') . '?v=' . urlencode($assetVersion)) ?>" defer></script>
 </head>
 
 <body class="admin-body">
@@ -38,6 +39,7 @@ $user = Auth::user() ?? [];
 
     <script>
         window.SC_BASE_URL = <?= json_encode(rtrim(BASE_URL, '/'), JSON_UNESCAPED_SLASHES) ?>;
+        window.SC_MEDIA_PICKER_URL = <?= json_encode(adminUrl('assets-library/picker.php'), JSON_UNESCAPED_SLASHES) ?>;
     </script>
 
     <div class="admin-shell">

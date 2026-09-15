@@ -30,7 +30,7 @@ $projects = ProjectFrontend::all();
             <!-- FLOATING LOGO -->
             <div class="floating-logo">
                 <a href="index.php" class="logo">
-                    <img src="assets/images/logo.png" alt="Logo" class="logo-img">
+                    <img src="<?= e(baseUrl('assets/images/logo.png')) ?>" alt="Logo" class="logo-img">
                 </a>
             </div>
 

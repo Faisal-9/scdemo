@@ -16,11 +16,10 @@
 <!-- Lazy Load Images -->
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.6.1/dist/lazyload.min.js"></script>
 
-<!-- Navigation Script -->
-<script src="assets/js/navigation.js" defer></script>
-
-<!-- Main Custom JS -->
-<!-- When your site is fully ready for production, replace time() with a fixed version number instead: -->
-<!-- <script src="assets/js/main.js?v=2.0" defer></script> -->
-<?php $assetVersion = $assetVersion ?? (defined('ASSET_VERSION') ? (string)constant('ASSET_VERSION') : '1.0.0'); ?>
-<script src="assets/js/main.js?v=<?php echo urlencode($assetVersion) ?>" defer></script>
+<!-- Local public scripts -->
+<?php
+$assetVersion = $assetVersion ?? (defined('ASSET_VERSION') ? (string)constant('ASSET_VERSION') : '1.0.0');
+$publicBaseUrl = function_exists('baseUrl') ? baseUrl() : '';
+?>
+<script src="<?php echo htmlspecialchars($publicBaseUrl . 'assets/js/navigation.js?v=' . urlencode($assetVersion), ENT_QUOTES, 'UTF-8'); ?>" defer></script>
+<script src="<?php echo htmlspecialchars($publicBaseUrl . 'assets/js/main.js?v=' . urlencode($assetVersion), ENT_QUOTES, 'UTF-8'); ?>" defer></script>

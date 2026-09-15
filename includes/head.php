@@ -83,9 +83,11 @@ $twitter_card = (string)($seo['twitter_card'] ?: $seoFallback['twitter_card']);
     <meta name="twitter:description" content="<?php echo htmlspecialchars($og_description, ENT_QUOTES, 'UTF-8'); ?>">
     <meta name="twitter:image" content="<?php echo htmlspecialchars($og_image, ENT_QUOTES, 'UTF-8'); ?>">
 
+    <?php $publicBaseUrl = function_exists('baseUrl') ? baseUrl() : ''; ?>
+
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/favicon1.png" sizes="32x32">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" href="<?php echo htmlspecialchars($publicBaseUrl . 'assets/images/favicon1.png', ENT_QUOTES, 'UTF-8'); ?>" sizes="32x32">
+    <link rel="apple-touch-icon" href="<?php echo htmlspecialchars($publicBaseUrl . 'assets/images/apple-touch-icon.png', ENT_QUOTES, 'UTF-8'); ?>">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,12 +112,12 @@ $twitter_card = (string)($seo['twitter_card'] ?: $seoFallback['twitter_card']);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
     <!-- Local Styles -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=<?php echo urlencode($assetVersion) ?>">
-    <link rel="stylesheet" href="assets/css/navigation.css?v=<?php echo urlencode($assetVersion) ?>">
+    <link rel="stylesheet" href="<?php echo htmlspecialchars($publicBaseUrl . 'assets/css/styles.css?v=' . urlencode($assetVersion), ENT_QUOTES, 'UTF-8'); ?>">
+    <link rel="stylesheet" href="<?php echo htmlspecialchars($publicBaseUrl . 'assets/css/navigation.css?v=' . urlencode($assetVersion), ENT_QUOTES, 'UTF-8'); ?>">
     <!-- <link rel="stylesheet" href="assets/css/responsive.css?v=<?php echo time() ?>"> -->
 
     <!-- Preload Important Logo -->
-    <link rel="preload" as="image" href="assets/images/logo.png">
+    <link rel="preload" as="image" href="<?php echo htmlspecialchars($publicBaseUrl . 'assets/images/logo.png', ENT_QUOTES, 'UTF-8'); ?>">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX"></script>
