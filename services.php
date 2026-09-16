@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <?php
-$page_title = "Services - State Corps";
 include("includes/head.php");
 require_once __DIR__ . '/app/public_bootstrap.php';
 $services = ServiceFrontend::all();

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <?php
-$page_title = "About State Corps";
 include("includes/head.php");
 ?>
 

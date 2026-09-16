@@ -5,8 +5,6 @@
  * Same public markup/design/content; only the data source is now MySQL.
  * ============================================================ */
 
-$page_title = "Projects - State Corps";
-
 include("includes/head.php");
 require_once __DIR__ . '/app/public_bootstrap.php';
 

@@ -11,9 +11,14 @@ final class NotificationManager
     {
         $userId ??= Auth::id();
         if (!$userId) return 0;
-        $stmt = Database::connection()->prepare('SELECT COUNT(*) FROM admin_notifications WHERE user_id = :user_id AND is_read = 0');
-        $stmt->execute([':user_id' => $userId]);
-        return (int)$stmt->fetchColumn();
+        try {
+            $stmt = Database::connection()->prepare('SELECT COUNT(*) FROM admin_notifications WHERE user_id = :user_id AND is_read = 0');
+            $stmt->execute([':user_id' => $userId]);
+            return (int)$stmt->fetchColumn();
+        } catch (PDOException $e) {
+            error_log('Admin notifications unavailable: ' . $e->getMessage());
+            return 0;
+        }
     }
 
     public static function latest(?int $userId = null, int $limit = 50): array

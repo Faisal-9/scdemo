@@ -41,20 +41,24 @@ final class AnalyticsTracker
             $referrerHost = substr((string)(parse_url($referrer, PHP_URL_HOST) ?: ''), 0, 255);
         }
 
-        $device = self::deviceType($userAgent);
-        $stmt = Database::connection()->prepare(
-            'INSERT INTO analytics_page_views
-             (visitor_hash, page_path, page_key, page_title, referrer_host, device_type)
-             VALUES (:visitor_hash, :page_path, :page_key, :page_title, :referrer_host, :device_type)'
-        );
-        $stmt->execute([
-            ':visitor_hash' => $visitorHash,
-            ':page_path' => $path !== '' ? $path : '/',
-            ':page_key' => $pageKey !== null ? substr($pageKey, 0, 100) : null,
-            ':page_title' => $pageTitle !== '' ? substr($pageTitle, 0, 255) : null,
-            ':referrer_host' => $referrerHost !== '' ? $referrerHost : null,
-            ':device_type' => $device,
-        ]);
+        try {
+            $device = self::deviceType($userAgent);
+            $stmt = Database::connection()->prepare(
+                'INSERT INTO analytics_page_views
+                 (visitor_hash, page_path, page_key, page_title, referrer_host, device_type)
+                 VALUES (:visitor_hash, :page_path, :page_key, :page_title, :referrer_host, :device_type)'
+            );
+            $stmt->execute([
+                ':visitor_hash' => $visitorHash,
+                ':page_path' => $path !== '' ? $path : '/',
+                ':page_key' => $pageKey !== null ? substr($pageKey, 0, 100) : null,
+                ':page_title' => $pageTitle !== '' ? substr($pageTitle, 0, 255) : null,
+                ':referrer_host' => $referrerHost !== '' ? $referrerHost : null,
+                ':device_type' => $device,
+            ]);
+        } catch (PDOException $e) {
+            error_log('Analytics tracking unavailable: ' . $e->getMessage());
+        }
     }
 
     private static function deviceType(string $userAgent): string

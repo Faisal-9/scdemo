@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-$page_title = "Contact Us - State Corps";
+require_once __DIR__ . '/app/public_bootstrap.php';
 include("includes/head.php");
 ?>
 
