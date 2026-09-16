@@ -36,7 +36,7 @@ $footerSocialLinks = [
 
                 <ul>
                     <?php foreach ($footerServiceLinks as $link): ?>
-                        <li><a href="<?php echo e($link['url']); ?>"><?php echo e($link['label']); ?></a></li>
+                        <li><a href="<?php echo e($link['url']); ?>"<?php echo ($link['target'] ?? '_self') === '_blank' ? ' target="_blank" rel="noopener noreferrer"' : ''; ?>><?php echo e($link['label']); ?></a></li>
                     <?php endforeach; ?>
                 </ul>
 
@@ -50,7 +50,7 @@ $footerSocialLinks = [
                 <ul>
 
                     <?php foreach ($footerCompanyLinks as $link): ?>
-                        <li><a href="<?php echo e($link['url']); ?>"><?php echo e($link['label']); ?></a></li>
+                        <li><a href="<?php echo e($link['url']); ?>"<?php echo ($link['target'] ?? '_self') === '_blank' ? ' target="_blank" rel="noopener noreferrer"' : ''; ?>><?php echo e($link['label']); ?></a></li>
                     <?php endforeach; ?>
 
                 </ul>
@@ -103,7 +103,7 @@ $footerSocialLinks = [
             <div class="footer-policy">
 
                 <?php foreach ($footerPolicyLinks as $link): ?>
-                    <a href="<?php echo e($link['url']); ?>"><?php echo e($link['label']); ?></a>
+                    <a href="<?php echo e($link['url']); ?>"<?php echo ($link['target'] ?? '_self') === '_blank' ? ' target="_blank" rel="noopener noreferrer"' : ''; ?>><?php echo e($link['label']); ?></a>
                 <?php endforeach; ?>
 
             </div>

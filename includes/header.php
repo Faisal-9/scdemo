@@ -1,249 +1,120 @@
 <?php
 require_once __DIR__ . '/../app/public_bootstrap.php';
 
-$current_page = basename($_SERVER['PHP_SELF']);
-$services_pages = ['services.php'];
-$sectors_pages  = ['sectors.php'];
-$media_pages    = ['media.php', 'news.php', 'events.php', 'gallery.php'];
-
-$aboutSections = [];
-foreach (AboutManager::sections() as $section) {
-    if ((int)($section['is_active'] ?? 1) !== 1) {
-        continue;
-    }
-    $aboutSections[] = [
-        'id' => (string)($section['legacy_id'] ?? $section['id']),
-        'data' => ['title' => (string)$section['title']],
-    ];
-}
-$services = ServiceFrontend::all();
-$sectors = SectorFrontend::all();
-$projects = ProjectFrontend::all();
-$opportunitiesLabel = (string)SiteSettings::get('header_opportunities_label', '');
-$contactLabel = (string)SiteSettings::get('header_contact_label', '');
-$siteLogo = (string)SiteSettings::get('site_logo', '');
-$navLabels = [
-    'home' => (string)SiteSettings::get('nav_home_label', ''),
-    'about' => (string)SiteSettings::get('nav_about_label', ''),
-    'services' => (string)SiteSettings::get('nav_services_label', ''),
-    'expertise' => (string)SiteSettings::get('nav_expertise_label', ''),
-    'projects' => (string)SiteSettings::get('nav_projects_label', ''),
-    'media' => (string)SiteSettings::get('nav_media_label', ''),
-];
-$socialLinks = [
+$currentPage = basename((string)($_SERVER['PHP_SELF'] ?? ''));
+$headerNavigation = Navigation::all('header');
+$headerTop = array_values(array_filter(
+    $headerNavigation,
+    static fn(array $item): bool => $item['parent_id'] === null && (int)$item['sort_order'] < 100
+));
+$headerMain = array_values(array_filter(
+    $headerNavigation,
+    static fn(array $item): bool => $item['parent_id'] === null && (int)$item['sort_order'] >= 100
+));
+$headerSocialLinks = [
     ['url' => (string)SiteSettings::get('social_facebook_url', ''), 'icon' => 'fa-facebook'],
     ['url' => (string)SiteSettings::get('social_x_url', ''), 'icon' => 'fa-x-twitter'],
     ['url' => (string)SiteSettings::get('social_linkedin_url', ''), 'icon' => 'fa-linkedin-in'],
 ];
+$headerColor = static function (string $key, string $fallback): string {
+    $value = (string)SiteSettings::get($key, $fallback);
+    return preg_match('/^#[0-9a-fA-F]{6}$/', $value) ? $value : $fallback;
+};
+$headerStyle = sprintf(
+    '--header-top-bg:%s;--header-top-text:%s;--header-bottom-bg:%s;--header-bottom-text:%s;--header-hover:%s;',
+    $headerColor('header_top_background_color', '#ffffff'),
+    $headerColor('header_top_text_color', '#18202a'),
+    $headerColor('header_bottom_background_color', '#0c1c3d'),
+    $headerColor('header_bottom_text_color', '#ffffff'),
+    $headerColor('header_hover_color', '#d4af37')
+);
+
+$navigationIsActive = static function (array $item) use ($currentPage): bool {
+    return basename((string)parse_url((string)$item['url'], PHP_URL_PATH)) === $currentPage;
+};
+
+$renderNavigationItem = null;
+$renderNavigationItem = static function (array $item, string $itemClass = 'nav-item') use (&$renderNavigationItem, $navigationIsActive): void {
+    $children = is_array($item['children'] ?? null) ? $item['children'] : [];
+    $hasChildren = $children !== [];
+    $active = $navigationIsActive($item) ? ' active' : '';
+    $dropdown = $hasChildren ? ' dropdown' : '';
+    $target = (string)($item['target'] ?? '_self');
+    $linkClass = $itemClass === 'nav-item-child' ? 'dropdown-link' : 'nav-link';
+    if ($hasChildren) {
+        $linkClass .= ' has-dropdown';
+    }
+    ?>
+    <li class="<?= e($itemClass . $dropdown . $active) ?>">
+        <a href="<?= e((string)$item['url']) ?>" class="<?= e($linkClass) ?>"<?= $target === '_blank' ? ' target="_blank" rel="noopener noreferrer"' : '' ?>>
+            <span class="nav-text"><?= e((string)$item['label']) ?></span>
+            <?php if ($hasChildren): ?><span class="dropdown-arrow">▼</span><?php endif; ?>
+        </a>
+        <?php if ($hasChildren): ?>
+            <div class="dropdown-menu">
+                <ul class="dropdown-list">
+                    <?php foreach ($children as $child): ?>
+                        <?php $renderNavigationItem($child, 'nav-item-child'); ?>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+    </li>
+    <?php
+};
 ?>
 
-<header class="header">
+<header class="header" style="<?= e($headerStyle) ?>">
     <div class="header-inner">
-
-        <!-- <div class="container"> -->
         <div class="main-navigation">
-
-            <!-- FLOATING LOGO -->
             <div class="floating-logo">
-                <a href="index.php" class="logo">
-                    <img src="<?= e(baseUrl($siteLogo)) ?>" alt="<?= e((string)SiteSettings::get('site_name', '')) ?>" class="logo-img">
+                <a href="<?= e(baseUrl('index.php')) ?>" class="logo">
+                    <img src="<?= e(baseUrl((string)SiteSettings::get('site_logo', ''))) ?>" alt="<?= e((string)SiteSettings::get('site_name', '')) ?>" class="logo-img">
                 </a>
             </div>
 
-            <!-- MOBILE MENU BUTTON -->
             <div class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
 
             <div class="nav-rows">
-
-                <!-- ================= TOP ROW ================= -->
                 <div class="nav-row nav-row-top">
                     <div class="container">
                         <div class="nav-row-inner">
-
                             <nav class="nav-menu nav-menu-top">
                                 <ul class="nav-list nav-list-top">
-
-                                    <li class="nav-item-top <?php echo ($current_page == 'opportunities.php') ? 'active' : '' ?>">
-                                        <a href="opportunities.php"
-                                            class="nav-link-top <?php echo ($current_page == 'opportunities.php') ? 'active' : '' ?>">
-                                            <?php echo e($opportunitiesLabel); ?>
-                                        </a>
-                                    </li>
-
-                                    <li class="nav-item-top <?php echo ($current_page == 'contact.php') ? 'active' : '' ?>">
-                                        <a href="contact.php"
-                                            class="nav-link-top <?php echo ($current_page == 'contact.php') ? 'active' : '' ?>">
-                                            <?php echo e($contactLabel); ?>
-                                        </a>
-                                    </li>
-
+                                    <?php foreach ($headerTop as $item): ?>
+                                        <?php $renderNavigationItem($item, 'nav-item-top'); ?>
+                                    <?php endforeach; ?>
                                 </ul>
                             </nav>
-
                             <div class="top-row-social">
                                 <span class="social-divider"></span>
-
-                                <?php foreach ($socialLinks as $social): ?>
+                                <?php foreach ($headerSocialLinks as $social): ?>
                                     <?php if ($social['url'] === '') continue; ?>
-                                    <a href="<?php echo e($social['url']); ?>" class="social-link-header" target="_blank" rel="noopener noreferrer">
-                                        <i class="fa-brands <?php echo e($social['icon']); ?>"></i>
+                                    <a href="<?= e($social['url']) ?>" class="social-link-header" target="_blank" rel="noopener noreferrer">
+                                        <i class="fa-brands <?= e($social['icon']) ?>"></i>
                                     </a>
                                 <?php endforeach; ?>
                             </div>
-
                         </div>
                     </div>
                 </div>
 
-                <!-- ================= BOTTOM ROW ================= -->
                 <div class="nav-row nav-row-bottom">
                     <div class="container">
                         <div class="nav-row-inner">
-
                             <nav class="nav-menu nav-menu-bottom">
                                 <ul class="nav-list nav-list-bottom">
-
-                                    <!-- HOME -->
-                                    <li class="nav-item <?php echo ($current_page == 'index.php' || $current_page == '') ? 'active' : '' ?>">
-                                        <a href="index.php" class="nav-link">
-                                            <span class="nav-text"><?= e($navLabels['home']) ?></span>
-                                        </a>
-                                    </li>
-
-                                    <!-- ABOUT -->
-                                    <li class="nav-item dropdown <?php echo ($current_page == 'about.php') ? 'active' : '' ?>">
-                                        <a href="about.php" class="nav-link has-dropdown">
-                                            <span class="nav-text"><?= e($navLabels['about']) ?></span>
-                                            <span class="dropdown-arrow">▼</span>
-                                        </a>
-
-                                        <div class="dropdown-menu">
-                                            <ul class="dropdown-list">
-                                                <?php foreach ($aboutSections as $section): ?>
-                                                    <li>
-                                                        <a href="about.php#<?php echo $section['id']; ?>" class="dropdown-link">
-                                                            <?php echo htmlspecialchars($section['data']['title']); ?>
-                                                        </a>
-                                                    </li>
-                                                <?php endforeach; ?>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <!-- SERVICES -->
-                                    <li class="nav-item dropdown <?php echo in_array($current_page, $services_pages) ? 'active' : '' ?>">
-                                        <a href="services.php" class="nav-link has-dropdown">
-                                            <span class="nav-text"><?= e($navLabels['services']) ?></span>
-                                            <span class="dropdown-arrow">▼</span>
-                                        </a>
-
-                                        <div class="dropdown-menu mega-menu">
-                                            <div class="mega-menu-content">
-                                                <?php foreach ($services as $serviceKey => $service): ?>
-                                                    <?php if (!isset($service['title'])) continue; ?>
-                                                    <div class="mega-column">
-                                                        <h4 class="mega-title">
-                                                            <a href="services.php?tab=<?php echo urlencode($serviceKey) ?>" class="mega-title-link">
-                                                                <?php echo htmlspecialchars($service['title']) ?>
-                                                            </a>
-                                                        </h4>
-
-                                                        <ul class="dropdown-list">
-                                                            <?php foreach ((isset($service['sub_services']) ? $service['sub_services'] : []) as $sub): ?>
-                                                                <li>
-                                                                    <a href="services.php?tab=<?php echo urlencode($serviceKey) ?>#<?php echo htmlspecialchars($serviceKey . '-' . $sub['id']) ?>" class="dropdown-link">
-                                                                        <?php echo htmlspecialchars($sub['title']) ?>
-                                                                    </a>
-                                                                </li>
-                                                            <?php endforeach; ?>
-                                                        </ul>
-                                                    </div>
-                                                <?php endforeach; ?>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <!-- EXPERTISE -->
-                                    <li class="nav-item dropdown <?php echo in_array($current_page, $sectors_pages) ? 'active' : '' ?>">
-                                        <a href="sectors.php" class="nav-link has-dropdown">
-                                            <span class="nav-text"><?= e($navLabels['expertise']) ?></span>
-                                            <span class="dropdown-arrow">▼</span>
-                                        </a>
-
-                                        <div class="dropdown-menu">
-                                            <ul class="dropdown-list">
-                                                <?php foreach ($sectors as $sectorKey => $sector): ?>
-                                                    <li>
-                                                        <a href="sectors.php?tab=<?php echo $sectorKey ?>" class="dropdown-link">
-                                                            <?php echo htmlspecialchars($sector['title']); ?>
-                                                        </a>
-                                                    </li>
-                                                <?php endforeach; ?>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <!-- PROJECTS -->
-                                    <li class="nav-item dropdown <?php echo ($current_page == 'projects.php') ? 'active' : '' ?>">
-                                        <a href="projects.php" class="nav-link has-dropdown">
-                                            <span class="nav-text"><?= e($navLabels['projects']) ?></span>
-                                            <span class="dropdown-arrow">▼</span>
-                                        </a>
-
-                                        <div class="dropdown-menu">
-                                            <ul class="dropdown-list">
-                                                <li>
-                                                    <a href="projects.php" class="dropdown-link">All Projects</a>
-                                                </li>
-                                                <?php
-                                                // Get unique sectors from projects
-                                                $projectSectors = array_unique(array_column($projects, 'sector'));
-                                                foreach ($projectSectors as $sectorName): ?>
-                                                    <li>
-                                                        <a href="projects.php?sector=<?php echo urlencode($sectorName) ?>" class="dropdown-link">
-                                                            <?php echo htmlspecialchars(ucfirst($sectorName)) ?>
-                                                        </a>
-                                                    </li>
-                                                <?php endforeach; ?>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <!-- MEDIA -->
-                                    <li class="nav-item dropdown <?php echo in_array($current_page, $media_pages) ? 'active' : '' ?>">
-                                        <a href="media.php" class="nav-link has-dropdown">
-                                            <span class="nav-text"><?= e($navLabels['media']) ?></span>
-                                            <span class="dropdown-arrow">▼</span>
-                                        </a>
-
-                                        <div class="dropdown-menu">
-                                            <ul class="dropdown-list">
-                                                <li>
-                                                    <a href="media.php?tab=news" class="dropdown-link">News</a>
-                                                </li>
-                                                <li>
-                                                    <a href="media.php?tab=events" class="dropdown-link">Events</a>
-                                                </li>
-                                                <li>
-                                                    <a href="media.php?tab=gallery" class="dropdown-link">Gallery</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
+                                    <?php foreach ($headerMain as $item): ?>
+                                        <?php $renderNavigationItem($item); ?>
+                                    <?php endforeach; ?>
                                 </ul>
                             </nav>
-
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 </header>

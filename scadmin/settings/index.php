@@ -5,6 +5,10 @@ Auth::requirePermission('manage_settings');
 
 $rows = SiteSettingsManager::rows();
 $pageTitle = 'Site Settings';
+$heading = $pageTitle;
+$description = 'Manage global identity, social links, navigation labels, and public header appearance.';
+$actionUrl = null;
+$actionLabel = null;
 require __DIR__ . '/../partials/header.php';
 require __DIR__ . '/../partials/sidebar.php';
 ?>

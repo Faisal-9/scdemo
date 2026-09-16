@@ -51,6 +51,10 @@ final class SiteSettingsManager
     private static function validate(array $row, string $value): void
     {
         $type = (string)$row['setting_type'];
+        $key = (string)$row['setting_key'];
+        if (str_ends_with($key, '_color') && !preg_match('/^#[0-9a-fA-F]{6}$/', $value)) {
+            throw new InvalidArgumentException('Color values must use six-digit hex format, for example #0c1c3d.');
+        }
         if ($type === 'email' && $value !== '' && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
             throw new InvalidArgumentException('Please enter a valid email address.');
         }

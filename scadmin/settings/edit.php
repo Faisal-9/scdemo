@@ -30,6 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $pageTitle = 'Edit Setting';
+$heading = $pageTitle;
+$description = (string)($row['description'] ?? 'Update the selected global site setting.');
+$actionUrl = null;
+$actionLabel = null;
 require __DIR__ . '/../partials/header.php';
 require __DIR__ . '/../partials/sidebar.php';
 ?>
@@ -42,7 +46,7 @@ require __DIR__ . '/../partials/sidebar.php';
       <div class="form-group"><label>Setting Key</label><input class="form-control" value="<?= e($row['setting_key']) ?>" disabled></div>
       <div class="form-group"><label>Type</label><input class="form-control" value="<?= e($row['setting_type']) ?>" disabled></div>
       <?php $type = (string)$row['setting_type'];
-      $inputType = match ($type) {
+      $inputType = str_ends_with((string)$row['setting_key'], '_color') ? 'color' : match ($type) {
         'email' => 'email',
         'url' => 'url',
         'phone' => 'tel',
