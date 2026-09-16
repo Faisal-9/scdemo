@@ -1,6 +1,15 @@
 <?php
 require_once __DIR__ . '/../app/public_bootstrap.php';
 $footerContact = ContactFrontend::data()['head_office'];
+$footerNavigation = Navigation::all('footer');
+$footerServiceLinks = array_values(array_filter($footerNavigation, static fn(array $item): bool => (int)($item['sort_order'] ?? 0) < 100));
+$footerCompanyLinks = array_values(array_filter($footerNavigation, static fn(array $item): bool => (int)($item['sort_order'] ?? 0) >= 100 && (int)($item['sort_order'] ?? 0) < 200));
+$footerPolicyLinks = array_values(array_filter($footerNavigation, static fn(array $item): bool => (int)($item['sort_order'] ?? 0) >= 200));
+$footerSocialLinks = [
+    ['url' => (string)SiteSettings::get('social_linkedin_url', ''), 'icon' => 'fa-linkedin-in'],
+    ['url' => (string)SiteSettings::get('social_facebook_url', ''), 'icon' => 'fa-facebook-f'],
+    ['url' => (string)SiteSettings::get('social_x_url', ''), 'icon' => 'fa-x-twitter'],
+];
 ?>
 <footer class="site-footer">
 
@@ -12,12 +21,10 @@ $footerContact = ContactFrontend::data()['head_office'];
             <!-- COMPANY -->
             <div class="footer-col footer-company">
 
-                <h2 class="footer-name">State Corps</h2>
+                <h2 class="footer-name"><?php echo e((string)SiteSettings::get('site_name', '')); ?></h2>
 
                 <div class="footer-statement">
-                    Building Infrastructure.
-                    Empowering Communities.
-                    Driving Sustainable Growth.
+                    <?php echo nl2br(e((string)SiteSettings::get('footer_statement', ''))); ?>
                 </div>
 
             </div>
@@ -25,38 +32,12 @@ $footerContact = ContactFrontend::data()['head_office'];
             <!-- SERVICES -->
             <div class="footer-col">
 
-                <h4>Services</h4>
+                <h4><?php echo e((string)SiteSettings::get('footer_services_label', '')); ?></h4>
 
                 <ul>
-                    <li>
-                        <a href="services.php?tab=engineeringanddesign#engineeringanddesign-engineering-services">
-                            Engineering Services
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="services.php?tab=engineeringanddesign#engineeringanddesign-design-services">
-                            Design Services
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="services.php?tab=mining">
-                            Mining Services
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="services.php?tab=implementation#implementation-project-management">
-                            Project Management
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="services.php?tab=implementation">
-                            EPC Solutions
-                        </a>
-                    </li>
+                    <?php foreach ($footerServiceLinks as $link): ?>
+                        <li><a href="<?php echo e($link['url']); ?>"><?php echo e($link['label']); ?></a></li>
+                    <?php endforeach; ?>
                 </ul>
 
             </div>
@@ -64,39 +45,13 @@ $footerContact = ContactFrontend::data()['head_office'];
             <!-- COMPANY -->
             <div class="footer-col">
 
-                <h4>Company</h4>
+                <h4><?php echo e((string)SiteSettings::get('footer_company_label', '')); ?></h4>
 
                 <ul>
 
-                    <li>
-                        <a href="about.php#general-info">
-                            Company Overview
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="about.php#mission-vision">
-                            Mission & Vision
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="projects.php">
-                            Projects
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="about.php#cprofile">
-                            Company Profile
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="contact.php">
-                            Contact Us
-                        </a>
-                    </li>
+                    <?php foreach ($footerCompanyLinks as $link): ?>
+                        <li><a href="<?php echo e($link['url']); ?>"><?php echo e($link['label']); ?></a></li>
+                    <?php endforeach; ?>
 
                 </ul>
 
@@ -105,7 +60,7 @@ $footerContact = ContactFrontend::data()['head_office'];
             <!-- CONTACT -->
             <div class="footer-col">
 
-                <h4>Contact</h4>
+                <h4><?php echo e((string)SiteSettings::get('footer_contact_label', '')); ?></h4>
 
                 <ul class="footer-contact">
 
@@ -125,17 +80,12 @@ $footerContact = ContactFrontend::data()['head_office'];
 
                 <div class="footer-social">
 
-                    <a href="https://www.linkedin.com/company/state-corps/" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-
-                    <a href="https://x.com/StateCorps" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
+                    <?php foreach ($footerSocialLinks as $social): ?>
+                        <?php if ($social['url'] === '') continue; ?>
+                        <a href="<?php echo e($social['url']); ?>" target="_blank" rel="noopener noreferrer">
+                            <i class="fab <?php echo e($social['icon']); ?>"></i>
+                        </a>
+                    <?php endforeach; ?>
 
                 </div>
 
@@ -147,18 +97,14 @@ $footerContact = ContactFrontend::data()['head_office'];
         <div class="footer-bottom">
 
             <div class="footer-copyright">
-                © 2026 State Corps. All Rights Reserved.
+                &copy; <?php echo date('Y'); ?> <?php echo e((string)SiteSettings::get('footer_copyright', '')); ?>. All Rights Reserved.
             </div>
 
             <div class="footer-policy">
 
-                <a href="policies.php">
-                    Policies
-                </a>
-
-                <a href="termsOfServices.php">
-                    Terms of Service
-                </a>
+                <?php foreach ($footerPolicyLinks as $link): ?>
+                    <a href="<?php echo e($link['url']); ?>"><?php echo e($link['label']); ?></a>
+                <?php endforeach; ?>
 
             </div>
 

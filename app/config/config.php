@@ -8,13 +8,13 @@ declare(strict_types=1);
 |--------------------------------------------------------------------------
 |
 | Local XAMPP:
-|   C:\xampp\htdocs\publicV6\
+|   C:\xampp\htdocs\scdemo\
 |
 | Public website:
-|   http://localhost/publicV6/
+|   http://localhost/scdemo/
 |
 | CMS:
-|   http://localhost/publicV6/scadmin/
+|   http://localhost/scdemo/scadmin/
 |
 | Production later:
 |   https://statecorps.com/
@@ -30,17 +30,17 @@ const APP_NAME = 'State Corps CMS';
 | Application URL
 |--------------------------------------------------------------------------
 |
-| Because publicV6 is directly inside htdocs, the base URL is:
+| Because scdemo is directly inside htdocs, the base URL is:
 |
-|   /publicV6
+|   /scdemo
 |
-| On production, when publicV6 itself becomes public_html:
+| On production, when the project is served from the web root:
 |
 |   ''
 |
 */
 
-const BASE_URL = '/publicV6';
+const BASE_URL = '/scdemo';
 
 
 /*

@@ -5,10 +5,10 @@ require_once __DIR__ . '/../app/public_bootstrap.php';
 $assetVersion = defined('ASSET_VERSION') ? (string)constant('ASSET_VERSION') : '1.0.0';
 
 if (!isset($page_title))
-    $page_title = "State Corps";
+    $page_title = (string)SiteSettings::get('site_name', '');
 
 if (!isset($page_description))
-    $page_description = "Leading infrastructure company delivering 100+ projects valued at $600M+ for government and international partners since 2007";
+    $page_description = (string)SiteSettings::get('site_description', '');
 
 $seoPageKeys = [
     'index.php' => 'home',
@@ -25,12 +25,12 @@ $seoPageKeys = [
 $seoFallback = [
     'title' => $page_title,
     'description' => $page_description,
-    'keywords' => 'State Corps Engineering, statecorps, infrastructure, engineering, construction',
+    'keywords' => (string)SiteSettings::get('site_keywords', ''),
     'canonical_url' => '',
     'robots' => 'index,follow',
     'og_title' => $page_title,
     'og_description' => $page_description,
-    'og_image' => 'assets/images/logo.png',
+    'og_image' => (string)SiteSettings::get('site_logo', ''),
     'twitter_card' => 'summary_large_image',
 ];
 $seo = $seoFallback;
@@ -64,7 +64,7 @@ $twitter_card = (string)($seo['twitter_card'] ?: $seoFallback['twitter_card']);
     <!-- SEO -->
     <meta name="description" content="<?php echo htmlspecialchars($page_description, ENT_QUOTES, 'UTF-8'); ?>">
     <meta name="keywords" content="<?php echo htmlspecialchars($page_keywords, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta name="author" content="State Corps Engineering">
+    <meta name="author" content="<?php echo htmlspecialchars((string)SiteSettings::get('site_author', ''), ENT_QUOTES, 'UTF-8'); ?>">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -117,7 +117,7 @@ $twitter_card = (string)($seo['twitter_card'] ?: $seoFallback['twitter_card']);
     <!-- <link rel="stylesheet" href="assets/css/responsive.css?v=<?php echo time() ?>"> -->
 
     <!-- Preload Important Logo -->
-    <link rel="preload" as="image" href="<?php echo htmlspecialchars($publicBaseUrl . 'assets/images/logo.png', ENT_QUOTES, 'UTF-8'); ?>">
+    <link rel="preload" as="image" href="<?php echo htmlspecialchars($publicBaseUrl . (string)SiteSettings::get('site_logo', ''), ENT_QUOTES, 'UTF-8'); ?>">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX"></script>

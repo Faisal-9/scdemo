@@ -1,0 +1,239 @@
+/* ================= RESPONSIVE ================= */
+
+/* =========================
+   POLICY PAGE
+========================= */
+
+.policy-sidebar {
+  background: #f5f7fb;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.policy-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.policy-sidebar li {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+
+.policy-sidebar li:hover {
+  background: rgba(10, 42, 102, 0.08);
+}
+
+.policy-sidebar li.active {
+  background: #0a2a66;
+  color: #fff;
+  /* font-weight: 500; */
+}
+
+/* CONTENT */
+
+.policy-content {
+  display: none;
+}
+
+.policy-content.active {
+  display: block;
+}
+
+.policy-content h2 {
+  /* font-size: 24px;
+  font-weight: 700; */
+  margin-bottom: 10px;
+  color: #0a2a66;
+}
+
+.policy-content h3 {
+  margin-top: 15px;
+  /* font-size: 20px;
+  font-weight: 600; */
+  color: #222;
+}
+
+.policy-content i {
+  color: #0c1c3d;
+}
+
+.policy-content p,
+.policy-content li {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* MOBILE */
+
+/* ================= FOOTER BASE ================= */
+.site-footer {
+  background: #0c1c3d;
+  color: #fff;
+  padding: 10px 0 0;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1.2fr;
+  gap: 30px;
+  padding-bottom: 10px;
+}
+
+.footer-name {
+  /* font-weight: 700;
+  font-size: 32px; */
+  margin-bottom: 20px;
+}
+
+.footer-statement {
+  /* font-weight: 600; */
+  color: #fff;
+  border-left: 4px solid #d4af37;
+  padding-left: 10px;
+  line-height: 1.8;
+}
+
+.footer-col h4 {
+  position: relative;
+  color: #fff;
+  margin-bottom: 10px;
+  /* font-size: 18px;
+  font-weight: 700; */
+  padding-bottom: 5px;
+}
+
+.footer-col h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: #d4af37;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col a:hover {
+  color: #d4af37;
+  padding-left: 4px;
+}
+
+.footer-contact li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+}
+
+.footer-contact i {
+  color: #d4af37;
+  /* margin-top: 5px; */
+}
+
+.footer-social {
+  margin-top: 5px;
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social a {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.footer-social a:hover {
+  background: #d4af37;
+  border-color: #d4af37;
+  color: #071d4a;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 13px;
+}
+
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-policy {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-policy a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+.footer-policy a:hover {
+  color: #d4af37;
+}
+
+/* ================= CONTACT ================= */
+.contact {
+  background: #fff;
+}
+
+.contact .contactheading {
+  color: white;
+}
+
+.contact .text {
+  color: white;
+}
+
+.contact .contactcontainer {
+  background: #0c1c3d !important;
+  position: relative;
+  z-index: 2;
+}
+
+.office-card {
+  transition: 0.3s;
+}
+
+.office-card:hover {
+  transform: translateY(-5px);
+}
+
+/* =================================================================
+   MOBILE FONT-SIZE VARIABLES — applied globally for small screens
+   Breakpoint: max-width 768px  (your existing mobile breakpoint)
+   Uses only the variables already defined in :root above.
+   No other rules were changed.
+================================================================= */
+

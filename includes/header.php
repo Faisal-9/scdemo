@@ -19,6 +19,22 @@ foreach (AboutManager::sections() as $section) {
 $services = ServiceFrontend::all();
 $sectors = SectorFrontend::all();
 $projects = ProjectFrontend::all();
+$opportunitiesLabel = (string)SiteSettings::get('header_opportunities_label', '');
+$contactLabel = (string)SiteSettings::get('header_contact_label', '');
+$siteLogo = (string)SiteSettings::get('site_logo', '');
+$navLabels = [
+    'home' => (string)SiteSettings::get('nav_home_label', ''),
+    'about' => (string)SiteSettings::get('nav_about_label', ''),
+    'services' => (string)SiteSettings::get('nav_services_label', ''),
+    'expertise' => (string)SiteSettings::get('nav_expertise_label', ''),
+    'projects' => (string)SiteSettings::get('nav_projects_label', ''),
+    'media' => (string)SiteSettings::get('nav_media_label', ''),
+];
+$socialLinks = [
+    ['url' => (string)SiteSettings::get('social_facebook_url', ''), 'icon' => 'fa-facebook'],
+    ['url' => (string)SiteSettings::get('social_x_url', ''), 'icon' => 'fa-x-twitter'],
+    ['url' => (string)SiteSettings::get('social_linkedin_url', ''), 'icon' => 'fa-linkedin-in'],
+];
 ?>
 
 <header class="header">
@@ -30,7 +46,7 @@ $projects = ProjectFrontend::all();
             <!-- FLOATING LOGO -->
             <div class="floating-logo">
                 <a href="index.php" class="logo">
-                    <img src="<?= e(baseUrl('assets/images/logo.png')) ?>" alt="Logo" class="logo-img">
+                    <img src="<?= e(baseUrl($siteLogo)) ?>" alt="<?= e((string)SiteSettings::get('site_name', '')) ?>" class="logo-img">
                 </a>
             </div>
 
@@ -54,14 +70,14 @@ $projects = ProjectFrontend::all();
                                     <li class="nav-item-top <?php echo ($current_page == 'opportunities.php') ? 'active' : '' ?>">
                                         <a href="opportunities.php"
                                             class="nav-link-top <?php echo ($current_page == 'opportunities.php') ? 'active' : '' ?>">
-                                            Opportunities
+                                            <?php echo e($opportunitiesLabel); ?>
                                         </a>
                                     </li>
 
                                     <li class="nav-item-top <?php echo ($current_page == 'contact.php') ? 'active' : '' ?>">
                                         <a href="contact.php"
                                             class="nav-link-top <?php echo ($current_page == 'contact.php') ? 'active' : '' ?>">
-                                            Contact Us
+                                            <?php echo e($contactLabel); ?>
                                         </a>
                                     </li>
 
@@ -71,17 +87,12 @@ $projects = ProjectFrontend::all();
                             <div class="top-row-social">
                                 <span class="social-divider"></span>
 
-                                <a href="https://www.facebook.com/StateCorpsInc/" class="social-link-header" target="_blank" rel="noopener noreferrer">
-                                    <i class="fa-brands fa-facebook"></i>
-                                </a>
-
-                                <a href="https://twitter.com/StateCorps" class="social-link-header" target="_blank" rel="noopener noreferrer">
-                                    <i class="fa-brands fa-x-twitter"></i>
-                                </a>
-
-                                <a href="https://www.linkedin.com/company/state-corps" class="social-link-header" target="_blank" rel="noopener noreferrer">
-                                    <i class="fa-brands fa-linkedin-in"></i>
-                                </a>
+                                <?php foreach ($socialLinks as $social): ?>
+                                    <?php if ($social['url'] === '') continue; ?>
+                                    <a href="<?php echo e($social['url']); ?>" class="social-link-header" target="_blank" rel="noopener noreferrer">
+                                        <i class="fa-brands <?php echo e($social['icon']); ?>"></i>
+                                    </a>
+                                <?php endforeach; ?>
                             </div>
 
                         </div>
@@ -99,14 +110,14 @@ $projects = ProjectFrontend::all();
                                     <!-- HOME -->
                                     <li class="nav-item <?php echo ($current_page == 'index.php' || $current_page == '') ? 'active' : '' ?>">
                                         <a href="index.php" class="nav-link">
-                                            <span class="nav-text">Home</span>
+                                            <span class="nav-text"><?= e($navLabels['home']) ?></span>
                                         </a>
                                     </li>
 
                                     <!-- ABOUT -->
                                     <li class="nav-item dropdown <?php echo ($current_page == 'about.php') ? 'active' : '' ?>">
                                         <a href="about.php" class="nav-link has-dropdown">
-                                            <span class="nav-text">About</span>
+                                            <span class="nav-text"><?= e($navLabels['about']) ?></span>
                                             <span class="dropdown-arrow">▼</span>
                                         </a>
 
@@ -126,7 +137,7 @@ $projects = ProjectFrontend::all();
                                     <!-- SERVICES -->
                                     <li class="nav-item dropdown <?php echo in_array($current_page, $services_pages) ? 'active' : '' ?>">
                                         <a href="services.php" class="nav-link has-dropdown">
-                                            <span class="nav-text">Services</span>
+                                            <span class="nav-text"><?= e($navLabels['services']) ?></span>
                                             <span class="dropdown-arrow">▼</span>
                                         </a>
 
@@ -159,7 +170,7 @@ $projects = ProjectFrontend::all();
                                     <!-- EXPERTISE -->
                                     <li class="nav-item dropdown <?php echo in_array($current_page, $sectors_pages) ? 'active' : '' ?>">
                                         <a href="sectors.php" class="nav-link has-dropdown">
-                                            <span class="nav-text">Expertise</span>
+                                            <span class="nav-text"><?= e($navLabels['expertise']) ?></span>
                                             <span class="dropdown-arrow">▼</span>
                                         </a>
 
@@ -179,7 +190,7 @@ $projects = ProjectFrontend::all();
                                     <!-- PROJECTS -->
                                     <li class="nav-item dropdown <?php echo ($current_page == 'projects.php') ? 'active' : '' ?>">
                                         <a href="projects.php" class="nav-link has-dropdown">
-                                            <span class="nav-text">Projects</span>
+                                            <span class="nav-text"><?= e($navLabels['projects']) ?></span>
                                             <span class="dropdown-arrow">▼</span>
                                         </a>
 
@@ -205,7 +216,7 @@ $projects = ProjectFrontend::all();
                                     <!-- MEDIA -->
                                     <li class="nav-item dropdown <?php echo in_array($current_page, $media_pages) ? 'active' : '' ?>">
                                         <a href="media.php" class="nav-link has-dropdown">
-                                            <span class="nav-text">Media</span>
+                                            <span class="nav-text"><?= e($navLabels['media']) ?></span>
                                             <span class="dropdown-arrow">▼</span>
                                         </a>
 

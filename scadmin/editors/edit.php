@@ -69,7 +69,6 @@ if (isPost()) {
     $editor['status'] = $status;
     $selectedPermissions = array_values(array_unique(array_map('intval', $permissionIds)));
 }
-?>
 
 $pageTitle = 'Edit Editor';
 $activeNav = 'editors';

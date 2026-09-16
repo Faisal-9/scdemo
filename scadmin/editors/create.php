@@ -53,7 +53,6 @@ if (isPost()) {
         }
     }
 }
-?>
 
 $pageTitle = 'Create Editor';
 $activeNav = 'editors';

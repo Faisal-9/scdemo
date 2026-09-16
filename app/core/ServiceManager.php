@@ -76,6 +76,17 @@ final class ServiceManager
         return $stmt->fetchAll();
     }
 
+    public static function itemTree(int $categoryId): array
+    {
+        $items = self::items($categoryId);
+        $tree = [];
+        foreach ($items as $item) {
+            $item['children'] = self::items($categoryId, (int)$item['id']);
+            $tree[] = $item;
+        }
+        return $tree;
+    }
+
     public static function item(int $id): ?array
     {
         $stmt = Database::connection()->prepare(

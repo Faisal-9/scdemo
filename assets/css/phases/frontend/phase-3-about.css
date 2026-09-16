@@ -1,0 +1,377 @@
+/* ================= ABOUT PAGE ================= */
+
+/* SIDEBAR DIVIDER */
+.sidebarr::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 1%;
+  bottom: 2%;
+  width: 1px;
+  background: #03142e;
+}
+
+.sidebarr {
+  position: relative;
+}
+
+/* SIDEBAR NAV */
+.about-sidebar {
+  position: sticky;
+  top: 120px;
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.about-sidebar .nav {
+  width: 100%;
+}
+
+.about-sidebar .nav-link {
+  display: block;
+  width: 100%;
+  padding: 7px;
+  color: #03142e;
+  font-size: 13px;
+  /* font-weight: 300; */
+  border-left: 3px solid transparent;
+  transition: 0.25s;
+}
+
+.about-sidebar .nav-link:hover {
+  background: #e9ecef;
+}
+
+.about-sidebar .nav-link.active {
+  border-left: 3px solid #0b1d4f;
+  color: #0b1d4f;
+  /* font-weight: 600; */
+  background: #fff;
+}
+
+/* PANELS */
+.about-panel {
+  display: none;
+}
+.about-panel.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+  min-height: 70vh;
+}
+
+/* SECTION BLOCKS */
+.about-section-block {
+  scroll-margin-top: 120px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  border-radius: 10px;
+  display: none;
+}
+
+.about-section-block.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.about-section-block h2 {
+  /* font-size: 24px; */
+  /* font-weight: 700; */
+  color: #0b1d4f;
+}
+
+/* GENERAL INFO */
+.general-info-content p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+  text-align: justify;
+}
+
+/* TIMELINE */
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.25s;
+}
+
+.timeline-item:hover {
+  background: #eef0f3;
+}
+.timeline-item.active {
+  background: #0b1d4f;
+  color: #fff;
+}
+
+.year-badge {
+  padding: 4px 10px;
+  background: #333;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.timeline-detail img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+/* MISSION / VISION */
+.mv-heading {
+  font-size: 22px;
+  /* font-weight: 700; */
+  color: #0a2a66;
+}
+
+.mv-text {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.mv-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.mv-values-list li {
+  display: flex;
+  gap: 10px;
+  /* padding: 8px 0; */
+}
+
+/* CLIENTS */
+.client-card {
+  min-height: 100px;
+  transition: all 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.client-logo {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.client-card:hover img {
+  opacity: 1;
+}
+
+/* CERTIFICATES */
+.certificate-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.certificate-img {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.certificate-name {
+  /* font-size: 13px;
+  font-weight: 600; */
+  color: #0b1d4f;
+  margin-top: auto;
+  line-height: 1.4;
+}
+
+/* AWARDS */
+.award-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.award-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.award-img {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.award-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.award-title {
+  /* font-size: 13px;
+  font-weight: 600; */
+  color: #0b1d4f;
+  margin-top: auto;
+  line-height: 1.4;
+}
+
+/* SISTER COMPANIES */
+.sister-card {
+  min-height: 180px;
+  transition: all 0.3s ease;
+}
+
+.sister-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.sister-logo {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sister-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.sister-name {
+  font-size: 13px;
+  color: #0b1d4f;
+  margin-top: auto;
+}
+
+/* ================= COMPANY PROFILE ================= */
+
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.profile-actions .profilebtn {
+  margin-top: auto;
+  display: inline-block;
+  padding: 10px 18px;
+  background: #eef0f3;
+  color: #0b1d4f;
+  text-decoration: none;
+  font-size: 14px;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.profile-actions .profilebtn:hover {
+  background: #0b1d4f;
+  color: white;
+}
+
+.company-profile-viewer {
+  width: 100%;
+  height: calc(100vh - 250px);
+  margin-top: 15px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.company-profile-viewer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .company-profile-viewer iframe {
+    height: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-actions {
+    flex-direction: column;
+  }
+
+  .profile-actions .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .company-profile-viewer iframe {
+    height: 550px;
+  }
+}
+
+/* ================= DESKTOP (min 1200px) ================= */
+@media (min-width: 1200px) {
+  .client-logo {
+    height: 80px;
+  }
+  .client-card {
+    min-height: 120px;
+  }
+  .certificate-img {
+    height: 240px;
+  }
+  .award-img {
+    height: 140px;
+  }
+  .sister-logo {
+    height: 120px;
+  }
+  .sister-card {
+    min-height: 220px;
+  }
+}
+

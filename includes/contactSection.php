@@ -12,14 +12,14 @@ $international_offices = $contact['international_offices'];
 
 $success = (isset($_GET['sent']) && $_GET['sent'] === '1') ? 'Your message has been sent successfully.' : '';
 $error = (isset($_GET['sent']) && $_GET['sent'] !== '1') ? 'Something went wrong. Please try again.' : '';
-$section_title = $page['section_title'] ?? 'Reach Us';
-$form_title = $page['form_title'] ?? 'Drop Message';
-$overseas_title = $page['overseas_title'] ?? 'Overseas Companies';
-$overseas_subtitle = $page['overseas_subtitle'] ?? 'Contact our offices worldwide for assistance and support.';
-$map_label = $page['map_label'] ?? 'Kart-e-Char, Kabul, Afghanistan';
-$lat = (string)($page['map_lat'] ?? '34.50447374731745');
-$lng = (string)($page['map_lng'] ?? '69.14093396440924');
-$zoom = (int)($page['map_zoom'] ?? 14);
+$section_title = (string)($page['section_title'] ?? '');
+$form_title = (string)($page['form_title'] ?? '');
+$overseas_title = (string)($page['overseas_title'] ?? '');
+$overseas_subtitle = (string)($page['overseas_subtitle'] ?? '');
+$map_label = (string)($page['map_label'] ?? '');
+$lat = (string)($page['map_lat'] ?? '');
+$lng = (string)($page['map_lng'] ?? '');
+$zoom = (int)($page['map_zoom'] ?? 0);
 $map_src = 'https://maps.google.com/maps?q=' . rawurlencode($lat . ',' . $lng) . '&z=' . $zoom . '&output=embed';
 ?>
 
@@ -91,7 +91,7 @@ $map_src = 'https://maps.google.com/maps?q=' . rawurlencode($lat . ',' . $lng) .
                             class="w-100"
                             style="height: 400px; border:0;"
                             loading="lazy"
-                            title="State Corps office map">
+                            title="<?php echo htmlspecialchars((string)SiteSettings::get('site_name', ''), ENT_QUOTES, 'UTF-8'); ?> office map">
                         </iframe>
 
                     </div>

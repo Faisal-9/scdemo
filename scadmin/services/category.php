@@ -49,7 +49,7 @@ if (isPost()) {
 }
 
 $category = $categoryId ? ServiceManager::category((int) $categoryId) : null;
-$items = $category ? ServiceManager::items((int) $category['id']) : [];
+$itemTree = $category ? ServiceManager::itemTree((int) $category['id']) : [];
 $pageTitle = $category ? 'Edit Service Category' : 'Add Service Category';
 $activeNav = 'services';
 require __DIR__ . '/../partials/header.php';
@@ -91,23 +91,33 @@ require __DIR__ . '/../partials/sidebar.php';
             <div class="panel-heading">
                 <div>
                     <h2>Service items</h2>
-                    <p class="muted">Items are the existing service panels. Child items become the existing <code>subitems</code> structure.</p>
+                    <p class="muted">Edit each service panel from here. Use <strong>Add child</strong> beneath a parent item to create the nested <code>subitems</code> shown publicly.</p>
                 </div><a class="button-link" href="<?= e(adminUrl('services/item.php?category_id=' . (int) $category['id'])) ?>">+ Add Service Item</a>
             </div>
-            <?php foreach ($items as $item): ?>
-                <?php $children = ServiceManager::items((int) $category['id'], (int) $item['id']); ?>
-                <div class="service-item-row">
-                    <div><strong><?= e($item['title']) ?></strong><span class="tree-key"><?= e((string) ($item['service_key'] ?? '')) ?></span><small><?= e((string) count($children)) ?> subitems · <?= e((string) count(ServiceManager::features((int) $item['id']))) ?> features</small></div>
+            <?php if ($itemTree === []): ?><div class="empty-state">No service items found. Add the first top-level item for this category.</div><?php endif; ?>
+            <?php foreach ($itemTree as $item): ?>
+                <?php $children = $item['children']; ?>
+                <div class="service-item-row service-item-parent">
+                    <div><strong><?= e($item['title']) ?></strong><span class="tree-key"><?= e((string) ($item['service_key'] ?? '')) ?></span><small><?= e((string) count($children)) ?> child item(s) · <?= e((string) count(ServiceManager::features((int) $item['id']))) ?> features · <?= $item['is_active'] ? 'Active' : 'Inactive' ?></small></div>
                     <div class="actions-cell">
                         <a class="small-button" href="<?= e(adminUrl('services/item.php?id=' . (int) $item['id'])) ?>">Edit</a>
+                        <a class="small-button" href="<?= e(adminUrl('services/item.php?category_id=' . (int) $category['id'] . '&parent_id=' . (int) $item['id'])) ?>">Add child</a>
                         <form method="post" action="<?= e(adminUrl('services/item.php?id=' . (int) $item['id'])) ?>" onsubmit="return confirm('Delete this service item and all child items?');">
-                            <?= CSRF::field() ?>
-                            <input type="hidden" name="form_action" value="delete_item">
-                            <input type="hidden" name="item_id" value="<?= e((string) $item['id']) ?>">
-                            <button class="small-button danger-button" type="submit">Delete</button>
+                            <?= CSRF::field() ?><input type="hidden" name="form_action" value="delete_item"><input type="hidden" name="item_id" value="<?= e((string) $item['id']) ?>"><button class="small-button danger-button" type="submit">Delete</button>
                         </form>
                     </div>
                 </div>
+                <?php foreach ($children as $child): ?>
+                    <div class="service-item-row service-item-child">
+                        <div><strong><?= e($child['title']) ?></strong><span class="tree-key"><?= e((string) ($child['service_key'] ?? '')) ?></span><small>Child item · <?= e((string) count(ServiceManager::features((int) $child['id']))) ?> features · <?= $child['is_active'] ? 'Active' : 'Inactive' ?></small></div>
+                        <div class="actions-cell">
+                            <a class="small-button" href="<?= e(adminUrl('services/item.php?id=' . (int) $child['id'])) ?>">Edit</a>
+                            <form method="post" action="<?= e(adminUrl('services/item.php?id=' . (int) $child['id'])) ?>" onsubmit="return confirm('Delete this child item?');">
+                                <?= CSRF::field() ?><input type="hidden" name="form_action" value="delete_item"><input type="hidden" name="item_id" value="<?= e((string) $child['id']) ?>"><button class="small-button danger-button" type="submit">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             <?php endforeach; ?>
         </section>
         <section class="danger-zone">

@@ -1,0 +1,144 @@
+/* ================= root styling variables ================= */
+:root {
+  /* headers font sizes */
+  /* --font-size-h1-s: 22px;
+  --font-size-h2-s: 18px; */
+  /* --font-size-h3-s: 16px; */
+  /* --font-size-h4-s: 12px; */
+
+  /* headers font weight */
+  /* --font-size-hw1-s: 700; */
+  /* --font-size-hw2-s: 600; */
+  /* --font-size-hw3-s: 500; */
+  /* --font-size-hw4-s: 500; */
+
+  /* text font sizes */
+  --font-size-text1-s: 13px;
+  --font-size-text2-s: 11px;
+
+  /* button text font sizes */
+  --font-size-b1-s: 14px;
+
+  /* text colors */
+  --color01-65: #000;
+  --color02-20: #0c1c3d;
+  --color03-10: #fff;
+  --color04-5: #d4af37;
+
+  /* background colors */
+  --bgcolor01-65: #0c1c3d;
+  --bgcolor02-20: #eef0f3;
+  --bgcolor03-10: #d4af37;
+  --bgcolor04-5: #000;
+
+  /* border colors */
+  --bcolor01: #0c1c3d;
+  --bcolor02: #d4af37;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.serif-link {
+  font-family: "EB Garamond", Times, serif !important;
+  /* font-weight: 500; */
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+}
+
+.serif-link:hover {
+  text-decoration: underline !important;
+}
+
+/* ==========================
+   IMAGE LIGHTBOX for all pages
+========================== */
+
+.img-lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.img-lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 8px;
+  animation: zoomIn 0.3s ease;
+}
+
+.img-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  /* font-size: 32px; */
+  cursor: pointer;
+}
+
+/* animation */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
