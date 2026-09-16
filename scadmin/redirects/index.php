@@ -4,20 +4,24 @@ require_once __DIR__ . '/../../app/bootstrap.php';
 Auth::requirePermission('manage_redirects');
 $rows = RedirectManager::all();
 $pageTitle = 'URL Redirects';
+$heading = $pageTitle;
+$description = 'Keep legacy links working and route retired URLs without changing application code.';
+$actionUrl = null;
+$actionLabel = null;
 require __DIR__ . '/../partials/header.php';
 require __DIR__ . '/../partials/sidebar.php';
 ?>
-<main class="admin-main">
+<main class="admin-main management-page">
 <?php require __DIR__ . '/../partials/alerts.php'; ?>
 <?php require __DIR__ . '/../partials/page-heading.php'; ?>
-<div class="admin-card">
-  <div class="admin-actions" style="justify-content:space-between;">
-    <div><span class="muted">Redirects are inactive only when disabled. No existing public URL changes until a redirect is explicitly created.</span></div>
+<div class="admin-card management-card">
+  <div class="management-toolbar">
+    <div><span class="management-kicker">Traffic control</span><p class="management-summary">Keep legacy links working and route retired URLs without changing application code.</p></div>
     <a class="btn btn-primary" href="<?= e(adminUrl('redirects/edit.php')) ?>">Add Redirect</a>
   </div>
   <div class="table-responsive">
     <table class="admin-table">
-      <thead><tr><th>Source</th><th>Destination</th><th>Status</th><th>Query</th><th>Status</th><th></th></tr></thead>
+      <thead><tr><th>Source</th><th>Destination</th><th>Code</th><th>Query</th><th>State</th><th></th></tr></thead>
       <tbody>
       <?php foreach ($rows as $row): ?>
       <tr>
@@ -25,7 +29,7 @@ require __DIR__ . '/../partials/sidebar.php';
         <td><?= e($row['destination_url']) ?></td>
         <td><?= (int)$row['status_code'] ?></td>
         <td><?= (int)$row['preserve_query'] === 1 ? 'Preserve' : 'Drop' ?></td>
-        <td><?= (int)$row['is_active'] === 1 ? 'Active' : 'Disabled' ?></td>
+        <td><span class="status-badge <?= (int)$row['is_active'] === 1 ? 'status-active' : 'status-inactive' ?>"><?= (int)$row['is_active'] === 1 ? 'Active' : 'Disabled' ?></span></td>
         <td>
           <a class="btn btn-sm btn-primary" href="<?= e(adminUrl('redirects/edit.php?id=' . (int)$row['id'])) ?>">Edit</a>
           <form method="post" action="<?= e(adminUrl('redirects/toggle.php')) ?>" style="display:inline">

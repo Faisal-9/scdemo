@@ -15,20 +15,26 @@ if (!in_array($location, ['header', 'footer'], true)) {
 $rows = NavigationManager::rows($location);
 
 $pageTitle = ucfirst($location) . ' Navigation';
+$heading = $pageTitle;
+$description = 'Organize public links and control their visibility across the selected navigation area.';
+$actionUrl = null;
+$actionLabel = null;
 
 require __DIR__ . '/../partials/header.php';
 require __DIR__ . '/../partials/sidebar.php';
 ?>
-<main class="admin-main">
+<main class="admin-main management-page">
   <?php require __DIR__ . '/../partials/alerts.php'; ?>
   <?php require __DIR__ . '/../partials/page-heading.php'; ?>
-  <div class="admin-card">
-    <div class="admin-actions" style="justify-content:space-between;">
+  <div class="admin-card management-card">
+    <div class="management-toolbar">
       <div>
+        <span class="management-kicker">Menu structure</span>
+        <p class="management-summary">Control the links shown in the public <?= e($location) ?> navigation.</p>
         <a class="btn btn-sm <?= $location === 'header' ? 'btn-primary' : 'btn-secondary' ?>" href="<?= e(adminUrl('navigation/?location=header')) ?>">Header</a>
         <a class="btn btn-sm <?= $location === 'footer' ? 'btn-primary' : 'btn-secondary' ?>" href="<?= e(adminUrl('navigation/?location=footer')) ?>">Footer</a>
       </div>
-      <a class="btn btn-primary" href="<?= e(adminUrl('navigation/edit.php?location=' . urlencode($location))) ?>">Add Item</a>
+      <a class="btn btn-primary" href="<?= e(adminUrl('navigation/edit.php?location=' . urlencode($location))) ?>">Add Navigation Item</a>
     </div>
     <div class="table-responsive">
       <table class="admin-table">
@@ -49,7 +55,7 @@ require __DIR__ . '/../partials/sidebar.php';
               <td><strong><?= e($row['label']) ?></strong><?php if (!empty($row['icon_class'])): ?><div class="muted"><?= e($row['icon_class']) ?></div><?php endif; ?></td>
               <td><code><?= e($row['url']) ?></code></td>
               <td><?= e((string)($row['parent_label'] ?? '—')) ?></td>
-              <td><?= (int)$row['is_active'] === 1 ? 'Active' : 'Hidden' ?></td>
+              <td><span class="status-badge <?= (int)$row['is_active'] === 1 ? 'status-active' : 'status-inactive' ?>"><?= (int)$row['is_active'] === 1 ? 'Active' : 'Hidden' ?></span></td>
               <td>
                 <a class="btn btn-sm btn-primary" href="<?= e(adminUrl('navigation/edit.php?id=' . (int)$row['id'])) ?>">Edit</a>
                 <form method="post" action="<?= e(adminUrl('navigation/toggle.php')) ?>" style="display:inline">

@@ -4,15 +4,19 @@ require_once __DIR__ . '/../../app/bootstrap.php';
 Auth::requirePermission('manage_seo');
 $rows = SeoManager::all();
 $pageTitle = 'SEO & Page Metadata';
+$heading = $pageTitle;
+$description = 'Manage titles, descriptions, robots rules, and social metadata for each public page.';
+$actionUrl = null;
+$actionLabel = null;
 require __DIR__ . '/../partials/header.php';
 require __DIR__ . '/../partials/sidebar.php';
 ?>
-<main class="admin-main">
+<main class="admin-main management-page">
 <?php require __DIR__ . '/../partials/alerts.php'; ?>
 <?php require __DIR__ . '/../partials/page-heading.php'; ?>
-<div class="admin-card">
-  <div class="admin-actions" style="justify-content:space-between;">
-    <div><span class="muted">Metadata is inactive only when the record is disabled. Empty fields fall back to the existing public page values.</span></div>
+<div class="admin-card management-card">
+  <div class="management-toolbar">
+    <div><span class="management-kicker">Search visibility</span><p class="management-summary">Manage titles, descriptions, robots rules, and social metadata for each public page.</p></div>
     <a class="btn btn-primary" href="<?= e(adminUrl('seo/edit.php')) ?>">Add Page</a>
   </div>
   <div class="table-responsive">
@@ -25,7 +29,7 @@ require __DIR__ . '/../partials/sidebar.php';
         <td><?= e((string)($row['title'] ?? '—')) ?></td>
         <td><?= e((string)($row['description'] ?? '—')) ?></td>
         <td><?= e($row['robots']) ?></td>
-        <td><?= (int)$row['is_active'] === 1 ? 'Active' : 'Disabled' ?></td>
+        <td><span class="status-badge <?= (int)$row['is_active'] === 1 ? 'status-active' : 'status-inactive' ?>"><?= (int)$row['is_active'] === 1 ? 'Active' : 'Disabled' ?></span></td>
         <td>
           <a class="btn btn-sm btn-primary" href="<?= e(adminUrl('seo/edit.php?id=' . (int)$row['id'])) ?>">Edit</a>
           <form method="post" action="<?= e(adminUrl('seo/toggle.php')) ?>" style="display:inline">

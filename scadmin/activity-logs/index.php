@@ -29,17 +29,18 @@ $pageTitle = 'Activity Logs';
 require __DIR__ . '/../partials/header.php';
 require __DIR__ . '/../partials/sidebar.php';
 ?>
-<main class="admin-main">
+<main class="admin-main management-page">
     <div class="admin-container">
         <?php require __DIR__ . '/../partials/alerts.php'; ?>
-        <div class="page-heading">
+        <div class="page-heading management-hero">
             <div>
+            <span class="management-kicker">Audit trail</span>
                 <h1>Activity Logs</h1>
                 <p>Audit trail of CMS logins, content changes, editor actions, and other recorded administrative activity.</p>
             </div>
         </div>
 
-        <div class="admin-card">
+        <div class="admin-card management-card">
             <form method="get" class="admin-filter-bar">
                 <input type="text" name="search" placeholder="Search description, user, IP..." value="<?= e($filters['search']) ?>">
                 <select name="action">
@@ -59,7 +60,7 @@ require __DIR__ . '/../partials/sidebar.php';
             </form>
         </div>
 
-        <div class="admin-card">
+        <div class="admin-card management-card">
             <div class="d-flex justify-content-between align-items-center mb-3"><strong><?= e((string)$total) ?> log entr<?= $total === 1 ? 'y' : 'ies' ?></strong><span class="muted">Read-only audit history</span></div>
             <div class="table-responsive">
                 <table class="admin-table">

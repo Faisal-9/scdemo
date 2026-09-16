@@ -852,10 +852,299 @@ textarea:focus {
   line-height: 1.4;
 }
 
+/* Keep the CMS chrome fixed while navigation and content scroll independently. */
+html,
+body.admin-body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.admin-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1000;
+  height: 68px;
+  box-shadow: 0 2px 14px rgba(23, 37, 53, 0.08);
+}
+
+.admin-shell {
+  position: fixed;
+  inset: 68px 0 0;
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  min-height: 0;
+  height: auto;
+}
+
+.sidebar {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #52677c #172535;
+}
+
+.sidebar-inner {
+  position: static;
+  min-height: 100%;
+}
+
+.admin-content,
+.admin-main {
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 34px;
+  scrollbar-gutter: stable;
+}
+
+/* Management views: shared visual language for high-volume admin work. */
+.management-page {
+  background: linear-gradient(180deg, #f7f9fb 0, var(--bg) 260px);
+}
+
+.management-page .admin-container {
+  width: min(1500px, 100%);
+  margin: 0 auto;
+}
+
+.management-hero,
+.management-page .page-heading {
+  margin-bottom: 22px;
+  padding: 24px 26px;
+  border: 1px solid #dfe6ed;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff, #f5f8fb);
+  box-shadow: 0 8px 24px rgba(24, 32, 42, 0.05);
+}
+
+.management-hero h1,
+.management-page .page-heading h1 {
+  margin: 3px 0 7px;
+  color: #172535;
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.management-hero p,
+.management-page .page-heading p,
+.management-summary {
+  margin: 0;
+  max-width: 760px;
+  color: var(--muted);
+}
+
+.management-kicker {
+  display: inline-block;
+  color: #56708b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.management-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e5eaf0;
+}
+
+.management-toolbar > div:first-child {
+  display: grid;
+  gap: 5px;
+}
+
+.management-toolbar .btn {
+  margin-top: 10px;
+}
+
+.management-card,
+.management-page .admin-card {
+  padding: 22px;
+  border: 1px solid #dfe6ed;
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 0 8px 24px rgba(24, 32, 42, 0.04);
+}
+
+.management-page .admin-filter-bar {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.5fr) repeat(3, minmax(130px, 1fr)) auto;
+  gap: 10px;
+  margin: 0 0 18px;
+  padding: 14px;
+  border: 1px solid #dfe6ed;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.management-page .admin-filter-bar input,
+.management-page .admin-filter-bar select,
+.management-page .admin-filter-bar button {
+  min-width: 0;
+  margin: 0;
+}
+
+.management-page .admin-table {
+  min-width: 880px;
+}
+
+.management-page .admin-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #eef3f7;
+}
+
+.management-page .admin-table td:last-child {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.management-page .admin-table td:last-child form {
+  display: inline-block !important;
+  margin: 0 0 0 5px;
+}
+
+.management-page .admin-table code {
+  color: #5b6d7f;
+  font-size: 12px;
+}
+
+.management-page .btn,
+.management-page button {
+  width: auto;
+  min-height: 38px;
+  padding: 0 13px;
+}
+
+.management-page .btn-sm {
+  min-height: 32px;
+  padding: 0 10px;
+}
+
+.media-library-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.media-library-actions,
+.media-library-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.media-import {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+  border-left: 4px solid #6c8ba8 !important;
+}
+
+.media-library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+  gap: 16px;
+}
+
+.media-library-card {
+  overflow: hidden;
+  border: 1px solid #dfe6ed;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 7px 18px rgba(24, 32, 42, .05);
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+
+.media-library-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(24, 32, 42, .1);
+}
+
+.media-library-thumb {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+  background: #eaf0f5;
+  color: #56708b;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.media-library-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-library-body {
+  display: grid;
+  gap: 7px;
+  padding: 14px;
+}
+
+.media-library-body strong,
+.media-library-body small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.media-library-body small {
+  color: var(--muted);
+}
+
+.media-library-card-actions {
+  margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .management-page .admin-filter-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .management-page .admin-filter-bar input {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .management-hero,
+  .management-page .page-heading,
+  .management-toolbar,
+  .media-import,
+  .media-library-hero {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .management-hero,
+  .management-page .page-heading,
+  .management-card,
+  .management-page .admin-card {
+    padding: 17px;
+  }
+
+  .management-page .admin-filter-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .management-page .admin-filter-bar input {
+    grid-column: auto;
+  }
+}
+
 @media (max-width: 850px) {
   .admin-shell {
     grid-template-columns: 1fr;
-    min-height: calc(100vh - 68px);
   }
 
   .mobile-menu-button {
@@ -868,7 +1157,12 @@ textarea:focus {
   }
 
   .sidebar.sidebar-open {
+    position: absolute;
+    inset: 0 auto 0 0;
+    z-index: 20;
     display: block;
+    width: min(310px, 88vw);
+    box-shadow: 14px 0 28px rgba(11, 24, 38, 0.22);
   }
 
   .sidebar-inner {
@@ -879,6 +1173,11 @@ textarea:focus {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .admin-content,
+  .admin-main {
+    padding: 28px 22px;
+  }
+
   .module-grid,
   .permission-grid {
     grid-template-columns: 1fr;
@@ -887,8 +1186,12 @@ textarea:focus {
 
 @media (max-width: 560px) {
   .admin-header {
-    min-height: auto;
+    height: 112px;
     padding: 12px 16px;
+  }
+
+  .admin-shell {
+    inset: 112px 0 0;
   }
 
   .admin-brand-area {
