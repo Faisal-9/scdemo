@@ -18,7 +18,7 @@ SELECT 'header_top_background_color', '#ffffff', 'text', 'Upper header backgroun
 WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key='header_top_background_color');
 
 INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
-SELECT 'header_top_text_color', '#18202a', 'text', 'Upper header text and icon color'
+SELECT 'header_top_text_color', '#0c1c3d', 'text', 'Upper header text and icon color'
 WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key='header_top_text_color');
 
 INSERT INTO site_settings (setting_key, setting_value, setting_type, description)

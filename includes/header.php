@@ -23,7 +23,7 @@ $headerColor = static function (string $key, string $fallback): string {
 $headerStyle = sprintf(
     '--header-top-bg:%s;--header-top-text:%s;--header-bottom-bg:%s;--header-bottom-text:%s;--header-hover:%s;',
     $headerColor('header_top_background_color', '#ffffff'),
-    $headerColor('header_top_text_color', '#18202a'),
+    $headerColor('header_top_text_color', '#0c1c3d'),
     $headerColor('header_bottom_background_color', '#0c1c3d'),
     $headerColor('header_bottom_text_color', '#ffffff'),
     $headerColor('header_hover_color', '#d4af37')
@@ -40,7 +40,9 @@ $renderNavigationItem = static function (array $item, string $itemClass = 'nav-i
     $active = $navigationIsActive($item) ? ' active' : '';
     $dropdown = $hasChildren ? ' dropdown' : '';
     $target = (string)($item['target'] ?? '_self');
-    $linkClass = $itemClass === 'nav-item-child' ? 'dropdown-link' : 'nav-link';
+    $linkClass = $itemClass === 'nav-item-top'
+        ? 'nav-link-top'
+        : ($itemClass === 'nav-item-child' ? 'dropdown-link' : 'nav-link');
     if ($hasChildren) {
         $linkClass .= ' has-dropdown';
     }

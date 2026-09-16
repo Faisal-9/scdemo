@@ -113,8 +113,8 @@ AnalyticsTracker::track($page_title, $pageKey);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
     <!-- Local Styles -->
-    <link rel="stylesheet" href="<?php echo htmlspecialchars($publicBaseUrl . 'assets/css/styles.css?v=' . urlencode($assetVersion), ENT_QUOTES, 'UTF-8'); ?>">
     <link rel="stylesheet" href="<?php echo htmlspecialchars($publicBaseUrl . 'assets/css/navigation.css?v=' . urlencode($assetVersion), ENT_QUOTES, 'UTF-8'); ?>">
+    <link rel="stylesheet" href="<?php echo htmlspecialchars($publicBaseUrl . 'assets/css/styles.css?v=' . urlencode($assetVersion), ENT_QUOTES, 'UTF-8'); ?>">
     <!-- <link rel="stylesheet" href="assets/css/responsive.css?v=<?php echo time() ?>"> -->
 
     <!-- Preload Important Logo -->
