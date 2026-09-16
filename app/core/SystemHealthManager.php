@@ -121,6 +121,9 @@ final class SystemHealthManager
             'sectors',
             'legal_documents',
             'contact_messages',
+            'analytics_page_views',
+            'admin_notifications',
+            'content_revisions',
         ];
         try {
             $pdo = Database::connection();

@@ -50,6 +50,7 @@ $og_title = (string)($seo['og_title'] ?: $page_title);
 $og_description = (string)($seo['og_description'] ?: $page_description);
 $og_image = (string)($seo['og_image'] ?: $seoFallback['og_image']);
 $twitter_card = (string)($seo['twitter_card'] ?: $seoFallback['twitter_card']);
+AnalyticsTracker::track($page_title, $pageKey);
 ?>
 
 <head>
@@ -118,19 +119,5 @@ $twitter_card = (string)($seo['twitter_card'] ?: $seoFallback['twitter_card']);
 
     <!-- Preload Important Logo -->
     <link rel="preload" as="image" href="<?php echo htmlspecialchars($publicBaseUrl . (string)SiteSettings::get('site_logo', ''), ENT_QUOTES, 'UTF-8'); ?>">
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX"></script>
-
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-        gtag('config', 'UA-XXXXXXXXX');
-    </script>
 
 </head>

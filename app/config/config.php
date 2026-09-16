@@ -121,6 +121,7 @@ define(
 );
 
 define('ASSET_VERSION', configEnv('SC_ASSET_VERSION', '1.0.0'));
+define('ANALYTICS_HASH_SALT', configEnv('SC_ANALYTICS_HASH_SALT', 'state-corps-local-analytics'));
 
 
 /*

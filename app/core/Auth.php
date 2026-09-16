@@ -170,6 +170,16 @@ final class Auth
         }
     }
 
+    public static function requireAnyPermission(array $permissionKeys): void
+    {
+        self::requireLogin();
+        foreach ($permissionKeys as $permissionKey) {
+            if (self::hasPermission((string)$permissionKey)) return;
+        }
+        http_response_code(403);
+        exit('You are not authorized to access this area.');
+    }
+
     private static function canAttemptLogin(string $username, string $ip): bool
     {
         $pdo = Database::connection();

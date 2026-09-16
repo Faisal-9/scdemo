@@ -5,6 +5,7 @@
 $pageTitle = $pageTitle ?? 'Admin';
 $activeNav = $activeNav ?? '';
 $user = Auth::user() ?? [];
+$notificationCount = class_exists('NotificationManager') && Auth::check() ? NotificationManager::unreadCount() : 0;
 $assetVersion = defined('ASSET_VERSION') ? (string)constant('ASSET_VERSION') : '1.0.0';
 ?>
 <!doctype html>
@@ -32,6 +33,8 @@ $assetVersion = defined('ASSET_VERSION') ? (string)constant('ASSET_VERSION') : '
         </div>
 
         <div class="header-user">
+            <?php if (Auth::hasPermission('search_content')): ?><form class="admin-header-search" method="get" action="<?= e(adminUrl('search/')) ?>"><input type="search" name="q" placeholder="Search CMS..." aria-label="Search CMS"></form><?php endif; ?>
+            <?php if ($notificationCount > 0): ?><a class="admin-notification-link" href="<?= e(adminUrl('notifications/')) ?>">Notifications (<?= e((string)$notificationCount) ?>)</a><?php endif; ?>
             <span class="header-user-name"><?= e((string) ($user['display_name'] ?? '')) ?></span>
             <a href="<?= e(adminUrl('logout.php')) ?>">Logout</a>
         </div>

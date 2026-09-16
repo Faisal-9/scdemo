@@ -22,6 +22,7 @@ require_once __DIR__ . '/core/LegalFrontend.php';
 require_once __DIR__ . '/core/ContactFrontend.php';
 require_once __DIR__ . '/core/Redirect.php';
 require_once __DIR__ . '/core/Seo.php';
+require_once __DIR__ . '/core/AnalyticsTracker.php';
 
 try {
     Redirect::applyCurrentRequest();

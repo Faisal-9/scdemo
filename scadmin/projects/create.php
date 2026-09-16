@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../../app/bootstrap.php';
 
-Auth::requirePermission('manage_projects');
+Auth::requireAnyPermission(['create_projects', 'manage_projects']);
 
 $error = null;
 $sectors = ProjectManager::sectors();
@@ -14,6 +14,7 @@ if (isPost()) {
 
     try {
         $projectId = ProjectManager::save($_POST);
+        RevisionManager::record('project', $projectId, $_POST, !empty($_POST['published']) ? 'published' : 'draft', 'Initial project version');
 
         Auth::audit(
             Auth::id(),

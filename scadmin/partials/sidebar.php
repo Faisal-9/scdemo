@@ -109,6 +109,27 @@ $navigation = [
         'permission' => 'manage_settings',
     ],
 
+    [
+        'key' => 'analytics',
+        'label' => 'Analytics',
+        'url' => adminUrl('analytics/'),
+        'permission' => 'manage_analytics',
+    ],
+
+    [
+        'key' => 'search',
+        'label' => 'Search',
+        'url' => adminUrl('search/'),
+        'permission' => 'search_content',
+    ],
+
+    [
+        'key' => 'notifications',
+        'label' => 'Notifications',
+        'url' => adminUrl('notifications/'),
+        'permission' => 'manage_notifications',
+    ],
+
 ];
 ?>
 

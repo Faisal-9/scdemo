@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../../app/bootstrap.php';
 
-Auth::requirePermission('manage_projects');
+Auth::requireAnyPermission(['delete_projects', 'manage_projects']);
 
 if (!isPost()) {
     redirect(adminUrl('projects/'));

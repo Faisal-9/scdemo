@@ -40,6 +40,7 @@ final class MediaLibraryManager
         $search = trim((string)($filters['search'] ?? ''));
         $type = (string)($filters['type'] ?? '');
         $scope = (string)($filters['scope'] ?? '');
+        $status = (string)($filters['status'] ?? '');
 
         if ($search !== '') {
             $where[] = '(original_name LIKE :search OR relative_path LIKE :search OR alt_text LIKE :search OR category LIKE :search)';
@@ -51,6 +52,8 @@ final class MediaLibraryManager
             $where[] = 'storage_scope = :scope';
             $params['scope'] = $scope;
         }
+        if (in_array($status, ['active', 'archived'], true)) $where[] = 'status = :status';
+        if (in_array($status, ['active', 'archived'], true)) $params['status'] = $status;
 
         $sql = 'SELECT * FROM media_library';
         if ($where) $sql .= ' WHERE ' . implode(' AND ', $where);
@@ -103,6 +106,8 @@ final class MediaLibraryManager
         $limit = str_starts_with($mime, 'image/') ? self::UPLOAD_MAX_IMAGE : self::UPLOAD_MAX_FILE;
         if ($size < 1 || $size > $limit) throw new InvalidArgumentException('The uploaded file exceeds the permitted size.');
         if (str_starts_with($mime, 'image/') && @getimagesize($file['tmp_name']) === false) throw new InvalidArgumentException('The uploaded image could not be validated.');
+        $dimensions = str_starts_with($mime, 'image/') ? @getimagesize($file['tmp_name']) : false;
+        $checksum = hash_file('sha256', $file['tmp_name']) ?: null;
 
         $extension = self::ALLOWED_MIME[$mime];
         $base = $displayName !== '' ? $displayName : pathinfo(basename((string)$file['name']), PATHINFO_FILENAME);
@@ -120,10 +125,10 @@ final class MediaLibraryManager
         $userId = self::currentUserId();
         try {
             $stmt = Database::connection()->prepare(
-                'INSERT INTO media_library (original_name, stored_name, relative_path, mime_type, file_size, alt_text, category, storage_scope, created_by)
-                 VALUES (?,?,?,?,?,?,?,?,?)'
+                 'INSERT INTO media_library (original_name, stored_name, relative_path, mime_type, file_size, checksum, width_px, height_px, alt_text, category, storage_scope, created_by)
+                  VALUES (?,?,?,?,?,?,?,?,?,?,?,?)'
             );
-            $stmt->execute([$base . '.' . $extension, $stored, $relative, $mime, $size, $altText ?: null, $category ?: null, 'upload', $userId]);
+              $stmt->execute([$base . '.' . $extension, $stored, $relative, $mime, $size, $checksum, $dimensions[0] ?? null, $dimensions[1] ?? null, $altText ?: null, $category ?: null, 'upload', $userId]);
             return (int)Database::connection()->lastInsertId();
         } catch (Throwable $e) {
             @unlink($absolute);
@@ -163,12 +168,14 @@ final class MediaLibraryManager
                     continue;
                 }
                 $name = basename($relative);
+                $dimensions = str_starts_with($mime, 'image/') ? @getimagesize($absolute) : false;
+                $checksum = hash_file('sha256', $absolute) ?: null;
                 $stmt = $pdo->prepare(
-                    'INSERT INTO media_library (original_name, stored_name, relative_path, mime_type, file_size, category, storage_scope, created_by)
-                     VALUES (?,?,?,?,?,?,?,?)'
+                    'INSERT INTO media_library (original_name, stored_name, relative_path, mime_type, file_size, checksum, width_px, height_px, category, storage_scope, created_by)
+                     VALUES (?,?,?,?,?,?,?,?,?,?,?)'
                 );
                 $category = self::categoryFromPath($relative);
-                $stmt->execute([$name, $name, $relative, $mime, (int)$file->getSize(), $category, 'legacy', self::currentUserId()]);
+                $stmt->execute([$name, $name, $relative, $mime, (int)$file->getSize(), $checksum, $dimensions[0] ?? null, $dimensions[1] ?? null, $category, 'legacy', self::currentUserId()]);
                 $known[$relative] = true;
                 $created++;
             }
@@ -176,17 +183,18 @@ final class MediaLibraryManager
         return compact('created', 'skipped', 'missing');
     }
 
-    public static function updateMeta(int $id, string $displayName, string $altText, string $category): void
+    public static function updateMeta(int $id, string $displayName, string $altText, string $category, string $status = 'active'): void
     {
         $row = self::find($id);
         if (!$row) throw new RuntimeException('Asset not found.');
         $displayName = self::cleanDisplayName($displayName);
         $altText = mb_substr(trim($altText), 0, 500);
         $category = self::cleanCategory($category);
+        $status = in_array($status, ['active', 'archived'], true) ? $status : 'active';
         $extension = pathinfo((string)$row['original_name'], PATHINFO_EXTENSION);
         $originalName = $displayName . ($extension !== '' ? '.' . strtolower($extension) : '');
-        $stmt = Database::connection()->prepare('UPDATE media_library SET original_name=?, alt_text=?, category=?, updated_at=NOW() WHERE id=?');
-        $stmt->execute([$originalName, $altText ?: null, $category ?: null, $id]);
+        $stmt = Database::connection()->prepare('UPDATE media_library SET original_name=?, alt_text=?, category=?, status=?, updated_at=NOW() WHERE id=?');
+        $stmt->execute([$originalName, $altText ?: null, $category ?: null, $status, $id]);
     }
 
     public static function rename(int $id, string $newBaseName): array
