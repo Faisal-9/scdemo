@@ -926,10 +926,10 @@ initProjectSwiper();
           null,
           "",
           window.location.pathname +
-            "?tab=" +
-            this.dataset.tab +
-            "&id=" +
-            this.dataset.id,
+          "?tab=" +
+          this.dataset.tab +
+          "&id=" +
+          this.dataset.id,
         );
       });
     });
@@ -962,13 +962,19 @@ document.querySelectorAll(".sub-sub-list .group-title").forEach((title) => {
       .forEach((l) => l.classList.remove("active"));
     parentList
       .querySelectorAll(".group-title")
-      .forEach((t) => t.classList.remove("active"));
+      .forEach((t) => {
+        t.classList.remove("active");
+        const icon = t.querySelector(".group-toggle-icon");
+        if (icon) icon.style.removeProperty("transform");
+      });
     parentList
       .querySelectorAll("li[data-target]")
       .forEach((i) => i.classList.remove("active"));
 
     groupList.classList.add("active");
     this.classList.add("active");
+    const icon = this.querySelector(".group-toggle-icon");
+    if (icon) icon.style.setProperty("transform", "rotate(180deg)", "important");
 
     const firstChildItem = groupList.querySelector("li[data-target]");
     if (firstChildItem) {

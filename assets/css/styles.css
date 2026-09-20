@@ -7,3 +7,12 @@
 @import url("./phases/frontend/phase-6-media.css");
 @import url("./phases/frontend/phase-7-legal-footer-contact.css");
 @import url("./phases/frontend/phase-8-responsive.css");
+
+.sub-sub-list .group-toggle-icon {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.sub-sub-list .group-title.active .group-toggle-icon {
+    transform: rotate(180deg);
+}

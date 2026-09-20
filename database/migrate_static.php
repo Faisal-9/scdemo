@@ -27,10 +27,8 @@ $dataDir = $root
 
 
 if (!is_dir($dataDir)) {
-    exit(
-        "ERROR: Data directory not found:" . PHP_EOL
-        . $dataDir . PHP_EOL
-    );
+    exit("ERROR: Data directory not found:" . PHP_EOL
+        . $dataDir . PHP_EOL);
 }
 
 
@@ -62,14 +60,11 @@ try {
             PDO::ATTR_EMULATE_PREPARES   => false,
         ]
     );
-
 } catch (PDOException $e) {
 
-    exit(
-        "ERROR: Database connection failed." . PHP_EOL
+    exit("ERROR: Database connection failed." . PHP_EOL
         . $e->getMessage()
-        . PHP_EOL
-    );
+        . PHP_EOL);
 }
 
 
@@ -150,8 +145,8 @@ function findVariable(
 
         throw new RuntimeException(
             "Could not identify required data variable. "
-            . "Available variables: "
-            . implode(', ', $available)
+                . "Available variables: "
+                . implode(', ', $available)
         );
     }
 
@@ -562,8 +557,8 @@ function requireEmptyTables(
 
             throw new RuntimeException(
                 "Table '{$table}' already contains "
-                . "{$count} row(s). "
-                . "Migration stopped to prevent duplicates."
+                    . "{$count} row(s). "
+                    . "Migration stopped to prevent duplicates."
             );
         }
     }
@@ -1117,41 +1112,41 @@ try {
             'home_hero_slides',
             [
                 'legacy_id' =>
-                    toNullableString(
-                        $slide['id'] ?? null
-                    ),
+                toNullableString(
+                    $slide['id'] ?? null
+                ),
 
                 'title' =>
-                    (string) (
-                        $slide['title']
-                        ?? $slide['subtitle']
-                        ?? ''
-                    ),
+                (string) (
+                    $slide['title']
+                    ?? $slide['subtitle']
+                    ?? ''
+                ),
 
                 'description' =>
-                    toText(
-                        $slide['desc']
+                toText(
+                    $slide['desc']
                         ?? $slide['description']
                         ?? null
-                    ),
+                ),
 
                 'image_path' =>
-                    (string) (
-                        $slide['image']
-                        ?? ''
-                    ),
+                (string) (
+                    $slide['image']
+                    ?? ''
+                ),
 
                 'indicator' =>
-                    toNullableString(
-                        $slide['indicator']
+                toNullableString(
+                    $slide['indicator']
                         ?? null
-                    ),
+                ),
 
                 'sort_order' =>
-                    (int) $order,
+                (int) $order,
 
                 'is_active' =>
-                    1,
+                1,
             ]
         );
 
@@ -1173,34 +1168,34 @@ try {
             'home_stats',
             [
                 'prefix' =>
-                    toNullableString(
-                        $stat['prefix']
+                toNullableString(
+                    $stat['prefix']
                         ?? null
-                    ),
+                ),
 
                 'number_value' =>
-                    isset($stat['number'])
-                        && is_numeric($stat['number'])
-                            ? (float) $stat['number']
-                            : 0,
+                isset($stat['number'])
+                    && is_numeric($stat['number'])
+                    ? (float) $stat['number']
+                    : 0,
 
                 'suffix' =>
-                    toNullableString(
-                        $stat['suffix']
+                toNullableString(
+                    $stat['suffix']
                         ?? null
-                    ),
+                ),
 
                 'label' =>
-                    (string) (
-                        $stat['label']
-                        ?? ''
-                    ),
+                (string) (
+                    $stat['label']
+                    ?? ''
+                ),
 
                 'sort_order' =>
-                    (int) $order,
+                (int) $order,
 
                 'is_active' =>
-                    1,
+                1,
             ]
         );
 
@@ -1222,22 +1217,22 @@ try {
             'home_history',
             [
                 'year' =>
-                    (string) (
-                        $item['year']
-                        ?? ''
-                    ),
+                (string) (
+                    $item['year']
+                    ?? ''
+                ),
 
                 'title' =>
-                    (string) (
-                        $item['title']
-                        ?? ''
-                    ),
+                (string) (
+                    $item['title']
+                    ?? ''
+                ),
 
                 'sort_order' =>
-                    (int) $order,
+                (int) $order,
 
                 'is_active' =>
-                    1,
+                1,
             ]
         );
 
@@ -1259,33 +1254,33 @@ try {
             'home_why_tabs',
             [
                 'legacy_id' =>
-                    (string) $legacyId,
+                (string) $legacyId,
 
                 'tab_name' =>
-                    (string) (
-                        $tab['tabname']
-                        ?? $tab['tab_name']
-                        ?? $tab['name']
-                        ?? ''
-                    ),
+                (string) (
+                    $tab['tabname']
+                    ?? $tab['tab_name']
+                    ?? $tab['name']
+                    ?? ''
+                ),
 
                 'title' =>
-                    toNullableString(
-                        $tab['title']
+                toNullableString(
+                    $tab['title']
                         ?? null
-                    ),
+                ),
 
                 'image_path' =>
-                    toNullableString(
-                        $tab['image']
+                toNullableString(
+                    $tab['image']
                         ?? null
-                    ),
+                ),
 
                 'sort_order' =>
-                    $whyTabCount,
+                $whyTabCount,
 
                 'is_active' =>
-                    1,
+                1,
             ]
         );
 
@@ -1295,8 +1290,8 @@ try {
         $items =
             isset($tab['text'])
             && is_array($tab['text'])
-                ? $tab['text']
-                : [];
+            ? $tab['text']
+            : [];
 
 
         foreach (
@@ -1315,13 +1310,13 @@ try {
                 'home_why_items',
                 [
                     'tab_id' =>
-                        $tabId,
+                    $tabId,
 
                     'item_text' =>
-                        (string) $text,
+                    (string) $text,
 
                     'sort_order' =>
-                        (int) $itemOrder,
+                    (int) $itemOrder,
                 ]
             );
 
@@ -1340,22 +1335,21 @@ try {
             'site_settings',
             [
                 'setting_key' =>
-                    'homepage_why_background',
+                'homepage_why_background',
 
                 'setting_value' =>
-                    $statsBg,
+                $statsBg,
 
                 'setting_type' =>
-                    'image',
+                'image',
 
                 'description' =>
-                    'Homepage Why State Corps background image',
+                'Homepage Why State Corps background image',
 
                 'updated_by' =>
-                    null,
+                null,
             ]
         );
-
     }
 
 
@@ -1375,112 +1369,112 @@ try {
         'about_page',
         [
             'id' =>
-                1,
+            1,
 
             'overview_title' =>
-                (string) (
-                    $generalInfo['title']
-                    ?? 'Overview'
-                ),
+            (string) (
+                $generalInfo['title']
+                ?? 'Overview'
+            ),
 
             'overview_content' =>
-                toText(
-                    $generalInfo['content']
+            toText(
+                $generalInfo['content']
                     ?? ''
-                ) ?? '',
+            ) ?? '',
 
             'mission_title' =>
-                (string) $missionTitle,
+            (string) $missionTitle,
 
             'mission' =>
-                toText(
-                    $missionVision['mission']
+            toText(
+                $missionVision['mission']
                     ?? $missionVision['text']
                     ?? ''
-                ) ?? '',
+            ) ?? '',
 
             'mission_image' =>
-                toNullableString(
-                    $missionVision['mission_img']
+            toNullableString(
+                $missionVision['mission_img']
                     ?? (
                         isset($missionVision['mission'])
                         && is_array($missionVision['mission'])
-                            ? null
-                            : null
+                        ? null
+                        : null
                     )
-                ),
+            ),
 
             'vision' =>
-                toText(
-                    $missionVision['vision']
+            toText(
+                $missionVision['vision']
                     ?? ''
-                ) ?? '',
+            ) ?? '',
 
             'vision_image' =>
-                toNullableString(
-                    $missionVision['vision_img']
+            toNullableString(
+                $missionVision['vision_img']
                     ?? null
-                ),
+            ),
 
             'core_values_image' =>
-                toNullableString(
-                    $missionVision['core_values_img']
+            toNullableString(
+                $missionVision['core_values_img']
                     ?? null
-                ),
+            ),
 
             'clients_title' =>
-                toNullableString(
-                    $clients['title']
+            toNullableString(
+                $clients['title']
                     ?? null
-                ),
+            ),
 
             'certificates_title' =>
-                toNullableString(
-                    $certificates['title']
+            toNullableString(
+                $certificates['title']
                     ?? null
-                ),
+            ),
 
             'awards_title' =>
-                toNullableString(
-                    $awards['title']
+            toNullableString(
+                $awards['title']
                     ?? null
-                ),
+            ),
 
             'affiliated_companies_title' =>
-                toNullableString(
-                    $sisterCompanies['title']
+            toNullableString(
+                $sisterCompanies['title']
                     ?? null
-                ),
+            ),
 
             'hse_title' =>
-                toNullableString(
-                    $hse['title']
+            toNullableString(
+                $hse['title']
                     ?? null
-                ),
+            ),
 
             'hse_content' =>
-                toText(
-                    $hse['content']
+            toText(
+                $hse['content']
                     ?? null
-                ),
+            ),
 
             'company_profile_title' =>
-                toNullableString(
-                    $cprofile['title']
+            toNullableString(
+                $cprofile['title']
                     ?? null
-                ),
+            ),
 
             'company_profile_content' =>
-                toText(
-                    $cprofile['content']
+            toText(
+                $cprofile['content']
                     ?? null
-                ),
+            ),
 
             'company_profile_file' =>
-                toNullableString(
-                    $cprofile['link']
+            toNullableString(
+                $cprofile['link']
                     ?? null
-                ),
+            ),
         ]
     );
 
@@ -1490,8 +1484,8 @@ try {
     $historyItems =
         isset($generalInfo['items'])
         && is_array($generalInfo['items'])
-            ? $generalInfo['items']
-            : [];
+        ? $generalInfo['items']
+        : [];
 
 
     foreach (
@@ -1508,32 +1502,32 @@ try {
             'about_history',
             [
                 'year' =>
-                    (string) (
-                        $item['year']
-                        ?? ''
-                    ),
+                (string) (
+                    $item['year']
+                    ?? ''
+                ),
 
                 'title' =>
-                    (string) (
-                        $item['title']
-                        ?? ''
-                    ),
+                (string) (
+                    $item['title']
+                    ?? ''
+                ),
 
                 'description' =>
-                    toText(
-                        $item['description']
+                toText(
+                    $item['description']
                         ?? null
-                    ),
+                ),
 
                 'image_path' =>
-                    toNullableString(
-                        $item['img']
+                toNullableString(
+                    $item['img']
                         ?? $item['image']
                         ?? null
-                    ),
+                ),
 
                 'sort_order' =>
-                    (int) $order,
+                (int) $order,
             ]
         );
 
@@ -1544,8 +1538,8 @@ try {
     $coreValues =
         isset($missionVision['core_values'])
         && is_array($missionVision['core_values'])
-            ? $missionVision['core_values']
-            : [];
+        ? $missionVision['core_values']
+        : [];
 
 
     $countCore = 0;
@@ -1560,10 +1554,10 @@ try {
             'about_core_values',
             [
                 'value_text' =>
-                    (string) $value,
+                (string) $value,
 
                 'sort_order' =>
-                    (int) $order,
+                (int) $order,
             ]
         );
 
@@ -1574,8 +1568,8 @@ try {
     $clientItems =
         isset($clients['items'])
         && is_array($clients['items'])
-            ? $clients['items']
-            : [];
+        ? $clients['items']
+        : [];
 
 
     $countClients = 0;
@@ -1592,15 +1586,14 @@ try {
 
             $name = null;
             $logo = $client;
-
         } else {
 
             $name =
                 isset($client['name'])
-                    ? toNullableString(
-                        $client['name']
-                    )
-                    : null;
+                ? toNullableString(
+                    $client['name']
+                )
+                : null;
 
             $logo =
                 (string) (
@@ -1616,16 +1609,16 @@ try {
             'about_clients',
             [
                 'name' =>
-                    $name,
+                $name,
 
                 'logo_path' =>
-                    $logo,
+                $logo,
 
                 'sort_order' =>
-                    (int) $order,
+                (int) $order,
 
                 'is_active' =>
-                    1,
+                1,
             ]
         );
 
@@ -1636,8 +1629,8 @@ try {
     $certificateItems =
         isset($certificates['items'])
         && is_array($certificates['items'])
-            ? $certificates['items']
-            : [];
+        ? $certificates['items']
+        : [];
 
 
     $countCertificates = 0;
@@ -1652,23 +1645,23 @@ try {
             'about_certificates',
             [
                 'name' =>
-                    (string) (
-                        $certificate['name']
-                        ?? ''
-                    ),
+                (string) (
+                    $certificate['name']
+                    ?? ''
+                ),
 
                 'logo_path' =>
-                    (string) (
-                        $certificate['logo']
-                        ?? $certificate['image']
-                        ?? ''
-                    ),
+                (string) (
+                    $certificate['logo']
+                    ?? $certificate['image']
+                    ?? ''
+                ),
 
                 'sort_order' =>
-                    (int) $order,
+                (int) $order,
 
                 'is_active' =>
-                    1,
+                1,
             ]
         );
 
@@ -1679,8 +1672,8 @@ try {
     $awardItems =
         isset($awards['items'])
         && is_array($awards['items'])
-            ? $awards['items']
-            : [];
+        ? $awards['items']
+        : [];
 
 
     $countAwards = 0;
@@ -1695,23 +1688,23 @@ try {
             'about_awards',
             [
                 'name' =>
-                    (string) (
-                        $award['name']
-                        ?? ''
-                    ),
+                (string) (
+                    $award['name']
+                    ?? ''
+                ),
 
                 'logo_path' =>
-                    (string) (
-                        $award['logo']
-                        ?? $award['image']
-                        ?? ''
-                    ),
+                (string) (
+                    $award['logo']
+                    ?? $award['image']
+                    ?? ''
+                ),
 
                 'sort_order' =>
-                    (int) $order,
+                (int) $order,
 
                 'is_active' =>
-                    1,
+                1,
             ]
         );
 
@@ -1722,8 +1715,8 @@ try {
     $companyItems =
         isset($sisterCompanies['items'])
         && is_array($sisterCompanies['items'])
-            ? $sisterCompanies['items']
-            : [];
+        ? $sisterCompanies['items']
+        : [];
 
 
     $countCompanies = 0;
@@ -1738,23 +1731,23 @@ try {
             'about_affiliated_companies',
             [
                 'name' =>
-                    (string) (
-                        $company['name']
-                        ?? ''
-                    ),
+                (string) (
+                    $company['name']
+                    ?? ''
+                ),
 
                 'logo_path' =>
-                    toNullableString(
-                        $company['logo']
+                toNullableString(
+                    $company['logo']
                         ?? $company['image']
                         ?? null
-                    ),
+                ),
 
                 'sort_order' =>
-                    (int) $order,
+                (int) $order,
 
                 'is_active' =>
-                    1,
+                1,
             ]
         );
 
@@ -1785,7 +1778,7 @@ try {
         $legacyId =
             toNullableString(
                 $project['id']
-                ?? null
+                    ?? null
             );
 
 
@@ -1829,83 +1822,83 @@ try {
             'projects',
             [
                 'legacy_id' =>
-                    $legacyId,
+                $legacyId,
 
                 'name' =>
-                    $name,
+                $name,
 
                 'slug' =>
-                    $slug,
+                $slug,
 
                 'sector_name' =>
-                    toNullableString(
-                        $project['sector']
+                toNullableString(
+                    $project['sector']
                         ?? null
-                    ),
+                ),
 
                 'category' =>
-                    toNullableString(
-                        $project['category']
+                toNullableString(
+                    $project['category']
                         ?? null
-                    ),
+                ),
 
                 'status' =>
-                    toNullableString(
-                        $project['status']
+                toNullableString(
+                    $project['status']
                         ?? null
-                    ),
+                ),
 
                 'completion_year' =>
-                    isset(
-                        $project['completion-year']
-                    )
+                isset(
+                    $project['completion-year']
+                )
                     && is_numeric(
                         $project['completion-year']
                     )
-                        ? (int) $project['completion-year']
-                        : null,
+                    ? (int) $project['completion-year']
+                    : null,
 
                 'location' =>
-                    toNullableString(
-                        $project['location']
+                toNullableString(
+                    $project['location']
                         ?? null
-                    ),
+                ),
 
                 'client' =>
-                    toNullableString(
-                        $project['client']
+                toNullableString(
+                    $project['client']
                         ?? null
-                    ),
+                ),
 
                 'description' =>
-                    toText(
-                        $project['description']
+                toText(
+                    $project['description']
                         ?? null
-                    ),
+                ),
 
                 'show_on_home' =>
-                    yesNo(
-                        $project['inhome']
+                yesNo(
+                    $project['inhome']
                         ?? 'no'
-                    ),
+                ),
 
                 'show_in_category_image' =>
-                    yesNo(
-                        $project['catimage']
+                yesNo(
+                    $project['catimage']
                         ?? 'no'
-                    ),
+                ),
 
                 'thumbnail_path' =>
-                    toNullableString(
-                        $project['thumbnail']
+                toNullableString(
+                    $project['thumbnail']
                         ?? null
-                    ),
+                ),
 
                 'published' =>
-                    1,
+                1,
 
                 'sort_order' =>
-                    (int) $order,
+                (int) $order,
             ]
         );
 
@@ -1916,8 +1909,8 @@ try {
         $images =
             isset($project['images'])
             && is_array($project['images'])
-                ? $project['images']
-                : [];
+            ? $project['images']
+            : [];
 
 
         foreach (
@@ -1939,19 +1932,19 @@ try {
                 'project_images',
                 [
                     'project_id' =>
-                        $projectId,
+                    $projectId,
 
                     'image_path' =>
-                        $image,
+                    $image,
 
                     'alt_text' =>
-                        $name,
+                    $name,
 
                     'caption' =>
-                        null,
+                    null,
 
                     'sort_order' =>
-                        (int) $imageOrder,
+                    (int) $imageOrder,
                 ]
             );
 
@@ -1963,8 +1956,8 @@ try {
         $scope =
             isset($project['scope'])
             && is_array($project['scope'])
-                ? $project['scope']
-                : [];
+            ? $project['scope']
+            : [];
 
 
         foreach (
@@ -1987,13 +1980,13 @@ try {
                 'project_scope',
                 [
                     'project_id' =>
-                        $projectId,
+                    $projectId,
 
                     'scope_text' =>
-                        $scopeText,
+                    $scopeText,
 
                     'sort_order' =>
-                        (int) $scopeOrder,
+                    (int) $scopeOrder,
                 ]
             );
 
@@ -2030,15 +2023,15 @@ try {
         $hero =
             isset($sector['hero'])
             && is_array($sector['hero'])
-                ? $sector['hero']
-                : [];
+            ? $sector['hero']
+            : [];
 
 
         $featured =
             isset($sector['project'])
             && is_array($sector['project'])
-                ? $sector['project']
-                : [];
+            ? $sector['project']
+            : [];
 
 
         $sectorId = insertRow(
@@ -2046,85 +2039,85 @@ try {
             'sectors',
             [
                 'sector_key' =>
-                    (string) $sectorKey,
+                (string) $sectorKey,
 
                 'title' =>
-                    (string) (
-                        $sector['title']
-                        ?? ''
-                    ),
+                (string) (
+                    $sector['title']
+                    ?? ''
+                ),
 
                 'description' =>
-                    toText(
-                        $sector['description']
+                toText(
+                    $sector['description']
                         ?? null
-                    ),
+                ),
 
                 'hero_tag' =>
-                    toNullableString(
-                        $hero['tag']
+                toNullableString(
+                    $hero['tag']
                         ?? null
-                    ),
+                ),
 
                 'hero_headline' =>
-                    toNullableString(
-                        $hero['headline']
+                toNullableString(
+                    $hero['headline']
                         ?? null
-                    ),
+                ),
 
                 'hero_subtitle' =>
-                    toNullableString(
-                        $hero['sub']
+                toNullableString(
+                    $hero['sub']
                         ?? null
-                    ),
+                ),
 
                 'hero_cta_text' =>
-                    toNullableString(
-                        $hero['cta_text']
+                toNullableString(
+                    $hero['cta_text']
                         ?? null
-                    ),
+                ),
 
                 'hero_cta_link' =>
-                    toNullableString(
-                        $hero['cta_link']
+                toNullableString(
+                    $hero['cta_link']
                         ?? null
-                    ),
+                ),
 
                 'hero_image' =>
-                    toNullableString(
-                        $hero['image']
+                toNullableString(
+                    $hero['image']
                         ?? null
-                    ),
+                ),
 
                 'featured_project_name' =>
-                    toNullableString(
-                        $featured['name']
+                toNullableString(
+                    $featured['name']
                         ?? null
-                    ),
+                ),
 
                 'featured_project_image' =>
-                    toNullableString(
-                        $featured['image']
+                toNullableString(
+                    $featured['image']
                         ?? null
-                    ),
+                ),
 
                 'featured_project_cta_text' =>
-                    toNullableString(
-                        $featured['cta_text']
+                toNullableString(
+                    $featured['cta_text']
                         ?? null
-                    ),
+                ),
 
                 'featured_project_cta_link' =>
-                    toNullableString(
-                        $featured['cta_link']
+                toNullableString(
+                    $featured['cta_link']
                         ?? null
-                    ),
+                ),
 
                 'sort_order' =>
-                    $countSectors,
+                $countSectors,
 
                 'is_active' =>
-                    1,
+                1,
             ]
         );
 
@@ -2135,8 +2128,8 @@ try {
         $statsItems =
             isset($sector['stats'])
             && is_array($sector['stats'])
-                ? $sector['stats']
-                : [];
+            ? $sector['stats']
+            : [];
 
 
         foreach (
@@ -2153,22 +2146,22 @@ try {
                 'sector_stats',
                 [
                     'sector_id' =>
-                        $sectorId,
+                    $sectorId,
 
                     'value_text' =>
-                        (string) (
-                            $stat['value']
-                            ?? ''
-                        ),
+                    (string) (
+                        $stat['value']
+                        ?? ''
+                    ),
 
                     'label' =>
-                        (string) (
-                            $stat['label']
-                            ?? ''
-                        ),
+                    (string) (
+                        $stat['label']
+                        ?? ''
+                    ),
 
                     'sort_order' =>
-                        (int) $order,
+                    (int) $order,
                 ]
             );
 
@@ -2180,8 +2173,8 @@ try {
         $whyItems =
             isset($sector['why'])
             && is_array($sector['why'])
-                ? $sector['why']
-                : [];
+            ? $sector['why']
+            : [];
 
 
         foreach (
@@ -2193,13 +2186,13 @@ try {
                 'sector_why',
                 [
                     'sector_id' =>
-                        $sectorId,
+                    $sectorId,
 
                     'text_content' =>
-                        (string) $why,
+                    (string) $why,
 
                     'sort_order' =>
-                        (int) $order,
+                    (int) $order,
                 ]
             );
 
@@ -2211,8 +2204,8 @@ try {
         $areas =
             isset($sector['areas'])
             && is_array($sector['areas'])
-                ? $sector['areas']
-                : [];
+            ? $sector['areas']
+            : [];
 
 
         foreach (
@@ -2224,13 +2217,13 @@ try {
                 'sector_areas',
                 [
                     'sector_id' =>
-                        $sectorId,
+                    $sectorId,
 
                     'title' =>
-                        (string) $area,
+                    (string) $area,
 
                     'sort_order' =>
-                        (int) $order,
+                    (int) $order,
                 ]
             );
 
@@ -2242,8 +2235,8 @@ try {
         $sections =
             isset($sector['sections'])
             && is_array($sector['sections'])
-                ? $sector['sections']
-                : [];
+            ? $sector['sections']
+            : [];
 
 
         foreach (
@@ -2260,37 +2253,37 @@ try {
                 'sector_sections',
                 [
                     'sector_id' =>
-                        $sectorId,
+                    $sectorId,
 
                     'legacy_id' =>
-                        toNullableString(
-                            $section['id']
+                    toNullableString(
+                        $section['id']
                             ?? null
-                        ),
+                    ),
 
                     'title' =>
-                        (string) (
-                            $section['title']
-                            ?? ''
-                        ),
+                    (string) (
+                        $section['title']
+                        ?? ''
+                    ),
 
                     'category' =>
-                        toNullableString(
-                            $section['category']
+                    toNullableString(
+                        $section['category']
                             ?? null
-                        ),
+                    ),
 
                     'content' =>
-                        toText(
-                            $section['content']
+                    toText(
+                        $section['content']
                             ?? null
-                        ),
+                    ),
 
                     'sort_order' =>
-                        (int) $sectionOrder,
+                    (int) $sectionOrder,
 
                     'is_active' =>
-                        1,
+                    1,
                 ]
             );
 
@@ -2300,8 +2293,8 @@ try {
 
             $images =
                 isset($section['image'])
-                    ? $section['image']
-                    : [];
+                ? $section['image']
+                : [];
 
 
             if (!is_array($images)) {
@@ -2329,13 +2322,13 @@ try {
                     'sector_section_images',
                     [
                         'section_id' =>
-                            $sectionId,
+                        $sectionId,
 
                         'image_path' =>
-                            $image,
+                        $image,
 
                         'sort_order' =>
-                            (int) $imageOrder,
+                        (int) $imageOrder,
                     ]
                 );
 
@@ -2347,8 +2340,8 @@ try {
             $sectionStats =
                 isset($section['stats'])
                 && is_array($section['stats'])
-                    ? $section['stats']
-                    : [];
+                ? $section['stats']
+                : [];
 
 
             foreach (
@@ -2365,22 +2358,22 @@ try {
                     'sector_section_stats',
                     [
                         'section_id' =>
-                            $sectionId,
+                        $sectionId,
 
                         'value_text' =>
-                            (string) (
-                                $stat['value']
-                                ?? ''
-                            ),
+                        (string) (
+                            $stat['value']
+                            ?? ''
+                        ),
 
                         'label' =>
-                            (string) (
-                                $stat['label']
-                                ?? ''
-                            ),
+                        (string) (
+                            $stat['label']
+                            ?? ''
+                        ),
 
                         'sort_order' =>
-                            (int) $statOrder,
+                        (int) $statOrder,
                     ]
                 );
 
@@ -2417,33 +2410,33 @@ try {
             'service_groups',
             [
                 'service_key' =>
-                    (string) $serviceKey,
+                (string) $serviceKey,
 
                 'title' =>
-                    (string) (
-                        $group['title']
-                        ?? ''
-                    ),
+                (string) (
+                    $group['title']
+                    ?? ''
+                ),
 
                 'hero_image' =>
-                    toNullableString(
-                        $group['hero_image']
+                toNullableString(
+                    $group['hero_image']
                         ?? $group['image']
                         ?? null
-                    ),
+                ),
 
                 'hero_text' =>
-                    toText(
-                        $group['hero_text']
+                toText(
+                    $group['hero_text']
                         ?? $group['text']
                         ?? null
-                    ),
+                ),
 
                 'sort_order' =>
-                    $countServiceGroups,
+                $countServiceGroups,
 
                 'is_active' =>
-                    1,
+                1,
             ]
         );
 
@@ -2454,8 +2447,8 @@ try {
         $categories =
             isset($group['sub_services'])
             && is_array($group['sub_services'])
-                ? $group['sub_services']
-                : [];
+            ? $group['sub_services']
+            : [];
 
 
         foreach (
@@ -2472,25 +2465,25 @@ try {
                 'service_categories',
                 [
                     'group_id' =>
-                        $groupId,
+                    $groupId,
 
                     'category_key' =>
-                        toNullableString(
-                            $category['id']
+                    toNullableString(
+                        $category['id']
                             ?? null
-                        ),
+                    ),
 
                     'title' =>
-                        (string) (
-                            $category['title']
-                            ?? ''
-                        ),
+                    (string) (
+                        $category['title']
+                        ?? ''
+                    ),
 
                     'sort_order' =>
-                        (int) $categoryOrder,
+                    (int) $categoryOrder,
 
                     'is_active' =>
-                        1,
+                    1,
                 ]
             );
 
@@ -2501,8 +2494,8 @@ try {
             $items =
                 isset($category['items'])
                 && is_array($category['items'])
-                    ? $category['items']
-                    : [];
+                ? $category['items']
+                : [];
 
 
             foreach (
@@ -2519,46 +2512,46 @@ try {
                     'service_items',
                     [
                         'category_id' =>
-                            $categoryId,
+                        $categoryId,
 
                         'parent_id' =>
-                            null,
+                        null,
 
                         'service_key' =>
-                            toNullableString(
-                                $item['id']
+                        toNullableString(
+                            $item['id']
                                 ?? null
-                            ),
+                        ),
 
                         'title' =>
-                            (string) (
-                                $item['title']
-                                ?? ''
-                            ),
+                        (string) (
+                            $item['title']
+                            ?? ''
+                        ),
 
                         'image_path' =>
-                            toNullableString(
-                                $item['image']
+                        toNullableString(
+                            $item['image']
                                 ?? null
-                            ),
+                        ),
 
                         'short_description' =>
-                            toText(
-                                $item['short_desc']
+                        toText(
+                            $item['short_desc']
                                 ?? null
-                            ),
+                        ),
 
                         'why_description' =>
-                            toText(
-                                $item['why']
+                        toText(
+                            $item['why']
                                 ?? null
-                            ),
+                        ),
 
                         'sort_order' =>
-                            (int) $itemOrder,
+                        (int) $itemOrder,
 
                         'is_active' =>
-                            1,
+                        1,
                     ]
                 );
 
@@ -2569,8 +2562,8 @@ try {
                 $features =
                     isset($item['features'])
                     && is_array($item['features'])
-                        ? $item['features']
-                        : [];
+                    ? $item['features']
+                    : [];
 
 
                 foreach (
@@ -2592,13 +2585,13 @@ try {
                         'service_features',
                         [
                             'service_item_id' =>
-                                $itemId,
+                            $itemId,
 
                             'feature_text' =>
-                                $feature,
+                            $feature,
 
                             'sort_order' =>
-                                (int) $featureOrder,
+                            (int) $featureOrder,
                         ]
                     );
 
@@ -2610,8 +2603,13 @@ try {
                 $subItems =
                     isset($item['subitems'])
                     && is_array($item['subitems'])
-                        ? $item['subitems']
-                        : [];
+                    ? $item['subitems']
+                    : (
+                        isset($item['items'])
+                        && is_array($item['items'])
+                        ? $item['items']
+                        : []
+                    );
 
 
                 foreach (
@@ -2632,8 +2630,8 @@ try {
 
                         $subImage =
                             isset($subImage[0])
-                                ? $subImage[0]
-                                : null;
+                            ? $subImage[0]
+                            : null;
                     }
 
 
@@ -2642,46 +2640,46 @@ try {
                         'service_items',
                         [
                             'category_id' =>
-                                $categoryId,
+                            $categoryId,
 
                             'parent_id' =>
-                                $itemId,
+                            $itemId,
 
                             'service_key' =>
-                                toNullableString(
-                                    $subItem['id']
+                            toNullableString(
+                                $subItem['id']
                                     ?? null
-                                ),
+                            ),
 
                             'title' =>
-                                (string) (
-                                    $subItem['title']
-                                    ?? ''
-                                ),
+                            (string) (
+                                $subItem['title']
+                                ?? ''
+                            ),
 
                             'image_path' =>
-                                toNullableString(
-                                    $subImage
-                                ),
+                            toNullableString(
+                                $subImage
+                            ),
 
                             'short_description' =>
-                                toText(
-                                    $subItem['short_desc']
+                            toText(
+                                $subItem['short_desc']
                                     ?? $subItem['text']
                                     ?? null
-                                ),
+                            ),
 
                             'why_description' =>
-                                toText(
-                                    $subItem['why']
+                            toText(
+                                $subItem['why']
                                     ?? null
-                                ),
+                            ),
 
                             'sort_order' =>
-                                (int) $subOrder,
+                            (int) $subOrder,
 
                             'is_active' =>
-                                1,
+                            1,
                         ]
                     );
 
@@ -2692,8 +2690,8 @@ try {
                     $childFeatures =
                         isset($subItem['features'])
                         && is_array($subItem['features'])
-                            ? $subItem['features']
-                            : [];
+                        ? $subItem['features']
+                        : [];
 
 
                     foreach (
@@ -2716,13 +2714,13 @@ try {
                             'service_features',
                             [
                                 'service_item_id' =>
-                                    $childId,
+                                $childId,
 
                                 'feature_text' =>
-                                    $feature,
+                                $feature,
 
                                 'sort_order' =>
-                                    (int) $featureOrder,
+                                (int) $featureOrder,
                             ]
                         );
 
@@ -2790,8 +2788,8 @@ try {
 
             $date =
                 isset($item['date'])
-                    ? (string) $item['date']
-                    : null;
+                ? (string) $item['date']
+                : null;
 
 
             $mediaId = insertRow(
@@ -2799,43 +2797,43 @@ try {
                 'media_items',
                 [
                     'legacy_id' =>
-                        toNullableString(
-                            $item['id']
+                    toNullableString(
+                        $item['id']
                             ?? null
-                        ),
+                    ),
 
                     'media_type' =>
-                        $mediaType,
+                    $mediaType,
 
                     'media_date' =>
-                        toNullableString($date),
+                    toNullableString($date),
 
                     'media_date_sort' =>
-                        normalizeDate($date),
+                    normalizeDate($date),
 
                     'title' =>
-                        (string) (
-                            $item['title']
-                            ?? ''
-                        ),
+                    (string) (
+                        $item['title']
+                        ?? ''
+                    ),
 
                     'image_path' =>
-                        toNullableString(
-                            $item['image']
+                    toNullableString(
+                        $item['image']
                             ?? null
-                        ),
+                    ),
 
                     'external_link' =>
-                        toNullableString(
-                            $item['link']
+                    toNullableString(
+                        $item['link']
                             ?? null
-                        ),
+                    ),
 
                     'sort_order' =>
-                        (int) $order,
+                    (int) $order,
 
                     'is_active' =>
-                        1,
+                    1,
                 ]
             );
 
@@ -2845,8 +2843,8 @@ try {
 
             $descriptions =
                 isset($item['description'])
-                    ? $item['description']
-                    : [];
+                ? $item['description']
+                : [];
 
 
             if (!is_array($descriptions)) {
@@ -2875,13 +2873,13 @@ try {
                     'media_descriptions',
                     [
                         'media_item_id' =>
-                            $mediaId,
+                        $mediaId,
 
                         'description_text' =>
-                            $description,
+                        $description,
 
                         'sort_order' =>
-                            (int) $descriptionOrder,
+                        (int) $descriptionOrder,
                     ]
                 );
 
@@ -2893,8 +2891,8 @@ try {
             $tags =
                 isset($item['tags'])
                 && is_array($item['tags'])
-                    ? $item['tags']
-                    : [];
+                ? $item['tags']
+                : [];
 
 
             foreach ($tags as $tag) {
@@ -2914,7 +2912,6 @@ try {
 
                     $tagId =
                         $tagMap[$tag];
-
                 } else {
 
                     $stmt = $pdo->prepare(
@@ -2938,7 +2935,6 @@ try {
 
                         $tagId =
                             (int) $existing;
-
                     } else {
 
                         $tagId = insertRow(
@@ -2946,7 +2942,7 @@ try {
                             'media_tags',
                             [
                                 'tag_name' =>
-                                    $tag,
+                                $tag,
                             ]
                         );
 
@@ -2965,10 +2961,10 @@ try {
                     'media_item_tags',
                     [
                         'media_item_id' =>
-                            $mediaId,
+                        $mediaId,
 
                         'tag_id' =>
-                            $tagId,
+                        $tagId,
                     ]
                 );
 
@@ -2992,10 +2988,10 @@ try {
 
     $legalSets = [
         'policies' =>
-            $policies,
+        $policies,
 
         'terms' =>
-            $TermsOfService,
+        $TermsOfService,
     ];
 
 
@@ -3023,7 +3019,6 @@ try {
                 /*
                  * Normal document.
                  */
-
             } else {
 
                 continue;
@@ -3041,19 +3036,19 @@ try {
                 'legal_documents',
                 [
                     'document_key' =>
-                        $dbDocumentKey,
+                    $dbDocumentKey,
 
                     'title' =>
-                        (string) (
-                            $document['title']
-                            ?? ''
-                        ),
+                    (string) (
+                        $document['title']
+                        ?? ''
+                    ),
 
                     'sort_order' =>
-                        $countDocuments,
+                    $countDocuments,
 
                     'is_active' =>
-                        1,
+                    1,
                 ]
             );
 
@@ -3064,8 +3059,8 @@ try {
             $sections =
                 isset($document['sections'])
                 && is_array($document['sections'])
-                    ? $document['sections']
-                    : [];
+                ? $document['sections']
+                : [];
 
 
             foreach (
@@ -3087,27 +3082,27 @@ try {
                     'legal_sections',
                     [
                         'document_id' =>
-                            $documentId,
+                        $documentId,
 
                         'title' =>
-                            (string) (
-                                $section['title']
-                                ?? ''
-                            ),
+                        (string) (
+                            $section['title']
+                            ?? ''
+                        ),
 
                         'content' =>
-                            toText(
-                                $section['content']
+                        toText(
+                            $section['content']
                                 ?? null
-                            ),
+                        ),
 
                         'section_type' =>
-                            $isList
-                                ? 'list'
-                                : 'content',
+                        $isList
+                            ? 'list'
+                            : 'content',
 
                         'sort_order' =>
-                            (int) $sectionOrder,
+                        (int) $sectionOrder,
                     ]
                 );
 
@@ -3127,13 +3122,13 @@ try {
                             'legal_section_items',
                             [
                                 'section_id' =>
-                                    $sectionId,
+                                $sectionId,
 
                                 'item_text' =>
-                                    (string) $item,
+                                (string) $item,
 
                                 'sort_order' =>
-                                    (int) $itemOrder,
+                                (int) $itemOrder,
                             ]
                         );
 
@@ -3218,8 +3213,6 @@ try {
     echo "Original source files were not modified." . PHP_EOL;
     echo "Frontend files were not modified." . PHP_EOL;
     echo PHP_EOL;
-
-
 } catch (Throwable $e) {
 
     if ($pdo->inTransaction()) {

@@ -30,7 +30,10 @@ if (!function_exists('renderServiceDetailPanel')) {
             if (isset($item['subitems']) || isset($item['items'])) {
                 $groupTitle = isset($item['title']) ? $item['title'] : (isset($item['subitems']) ? 'Subitems' : 'Items');
         ?>
-                <li class="group-title"><?php echo htmlspecialchars($groupTitle) ?></li>
+                <li class="group-title">
+                    <span><?php echo htmlspecialchars($groupTitle) ?></span>
+                    <i class="fa-solid fa-chevron-down group-toggle-icon" aria-hidden="true"></i>
+                </li>
                 <ul class="group-list">
                     <?php
                     $children = isset($item['subitems']) ? $item['subitems'] : $item['items'];
