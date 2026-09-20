@@ -11,10 +11,10 @@ if (!function_exists('renderServiceDetailPanel')) {
             <h3 class="service-detail-title"><?php echo htmlspecialchars($item['title']) ?></h3>
             <p class="service-short-desc"><?php echo htmlspecialchars($item['short_desc']) ?></p>
             <div class="service-why">
-                <h5 class="services-why-heading">Why Choose Our <?php echo htmlspecialchars($item['title']) ?> Service?</h5>
+                <h5 class="services-why-heading"><?php echo htmlspecialchars(str_replace('%s', (string)$item['title'], (string)SiteSettings::get('service_why_choose_template', 'Why Choose Our %s Service?'))); ?></h5>
                 <p class="service-why-text"><?php echo htmlspecialchars($item['why']) ?></p>
             </div>
-            <h5>Key Features</h5>
+            <h5><?php echo e((string)SiteSettings::get('service_features_label', 'Key Features')); ?></h5>
             <ul>
                 <?php foreach ($item['features'] as $feature): ?>
                     <li><?php echo htmlspecialchars($feature) ?></li>

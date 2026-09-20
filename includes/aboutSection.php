@@ -100,13 +100,13 @@ $aboutSections = [
 
                     <!-- MISSION & VISION -->
                     <section id="mission-vision" class="about-section-block about-panel py-1">
-                        <h2 class="text-center mb-4">Mission, Vision & Core Values</h2>
+                        <h2 class="text-center mb-4"><?php echo e((string)SiteSettings::get('about_mission_section_title', 'Mission, Vision & Core Values')); ?></h2>
 
                         <!-- ROW 1: Mission — text left, image right -->
                         <div class="row align-items-center g-4 mb-5">
                             <div class="col-lg-6">
                                 <div class="mv-text-block">
-                                    <h3 class="mv-heading">Our Mission</h3>
+                                    <h3 class="mv-heading"><?php echo e((string)SiteSettings::get('about_mission_label', 'Our Mission')); ?></h3>
                                     <p class="mv-text"><?php echo $missionVision['mission'] ?></p>
                                 </div>
                             </div>
@@ -126,7 +126,7 @@ $aboutSections = [
                             </div>
                             <div class="col-lg-6">
                                 <div class="mv-text-block">
-                                    <h3 class="mv-heading">Our Vision</h3>
+                                    <h3 class="mv-heading"><?php echo e((string)SiteSettings::get('about_vision_label', 'Our Vision')); ?></h3>
                                     <p class="mv-text"><?php echo $missionVision['vision'] ?></p>
                                 </div>
                             </div>
@@ -136,7 +136,7 @@ $aboutSections = [
                         <div class="row align-items-center g-4">
                             <div class="col-lg-6">
                                 <div class="mv-text-block">
-                                    <h3 class="mv-heading">Core Values</h3>
+                                    <h3 class="mv-heading"><?php echo e((string)SiteSettings::get('about_core_values_label', 'Core Values')); ?></h3>
                                     <ul class="mv-values-list">
                                         <?php foreach ($missionVision['core_values'] as $value): ?>
                                             <li>

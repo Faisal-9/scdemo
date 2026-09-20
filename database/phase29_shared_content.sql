@@ -70,6 +70,54 @@ SELECT 'footer_contact_label', 'Contact', 'text', 'Footer contact heading'
 WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'footer_contact_label');
 
 INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'about_mission_section_title', 'Mission, Vision & Core Values', 'text', 'About page mission and vision section heading'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'about_mission_section_title');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'about_mission_label', 'Our Mission', 'text', 'About page mission label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'about_mission_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'about_vision_label', 'Our Vision', 'text', 'About page vision label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'about_vision_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'about_core_values_label', 'Core Values', 'text', 'About page core values label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'about_core_values_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'home_about_section_title', 'Why State Corps', 'text', 'Homepage about heading'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'home_about_section_title');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'home_services_section_title', 'Services', 'text', 'Homepage services section heading'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'home_services_section_title');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'home_explore_projects_label', 'Explore Projects', 'text', 'Homepage hero CTA label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'home_explore_projects_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'home_read_more_label', 'Read More +', 'text', 'Homepage service card CTA label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'home_read_more_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'sector_why_choose_title', 'Why Choose Us', 'text', 'Sector page why-choose heading'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'sector_why_choose_title');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'sector_areas_title', 'Areas of Expertise', 'text', 'Sector page expertise heading'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'sector_areas_title');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'service_features_label', 'Key Features', 'text', 'Service detail features heading'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'service_features_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'service_why_choose_template', 'Why Choose Our %s Service?', 'text', 'Service detail why-choose heading template with %s for the service title'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'service_why_choose_template');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
 SELECT 'footer_policies_label', 'Policies', 'text', 'Footer policies link label'
 WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'footer_policies_label');
 

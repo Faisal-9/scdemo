@@ -48,7 +48,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
                                 <?php echo htmlspecialchars($slide['desc'], ENT_QUOTES, 'UTF-8') ?>
                             </p>
                             <a href="projects.php" class="hero-btn">
-                                Explore Projects
+                                <?php echo e((string)SiteSettings::get('home_explore_projects_label', 'Explore Projects')); ?>
                             </a>
                         </div>
                     </div>
@@ -86,7 +86,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
     <div class="container">
 
         <div class="index-about-us-header text-center mb-4">
-            <h2 class="">Why State Corps</h2>
+            <h2 class=""><?php echo e((string)SiteSettings::get('home_about_section_title', 'Why State Corps')); ?></h2>
         </div>
 
         <div class="row align-items-center">
@@ -263,7 +263,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
     <div class="container">
 
         <div class="section-header text-center mb-4">
-            <h2 class="">Services</h2>
+            <h2 class=""><?php echo e((string)SiteSettings::get('home_services_section_title', 'Services')); ?></h2>
         </div>
 
         <div class="row g-4">
@@ -291,7 +291,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
 
                             <a href="services.php?tab=<?php echo $serviceKey ?>"
                                 class="service-btn serif-link">
-                                Read More +
+                                <?php echo e((string)SiteSettings::get('home_read_more_label', 'Read More +')); ?>
                             </a>
                         </div>
 

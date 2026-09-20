@@ -44,7 +44,7 @@ $sector = isset($sector) ? $sector : [];
 
                 <?php if (!empty($sector['why'])): ?>
                     <div class="why">
-                        <h2>Why Choose Us</h2>
+                        <h2><?php echo e((string)SiteSettings::get('sector_why_choose_title', 'Why Choose Us')); ?></h2>
                         <ul>
                             <?php foreach ($sector['why'] as $w): ?>
                                 <li><?php echo $w ?></li>
@@ -55,7 +55,7 @@ $sector = isset($sector) ? $sector : [];
 
                 <?php if (!empty($sector['areas'])): ?>
                     <div class="areas">
-                        <h2>Areas of Expertise</h2>
+                        <h2><?php echo e((string)SiteSettings::get('sector_areas_title', 'Areas of Expertise')); ?></h2>
                         <ul>
                             <?php foreach ($sector['areas'] as $a): ?>
                                 <li><?php echo $a ?></li>
