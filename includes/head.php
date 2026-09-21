@@ -10,6 +10,9 @@ if (!isset($page_title))
 if (!isset($page_description))
     $page_description = (string)SiteSettings::get('site_description', '');
 
+$siteLogoSetting = (string)SiteSettings::get('site_logo', '');
+$siteLogo = AssetResolver::path($siteLogoSetting) ?: $siteLogoSetting;
+
 $seoPageKeys = [
     'index.php' => 'home',
     'about.php' => 'about',
@@ -30,7 +33,7 @@ $seoFallback = [
     'robots' => 'index,follow',
     'og_title' => $page_title,
     'og_description' => $page_description,
-    'og_image' => (string)SiteSettings::get('site_logo', ''),
+    'og_image' => $siteLogo,
     'twitter_card' => 'summary_large_image',
 ];
 $seo = $seoFallback;
@@ -118,6 +121,6 @@ AnalyticsTracker::track($page_title, $pageKey);
     <!-- <link rel="stylesheet" href="assets/css/responsive.css?v=<?php echo time() ?>"> -->
 
     <!-- Preload Important Logo -->
-    <link rel="preload" as="image" href="<?php echo htmlspecialchars($publicBaseUrl . (string)SiteSettings::get('site_logo', ''), ENT_QUOTES, 'UTF-8'); ?>">
+    <link rel="preload" as="image" href="<?php echo htmlspecialchars($publicBaseUrl . $siteLogo, ENT_QUOTES, 'UTF-8'); ?>">
 
 </head>

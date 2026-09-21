@@ -16,6 +16,8 @@ $headerSocialLinks = [
     ['url' => (string)SiteSettings::get('social_x_url', ''), 'icon' => 'fa-x-twitter'],
     ['url' => (string)SiteSettings::get('social_linkedin_url', ''), 'icon' => 'fa-linkedin-in'],
 ];
+$siteLogoSetting = (string)SiteSettings::get('site_logo', '');
+$siteLogo = AssetResolver::path($siteLogoSetting) ?: $siteLogoSetting;
 $headerColor = static function (string $key, string $fallback): string {
     $value = (string)SiteSettings::get($key, $fallback);
     return preg_match('/^#[0-9a-fA-F]{6}$/', $value) ? $value : $fallback;
@@ -71,7 +73,7 @@ $renderNavigationItem = static function (array $item, string $itemClass = 'nav-i
         <div class="main-navigation">
             <div class="floating-logo">
                 <a href="<?= e(baseUrl('index.php')) ?>" class="logo">
-                    <img src="<?= e(baseUrl((string)SiteSettings::get('site_logo', ''))) ?>" alt="<?= e((string)SiteSettings::get('site_name', '')) ?>" class="logo-img">
+                    <img src="<?= e(baseUrl($siteLogo)) ?>" alt="<?= e((string)SiteSettings::get('site_name', '')) ?>" class="logo-img">
                 </a>
             </div>
 
