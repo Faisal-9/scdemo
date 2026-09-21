@@ -38,7 +38,7 @@ require __DIR__ . '/../partials/sidebar.php';
                 <div class="form-field"><label>Sort order</label><input type="number" min="0" name="sort_order" value="<?= e((string)($slide['sort_order'] ?? 0)) ?>"></div>
                 <div class="form-field form-field-wide"><label>Title</label><input name="title" maxlength="255" value="<?= e($slide['title'] ?? '') ?>" required></div>
                 <div class="form-field form-field-wide"><label>Description</label><textarea name="description" rows="6"><?= e($slide['description'] ?? '') ?></textarea></div>
-                <div class="form-field form-field-wide"><?php mediaPickerField('image_path', (string) ($slide['image_path'] ?? ''), ['label' => 'Image path', 'required' => true]); ?></div>
+                <div class="form-field form-field-wide"><?php mediaPickerField('hero_asset_id', (string) ($slide['hero_asset_id'] ?? ''), ['label' => 'Hero image', 'required' => true]); ?></div>
                 <div class="form-field form-field-wide"><label>Indicator</label><input name="indicator" value="<?= e($slide['indicator'] ?? '') ?>"></div>
             </div><label class="permission-option"><input type="checkbox" name="is_active" value="1" <?= !isset($slide['is_active']) || $slide['is_active'] ? 'checked' : '' ?>><span><strong>Active</strong></span></label>
             <div class="form-actions"><a class="button-link button-secondary" href="<?= e(adminUrl('homepage/')) ?>">Cancel</a><button class="button-primary" type="submit">Save Slide</button></div>

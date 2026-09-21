@@ -54,7 +54,7 @@ final class MediaManager
         self::assertType($type);
         $title = trim((string)($data['title'] ?? ''));
         if ($title === '') throw new RuntimeException('Media title is required.');
-        $image = trim((string)($data['image_path'] ?? ''));
+        $image = AssetResolver::id($data['media_asset_id'] ?? null);
         $date = trim((string)($data['media_date'] ?? ''));
         $dateSort = trim((string)($data['media_date_sort'] ?? ''));
         $external = self::nullable($data['external_link'] ?? null);
@@ -72,14 +72,14 @@ final class MediaManager
         $pdo->beginTransaction();
         try {
             if ($id === null) {
-                $stmt = $pdo->prepare('INSERT INTO media_items (legacy_id, media_type, media_date, media_date_sort, title, image_path, external_link, sort_order, is_active) VALUES (:legacy_id,:media_type,:media_date,:media_date_sort,:title,:image_path,:external_link,:sort_order,:is_active)');
+                $stmt = $pdo->prepare('INSERT INTO media_items (legacy_id, media_type, media_date, media_date_sort, title, media_asset_id, external_link, sort_order, is_active) VALUES (:legacy_id,:media_type,:media_date,:media_date_sort,:title,:media_asset_id,:external_link,:sort_order,:is_active)');
                 $stmt->execute([
                     ':legacy_id' => $legacy,
                     ':media_type' => $type,
                     ':media_date' => self::nullable($date),
                     ':media_date_sort' => self::nullable($dateSort),
                     ':title' => $title,
-                    ':image_path' => self::nullable($image),
+                    ':media_asset_id' => $image,
                     ':external_link' => $external,
                     ':sort_order' => $sort,
                     ':is_active' => $active
@@ -90,14 +90,14 @@ final class MediaManager
                 $exists = $pdo->prepare('SELECT id FROM media_items WHERE id=:id LIMIT 1');
                 $exists->execute([':id' => $id]);
                 if (!$exists->fetchColumn()) throw new RuntimeException('Media item not found.');
-                $stmt = $pdo->prepare('UPDATE media_items SET legacy_id=:legacy_id, media_type=:media_type, media_date=:media_date, media_date_sort=:media_date_sort, title=:title, image_path=:image_path, external_link=:external_link, sort_order=:sort_order, is_active=:is_active WHERE id=:id');
+                $stmt = $pdo->prepare('UPDATE media_items SET legacy_id=:legacy_id, media_type=:media_type, media_date=:media_date, media_date_sort=:media_date_sort, title=:title, media_asset_id=:media_asset_id, external_link=:external_link, sort_order=:sort_order, is_active=:is_active WHERE id=:id');
                 $stmt->execute([
                     ':legacy_id' => $legacy,
                     ':media_type' => $type,
                     ':media_date' => self::nullable($date),
                     ':media_date_sort' => self::nullable($dateSort),
                     ':title' => $title,
-                    ':image_path' => self::nullable($image),
+                    ':media_asset_id' => $image,
                     ':external_link' => $external,
                     ':sort_order' => $sort,
                     ':is_active' => $active,

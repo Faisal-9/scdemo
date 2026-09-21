@@ -44,7 +44,7 @@ final class MediaFrontend
                 'date' => (string)($row['media_date'] ?? ''),
                 'title' => (string)$row['title'],
                 'description' => $row['media_type'] === 'gallery' ? (string)($paragraphs[0] ?? '') : $paragraphs,
-                'image' => (string)($row['image_path'] ?? ''),
+                'image' => AssetResolver::path($row['media_asset_id'] ?? null),
                 'link' => (string)($row['external_link'] ?? ''),
                 'tags' => $tagNames,
             ];

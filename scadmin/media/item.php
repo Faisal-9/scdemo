@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 if (!$row) {
-    $row = ['media_type' => 'news', 'legacy_id' => '', 'media_date' => '', 'media_date_sort' => '', 'title' => '', 'image_path' => '', 'external_link' => '', 'sort_order' => 0, 'is_active' => 1, 'descriptions' => [''], 'tags_csv' => ''];
+    $row = ['media_type' => 'news', 'legacy_id' => '', 'media_date' => '', 'media_date_sort' => '', 'title' => '', 'media_asset_id' => '', 'external_link' => '', 'sort_order' => 0, 'is_active' => 1, 'descriptions' => [''], 'tags_csv' => ''];
 }
 $pageTitle = $id ? 'Edit Media' : 'Add Media';
 $activeNav = 'media';
@@ -57,7 +57,7 @@ require __DIR__ . '/../partials/sidebar.php';
                 <label>Display date<input name="media_date" value="<?= e((string)($row['media_date'] ?? '')) ?>" required></label>
                 <label>Date for sorting<input type="date" name="media_date_sort" value="<?= e((string)($row['media_date_sort'] ?? '')) ?>"></label>
                 <label class="full">Title<input name="title" value="<?= e((string)$row['title']) ?>" required></label>
-                <div class="full"><?php mediaPickerField('image_path', (string) ($row['image_path'] ?? ''), ['label' => 'Image path']); ?><small>Example: assets/images/media/23-1225-Jawzjan.jpeg</small></div>
+                <div class="full"><?php mediaPickerField('media_asset_id', (string) ($row['media_asset_id'] ?? ''), ['label' => 'Image']); ?></div>
                 <label class="full">External link<input name="external_link" value="<?= e((string)($row['external_link'] ?? '')) ?>"></label>
                 <label>Sort order<input type="number" min="0" name="sort_order" value="<?= e((string)$row['sort_order']) ?>"></label>
                 <label class="check"><input type="checkbox" name="is_active" value="1" <?= $row['is_active'] ? 'checked' : '' ?>> Active / published</label>

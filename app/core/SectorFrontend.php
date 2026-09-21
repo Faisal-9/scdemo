@@ -26,14 +26,14 @@ final class SectorFrontend
                     'sub' => (string) ($row['hero_subtitle'] ?? ''),
                     'cta_text' => (string) ($row['hero_cta_text'] ?? ''),
                     'cta_link' => (string) ($row['hero_cta_link'] ?? ''),
-                    'image' => (string) ($row['hero_image'] ?? ''),
+                    'image' => AssetResolver::path($row['hero_asset_id'] ?? null),
                 ],
                 'stats' => self::sectorStats($pdo, $sectorId),
                 'why' => self::columnValues($pdo, 'sector_why', 'text_content', 'sector_id', $sectorId),
                 'areas' => self::columnValues($pdo, 'sector_areas', 'title', 'sector_id', $sectorId),
                 'project' => [
                     'name' => (string) ($row['featured_project_name'] ?? ''),
-                    'image' => (string) ($row['featured_project_image'] ?? ''),
+                    'image' => AssetResolver::path($row['featured_project_asset_id'] ?? null),
                     'cta_text' => (string) ($row['featured_project_cta_text'] ?? ''),
                     'cta_link' => (string) ($row['featured_project_cta_link'] ?? ''),
                 ],
@@ -103,7 +103,7 @@ final class SectorFrontend
             $sectionId = (int) $row['id'];
 
             $images = $pdo->prepare(
-                'SELECT image_path FROM sector_section_images
+                'SELECT section_asset_id FROM sector_section_images
                  WHERE section_id = :section_id ORDER BY sort_order ASC, id ASC'
             );
             $images->execute([':section_id' => $sectionId]);
@@ -128,7 +128,7 @@ final class SectorFrontend
                 'category' => (string) ($row['category'] ?? ''),
                 'content' => (string) ($row['content'] ?? ''),
                 'image' => array_map(
-                    static fn(array $image): string => (string) $image['image_path'],
+                    static fn(array $image): string => AssetResolver::path($image['section_asset_id'] ?? null),
                     $images->fetchAll()
                 ),
                 'stats' => $sectionStats,

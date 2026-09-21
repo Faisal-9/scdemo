@@ -28,7 +28,7 @@ final class ProjectFrontend
                 description,
                 show_on_home,
                 show_in_category_image,
-                thumbnail_path
+                thumbnail_asset_id
              FROM projects
              WHERE published = 1
              ORDER BY sort_order ASC, id ASC'
@@ -42,13 +42,13 @@ final class ProjectFrontend
         $projectIds = array_map(static fn(array $row): int => (int)$row['id'], $rows);
         $placeholders = implode(',', array_fill(0, count($projectIds), '?'));
         $imageStmt = $pdo->prepare(
-            "SELECT project_id, image_path FROM project_images
+            "SELECT project_id, project_asset_id FROM project_images
              WHERE project_id IN ($placeholders) ORDER BY project_id ASC, sort_order ASC, id ASC"
         );
         $imageStmt->execute($projectIds);
         $images = [];
         foreach ($imageStmt->fetchAll() as $image) {
-            $images[(int)$image['project_id']][] = (string)$image['image_path'];
+            $images[(int)$image['project_id']][] = AssetResolver::path($image['project_asset_id'] ?? null);
         }
         $scopeStmt = $pdo->prepare(
             "SELECT project_id, scope_text FROM project_scope
@@ -87,7 +87,7 @@ final class ProjectFrontend
                 description,
                 show_on_home,
                 show_in_category_image,
-                thumbnail_path
+                thumbnail_asset_id
              FROM projects
              WHERE published = 1
                AND legacy_id = :legacy_id
@@ -178,7 +178,7 @@ final class ProjectFrontend
             'client' => (string) ($row['client'] ?? ''),
             'inhome' => (int) ($row['show_on_home'] ?? 0) === 1 ? 'yes' : 'no',
             'catimage' => (int) ($row['show_in_category_image'] ?? 0) === 1 ? 'yes' : 'no',
-            'thumbnail' => (string) ($row['thumbnail_path'] ?? ''),
+            'thumbnail' => AssetResolver::path($row['thumbnail_asset_id'] ?? null),
             'images' => $images ?? self::images((int) $row['id']),
             'description' => (string) ($row['description'] ?? ''),
             'scope' => $scope ?? self::scope((int) $row['id']),
@@ -189,7 +189,7 @@ final class ProjectFrontend
     {
         $pdo = Database::connection();
         $stmt = $pdo->prepare(
-            'SELECT image_path
+            'SELECT project_asset_id
              FROM project_images
              WHERE project_id = :project_id
              ORDER BY sort_order ASC, id ASC'
@@ -197,7 +197,7 @@ final class ProjectFrontend
         $stmt->execute([':project_id' => $projectId]);
 
         return array_map(
-            static fn($value): string => (string) $value,
+            static fn($value): string => AssetResolver::path($value),
             $stmt->fetchAll(PDO::FETCH_COLUMN)
         );
     }

@@ -8,13 +8,13 @@ $path = HomeManager::statsBackground();
 if (isPost()) {
     CSRF::verify($_POST['csrf_token'] ?? null);
     try {
-        HomeManager::saveStatsBackground(postString('image_path'));
+        HomeManager::saveStatsBackground(postString('asset_id'));
         Auth::audit(Auth::id(), 'update', 'home_setting', null, 'Updated homepage statistics background image.');
         flash('success', 'Background saved.');
         redirect(adminUrl('homepage/background.php'));
     } catch (Throwable $e) {
         $error = APP_DEBUG ? $e->getMessage() : 'Background could not be saved.';
-        $path = postString('image_path');
+        $path = postString('asset_id');
     }
 }
 $pageTitle = 'Homepage Statistics Background';
@@ -30,7 +30,7 @@ require __DIR__ . '/../partials/sidebar.php';
                                 require __DIR__ . '/../partials/page-heading.php';
                                 require __DIR__ . '/../partials/alerts.php';
                                 if ($error): ?><div class="alert alert-error"><?= e($error) ?></div><?php endif; ?><section class="form-card">
-        <form method="post"><?= CSRF::field() ?><?php mediaPickerField('image_path', (string) $path, ['label' => 'Image path', 'required' => true]); ?><small class="form-note">Keep the existing asset path unless you intentionally replace the image.</small>
+        <form method="post"><?= CSRF::field() ?><?php mediaPickerField('asset_id', (string) $path, ['label' => 'Background image', 'required' => true]); ?>
             <div class="form-actions"><a class="button-link button-secondary" href="<?= e(adminUrl('homepage/')) ?>">Cancel</a><button class="button-primary" type="submit">Save Background</button></div>
         </form>
     </section>

@@ -16,7 +16,7 @@ final class HomeFrontend
 
         $heroSlides = [];
         $stmt = $pdo->query(
-            'SELECT legacy_id, title, description, image_path, indicator
+            'SELECT legacy_id, title, description, hero_asset_id, indicator
              FROM home_hero_slides
              WHERE is_active = 1
              ORDER BY sort_order ASC, id ASC'
@@ -27,7 +27,7 @@ final class HomeFrontend
                 'id' => (string) ($row['legacy_id'] ?? ''),
                 'title' => (string) $row['title'],
                 'desc' => (string) ($row['description'] ?? ''),
-                'image' => (string) $row['image_path'],
+                'image' => AssetResolver::path($row['hero_asset_id'] ?? null),
                 'indicator' => $row['indicator'] !== null ? (string) $row['indicator'] : null,
             ];
         }
@@ -80,7 +80,7 @@ final class HomeFrontend
 
         $whySC = [];
         $tabsStmt = $pdo->query(
-            'SELECT id, legacy_id, tab_name, title, image_path
+            'SELECT id, legacy_id, tab_name, title, why_asset_id
              FROM home_why_tabs
              WHERE is_active = 1
              ORDER BY sort_order ASC, id ASC'
@@ -105,7 +105,7 @@ final class HomeFrontend
             $legacyKey = (string) ($row['legacy_id'] ?? $row['id']);
             $tab = [
                 'tabname' => (string) $row['tab_name'],
-                'image' => $row['image_path'] !== null ? (string) $row['image_path'] : null,
+                'image' => AssetResolver::path($row['why_asset_id'] ?? null) ?: null,
             ];
 
             if ($row['title'] !== null && (string) $row['title'] !== '') {
@@ -137,6 +137,6 @@ final class HomeFrontend
         $stmt->execute([':key' => $key]);
         $value = $stmt->fetchColumn();
 
-        return $value === false || (string) $value === '' ? $fallback : (string) $value;
+        return $value === false || (string) $value === '' ? $fallback : (AssetResolver::path($value) ?: $fallback);
     }
 }

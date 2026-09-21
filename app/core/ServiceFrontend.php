@@ -10,7 +10,7 @@ final class ServiceFrontend
     {
         $pdo = Database::connection();
         $groups = $pdo->query(
-            'SELECT id, service_key, title, hero_image, hero_text
+            'SELECT id, service_key, title, hero_asset_id, hero_text
              FROM service_groups
              WHERE is_active = 1
              ORDER BY sort_order ASC, id ASC'
@@ -27,7 +27,7 @@ final class ServiceFrontend
              ORDER BY sort_order ASC, id ASC'
         )->fetchAll();
         $items = $pdo->query(
-            'SELECT id, category_id, parent_id, service_key, title, image_path, short_description, why_description
+            'SELECT id, category_id, parent_id, service_key, title, service_asset_id, short_description, why_description
              FROM service_items
              WHERE is_active = 1
              ORDER BY sort_order ASC, id ASC'
@@ -67,7 +67,7 @@ final class ServiceFrontend
 
             $output[(string) $group['service_key']] = [
                 'title' => (string) $group['title'],
-                'hero_image' => (string) ($group['hero_image'] ?? ''),
+                'hero_image' => AssetResolver::path($group['hero_asset_id'] ?? null),
                 'hero_text' => (string) ($group['hero_text'] ?? ''),
                 'sub_services' => $subServices,
             ];
@@ -111,7 +111,7 @@ final class ServiceFrontend
             '_db_id' => (int) $row['id'],
             'id' => (string) ($row['service_key'] ?? ''),
             'title' => (string) $row['title'],
-            'image' => (string) ($row['image_path'] ?? ''),
+            'image' => AssetResolver::path($row['service_asset_id'] ?? null),
             'short_desc' => (string) ($row['short_description'] ?? ''),
             'why' => (string) ($row['why_description'] ?? ''),
             'features' => $featuresByItem[(int)$row['id']] ?? [],

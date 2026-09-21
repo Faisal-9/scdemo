@@ -66,11 +66,11 @@ require __DIR__ . '/../partials/sidebar.php';
                         <div class="form-field"><label>Sort order</label><input name="sort_order" type="number" min="0" value="<?= e((string)($existing['sort_order'] ?? 0)) ?>"></div>
                         <div class="form-field form-field-wide"><label>Title</label><input name="title" value="<?= e($existing['title'] ?? '') ?>" required></div>
                         <div class="form-field form-field-wide"><label>Description</label><textarea name="description" rows="5" required><?= e($existing['description'] ?? '') ?></textarea></div>
-                        <div class="form-field form-field-wide"><?php mediaPickerField('image_path', (string)($existing['image_path'] ?? ''), ['label' => 'Image path', 'required' => true]); ?></div>
+                        <div class="form-field form-field-wide"><?php mediaPickerField('timeline_asset_id', (string)($existing['timeline_asset_id'] ?? ''), ['label' => 'Timeline image', 'required' => true]); ?></div>
                     <?php elseif ($type === 'values'): ?><div class="form-field form-field-wide"><label>Value text</label><textarea name="value_text" rows="3" required><?= e($existing['value_text'] ?? '') ?></textarea></div>
                         <div class="form-field"><label>Sort order</label><input name="sort_order" type="number" min="0" value="<?= e((string)($existing['sort_order'] ?? 0)) ?>"></div>
                     <?php else: ?><div class="form-field form-field-wide"><label><?= e($type === 'clients' ? 'Client label (optional)' : 'Name') ?></label><input name="name" value="<?= e($existing['name'] ?? '') ?>"></div>
-                        <div class="form-field form-field-wide"><?php mediaPickerField('logo_path', (string)($existing['logo_path'] ?? ''), ['label' => 'Logo path', 'required' => true]); ?></div>
+                        <div class="form-field form-field-wide"><?php mediaPickerField('about_asset_id', (string)($existing['about_asset_id'] ?? ''), ['label' => 'Logo', 'required' => true]); ?></div>
                         <div class="form-field"><label>Sort order</label><input name="sort_order" type="number" min="0" value="<?= e((string)($existing['sort_order'] ?? 0)) ?>"></div><?php endif; ?>
                 </div><label class="permission-option"><input type="checkbox" name="is_active" value="1" <?= !isset($existing['is_active']) || $existing['is_active'] ? 'checked' : '' ?>><span><strong>Active</strong></span></label>
                 <div class="form-actions"><a class="button-link button-secondary" href="<?= e(adminUrl('about/items.php?type=' . $type)) ?>">Cancel</a><button class="button-primary" type="submit">Save</button></div>

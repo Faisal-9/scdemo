@@ -44,7 +44,7 @@ require __DIR__ . '/../partials/sidebar.php';
                 <div class="form-field"><label>Sort order</label><input name="sort_order" type="number" min="0" value="<?= e((string)($existing['sort_order'] ?? 0)) ?>"></div>
                 <div class="form-field"><label>Tab name</label><input name="tab_name" value="<?= e($existing['tab_name'] ?? '') ?>" required></div>
                 <div class="form-field"><label>Title</label><input name="title" value="<?= e($existing['title'] ?? '') ?>"></div>
-                <div class="form-field form-field-wide"><?php mediaPickerField('image_path', (string) ($existing['image_path'] ?? ''), ['label' => 'Image path']); ?></div>
+                <div class="form-field form-field-wide"><?php mediaPickerField('why_asset_id', (string) ($existing['why_asset_id'] ?? ''), ['label' => 'Why image']); ?></div>
             </div>
             <div class="permission-box">
                 <h2>Tab items</h2>

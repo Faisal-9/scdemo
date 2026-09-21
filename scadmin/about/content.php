@@ -71,10 +71,10 @@ require __DIR__ . '/../partials/sidebar.php';
                 <div class="form-grid">
                     <div class="form-field form-field-wide"><label>Section title</label><input name="title" value="<?= e($record['title'] ?? '') ?>" required></div>
                     <div class="form-field form-field-wide"><label>Mission</label><textarea name="mission" rows="6" required><?= e($record['mission'] ?? '') ?></textarea></div>
-                    <div class="form-field form-field-wide"><?php mediaPickerField('mission_img', (string) ($record['mission_img'] ?? ''), ['label' => 'Mission image', 'required' => true]); ?></div>
+                    <div class="form-field form-field-wide"><?php mediaPickerField('mission_asset_id', (string) ($record['mission_asset_id'] ?? ''), ['label' => 'Mission image', 'required' => true]); ?></div>
                     <div class="form-field form-field-wide"><label>Vision</label><textarea name="vision" rows="6" required><?= e($record['vision'] ?? '') ?></textarea></div>
-                    <div class="form-field form-field-wide"><?php mediaPickerField('vision_img', (string) ($record['vision_img'] ?? ''), ['label' => 'Vision image', 'required' => true]); ?></div>
-                    <div class="form-field form-field-wide"><?php mediaPickerField('core_values_img', (string) ($record['core_values_img'] ?? ''), ['label' => 'Core values image', 'required' => true]); ?></div>
+                    <div class="form-field form-field-wide"><?php mediaPickerField('vision_asset_id', (string) ($record['vision_asset_id'] ?? ''), ['label' => 'Vision image', 'required' => true]); ?></div>
+                    <div class="form-field form-field-wide"><?php mediaPickerField('core_values_asset_id', (string) ($record['core_values_asset_id'] ?? ''), ['label' => 'Core values image', 'required' => true]); ?></div>
                 </div>
                 <p class="form-note">Core values themselves are managed separately from the About dashboard.</p>
             <?php elseif ($section === 'hse'): ?>
@@ -86,7 +86,7 @@ require __DIR__ . '/../partials/sidebar.php';
                 <div class="form-grid">
                     <div class="form-field form-field-wide"><label>Title</label><input name="title" value="<?= e($record['title'] ?? '') ?>" required></div>
                     <div class="form-field form-field-wide"><label>Content</label><textarea name="content" rows="8" required><?= e($record['content'] ?? '') ?></textarea></div>
-                    <div class="form-field form-field-wide"><?php mediaPickerField('link', (string) ($record['link'] ?? ''), ['label' => 'Company profile file', 'type' => 'document', 'required' => true]); ?></div>
+                    <div class="form-field form-field-wide"><?php mediaPickerField('profile_asset_id', (string) ($record['profile_asset_id'] ?? ''), ['label' => 'Company profile file', 'type' => 'document', 'required' => true]); ?></div>
                 </div>
             <?php endif; ?>
             <div class="form-actions"><a class="button-link button-secondary" href="<?= e(adminUrl('about/')) ?>">Cancel</a><button class="button-primary" type="submit">Save</button></div>

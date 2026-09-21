@@ -56,11 +56,11 @@ if (isPost()) {
             'description' => $_POST['description'] ?? null,
             'show_on_home' => !empty($_POST['show_on_home']) ? 1 : 0,
             'show_in_category_image' => !empty($_POST['show_in_category_image']) ? 1 : 0,
-            'thumbnail_path' => $_POST['thumbnail_path'] ?? null,
+            'thumbnail_asset_id' => $_POST['thumbnail_asset_id'] ?? null,
             'published' => !empty($_POST['published']) ? 1 : 0,
             'sort_order' => $_POST['sort_order'] ?? $project['sort_order'],
             'images' => array_map(
-                static fn($path) => ['image_path' => (string) $path, 'alt_text' => '', 'caption' => ''],
+                static fn($path) => ['project_asset_id' => (string) $path, 'alt_text' => '', 'caption' => ''],
                 is_array($_POST['images'] ?? null) ? $_POST['images'] : []
             ),
             'scope' => array_map(
@@ -106,7 +106,36 @@ require __DIR__ . '/../partials/sidebar.php';
 </main>
 
 <?php if ($revisions !== []): ?>
-    <section class="content-panel revision-panel"><div class="panel-heading"><div><h2>Version history</h2><p class="muted">Saved project versions and workflow status.</p></div></div><div class="table-responsive"><table class="admin-table"><thead><tr><th>Date</th><th>Author</th><th>Status</th><th>Note</th><th></th></tr></thead><tbody><?php foreach ($revisions as $revision): ?><tr><td><?= e((string)$revision['created_at']) ?></td><td><?= e((string)$revision['user_name']) ?></td><td><?= e(ucfirst((string)$revision['status'])) ?></td><td><?= e((string)$revision['note']) ?></td><td><form method="post" action="<?=e(adminUrl('projects/restore.php'))?>" onsubmit="return confirm('Restore this project version?');"><?=CSRF::field()?><input type="hidden" name="revision_id" value="<?=e((string)$revision['id'])?>"><button class="small-button" type="submit">Restore</button></form></td></tr><?php endforeach; ?></tbody></table></div></section>
+    <section class="content-panel revision-panel">
+        <div class="panel-heading">
+            <div>
+                <h2>Version history</h2>
+                <p class="muted">Saved project versions and workflow status.</p>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Author</th>
+                        <th>Status</th>
+                        <th>Note</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody><?php foreach ($revisions as $revision): ?><tr>
+                            <td><?= e((string)$revision['created_at']) ?></td>
+                            <td><?= e((string)$revision['user_name']) ?></td>
+                            <td><?= e(ucfirst((string)$revision['status'])) ?></td>
+                            <td><?= e((string)$revision['note']) ?></td>
+                            <td>
+                                <form method="post" action="<?= e(adminUrl('projects/restore.php')) ?>" onsubmit="return confirm('Restore this project version?');"><?= CSRF::field() ?><input type="hidden" name="revision_id" value="<?= e((string)$revision['id']) ?>"><button class="small-button" type="submit">Restore</button></form>
+                            </td>
+                        </tr><?php endforeach; ?></tbody>
+            </table>
+        </div>
+    </section>
 <?php endif; ?>
 
 <?php require __DIR__ . '/../partials/footer.php'; ?>

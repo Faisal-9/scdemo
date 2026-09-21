@@ -10,7 +10,7 @@ final class ServiceManager
     public static function groups(): array
     {
         $stmt = Database::connection()->query(
-            'SELECT id, service_key, title, hero_image, hero_text, sort_order, is_active
+            'SELECT id, service_key, title, hero_asset_id, hero_text, sort_order, is_active
              FROM service_groups
              ORDER BY sort_order ASC, id ASC'
         );
@@ -125,14 +125,14 @@ final class ServiceManager
 
         $stmt = $pdo->prepare(
             'INSERT INTO service_groups
-                (service_key, title, hero_image, hero_text, sort_order, is_active)
+                (service_key, title, hero_asset_id, hero_text, sort_order, is_active)
              VALUES
-                (:service_key, :title, :hero_image, :hero_text, :sort_order, :is_active)'
+                (:service_key, :title, :hero_asset_id, :hero_text, :sort_order, :is_active)'
         );
         $stmt->execute([
             ':service_key' => $key,
             ':title' => $title,
-            ':hero_image' => self::nullable($heroImage),
+            ':hero_asset_id' => AssetResolver::id($heroImage),
             ':hero_text' => self::nullable($heroText),
             ':sort_order' => $sortOrder,
             ':is_active' => $active ? 1 : 0,
@@ -154,7 +154,7 @@ final class ServiceManager
             'UPDATE service_groups
              SET service_key = :service_key,
                  title = :title,
-                 hero_image = :hero_image,
+                 hero_asset_id = :hero_asset_id,
                  hero_text = :hero_text,
                  sort_order = :sort_order,
                  is_active = :is_active
@@ -163,7 +163,7 @@ final class ServiceManager
         $stmt->execute([
             ':service_key' => $key,
             ':title' => $title,
-            ':hero_image' => self::nullable($heroImage),
+            ':hero_asset_id' => AssetResolver::id($heroImage),
             ':hero_text' => self::nullable($heroText),
             ':sort_order' => $sortOrder,
             ':is_active' => $active ? 1 : 0,
@@ -250,16 +250,16 @@ final class ServiceManager
         try {
             $stmt = $pdo->prepare(
                 'INSERT INTO service_items
-                    (category_id, parent_id, service_key, title, image_path, short_description, why_description, sort_order, is_active)
+                    (category_id, parent_id, service_key, title, service_asset_id, short_description, why_description, sort_order, is_active)
                  VALUES
-                    (:category_id, :parent_id, :service_key, :title, :image_path, :short_description, :why_description, :sort_order, :is_active)'
+                    (:category_id, :parent_id, :service_key, :title, :service_asset_id, :short_description, :why_description, :sort_order, :is_active)'
             );
             $stmt->execute([
                 ':category_id' => $categoryId,
                 ':parent_id' => $parentId,
                 ':service_key' => $key,
                 ':title' => $title,
-                ':image_path' => self::nullable($image),
+                ':service_asset_id' => AssetResolver::id($image),
                 ':short_description' => self::nullable($shortDescription),
                 ':why_description' => self::nullable($why),
                 ':sort_order' => $sortOrder,
@@ -308,7 +308,7 @@ final class ServiceManager
                  SET parent_id = :parent_id,
                      service_key = :service_key,
                      title = :title,
-                     image_path = :image_path,
+                     service_asset_id = :service_asset_id,
                      short_description = :short_description,
                      why_description = :why_description,
                      sort_order = :sort_order,
@@ -319,7 +319,7 @@ final class ServiceManager
                 ':parent_id' => $parentId,
                 ':service_key' => $key,
                 ':title' => $title,
-                ':image_path' => self::nullable($image),
+                ':service_asset_id' => AssetResolver::id($image),
                 ':short_description' => self::nullable($shortDescription),
                 ':why_description' => self::nullable($why),
                 ':sort_order' => $sortOrder,

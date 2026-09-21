@@ -19,10 +19,10 @@ final class ContactFrontend
                 $db->query('SELECT * FROM contact_page WHERE id=1 LIMIT 1')->fetch(PDO::FETCH_ASSOC) ?: []
             );
             $qrRows = $db->query(
-                'SELECT image_path,label FROM contact_qr_codes WHERE is_active=1 ORDER BY sort_order ASC,id ASC'
+                'SELECT asset_id,label FROM contact_qr_codes WHERE is_active=1 ORDER BY sort_order ASC,id ASC'
             )->fetchAll(PDO::FETCH_ASSOC);
             $qr = array_map(static fn(array $row): array => [
-                'image' => (string)$row['image_path'],
+                'image' => AssetResolver::path($row['asset_id'] ?? null),
                 'label' => (string)$row['label'],
             ], $qrRows);
             $offices = $db->query(

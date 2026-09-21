@@ -13,7 +13,7 @@ $project = $project ?? [
     'description' => '',
     'show_on_home' => 0,
     'show_in_category_image' => 0,
-    'thumbnail_path' => '',
+    'thumbnail_asset_id' => '',
     'published' => 1,
     'sort_order' => 0,
     'images' => [],
@@ -101,7 +101,7 @@ $scopeRows = $project['scope'] ?? [];
             </div>
 
             <div class="form-field form-field-wide">
-                <?php mediaPickerField('thumbnail_path', (string) ($project['thumbnail_path'] ?? ''), ['label' => 'Thumbnail image', 'required' => false]); ?>
+                <?php mediaPickerField('thumbnail_asset_id', (string) ($project['thumbnail_asset_id'] ?? ''), ['label' => 'Thumbnail image', 'required' => false]); ?>
             </div>
 
             <div class="repeatable-header">
@@ -121,7 +121,7 @@ $scopeRows = $project['scope'] ?? [];
                 <?php else: ?>
                     <?php foreach ($imageRows as $image): ?>
                         <div class="repeatable-row">
-                            <?php mediaPickerField('images[]', (string) ($image['image_path'] ?? ''), ['label' => 'Gallery image']); ?>
+                            <?php mediaPickerField('images[][project_asset_id]', (string) ($image['project_asset_id'] ?? ''), ['label' => 'Gallery image']); ?>
                             <button type="button" class="remove-row" data-remove-row>Remove</button>
                         </div>
                     <?php endforeach; ?>

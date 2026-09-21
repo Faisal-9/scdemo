@@ -35,7 +35,7 @@
       <div class="form-field"><label>Subtitle</label><input name="hero_subtitle" value="<?= e($sector['hero_subtitle'] ?? '') ?>"></div>
       <div class="form-field"><label>CTA text</label><input name="hero_cta_text" value="<?= e($sector['hero_cta_text'] ?? '') ?>"></div>
       <div class="form-field"><label>CTA link</label><input name="hero_cta_link" value="<?= e($sector['hero_cta_link'] ?? '') ?>"></div>
-      <div class="form-field form-field-wide"><?php mediaPickerField('hero_image', (string) ($sector['hero_image'] ?? ''), ['label' => 'Hero image']); ?></div>
+      <div class="form-field form-field-wide"><?php mediaPickerField('hero_asset_id', (string) ($sector['hero_asset_id'] ?? ''), ['label' => 'Hero image']); ?></div>
     </div>
   </div>
 
@@ -43,7 +43,7 @@
     <h2>Featured project</h2>
     <div class="form-grid">
       <div class="form-field"><label>Name</label><input name="featured_project_name" value="<?= e($sector['featured_project_name'] ?? '') ?>"></div>
-      <div class="form-field form-field-wide"><?php mediaPickerField('featured_project_image', (string) ($sector['featured_project_image'] ?? ''), ['label' => 'Featured project image']); ?></div>
+      <div class="form-field form-field-wide"><?php mediaPickerField('featured_project_asset_id', (string) ($sector['featured_project_asset_id'] ?? ''), ['label' => 'Featured project image']); ?></div>
       <div class="form-field"><label>CTA text</label><input name="featured_project_cta_text" value="<?= e($sector['featured_project_cta_text'] ?? '') ?>"></div>
       <div class="form-field"><label>CTA link</label><input name="featured_project_cta_link" value="<?= e($sector['featured_project_cta_link'] ?? '') ?>"></div>
     </div>
@@ -89,7 +89,7 @@
         <label>Images</label>
         <div class="repeatable-list">
           <?php $imgPaths = [];
-          foreach (($section['image'] ?? []) as $img) $imgPaths[] = is_array($img) ? ($img['image_path'] ?? '') : $img;
+          foreach (($section['image'] ?? []) as $img) $imgPaths[] = is_array($img) ? ($img['section_asset_id'] ?? '') : $img;
           if ($imgPaths === []) $imgPaths = [''];
           foreach ($imgPaths as $imgPath): ?>
             <?php mediaPickerField('sections[' . $sIndex . '][images_text][]', (string) $imgPath, ['label' => 'Section image']); ?>

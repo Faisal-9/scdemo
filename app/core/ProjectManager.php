@@ -100,7 +100,7 @@ final class ProjectManager
     {
         $pdo = Database::connection();
         $stmt = $pdo->prepare(
-            'SELECT id, image_path, alt_text, caption, sort_order
+            'SELECT id, project_asset_id, alt_text, caption, sort_order
              FROM project_images
              WHERE project_id = :project_id
              ORDER BY sort_order ASC, id ASC'
@@ -136,12 +136,12 @@ final class ProjectManager
                     'INSERT INTO projects
                         (legacy_id, name, slug, sector_name, category, status,
                          completion_year, location, client, description,
-                         show_on_home, show_in_category_image, thumbnail_path,
+                         show_on_home, show_in_category_image, thumbnail_asset_id,
                          published, sort_order)
                      VALUES
                         (:legacy_id, :name, :slug, :sector_name, :category, :status,
                          :completion_year, :location, :client, :description,
-                         :show_on_home, :show_in_category_image, :thumbnail_path,
+                         :show_on_home, :show_in_category_image, :thumbnail_asset_id,
                          :published, :sort_order)'
                 );
 
@@ -158,7 +158,7 @@ final class ProjectManager
                     ':description' => $normalized['description'],
                     ':show_on_home' => $normalized['show_on_home'],
                     ':show_in_category_image' => $normalized['show_in_category_image'],
-                    ':thumbnail_path' => $normalized['thumbnail_path'],
+                    ':thumbnail_asset_id' => $normalized['thumbnail_asset_id'],
                     ':published' => $normalized['published'],
                     ':sort_order' => $normalized['sort_order'],
                 ]);
@@ -179,7 +179,7 @@ final class ProjectManager
                          description = :description,
                          show_on_home = :show_on_home,
                          show_in_category_image = :show_in_category_image,
-                         thumbnail_path = :thumbnail_path,
+                         thumbnail_asset_id = :thumbnail_asset_id,
                          published = :published,
                          sort_order = :sort_order
                      WHERE id = :id'
@@ -198,7 +198,7 @@ final class ProjectManager
                     ':description' => $normalized['description'],
                     ':show_on_home' => $normalized['show_on_home'],
                     ':show_in_category_image' => $normalized['show_in_category_image'],
-                    ':thumbnail_path' => $normalized['thumbnail_path'],
+                    ':thumbnail_asset_id' => $normalized['thumbnail_asset_id'],
                     ':published' => $normalized['published'],
                     ':sort_order' => $normalized['sort_order'],
                     ':id' => $projectId,
@@ -352,7 +352,7 @@ final class ProjectManager
             'description' => self::nullable((string) ($data['description'] ?? '')),
             'show_on_home' => !empty($data['show_on_home']) ? 1 : 0,
             'show_in_category_image' => !empty($data['show_in_category_image']) ? 1 : 0,
-            'thumbnail_path' => self::nullable((string) ($data['thumbnail_path'] ?? '')),
+            'thumbnail_asset_id' => AssetResolver::id($data['thumbnail_asset_id'] ?? null),
             'published' => !empty($data['published']) ? 1 : 0,
             'sort_order' => $sortOrder,
             'images' => $images,
@@ -375,23 +375,20 @@ final class ProjectManager
                 $alt = null;
                 $caption = null;
             } elseif (is_array($image)) {
-                $path = trim((string) ($image['image_path'] ?? ''));
+                $path = trim((string) ($image['project_asset_id'] ?? ''));
                 $alt = self::nullable((string) ($image['alt_text'] ?? ''));
                 $caption = self::nullable((string) ($image['caption'] ?? ''));
             } else {
                 continue;
             }
 
-            if ($path === '') {
+            $assetId = AssetResolver::id($path);
+            if (!$assetId) {
                 continue;
             }
 
-            if (strlen($path) > 500) {
-                throw new RuntimeException('An image path is too long.');
-            }
-
             $normalized[] = [
-                'image_path' => $path,
+                'project_asset_id' => $assetId,
                 'alt_text' => $alt,
                 'caption' => $caption,
                 'sort_order' => $order++,
@@ -436,15 +433,15 @@ final class ProjectManager
 
         $insert = $pdo->prepare(
             'INSERT INTO project_images
-                (project_id, image_path, alt_text, caption, sort_order)
+                (project_id, project_asset_id, alt_text, caption, sort_order)
              VALUES
-                (:project_id, :image_path, :alt_text, :caption, :sort_order)'
+                (:project_id, :project_asset_id, :alt_text, :caption, :sort_order)'
         );
 
         foreach ($images as $image) {
             $insert->execute([
                 ':project_id' => $projectId,
-                ':image_path' => $image['image_path'],
+                ':project_asset_id' => $image['project_asset_id'],
                 ':alt_text' => $image['alt_text'],
                 ':caption' => $image['caption'],
                 ':sort_order' => $image['sort_order'],

@@ -19,7 +19,7 @@ final class SectorManager
         $stmt = $pdo->prepare('SELECT * FROM sectors WHERE id = :id LIMIT 1');
         $stmt->execute([':id' => $id]);
         $row = $stmt->fetch();
-        return is_array($row) ? $row : null;
+        return is_array($row) ? AssetResolver::hydrate($row, ['hero_asset_id' => 'hero_image', 'featured_project_asset_id' => 'featured_project_image']) : null;
     }
 
     public static function save(int $id, array $data): void
@@ -55,9 +55,9 @@ final class SectorManager
                     hero_subtitle = :hero_subtitle,
                     hero_cta_text = :hero_cta_text,
                     hero_cta_link = :hero_cta_link,
-                    hero_image = :hero_image,
+                    hero_asset_id = :hero_asset_id,
                     featured_project_name = :featured_project_name,
-                    featured_project_image = :featured_project_image,
+                    featured_project_asset_id = :featured_project_asset_id,
                     featured_project_cta_text = :featured_project_cta_text,
                     featured_project_cta_link = :featured_project_cta_link,
                     sort_order = :sort_order,
@@ -73,9 +73,9 @@ final class SectorManager
                 ':hero_subtitle' => self::nullable($data['hero_subtitle'] ?? null),
                 ':hero_cta_text' => self::nullable($data['hero_cta_text'] ?? null),
                 ':hero_cta_link' => self::nullable($data['hero_cta_link'] ?? null),
-                ':hero_image' => self::nullable($data['hero_image'] ?? null),
+                ':hero_asset_id' => AssetResolver::id($data['hero_asset_id'] ?? null),
                 ':featured_project_name' => self::nullable($data['featured_project_name'] ?? null),
-                ':featured_project_image' => self::nullable($data['featured_project_image'] ?? null),
+                ':featured_project_asset_id' => AssetResolver::id($data['featured_project_asset_id'] ?? null),
                 ':featured_project_cta_text' => self::nullable($data['featured_project_cta_text'] ?? null),
                 ':featured_project_cta_link' => self::nullable($data['featured_project_cta_link'] ?? null),
                 ':sort_order' => max(0, (int) ($data['sort_order'] ?? 0)),

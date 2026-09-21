@@ -41,7 +41,7 @@ final class AboutFrontend
                     'year' => (string)($row['year'] ?? ''),
                     'title' => (string)($row['title'] ?? ''),
                     'description' => (string)($row['description'] ?? ''),
-                    'img' => (string)($row['image_path'] ?? ''),
+                    'img' => AssetResolver::path($row['timeline_asset_id'] ?? null),
                 ],
                 $timelineRows
             ),
@@ -50,10 +50,10 @@ final class AboutFrontend
         $missionVision = [
             'title' => self::sectionTitle($sectionTitles, 'mission-vision', $mv['title'] ?? ''),
             'mission' => (string)($mv['mission'] ?? ''),
-            'mission_img' => (string)($mv['mission_img'] ?? ''),
+            'mission_img' => AssetResolver::path($mv['mission_asset_id'] ?? null),
             'vision' => (string)($mv['vision'] ?? ''),
-            'vision_img' => (string)($mv['vision_img'] ?? ''),
-            'core_values_img' => (string)($mv['core_values_img'] ?? ''),
+            'vision_img' => AssetResolver::path($mv['vision_asset_id'] ?? null),
+            'core_values_img' => AssetResolver::path($mv['core_values_asset_id'] ?? null),
             'core_values' => array_values(array_map(
                 static fn(array $row): string => (string)($row['value_text'] ?? ''),
                 $coreRows
@@ -63,7 +63,7 @@ final class AboutFrontend
         $clients = [
             'title' => self::sectionTitle($sectionTitles, 'clients', 'Clients'),
             'items' => array_map(
-                static fn(array $row): array => ['logo' => (string)($row['logo_path'] ?? '')],
+                static fn(array $row): array => ['logo' => AssetResolver::path($row['about_asset_id'] ?? null)],
                 $clientRows
             ),
         ];
@@ -73,7 +73,7 @@ final class AboutFrontend
             'items' => array_map(
                 static fn(array $row): array => [
                     'name' => (string)($row['name'] ?? ''),
-                    'logo' => (string)($row['logo_path'] ?? ''),
+                    'logo' => AssetResolver::path($row['about_asset_id'] ?? null),
                 ],
                 $certificateRows
             ),
@@ -84,7 +84,7 @@ final class AboutFrontend
             'items' => array_map(
                 static fn(array $row): array => [
                     'name' => (string)($row['name'] ?? ''),
-                    'logo' => (string)($row['logo_path'] ?? ''),
+                    'logo' => AssetResolver::path($row['about_asset_id'] ?? null),
                 ],
                 $awardRows
             ),
@@ -95,7 +95,7 @@ final class AboutFrontend
             'items' => array_map(
                 static fn(array $row): array => [
                     'name' => (string)($row['name'] ?? ''),
-                    'logo' => (string)($row['logo_path'] ?? ''),
+                    'logo' => AssetResolver::path($row['about_asset_id'] ?? null),
                 ],
                 $sisterRows
             ),

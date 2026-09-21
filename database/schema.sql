@@ -130,7 +130,7 @@ CREATE TABLE home_hero_slides (
     legacy_id VARCHAR(100) NULL,
     title VARCHAR(255) NOT NULL,
     description TEXT NULL,
-    image_path VARCHAR(500) NOT NULL,
+    hero_asset_id INT UNSIGNED NULL,
     indicator VARCHAR(255) NULL,
     sort_order INT NOT NULL DEFAULT 0,
     is_active TINYINT(1) NOT NULL DEFAULT 1,
@@ -173,7 +173,7 @@ CREATE TABLE home_why_tabs (
     legacy_id VARCHAR(20) NULL,
     tab_name VARCHAR(255) NOT NULL,
     title VARCHAR(255) NULL,
-    image_path VARCHAR(500) NULL,
+    why_asset_id INT UNSIGNED NULL,
     sort_order INT NOT NULL DEFAULT 0,
     is_active TINYINT(1) NOT NULL DEFAULT 1,
 
@@ -210,12 +210,12 @@ CREATE TABLE about_page (
 
     mission_title VARCHAR(255) NOT NULL,
     mission TEXT NOT NULL,
-    mission_image VARCHAR(500) NULL,
+    mission_asset_id INT UNSIGNED NULL,
 
     vision TEXT NOT NULL,
-    vision_image VARCHAR(500) NULL,
+    vision_asset_id INT UNSIGNED NULL,
 
-    core_values_image VARCHAR(500) NULL,
+    core_values_asset_id INT UNSIGNED NULL,
 
     clients_title VARCHAR(255) NULL,
     certificates_title VARCHAR(255) NULL,
@@ -227,7 +227,7 @@ CREATE TABLE about_page (
 
     company_profile_title VARCHAR(255) NULL,
     company_profile_content LONGTEXT NULL,
-    company_profile_file VARCHAR(500) NULL,
+    profile_asset_id INT UNSIGNED NULL,
 
     updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
         ON UPDATE CURRENT_TIMESTAMP,
@@ -241,7 +241,7 @@ CREATE TABLE about_history (
     year VARCHAR(20) NOT NULL,
     title VARCHAR(255) NOT NULL,
     description TEXT NULL,
-    image_path VARCHAR(500) NULL,
+    timeline_asset_id INT UNSIGNED NULL,
     sort_order INT NOT NULL DEFAULT 0,
 
     PRIMARY KEY (id),
@@ -262,7 +262,7 @@ CREATE TABLE about_core_values (
 CREATE TABLE about_clients (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NULL,
-    logo_path VARCHAR(500) NOT NULL,
+    about_asset_id INT UNSIGNED NULL,
     sort_order INT NOT NULL DEFAULT 0,
     is_active TINYINT(1) NOT NULL DEFAULT 1,
 
@@ -274,7 +274,7 @@ CREATE TABLE about_clients (
 CREATE TABLE about_certificates (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
-    logo_path VARCHAR(500) NOT NULL,
+    about_asset_id INT UNSIGNED NULL,
     sort_order INT NOT NULL DEFAULT 0,
     is_active TINYINT(1) NOT NULL DEFAULT 1,
 
@@ -285,7 +285,7 @@ CREATE TABLE about_certificates (
 CREATE TABLE about_awards (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
-    logo_path VARCHAR(500) NOT NULL,
+    about_asset_id INT UNSIGNED NULL,
     sort_order INT NOT NULL DEFAULT 0,
     is_active TINYINT(1) NOT NULL DEFAULT 1,
 
@@ -296,7 +296,7 @@ CREATE TABLE about_awards (
 CREATE TABLE about_affiliated_companies (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
-    logo_path VARCHAR(500) NULL,
+    about_asset_id INT UNSIGNED NULL,
     sort_order INT NOT NULL DEFAULT 0,
     is_active TINYINT(1) NOT NULL DEFAULT 1,
 
@@ -330,7 +330,7 @@ CREATE TABLE projects (
     show_on_home TINYINT(1) NOT NULL DEFAULT 0,
     show_in_category_image TINYINT(1) NOT NULL DEFAULT 0,
 
-    thumbnail_path VARCHAR(500) NULL,
+    thumbnail_asset_id INT UNSIGNED NULL,
 
     published TINYINT(1) NOT NULL DEFAULT 1,
     sort_order INT NOT NULL DEFAULT 0,
@@ -353,7 +353,7 @@ CREATE TABLE projects (
 CREATE TABLE project_images (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     project_id INT UNSIGNED NOT NULL,
-    image_path VARCHAR(500) NOT NULL,
+    project_asset_id INT UNSIGNED NULL,
     alt_text VARCHAR(255) NULL,
     caption VARCHAR(500) NULL,
     sort_order INT NOT NULL DEFAULT 0,
@@ -402,10 +402,10 @@ CREATE TABLE sectors (
     hero_subtitle VARCHAR(500) NULL,
     hero_cta_text VARCHAR(255) NULL,
     hero_cta_link VARCHAR(500) NULL,
-    hero_image VARCHAR(500) NULL,
+    hero_asset_id INT UNSIGNED NULL,
 
     featured_project_name VARCHAR(500) NULL,
-    featured_project_image VARCHAR(500) NULL,
+    featured_project_asset_id INT UNSIGNED NULL,
     featured_project_cta_text VARCHAR(255) NULL,
     featured_project_cta_link VARCHAR(500) NULL,
 
@@ -490,7 +490,7 @@ CREATE TABLE sector_sections (
 CREATE TABLE sector_section_images (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     section_id INT UNSIGNED NOT NULL,
-    image_path VARCHAR(500) NOT NULL,
+    section_asset_id INT UNSIGNED NULL,
     sort_order INT NOT NULL DEFAULT 0,
 
     PRIMARY KEY (id),
@@ -527,7 +527,7 @@ CREATE TABLE service_groups (
 
     service_key VARCHAR(150) NOT NULL,
     title VARCHAR(255) NOT NULL,
-    hero_image VARCHAR(500) NULL,
+    hero_asset_id INT UNSIGNED NULL,
     hero_text LONGTEXT NULL,
 
     sort_order INT NOT NULL DEFAULT 0,
@@ -565,7 +565,7 @@ CREATE TABLE service_items (
 
     service_key VARCHAR(150) NULL,
     title VARCHAR(500) NOT NULL,
-    image_path VARCHAR(500) NULL,
+    service_asset_id INT UNSIGNED NULL,
 
     short_description LONGTEXT NULL,
     why_description LONGTEXT NULL,
@@ -613,7 +613,7 @@ CREATE TABLE media_items (
     media_date_sort DATE NULL,
 
     title VARCHAR(500) NOT NULL,
-    image_path VARCHAR(500) NULL,
+    media_asset_id INT UNSIGNED NULL,
     external_link VARCHAR(1000) NULL,
 
     sort_order INT NOT NULL DEFAULT 0,

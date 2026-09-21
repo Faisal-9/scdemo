@@ -86,11 +86,11 @@
         const separator = pickerUrl.includes("?") ? "&" : "?";
         const r = await fetch(
           pickerUrl +
-            separator +
-            "format=json&type=" +
-            encodeURIComponent(type) +
-            "&q=" +
-            encodeURIComponent(q),
+          separator +
+          "format=json&type=" +
+          encodeURIComponent(type) +
+          "&q=" +
+          encodeURIComponent(q),
           {
             credentials: "same-origin",
             headers: { "X-Requested-With": "XMLHttpRequest" },
@@ -107,13 +107,13 @@
           const b = document.createElement("button");
           b.type = "button";
           b.className = "media-picker-result";
-          b.dataset.path = item.relative_path;
+          b.dataset.id = String(item.id);
           const baseUrl = String(window.SC_BASE_URL || "").replace(/\/$/, "");
           b.innerHTML =
             (String(item.mime_type).startsWith("image/")
               ? '<img src="' +
-                escapeHtml(baseUrl + "/" + item.relative_path) +
-                '" alt="">'
+              escapeHtml(baseUrl + "/" + item.relative_path) +
+              '" alt="">'
               : '<span class="media-picker-result-file">FILE</span>') +
             "<strong>" +
             escapeHtml(item.original_name) +
@@ -121,10 +121,10 @@
             escapeHtml(item.relative_path) +
             "</small>";
           b.addEventListener("click", () => {
-            input.value = item.relative_path;
+            input.value = String(item.id);
             input.dispatchEvent(new Event("change", { bubbles: true }));
             const cur = field.querySelector("[data-media-picker-current-name]");
-            if (cur) cur.textContent = item.original_name;
+            if (cur) cur.textContent = item.relative_path;
             overlay.remove();
           });
           results.appendChild(b);
@@ -143,7 +143,7 @@
       if (e.target === overlay || e.target.closest("[data-close]"))
         overlay.remove();
     });
-    load(input.value ? input.value.split("/").pop() : "");
+    load("");
   }
   document.addEventListener("click", function (e) {
     const btn = e.target.closest("[data-media-picker-open]");
