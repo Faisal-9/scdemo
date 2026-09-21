@@ -57,12 +57,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $action = (string)($_POST['action'] ?? '');
             $uid = Auth::id();
             if ($action === 'create_saved') {
-                BackupVaultManager::create((string)($_POST['type'] ?? 'full'), $uid);
+                $saved = BackupVaultManager::create((string)($_POST['type'] ?? 'full'), $uid);
+                Auth::audit($uid, 'create', 'database_backup', (int)$saved['id'], 'Created and verified saved database backup: ' . $saved['filename']);
                 header('Location: index.php?saved=1');
                 exit;
             }
             if ($action === 'delete_saved') {
-                BackupVaultManager::delete((int)($_POST['id'] ?? 0));
+                $backupId = (int)($_POST['id'] ?? 0);
+                $backup = BackupVaultManager::get($backupId);
+                BackupVaultManager::delete($backupId);
+                Auth::audit($uid, 'delete', 'database_backup', $backupId, 'Deleted saved database backup: ' . (string)($backup['filename'] ?? $backupId));
                 header('Location: index.php?deleted=1');
                 exit;
             }

@@ -16,8 +16,8 @@ CREATE TABLE IF NOT EXISTS `database_backups` (
   CONSTRAINT `fk_database_backups_user` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `permissions` (`permission_key`, `description`)
-SELECT 'manage_backup_vault', 'Manage saved CMS database backups'
+INSERT INTO `permissions` (`permission_key`, `permission_name`, `description`)
+SELECT 'manage_backup_vault', 'Manage backup vault', 'Manage saved CMS database backups'
 WHERE NOT EXISTS (
   SELECT 1 FROM `permissions` WHERE `permission_key` = 'manage_backup_vault'
 );

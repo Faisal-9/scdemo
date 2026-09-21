@@ -28,5 +28,7 @@ if (!in_array($type, ['full', 'schema'], true)) {
     http_response_code(400);
     exit('Invalid backup type.');
 }
+$uid = Auth::id();
+Auth::audit($uid, 'export', 'database_backup', null, 'Downloaded on-demand ' . $type . ' database export.');
 DatabaseBackupManager::exportSql($type === 'full');
 exit;

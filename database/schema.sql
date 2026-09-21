@@ -87,6 +87,27 @@ CREATE TABLE audit_logs (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
+CREATE TABLE database_backups (
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    filename VARCHAR(255) NOT NULL,
+    backup_type ENUM('full', 'schema') NOT NULL DEFAULT 'full',
+    size_bytes BIGINT UNSIGNED NOT NULL DEFAULT 0,
+    sha256 CHAR(64) NOT NULL,
+    created_by INT UNSIGNED NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (id),
+    UNIQUE KEY uq_database_backups_filename (filename),
+    KEY idx_database_backups_created_at (created_at),
+    KEY idx_database_backups_created_by (created_by),
+
+    CONSTRAINT fk_database_backups_user
+        FOREIGN KEY (created_by)
+        REFERENCES users(id)
+        ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
 -- ============================================================
 -- 2. GLOBAL WEBSITE SETTINGS
 -- ============================================================
@@ -837,6 +858,21 @@ VALUES
         'manage_settings',
         'Manage Settings',
         'Edit global website settings'
+    ),
+    (
+        'manage_database_backups',
+        'Manage Database Backups',
+        'Inspect and export CMS database backups'
+    ),
+    (
+        'manage_backup_vault',
+        'Manage Backup Vault',
+        'Manage saved CMS database backups'
+    ),
+    (
+        'manage_backup_center',
+        'Manage Backup Center',
+        'Create, download, verify, and manage CMS database backups'
     );
 
 

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -12,8 +13,8 @@ final class BackupVaultManager
         if (defined('SC_BACKUP_STORAGE') && is_string(SC_BACKUP_STORAGE) && SC_BACKUP_STORAGE !== '') {
             return rtrim(SC_BACKUP_STORAGE, DIRECTORY_SEPARATOR);
         }
-        // publicV6/app/core -> publicV6 -> project parent -> project storage sibling.
-        return dirname(__DIR__, 3) . DIRECTORY_SEPARATOR . 'storage' . DIRECTORY_SEPARATOR . 'backups';
+        // app/core -> project root -> project storage directory.
+        return dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'storage' . DIRECTORY_SEPARATOR . 'backups';
     }
 
     public static function ensureStorage(): void
@@ -152,7 +153,9 @@ final class BackupVaultManager
         if ($verify['status'] !== 'ok') {
             throw new RuntimeException('Backup failed integrity verification and cannot be downloaded.');
         }
-        while (ob_get_level() > 0) { @ob_end_clean(); }
+        while (ob_get_level() > 0) {
+            @ob_end_clean();
+        }
         header('Content-Type: application/sql; charset=utf-8');
         header('Content-Disposition: attachment; filename="' . basename((string)$backup['filename']) . '"');
         header('Content-Length: ' . (string)filesize($path));
@@ -165,7 +168,7 @@ final class BackupVaultManager
     public static function formatBytes(int $bytes): string
     {
         if ($bytes < 1024) return $bytes . ' B';
-        $units = ['KB','MB','GB','TB'];
+        $units = ['KB', 'MB', 'GB', 'TB'];
         $value = (float)$bytes;
         foreach ($units as $unit) {
             $value /= 1024;
@@ -195,7 +198,10 @@ final class BackupVaultManager
         if (!$row) return;
         $create = '';
         foreach ($row as $key => $value) {
-            if (stripos((string)$key, 'create') !== false) { $create = (string)$value; break; }
+            if (stripos((string)$key, 'create') !== false) {
+                $create = (string)$value;
+                break;
+            }
         }
         self::out($handle, "-- --------------------------------------------------------\n-- Table: " . str_replace(["\r", "\n"], ' ', $table) . "\n\n");
         self::out($handle, 'DROP TABLE IF EXISTS ' . $quoted . ";\n" . $create . ";\n\n");
@@ -211,7 +217,9 @@ final class BackupVaultManager
         $batch = [];
         while ($record = $data->fetch(PDO::FETCH_NUM)) {
             $values = [];
-            foreach ($record as $value) { $values[] = self::sqlValue($value); }
+            foreach ($record as $value) {
+                $values[] = self::sqlValue($value);
+            }
             $batch[] = '(' . implode(', ', $values) . ')';
             if (count($batch) >= 100) {
                 self::out($handle, 'INSERT INTO ' . $quoted . ' ' . $columnSql . " VALUES\n" . implode(",\n", $batch) . ";\n");
