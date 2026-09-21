@@ -58,6 +58,94 @@ SELECT 'nav_media_label', 'Media', 'text', 'Main navigation media label'
 WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'nav_media_label');
 
 INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_dashboard_label', 'Dashboard', 'text', 'Admin sidebar dashboard label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_dashboard_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_assets_library_label', 'Asset Library', 'text', 'Admin sidebar asset library label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_assets_library_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_homepage_label', 'Homepage', 'text', 'Admin sidebar homepage label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_homepage_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_about_label', 'About', 'text', 'Admin sidebar about label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_about_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_projects_label', 'Projects', 'text', 'Admin sidebar projects label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_projects_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_services_label', 'Services', 'text', 'Admin sidebar services label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_services_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_sectors_label', 'Sectors', 'text', 'Admin sidebar sectors label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_sectors_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_media_label', 'Media', 'text', 'Admin sidebar media label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_media_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_legal_label', 'Policies & Terms', 'text', 'Admin sidebar legal label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_legal_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_messages_label', 'Messages', 'text', 'Admin sidebar messages label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_messages_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_contact_label', 'Contact', 'text', 'Admin sidebar contact label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_contact_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_navigation_label', 'Navigation', 'text', 'Admin sidebar navigation label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_navigation_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_seo_label', 'SEO', 'text', 'Admin sidebar SEO label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_seo_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_redirects_label', 'Redirects', 'text', 'Admin sidebar redirects label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_redirects_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_settings_label', 'Settings', 'text', 'Admin sidebar settings label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_settings_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_analytics_label', 'Analytics', 'text', 'Admin sidebar analytics label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_analytics_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_search_label', 'Search', 'text', 'Admin sidebar search label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_search_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_notifications_label', 'Notifications', 'text', 'Admin sidebar notifications label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_notifications_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_editors_label', 'Editors', 'text', 'Admin sidebar editors label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_editors_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_activity_logs_label', 'Activity Logs', 'text', 'Admin sidebar activity logs label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_activity_logs_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_system_health_label', 'System Health', 'text', 'Admin sidebar system health label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_system_health_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
+SELECT 'admin_nav_database_backup_label', 'Database Backup', 'text', 'Admin sidebar database backup label'
+WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'admin_nav_database_backup_label');
+
+INSERT INTO site_settings (setting_key, setting_value, setting_type, description)
 SELECT 'footer_services_label', 'Services', 'text', 'Footer services heading'
 WHERE NOT EXISTS (SELECT 1 FROM site_settings WHERE setting_key = 'footer_services_label');
 

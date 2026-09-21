@@ -143,9 +143,9 @@ require __DIR__ . '/../partials/sidebar.php';
                 <div class="form-field"><label for="service_key">Service key</label><input id="service_key" name="service_key" type="text" maxlength="150" value="<?= e($serviceItem['service_key'] ?? '') ?>"></div>
                 <div class="form-field"><label for="title">Title</label><input id="title" name="title" type="text" maxlength="500" value="<?= e($serviceItem['title'] ?? '') ?>" required></div>
                 <div class="form-field"><label for="parent_id">Parent item</label><select id="parent_id" name="parent_id">
-                    <option value="">No parent (top-level item)</option><?php foreach ($parentOptions as $parent): ?><option value="<?= e((string)$parent['id']) ?>" <?= $selectedParentId === (int)$parent['id'] ? 'selected' : '' ?>><?= e($parent['title']) ?></option><?php endforeach; ?>
+                        <option value="">No parent (top-level item)</option><?php foreach ($parentOptions as $parent): ?><option value="<?= e((string)$parent['id']) ?>" <?= $selectedParentId === (int)$parent['id'] ? 'selected' : '' ?>><?= e($parent['title']) ?></option><?php endforeach; ?>
                     </select><small>Use this for the existing nested <code>subitems</code> structure.</small></div>
-                <div class="form-field"><label for="image_path">Image path</label><input id="image_path" name="image_path" type="text" maxlength="500" value="<?= e($serviceItem['image_path'] ?? '') ?>"></div>
+                <div class="form-field form-field-wide"><?php mediaPickerField('image_path', (string) ($serviceItem['image_path'] ?? ''), ['label' => 'Image path']); ?></div>
                 <div class="form-field"><label for="sort_order">Sort order</label><input id="sort_order" name="sort_order" type="number" min="0" value="<?= e((string)($serviceItem['sort_order'] ?? 0)) ?>"></div>
             </div>
             <div class="form-field"><label for="short_description">Short description</label><textarea id="short_description" name="short_description" rows="6"><?= e($serviceItem['short_description'] ?? '') ?></textarea></div>

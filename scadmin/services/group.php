@@ -81,7 +81,7 @@ require __DIR__ . '/../partials/sidebar.php';
             <div class="form-grid">
                 <div class="form-field"><label for="service_key">Group key</label><input id="service_key" name="service_key" type="text" maxlength="150" value="<?= e($group['service_key'] ?? '') ?>" required><small>Use the existing key for migrated groups. Do not change it casually.</small></div>
                 <div class="form-field"><label for="title">Title</label><input id="title" name="title" type="text" maxlength="255" value="<?= e($group['title'] ?? '') ?>" required></div>
-                <div class="form-field"><label for="hero_image">Hero image path</label><input id="hero_image" name="hero_image" type="text" maxlength="500" value="<?= e($group['hero_image'] ?? '') ?>"><small>Existing asset path, for example assets/images/services/service-eng-hero.jpg</small></div>
+                <div class="form-field"><?php mediaPickerField('hero_image', (string) ($group['hero_image'] ?? ''), ['label' => 'Hero image']); ?><small>Existing asset path, for example assets/images/services/service-eng-hero.jpg</small></div>
                 <div class="form-field"><label for="sort_order">Sort order</label><input id="sort_order" name="sort_order" type="number" min="0" value="<?= e((string) ($group['sort_order'] ?? 0)) ?>"></div>
             </div>
             <div class="form-field"><label for="hero_text">Hero text</label><textarea id="hero_text" name="hero_text" rows="4"><?= e($group['hero_text'] ?? '') ?></textarea></div>

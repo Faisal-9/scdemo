@@ -38,7 +38,7 @@ require __DIR__ . '/../partials/sidebar.php';
                                     require __DIR__ . '/../partials/page-heading.php';
                                     require __DIR__ . '/../partials/alerts.php';
                                     if ($error): ?><div class="alert alert-error"><?= e($error) ?></div><?php endif; ?><?php if ($id): ?><section class="form-card">
-                <form method="post"><?= CSRF::field() ?><label>Label<input name="label" value="<?= e($existing['label'] ?? '') ?>" required></label><label>Image path<input name="image_path" value="<?= e($existing['image_path'] ?? '') ?>" required></label><label>Sort order<input type="number" min="0" name="sort_order" value="<?= e((string)($existing['sort_order'] ?? 0)) ?>"></label><label><input type="checkbox" name="is_active" value="1" <?= !isset($existing['is_active']) || $existing['is_active'] ? 'checked' : '' ?>> Active</label>
+                <form method="post"><?= CSRF::field() ?><label>Label<input name="label" value="<?= e($existing['label'] ?? '') ?>" required></label><?php mediaPickerField('image_path', (string) ($existing['image_path'] ?? ''), ['label' => 'Image path', 'required' => true]); ?><label>Sort order<input type="number" min="0" name="sort_order" value="<?= e((string)($existing['sort_order'] ?? 0)) ?>"></label><label><input type="checkbox" name="is_active" value="1" <?= !isset($existing['is_active']) || $existing['is_active'] ? 'checked' : '' ?>> Active</label>
                     <div class="form-actions"><button type="submit">Save</button><a class="button-link button-secondary" href="<?= e(adminUrl('contact/qr.php')) ?>">Cancel</a></div>
                 </form>
             </section><?php else: ?><section class="content-panel">

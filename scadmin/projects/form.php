@@ -100,9 +100,8 @@ $scopeRows = $project['scope'] ?? [];
                 <p class="muted">Use paths already present under the publicV6 assets directory. Upload/media-library integration comes in a later phase.</p>
             </div>
 
-            <div class="form-field">
-                <label for="thumbnail_path">Thumbnail path</label>
-                <input id="thumbnail_path" name="thumbnail_path" type="text" maxlength="500" value="<?= e((string) $project['thumbnail_path']) ?>" placeholder="assets/images/projects/01-logar-gardiz-1.jpg">
+            <div class="form-field form-field-wide">
+                <?php mediaPickerField('thumbnail_path', (string) ($project['thumbnail_path'] ?? ''), ['label' => 'Thumbnail image', 'required' => false]); ?>
             </div>
 
             <div class="repeatable-header">
@@ -116,13 +115,13 @@ $scopeRows = $project['scope'] ?? [];
             <div id="imageRows" class="repeatable-list">
                 <?php if ($imageRows === []): ?>
                     <div class="repeatable-row">
-                        <input type="text" name="images[]" value="" placeholder="assets/images/projects/example.jpg">
+                        <?php mediaPickerField('images[]', '', ['label' => 'Gallery image']); ?>
                         <button type="button" class="remove-row" data-remove-row>Remove</button>
                     </div>
                 <?php else: ?>
                     <?php foreach ($imageRows as $image): ?>
                         <div class="repeatable-row">
-                            <input type="text" name="images[]" value="<?= e((string) ($image['image_path'] ?? '')) ?>" placeholder="assets/images/projects/example.jpg">
+                            <?php mediaPickerField('images[]', (string) ($image['image_path'] ?? ''), ['label' => 'Gallery image']); ?>
                             <button type="button" class="remove-row" data-remove-row>Remove</button>
                         </div>
                     <?php endforeach; ?>
@@ -131,7 +130,7 @@ $scopeRows = $project['scope'] ?? [];
 
             <template id="imageRowsTemplate">
                 <div class="repeatable-row">
-                    <input type="text" name="images[]" value="" placeholder="assets/images/projects/example.jpg">
+                    <?php mediaPickerField('images[]', '', ['label' => 'Gallery image']); ?>
                     <button type="button" class="remove-row" data-remove-row>Remove</button>
                 </div>
             </template>

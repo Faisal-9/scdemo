@@ -5,12 +5,27 @@ require_once __DIR__ . '/../../app/bootstrap.php';
 Auth::requirePermission('manage_sectors');
 
 $sector = [
-    'sector_key' => '', 'title' => '', 'description' => '', 'sort_order' => count(SectorManager::all()), 'is_active' => 1,
-    'hero_tag' => '', 'hero_headline' => '', 'hero_subtitle' => '', 'hero_cta_text' => '', 'hero_cta_link' => '', 'hero_image' => '',
-    'featured_project_name' => '', 'featured_project_image' => '', 'featured_project_cta_text' => '', 'featured_project_cta_link' => '',
-    'stats' => [], 'why' => [], 'areas' => [], 'sections' => [],
+    'sector_key' => '',
+    'title' => '',
+    'description' => '',
+    'sort_order' => count(SectorManager::all()),
+    'is_active' => 1,
+    'hero_tag' => '',
+    'hero_headline' => '',
+    'hero_subtitle' => '',
+    'hero_cta_text' => '',
+    'hero_cta_link' => '',
+    'hero_image' => '',
+    'featured_project_name' => '',
+    'featured_project_image' => '',
+    'featured_project_cta_text' => '',
+    'featured_project_cta_link' => '',
+    'stats' => [],
+    'why' => [],
+    'areas' => [],
+    'sections' => [],
 ];
-$errors=[];
+$errors = [];
 
 if (isPost()) {
     CSRF::verify($_POST['csrf_token'] ?? null);
@@ -25,12 +40,21 @@ if (isPost()) {
     }
 }
 
-$pageTitle='Create Sector'; $activeNav='sectors';
-require __DIR__ . '/../partials/header.php'; require __DIR__ . '/../partials/sidebar.php';
+$pageTitle = 'Create Sector';
+$activeNav = 'sectors';
+require __DIR__ . '/../partials/header.php';
+require __DIR__ . '/../partials/sidebar.php';
 ?>
 <main class="admin-content">
-<?php $breadcrumbs=[['label'=>'Dashboard','url'=>adminUrl('dashboard.php')],['label'=>'Sectors','url'=>adminUrl('sectors/')],['label'=>'Create Sector','url'=>null]]; require __DIR__ . '/../partials/breadcrumbs.php'; $heading='Create Sector'; $description='Add a new sector using the existing public template structure.'; $actionUrl=null; $actionLabel=null; require __DIR__ . '/../partials/page-heading.php'; ?>
-<?php $submitLabel='Create Sector'; require __DIR__ . '/form.php'; ?>
+    <?php $breadcrumbs = [['label' => 'Dashboard', 'url' => adminUrl('dashboard.php')], ['label' => 'Sectors', 'url' => adminUrl('sectors/')], ['label' => 'Create Sector', 'url' => null]];
+    require __DIR__ . '/../partials/breadcrumbs.php';
+    $heading = 'Create Sector';
+    $description = 'Add a new sector using the existing public template structure.';
+    $actionUrl = null;
+    $actionLabel = null;
+    require __DIR__ . '/../partials/page-heading.php'; ?>
+    <?php $submitLabel = 'Create Sector';
+    require __DIR__ . '/form.php'; ?>
 </main>
 <?php require __DIR__ . '/../partials/footer.php'; ?>
 <?php
@@ -48,13 +72,16 @@ function normalizeSectorPost(array $sector): array
 function normalizeSections(array $sections): array
 {
     foreach ($sections as &$section) {
-        $section['image'] = preg_split('/\R/', trim((string) ($section['images_text'] ?? '')), -1, PREG_SPLIT_NO_EMPTY);
+        $rawImages = $section['images_text'] ?? [];
+        $section['image'] = is_array($rawImages)
+            ? array_values(array_filter(array_map('trim', $rawImages), static fn(string $path): bool => $path !== ''))
+            : preg_split('/\R/', trim((string) $rawImages), -1, PREG_SPLIT_NO_EMPTY);
         $section['stats'] = [];
         foreach (preg_split('/\R/', trim((string) ($section['stats_text'] ?? '')), -1, PREG_SPLIT_NO_EMPTY) as $line) {
-            [$value,$label] = array_pad(explode('|',$line,2),2,'');
-            $section['stats'][]=['value'=>trim($value),'label'=>trim($label)];
+            [$value, $label] = array_pad(explode('|', $line, 2), 2, '');
+            $section['stats'][] = ['value' => trim($value), 'label' => trim($label)];
         }
-        unset($section['images_text'],$section['stats_text']);
+        unset($section['images_text'], $section['stats_text']);
     }
     unset($section);
     return array_values($sections);

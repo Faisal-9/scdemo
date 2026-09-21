@@ -7,29 +7,41 @@ Auth::requirePermission('manage_sectors');
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 if (!$id) redirect(adminUrl('sectors/'));
 $sector = SectorManager::find((int)$id);
-if ($sector === null) { flash('error','Sector not found.'); redirect(adminUrl('sectors/')); }
-$errors=[];
+if ($sector === null) {
+    flash('error', 'Sector not found.');
+    redirect(adminUrl('sectors/'));
+}
+$errors = [];
 
 if (isPost()) {
     CSRF::verify($_POST['csrf_token'] ?? null);
     $sector = array_merge($sector, $_POST);
     try {
         SectorManager::update((int)$id, normalizeSectorPost($sector));
-        Auth::audit(Auth::id(),'update','sector',(int)$id,'Updated sector: '.$sector['title']);
-        flash('success','Sector updated successfully.');
-        redirect(adminUrl('sectors/edit.php?id='.(int)$id));
+        Auth::audit(Auth::id(), 'update', 'sector', (int)$id, 'Updated sector: ' . $sector['title']);
+        flash('success', 'Sector updated successfully.');
+        redirect(adminUrl('sectors/edit.php?id=' . (int)$id));
     } catch (Throwable $e) {
         $errors[] = APP_DEBUG ? $e->getMessage() : 'The sector could not be updated.';
     }
 }
 
-$pageTitle='Edit Sector'; $activeNav='sectors';
-require __DIR__ . '/../partials/header.php'; require __DIR__ . '/../partials/sidebar.php';
+$pageTitle = 'Edit Sector';
+$activeNav = 'sectors';
+require __DIR__ . '/../partials/header.php';
+require __DIR__ . '/../partials/sidebar.php';
 ?>
 <main class="admin-content">
-<?php $breadcrumbs=[['label'=>'Dashboard','url'=>adminUrl('dashboard.php')],['label'=>'Sectors','url'=>adminUrl('sectors/')],['label'=>'Edit Sector','url'=>null]]; require __DIR__ . '/../partials/breadcrumbs.php'; $heading='Edit Sector'; $description='Edit the database content while keeping the public sector template unchanged.'; $actionUrl=null; $actionLabel=null; require __DIR__ . '/../partials/page-heading.php'; ?>
-<?php require __DIR__ . '/../partials/alerts.php'; ?>
-<?php $submitLabel='Save Changes'; require __DIR__ . '/form.php'; ?>
+    <?php $breadcrumbs = [['label' => 'Dashboard', 'url' => adminUrl('dashboard.php')], ['label' => 'Sectors', 'url' => adminUrl('sectors/')], ['label' => 'Edit Sector', 'url' => null]];
+    require __DIR__ . '/../partials/breadcrumbs.php';
+    $heading = 'Edit Sector';
+    $description = 'Edit the database content while keeping the public sector template unchanged.';
+    $actionUrl = null;
+    $actionLabel = null;
+    require __DIR__ . '/../partials/page-heading.php'; ?>
+    <?php require __DIR__ . '/../partials/alerts.php'; ?>
+    <?php $submitLabel = 'Save Changes';
+    require __DIR__ . '/form.php'; ?>
 </main>
 <?php require __DIR__ . '/../partials/footer.php'; ?>
 <?php
@@ -47,13 +59,16 @@ function normalizeSectorPost(array $sector): array
 function normalizeSections(array $sections): array
 {
     foreach ($sections as &$section) {
-        $section['image'] = preg_split('/\R/', trim((string) ($section['images_text'] ?? '')), -1, PREG_SPLIT_NO_EMPTY);
+        $rawImages = $section['images_text'] ?? [];
+        $section['image'] = is_array($rawImages)
+            ? array_values(array_filter(array_map('trim', $rawImages), static fn(string $path): bool => $path !== ''))
+            : preg_split('/\R/', trim((string) $rawImages), -1, PREG_SPLIT_NO_EMPTY);
         $section['stats'] = [];
         foreach (preg_split('/\R/', trim((string) ($section['stats_text'] ?? '')), -1, PREG_SPLIT_NO_EMPTY) as $line) {
-            [$value,$label] = array_pad(explode('|',$line,2),2,'');
-            $section['stats'][]=['value'=>trim($value),'label'=>trim($label)];
+            [$value, $label] = array_pad(explode('|', $line, 2), 2, '');
+            $section['stats'][] = ['value' => trim($value), 'label' => trim($label)];
         }
-        unset($section['images_text'],$section['stats_text']);
+        unset($section['images_text'], $section['stats_text']);
     }
     unset($section);
     return array_values($sections);

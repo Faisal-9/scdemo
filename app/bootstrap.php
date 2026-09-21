@@ -9,6 +9,7 @@ require_once __DIR__ . '/core/SiteGlobals.php';
 require_once __DIR__ . '/core/CSRF.php';
 require_once __DIR__ . '/helpers/functions.php';
 require_once __DIR__ . '/helpers/admin.php';
+require_once __DIR__ . '/helpers/media_picker.php';
 require_once __DIR__ . '/core/Auth.php';
 require_once __DIR__ . '/core/SiteSettings.php';
 require_once __DIR__ . '/core/SiteSettingsManager.php';
