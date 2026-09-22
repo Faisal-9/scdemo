@@ -95,7 +95,7 @@ final class AboutFrontend
             'items' => array_map(
                 static fn(array $row): array => [
                     'name' => (string)($row['name'] ?? ''),
-                    'logo' => AssetResolver::path($row['about_asset_id'] ?? null),
+                    'logo' => AssetResolver::path($row['about_asset_id'] ?? null) ?: (string)($row['logo_path'] ?? ''),
                 ],
                 $sisterRows
             ),

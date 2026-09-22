@@ -170,7 +170,12 @@ final class AboutManager
     {
         $table = self::tableFor($type);
         $rows = Database::connection()->query("SELECT * FROM {$table} ORDER BY sort_order ASC,id ASC")->fetchAll();
-        return array_map(static fn(array $row): array => AssetResolver::hydrate($row, ['about_asset_id' => 'logo_path']), $rows);
+        return array_map(static function (array $row): array {
+            if (array_key_exists('about_asset_id', $row) && AssetResolver::id($row['about_asset_id'])) {
+                $row['logo_path'] = AssetResolver::path($row['about_asset_id']);
+            }
+            return $row;
+        }, $rows);
     }
 
     public static function item(string $type, int $id): ?array
@@ -179,13 +184,39 @@ final class AboutManager
         $st = Database::connection()->prepare("SELECT * FROM {$table} WHERE id=:id LIMIT 1");
         $st->execute([':id' => $id]);
         $r = $st->fetch();
-        return is_array($r) ? AssetResolver::hydrate($r, ['about_asset_id' => 'logo_path']) : null;
+        if (!is_array($r)) return null;
+        if (array_key_exists('about_asset_id', $r) && AssetResolver::id($r['about_asset_id'])) {
+            $r['logo_path'] = AssetResolver::path($r['about_asset_id']);
+        }
+        return $r;
     }
 
     public static function saveItem(string $type, array $data, ?int $id = null): int
     {
         $pdo = Database::connection();
         $table = self::tableFor($type);
+        if ($type === 'sister') {
+            $assetId = AssetResolver::id($data['about_asset_id'] ?? null);
+            $logo = $assetId ? AssetResolver::path($assetId) : trim((string)($data['logo_path'] ?? ''));
+            if (!$assetId || $logo === '') throw new RuntimeException('Affiliated company logo is required.');
+            $params = [
+                ':name' => trim((string)($data['name'] ?? '')),
+                ':about_asset_id' => $assetId,
+                ':logo_path' => $logo,
+                ':sort_order' => max(0, (int)($data['sort_order'] ?? 0)),
+                ':is_active' => !empty($data['is_active']) ? 1 : 0,
+            ];
+            if ($params[':name'] === '') throw new RuntimeException('Affiliated company name is required.');
+            if ($id === null) {
+                $st = $pdo->prepare('INSERT INTO about_sister_companies (name,about_asset_id,logo_path,sort_order,is_active) VALUES (:name,:about_asset_id,:logo_path,:sort_order,:is_active)');
+                $st->execute($params);
+                return (int)$pdo->lastInsertId();
+            }
+            $params[':id'] = $id;
+            $st = $pdo->prepare('UPDATE about_sister_companies SET name=:name,about_asset_id=:about_asset_id,logo_path=:logo_path,sort_order=:sort_order,is_active=:is_active WHERE id=:id');
+            $st->execute($params);
+            return $id;
+        }
         if ($type === 'clients') {
             $name = null;
             $path = 'logo_path';
