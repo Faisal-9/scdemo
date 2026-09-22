@@ -113,11 +113,12 @@ if (!$project) {
 
                             <div class="swiper-wrapper">
 
-                                <?php foreach ($project['images'] as $img): ?>
+                                <?php foreach (($project['image_details'] ?? []) as $image): ?>
 
                                     <div class="swiper-slide">
 
-                                        <img src="<?php echo $img ?>" class="img-fluid rounded">
+                                        <img src="<?php echo htmlspecialchars((string)$image['path'], ENT_QUOTES, 'UTF-8') ?>" alt="<?php echo htmlspecialchars((string)($image['alt'] ?: $project['name']), ENT_QUOTES, 'UTF-8') ?>" class="img-fluid rounded">
+                                        <?php if ($image['caption'] !== ''): ?><p class="project-image-caption"><?php echo htmlspecialchars($image['caption'], ENT_QUOTES, 'UTF-8') ?></p><?php endif; ?>
 
                                     </div>
 

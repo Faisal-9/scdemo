@@ -42,13 +42,24 @@ final class ProjectFrontend
         $projectIds = array_map(static fn(array $row): int => (int)$row['id'], $rows);
         $placeholders = implode(',', array_fill(0, count($projectIds), '?'));
         $imageStmt = $pdo->prepare(
-            "SELECT project_id, project_asset_id FROM project_images
+            "SELECT project_id, project_asset_id, alt_text, caption FROM project_images
              WHERE project_id IN ($placeholders) ORDER BY project_id ASC, sort_order ASC, id ASC"
         );
         $imageStmt->execute($projectIds);
         $images = [];
+        $imageDetails = [];
         foreach ($imageStmt->fetchAll() as $image) {
-            $images[(int)$image['project_id']][] = AssetResolver::path($image['project_asset_id'] ?? null);
+            $projectId = (int)$image['project_id'];
+            $path = AssetResolver::path($image['project_asset_id'] ?? null);
+            if ($path === '') {
+                continue;
+            }
+            $images[$projectId][] = $path;
+            $imageDetails[$projectId][] = [
+                'path' => $path,
+                'alt' => (string)($image['alt_text'] ?? ''),
+                'caption' => (string)($image['caption'] ?? ''),
+            ];
         }
         $scopeStmt = $pdo->prepare(
             "SELECT project_id, scope_text FROM project_scope
@@ -63,7 +74,7 @@ final class ProjectFrontend
 
         foreach ($rows as $row) {
             $id = (int)$row['id'];
-            $projects[] = self::toLegacyShape($row, $images[$id] ?? [], $scopes[$id] ?? []);
+            $projects[] = self::toLegacyShape($row, $images[$id] ?? [], $scopes[$id] ?? [], $imageDetails[$id] ?? []);
         }
 
         return $projects;
@@ -158,14 +169,14 @@ final class ProjectFrontend
         }
 
         return [
-            'background' => $settings['projects_hero_background'] ?? 'assets/images/slider_04.jpg',
+            'background' => AssetResolver::path($settings['projects_hero_background'] ?? null) ?: ($settings['projects_hero_background'] ?? 'assets/images/slider_04.jpg'),
             'title' => $settings['projects_hero_title'] ?? 'Turning Ambition Into <span>Lasting</span> Impact',
             'subtitle' => $settings['projects_hero_subtitle'] ?? 'Delivering infrastructure, power & energy, mining, and development projects across regions.',
             'stats' => $stats,
         ];
     }
 
-    private static function toLegacyShape(array $row, ?array $images = null, ?array $scope = null): array
+    private static function toLegacyShape(array $row, ?array $images = null, ?array $scope = null, ?array $imageDetails = null): array
     {
         return [
             'id' => (string) ($row['legacy_id'] ?? ''),
@@ -180,6 +191,7 @@ final class ProjectFrontend
             'catimage' => (int) ($row['show_in_category_image'] ?? 0) === 1 ? 'yes' : 'no',
             'thumbnail' => AssetResolver::path($row['thumbnail_asset_id'] ?? null),
             'images' => $images ?? self::images((int) $row['id']),
+            'image_details' => $imageDetails ?? self::imageDetails((int) $row['id']),
             'description' => (string) ($row['description'] ?? ''),
             'scope' => $scope ?? self::scope((int) $row['id']),
         ];
@@ -200,6 +212,29 @@ final class ProjectFrontend
             static fn($value): string => AssetResolver::path($value),
             $stmt->fetchAll(PDO::FETCH_COLUMN)
         );
+    }
+
+    private static function imageDetails(int $projectId): array
+    {
+        $pdo = Database::connection();
+        $stmt = $pdo->prepare(
+            'SELECT project_asset_id, alt_text, caption
+             FROM project_images
+             WHERE project_id = :project_id
+             ORDER BY sort_order ASC, id ASC'
+        );
+        $stmt->execute([':project_id' => $projectId]);
+        $details = [];
+        foreach ($stmt->fetchAll() as $row) {
+            $path = AssetResolver::path($row['project_asset_id'] ?? null);
+            if ($path === '') continue;
+            $details[] = [
+                'path' => $path,
+                'alt' => (string)($row['alt_text'] ?? ''),
+                'caption' => (string)($row['caption'] ?? ''),
+            ];
+        }
+        return $details;
     }
 
     private static function scope(int $projectId): array

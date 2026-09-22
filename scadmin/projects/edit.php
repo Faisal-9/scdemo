@@ -60,7 +60,11 @@ if (isPost()) {
             'published' => !empty($_POST['published']) ? 1 : 0,
             'sort_order' => $_POST['sort_order'] ?? $project['sort_order'],
             'images' => array_map(
-                static fn($path) => ['project_asset_id' => (string) $path, 'alt_text' => '', 'caption' => ''],
+                static fn($image) => is_array($image) ? [
+                    'project_asset_id' => (string) ($image['project_asset_id'] ?? ''),
+                    'alt_text' => (string) ($image['alt_text'] ?? ''),
+                    'caption' => (string) ($image['caption'] ?? ''),
+                ] : ['project_asset_id' => (string) $image, 'alt_text' => '', 'caption' => ''],
                 is_array($_POST['images'] ?? null) ? $_POST['images'] : []
             ),
             'scope' => array_map(
@@ -127,8 +131,8 @@ require __DIR__ . '/../partials/sidebar.php';
                 <tbody><?php foreach ($revisions as $revision): ?><tr>
                             <td><?= e((string)$revision['created_at']) ?></td>
                             <td><?= e((string)$revision['user_name']) ?></td>
-                            <td><?= e(ucfirst((string)$revision['status'])) ?></td>
-                            <td><?= e((string)$revision['note']) ?></td>
+                            <td>Saved</td>
+                            <td>Project update</td>
                             <td>
                                 <form method="post" action="<?= e(adminUrl('projects/restore.php')) ?>" onsubmit="return confirm('Restore this project version?');"><?= CSRF::field() ?><input type="hidden" name="revision_id" value="<?= e((string)$revision['id']) ?>"><button class="small-button" type="submit">Restore</button></form>
                             </td>

@@ -107,7 +107,7 @@ $scopeRows = $project['scope'] ?? [];
             <div class="repeatable-header">
                 <div>
                     <h3>Gallery images</h3>
-                    <p class="muted">One path per row. Existing gallery paths are preserved.</p>
+                    <p class="muted">Choose images from the media library and add accessible text for each one.</p>
                 </div>
                 <button type="button" class="secondary-button" data-add-row="imageRows">+ Add image</button>
             </div>
@@ -115,13 +115,21 @@ $scopeRows = $project['scope'] ?? [];
             <div id="imageRows" class="repeatable-list">
                 <?php if ($imageRows === []): ?>
                     <div class="repeatable-row">
-                        <?php mediaPickerField('images[]', '', ['label' => 'Gallery image']); ?>
+                        <?php mediaPickerField('images[0][project_asset_id]', '', ['label' => 'Gallery image']); ?>
+                        <div class="gallery-image-meta">
+                            <label>Alt text<input type="text" name="images[0][alt_text]" maxlength="255"></label>
+                            <label>Caption<input type="text" name="images[0][caption]" maxlength="500"></label>
+                        </div>
                         <button type="button" class="remove-row" data-remove-row>Remove</button>
                     </div>
                 <?php else: ?>
-                    <?php foreach ($imageRows as $image): ?>
+                    <?php foreach ($imageRows as $loopIndex => $image): ?>
                         <div class="repeatable-row">
-                            <?php mediaPickerField('images[][project_asset_id]', (string) ($image['project_asset_id'] ?? ''), ['label' => 'Gallery image']); ?>
+                            <?php mediaPickerField('images[' . $loopIndex . '][project_asset_id]', (string) ($image['project_asset_id'] ?? ''), ['label' => 'Gallery image']); ?>
+                            <div class="gallery-image-meta">
+                                <label>Alt text<input type="text" name="images[<?= $loopIndex ?>][alt_text]" maxlength="255" value="<?= e((string) ($image['alt_text'] ?? '')) ?>"></label>
+                                <label>Caption<input type="text" name="images[<?= $loopIndex ?>][caption]" maxlength="500" value="<?= e((string) ($image['caption'] ?? '')) ?>"></label>
+                            </div>
                             <button type="button" class="remove-row" data-remove-row>Remove</button>
                         </div>
                     <?php endforeach; ?>
@@ -130,7 +138,11 @@ $scopeRows = $project['scope'] ?? [];
 
             <template id="imageRowsTemplate">
                 <div class="repeatable-row">
-                    <?php mediaPickerField('images[]', '', ['label' => 'Gallery image']); ?>
+                    <?php mediaPickerField('images[__INDEX__][project_asset_id]', '', ['label' => 'Gallery image']); ?>
+                    <div class="gallery-image-meta">
+                        <label>Alt text<input type="text" name="images[__INDEX__][alt_text]" maxlength="255"></label>
+                        <label>Caption<input type="text" name="images[__INDEX__][caption]" maxlength="500"></label>
+                    </div>
                     <button type="button" class="remove-row" data-remove-row>Remove</button>
                 </div>
             </template>
@@ -203,3 +215,22 @@ $scopeRows = $project['scope'] ?? [];
         </div>
     </form>
 </section>
+<script>
+    (function () {
+        function bindRepeatable(listId, templateId, token) {
+            const list = document.getElementById(listId);
+            const template = document.getElementById(templateId);
+            const button = document.querySelector('[data-add-row="' + listId + '"]');
+            if (!list || !template || !button) return;
+            let nextIndex = list.querySelectorAll('.repeatable-row').length;
+            button.addEventListener('click', function () {
+                list.insertAdjacentHTML('beforeend', template.innerHTML.replaceAll(token, String(nextIndex++)));
+            });
+            list.addEventListener('click', function (event) {
+                if (event.target.matches('[data-remove-row]')) event.target.closest('.repeatable-row')?.remove();
+            });
+        }
+        bindRepeatable('imageRows', 'imageRowsTemplate', '__INDEX__');
+        bindRepeatable('scopeRows', 'scopeRowsTemplate', '__INDEX__');
+    }());
+</script>

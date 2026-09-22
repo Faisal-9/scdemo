@@ -678,6 +678,30 @@
   justify-content: center;
 }
 
+.gallery-image-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  flex: 1;
+}
+
+.gallery-image-meta label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.gallery-image-meta input {
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font: inherit;
+  color: var(--text);
+}
+
 .table-card {
   margin-top: 20px;
 }
