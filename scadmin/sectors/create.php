@@ -23,7 +23,6 @@ $sector = [
     'stats' => [],
     'why' => [],
     'areas' => [],
-    'sections' => [],
 ];
 $errors = [];
 
@@ -66,23 +65,5 @@ function normalizeSectorPost(array $sector): array
     $sector['stats'] = array_values((array) ($sector['stats'] ?? []));
     $sector['why'] = array_values((array) ($sector['why'] ?? []));
     $sector['areas'] = array_values((array) ($sector['areas'] ?? []));
-    $sector['sections'] = normalizeSections((array) ($sector['sections'] ?? []));
     return $sector;
-}
-function normalizeSections(array $sections): array
-{
-    foreach ($sections as &$section) {
-        $rawImages = $section['images_text'] ?? [];
-        $section['image'] = is_array($rawImages)
-            ? array_values(array_filter(array_map('trim', $rawImages), static fn(string $path): bool => $path !== ''))
-            : preg_split('/\R/', trim((string) $rawImages), -1, PREG_SPLIT_NO_EMPTY);
-        $section['stats'] = [];
-        foreach (preg_split('/\R/', trim((string) ($section['stats_text'] ?? '')), -1, PREG_SPLIT_NO_EMPTY) as $line) {
-            [$value, $label] = array_pad(explode('|', $line, 2), 2, '');
-            $section['stats'][] = ['value' => trim($value), 'label' => trim($label)];
-        }
-        unset($section['images_text'], $section['stats_text']);
-    }
-    unset($section);
-    return array_values($sections);
 }

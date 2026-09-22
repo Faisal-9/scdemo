@@ -40,11 +40,6 @@ final class SectorFrontend
                 'description' => self::restoreDescription((string) ($row['description'] ?? '')),
             ];
 
-            $sections = self::sections($pdo, $sectorId);
-            if ($sections !== []) {
-                $sector['sections'] = $sections;
-            }
-
             $result[(string) $row['sector_key']] = $sector;
         }
 
@@ -86,56 +81,6 @@ final class SectorFrontend
             static fn(array $row): string => (string) $row[$valueColumn],
             $stmt->fetchAll()
         );
-    }
-
-    private static function sections(PDO $pdo, int $sectorId): array
-    {
-        $stmt = $pdo->prepare(
-            'SELECT id, legacy_id, title, category, content
-             FROM sector_sections
-             WHERE sector_id = :sector_id AND is_active = 1
-             ORDER BY sort_order ASC, id ASC'
-        );
-        $stmt->execute([':sector_id' => $sectorId]);
-
-        $result = [];
-        foreach ($stmt->fetchAll() as $row) {
-            $sectionId = (int) $row['id'];
-
-            $images = $pdo->prepare(
-                'SELECT section_asset_id FROM sector_section_images
-                 WHERE section_id = :section_id ORDER BY sort_order ASC, id ASC'
-            );
-            $images->execute([':section_id' => $sectionId]);
-
-            $stats = $pdo->prepare(
-                'SELECT value_text, label FROM sector_section_stats
-                 WHERE section_id = :section_id ORDER BY sort_order ASC, id ASC'
-            );
-            $stats->execute([':section_id' => $sectionId]);
-
-            $sectionStats = [];
-            foreach ($stats->fetchAll() as $stat) {
-                $sectionStats[] = [
-                    'value' => (string) $stat['value_text'],
-                    'label' => (string) $stat['label'],
-                ];
-            }
-
-            $result[] = [
-                'id' => (string) ($row['legacy_id'] ?? ''),
-                'title' => (string) $row['title'],
-                'category' => (string) ($row['category'] ?? ''),
-                'content' => (string) ($row['content'] ?? ''),
-                'image' => array_map(
-                    static fn(array $image): string => AssetResolver::path($image['section_asset_id'] ?? null),
-                    $images->fetchAll()
-                ),
-                'stats' => $sectionStats,
-            ];
-        }
-
-        return $result;
     }
 
     private static function restoreDescription(string $value): mixed

@@ -70,43 +70,6 @@
     </div><button type="button" class="small-button" data-add-template="area">+ Add area</button>
   </div>
 
-  <div class="form-card">
-    <h2>Nested sections</h2>
-    <p class="muted">Sections support their own title, category, content, images and statistics.</p>
-    <?php foreach (($sector['sections'] ?? []) as $sIndex => $section): ?>
-      <fieldset class="nested-block">
-        <legend>Section <?= $sIndex + 1 ?></legend>
-        <div class="form-grid">
-          <div class="form-field"><label>ID</label><input name="sections[<?= $sIndex ?>][id]" value="<?= e($section['legacy_id'] ?? $section['id'] ?? '') ?>"></div>
-          <div class="form-field"><label>Title</label><input name="sections[<?= $sIndex ?>][title]" value="<?= e($section['title'] ?? '') ?>"></div>
-          <div class="form-field"><label>Category</label><input name="sections[<?= $sIndex ?>][category]" value="<?= e($section['category'] ?? '') ?>"></div>
-          <div class="form-field"><label>Active</label><select name="sections[<?= $sIndex ?>][is_active]">
-              <option value="1" <?= !isset($section['is_active']) || $section['is_active'] ? 'selected' : '' ?>>Active</option>
-              <option value="0" <?= isset($section['is_active']) && !$section['is_active'] ? 'selected' : '' ?>>Inactive</option>
-            </select></div>
-        </div>
-        <label>Content</label><textarea name="sections[<?= $sIndex ?>][content]" rows="5"><?= e($section['content'] ?? '') ?></textarea>
-        <label>Images</label>
-        <div class="repeatable-list">
-          <?php $imgPaths = [];
-          foreach (($section['image'] ?? []) as $img) $imgPaths[] = is_array($img) ? ($img['section_asset_id'] ?? '') : $img;
-          if ($imgPaths === []) $imgPaths = [''];
-          foreach ($imgPaths as $imgPath): ?>
-            <?php mediaPickerField('sections[' . $sIndex . '][images_text][]', (string) $imgPath, ['label' => 'Section image']); ?>
-          <?php endforeach; ?>
-        </div>
-        <label>Section statistics (one `value | label` per line)</label><textarea name="sections[<?= $sIndex ?>][stats_text]" rows="4"><?php $statLines = [];
-                                                                                                                                        foreach (($section['stats'] ?? []) as $st) {
-                                                                                                                                          $v = $st['value_text'] ?? $st['value'] ?? '';
-                                                                                                                                          $l = $st['label'] ?? '';
-                                                                                                                                          $statLines[] = $v . ' | ' . $l;
-                                                                                                                                        }
-                                                                                                                                        echo e(implode("\n", $statLines)); ?></textarea>
-      </fieldset>
-    <?php endforeach; ?>
-    <button type="button" class="small-button" disabled>+ Add nested section (dedicated builder in a later refinement)</button>
-  </div>
-
   <div class="form-actions"><a class="button-link button-secondary" href="<?= e(adminUrl('sectors/')) ?>">Cancel</a><button type="submit"><?= e($submitLabel) ?></button></div>
 </form>
 <script>
