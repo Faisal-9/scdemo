@@ -52,15 +52,15 @@ $stats = [
     ['number' => 4, 'label' => 'Active Global Offices'],
 ];
 /*  HISTORY  */
-$history = [
-    ['year' => '2007', 'title' => 'State Corps Establishment'],
-    ['year' => '2010', 'title' => 'First Major Project'],
-    ['year' => '2012', 'title' => 'Awarded by USACE'],
-    ['year' => '2014', 'title' => 'International Expansion to Middle East, Turkey and USA'],
-    ['year' => '2021', 'title' => 'Successfully completed 60 projects valued at $400M+'],
-    ['year' => '2024', 'title' => 'Awarded by MoWE & DABS'],
-    ['year' => '2025', 'title' => 'UZBEK-AFGHAN 5 projects'],
-];
+// $history = [
+//     ['year' => '2007', 'title' => 'State Corps Establishment'],
+//     ['year' => '2010', 'title' => 'First Major Project'],
+//     ['year' => '2012', 'title' => 'Awarded by USACE'],
+//     ['year' => '2014', 'title' => 'International Expansion to Middle East, Turkey and USA'],
+//     ['year' => '2021', 'title' => 'Successfully completed 60 projects valued at $400M+'],
+//     ['year' => '2024', 'title' => 'Awarded by MoWE & DABS'],
+//     ['year' => '2025', 'title' => 'UZBEK-AFGHAN 5 projects'],
+// ];
 /* INNER TABS  */
 $whySC = [
     '01' => [

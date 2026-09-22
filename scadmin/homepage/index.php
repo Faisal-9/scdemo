@@ -6,7 +6,6 @@ Auth::requirePermission('manage_homepage');
 
 $slides = HomeManager::heroSlides();
 $stats = HomeManager::stats();
-$history = HomeManager::history();
 $whyTabs = HomeManager::whyTabs();
 $statsBackground = HomeManager::statsBackground();
 
@@ -26,6 +25,55 @@ require __DIR__ . '/../partials/sidebar.php';
     require __DIR__ . '/../partials/alerts.php'; ?>
 
     <section class="content-panel">
+        <div class="panel-heading">
+            <div>
+                <h2>Homepage sections</h2>
+                <p class="muted">Every section visible on the public homepage has an editor here or in its owning content area.</p>
+            </div>
+        </div>
+        <div class="dashboard-grid">
+            <article class="dashboard-card">
+                <h3>Hero</h3>
+                <p class="muted">Homepage slider slides, descriptions, images, and order.</p>
+                <a class="small-button" href="#homepage-hero">Manage below</a>
+            </article>
+            <article class="dashboard-card">
+                <h3>Why State Corps</h3>
+                <p class="muted">Statistics, background, tabs, images, and bullet lists.</p>
+                <a class="small-button" href="#homepage-why">Manage below</a>
+            </article>
+            <article class="dashboard-card">
+                <h3>Services</h3>
+                <p class="muted">The homepage service cards use the shared service groups.</p>
+                <?php if (Auth::hasPermission('manage_services')): ?>
+                    <a class="small-button" href="<?= e(adminUrl('services/')) ?>">Manage services</a>
+                <?php else: ?><span class="muted">No access</span><?php endif; ?>
+            </article>
+            <article class="dashboard-card">
+                <h3>Featured Projects</h3>
+                <p class="muted">Choose homepage projects and manage their displayed content.</p>
+                <?php if (Auth::hasPermission('manage_projects')): ?>
+                    <a class="small-button" href="<?= e(adminUrl('projects/')) ?>">Manage projects</a>
+                <?php else: ?><span class="muted">No access</span><?php endif; ?>
+            </article>
+            <article class="dashboard-card">
+                <h3>Our Clients</h3>
+                <p class="muted">The homepage client logos are managed with About content.</p>
+                <?php if (Auth::hasPermission('manage_about')): ?>
+                    <a class="small-button" href="<?= e(adminUrl('about/items.php?type=clients')) ?>">Manage clients</a>
+                <?php else: ?><span class="muted">No access</span><?php endif; ?>
+            </article>
+            <article class="dashboard-card">
+                <h3>Recent Activities</h3>
+                <p class="muted">The latest news and events are selected from shared media content.</p>
+                <?php if (Auth::hasPermission('manage_media')): ?>
+                    <a class="small-button" href="<?= e(adminUrl('media/')) ?>">Manage media</a>
+                <?php else: ?><span class="muted">No access</span><?php endif; ?>
+            </article>
+        </div>
+    </section>
+
+    <section class="content-panel" id="homepage-hero">
         <div class="panel-heading">
             <div>
                 <h2>Hero slides</h2>
@@ -58,7 +106,7 @@ require __DIR__ . '/../partials/sidebar.php';
         </div>
     </section>
 
-    <section class="content-panel">
+    <section class="content-panel" id="homepage-why">
         <div class="panel-heading">
             <div>
                 <h2>Statistics</h2>
@@ -84,37 +132,6 @@ require __DIR__ . '/../partials/sidebar.php';
                             <td><?= e($row['label']) ?></td>
                             <td><span class="status-badge status-<?= $row['is_active'] ? 'active' : 'inactive' ?>"><?= $row['is_active'] ? 'Active' : 'Inactive' ?></span></td>
                             <td><a class="small-button" href="<?= e(adminUrl('homepage/stat.php?id=' . (int)$row['id'])) ?>">Edit</a></td>
-                        </tr><?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section class="content-panel">
-        <div class="panel-heading">
-            <div>
-                <h2>History</h2>
-                <p class="muted">Existing timeline entries are kept as individual records.</p>
-            </div><a class="button-link" href="<?= e(adminUrl('homepage/history.php')) ?>">+ Add entry</a>
-        </div>
-        <div class="table-wrap">
-            <table class="admin-table">
-                <thead>
-                    <tr>
-                        <th>Order</th>
-                        <th>Year</th>
-                        <th>Title</th>
-                        <th>Status</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($history as $row): ?><tr>
-                            <td><?= e((string)$row['sort_order']) ?></td>
-                            <td><?= e($row['year']) ?></td>
-                            <td><?= e($row['title']) ?></td>
-                            <td><span class="status-badge status-<?= $row['is_active'] ? 'active' : 'inactive' ?>"><?= $row['is_active'] ? 'Active' : 'Inactive' ?></span></td>
-                            <td><a class="small-button" href="<?= e(adminUrl('homepage/history.php?id=' . (int)$row['id'])) ?>">Edit</a></td>
                         </tr><?php endforeach; ?>
                 </tbody>
             </table>
