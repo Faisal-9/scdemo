@@ -38,8 +38,8 @@ $navigationGroups = [
                 <a class="admin-nav-link <?= e(adminActive('dashboard', $activeNav)) ?>" href="<?= e(adminUrl('dashboard.php')) ?>">Dashboard</a>
             </div>
 
-            <?php foreach ($navigationGroups as $heading => $items): ?>
-                <?php $visibleItems = array_values(array_filter($items, static fn(array $item): bool => adminHasAccess($item['permission']))); ?>
+            <?php foreach ($navigationGroups as $heading => $navItems): ?>
+                <?php $visibleItems = array_values(array_filter($navItems, static fn(array $item): bool => adminHasAccess($item['permission']))); ?>
                 <?php if ($visibleItems === []): continue; endif; ?>
                 <div class="admin-nav-group">
                     <div class="admin-nav-heading"><?= e($heading) ?></div>

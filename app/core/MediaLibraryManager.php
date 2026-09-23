@@ -65,7 +65,7 @@ final class MediaLibraryManager
 
     public static function pickerSearch(string $query = '', string $type = 'image', int $limit = 36): array
     {
-        $limit = max(1, min($limit, 100));
+        $limit = max(1, min($limit, 2000));
         $where = ['1=1'];
         $params = [];
         $query = trim($query);

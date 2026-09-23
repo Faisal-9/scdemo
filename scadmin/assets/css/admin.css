@@ -270,6 +270,30 @@
   gap: 4px 20px;
 }
 
+.contact-cms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.contact-cms-grid .content-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.contact-cms-grid .content-panel p {
+  flex: 1 1 auto;
+  margin-bottom: 18px;
+}
+
+.contact-cms-grid .content-panel .button-link {
+  align-self: flex-start;
+}
+
 .form-field select {
   width: 100%;
   min-height: 46px;
@@ -442,6 +466,10 @@
   .form-grid,
   .permission-grid,
   .editor-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-cms-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1098,12 +1126,62 @@ body.admin-body {
 
 .media-admin-thumbnail {
   display: block;
-  width: 72px;
-  height: 52px;
+  width: 48px !important;
+  height: 36px !important;
   object-fit: cover;
   border: 1px solid var(--border);
   border-radius: 6px;
   background: #f1f5f9;
+}
+
+.media-admin-table {
+  min-width: 980px;
+  table-layout: fixed;
+}
+
+.media-admin-table .media-image-column { width: 64px; }
+.media-admin-table .media-order-column { width: 58px; }
+.media-admin-table .media-legacy-column { width: 88px; }
+.media-admin-table .media-title-column { width: 260px; }
+.media-admin-table .media-date-column { width: 120px; }
+.media-admin-table .media-tags-column { width: 210px; }
+.media-admin-table .media-status-column { width: 92px; }
+.media-admin-table .media-actions-column { width: 145px; }
+
+.media-admin-table td {
+  overflow-wrap: anywhere;
+}
+
+.media-admin-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.media-admin-toolbar strong,
+.media-admin-toolbar .muted {
+  display: block;
+}
+
+.media-admin-filters,
+.media-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: center;
+}
+
+.media-admin-filters .active {
+  background: #1f4d73;
+  color: #fff;
+}
+
+.media-row-actions form {
+  margin: 0;
 }
 
 .media-library-actions,

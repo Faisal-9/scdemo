@@ -7,7 +7,7 @@ Auth::requirePermission('manage_assets');
 $q = trim((string)($_GET['q'] ?? ''));
 $type = (string)($_GET['type'] ?? 'image');
 if (!in_array($type, ['image', 'document'], true)) $type = 'image';
-$rows = MediaLibraryManager::pickerSearch($q, $type, 48);
+$rows = MediaLibraryManager::pickerSearch($q, $type, 2000);
 if (($_GET['format'] ?? '') === 'json') {
     header('Content-Type: application/json; charset=utf-8');
     echo json_encode(['items' => $rows], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);

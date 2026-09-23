@@ -42,6 +42,7 @@
       if (
         !image ||
         image.closest("[data-admin-image-preview]") ||
+        image.closest("[data-media-picker], .media-picker-overlay, .media-picker-result") ||
         !document.body.classList.contains("admin-body")
       )
         return;
@@ -125,6 +126,16 @@
             input.dispatchEvent(new Event("change", { bubbles: true }));
             const cur = field.querySelector("[data-media-picker-current-name]");
             if (cur) cur.textContent = item.relative_path;
+            const current = field.querySelector("[data-media-picker-current]");
+            if (current && type === "image") {
+              const baseUrl = String(window.SC_BASE_URL || "").replace(/\/$/, "");
+              current.querySelector("img")?.remove();
+              const preview = document.createElement("img");
+              preview.src = baseUrl + "/" + item.relative_path;
+              preview.alt = "";
+              preview.loading = "lazy";
+              current.prepend(preview);
+            }
             overlay.remove();
           });
           results.appendChild(b);

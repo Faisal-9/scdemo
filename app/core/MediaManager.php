@@ -26,7 +26,7 @@ final class MediaManager
         $sql .= ' ORDER BY m.media_type ASC, m.sort_order ASC, COALESCE(m.media_date_sort, \'1000-01-01\') DESC, m.id ASC';
         $stmt = $pdo->prepare($sql);
         $stmt->execute($params);
-        $rows = $stmt->fetchAll();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $desc = $pdo->prepare('SELECT id, description_text, sort_order FROM media_descriptions WHERE media_item_id = :id ORDER BY sort_order ASC, id ASC');
         $tags = $pdo->prepare('SELECT t.id, t.tag_name FROM media_item_tags mit INNER JOIN media_tags t ON t.id = mit.tag_id WHERE mit.media_item_id = :id ORDER BY t.tag_name ASC, t.id ASC');
         foreach ($rows as &$row) {
@@ -41,9 +41,9 @@ final class MediaManager
             ], $row);
             $row['media_image_path'] = AssetResolver::path($row['media_asset_id']);
             $desc->execute([':id' => (int)$row['id']]);
-            $row['descriptions'] = $desc->fetchAll();
+            $row['descriptions'] = $desc->fetchAll(PDO::FETCH_ASSOC);
             $tags->execute([':id' => (int)$row['id']]);
-            $row['tag_rows'] = $tags->fetchAll();
+            $row['tag_rows'] = $tags->fetchAll(PDO::FETCH_ASSOC);
             $row['tags_csv'] = implode(', ', array_map(static fn(array $t): string => (string)$t['tag_name'], $row['tag_rows']));
         }
         unset($row);
