@@ -15,7 +15,13 @@ foreach ($rows as $row) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     CSRF::check($_POST['_csrf'] ?? '');
     try {
-        SiteSettingsManager::saveManyForSection('footer', $_POST['setting'] ?? []);
+    $submittedSettings = $_POST['setting'] ?? [];
+    foreach ($settings as $key => $row) {
+      if ($key === 'footer_logo_enabled') {
+        $submittedSettings[(int)$row['id']] = isset($_POST['footer_logo_enabled']) ? '1' : '0';
+      }
+    }
+    SiteSettingsManager::saveManyForSection('footer', $submittedSettings);
         Auth::audit(Auth::id(), 'update', 'footer_settings', null, 'Updated footer settings.');
         Session::flash('success', 'Footer settings updated successfully.');
     } catch (Throwable $e) {
@@ -47,10 +53,16 @@ require __DIR__ . '/../partials/sidebar.php';
       <?php foreach ($settings as $key => $row): ?>
         <?php $type = (string)$row['setting_type']; $value = (string)$row['setting_value']; ?>
         <div class="form-group">
-          <label for="setting-<?= e($key) ?>"><?= e(ucwords(str_replace('_', ' ', $key))) ?></label>
-          <?php if ($type === 'textarea'): ?>
+          <?php if ($key === 'footer_logo'): ?>
+            <?php mediaPickerField('setting[' . (int)$row['id'] . ']', $value, ['label' => 'Footer Logo']); ?>
+          <?php elseif ($key === 'footer_logo_enabled'): ?>
+            <label for="setting-<?= e($key) ?>">Show Footer Logo</label>
+            <input id="setting-<?= e($key) ?>" type="checkbox" name="footer_logo_enabled" value="1" <?= in_array(strtolower($value), ['1', 'true', 'yes', 'on'], true) ? 'checked' : '' ?>>
+          <?php elseif ($type === 'textarea'): ?>
+            <label for="setting-<?= e($key) ?>"><?= e(ucwords(str_replace('_', ' ', $key))) ?></label>
             <textarea id="setting-<?= e($key) ?>" name="setting[<?= (int)$row['id'] ?>]" class="form-control" rows="6"><?= e($value) ?></textarea>
           <?php else: ?>
+            <label for="setting-<?= e($key) ?>"><?= e(ucwords(str_replace('_', ' ', $key))) ?></label>
             <input id="setting-<?= e($key) ?>" type="text" name="setting[<?= (int)$row['id'] ?>]" class="form-control" value="<?= e($value) ?>">
           <?php endif; ?>
           <?php if (!empty($row['description'])): ?><div class="muted"><?= e($row['description']) ?></div><?php endif; ?>

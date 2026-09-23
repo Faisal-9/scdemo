@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../app/public_bootstrap.php';
 $footerContact = ContactFrontend::data()['head_office'];
+$footerLogoEnabled = in_array(strtolower((string)SiteSettings::get('footer_logo_enabled', '1')), ['1', 'true', 'yes', 'on'], true);
 $footerLogoSetting = (string)SiteSettings::get('footer_logo', '');
 $footerLogo = AssetResolver::path($footerLogoSetting) ?: $footerLogoSetting;
 $footerNavigation = Navigation::all('footer');
@@ -23,7 +24,7 @@ $footerSocialLinks = [
             <!-- COMPANY -->
             <div class="footer-col footer-company">
 
-                <?php if ($footerLogo !== ''): ?>
+                <?php if ($footerLogoEnabled && $footerLogo !== ''): ?>
                     <img src="<?= e(baseUrl($footerLogo)) ?>" alt="<?= e((string)SiteSettings::get('site_name', '')) ?>" class="footer-logo">
                 <?php endif; ?>
 

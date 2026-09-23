@@ -47,12 +47,16 @@ require __DIR__ . '/../partials/sidebar.php';
       <?php foreach ($settings as $key => $row): ?>
         <?php $type = (string)$row['setting_type']; $value = (string)$row['setting_value']; ?>
         <div class="form-group">
-          <label for="setting-<?= e($key) ?>"><?= e(ucwords(str_replace('_', ' ', $key))) ?></label>
-          <?php if ($type === 'textarea'): ?>
+          <?php if ($key === 'site_logo'): ?>
+            <?php mediaPickerField('setting[' . (int)$row['id'] . ']', $value, ['label' => 'Site Logo']); ?>
+          <?php elseif ($type === 'textarea'): ?>
+            <label for="setting-<?= e($key) ?>"><?= e(ucwords(str_replace('_', ' ', $key))) ?></label>
             <textarea id="setting-<?= e($key) ?>" name="setting[<?= (int)$row['id'] ?>]" class="form-control" rows="5"><?= e($value) ?></textarea>
           <?php elseif (str_ends_with($key, '_color')): ?>
+            <label for="setting-<?= e($key) ?>"><?= e(ucwords(str_replace('_', ' ', $key))) ?></label>
             <input id="setting-<?= e($key) ?>" type="color" name="setting[<?= (int)$row['id'] ?>]" value="<?= e($value) ?>">
           <?php else: ?>
+            <label for="setting-<?= e($key) ?>"><?= e(ucwords(str_replace('_', ' ', $key))) ?></label>
             <input id="setting-<?= e($key) ?>" type="<?= $type === 'url' ? 'url' : 'text' ?>" name="setting[<?= (int)$row['id'] ?>]" class="form-control" value="<?= e($value) ?>">
           <?php endif; ?>
           <?php if (!empty($row['description'])): ?><div class="muted"><?= e($row['description']) ?></div><?php endif; ?>

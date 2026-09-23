@@ -8,6 +8,13 @@
 @import url("./phases/frontend/phase-7-legal-footer-contact.css");
 @import url("./phases/frontend/phase-8-responsive.css");
 
+.site-footer .footer-logo {
+    display: block;
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
 .sub-sub-list .group-toggle-icon {
     font-size: 0.75rem;
     transition: transform 0.3s ease;

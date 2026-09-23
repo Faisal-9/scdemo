@@ -18,6 +18,7 @@ final class SiteSettingsManager
         ],
         'footer' => [
             'footer_logo',
+            'footer_logo_enabled',
             'footer_statement',
             'footer_services_label',
             'footer_company_label',
