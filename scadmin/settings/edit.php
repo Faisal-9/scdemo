@@ -15,6 +15,11 @@ if (!$row) {
   exit('Setting not found.');
 }
 
+$managedSection = SiteSettingsManager::sectionForKey((string)$row['setting_key']);
+if ($managedSection !== null) {
+  redirect(adminUrl($managedSection . '/'));
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   CSRF::check($_POST['_csrf'] ?? '');
   try {

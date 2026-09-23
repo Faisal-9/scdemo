@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/../app/public_bootstrap.php';
 $footerContact = ContactFrontend::data()['head_office'];
+$footerLogoSetting = (string)SiteSettings::get('footer_logo', '');
+$footerLogo = AssetResolver::path($footerLogoSetting) ?: $footerLogoSetting;
 $footerNavigation = Navigation::all('footer');
 $footerServiceLinks = array_values(array_filter($footerNavigation, static fn(array $item): bool => (int)($item['sort_order'] ?? 0) < 100));
 $footerCompanyLinks = array_values(array_filter($footerNavigation, static fn(array $item): bool => (int)($item['sort_order'] ?? 0) >= 100 && (int)($item['sort_order'] ?? 0) < 200));
@@ -20,6 +22,10 @@ $footerSocialLinks = [
 
             <!-- COMPANY -->
             <div class="footer-col footer-company">
+
+                <?php if ($footerLogo !== ''): ?>
+                    <img src="<?= e(baseUrl($footerLogo)) ?>" alt="<?= e((string)SiteSettings::get('site_name', '')) ?>" class="footer-logo">
+                <?php endif; ?>
 
                 <h2 class="footer-name"><?php echo e((string)SiteSettings::get('site_name', '')); ?></h2>
 

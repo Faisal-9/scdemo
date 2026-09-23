@@ -3,10 +3,18 @@ declare(strict_types=1);
 require_once __DIR__ . '/../../app/bootstrap.php';
 Auth::requirePermission('manage_settings');
 
-$rows = SiteSettingsManager::rows();
+$sectionKeys = array_merge(
+  SiteSettingsManager::rowsForSection('header'),
+  SiteSettingsManager::rowsForSection('footer')
+);
+$managedKeys = array_fill_keys(array_column($sectionKeys, 'setting_key'), true);
+$rows = array_values(array_filter(
+  SiteSettingsManager::rows(),
+  static fn(array $row): bool => !isset($managedKeys[$row['setting_key']])
+));
 $pageTitle = 'Site Settings';
 $heading = $pageTitle;
-$description = 'Manage global identity, social links, navigation labels, and public header appearance.';
+$description = 'Manage general site identity, content defaults, and administration preferences.';
 $actionUrl = null;
 $actionLabel = null;
 require __DIR__ . '/../partials/header.php';

@@ -20,6 +20,8 @@ $navigationGroups = [
         ['key' => 'legal', 'label' => 'Policies & Terms', 'url' => adminUrl('legal/'), 'permission' => 'manage_legal'],
     ],
     'Site Management' => [
+        ['key' => 'header', 'label' => 'Header', 'url' => adminUrl('header/'), 'permission' => 'manage_settings'],
+        ['key' => 'footer', 'label' => 'Footer', 'url' => adminUrl('footer/'), 'permission' => 'manage_settings'],
         ['key' => 'navigation', 'label' => 'Navigation', 'url' => adminUrl('navigation/'), 'permission' => 'manage_navigation'],
         ['key' => 'seo', 'label' => 'SEO', 'url' => adminUrl('seo/'), 'permission' => 'manage_seo'],
         ['key' => 'redirects', 'label' => 'Redirects', 'url' => adminUrl('redirects/'), 'permission' => 'manage_redirects'],
@@ -38,11 +40,11 @@ $navigationGroups = [
                 <a class="admin-nav-link <?= e(adminActive('dashboard', $activeNav)) ?>" href="<?= e(adminUrl('dashboard.php')) ?>">Dashboard</a>
             </div>
 
-            <?php foreach ($navigationGroups as $heading => $navItems): ?>
+            <?php foreach ($navigationGroups as $groupHeading => $navItems): ?>
                 <?php $visibleItems = array_values(array_filter($navItems, static fn(array $item): bool => adminHasAccess($item['permission']))); ?>
                 <?php if ($visibleItems === []): continue; endif; ?>
                 <div class="admin-nav-group">
-                    <div class="admin-nav-heading"><?= e($heading) ?></div>
+                    <div class="admin-nav-heading"><?= e($groupHeading) ?></div>
                     <?php foreach ($visibleItems as $item): ?>
                         <?php if ($item['url'] !== null): ?>
                             <a class="admin-nav-link <?= e(adminActive($item['key'], $activeNav)) ?>" href="<?= e($item['url']) ?>"><?= e($item['label']) ?></a>
