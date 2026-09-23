@@ -8,7 +8,7 @@ $page = ContactMessageManager::page();
 $q = ContactMessageManager::qrCodes();
 $o = ContactMessageManager::offices();
 $pageTitle = 'Contact';
-$activeNav = 'messages';
+$activeNav = 'contact';
 require __DIR__ . '/../partials/header.php';
 require __DIR__ . '/../partials/sidebar.php';
 ?>

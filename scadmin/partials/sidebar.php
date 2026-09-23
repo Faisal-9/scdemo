@@ -1,7 +1,7 @@
 <?php
 
 /** @var string $activeNav */
-$activeNav = $activeNav ?? '';
+$activeNav = adminResolvedActiveNav($activeNav ?? '');
 
 $navigationGroups = [
     'Public Pages' => [

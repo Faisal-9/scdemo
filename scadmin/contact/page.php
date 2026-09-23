@@ -19,7 +19,7 @@ if (isPost()) {
     }
 }
 $pageTitle = 'Contact Page';
-$activeNav = 'messages';
+$activeNav = 'contact';
 require __DIR__ . '/../partials/header.php';
 require __DIR__ . '/../partials/sidebar.php';
 ?><main class="admin-content">

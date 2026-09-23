@@ -34,3 +34,26 @@ function adminActive(string $key, string $activeNav = ''): string
 {
     return $key === $activeNav ? 'active' : '';
 }
+
+function adminResolvedActiveNav(string $activeNav = ''): string
+{
+    if ($activeNav !== '') {
+        return $activeNav;
+    }
+
+    $requestPath = (string) parse_url((string) ($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH);
+    $adminPrefix = rtrim(adminUrl(), '/');
+
+    if ($adminPrefix !== '' && str_starts_with($requestPath, $adminPrefix . '/')) {
+        $adminPath = trim(substr($requestPath, strlen($adminPrefix)), '/');
+        $section = explode('/', $adminPath)[0] ?? '';
+
+        if ($section === 'dashboard.php' || $section === '') {
+            return 'dashboard';
+        }
+
+        return $section;
+    }
+
+    return '';
+}
