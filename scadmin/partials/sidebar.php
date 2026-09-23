@@ -10,6 +10,7 @@ $navigationGroups = [
         ['key' => 'services', 'label' => 'Services', 'url' => adminUrl('services/'), 'permission' => 'manage_services'],
         ['key' => 'sectors', 'label' => 'Expertise', 'url' => adminUrl('sectors/'), 'permission' => 'manage_sectors'],
         ['key' => 'projects', 'label' => 'Projects', 'url' => adminUrl('projects/'), 'permission' => 'manage_projects'],
+        ['key' => 'projects-hero', 'label' => 'Projects Hero', 'url' => adminUrl('projects/hero.php'), 'permission' => 'manage_projects'],
         ['key' => 'media', 'label' => 'Media', 'url' => adminUrl('media/'), 'permission' => 'manage_media'],
         ['key' => 'opportunities', 'label' => 'Opportunities', 'url' => null, 'permission' => 'manage_opportunities'],
         ['key' => 'contact', 'label' => 'Contact', 'url' => adminUrl('contact/'), 'permission' => 'manage_messages'],

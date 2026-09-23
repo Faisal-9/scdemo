@@ -25,6 +25,17 @@ final class SiteSettingsManager
             'footer_contact_label',
             'footer_copyright',
         ],
+        'projects' => [
+            'projects_hero_background',
+            'projects_hero_title',
+            'projects_hero_subtitle',
+            'projects_hero_stat_1_count',
+            'projects_hero_stat_1_label',
+            'projects_hero_stat_2_count',
+            'projects_hero_stat_2_label',
+            'projects_hero_stat_3_count',
+            'projects_hero_stat_3_label',
+        ],
     ];
 
     public static function rows(): array
@@ -45,6 +56,17 @@ final class SiteSettingsManager
             return [];
         }
 
+        if ($section === 'projects') {
+            $stmt = Database::connection()->query(
+                "SELECT id, setting_key, setting_value, setting_type, description, updated_by, updated_at
+                 FROM site_settings
+                 WHERE setting_key IN ('projects_hero_background', 'projects_hero_title', 'projects_hero_subtitle')
+                    OR setting_key REGEXP '^projects_hero_stat_[0-9]+_(count|label)$'
+                 ORDER BY setting_key ASC"
+            );
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
         $placeholders = implode(',', array_fill(0, count($keys), '?'));
         $stmt = Database::connection()->prepare(
             'SELECT id, setting_key, setting_value, setting_type, description, updated_by, updated_at
@@ -58,6 +80,10 @@ final class SiteSettingsManager
 
     public static function sectionForKey(string $key): ?string
     {
+        if (preg_match('/^projects_hero_stat_[0-9]+_(count|label)$/', $key)) {
+            return 'projects';
+        }
+
         foreach (self::SECTION_KEYS as $section => $keys) {
             if (in_array($key, $keys, true)) {
                 return $section;
@@ -65,6 +91,57 @@ final class SiteSettingsManager
         }
 
         return null;
+    }
+
+    public static function managedKeys(): array
+    {
+        return array_merge(...array_values(self::SECTION_KEYS));
+    }
+
+    public static function addProjectsHeroStat(int $index): void
+    {
+        if ($index < 1) {
+            throw new InvalidArgumentException('Statistic number must be positive.');
+        }
+
+        $pdo = Database::connection();
+        $check = $pdo->prepare('SELECT COUNT(*) FROM site_settings WHERE setting_key IN (?, ?)');
+        $countKey = 'projects_hero_stat_' . $index . '_count';
+        $labelKey = 'projects_hero_stat_' . $index . '_label';
+        $check->execute([$countKey, $labelKey]);
+        if ((int)$check->fetchColumn() > 0) {
+            throw new InvalidArgumentException('That statistic already exists.');
+        }
+
+        $stmt = $pdo->prepare(
+            'INSERT INTO site_settings (setting_key, setting_value, setting_type, description, updated_by)
+             VALUES (?, ?, \'text\', ?, ?), (?, ?, \'text\', ?, ?)'
+        );
+        $userId = Auth::id();
+        $stmt->execute([
+            $countKey, '0', 'Projects hero statistic value', $userId,
+            $labelKey, 'New Statistic', 'Projects hero statistic label', $userId,
+        ]);
+        SiteSettings::clearCache();
+    }
+
+    public static function deleteProjectsHeroStat(int $index): void
+    {
+        if ($index < 1) {
+            throw new InvalidArgumentException('Statistic number must be positive.');
+        }
+
+        $pdo = Database::connection();
+        $stmt = $pdo->prepare(
+            "DELETE FROM site_settings
+             WHERE setting_key IN (?, ?)
+                AND setting_key REGEXP '^projects_hero_stat_[0-9]+_(count|label)$'"
+        );
+        $stmt->execute([
+            'projects_hero_stat_' . $index . '_count',
+            'projects_hero_stat_' . $index . '_label',
+        ]);
+        SiteSettings::clearCache();
     }
 
     public static function find(int $id): ?array

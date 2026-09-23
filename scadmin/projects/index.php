@@ -48,6 +48,16 @@ require __DIR__ . '/../partials/sidebar.php';
     <?php require __DIR__ . '/../partials/alerts.php'; ?>
 
     <section class="content-panel project-filter-panel">
+        <div class="table-toolbar">
+            <div>
+                <strong>Projects page hero</strong>
+                <span class="muted">Edit the public hero image, message, and statistics.</span>
+            </div>
+            <a class="button-link button-secondary" href="<?= e(adminUrl('projects/hero.php')) ?>">Manage Hero</a>
+        </div>
+    </section>
+
+    <section class="content-panel project-filter-panel">
         <form method="get" class="filter-form">
             <div class="filter-field filter-search">
                 <label for="q">Search</label>

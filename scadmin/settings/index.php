@@ -3,14 +3,10 @@ declare(strict_types=1);
 require_once __DIR__ . '/../../app/bootstrap.php';
 Auth::requirePermission('manage_settings');
 
-$sectionKeys = array_merge(
-  SiteSettingsManager::rowsForSection('header'),
-  SiteSettingsManager::rowsForSection('footer')
-);
-$managedKeys = array_fill_keys(array_column($sectionKeys, 'setting_key'), true);
+$managedKeys = array_fill_keys(SiteSettingsManager::managedKeys(), true);
 $rows = array_values(array_filter(
   SiteSettingsManager::rows(),
-  static fn(array $row): bool => !isset($managedKeys[$row['setting_key']])
+  static fn(array $row): bool => !isset($managedKeys[$row['setting_key']]) && SiteSettingsManager::sectionForKey((string)$row['setting_key']) === null
 ));
 $pageTitle = 'Site Settings';
 $heading = $pageTitle;
