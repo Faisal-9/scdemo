@@ -110,10 +110,11 @@
           b.className = "media-picker-result";
           b.dataset.id = String(item.id);
           const baseUrl = String(window.SC_BASE_URL || "").replace(/\/$/, "");
+          const publicPath = String(item.public_path || item.relative_path);
           b.innerHTML =
             (String(item.mime_type).startsWith("image/")
               ? '<img src="' +
-              escapeHtml(baseUrl + "/" + item.relative_path) +
+              escapeHtml(baseUrl + "/" + publicPath) +
               '" alt="">'
               : '<span class="media-picker-result-file">FILE</span>') +
             "<strong>" +
@@ -131,7 +132,7 @@
               const baseUrl = String(window.SC_BASE_URL || "").replace(/\/$/, "");
               current.querySelector("img")?.remove();
               const preview = document.createElement("img");
-              preview.src = baseUrl + "/" + item.relative_path;
+              preview.src = baseUrl + "/" + String(item.public_path || item.relative_path);
               preview.alt = "";
               preview.loading = "lazy";
               current.prepend(preview);
