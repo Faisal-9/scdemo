@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $pageTitle = 'Projects Hero';
 $heading = $pageTitle;
 $description = 'Manage the hero image, messaging, and statistics shown on the public Projects page.';
-$activeNav = 'projects-hero';
+$activeNav = 'projects';
 require __DIR__ . '/../partials/header.php';
 require __DIR__ . '/../partials/sidebar.php';
 ?>
