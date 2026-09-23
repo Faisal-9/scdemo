@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   CSRF::check($_POST['_csrf'] ?? '');
   try {
     SiteSettingsManager::save((int)$id, trim((string)($_POST['setting_value'] ?? '')));
+    Auth::audit(Auth::id(), 'update', 'setting', (int)$id, 'Updated site setting.');
     Session::flash('success', 'Setting updated successfully.');
     header('Location: ' . adminUrl('settings/'));
     exit;

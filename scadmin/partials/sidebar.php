@@ -62,6 +62,9 @@ $navigationGroups = [
                     <?php if (adminHasAccess('manage_activity_logs')): ?>
                         <a class="admin-nav-link <?= e(adminActive('activity-logs', $activeNav)) ?>" href="<?= e(adminUrl('activity-logs/')) ?>"><?= e((string) SiteSettings::get('admin_nav_activity_logs_label', 'Activity Logs')); ?></a>
                     <?php endif; ?>
+                    <?php if (adminHasAccess('manage_revisions')): ?>
+                        <a class="admin-nav-link <?= e(adminActive('revisions', $activeNav)) ?>" href="<?= e(adminUrl('revisions/')) ?>">Version History</a>
+                    <?php endif; ?>
                     <?php if (adminHasAccess('manage_system_health')): ?>
                         <a class="admin-nav-link <?= e(adminActive('system-health', $activeNav)) ?>" href="<?= e(adminUrl('system-health/')) ?>"><?= e((string) SiteSettings::get('admin_nav_system_health_label', 'System Health')); ?></a>
                     <?php endif; ?>

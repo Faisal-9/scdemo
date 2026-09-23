@@ -790,7 +790,11 @@ CREATE TABLE content_revisions (
     entity_type VARCHAR(100) NOT NULL,
     entity_id BIGINT UNSIGNED NOT NULL,
 
-    revision_data LONGTEXT NOT NULL,
+    status ENUM('draft','review','approved','published','archived') NOT NULL DEFAULT 'draft',
+
+    snapshot_json LONGTEXT NOT NULL,
+
+    note VARCHAR(500) NULL,
 
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 

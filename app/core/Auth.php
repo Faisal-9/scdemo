@@ -256,5 +256,15 @@ final class Auth
                 500
             ),
         ]);
+
+        if (in_array($action, ['create', 'update'], true) && $entityType !== null && $entityId !== null && !empty($_POST)) {
+            RevisionManager::record(
+                $entityType,
+                $entityId,
+                $_POST,
+                RevisionManager::statusForSnapshot($_POST),
+                ucfirst($action) . ' via CMS editor; applied directly to live content'
+            );
+        }
     }
 }

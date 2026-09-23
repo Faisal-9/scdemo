@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'is_active' => isset($_POST['is_active']),
             'parent_id' => $_POST['parent_id'] ?? '',
         ]);
+        Auth::audit(Auth::id(), $id ? 'update' : 'create', 'navigation', $savedId, ($id ? 'Updated' : 'Created') . ' navigation item: ' . (string)($_POST['label'] ?? ''));
         Session::flash('success', 'Navigation item saved successfully.');
         header('Location: ' . adminUrl('navigation/?location=' . urlencode((string)($_POST['location'] ?? 'header'))));
         exit;

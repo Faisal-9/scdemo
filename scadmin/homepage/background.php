@@ -9,7 +9,7 @@ if (isPost()) {
     CSRF::verify($_POST['csrf_token'] ?? null);
     try {
         HomeManager::saveStatsBackground(postString('asset_id'));
-        Auth::audit(Auth::id(), 'update', 'home_setting', null, 'Updated homepage statistics background image.');
+        Auth::audit(Auth::id(), 'update', 'home_setting', 1, 'Updated homepage statistics background image.');
         flash('success', 'Background saved.');
         redirect(adminUrl('homepage/background.php'));
     } catch (Throwable $e) {

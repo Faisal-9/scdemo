@@ -14,6 +14,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         CSRF::verify($_POST['csrf_token'] ?? '');
         $data=$_POST; $data['is_active']=isset($_POST['is_active'])?1:0;
         LegalManager::saveDocument($data,$id);
+        Auth::audit(Auth::id(), 'update', 'legal_document', $id, 'Updated legal document.');
         Session::flash('success','Legal document updated.'); header('Location: '.adminUrl('legal/document.php?id='.$id)); exit;
     }catch(Throwable $e){$errors[]=$e->getMessage(); $doc=array_merge($doc,$_POST);}
 }

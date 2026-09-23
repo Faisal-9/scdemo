@@ -16,6 +16,7 @@ if (isPost()) {
     CSRF::verify($_POST['csrf_token'] ?? null);
     try {
         $new = ContactMessageManager::saveQr($_POST, $id ?: null);
+        Auth::audit(Auth::id(), $id ? 'update' : 'create', 'contact_qr', $new, ($id ? 'Updated' : 'Created') . ' contact QR code.');
         flash('success', 'QR code saved.');
         redirect(adminUrl('contact/qr.php'));
     } catch (Throwable $e) {

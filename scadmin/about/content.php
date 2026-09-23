@@ -37,7 +37,7 @@ if (isPost()) {
     CSRF::verify($_POST['csrf_token'] ?? null);
     try {
         call_user_func($save, $_POST);
-        Auth::audit(Auth::id(), 'update', 'about_' . $section, null, 'Updated About ' . $title);
+        Auth::audit(Auth::id(), 'update', 'about_' . $section, 1, 'Updated About ' . $title);
         flash('success', $title . ' saved.');
         redirect(adminUrl('about/content.php?section=' . $section));
     } catch (Throwable $e) {

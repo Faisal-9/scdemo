@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'note'=>$_POST['note'] ?? '', 'sort_order'=>$_POST['sort_order'] ?? 0,
             'is_active'=>isset($_POST['is_active']) ? 1 : 0,
         ]);
+        Auth::audit(Auth::id(), $id ? 'update' : 'create', 'redirect', $saved, ($id ? 'Updated' : 'Created') . ' redirect.');
         header('Location: ' . adminUrl('redirects/index.php')); exit;
     } catch (Throwable $e) { $error = $e->getMessage(); }
 }

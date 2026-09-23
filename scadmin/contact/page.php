@@ -10,6 +10,7 @@ if (isPost()) {
     CSRF::verify($_POST['csrf_token'] ?? null);
     try {
         ContactMessageManager::savePage($_POST);
+        Auth::audit(Auth::id(), 'update', 'contact_page', 1, 'Updated Contact page content.');
         flash('success', 'Contact page content saved.');
         redirect(adminUrl('contact/page.php'));
     } catch (Throwable $e) {

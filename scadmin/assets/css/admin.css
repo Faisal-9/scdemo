@@ -1050,11 +1050,60 @@ body.admin-body {
   padding: 0 10px;
 }
 
+.management-page .revision-diff-table,
+.management-page .revision-snapshot-table {
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.revision-diff-table th:first-child {
+  width: 18%;
+}
+
+.revision-diff-table th:not(:first-child),
+.revision-diff-table td:not(:first-child),
+.revision-snapshot-table th,
+.revision-snapshot-table td {
+  width: 41%;
+  vertical-align: top;
+}
+
+.revision-value {
+  box-sizing: border-box;
+  max-width: 100%;
+  max-height: 220px;
+  margin: 0;
+  overflow: auto;
+  padding: 10px;
+  border: 1px solid #e1e8ee;
+  border-radius: 6px;
+  background: #f8fafc;
+  color: #263746;
+  font: 12px/1.5 Consolas, "Liberation Mono", monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.revision-value-large {
+  max-height: 420px;
+}
+
 .media-library-hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+}
+
+.media-admin-thumbnail {
+  display: block;
+  width: 72px;
+  height: 52px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #f1f5f9;
 }
 
 .media-library-actions,

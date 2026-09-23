@@ -18,7 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $data = $_POST;
         $data['is_active'] = isset($_POST['is_active']) ? 1 : 0;
         $data['descriptions'] = isset($_POST['descriptions']) && is_array($_POST['descriptions']) ? $_POST['descriptions'] : [];
-        MediaManager::save($data, $id);
+        $savedId = MediaManager::save($data, $id);
+        Auth::audit(Auth::id(), $id ? 'update' : 'create', 'media_item', $savedId, ($id ? 'Updated' : 'Created') . ' media item: ' . (string)($data['title'] ?? ''));
         Session::flash('success', $id ? 'Media item updated.' : 'Media item created.');
         header('Location: ' . adminUrl('media/'));
         exit;

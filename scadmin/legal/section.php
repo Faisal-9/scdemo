@@ -18,6 +18,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
    $data=$_POST;
    $sectionId=LegalManager::saveSection($documentId,$data,$sectionId);
    LegalManager::replaceSectionItems($sectionId,is_array($_POST['items']??null)?$_POST['items']:[]);
+  Auth::audit(Auth::id(), $row ? 'update' : 'create', 'legal_section', $sectionId, ($row ? 'Updated' : 'Created') . ' legal section.');
    Session::flash('success','Legal section saved.'); header('Location: '.adminUrl('legal/document.php?id='.$documentId)); exit;
  }catch(Throwable $e){$errors[]=$e->getMessage();$row=array_merge((array)$row,$_POST);}
 }

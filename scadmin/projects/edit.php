@@ -21,15 +21,11 @@ if ($project === null) {
 $error = null;
 $sectors = ProjectManager::sectors();
 $success = flash('success');
-$revisions = adminHasAccess('manage_revisions') ? RevisionManager::forEntity('project', (int)$id) : [];
-
 if (isPost()) {
     CSRF::verify($_POST['csrf_token'] ?? null);
 
     try {
         ProjectManager::save($_POST, (int) $id);
-        RevisionManager::record('project', (int)$id, $_POST, !empty($_POST['published']) ? 'published' : 'draft', 'Project update');
-
         Auth::audit(
             Auth::id(),
             'update',
@@ -108,38 +104,5 @@ require __DIR__ . '/../partials/sidebar.php';
 
     <?php require __DIR__ . '/form.php'; ?>
 </main>
-
-<?php if ($revisions !== []): ?>
-    <section class="content-panel revision-panel">
-        <div class="panel-heading">
-            <div>
-                <h2>Version history</h2>
-                <p class="muted">Saved project versions and workflow status.</p>
-            </div>
-        </div>
-        <div class="table-responsive">
-            <table class="admin-table">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Author</th>
-                        <th>Status</th>
-                        <th>Note</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody><?php foreach ($revisions as $revision): ?><tr>
-                            <td><?= e((string)$revision['created_at']) ?></td>
-                            <td><?= e((string)$revision['user_name']) ?></td>
-                            <td>Saved</td>
-                            <td>Project update</td>
-                            <td>
-                                <form method="post" action="<?= e(adminUrl('projects/restore.php')) ?>" onsubmit="return confirm('Restore this project version?');"><?= CSRF::field() ?><input type="hidden" name="revision_id" value="<?= e((string)$revision['id']) ?>"><button class="small-button" type="submit">Restore</button></form>
-                            </td>
-                        </tr><?php endforeach; ?></tbody>
-            </table>
-        </div>
-    </section>
-<?php endif; ?>
 
 <?php require __DIR__ . '/../partials/footer.php'; ?>

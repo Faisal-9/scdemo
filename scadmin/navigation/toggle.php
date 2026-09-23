@@ -9,6 +9,7 @@ if (!$id) { http_response_code(404); exit('Navigation item not found.'); }
 try {
     $row = NavigationManager::find((int)$id);
     NavigationManager::toggle((int)$id);
+    Auth::audit(Auth::id(), 'update', 'navigation', (int)$id, 'Updated navigation visibility.');
     Session::flash('success', 'Navigation visibility updated.');
     header('Location: ' . adminUrl('navigation/?location=' . urlencode((string)($row['location'] ?? 'header'))));
     exit;

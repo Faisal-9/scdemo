@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   try {
     CSRF::verify($_POST['_csrf'] ?? '');
     $savedId = SeoManager::save($id, $_POST);
+    Auth::audit(Auth::id(), $id ? 'update' : 'create', 'seo', $savedId, ($id ? 'Updated' : 'Created') . ' SEO metadata.');
     Session::flash('success', 'SEO metadata saved.');
     redirect(adminUrl('seo/edit.php?id=' . $savedId));
   } catch (Throwable $e) {

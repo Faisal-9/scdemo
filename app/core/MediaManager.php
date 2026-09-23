@@ -30,6 +30,16 @@ final class MediaManager
         $desc = $pdo->prepare('SELECT id, description_text, sort_order FROM media_descriptions WHERE media_item_id = :id ORDER BY sort_order ASC, id ASC');
         $tags = $pdo->prepare('SELECT t.id, t.tag_name FROM media_item_tags mit INNER JOIN media_tags t ON t.id = mit.tag_id WHERE mit.media_item_id = :id ORDER BY t.tag_name ASC, t.id ASC');
         foreach ($rows as &$row) {
+            $row = array_merge([
+                'media_type' => '',
+                'sort_order' => 0,
+                'legacy_id' => '',
+                'title' => '',
+                'media_date' => '',
+                'is_active' => 0,
+                'media_asset_id' => null,
+            ], $row);
+            $row['media_image_path'] = AssetResolver::path($row['media_asset_id']);
             $desc->execute([':id' => (int)$row['id']]);
             $row['descriptions'] = $desc->fetchAll();
             $tags->execute([':id' => (int)$row['id']]);
@@ -124,7 +134,6 @@ final class MediaManager
                 $link->execute([':item' => $id, ':tag' => (int)$tagId]);
             }
             $pdo->commit();
-            self::audit($action, $id, $title);
             return $id;
         } catch (Throwable $e) {
             if ($pdo->inTransaction()) $pdo->rollBack();
@@ -143,7 +152,6 @@ final class MediaManager
             $pdo->prepare('DELETE FROM media_descriptions WHERE media_item_id=:id')->execute([':id' => $id]);
             $pdo->prepare('DELETE FROM media_items WHERE id=:id')->execute([':id' => $id]);
             $pdo->commit();
-            self::audit('delete', $id, (string)$row['title']);
         } catch (Throwable $e) {
             if ($pdo->inTransaction()) $pdo->rollBack();
             throw $e;
@@ -168,13 +176,5 @@ final class MediaManager
     private static function assertType(string $type): void
     {
         if (!in_array($type, self::TYPES, true)) throw new RuntimeException('Invalid media type.');
-    }
-    private static function audit(string $action, int $id, string $title): void
-    {
-        try {
-            $stmt = Database::connection()->prepare('INSERT INTO audit_logs (user_id, action, entity_type, entity_id, description, ip_address, user_agent) VALUES (:uid,:action,\'media_item\',:id,:description,:ip,:ua)');
-            $stmt->execute([':uid' => class_exists('Auth') ? (Auth::id() ?: null) : null, ':action' => $action, ':id' => $id, ':description' => ucfirst($action) . ' media item: ' . $title, ':ip' => $_SERVER['REMOTE_ADDR'] ?? null, ':ua' => $_SERVER['HTTP_USER_AGENT'] ?? null]);
-        } catch (Throwable $e) { /* audit failure must not break content save */
-        }
     }
 }

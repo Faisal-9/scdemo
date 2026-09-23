@@ -14,8 +14,6 @@ if (isPost()) {
 
     try {
         $projectId = ProjectManager::save($_POST);
-        RevisionManager::record('project', $projectId, $_POST, !empty($_POST['published']) ? 'published' : 'draft', 'Initial project version');
-
         Auth::audit(
             Auth::id(),
             'create',

@@ -16,6 +16,7 @@ if (isPost()) {
     CSRF::verify($_POST['csrf_token'] ?? null);
     try {
         $new = ContactMessageManager::saveOffice($_POST, $id ?: null);
+        Auth::audit(Auth::id(), $id ? 'update' : 'create', 'contact_office', $new, ($id ? 'Updated' : 'Created') . ' contact office.');
         flash('success', 'Office saved.');
         redirect(adminUrl('contact/offices.php'));
     } catch (Throwable $e) {
