@@ -84,7 +84,7 @@ final class HomeManager
         $stmt = Database::connection()->prepare('SELECT setting_value FROM site_settings WHERE setting_key = :key LIMIT 1');
         $stmt->execute([':key' => 'home_stats_background']);
         $value = $stmt->fetchColumn();
-        return $value === false ? 'assets/images/home/whybg1.jpg' : (string) $value;
+        return $value === false ? '' : (string) $value;
     }
 
     public static function saveStat(array $data, ?int $id = null): int

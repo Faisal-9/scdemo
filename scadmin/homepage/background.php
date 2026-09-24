@@ -24,7 +24,7 @@ require __DIR__ . '/../partials/sidebar.php';
 ?><main class="admin-content"><?php $breadcrumbs = [['label' => 'Dashboard', 'url' => adminUrl('dashboard.php')], ['label' => 'Homepage', 'url' => adminUrl('homepage/')], ['label' => 'Statistics Background', 'url' => null]];
                                 require __DIR__ . '/../partials/breadcrumbs.php';
                                 $heading = 'Statistics Background';
-                                $description = 'Current value: assets/images/home/whybg1.jpg';
+                                $description = 'Choose the background image stored in the media library.';
                                 $actionUrl = adminUrl('homepage/');
                                 $actionLabel = 'Back';
                                 require __DIR__ . '/../partials/page-heading.php';

@@ -169,9 +169,9 @@ final class ProjectFrontend
         }
 
         return [
-            'background' => AssetResolver::path($settings['projects_hero_background'] ?? null) ?: ($settings['projects_hero_background'] ?? 'assets/images/slider_04.jpg'),
-            'title' => $settings['projects_hero_title'] ?? 'Turning Ambition Into <span>Lasting</span> Impact',
-            'subtitle' => $settings['projects_hero_subtitle'] ?? 'Delivering infrastructure, power & energy, mining, and development projects across regions.',
+            'background' => AssetResolver::path($settings['projects_hero_background'] ?? null) ?: '',
+            'title' => $settings['projects_hero_title'] ?? '',
+            'subtitle' => $settings['projects_hero_subtitle'] ?? '',
             'stats' => $stats,
         ];
     }

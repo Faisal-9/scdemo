@@ -272,7 +272,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
                     <div class="service-card h-100">
 
                         <div class="service-image">
-                            <img src="<?php echo htmlspecialchars(isset($service['image']) ? $service['image'] : (isset($service['hero_image']) ? $service['hero_image'] : 'assets/images/default.jpg')) ?>"
+                            <img src="<?php echo htmlspecialchars(isset($service['image']) ? $service['image'] : (isset($service['hero_image']) ? $service['hero_image'] : '')) ?>"
                                 alt="<?php echo htmlspecialchars($service['title']) ?>"
                                 class="img-fluid"
                                 loading="lazy">
@@ -359,7 +359,7 @@ if (isset($projects) && is_array($projects)) {
                 $heroProject = $catImageProject ?: (!empty($group['chosen']) ? $group['chosen'][0] : $group['projects'][0]);
                 $heroImage = isset($heroProject['thumbnail']) && trim($heroProject['thumbnail']) !== ''
                     ? $heroProject['thumbnail']
-                    : 'assets/images/default.jpg';
+                    : '';
                 ?>
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="category-project-card card border-0 h-100">

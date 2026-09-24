@@ -34,8 +34,7 @@ final class HomeFrontend
 
         $statsBg = self::setting(
             $pdo,
-            'home_stats_background',
-            'assets/images/home/whybg1.jpg'
+            'home_stats_background'
         );
 
         $stats = [];
@@ -129,7 +128,7 @@ final class HomeFrontend
         }
     }
 
-    private static function setting(PDO $pdo, string $key, string $fallback): string
+    private static function setting(PDO $pdo, string $key): string
     {
         $stmt = $pdo->prepare(
             'SELECT setting_value FROM site_settings WHERE setting_key = :key LIMIT 1'
@@ -137,6 +136,6 @@ final class HomeFrontend
         $stmt->execute([':key' => $key]);
         $value = $stmt->fetchColumn();
 
-        return $value === false || (string) $value === '' ? $fallback : (AssetResolver::path($value) ?: $fallback);
+        return $value === false || (string) $value === '' ? '' : (AssetResolver::path($value) ?: '');
     }
 }

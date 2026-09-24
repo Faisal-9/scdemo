@@ -120,7 +120,7 @@ define(
     filter_var(configEnv('SC_APP_DEBUG', 'true'), FILTER_VALIDATE_BOOLEAN)
 );
 
-define('ASSET_VERSION', configEnv('SC_ASSET_VERSION', '1.1.0'));
+define('ASSET_VERSION', configEnv('SC_ASSET_VERSION', '1.1.1'));
 define('ANALYTICS_HASH_SALT', configEnv('SC_ANALYTICS_HASH_SALT', 'state-corps-local-analytics'));
 
 

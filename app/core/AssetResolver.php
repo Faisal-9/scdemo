@@ -18,9 +18,10 @@ final class AssetResolver
         $id = self::id($value);
         if ($id === null) return '';
         if (array_key_exists($id, self::$paths)) return self::$paths[$id];
-        $stmt = Database::connection()->prepare('SELECT relative_path FROM media_library WHERE id = ? LIMIT 1');
+        $stmt = Database::connection()->prepare('SELECT relative_path FROM media_library WHERE id = ? AND status = \'active\' LIMIT 1');
         $stmt->execute([$id]);
-        return self::$paths[$id] = self::resolveRelativePath((string)($stmt->fetchColumn() ?: ''));
+        $relative = (string)($stmt->fetchColumn() ?: '');
+        return self::$paths[$id] = $relative !== '' ? self::resolveRelativePath($relative) : '';
     }
 
     public static function resolveRelativePath(string $relative): string

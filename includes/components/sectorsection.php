@@ -5,7 +5,7 @@ $sector = isset($sector) ? $sector : [];
 <section class="sector-modern">
 
     <!-- HERO -->
-    <div class="sector-hero" style="background-image:url('<?php echo isset($sector['hero']['image']) ? $sector['hero']['image'] : 'assets/images/default.jpg' ?>')">
+    <div class="sector-hero" style="background-image:url('<?php echo isset($sector['hero']['image']) ? $sector['hero']['image'] : '' ?>')">
         <div class="overlay">
             <div class="container">
                 <p class="tag"><?php echo isset($sector['hero']['tag']) ? $sector['hero']['tag'] : '' ?></p>

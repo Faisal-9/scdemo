@@ -129,7 +129,8 @@ final class DatabaseBackupManager
         echo '-- Table: ' . self::sqlComment($table) . "\n\n";
         echo 'DROP TABLE IF EXISTS ' . $quoted . ";\n";
         echo $create . ";\n\n";
-        if (!$withData) return;
+        // Do not recursively embed saved backup payloads in a full export.
+        if (!$withData || $table === 'database_backups') return;
 
         $data = $pdo->query('SELECT * FROM ' . $quoted);
         $columns = [];

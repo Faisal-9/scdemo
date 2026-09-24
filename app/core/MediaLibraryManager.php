@@ -30,8 +30,6 @@ final class MediaLibraryManager
         'application/zip' => 'zip',
     ];
 
-    private const LEGACY_ROOTS = ['assets/images', 'assets/documents'];
-
     public static function list(array $filters = []): array
     {
         $pdo = Database::connection();
@@ -115,72 +113,29 @@ final class MediaLibraryManager
         $category = self::cleanCategory($category);
         $altText = mb_substr(trim($altText), 0, 500);
 
-        $dir = self::uploadRoot() . DIRECTORY_SEPARATOR . date('Y/m');
-        if (!is_dir($dir) && !@mkdir($dir, 0750, true)) throw new RuntimeException('Upload directory could not be created.');
-        $stored = self::uniqueStoredName($dir, $base, $extension);
-        $absolute = $dir . DIRECTORY_SEPARATOR . $stored;
-        if (!@move_uploaded_file($file['tmp_name'], $absolute)) throw new RuntimeException('The uploaded file could not be stored.');
+        $stored = $base . '-' . bin2hex(random_bytes(6)) . '.' . $extension;
 
-        $relative = 'assets/uploads/' . date('Y/m') . '/' . $stored;
+        $relative = 'uploads/' . $stored;
+        $directory = self::uploadRoot();
+        if (!is_dir($directory) && !@mkdir($directory, 0775, true) && !is_dir($directory)) {
+            throw new RuntimeException('The upload directory could not be created.');
+        }
+        $absolute = $directory . DIRECTORY_SEPARATOR . $stored;
+        if (!@move_uploaded_file($file['tmp_name'], $absolute)) {
+            throw new RuntimeException('The uploaded file could not be stored.');
+        }
         $userId = self::currentUserId();
         try {
             $stmt = Database::connection()->prepare(
-                 'INSERT INTO media_library (original_name, stored_name, relative_path, mime_type, file_size, checksum, width_px, height_px, alt_text, category, storage_scope, created_by)
-                  VALUES (?,?,?,?,?,?,?,?,?,?,?,?)'
+                                'INSERT INTO media_library (original_name, stored_name, relative_path, mime_type, file_size, checksum, width_px, height_px, alt_text, category, storage_scope, created_by)
+                                    VALUES (?,?,?,?,?,?,?,?,?,?,?,?)'
             );
-              $stmt->execute([$base . '.' . $extension, $stored, $relative, $mime, $size, $checksum, $dimensions[0] ?? null, $dimensions[1] ?? null, $altText ?: null, $category ?: null, 'upload', $userId]);
+                            $stmt->execute([$base . '.' . $extension, $stored, $relative, $mime, $size, $checksum, $dimensions[0] ?? null, $dimensions[1] ?? null, $altText ?: null, $category ?: null, 'upload', $userId]);
             return (int)Database::connection()->lastInsertId();
         } catch (Throwable $e) {
             @unlink($absolute);
             throw $e;
         }
-    }
-
-    public static function importExistingAssets(): array
-    {
-        $pdo = Database::connection();
-        $known = [];
-        foreach ($pdo->query('SELECT relative_path FROM media_library')->fetchAll(PDO::FETCH_COLUMN) as $path) $known[(string)$path] = true;
-
-        $root = dirname(__DIR__, 2);
-        $created = 0;
-        $skipped = 0;
-        $missing = 0;
-        foreach (self::LEGACY_ROOTS as $relativeRoot) {
-            $absoluteRoot = $root . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $relativeRoot);
-            if (!is_dir($absoluteRoot)) {
-                $missing++;
-                continue;
-            }
-            $it = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($absoluteRoot, FilesystemIterator::SKIP_DOTS));
-            foreach ($it as $file) {
-                if (!$file->isFile()) continue;
-                $absolute = $file->getPathname();
-                $relative = $relativeRoot . '/' . str_replace(DIRECTORY_SEPARATOR, '/', substr($absolute, strlen($absoluteRoot) + 1));
-                $relative = ltrim($relative, '/');
-                if (isset($known[$relative])) {
-                    $skipped++;
-                    continue;
-                }
-                $mime = self::detectMime($absolute);
-                if (!isset(self::ALLOWED_MIME[$mime])) {
-                    $skipped++;
-                    continue;
-                }
-                $name = basename($relative);
-                $dimensions = str_starts_with($mime, 'image/') ? @getimagesize($absolute) : false;
-                $checksum = hash_file('sha256', $absolute) ?: null;
-                $stmt = $pdo->prepare(
-                    'INSERT INTO media_library (original_name, stored_name, relative_path, mime_type, file_size, checksum, width_px, height_px, category, storage_scope, created_by)
-                     VALUES (?,?,?,?,?,?,?,?,?,?,?)'
-                );
-                $category = self::categoryFromPath($relative);
-                $stmt->execute([$name, $name, $relative, $mime, (int)$file->getSize(), $checksum, $dimensions[0] ?? null, $dimensions[1] ?? null, $category, 'legacy', self::currentUserId()]);
-                $known[$relative] = true;
-                $created++;
-            }
-        }
-        return compact('created', 'skipped', 'missing');
     }
 
     public static function updateMeta(int $id, string $displayName, string $altText, string $category, string $status = 'active'): void

@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $overview = null;
 $backups = [];
-$storage = ['path' => '', 'writable' => false, 'files' => 0, 'bytes' => 0];
+$storage = ['database' => true, 'bytes' => 0];
 try {
     $overview = DatabaseBackupManager::overview();
 } catch (Throwable $e) {
@@ -86,20 +86,12 @@ try {
 }
 try {
     $backups = BackupVaultManager::listBackups();
-    $storage['path'] = BackupVaultManager::storageDir();
-    if (is_dir($storage['path'])) {
-        $storage['writable'] = is_writable($storage['path']);
-        $files = glob($storage['path'] . DIRECTORY_SEPARATOR . '*.sql') ?: [];
-        $storage['files'] = count($files);
-        foreach ($files as $f) {
-            $storage['bytes'] += (int)@filesize($f);
-        }
-    }
 } catch (Throwable $e) {
     $error = $error ?: $e->getMessage();
 }
 
 $totalBackupBytes = array_sum(array_map(static fn($b) => (int)$b['size_bytes'], $backups));
+$storage['bytes'] = $totalBackupBytes;
 $ok = 0;
 $missing = 0;
 $failed = 0;
@@ -419,7 +411,7 @@ require __DIR__ . '/../partials/sidebar.php';
             </div>
             <div class="bc-stat">
                 <div class="bc-label">Vault Storage</div>
-                <div class="bc-num"><?= $storage['writable'] ? 'Ready' : 'Check' ?></div>
+                <div class="bc-num">Database</div>
                 <div class="bc-muted"><?= e(BackupVaultManager::formatBytes((int)$storage['bytes'])) ?></div>
             </div>
         </div>
@@ -429,7 +421,7 @@ require __DIR__ . '/../partials/sidebar.php';
                 <div class="bc-toolbar">
                     <div>
                         <h2 style="margin-bottom:.15rem">Saved Backups</h2>
-                        <div class="bc-small">Saved files are verified against their stored SHA-256 checksum before download.</div>
+                        <div class="bc-small">Saved SQL is stored and verified directly in the database.</div>
                     </div>
                     <form class="bc-form" method="post" action="index.php"><input type="hidden" name="csrf" value="<?= e($csrf) ?>"><input type="hidden" name="action" value="create_saved"><select class="bc-select" name="type">
                             <option value="full">Full — schema + data</option>
@@ -488,10 +480,9 @@ require __DIR__ . '/../partials/sidebar.php';
                         <div class="bc-kv"><span>Estimated DB size</span><strong><?= e(DatabaseBackupManager::formatBytes((int)$overview['estimated_bytes'])) ?></strong></div><?php endif; ?>
                 </div>
                 <div class="bc-card">
-                    <h2>Vault Status</h2>
-                    <div class="bc-kv"><span>Folder</span><strong style="max-width:62%;text-align:right;word-break:break-word"><?= e($storage['path']) ?></strong></div>
-                    <div class="bc-kv"><span>Writable</span><strong><?= $storage['writable'] ? 'Yes' : 'No' ?></strong></div>
-                    <div class="bc-kv"><span>SQL files on disk</span><strong><?= e((string)$storage['files']) ?></strong></div>
+                    <h2>Backup Storage</h2>
+                    <div class="bc-kv"><span>Storage</span><strong>Database</strong></div>
+                    <div class="bc-kv"><span>Payload</span><strong>SQL text</strong></div>
                     <div class="bc-kv"><span>Latest saved</span><strong><?= e($last['created_at'] ?? 'None') ?></strong></div>
                     <div class="bc-note" style="margin-top:.75rem">Keep an independent off-server backup copy. A server-local vault is not a substitute for disaster recovery.</div>
                 </div>

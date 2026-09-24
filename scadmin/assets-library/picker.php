@@ -10,7 +10,7 @@ if (!in_array($type, ['image', 'document'], true)) $type = 'image';
 $rows = MediaLibraryManager::pickerSearch($q, $type, 2000);
 if (($_GET['format'] ?? '') === 'json') {
     foreach ($rows as &$row) {
-        $row['public_path'] = AssetResolver::resolveRelativePath((string)$row['relative_path']);
+        $row['public_path'] = AssetResolver::path($row['id']);
     }
     unset($row);
     header('Content-Type: application/json; charset=utf-8');

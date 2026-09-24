@@ -7,7 +7,9 @@ if (!function_exists('renderServiceDetailPanel')) {
     {
 ?>
         <div class="detail-panel <?php echo $activeClass ?>" id="<?php echo htmlspecialchars($panelId) ?>">
-            <img src="<?php echo htmlspecialchars($item['image']) ?>" class="img-fluid mb-3 zoomable service-detail-img" alt="<?php echo htmlspecialchars($item['title']) ?>">
+            <?php if (!empty($item['image'])): ?>
+                <img src="<?php echo htmlspecialchars($item['image']) ?>" class="img-fluid mb-3 zoomable service-detail-img" alt="<?php echo htmlspecialchars($item['title']) ?>">
+            <?php endif; ?>
             <h3 class="service-detail-title"><?php echo htmlspecialchars($item['title']) ?></h3>
             <p class="service-short-desc"><?php echo htmlspecialchars($item['short_desc']) ?></p>
             <div class="service-why">

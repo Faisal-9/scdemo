@@ -4,35 +4,15 @@ declare(strict_types=1);
 
 /**
  * State Corps CMS — Secure Backup Vault.
- * Stores generated SQL backups outside the public document root by default.
+ * Stores generated SQL backups directly in the database.
  */
 final class BackupVaultManager
 {
-    public static function storageDir(): string
-    {
-        if (defined('SC_BACKUP_STORAGE') && is_string(SC_BACKUP_STORAGE) && SC_BACKUP_STORAGE !== '') {
-            return rtrim(SC_BACKUP_STORAGE, DIRECTORY_SEPARATOR);
-        }
-        // app/core -> project root -> project storage directory.
-        return dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'storage' . DIRECTORY_SEPARATOR . 'backups';
-    }
-
-    public static function ensureStorage(): void
-    {
-        $dir = self::storageDir();
-        if (!is_dir($dir) && !@mkdir($dir, 0750, true)) {
-            throw new RuntimeException('Backup storage directory could not be created: ' . $dir);
-        }
-        if (!is_writable($dir)) {
-            throw new RuntimeException('Backup storage directory is not writable. Configure SC_BACKUP_STORAGE or filesystem permissions.');
-        }
-    }
-
     public static function listBackups(): array
     {
         $pdo = Database::connection();
         $stmt = $pdo->query(
-            "SELECT b.id, b.filename, b.backup_type, b.size_bytes, b.sha256,
+            "SELECT b.id, b.filename, b.backup_type, b.size_bytes, b.sha256, b.backup_sql,
                     b.created_by, b.created_at, u.display_name AS creator_name, u.username AS creator_username
              FROM database_backups b
              LEFT JOIN users u ON u.id = b.created_by
@@ -44,7 +24,7 @@ final class BackupVaultManager
     public static function get(int $id): ?array
     {
         $stmt = Database::connection()->prepare(
-            "SELECT b.id, b.filename, b.backup_type, b.size_bytes, b.sha256,
+            "SELECT b.id, b.filename, b.backup_type, b.size_bytes, b.sha256, b.backup_sql,
                     b.created_by, b.created_at, u.display_name AS creator_name, u.username AS creator_username
              FROM database_backups b
              LEFT JOIN users u ON u.id = b.created_by
@@ -61,8 +41,6 @@ final class BackupVaultManager
         if (!in_array($type, ['full', 'schema'], true)) {
             throw new InvalidArgumentException('Unsupported backup type.');
         }
-        self::ensureStorage();
-
         $pdo = Database::connection();
         $dbName = (string)$pdo->query('SELECT DATABASE()')->fetchColumn();
         if ($dbName === '') {
@@ -72,10 +50,7 @@ final class BackupVaultManager
         $suffix = date('Ymd_His') . '_' . bin2hex(random_bytes(4));
         $safeDb = preg_replace('/[^A-Za-z0-9_-]+/', '_', $dbName) ?: 'database';
         $filename = $safeDb . '_cms_' . $type . '_' . $suffix . '.sql';
-        $tmp = self::storageDir() . DIRECTORY_SEPARATOR . '.' . $filename . '.part';
-        $path = self::storageDir() . DIRECTORY_SEPARATOR . $filename;
-
-        $handle = @fopen($tmp, 'wb');
+        $handle = @fopen('php://temp', 'w+b');
         if ($handle === false) {
             throw new RuntimeException('Could not open the backup file for writing.');
         }
@@ -83,45 +58,37 @@ final class BackupVaultManager
         try {
             self::write($handle, $pdo, $dbName, $type === 'full');
             fflush($handle);
-            fclose($handle);
-            $handle = null;
-            if (!@rename($tmp, $path)) {
-                throw new RuntimeException('Could not finalize the backup file.');
-            }
-            $size = (int)@filesize($path);
-            $sha = @hash_file('sha256', $path);
-            if ($size < 1 || !is_string($sha)) {
+            rewind($handle);
+            $sql = stream_get_contents($handle);
+            $size = strlen((string)$sql);
+            $sha = hash('sha256', (string)$sql);
+            if ($size < 1 || $sql === false) {
                 throw new RuntimeException('Backup integrity check failed.');
             }
 
             $stmt = $pdo->prepare(
-                "INSERT INTO database_backups (filename, backup_type, size_bytes, sha256, created_by)
-                 VALUES (?, ?, ?, ?, ?)"
+                "INSERT INTO database_backups (filename, backup_type, size_bytes, sha256, backup_sql, created_by)
+                 VALUES (?, ?, ?, ?, ?, ?)"
             );
-            $stmt->execute([$filename, $type, $size, $sha, $userId]);
+            $stmt->execute([$filename, $type, $size, $sha, $sql, $userId]);
             $id = (int)$pdo->lastInsertId();
             return self::get($id) ?? throw new RuntimeException('Backup metadata could not be loaded.');
         } catch (Throwable $e) {
             if (is_resource($handle)) {
                 fclose($handle);
             }
-            @unlink($tmp);
-            @unlink($path);
             throw $e;
         }
     }
 
     public static function verify(array $backup): array
     {
-        $path = self::storageDir() . DIRECTORY_SEPARATOR . basename((string)$backup['filename']);
-        if (!is_file($path)) {
-            return ['status' => 'missing', 'message' => 'Backup file is missing from the vault.'];
+        $sql = (string)($backup['backup_sql'] ?? '');
+        if ($sql === '') {
+            return ['status' => 'missing', 'message' => 'Backup SQL is missing from the database.'];
         }
-        $size = (int)@filesize($path);
-        $hash = @hash_file('sha256', $path);
-        if (!is_string($hash)) {
-            return ['status' => 'error', 'message' => 'Could not calculate the file checksum.'];
-        }
+        $size = strlen($sql);
+        $hash = hash('sha256', $sql);
         if ($size !== (int)$backup['size_bytes'] || !hash_equals((string)$backup['sha256'], $hash)) {
             return ['status' => 'failed', 'message' => 'Checksum or file size does not match the stored integrity record.'];
         }
@@ -134,21 +101,13 @@ final class BackupVaultManager
         if (!$backup) {
             throw new RuntimeException('Backup not found.');
         }
-        $path = self::storageDir() . DIRECTORY_SEPARATOR . basename((string)$backup['filename']);
         $pdo = Database::connection();
         $stmt = $pdo->prepare('DELETE FROM database_backups WHERE id = ?');
         $stmt->execute([$id]);
-        if (is_file($path)) {
-            @unlink($path);
-        }
     }
 
     public static function download(array $backup): void
     {
-        $path = self::storageDir() . DIRECTORY_SEPARATOR . basename((string)$backup['filename']);
-        if (!is_file($path) || !is_readable($path)) {
-            throw new RuntimeException('Backup file is unavailable.');
-        }
         $verify = self::verify($backup);
         if ($verify['status'] !== 'ok') {
             throw new RuntimeException('Backup failed integrity verification and cannot be downloaded.');
@@ -158,11 +117,11 @@ final class BackupVaultManager
         }
         header('Content-Type: application/sql; charset=utf-8');
         header('Content-Disposition: attachment; filename="' . basename((string)$backup['filename']) . '"');
-        header('Content-Length: ' . (string)filesize($path));
+        header('Content-Length: ' . (string)strlen((string)$backup['backup_sql']));
         header('Cache-Control: private, no-store, no-cache, must-revalidate');
         header('Pragma: no-cache');
         header('X-Content-Type-Options: nosniff');
-        readfile($path);
+        echo (string)$backup['backup_sql'];
     }
 
     public static function formatBytes(int $bytes): string
@@ -205,7 +164,9 @@ final class BackupVaultManager
         }
         self::out($handle, "-- --------------------------------------------------------\n-- Table: " . str_replace(["\r", "\n"], ' ', $table) . "\n\n");
         self::out($handle, 'DROP TABLE IF EXISTS ' . $quoted . ";\n" . $create . ";\n\n");
-        if (!$withData) return;
+        // Saved backups must not contain previous backup payloads, or each full
+        // backup would recursively include the preceding backup and grow forever.
+        if (!$withData || $table === 'database_backups') return;
 
         $data = $pdo->query('SELECT * FROM ' . $quoted);
         $columns = [];

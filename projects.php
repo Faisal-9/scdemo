@@ -157,7 +157,7 @@ $urlSector = isset($_GET['sector']) ? strtolower(trim($_GET['sector'])) : 'all';
 
                                         data-year="<?php echo $project['completion-year'] ?>" S
 
-                                        style="background-image:url('<?php echo $project['thumbnail'] ?: 'assets/images/default.jpg' ?>')">
+                                        style="background-image:url('<?php echo $project['thumbnail'] ?: '' ?>')">
 
                                         <div class="overlay"></div>
                                         <div class="content">

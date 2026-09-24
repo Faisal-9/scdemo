@@ -86,35 +86,25 @@ final class AssetManager
         $category = self::cleanCategory($category);
         $altText = mb_substr(trim($altText), 0, 500);
 
-        $root = self::uploadRoot();
-        if (!is_dir($root) && !mkdir($root, 0755, true) && !is_dir($root)) {
-            throw new RuntimeException('Upload directory could not be created.');
-        }
-
-        $folder = date('Y/m');
-        $destinationDir = $root . DIRECTORY_SEPARATOR . $folder;
-        if (!is_dir($destinationDir) && !mkdir($destinationDir, 0755, true) && !is_dir($destinationDir)) {
-            throw new RuntimeException('Upload folder could not be created.');
-        }
-
+        if (!is_uploaded_file($file['tmp_name'])) throw new RuntimeException('Upload validation failed.');
         $stored = bin2hex(random_bytes(16)) . '.' . $extension;
-        $absolute = $destinationDir . DIRECTORY_SEPARATOR . $stored;
-        if (!is_uploaded_file($file['tmp_name'])) {
-            throw new RuntimeException('Upload validation failed.');
+        $relative = 'uploads/' . $stored;
+        $root = self::uploadRoot();
+        if (!is_dir($root) && !@mkdir($root, 0775, true) && !is_dir($root)) {
+            throw new RuntimeException('The upload directory could not be created.');
         }
-        if (!move_uploaded_file($file['tmp_name'], $absolute)) {
+        $absolute = $root . DIRECTORY_SEPARATOR . $stored;
+        if (!@move_uploaded_file($file['tmp_name'], $absolute)) {
             throw new RuntimeException('The uploaded file could not be stored.');
         }
-
-        $relative = 'assets/uploads/' . $folder . '/' . $stored;
         $userId = Auth::id();
 
         try {
             $stmt = Database::connection()->prepare(
-                'INSERT INTO media_library (original_name, stored_name, relative_path, mime_type, file_size, alt_text, category, created_by)
-                 VALUES (?,?,?,?,?,?,?,?)'
+                 'INSERT INTO media_library (original_name, stored_name, relative_path, mime_type, file_size, alt_text, category, created_by)
+                  VALUES (?,?,?,?,?,?,?,?)'
             );
-            $stmt->execute([$original, $stored, $relative, $mime, $size, $altText ?: null, $category ?: null, $userId]);
+              $stmt->execute([$original, $stored, $relative, $mime, $size, $altText ?: null, $category ?: null, $userId]);
             $id = (int)Database::connection()->lastInsertId();
         } catch (Throwable $e) {
             @unlink($absolute);

@@ -1,6 +1,0 @@
-app/bootstrap.php additions:
-require_once __DIR__ . '/core/Redirect.php';
-require_once __DIR__ . '/core/RedirectManager.php';
-
-public_bootstrap.php public request hook (after app/bootstrap.php and before output):
-Redirect::applyCurrentRequest();

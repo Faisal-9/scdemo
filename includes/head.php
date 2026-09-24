@@ -89,10 +89,6 @@ AnalyticsTracker::track($page_title, $pageKey);
 
     <?php $publicBaseUrl = function_exists('baseUrl') ? baseUrl() : ''; ?>
 
-    <!-- Favicon -->
-    <link rel="icon" href="<?php echo htmlspecialchars($publicBaseUrl . 'assets/images/favicon1.png', ENT_QUOTES, 'UTF-8'); ?>" sizes="32x32">
-    <link rel="apple-touch-icon" href="<?php echo htmlspecialchars($publicBaseUrl . 'assets/images/apple-touch-icon.png', ENT_QUOTES, 'UTF-8'); ?>">
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
