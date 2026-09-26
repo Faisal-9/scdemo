@@ -23,17 +23,19 @@ $footerSocialLinks = [
 
             <!-- COMPANY -->
             <div class="footer-col footer-company">
+                <div class="footer-company-content">
+                    <?php if ($footerLogoEnabled && $footerLogo !== ''): ?>
+                        <img src="<?= e(baseUrl($footerLogo)) ?>" alt="<?= e((string)SiteSettings::get('site_name', '')) ?>" class="footer-logo">
+                    <?php endif; ?>
 
-                <?php if ($footerLogoEnabled && $footerLogo !== ''): ?>
-                    <img src="<?= e(baseUrl($footerLogo)) ?>" alt="<?= e((string)SiteSettings::get('site_name', '')) ?>" class="footer-logo">
-                <?php endif; ?>
+                    <div class="footer-company-copy">
+                        <h2 class="footer-name"><?php echo e((string)SiteSettings::get('site_name', '')); ?></h2>
 
-                <h2 class="footer-name"><?php echo e((string)SiteSettings::get('site_name', '')); ?></h2>
-
-                <div class="footer-statement">
-                    <?php echo nl2br(e((string)SiteSettings::get('footer_statement', ''))); ?>
+                        <div class="footer-statement">
+                            <?php echo nl2br(e((string)SiteSettings::get('footer_statement', ''))); ?>
+                        </div>
+                    </div>
                 </div>
-
             </div>
 
             <!-- SERVICES -->

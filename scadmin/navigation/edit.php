@@ -9,6 +9,9 @@ if ($id && !$row) { http_response_code(404); exit('Navigation item not found.');
 
 $location = (string)($row['location'] ?? ($_GET['location'] ?? 'header'));
 if (!in_array($location, ['header', 'footer'], true)) { $location = 'header'; }
+if ($location === 'footer') {
+    redirect(adminUrl('footer/' . ($id ? '?nav_id=' . (int)$id : '?add_nav=1')));
+}
 $parents = NavigationManager::parents($location, $id ? (int)$id : null);
 
 $values = [

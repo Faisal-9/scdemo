@@ -892,7 +892,7 @@
 .footer-name {
   margin: 0 0 14px;
   color: #fff;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
 }
 
@@ -901,7 +901,7 @@
   padding-left: 9px;
   border-left: 3px solid var(--header-hover, #d4af37);
   color: rgba(255, 255, 255, .92);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.7;
 }
 
@@ -998,6 +998,15 @@
 }
 
 @media (max-width: 576px) {
+  .footer-company-content {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .site-footer .footer-company-content .footer-logo {
+    flex-basis: auto;
+  }
+
   .heroSwiper {
     height: 440px;
   }

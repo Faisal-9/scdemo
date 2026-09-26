@@ -87,6 +87,16 @@
   padding-bottom: 10px;
 }
 
+.footer-company-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.footer-company-copy {
+  min-width: 0;
+}
+
 .footer-name {
   /* font-weight: 700;
   font-size: 32px; */

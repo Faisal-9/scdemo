@@ -10,9 +10,13 @@
 
 .site-footer .footer-logo {
     display: block;
-    width: 150px;
+    width: 170px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+}
+
+.site-footer .footer-company-content .footer-logo {
+    flex: 0 0 170px;
 }
 
 .sub-sub-list .group-toggle-icon {

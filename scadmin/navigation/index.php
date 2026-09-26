@@ -11,6 +11,9 @@ $location = strtolower(trim((string)($_GET['location'] ?? 'header')));
 if (!in_array($location, ['header', 'footer'], true)) {
   $location = 'header';
 }
+if ($location === 'footer') {
+  redirect(adminUrl('footer/'));
+}
 
 $rows = NavigationManager::rows($location);
 
