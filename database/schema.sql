@@ -935,7 +935,7 @@ CREATE TABLE `site_settings` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `setting_key` varchar(150) NOT NULL,
   `setting_value` text DEFAULT NULL,
-  `setting_type` enum('text','textarea','url','email','phone','image','document','boolean','number') NOT NULL DEFAULT 'text',
+  `setting_type` enum('text','textarea','url','email','phone','image','document','boolean','number','timezone') NOT NULL DEFAULT 'text',
   `description` varchar(255) DEFAULT NULL,
   `updated_by` int(10) unsigned DEFAULT NULL,
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
@@ -945,6 +945,9 @@ CREATE TABLE `site_settings` (
   CONSTRAINT `fk_settings_user` FOREIGN KEY (`updated_by`) REFERENCES `users` (`id`) ON DELETE SET NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+INSERT INTO `site_settings` (`setting_key`, `setting_value`, `setting_type`, `description`)
+VALUES ('timezone', 'UTC', 'timezone', 'Timezone used for application-generated dates and times')
+ON DUPLICATE KEY UPDATE `setting_type` = VALUES(`setting_type`), `description` = VALUES(`description`);
 DROP TABLE IF EXISTS `url_redirects`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;

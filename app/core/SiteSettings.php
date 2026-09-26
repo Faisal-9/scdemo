@@ -37,6 +37,19 @@ final class SiteSettings
         self::$cache = null;
     }
 
+    public static function applyConfiguredTimezone(): void
+    {
+        $timezone = (string)self::get('timezone', 'UTC');
+
+        try {
+            new DateTimeZone($timezone);
+        } catch (Throwable $e) {
+            $timezone = 'UTC';
+        }
+
+        date_default_timezone_set($timezone);
+    }
+
     /**
      * Read settings directly from PDO. Works with the existing Database::connection() implementation.
      */

@@ -13,6 +13,7 @@ require_once __DIR__ . '/helpers/media_picker.php';
 require_once __DIR__ . '/core/Auth.php';
 require_once __DIR__ . '/core/SiteSettings.php';
 require_once __DIR__ . '/core/SiteSettingsManager.php';
+SiteSettings::applyConfiguredTimezone();
 require_once __DIR__ . '/core/EditorManager.php';
 require_once __DIR__ . '/core/ProjectManager.php';
 require_once __DIR__ . '/core/ServiceManager.php';

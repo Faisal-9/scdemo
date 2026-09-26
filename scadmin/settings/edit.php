@@ -40,6 +40,19 @@ $heading = $pageTitle;
 $description = (string)($row['description'] ?? 'Update the selected global site setting.');
 $actionUrl = null;
 $actionLabel = null;
+$timezoneOptions = [];
+if ((string)$row['setting_type'] === 'timezone') {
+  foreach (DateTimeZone::listIdentifiers() as $timezone) {
+    $dateTimeZone = new DateTimeZone($timezone);
+    $offset = $dateTimeZone->getOffset(new DateTimeImmutable('now', $dateTimeZone));
+    $sign = $offset < 0 ? '-' : '+';
+    $absoluteOffset = abs($offset);
+    $offsetLabel = sprintf('UTC%s%02d:%02d', $sign, intdiv($absoluteOffset, 3600), intdiv($absoluteOffset % 3600, 60));
+    $category = str_contains($timezone, '/') ? explode('/', $timezone, 2)[0] : 'Other';
+    $timezoneOptions[$category][] = ['value' => $timezone, 'label' => $offsetLabel . ' - ' . str_replace('_', ' ', $timezone)];
+  }
+  ksort($timezoneOptions);
+}
 require __DIR__ . '/../partials/header.php';
 require __DIR__ . '/../partials/sidebar.php';
 ?>
@@ -59,7 +72,17 @@ require __DIR__ . '/../partials/sidebar.php';
         'number' => 'number',
         default => 'text'
       }; ?>
-      <?php if ($type === 'textarea'): ?>
+      <?php if ($type === 'timezone'): ?>
+        <div class="form-group"><label>Value</label><select name="setting_value" class="form-control">
+            <?php foreach ($timezoneOptions as $category => $options): ?>
+              <optgroup label="<?= e($category) ?>">
+                <?php foreach ($options as $option): ?>
+                  <option value="<?= e($option['value']) ?>" <?= $option['value'] === (string)$row['setting_value'] ? 'selected' : '' ?>><?= e($option['label']) ?></option>
+                <?php endforeach; ?>
+              </optgroup>
+            <?php endforeach; ?>
+          </select></div>
+      <?php elseif ($type === 'textarea'): ?>
         <div class="form-group"><label>Value</label><textarea name="setting_value" class="form-control" rows="8"><?= e((string)$row['setting_value']) ?></textarea></div>
       <?php elseif ($type === 'boolean'): ?>
         <div class="form-group"><label>Value</label><select name="setting_value" class="form-control">

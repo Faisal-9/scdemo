@@ -12,6 +12,7 @@ require_once __DIR__ . '/core/Database.php';
 require_once __DIR__ . '/core/AssetResolver.php';
 require_once __DIR__ . '/helpers/functions.php';
 require_once __DIR__ . '/core/SiteSettings.php';
+SiteSettings::applyConfiguredTimezone();
 require_once __DIR__ . '/core/Navigation.php';
 require_once __DIR__ . '/core/ProjectFrontend.php';
 require_once __DIR__ . '/core/ServiceFrontend.php';

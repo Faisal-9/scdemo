@@ -237,5 +237,8 @@ final class SiteSettingsManager
         if ($type === 'boolean' && !in_array(strtolower($value), ['0', '1', 'true', 'false', 'yes', 'no', 'on', 'off'], true)) {
             throw new InvalidArgumentException('Boolean settings must use a true/false value.');
         }
+        if ($type === 'timezone' && !in_array($value, DateTimeZone::listIdentifiers(), true)) {
+            throw new InvalidArgumentException('Please select a valid timezone.');
+        }
     }
 }
