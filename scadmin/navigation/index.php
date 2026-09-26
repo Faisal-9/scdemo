@@ -14,6 +14,7 @@ if (!in_array($location, ['header', 'footer'], true)) {
 if ($location === 'footer') {
   redirect(adminUrl('footer/'));
 }
+redirect(adminUrl('header/'));
 
 $rows = NavigationManager::rows($location);
 

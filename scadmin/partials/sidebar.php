@@ -22,7 +22,6 @@ $navigationGroups = [
     'Site Management' => [
         ['key' => 'header', 'label' => 'Header', 'url' => adminUrl('header/'), 'permission' => 'manage_settings'],
         ['key' => 'footer', 'label' => 'Footer', 'url' => adminUrl('footer/'), 'permission' => 'manage_settings'],
-        ['key' => 'navigation', 'label' => 'Navigation', 'url' => adminUrl('navigation/'), 'permission' => 'manage_navigation'],
         ['key' => 'seo', 'label' => 'SEO', 'url' => adminUrl('seo/'), 'permission' => 'manage_seo'],
         ['key' => 'redirects', 'label' => 'Redirects', 'url' => adminUrl('redirects/'), 'permission' => 'manage_redirects'],
         ['key' => 'settings', 'label' => 'Settings', 'url' => adminUrl('settings/'), 'permission' => 'manage_settings'],

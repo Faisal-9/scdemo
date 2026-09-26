@@ -12,6 +12,7 @@ if (!in_array($location, ['header', 'footer'], true)) { $location = 'header'; }
 if ($location === 'footer') {
     redirect(adminUrl('footer/' . ($id ? '?nav_id=' . (int)$id : '?add_nav=1')));
 }
+redirect(adminUrl('header/' . ($id ? '?nav_id=' . (int)$id : '?add_nav=1')));
 $parents = NavigationManager::parents($location, $id ? (int)$id : null);
 
 $values = [
