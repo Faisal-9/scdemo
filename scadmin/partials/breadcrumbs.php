@@ -1,6 +1,7 @@
 <?php
 /** @var array<int, array{label:string,url:?string}> $breadcrumbs */
 $breadcrumbs = $breadcrumbs ?? [];
+$breadcrumbsRendered = true;
 ?>
 
 <?php if ($breadcrumbs !== []): ?>
