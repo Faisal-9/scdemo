@@ -17,20 +17,20 @@ if (isPost()) {
         $path = postString('asset_id');
     }
 }
-$pageTitle = 'Homepage Statistics Background';
+$pageTitle = 'Homepage Why State Corps Background';
 $activeNav = 'homepage';
 require __DIR__ . '/../partials/header.php';
 require __DIR__ . '/../partials/sidebar.php';
 ?><main class="admin-content"><?php $breadcrumbs = [['label' => 'Dashboard', 'url' => adminUrl('dashboard.php')], ['label' => 'Homepage', 'url' => adminUrl('homepage/')], ['label' => 'Statistics Background', 'url' => null]];
                                 require __DIR__ . '/../partials/breadcrumbs.php';
-                                $heading = 'Statistics Background';
+                                $heading = 'Why State Corps Background';
                                 $description = 'Choose the background image stored in the media library.';
                                 $actionUrl = adminUrl('homepage/');
                                 $actionLabel = 'Back';
                                 require __DIR__ . '/../partials/page-heading.php';
                                 require __DIR__ . '/../partials/alerts.php';
                                 if ($error): ?><div class="alert alert-error"><?= e($error) ?></div><?php endif; ?><section class="form-card">
-        <form method="post"><?= CSRF::field() ?><?php mediaPickerField('asset_id', (string) $path, ['label' => 'Background image', 'required' => true]); ?>
+        <form method="post"><?= CSRF::field() ?><?php mediaPickerField('asset_id', (string) $path, ['label' => 'Why State Corps background image', 'required' => true]); ?>
             <div class="form-actions"><a class="button-link button-secondary" href="<?= e(adminUrl('homepage/')) ?>">Cancel</a><button class="button-primary" type="submit">Save Background</button></div>
         </form>
     </section>

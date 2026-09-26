@@ -5,6 +5,9 @@ declare(strict_types=1);
 final class SiteSettingsManager
 {
     private const SECTION_KEYS = [
+        'homepage' => [
+            'home_stats_background',
+        ],
         'header' => [
             'site_logo',
             'social_facebook_url',

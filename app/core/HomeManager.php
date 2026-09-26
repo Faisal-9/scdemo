@@ -197,7 +197,7 @@ final class HomeManager
         $assetId = AssetResolver::id($assetId);
         if (!$assetId) throw new RuntimeException('Statistics background image is required.');
         $pdo = Database::connection();
-        $stmt = $pdo->prepare('INSERT INTO site_settings (setting_key,setting_value,setting_type,description) VALUES (:key,:value,\'image\',\'Homepage statistics background image\') ON DUPLICATE KEY UPDATE setting_value=VALUES(setting_value),setting_type=VALUES(setting_type),description=VALUES(description)');
+        $stmt = $pdo->prepare('INSERT INTO site_settings (setting_key,setting_value,setting_type,description) VALUES (:key,:value,\'image\',\'Homepage Why State Corps and statistics background image\') ON DUPLICATE KEY UPDATE setting_value=VALUES(setting_value),setting_type=VALUES(setting_type),description=VALUES(description)');
         $stmt->execute([':key' => 'home_stats_background', ':value' => (string)$assetId]);
     }
 

@@ -17,7 +17,8 @@ if (!$row) {
 
 $managedSection = SiteSettingsManager::sectionForKey((string)$row['setting_key']);
 if ($managedSection !== null) {
-  redirect(adminUrl($managedSection . '/'));
+  $managedUrl = $managedSection === 'homepage' ? 'homepage/background.php' : $managedSection . '/';
+  redirect(adminUrl($managedUrl));
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

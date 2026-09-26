@@ -113,7 +113,7 @@ require __DIR__ . '/../partials/sidebar.php';
                 <p class="muted">The four current homepage statistics plus any future records.</p>
             </div><a class="button-link" href="<?= e(adminUrl('homepage/stat.php')) ?>">+ Add statistic</a>
         </div>
-        <p class="muted">Background: <code><?= e($statsBackground) ?></code> · <a href="<?= e(adminUrl('homepage/background.php')) ?>">Edit background</a></p>
+        <p class="muted">Why State Corps background: <code><?= e($statsBackground) ?></code> · <a href="<?= e(adminUrl('homepage/background.php')) ?>">Edit background</a></p>
         <div class="table-wrap">
             <table class="admin-table">
                 <thead>
