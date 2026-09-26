@@ -59,7 +59,7 @@ require __DIR__ . '/../partials/sidebar.php';
                     <tbody><?php foreach ($rows as $r): ?><tr>
                                 <td><?= e((string)$r['sort_order']) ?></td>
                                 <td><strong><?= e($r['title']) ?></strong><br><?= e($r['address']) ?></td>
-                                <td><?= e($r['phone'] ?? '') ?><?php if ($r['email']): ?><br><?= e($r['email']) ?><?php endif; ?></td>
+                                <td><?= e($r['phone'] ?? '') ?><?php if (!empty($r['whatsapp'])): ?><br>WhatsApp: <?= e($r['whatsapp']) ?><?php endif; ?><?php if ($r['email']): ?><br><?= e($r['email']) ?><?php endif; ?></td>
                                 <td><?= ((int)$r['is_active'] === 1) ? 'Active' : 'Inactive' ?></td>
                                 <td><a class="small-button" href="<?= e(adminUrl('contact/offices.php?id=' . (int)$r['id'])) ?>">Edit</a></td>
                             </tr><?php endforeach; ?></tbody>

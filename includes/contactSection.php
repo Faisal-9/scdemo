@@ -82,7 +82,7 @@ $map_src = 'https://maps.google.com/maps?q=' . rawurlencode($lat . ',' . $lng) .
                 <div class="col-lg-6">
                     <div class="position-relative rounded overflow-hidden">
 
-                        <div class="position-absolute top-end start-0 bg-black text-white px-3 py-1 small z-3">
+                        <div class="position-absolute top-0 end-0 bg-black text-white px-3 py-1 small z-3">
                             <?php echo htmlspecialchars($map_label, ENT_QUOTES, 'UTF-8'); ?>
                         </div>
 
@@ -161,6 +161,12 @@ $map_src = 'https://maps.google.com/maps?q=' . rawurlencode($lat . ',' . $lng) .
                             <?php if (!empty($office['phone'])): ?>
                                 <p><strong>Phone:</strong>
                                     <a href="tel:<?php echo htmlspecialchars($office['phone'], ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($office['phone'], ENT_QUOTES, 'UTF-8'); ?></a>
+                                </p>
+                            <?php endif; ?>
+
+                            <?php if (!empty($office['whatsapp'])): ?>
+                                <p><strong>WhatsApp:</strong>
+                                    <a href="https://wa.me/<?php echo preg_replace('/\D+/', '', (string)$office['whatsapp']); ?>" target="_blank" rel="noopener noreferrer"><?php echo htmlspecialchars($office['whatsapp'], ENT_QUOTES, 'UTF-8'); ?></a>
                                 </p>
                             <?php endif; ?>
 
