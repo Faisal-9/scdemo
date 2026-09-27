@@ -123,7 +123,7 @@ $latestActivityItems = array_slice($latestActivityItems, 0, 3);
             </div>
 
             <!-- TABS AREA -->
-            <div class="col-lg-9 col-md-8 d-none d-md-flex">
+            <div class="col-lg-9 col-md-8 d-flex index-why-tabs-area">
 
                 <section class="index-about-us">
                     <div class="index-about-us-container">

@@ -217,7 +217,12 @@ img {
 }
 
 .stat-number .prefix {
+  font-size: 0.72em;
   margin-right: -9px;
+}
+
+.stat-number .counter {
+  font-size: 0.86em;
 }
 
 .stat-number .suffix {
